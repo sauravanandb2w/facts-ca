@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gharana – Hindustani Classical Music</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f5f0eb;color:#222}
+header{background:linear-gradient(135deg,#4a148c,#6a1b9a);color:#fff;padding:26px 20px 18px;text-align:center}
+header h1{font-size:1.8rem;margin-bottom:4px}
+header p{font-size:.9rem;opacity:.88}
+.badge{display:inline-block;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 16px;font-size:.83rem;margin-top:8px}
+main{max-width:960px;margin:0 auto;padding:20px 16px 60px}
+h2{font-size:1.1rem;color:#4a148c;border-left:5px solid #8e24aa;padding-left:12px;margin:28px 0 14px}
+h3{font-size:.97rem;color:#6a1b9a;margin:16px 0 8px}
+
+/* MAP SECTION */
+.map-wrap{background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,.1);padding:20px;margin-bottom:24px}
+.map-flex{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.map-svg-box{flex:0 0 340px}
+.map-legend{flex:1;min-width:220px}
+.legend-item{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:.84rem}
+.legend-dot{width:14px;height:14px;border-radius:50%;flex-shrink:0}
+
+/* GHARANA CARDS */
+.gharana-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.g-card{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);overflow:hidden}
+.g-card-head{padding:12px 16px;color:#fff;font-weight:700;font-size:.95rem;display:flex;justify-content:space-between;align-items:center}
+.g-card-body{padding:12px 16px;font-size:.83rem;line-height:1.6}
+.g-card-body b{color:#4a148c}
+.trick{background:#f3e5f5;border-left:4px solid #8e24aa;padding:8px 12px;border-radius:0 6px 6px 0;margin-top:10px;font-size:.82rem}
+
+/* TABLE */
+.comp-table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:20px}
+.comp-table th{background:#4a148c;color:#fff;padding:9px 12px;font-size:.82rem;text-align:left}
+.comp-table td{padding:8px 12px;font-size:.82rem;border-bottom:1px solid #f0f0f0}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:hover td{background:#f3e5f5}
+
+/* MCQ */
+.mcq-card{background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:14px;overflow:hidden}
+.mcq-header{background:#ede7f6;padding:11px 16px;font-weight:600;font-size:.91rem;color:#4a148c;display:flex;gap:10px}
+.q-num{background:#6a1b9a;color:#fff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:.76rem;flex-shrink:0}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 16px}
+.opt{padding:7px 12px;border-radius:7px;border:1.5px solid #e0e0e0;background:#fafafa;font-size:.83rem;cursor:pointer}
+.opt.correct{background:#e8f5e9;border-color:#66bb6a;font-weight:600}
+.opt.wrong{background:#ffebee;border-color:#ef9a9a}
+.show-btn{display:block;margin:0 16px 12px;padding:6px 14px;background:#6a1b9a;color:#fff;border:none;border-radius:6px;cursor:pointer;font-size:.81rem;font-weight:600}
+.show-btn:hover{background:#4a148c}
+.exp{display:none;background:#ede7f6;border-left:4px solid #6a1b9a;padding:10px 14px;margin:0 16px 14px;border-radius:0 6px 6px 0;font-size:.83rem;line-height:1.55}
+.exp.vis{display:block}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:24px;margin-bottom:20px}
+.timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:3px;background:#ce93d8;border-radius:2px}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-item::before{content:'';position:absolute;left:-20px;top:4px;width:12px;height:12px;border-radius:50%;background:#8e24aa;border:2px solid #fff;box-shadow:0 0 0 2px #8e24aa}
+.tl-item .year{font-size:.75rem;color:#8e24aa;font-weight:700}
+.tl-item .desc{font-size:.84rem;line-height:1.5}
+
+@media(max-width:600px){
+  .gharana-grid,.opts{grid-template-columns:1fr}
+  .map-flex{flex-direction:column}
+  .map-svg-box{flex:none;width:100%}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🎵 Gharana — Hindustani Classical Music</h1>
+  <p>Crazy Trick | Complete Notes | Map + Charts + MCQs</p>
+  <div class="badge">Khayal · Thumri · Tabla · Dhrupad · Memory Tricks</div>
+</header>
+<main>
+
+<!-- WHAT IS GHARANA -->
+<h2>📖 What is a Gharana?</h2>
+<div style="background:#fff;border-radius:10px;padding:16px 20px;box-shadow:0 2px 8px rgba(0,0,0,.07);margin-bottom:20px;font-size:.88rem;line-height:1.7">
+  <b>Gharana</b> (from Hindi <i>ghar</i> = home/family) is a system of social organisation linking musicians or dancers by <b>lineage, apprenticeship, and stylistic traits</b>.<br><br>
+  Key features of a Gharana: (1) <b>Transmission</b> — guru-shishya parampara; (2) <b>Geography</b> — named after the city/town of origin; (3) <b>Style</b> — distinct bol, taan, alap, and bandish patterns; (4) <b>Hereditary</b> — within families historically, now open.<br><br>
+  🧠 Trick: <b>GHARANA = GHAR (home) + ANA (come) → musicians who all COME from the same HOME of style!</b>
+</div>
+
+<!-- INDIA MAP -->
+<h2>🗺️ Gharana Map of India</h2>
+<div class="map-wrap">
+  <div class="map-flex">
+    <div class="map-svg-box">
+      <!-- CORRECTED India SVG map — geographic coordinates -->
+      <!-- x=(lon-68)*14.48  y=(37-lat)*17.24  viewBox 0 0 420 500 -->
+      <svg viewBox="0 0 420 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:380px">
+
+        <!-- ── India mainland outline (clockwise from J&K north) ── -->
+        <path d="
+          M 130,2
+          L 145,25  L 153,50  L 153,68  L 167,103
+          L 189,129 L 238,155 L 275,173 L 296,172
+          L 311,173 L 333,164 L 349,130
+          L 391,129 L 420,155
+          L 391,181 L 369,215 L 355,259
+          L 340,224 L 311,245 L 296,251
+          L 283,268 L 268,294 L 204,344
+          L 175,379 L 157,474 L 138,498
+          L 114,448 L 97,413  L 84,370
+          L 80,344  L 72,310  L 69,275
+          L 43,278  L 20,278  L 12,254
+          L 3,227   L 22,215  L 36,189
+          L 42,146  L 72,120  L 93,94
+          L 93,77   L 101,60  L 137,25
+          Z"
+          fill="#e8d5f5" stroke="#7b1fa2" stroke-width="1.8"/>
+
+        <!-- State boundaries (light lines for major regions) -->
+        <!-- Rajasthan-MP border roughly: -->
+        <line x1="72" y1="120" x2="148" y2="187" stroke="#c5a0e0" stroke-width="0.5" stroke-dasharray="3,3"/>
+        <!-- UP-Bihar roughly: -->
+        <line x1="238" y1="155" x2="217" y2="202" stroke="#c5a0e0" stroke-width="0.5" stroke-dasharray="3,3"/>
+
+        <!-- Compass indicator -->
+        <text x="12" y="20" font-size="11" fill="#7b1fa2" font-weight="bold">N↑</text>
+
+        <!-- ============ GHARANA CITY DOTS ============ -->
+        <!-- Coordinates: x=(lon-68)*14.48, y=(37-lat)*17.24 -->
+
+        <!-- Patiala [Punjab] (30.3N, 76.4E) → (122,116) — Patiala Khayal + Patiala-Kasur Tabla -->
+        <circle cx="122" cy="116" r="7" fill="#e53935" stroke="#fff" stroke-width="2"/>
+        <text x="104" y="112" font-size="9" fill="#c62828" font-weight="bold">Patiala</text>
+
+        <!-- Kirana [Haryana] (29.9N, 76.8E) → (127,123) — Kirana Khayal (Bhimsen Joshi) -->
+        <circle cx="127" cy="130" r="6" fill="#388e3c" stroke="#fff" stroke-width="1.5"/>
+        <text x="107" y="143" font-size="8" fill="#2e7d32" font-weight="bold">Kirana</text>
+
+        <!-- Mewat/Nuh [Haryana] (28.0N, 77.0E) → (130,155) — Mewati Gharana (Pandit Jasraj) -->
+        <circle cx="130" cy="155" r="6" fill="#e91e63" stroke="#fff" stroke-width="1.5"/>
+        <text x="108" y="168" font-size="8" fill="#880e4f" font-weight="bold">Mewat</text>
+
+        <!-- Delhi (28.6N, 77.2E) → (133,145) — Delhi Khayal + Delhi Tabla -->
+        <circle cx="140" cy="145" r="7" fill="#f57c00" stroke="#fff" stroke-width="2"/>
+        <text x="149" y="141" font-size="9" fill="#e65100" font-weight="bold">Delhi</text>
+
+        <!-- Ajrada [near Muzaffarnagar, UP] (29.5N, 77.7E) → (141,129) — Ajrada Tabla -->
+        <circle cx="141" cy="129" r="5" fill="#fbc02d" stroke="#fff" stroke-width="1.5"/>
+        <text x="150" y="126" font-size="8" fill="#f57f17">Ajrada</text>
+
+        <!-- Rampur [UP] (28.8N, 79.0E) → (159,141) — Rampur-Sahaswan Khayal -->
+        <circle cx="159" cy="141" r="5" fill="#8e24aa" stroke="#fff" stroke-width="1.5"/>
+        <text x="163" y="135" font-size="8" fill="#6a1b9a">Rampur</text>
+
+        <!-- Agra [UP] (27.2N, 78.0E) → (145,169) — Agra Khayal (Faiyaz Khan) -->
+        <circle cx="145" cy="169" r="7" fill="#0288d1" stroke="#fff" stroke-width="2"/>
+        <text x="152" y="165" font-size="9" fill="#01579b" font-weight="bold">Agra</text>
+
+        <!-- Jaipur [Rajasthan] (26.9N, 75.8E) → (113,174) — Jaipur-Atrauli Khayal -->
+        <circle cx="113" cy="174" r="7" fill="#d81b60" stroke="#fff" stroke-width="2"/>
+        <text x="84" y="171" font-size="9" fill="#880e4f" font-weight="bold">Jaipur</text>
+
+        <!-- Farrukhabad [UP] (27.4N, 79.6E) → (168,166) — Farrukhabad Tabla -->
+        <circle cx="168" cy="166" r="5" fill="#00897b" stroke="#fff" stroke-width="1.5"/>
+        <text x="172" y="161" font-size="8" fill="#00695c">Farrukhabad</text>
+
+        <!-- Lucknow [UP] (26.8N, 80.9E) → (187,176) — Lucknow/Purab Tabla -->
+        <circle cx="187" cy="176" r="6" fill="#009688" stroke="#fff" stroke-width="1.5"/>
+        <text x="191" y="172" font-size="8" fill="#00695c" font-weight="bold">Lucknow</text>
+
+        <!-- Gwalior [MP] (26.2N, 78.2E) → (148,187) — Gwalior Khayal (OLDEST) -->
+        <circle cx="148" cy="187" r="7" fill="#5e35b1" stroke="#fff" stroke-width="2"/>
+        <text x="155" y="199" font-size="9" fill="#4527a0" font-weight="bold">Gwalior</text>
+
+        <!-- Benaras [UP] (25.3N, 83.0E) → (217,202) — Benaras Tabla -->
+        <circle cx="217" cy="202" r="6" fill="#ef6c00" stroke="#fff" stroke-width="1.5"/>
+        <text x="221" y="198" font-size="8" fill="#bf360c" font-weight="bold">Benaras</text>
+
+        <!-- Maihar [MP] (24.3N, 80.7E) → (184,219) — Maihar/Senia instrumental -->
+        <circle cx="184" cy="219" r="6" fill="#c62828" stroke="#fff" stroke-width="1.5"/>
+        <text x="158" y="228" font-size="8" fill="#b71c1c" font-weight="bold">Maihar</text>
+
+        <!-- Darbhanga [Bihar] (26.2N, 85.9E) → (259,187) — Darbhanga Dhrupad -->
+        <circle cx="259" cy="187" r="5" fill="#558b2f" stroke="#fff" stroke-width="1.5"/>
+        <text x="263" y="184" font-size="8" fill="#33691e">Darbhanga</text>
+
+        <!-- Title -->
+        <text x="210" y="490" text-anchor="middle" font-size="10" fill="#4a148c" font-weight="bold">Gharana Map of India</text>
+      </svg>
+    </div>
+    <div class="map-legend">
+      <h3 style="margin-bottom:12px;color:#4a148c">🎯 Legend — Khayal Gharanas</h3>
+      <div class="legend-item"><div class="legend-dot" style="background:#e53935"></div><b>Patiala</b> — Punjab, ornate & expressive</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f57c00"></div><b>Delhi</b> — Delhi, dhrupad-influenced</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#388e3c"></div><b>Kirana</b> — Haryana, sweet & meditative</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#0288d1"></div><b>Agra</b> — UP, powerful & bold</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#d81b60"></div><b>Jaipur-Atrauli</b> — Rajasthan, complex & fast</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#5e35b1"></div><b>Gwalior</b> — MP, oldest & balanced</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#00897b"></div><b>Lucknow</b> — UP, tabla/thumri center</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ef6c00"></div><b>Benaras</b> — UP, thumri & taal center</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#c62828"></div><b>Maihar</b> — MP, instrumental gharana</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#8e24aa"></div><b>Rampur-Sahaswan</b> — UP, blend style</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#fbc02d"></div><b>Ajrada</b> — UP, tabla style</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#e91e63"></div><b>Mewat</b> — Haryana, bhakti/devotional</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#558b2f"></div><b>Darbhanga</b> — Bihar, dhrupad style</div>
+    </div>
+  </div>
+</div>
+
+<!-- MASTER TRICK -->
+<div style="background:#4a148c;color:#fff;border-radius:12px;padding:16px 20px;margin-bottom:24px;font-size:.9rem">
+  🧠 <b>Master Trick for Khayal Gharanas — G-D-A-K-J-P-R:</b><br>
+  <span style="font-size:1.2rem;letter-spacing:4px;font-weight:900">G D A K J P R</span><br>
+  <b>G</b>walior (oldest) → <b>D</b>elhi → <b>A</b>gra → <b>K</b>irana → <b>J</b>aipur → <b>P</b>atiala → <b>R</b>ampur<br>
+  <i>"<b>G</b>reat <b>D</b>ads <b>A</b>lways <b>K</b>eep <b>J</b>oyful <b>P</b>eople <b>R</b>adiant"</i>
+</div>
+
+<!-- KHAYAL GHARANAS DETAIL -->
+<h2>🎤 Khayal Gharanas — Detailed Notes</h2>
+<div class="gharana-grid">
+
+  <div class="g-card">
+    <div class="g-card-head" style="background:#5e35b1">🏆 Gwalior Gharana <span style="font-size:.75rem;opacity:.85">Madhya Pradesh</span></div>
+    <div class="g-card-body">
+      <b>Founded by:</b> Haddu Khan, Hassu Khan, Natthan Khan (19th century)<br>
+      <b>Style:</b> Simple, clear, balanced, well-articulated — "shuddh gayaki"<br>
+      <b>Speciality:</b> Strong emphasis on swara, gamak, alankar<br>
+      <b>Key artists:</b> Kumar Gandharva, Veena Sahasrabuddhe, Omkarnath Thakur<br>
+      <b>Claim to fame:</b> <b>OLDEST Khayal Gharana</b><br>
+      <div class="trick">🧠 G for Gwalior = G for <b>Grandfather</b> → oldest Khayal gharana → Gwalior = granddaddy of Khayal!</div>
+    </div>
+  </div>
+
+  <div class="g-card">
+    <div class="g-card-head" style="background:#f57c00">🏰 Delhi Gharana <span style="font-size:.75rem;opacity:.85">Delhi</span></div>
+    <div class="g-card-body">
+      <b>Founded by:</b> Descendants of <b>Tansen</b> (Mian ki Billi lineage)<br>
+      <b>Style:</b> Dhrupad-influenced, grave, serious, dignified<br>
+      <b>Speciality:</b> Khayal ang with dhrupad seriousness, slow vilambit khayal<br>
+      <b>Key artists:</b> Tanras Khan, Mamman Khan, Chand Khan<br>
+      <b>Claim to fame:</b> Direct lineage from <b>Tansen</b><br>
+      <div class="trick">🧠 Delhi = Capital → Delhi Gharana = CAPITAL of tradition, direct from Tansen → D for Dhrupad-influenced!</div>
+    </div>
+  </div>
+
+  <div class="g-card">
+    <div class="g-card-head" style="background:#0288d1">💪 Agra Gharana <span style="font-size:.75rem;opacity:.85">Uttar Pradesh</span></div>
+    <div class="g-card-body">
+      <b>Founded by:</b> Ghagge Khuda Bakhsh (18th century)<br>
+      <b>Style:</b> Powerful, bold, sur-based, dhrupad-ang, heavy voice<br>
+      <b>Speciality:</b> Strong voice production, layakari, tappa influence<br>
+      <b>Key artists:</b> <b>Faiyaz Khan</b> (Aftab-e-Mausiqi, title from Baroda), Latafat Hussain Khan<br>
+      <b>Claim to fame:</b> Faiyaz Khan = most celebrated vocalist of 20th century<br>
+      <div class="trick">🧠 A for Agra = A for <b>Attack</b> → powerful, aggressive, bold style → Agra also has Taj Mahal = majestic like its singing!</div>
+    </div>
+  </div>
+
+  <div class="g-card">
+    <div class="g-card-head" style="background:#388e3c">🌸 Kirana Gharana <span style="font-size:.75rem;opacity:.85">Haryana (Kirana village)</span></div>
+    <div class="g-card-body">
+      <b>Founded by:</b> <b>Abdul Karim Khan</b>, Abdul Wahid Khan (late 19th c.)<br>
+      <b>Style:</b> Slow, sweet, meditative, heavy use of <b>gamak</b>, emotional depth<br>
+      <b>Speciality:</b> Raga vistar (slow exposition), meend, sustained notes<br>
+      <b>Key artists:</b> <b>Bhimsen Joshi</b> (Bharat Ratna 2009), Gangubai Hangal, Hirabai Barodekar, Roshanara Begum<br>
+      <b>Claim to fame:</b> Bhimsen Joshi = most revered vocalist of 20th century<br>
+      <div class="trick">🧠 K for Kirana = K for <b>Komal</b> (gentle/soft) → sweet, slow, meditative → Kirana = flash of light, slow and steady glow!</div>
+    </div>
+  </div>
+
+  <div class="g-card">
+    <div class="g-card-head" style="background:#d81b60">⚡ Jaipur-Atrauli Gharana <span style="font-size:.75rem;opacity:.85">Rajasthan</span></div>
+    <div class="g-card-body">
+      <b>Founded by:</b> <b>Alladiya Khan</b> (19th-20th century)<br>
+      <b>Style:</b> Complex, intricate, fast taan, aggressive, scholarly<br>
+      <b>Speciality:</b> Complicated taan patterns, bol-taan, unique ragas<br>
+      <b>Key artists:</b> Kesarbai Kerkar, <b>Kishori Amonkar</b>, Mallikarjun Mansur, Mogubai Kurdikar<br>
+      <b>Claim to fame:</b> Known for rare and unusual ragas<br>
+      <div class="trick">🧠 J for Jaipur = J for <b>Jumpy</b> → fast, intricate, complex taans → Jaipur = Pink City = colorful complexity!</div>
+    </div>
+  </div>
+
+  <div class="g-card">
+    <div class="g-card-head" style="background:#e53935">🌟 Patiala Gharana <span style="font-size:.75rem;opacity:.85">Punjab</span></div>
+    <div class="g-card-body">
+      <b>Founded by:</b> Fateh Ali Khan &amp; Ali Bakhsh Khan (Patiala royal court)<br>
+      <b>Style:</b> Ornate, thumri-influenced, expressive, romantic, large voice<br>
+      <b>Speciality:</b> Bol-baant, thumri &amp; khayal blend, murki, khatka<br>
+      <b>Key artists:</b> <b>Bade Ghulam Ali Khan</b> (greatest vocalist), Raza Ali Khan, Ajoy Chakrabarty<br>
+      <b>Claim to fame:</b> Bade Ghulam Ali Khan's "Yaad Piya ki Aaye" is iconic<br>
+      <div class="trick">🧠 P for Patiala = P for <b>Pretty &amp; Punjabi</b> → ornate, decorative, full of murki-khatka like Punjab's bhangra energy in classical form!</div>
+    </div>
+  </div>
+
+  <div class="g-card">
+    <div class="g-card-head" style="background:#8e24aa">🔀 Rampur-Sahaswan Gharana <span style="font-size:.75rem;opacity:.85">Uttar Pradesh</span></div>
+    <div class="g-card-body">
+      <b>Founded by:</b> Inayat Hussain Khan (Rampur royal court)<br>
+      <b>Style:</b> Blend of Gwalior + Delhi, balanced, academic<br>
+      <b>Speciality:</b> Scholarly approach, both slow and fast styles<br>
+      <b>Key artists:</b> Mushtaq Hussain Khan, <b>Rashid Khan</b><br>
+      <b>Claim to fame:</b> Patronised by Nawab of Rampur<br>
+      <div class="trick">🧠 R for Rampur = R for <b>Remix</b> → blends Gwalior + Delhi → best of two worlds, like a remix track!</div>
+    </div>
+  </div>
+
+  <div class="g-card">
+    <div class="g-card-head" style="background:#00897b">🎭 Mewati Gharana <span style="font-size:.75rem;opacity:.85">Haryana/Rajasthan</span></div>
+    <div class="g-card-body">
+      <b>Founded by:</b> Ghagge Nazir Khan<br>
+      <b>Style:</b> Bhakti-oriented, devotional, use of bhajans, sur-based<br>
+      <b>Speciality:</b> Heavy devotional content, slow alap<br>
+      <b>Key artists:</b> <b>Pandit Jasraj</b> (Padma Vibhushan), Sanjeev Abhyankar<br>
+      <b>Claim to fame:</b> Pandit Jasraj = most beloved vocalist; NASA named minor planet 2006VP32 after him!<br>
+      <div class="trick">🧠 Mewati = Mewa (dry fruit) → sweet, rich, nourishing like devotional music → Jasraj = GEM of Mewati → NASA planet named after him!</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- COMPARISON TABLE -->
+<h2>📊 Khayal Gharana Comparison Chart</h2>
+<table class="comp-table">
+  <tr><th>Gharana</th><th>State</th><th>Style Key Word</th><th>Founder</th><th>Star Artist</th><th>Exam Fact</th></tr>
+  <tr><td><b>Gwalior</b></td><td>MP</td><td>Simple / Balanced</td><td>Haddu-Hassu Khan</td><td>Kumar Gandharva</td><td>OLDEST Khayal Gharana</td></tr>
+  <tr><td><b>Delhi</b></td><td>Delhi</td><td>Dhrupad-influenced</td><td>Tansen lineage</td><td>Tanras Khan</td><td>Direct Tansen descendants</td></tr>
+  <tr><td><b>Agra</b></td><td>UP</td><td>Powerful / Bold</td><td>Ghagge Khuda Bakhsh</td><td>Faiyaz Khan</td><td>Faiyaz Khan = Aftab-e-Mausiqi</td></tr>
+  <tr><td><b>Kirana</b></td><td>Haryana</td><td>Sweet / Meditative</td><td>Abdul Karim Khan</td><td>Bhimsen Joshi</td><td>Bhimsen Joshi = Bharat Ratna 2009</td></tr>
+  <tr><td><b>Jaipur-Atrauli</b></td><td>Rajasthan</td><td>Complex / Fast taan</td><td>Alladiya Khan</td><td>Kishori Amonkar</td><td>Rare ragas specialty</td></tr>
+  <tr><td><b>Patiala</b></td><td>Punjab</td><td>Ornate / Thumri blend</td><td>Fateh Ali Khan</td><td>Bade Ghulam Ali Khan</td><td>Greatest Patiala vocalist</td></tr>
+  <tr><td><b>Rampur-Sahaswan</b></td><td>UP</td><td>Gwalior + Delhi blend</td><td>Inayat Hussain Khan</td><td>Rashid Khan</td><td>Nawab of Rampur's court</td></tr>
+  <tr><td><b>Mewati</b></td><td>Haryana/Raj</td><td>Devotional / Bhakti</td><td>Ghagge Nazir Khan</td><td>Pandit Jasraj</td><td>NASA planet after Pandit Jasraj!</td></tr>
+</table>
+
+<!-- TABLA GHARANAS -->
+<h2>🥁 Tabla Gharanas</h2>
+<div class="gharana-grid">
+  <div class="g-card">
+    <div class="g-card-head" style="background:#37474f">Delhi Tabla Gharana</div>
+    <div class="g-card-body"><b>Founded by:</b> Sidhar Khan Dhari<br><b>Style:</b> Open resonant sound, simple &amp; clear, emphasis on bols<br><b>Key bols:</b> Na, Tin, Dhin in open style<br><div class="trick">🧠 Delhi = Open city → Delhi tabla = Open, resonant sound!</div></div>
+  </div>
+  <div class="g-card">
+    <div class="g-card-head" style="background:#455a64">Ajrada Gharana (UP)</div>
+    <div class="g-card-body"><b>Founded by:</b> Kallu Khan, Miru Khan<br><b>Style:</b> Mix of Delhi &amp; Lucknow styles<br><b>Location:</b> Near Meerut, UP<br><div class="trick">🧠 Ajrada = Adjacent to Delhi AND Lucknow → blends BOTH styles!</div></div>
+  </div>
+  <div class="g-card">
+    <div class="g-card-head" style="background:#00695c">Lucknow Tabla Gharana</div>
+    <div class="g-card-body"><b>Founded by:</b> Mian Bakhsh Khan<br><b>Style:</b> Lyrical, melodic, dance-oriented (kathak)<br><b>Key:</b> Associated with Kathak dance accompaniment<br><div class="trick">🧠 Lucknow = Nawabi culture → Lucknow tabla = lyrical and NAWABI graceful!</div></div>
+  </div>
+  <div class="g-card">
+    <div class="g-card-head" style="background:#1565c0">Farrukhabad Gharana</div>
+    <div class="g-card-body"><b>Founded by:</b> Haji Vilayat Ali Khan<br><b>Style:</b> Blend of Delhi + Lucknow, versatile<br><b>Key artists:</b> <b>Alla Rakha, Zakir Hussain</b> (father-son)<br><div class="trick">🧠 Farrukhabad = FAR + RUKHABAD → Zakir Hussain FARRUKHABAD = most famous tabla player! Tabla ka BAAP!</div></div>
+  </div>
+  <div class="g-card">
+    <div class="g-card-head" style="background:#bf360c">Benaras Tabla Gharana</div>
+    <div class="g-card-body"><b>Founded by:</b> Ram Sahay<br><b>Style:</b> Resonant, weighty, gayan ang (singing style), slow maturity<br><b>Key:</b> Influenced by classical vocal music structure<br><div class="trick">🧠 Benaras = ancient spiritual city → Benaras tabla = WEIGHTY, spiritually deep sound!</div></div>
+  </div>
+  <div class="g-card">
+    <div class="g-card-head" style="background:#6a1b9a">Punjab Tabla Gharana</div>
+    <div class="g-card-body"><b>Founded by:</b> Lal Khan<br><b>Style:</b> Bright crisp sound, large bass, energetic<br><b>Key:</b> Often used in folk and lighter music<br><div class="trick">🧠 Punjab = energetic Bhangra state → Punjab tabla = bright, CRISP, energetic beats!</div></div>
+  </div>
+</div>
+
+<h2>📊 Tabla Gharana Quick Chart</h2>
+<table class="comp-table">
+  <tr><th>Gharana</th><th>State</th><th>Style</th><th>Star Artist</th></tr>
+  <tr><td><b>Delhi</b></td><td>Delhi</td><td>Open, resonant, simple</td><td>Sidhar Khan Dhari</td></tr>
+  <tr><td><b>Ajrada</b></td><td>UP (Meerut)</td><td>Delhi+Lucknow blend</td><td>Kallu Khan, Miru Khan</td></tr>
+  <tr><td><b>Lucknow</b></td><td>UP</td><td>Lyrical, dance-oriented</td><td>Mian Bakhsh Khan</td></tr>
+  <tr><td><b>Farrukhabad</b></td><td>UP</td><td>Delhi+Lucknow blend, versatile</td><td><b>Zakir Hussain</b></td></tr>
+  <tr><td><b>Benaras</b></td><td>UP</td><td>Weighty, gayan ang</td><td>Ram Sahay</td></tr>
+  <tr><td><b>Punjab</b></td><td>Punjab</td><td>Bright, crisp, large bass</td><td>Lal Khan</td></tr>
+</table>
+<div style="background:#fff3e0;border-left:4px solid #ff9800;border-radius:6px;padding:10px 14px;font-size:.85rem;margin-bottom:20px">
+  🧠 Trick for <b>6 Tabla Gharanas</b>: <b>D-A-L-F-B-P</b> = <b>"Dilli Aur Lucknow Farrukhabad Benaras Punjab"</b> → <i>"Dada Aur Log Farrukhabad Benaras Padhate"</i>
+</div>
+
+<!-- DHRUPAD & INSTRUMENTAL -->
+<h2>🕉️ Dhrupad Gharanas</h2>
+<table class="comp-table">
+  <tr><th>Gharana</th><th>State</th><th>Style/Claim</th><th>Key Artists</th></tr>
+  <tr><td><b>Dagar Gharana</b></td><td>Delhi/Rajasthan</td><td>Oldest dhrupad lineage; pure, meditative</td><td>Nasir Moinuddin Dagar, Nasir Aminuddin Dagar</td></tr>
+  <tr><td><b>Darbhanga Gharana</b></td><td>Bihar</td><td>Maithili traditions, scholarly</td><td>Ram Chatur Mallick</td></tr>
+  <tr><td><b>Betia Gharana</b></td><td>Bihar</td><td>Court of Betia Raja; traditional</td><td>Siyaram Tiwari</td></tr>
+  <tr><td><b>Talwandi Gharana</b></td><td>Punjab</td><td>Light, accessible dhrupad</td><td>Talwandi Gharana musicians</td></tr>
+</table>
+
+<h2>🎸 Instrumental Gharanas (Sitar/Sarod)</h2>
+<table class="comp-table">
+  <tr><th>Gharana</th><th>Instrument</th><th>Location</th><th>Founder</th><th>Key Artists</th></tr>
+  <tr><td><b>Maihar Gharana</b></td><td>Sitar, Sarod, many</td><td>Maihar, MP</td><td><b>Baba Allauddin Khan</b></td><td>Ravi Shankar, Ali Akbar Khan, Nikhil Banerjee, Amjad Ali Khan</td></tr>
+  <tr><td><b>Imdadkhani/Etawah</b></td><td>Sitar, Surbahar</td><td>Etawah, UP</td><td>Imdad Khan</td><td>Vilayat Khan, Imrat Khan</td></tr>
+  <tr><td><b>Senia Gharana</b></td><td>Rudra Veena, Been</td><td>Delhi (court)</td><td>Tansen lineage</td><td>Zia Mohiuddin Dagar</td></tr>
+</table>
+<div style="background:#e8f5e9;border-left:4px solid #43a047;border-radius:6px;padding:10px 14px;font-size:.85rem;margin-bottom:20px">
+  🧠 Trick: <b>Maihar Gharana = MAHAR (great) → Baba Allauddin Khan produced GREAT artists: Ravi Shankar (sitar) + Ali Akbar Khan (sarod) + his daughter Annapurna Devi!</b>
+</div>
+
+<!-- THUMRI -->
+<h2>🎶 Thumri — Two Main Styles</h2>
+<div class="gharana-grid" style="grid-template-columns:1fr 1fr">
+  <div class="g-card">
+    <div class="g-card-head" style="background:#ad1457">Lucknow (Purab) Thumri</div>
+    <div class="g-card-body"><b>Style:</b> Slow, romantic, Nawabi, word emphasis<br><b>Instrument:</b> Tabla + sarangi<br><b>Key:</b> Wajid Ali Shah's court<br><div class="trick">🧠 Lucknow = Nawab → Thumri is Nawabi love song → slow, romantic, dripping with emotion!</div></div>
+  </div>
+  <div class="g-card">
+    <div class="g-card-head" style="background:#4e342e">Benaras Thumri</div>
+    <div class="g-card-body"><b>Style:</b> Faster, rhythmic, earthy, devotional<br><b>Instrument:</b> Harmonium prominent<br><b>Key:</b> Siddheshwari Devi, Girija Devi<br><div class="trick">🧠 Benaras = Kashi, city of Shiva → Benaras thumri = earthy, devotional, rhythmic like Shiva's damaru!</div></div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<h2>📅 Gharana Development Timeline</h2>
+<div class="timeline" style="background:#fff;border-radius:10px;padding:20px 20px 20px 36px;box-shadow:0 2px 8px rgba(0,0,0,.07)">
+  <div class="tl-item"><div class="year">~1500s</div><div class="desc"><b>Dhrupad Gharanas</b> peak under Akbar's court. Tansen (one of Nav Ratnas) performs at Mughal court.</div></div>
+  <div class="tl-item"><div class="year">~1700s</div><div class="desc"><b>Gwalior Gharana</b> founded by Haddu-Hassu Khan — becomes first major Khayal Gharana.</div></div>
+  <div class="tl-item"><div class="year">~1800s</div><div class="desc"><b>Agra, Delhi, Kirana Gharanas</b> flourish under princely court patronage.</div></div>
+  <div class="tl-item"><div class="year">~1850-1900</div><div class="desc"><b>Jaipur-Atrauli</b> (Alladiya Khan) and <b>Patiala</b> (Fateh Ali Khan) Gharanas established.</div></div>
+  <div class="tl-item"><div class="year">~1900-1950</div><div class="desc">Radio and recording transform gharanas. Faiyaz Khan, Bade Ghulam Ali Khan, Abdul Karim Khan reach pan-India fame.</div></div>
+  <div class="tl-item"><div class="year">1952</div><div class="desc">Baba Allauddin Khan founds <b>Maihar Gharana's</b> legacy through Ravi Shankar and Ali Akbar Khan at global stage.</div></div>
+  <div class="tl-item"><div class="year">1970s-today</div><div class="desc">Gharana boundaries soften. Artists like Zakir Hussain, Rashid Khan, Ajoy Chakrabarty carry traditions globally.</div></div>
+</div>
+
+<!-- IMPORTANT TITLES & AWARDS -->
+<h2>🏅 Important Titles Given to Musicians</h2>
+<table class="comp-table">
+  <tr><th>Title</th><th>Meaning</th><th>Given to</th><th>By Whom</th></tr>
+  <tr><td><b>Aftab-e-Mausiqi</b></td><td>Sun of Music</td><td>Faiyaz Khan (Agra)</td><td>Maharaja of Baroda</td></tr>
+  <tr><td><b>Rasraj</b></td><td>King of Emotion</td><td>Faiyaz Khan</td><td>—</td></tr>
+  <tr><td><b>Sangeet Martand</b></td><td>Sun of Music</td><td>Bhimsen Joshi (Kirana)</td><td>—</td></tr>
+  <tr><td><b>Bharata Ratna</b></td><td>—</td><td>Bhimsen Joshi</td><td>Govt of India, 2009</td></tr>
+  <tr><td><b>Bade (Elder)</b></td><td>Title of respect</td><td>Bade Ghulam Ali Khan (Patiala)</td><td>Music community</td></tr>
+  <tr><td><b>Sarod Samrat</b></td><td>Emperor of Sarod</td><td>Amjad Ali Khan (Maihar)</td><td>—</td></tr>
+</table>
+
+<!-- MCQ SECTION -->
+<h2>📝 Practice MCQs — Gharana</h2><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q1</div><div>Which is the oldest Khayal Gharana in Hindustani classical music?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Agra Gharana</div><div class="opt" data-l="B"><b>B.</b> Kirana Gharana</div><div class="opt" data-l="C"><b>C.</b> Gwalior Gharana</div><div class="opt" data-l="D"><b>D.</b> Delhi Gharana</div></div>
+  <button class="show-btn" onclick="reveal(this,'C')">Show Answer</button>
+  <div class="exp">Gwalior Gharana (MP) is the <b>oldest Khayal Gharana</b>, founded by Haddu Khan, Hassu Khan, and Natthan Khan in the 19th century. 🧠 Trick: <b>G for Gwalior = G for Grandfather → oldest = grandfather of Khayal!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q2</div><div>Pandit Bhimsen Joshi, who received Bharat Ratna in 2009, belongs to which Gharana?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Agra Gharana</div><div class="opt" data-l="B"><b>B.</b> Jaipur-Atrauli Gharana</div><div class="opt" data-l="C"><b>C.</b> Patiala Gharana</div><div class="opt" data-l="D"><b>D.</b> Kirana Gharana</div></div>
+  <button class="show-btn" onclick="reveal(this,'D')">Show Answer</button>
+  <div class="exp"><b>Bhimsen Joshi</b> belongs to the <b>Kirana Gharana</b> (founded by Abdul Karim Khan). He received <b>Bharat Ratna in 2009</b>. 🧠 Trick: <b>Kirana = flash of light, Bhimsen = blazing Bharat Ratna!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q3</div><div>Bade Ghulam Ali Khan, the legendary vocalist, belonged to which Gharana?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Kirana Gharana</div><div class="opt" data-l="B"><b>B.</b> Patiala Gharana</div><div class="opt" data-l="C"><b>C.</b> Gwalior Gharana</div><div class="opt" data-l="D"><b>D.</b> Jaipur Gharana</div></div>
+  <button class="show-btn" onclick="reveal(this,'B')">Show Answer</button>
+  <div class="exp"><b>Bade Ghulam Ali Khan</b> belongs to the <b>Patiala Gharana</b> (Punjab). Known for ornate style, thumri-influenced singing. 🧠 Trick: <b>Patiala = Punjab = Punjabi pride → BADE (big) artist from BADE (big) Patiala traditions!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q4</div><div>Zakir Hussain, the legendary tabla player, belongs to which Tabla Gharana?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Delhi Gharana</div><div class="opt" data-l="B"><b>B.</b> Lucknow Gharana</div><div class="opt" data-l="C"><b>C.</b> Farrukhabad Gharana</div><div class="opt" data-l="D"><b>D.</b> Benaras Gharana</div></div>
+  <button class="show-btn" onclick="reveal(this,'C')">Show Answer</button>
+  <div class="exp"><b>Zakir Hussain</b> belongs to the <b>Farrukhabad Gharana</b> (UP). His father Alla Rakha also belonged to this gharana. 🧠 Trick: <b>Farrukhabad = FA-RU-KH = Famous-Rhythmic-Khan → Zakir = FAR better than any other!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q5</div><div>Which Gharana was founded by Alladiya Khan and is known for complex taan patterns?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Agra Gharana</div><div class="opt" data-l="B"><b>B.</b> Mewati Gharana</div><div class="opt" data-l="C"><b>C.</b> Rampur Gharana</div><div class="opt" data-l="D"><b>D.</b> Jaipur-Atrauli Gharana</div></div>
+  <button class="show-btn" onclick="reveal(this,'D')">Show Answer</button>
+  <div class="exp"><b>Jaipur-Atrauli Gharana</b> was founded by <b>Alladiya Khan</b>. Known for complex and intricate taan patterns and rare ragas. Key artists: Kishori Amonkar, Kesarbai Kerkar. 🧠 Trick: <b>J for Jaipur = J for Jumpy complex taans!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q6</div><div>Pandit Jasraj, known for his devotional singing, belongs to which Gharana?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Kirana Gharana</div><div class="opt" data-l="B"><b>B.</b> Agra Gharana</div><div class="opt" data-l="C"><b>C.</b> Mewati Gharana</div><div class="opt" data-l="D"><b>D.</b> Delhi Gharana</div></div>
+  <button class="show-btn" onclick="reveal(this,'C')">Show Answer</button>
+  <div class="exp"><b>Pandit Jasraj</b> belongs to the <b>Mewati Gharana</b> (Haryana/Rajasthan). Known for devotional-bhakti oriented music. NASA named minor planet <b>2006VP32 after him!</b> 🧠 Trick: <b>Mewati = devotional → Jasraj = divine → NASA PLANET named after him!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q7</div><div>The Maihar Gharana in instrumental music was founded by which legendary musician?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Ravi Shankar</div><div class="opt" data-l="B"><b>B.</b> Baba Allauddin Khan</div><div class="opt" data-l="C"><b>C.</b> Ali Akbar Khan</div><div class="opt" data-l="D"><b>D.</b> Vilayat Khan</div></div>
+  <button class="show-btn" onclick="reveal(this,'B')">Show Answer</button>
+  <div class="exp"><b>Baba Allauddin Khan</b> founded the <b>Maihar Gharana</b> (Maihar, MP). His students include <b>Ravi Shankar (sitar), Ali Akbar Khan (sarod), Annapurna Devi, Nikhil Banerjee</b>. 🧠 Trick: <b>Baba = father → BABA Allauddin Khan was FATHER of the entire Maihar musical family!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q8</div><div>Which title was given to Faiyaz Khan of the Agra Gharana by the Maharaja of Baroda?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Sangeet Martand</div><div class="opt" data-l="B"><b>B.</b> Aftab-e-Mausiqi</div><div class="opt" data-l="C"><b>C.</b> Sarod Samrat</div><div class="opt" data-l="D"><b>D.</b> Rasrang</div></div>
+  <button class="show-btn" onclick="reveal(this,'B')">Show Answer</button>
+  <div class="exp"><b>Faiyaz Khan</b> (Agra Gharana) was given the title <b>'Aftab-e-Mausiqi'</b> (Sun of Music) by the Maharaja of Baroda. He was the most celebrated vocalist of the early 20th century. 🧠 Trick: <b>Aftab = Sun (in Urdu/Persian) → Faiyaz Khan = Sun of Indian classical music!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q9</div><div>How many Tabla Gharanas are traditionally recognized in Hindustani music?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> 4</div><div class="opt" data-l="B"><b>B.</b> 5</div><div class="opt" data-l="C"><b>C.</b> 6</div><div class="opt" data-l="D"><b>D.</b> 8</div></div>
+  <button class="show-btn" onclick="reveal(this,'C')">Show Answer</button>
+  <div class="exp">There are <b>6 traditionally recognized Tabla Gharanas</b>: Delhi, Ajrada, Lucknow, Farrukhabad, Benaras, Punjab. 🧠 Trick: <b>D-A-L-F-B-P = 'Dilli Aur Lucknow Farrukhabad Benaras Punjab' → count 6 cities = 6 gharanas!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q10</div><div>Kishori Amonkar, one of India's greatest vocalists, belonged to which Gharana?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Kirana Gharana</div><div class="opt" data-l="B"><b>B.</b> Gwalior Gharana</div><div class="opt" data-l="C"><b>C.</b> Jaipur-Atrauli Gharana</div><div class="opt" data-l="D"><b>D.</b> Patiala Gharana</div></div>
+  <button class="show-btn" onclick="reveal(this,'C')">Show Answer</button>
+  <div class="exp"><b>Kishori Amonkar</b> belonged to the <b>Jaipur-Atrauli Gharana</b>. She was also deeply influenced by Kirana Gharana. Known for her ethereal, deeply introspective singing. 🧠 Trick: <b>Jaipur = Pink City → Kishori's voice was as colorful and complex as Jaipur's architecture!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q11</div><div>'Gharana' in Indian classical music literally means:</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> A musical raga</div><div class="opt" data-l="B"><b>B.</b> A family/school of music</div><div class="opt" data-l="C"><b>C.</b> A musical instrument</div><div class="opt" data-l="D"><b>D.</b> A type of rhythm</div></div>
+  <button class="show-btn" onclick="reveal(this,'B')">Show Answer</button>
+  <div class="exp"><b>Gharana</b> means literally 'from a home (ghar)' — it refers to a <b>musical school or lineage</b> linked by guru-shishya parampara, geography, and distinct style. 🧠 Trick: <b>GHAR-ANA = from the HOME → musicians come from the same musical home!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q12</div><div>Which Gharana is directly descended from the lineage of the legendary Tansen?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Gwalior Gharana</div><div class="opt" data-l="B"><b>B.</b> Delhi Gharana</div><div class="opt" data-l="C"><b>C.</b> Agra Gharana</div><div class="opt" data-l="D"><b>D.</b> Kirana Gharana</div></div>
+  <button class="show-btn" onclick="reveal(this,'B')">Show Answer</button>
+  <div class="exp">The <b>Delhi Gharana</b> is directly descended from the lineage of <b>Tansen</b> (one of Akbar's Nav Ratnas). Tansen's descendants maintained this tradition in Delhi. 🧠 Trick: <b>Delhi = Capital → Delhi Gharana = CAPITAL tradition, directly from Tansen the great!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q13</div><div>Vilayat Khan, the legendary sitarist, belonged to which Gharana?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Maihar Gharana</div><div class="opt" data-l="B"><b>B.</b> Senia Gharana</div><div class="opt" data-l="C"><b>C.</b> Imdadkhani/Etawah Gharana</div><div class="opt" data-l="D"><b>D.</b> Jaipur Gharana</div></div>
+  <button class="show-btn" onclick="reveal(this,'C')">Show Answer</button>
+  <div class="exp"><b>Vilayat Khan</b> belonged to the <b>Imdadkhani (Etawah) Gharana</b> — named after his grandfather Imdad Khan. Known for gayaki ang (vocal style) on sitar. 🧠 Trick: <b>Etawah = UP → Etawah Gharana = ELITE sitar style; Vilayat = 'abroad' → took Indian sitar to the world!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q14</div><div>The Lucknow Tabla Gharana style is mainly associated with which dance form?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Bharatanatyam</div><div class="opt" data-l="B"><b>B.</b> Odissi</div><div class="opt" data-l="C"><b>C.</b> Kathak</div><div class="opt" data-l="D"><b>D.</b> Manipuri</div></div>
+  <button class="show-btn" onclick="reveal(this,'C')">Show Answer</button>
+  <div class="exp">The <b>Lucknow Tabla Gharana</b> is primarily associated with <b>Kathak dance</b> — the tabla style is lyrical and melodic to complement Kathak's graceful movements. 🧠 Trick: <b>Lucknow = Nawabi culture → Lucknow Tabla + Lucknow Kathak = NAWABI pair!</b></div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q15</div><div>Who among these belongs to the Kirana Gharana?</div></div>
+  <div class="opts"><div class="opt" data-l="A"><b>A.</b> Bade Ghulam Ali Khan</div><div class="opt" data-l="B"><b>B.</b> Faiyaz Khan</div><div class="opt" data-l="C"><b>C.</b> Gangubai Hangal</div><div class="opt" data-l="D"><b>D.</b> Kishori Amonkar</div></div>
+  <button class="show-btn" onclick="reveal(this,'C')">Show Answer</button>
+  <div class="exp"><b>Gangubai Hangal</b> belongs to the <b>Kirana Gharana</b>. Other Kirana artists: Bhimsen Joshi, Hirabai Barodekar, Roshanara Begum, Prabha Atre. 🧠 Trick: <b>Kirana = Karnatka-Haryana connection → Gangubai Hangal from Karnataka = Kirana Gharana's Karnataka jewel!</b></div>
+</div>
+</main>
+<footer style="text-align:center;color:#888;font-size:.82rem;padding:20px">Crazy Trick | Gharana Notes 2026 | Hindustani Classical Music</footer>
+<script>
+function reveal(btn, correct) {
+  var card = btn.closest(".mcq-card");
+  card.querySelectorAll(".opt").forEach(function(o) {
+    o.classList.add(o.getAttribute("data-l") === correct ? "correct" : "wrong");
+  });
+  card.querySelector(".exp").classList.add("vis");
+  btn.disabled = true; btn.textContent = "Answered"; btn.style.background = "#555";
+}
+</script>
+</body>
+</html>
