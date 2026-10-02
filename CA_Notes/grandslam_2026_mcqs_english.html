@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grand Slams 2026 – Winners & Tricks</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f8; color: #222; }
+header { background: linear-gradient(135deg, #1a237e 0%, #283593 100%); color: #fff; padding: 28px 20px 20px; text-align: center; }
+header h1 { font-size: 1.8rem; margin-bottom: 6px; }
+header p { font-size: 0.92rem; opacity: 0.88; }
+.badge { display: inline-block; background: rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 16px; font-size: 0.85rem; margin-top: 8px; }
+main { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+h2 { font-size: 1.15rem; color: #1a237e; border-left: 5px solid #3949ab; padding-left: 12px; margin: 28px 0 14px; }
+
+/* Grand Slam Flow Diagram */
+.slam-flow { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 24px; }
+.slam-card { border-radius: 12px; padding: 14px 10px; text-align: center; color: #fff; position: relative; }
+.slam-card .num { font-size: 1.8rem; font-weight: 900; opacity: 0.3; position: absolute; top: 6px; right: 10px; }
+.slam-card h3 { font-size: 0.95rem; margin-bottom: 6px; }
+.slam-card .country { font-size: 0.75rem; opacity: 0.85; }
+.slam-card .month { font-size: 0.8rem; margin-top: 6px; background: rgba(255,255,255,0.2); border-radius: 8px; padding: 2px 8px; display: inline-block; }
+.slam-card .court { font-size: 0.78rem; margin-top: 4px; opacity: 0.9; }
+.ao { background: linear-gradient(135deg, #1565c0, #0d47a1); }
+.fo { background: linear-gradient(135deg, #b71c1c, #880e4f); }
+.wb { background: linear-gradient(135deg, #2e7d32, #1b5e20); }
+.uo { background: linear-gradient(135deg, #e65100, #bf360c); }
+.arrow { display: flex; align-items: center; justify-content: center; color: #9c27b0; font-size: 1.4rem; }
+
+/* Trick boxes */
+.trick-box { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); padding: 20px; margin-bottom: 20px; }
+.trick-title { font-size: 1rem; font-weight: 700; color: #3949ab; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+
+/* CASA trick visual */
+.casa-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.casa-row { display: flex; align-items: center; gap: 10px; background: #f5f5f5; border-radius: 8px; padding: 10px 14px; }
+.casa-letter { font-size: 2rem; font-weight: 900; width: 44px; text-align: center; border-radius: 8px; flex-shrink: 0; color: #fff; }
+.casa-info { flex: 1; }
+.casa-info .player { font-weight: 700; font-size: 0.93rem; }
+.casa-info .slam { font-size: 0.78rem; color: #666; }
+.c-col { background: #1565c0; }
+.a-col { background: #b71c1c; }
+.s-col { background: #2e7d32; }
+
+/* EMNE trick visual */
+.court-visual { background: #1b5e20; border-radius: 12px; padding: 16px; color: #fff; text-align: center; margin-bottom: 14px; position: relative; }
+.court-inner { background: #2e7d32; border-radius: 8px; padding: 14px; border: 3px dashed rgba(255,255,255,0.4); }
+.court-net { border-top: 3px solid rgba(255,255,255,0.7); margin: 8px 0; }
+.court-labels { display: flex; justify-content: space-between; font-size: 0.75rem; opacity: 0.85; }
+.court-players { display: flex; justify-content: center; gap: 40px; font-size: 2.2rem; font-weight: 900; margin: 8px 0; }
+.gate { background: rgba(255,255,255,0.15); border-radius: 6px; padding: 4px 10px; font-size: 0.78rem; display: inline-block; margin: 4px 0; }
+.emne-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.emne-row { background: #f5f5f5; border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; }
+.emne-letter { font-size: 1.8rem; font-weight: 900; width: 40px; text-align: center; border-radius: 8px; flex-shrink: 0; color: #fff; }
+.e-col { background: #1565c0; }
+.m-col { background: #880e4f; }
+.n-col { background: #2e7d32; }
+
+/* Records table */
+.rec-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+.rec-table th { background: #283593; color: #fff; padding: 10px 12px; font-size: 0.85rem; text-align: left; }
+.rec-table td { padding: 9px 12px; font-size: 0.85rem; border-bottom: 1px solid #f0f0f0; }
+.rec-table tr:last-child td { border-bottom: none; }
+.rec-table tr:hover td { background: #e8eaf6; }
+.gold { color: #f9a825; font-weight: 700; }
+
+/* MCQ section */
+.mcq-card { background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 16px; overflow: hidden; }
+.mcq-header { background: #e8eaf6; padding: 12px 16px; font-weight: 600; font-size: 0.93rem; color: #1a237e; display: flex; gap: 10px; }
+.q-num { background: #3949ab; color: #fff; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; flex-shrink: 0; }
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 12px 16px; }
+.option { padding: 8px 12px; border-radius: 7px; border: 1.5px solid #e0e0e0; background: #fafafa; font-size: 0.85rem; }
+.option:hover { background: #e8eaf6; border-color: #3949ab; }
+.option.correct { background: #e8f5e9; border: 1px solid #66bb6a; font-weight: 600; }
+.option.wrong { background: #ffebee; border: 1px solid #ef9a9a; }
+.show-btn { display: block; margin: 0 16px 12px; padding: 6px 14px; background: #3949ab; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 0.83rem; font-weight: 600; }
+.show-btn:hover { background: #283593; }
+.explanation { display: none; background: #e8eaf6; border-left: 4px solid #3949ab; padding: 10px 14px; margin: 0 16px 14px; border-radius: 0 6px 6px 0; font-size: 0.85rem; line-height: 1.55; }
+.explanation.visible { display: block; }
+
+/* Indian tennis */
+.indian-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.player-card { background: #fff; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); border-left: 4px solid #3949ab; }
+.player-card h4 { color: #1a237e; font-size: 0.95rem; margin-bottom: 6px; }
+.player-card .titles { font-size: 1.4rem; font-weight: 900; color: #3949ab; }
+.player-card .detail { font-size: 0.78rem; color: #555; margin-top: 4px; line-height: 1.5; }
+
+footer { text-align: center; color: #888; font-size: 0.82rem; padding: 20px; }
+@media(max-width:600px) {
+  .slam-flow { grid-template-columns: 1fr 1fr; }
+  .casa-visual, .emne-grid, .indian-grid, .options-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🎾 Grand Slams 2026 – Winners & Tricks</h1>
+  <p>Crazy Trick | Memory Tricks | Current Affairs 2026</p>
+  <div class="badge">4 Grand Slams | Men's & Women's Singles | Records | Indian Tennis</div>
+</header>
+
+<main>
+
+<!-- SLAM FLOW -->
+<h2>🗓️ Grand Slam Sequence (Must Know!)</h2>
+<div class="slam-flow">
+  <div class="slam-card ao"><div class="num">1</div><div style="font-size:1.6rem">🇦🇺</div><h3>Australian Open</h3><div class="country">Melbourne, Australia</div><div class="month">January</div><div class="court">🔵 Hard Court</div><div class="court" style="font-size:0.72rem;margin-top:3px;">Est. 1905 | Melbourne Park (since 1988)</div></div>
+  <div class="slam-card fo"><div class="num">2</div><div style="font-size:1.6rem">🇫🇷</div><h3>French Open</h3><div class="country">Paris, France</div><div class="month">May–June</div><div class="court">🔴 Clay Court</div><div class="court" style="font-size:0.72rem;margin-top:3px;">Est. 1891 | Stade Roland Garros</div></div>
+  <div class="slam-card wb"><div class="num">3</div><div style="font-size:1.6rem">🇬🇧</div><h3>Wimbledon</h3><div class="country">London, UK</div><div class="month">June–July</div><div class="court">🟢 Grass Court</div><div class="court" style="font-size:0.72rem;margin-top:3px;">Est. 1877 | Oldest Grand Slam</div></div>
+  <div class="slam-card uo"><div class="num">4</div><div style="font-size:1.6rem">🇺🇸</div><h3>US Open</h3><div class="country">New York, USA</div><div class="month">Aug–Sep</div><div class="court">🔵 Hard Court</div><div class="court" style="font-size:0.72rem;margin-top:3px;">Est. 1881 | Flushing Meadows</div></div>
+</div>
+<div style="background:#fff3e0;border-left:4px solid #ff9800;border-radius:6px;padding:10px 14px;font-size:0.87rem;margin-bottom:20px;">
+  ⚡ <b>Memory:</b> <b>A-F-W-U</b> = "A Few Wimbledon Upsets" → Australian, French, Wimbledon, US Open &nbsp;|&nbsp; Court: <b>Hard–Clay–Grass–Hard</b> (HC GH → "Hug Green")
+</div>
+
+<!-- MEN'S TRICK -->
+<h2>👨 Men's Singles 2026 – CASA Trick</h2>
+<div class="trick-box">
+  <div class="trick-title">💡 The Trick: Grand Slam winner gets <b>MONEY</b> → puts it in <b>Current Account &amp; Savings Account</b> → C-A-S-A</div>
+  <div style="background:#e8eaf6;border-radius:8px;padding:12px 16px;text-align:center;font-size:1.5rem;font-weight:900;letter-spacing:6px;margin-bottom:14px;color:#1a237e;">C &nbsp; A &nbsp; S &nbsp; A</div>
+  <div class="casa-visual">
+    <div class="casa-row"><div class="casa-letter c-col">C</div><div class="casa-info"><div class="player">Carlos Alcaraz 🇪🇸</div><div class="slam">🇦🇺 Australian Open</div></div></div>
+    <div class="casa-row"><div class="casa-letter a-col">A</div><div class="casa-info"><div class="player">Alexander Zverev 🇩🇪</div><div class="slam">🇫🇷 French Open</div></div></div>
+    <div class="casa-row"><div class="casa-letter s-col">S</div><div class="casa-info"><div class="player">Jannik Sinner 🇮🇹</div><div class="slam">🇬🇧 Wimbledon</div></div></div>
+    <div class="casa-row"><div class="casa-letter a-col">A</div><div class="casa-info"><div class="player">Alexander Zverev 🇩🇪</div><div class="slam">🇺🇸 US Open</div></div></div>
+  </div>
+  <div style="background:#e8f5e9;border-radius:8px;padding:10px 14px;font-size:0.85rem;margin-top:12px;">
+    ⭐ <b>Zverev won 2 titles</b> (French Open + US Open) | <b>Sinner won Wimbledon</b> | <b>Alcaraz won Australian Open</b>
+  </div>
+</div>
+
+<!-- WOMEN'S TRICK -->
+<h2>👩 Women's Singles 2026 – Court Visual Trick</h2>
+<div class="trick-box">
+  <div class="trick-title">💡 The Trick: Imagine a Tennis Court with Entry Gate (E) and Exit Gate (E). Inside, letters M and N are playing tennis.</div>
+  <div class="court-visual">
+    <div style="font-size:0.8rem;opacity:0.8;margin-bottom:6px;">🚪 ENTRY GATE (E)</div>
+    <div class="court-inner">
+      <div class="court-labels"><span>baseline</span><span>baseline</span></div>
+      <div class="court-players"><span>M</span><span>N</span></div>
+      <div class="court-net"></div>
+      <div style="font-size:0.75rem;opacity:0.7;text-align:center;">← tennis court →</div>
+    </div>
+    <div style="font-size:0.8rem;opacity:0.8;margin-top:6px;">🚪 EXIT GATE (E)</div>
+    <div style="margin-top:10px;font-size:1.4rem;font-weight:900;letter-spacing:8px;">E &nbsp; M &nbsp; N &nbsp; E</div>
+  </div>
+  <div class="emne-grid">
+    <div class="emne-row"><div class="emne-letter e-col">E</div><div class="casa-info"><div class="player">Elena Rybakina 🇰🇿</div><div class="slam">🇦🇺 Australian Open</div></div></div>
+    <div class="emne-row"><div class="emne-letter m-col">M</div><div class="casa-info"><div class="player">Mirra Andreeva 🇷🇺</div><div class="slam">🇫🇷 French Open</div></div></div>
+    <div class="emne-row"><div class="emne-letter n-col">N</div><div class="casa-info"><div class="player">Linda Nosková 🇨🇿</div><div class="slam">🇬🇧 Wimbledon</div></div></div>
+    <div class="emne-row"><div class="emne-letter e-col">E</div><div class="casa-info"><div class="player">Elena Rybakina 🇰🇿</div><div class="slam">🇺🇸 US Open</div></div></div>
+  </div>
+  <div style="background:#e8f5e9;border-radius:8px;padding:10px 14px;font-size:0.85rem;margin-top:12px;">
+    ⭐ <b>Rybakina won 2 titles</b> (Australian Open + US Open — both Entry E &amp; Exit E!)
+  </div>
+</div>
+
+<!-- ALL TIME RECORDS -->
+<h2>🏆 All-Time Grand Slam Records</h2>
+<table class="rec-table" style="margin-bottom:14px;">
+  <tr><th colspan="4">Men's Singles – Most Grand Slam Titles (All-Time)</th></tr>
+  <tr><th>Rank</th><th>Player</th><th>Country</th><th>Titles</th></tr>
+  <tr><td class="gold">🥇 1</td><td><b>Novak Djokovic</b></td><td>🇷🇸 Serbia</td><td class="gold"><b>24</b></td></tr>
+  <tr><td>🥈 2</td><td>Rafael Nadal</td><td>🇪🇸 Spain</td><td><b>22</b></td></tr>
+  <tr><td>🥉 3</td><td>Roger Federer</td><td>🇨🇭 Switzerland</td><td><b>20</b></td></tr>
+</table>
+<table class="rec-table" style="margin-bottom:14px;">
+  <tr><th colspan="4">Women's Singles – Most Grand Slam Titles (All-Time)</th></tr>
+  <tr><th>Rank</th><th>Player</th><th>Country</th><th>Titles</th></tr>
+  <tr><td class="gold">🥇 1</td><td><b>Margaret Court</b> <span style="font-size:0.75rem;color:#888">(some pre-Open Era)</span></td><td>🇦🇺 Australia</td><td class="gold"><b>24</b></td></tr>
+  <tr><td>🥈 2</td><td><b>Serena Williams</b> <span style="font-size:0.75rem;color:#888">(Open Era record)</span></td><td>🇺🇸 USA</td><td><b>23</b></td></tr>
+  <tr><td>🥉 3</td><td>Steffi Graf</td><td>🇩🇪 Germany</td><td><b>22</b></td></tr>
+</table>
+<table class="rec-table" style="margin-bottom:20px;">
+  <tr><th>Grand Slam</th><th>Men's Record Holder</th><th>Titles</th><th>Women's Record Holder</th><th>Titles</th></tr>
+  <tr><td>🇦🇺 Australian Open</td><td>Novak Djokovic</td><td><b>10</b></td><td>Margaret Court</td><td><b>11</b></td></tr>
+  <tr><td>🇫🇷 French Open</td><td>Rafael Nadal (King of Clay)</td><td><b>14</b></td><td>Chris Evert</td><td><b>7</b></td></tr>
+  <tr><td>🇬🇧 Wimbledon</td><td>Roger Federer</td><td><b>8</b></td><td>Martina Navratilova</td><td><b>9</b></td></tr>
+  <tr><td>🇺🇸 US Open</td><td>Sears / Larned / Tilden (3-way tie)</td><td><b>7</b> each</td><td>Molla Mallory</td><td><b>8</b></td></tr>
+</table>
+<div style="background:#fff3e0;border-left:4px solid #ff9800;border-radius:6px;padding:10px 14px;font-size:0.85rem;margin-bottom:20px;">
+  ⚠️ <b>Open Era (1968 onwards):</b> Both professional &amp; amateur players can participate. Records before 1968 are "all-time" records. Open Era women's record = Serena Williams (23).
+</div>
+
+<!-- INDIAN TENNIS -->
+<h2>🇮🇳 Indian Tennis – Key Achievements</h2>
+<div class="indian-grid" style="margin-bottom:20px;">
+  <div class="player-card">
+    <h4>Leander Paes</h4>
+    <div class="titles">18 🏆</div>
+    <div class="detail">8 Men's Doubles + 10 Mixed Doubles<br>🥉 Bronze Medal – 1996 Atlanta Olympics (Men's Singles)<br>🏛️ International Tennis Hall of Fame (2024)<br>Former World No.1 in Doubles</div>
+  </div>
+  <div class="player-card">
+    <h4>Mahesh Bhupathi</h4>
+    <div class="titles">12 🏆</div>
+    <div class="detail">All in Doubles/Mixed Doubles<br>🚂 "Indian Express" – famous partnership with Leander Paes<br>Former World No.1 in Doubles</div>
+  </div>
+  <div class="player-card">
+    <h4>Sania Mirza</h4>
+    <div class="titles">6 🏆</div>
+    <div class="detail">3 Women's Doubles + 3 Mixed Doubles<br>🌍 Former World No.1 in Women's Doubles<br>First Indian woman to win a Grand Slam title</div>
+  </div>
+  <div class="player-card" style="border-left-color:#ff6f00;">
+    <h4>Rohan Bopanna</h4>
+    <div class="titles">1 🏆</div>
+    <div class="detail">🇦🇺 2024 Australian Open Men's Doubles (with Matthew Ebden)<br>👴 Age at win: 43 years 329 days = <b>Oldest man to win Grand Slam title</b><br>3rd Indian man to win Grand Slam Men's Doubles (after Paes &amp; Bhupathi)</div>
+  </div>
+</div>
+
+<!-- MCQ SECTION -->
+<h2>📝 Practice MCQs</h2><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q1</div><div>2026 Australian Open Men's Singles winner?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> Novak Djokovic</div><div class="option" data-letter="B"><b>B.</b> Carlos Alcaraz</div><div class="option" data-letter="C"><b>C.</b> Alexander Zverev</div><div class="option" data-letter="D"><b>D.</b> Jannik Sinner</div></div>
+  <button class="show-btn" onclick="toggle(this,'B')">Show Answer</button>
+  <div class="explanation">CASA trick: C = Carlos Alcaraz → Australian Open (1st Grand Slam of year). Memory: Current Account → C → Carlos.</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q2</div><div>Which player won TWO Men's Singles Grand Slams in 2026?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> Carlos Alcaraz</div><div class="option" data-letter="B"><b>B.</b> Jannik Sinner</div><div class="option" data-letter="C"><b>C.</b> Alexander Zverev</div><div class="option" data-letter="D"><b>D.</b> Rafael Nadal</div></div>
+  <button class="show-btn" onclick="toggle(this,'C')">Show Answer</button>
+  <div class="explanation">CASA: A appears twice (French Open + US Open) = Alexander Zverev won both.</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q3</div><div>2026 Wimbledon Men's Singles winner?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> Carlos Alcaraz</div><div class="option" data-letter="B"><b>B.</b> Alexander Zverev</div><div class="option" data-letter="C"><b>C.</b> Jannik Sinner</div><div class="option" data-letter="D"><b>D.</b> Holger Rune</div></div>
+  <button class="show-btn" onclick="toggle(this,'C')">Show Answer</button>
+  <div class="explanation">CASA: S = Sinner → Wimbledon (3rd Grand Slam). Memory: Savings account → S → Sinner.</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q4</div><div>2026 Women's Singles – who won Australian Open AND US Open?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> Mirra Andreeva</div><div class="option" data-letter="B"><b>B.</b> Linda Nosková</div><div class="option" data-letter="C"><b>C.</b> Aryna Sabalenka</div><div class="option" data-letter="D"><b>D.</b> Elena Rybakina</div></div>
+  <button class="show-btn" onclick="toggle(this,'D')">Show Answer</button>
+  <div class="explanation">EMNE: E appears at Entry (Australian) and Exit (US Open) → Elena Rybakina won both!</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q5</div><div>2026 French Open Women's Singles winner?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> Elena Rybakina</div><div class="option" data-letter="B"><b>B.</b> Coco Gauff</div><div class="option" data-letter="C"><b>C.</b> Mirra Andreeva</div><div class="option" data-letter="D"><b>D.</b> Iga Swiatek</div></div>
+  <button class="show-btn" onclick="toggle(this,'C')">Show Answer</button>
+  <div class="explanation">EMNE: M = Mirra Andreeva → French Open (2nd Grand Slam). Remember M is in the middle of the court.</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q6</div><div>Which Grand Slam is played on CLAY court?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> Australian Open</div><div class="option" data-letter="B"><b>B.</b> French Open</div><div class="option" data-letter="C"><b>C.</b> Wimbledon</div><div class="option" data-letter="D"><b>D.</b> US Open</div></div>
+  <button class="show-btn" onclick="toggle(this,'B')">Show Answer</button>
+  <div class="explanation">Courts: Australian=Hard, French=Clay (Roland Garros), Wimbledon=Grass, US Open=Hard. Only French Open uses clay.</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q7</div><div>Wimbledon is the world's oldest Grand Slam. When did it start?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> 1877</div><div class="option" data-letter="B"><b>B.</b> 1881</div><div class="option" data-letter="C"><b>C.</b> 1891</div><div class="option" data-letter="D"><b>D.</b> 1905</div></div>
+  <button class="show-btn" onclick="toggle(this,'A')">Show Answer</button>
+  <div class="explanation">Wimbledon started in 1877 (grass court). US Open=1881, French Open=1891, Australian Open=1905. Memory: Wimbledon is Oldest → earliest year.</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q8</div><div>Most Men's Singles Grand Slam titles (all-time)?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> Roger Federer – 20</div><div class="option" data-letter="B"><b>B.</b> Rafael Nadal – 22</div><div class="option" data-letter="C"><b>C.</b> Novak Djokovic – 24</div><div class="option" data-letter="D"><b>D.</b> Pete Sampras – 14</div></div>
+  <button class="show-btn" onclick="toggle(this,'C')">Show Answer</button>
+  <div class="explanation">Novak Djokovic holds the all-time record with 24 Grand Slam Men's Singles titles. Nadal=22, Federer=20.</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q9</div><div>Rafael Nadal holds the record for most titles at which Grand Slam?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> Australian Open</div><div class="option" data-letter="B"><b>B.</b> French Open</div><div class="option" data-letter="C"><b>C.</b> Wimbledon</div><div class="option" data-letter="D"><b>D.</b> US Open</div></div>
+  <button class="show-btn" onclick="toggle(this,'B')">Show Answer</button>
+  <div class="explanation">Nadal won French Open 14 times — nicknamed 'King of Clay'. It is the all-time record for a single Grand Slam.</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q10</div><div>Rohan Bopanna became the oldest man to win a Grand Slam title. Which title was it?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> 2024 Wimbledon Mixed Doubles</div><div class="option" data-letter="B"><b>B.</b> 2024 Australian Open Men's Doubles</div><div class="option" data-letter="C"><b>C.</b> 2023 US Open Men's Doubles</div><div class="option" data-letter="D"><b>D.</b> 2024 French Open Mixed Doubles</div></div>
+  <button class="show-btn" onclick="toggle(this,'B')">Show Answer</button>
+  <div class="explanation">Rohan Bopanna won 2024 Australian Open Men's Doubles (with Matthew Ebden) at age 43 years 329 days — oldest man to win a Grand Slam title.</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q11</div><div>Leander Paes was inducted into International Tennis Hall of Fame in which year?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> 2020</div><div class="option" data-letter="B"><b>B.</b> 2022</div><div class="option" data-letter="C"><b>C.</b> 2023</div><div class="option" data-letter="D"><b>D.</b> 2024</div></div>
+  <button class="show-btn" onclick="toggle(this,'D')">Show Answer</button>
+  <div class="explanation">Leander Paes was inducted into the International Tennis Hall of Fame in 2024. He also won Bronze at 1996 Atlanta Olympics in Men's Singles.</div>
+</div><div class="mcq-card">
+  <div class="mcq-header"><div class="q-num">Q12</div><div>Which statement about US Open is WRONG?</div></div>
+  <div class="options-grid"><div class="option" data-letter="A"><b>A.</b> Started in 1881 as US National Championship</div><div class="option" data-letter="B"><b>B.</b> Played on Grass Court</div><div class="option" data-letter="C"><b>C.</b> Played in August–September</div><div class="option" data-letter="D"><b>D.</b> Held at Flushing Meadows, New York</div></div>
+  <button class="show-btn" onclick="toggle(this,'B')">Show Answer</button>
+  <div class="explanation">US Open is played on HARD court (not grass). It was grass earlier, then clay, but now hard court. French Open=Clay, Wimbledon=Grass.</div>
+</div>
+</main>
+<footer>Crazy Trick | Grand Slams 2026 | Current Affairs</footer>
+<script>
+function toggle(btn, correct) {
+  var card = btn.closest('.mcq-card');
+  card.querySelectorAll('.option').forEach(function(o) {
+    o.classList.add(o.getAttribute('data-letter') === correct ? 'correct' : 'wrong');
+  });
+  card.querySelector('.explanation').classList.add('visible');
+  btn.disabled = true; btn.textContent = 'Answer Shown'; btn.style.background = '#555';
+}
+</script>
+</body>
+</html>
