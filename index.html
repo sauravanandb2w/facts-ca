@@ -3,244 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UPSC Maths Optional — Master Index</title>
+<title>Current Affairs MCQs 2026 – All Months</title>
 <style>
-  :root{--bg:#0f1117;--surface:#1a1d27;--border:#2e3147;--text:#e2e8f0;--muted:#8892a4;--accent:#3b82f6;}
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{background:var(--bg);color:var(--text);font-family:'Georgia',serif;min-height:100vh;padding:2rem 1rem}
-  .container{max-width:860px;margin:0 auto}
-  h1{text-align:center;font-size:2rem;color:#f1f5f9;margin-bottom:.3rem}
-  .subtitle{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:2.5rem}
-  h2{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:2rem 0 .75rem;border-bottom:1px solid var(--border);padding-bottom:.3rem}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-  @media(max-width:600px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.2rem;text-decoration:none;display:block;transition:border-color .2s,background .2s}
-  .card:hover{border-color:var(--accent);background:#1e2535}
-  .card-num{font-size:.7rem;color:var(--muted);font-family:monospace;margin-bottom:.2rem}
-  .card-title{color:#e2e8f0;font-size:1rem;margin-bottom:.5rem}
-  .links{display:flex;gap:.5rem;flex-wrap:wrap}
-  .link{font-size:.75rem;padding:.2rem .6rem;border-radius:4px;text-decoration:none;font-family:monospace}
-  .l1{background:#1e3a5f;color:#93c5fd}.l1:hover{background:#2a4d7a}
-  .l2{background:#1a3a2a;color:#86efac}.l2:hover{background:#234d38}
-  .stats{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.55rem}
-  .badge{font-size:.68rem;padding:.15rem .5rem;border-radius:20px;font-family:monospace;font-weight:600;white-space:nowrap}
-  .b-pyq{background:#1a0a2a;color:#e879f9;border:1px solid #a21caf}
-  .b-thm{background:#1e3a5f;color:#93c5fd;border:1px solid #1d4ed8}
-  .b-proof{background:#1a2a3a;color:#bfdbfe;border:1px solid #3b82f6}
-  .b-hot{background:#3a1a0a;color:#fdba74;border:1px solid #ea580c}
-  footer{text-align:center;color:var(--muted);font-size:.8rem;margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border)}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f8; color: #222; min-height: 100vh; }
+  header { background: linear-gradient(135deg, #1a237e 0%, #283593 100%); color: #fff; padding: 32px 20px 24px; text-align: center; }
+  header h1 { font-size: 2rem; margin-bottom: 8px; }
+  header p { font-size: 1rem; opacity: 0.88; }
+  .badge { display: inline-block; background: rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 16px; font-size: 0.9rem; margin-top: 10px; }
+  main { max-width: 780px; margin: 36px auto; padding: 0 16px 48px; }
+  .exam-alert { background: #fff3e0; border: 2px solid #ff9800; border-radius: 10px; padding: 14px 20px; margin-bottom: 28px; font-size: 0.97rem; color: #e65100; font-weight: 600; text-align: center; }
+  .month-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .month-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); overflow: hidden; transition: transform 0.15s, box-shadow 0.15s; text-decoration: none; color: inherit; display: block; }
+  .month-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.13); }
+  .month-header { padding: 18px 20px 12px; display: flex; align-items: center; gap: 14px; }
+  .month-icon { width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+  .month-info h2 { font-size: 1.1rem; color: #1a237e; }
+  .month-info p { font-size: 0.82rem; color: #666; margin-top: 2px; }
+  .month-footer { border-top: 1px solid #f0f0f0; padding: 10px 20px; font-size: 0.82rem; color: #3949ab; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+  .jan .month-icon { background: #e3f2fd; }
+  .feb .month-icon { background: #fce4ec; }
+  .mar .month-icon { background: #e8f5e9; }
+  .apr .month-icon { background: #fff8e1; }
+  .may .month-icon { background: #f3e5f5; }
+  .jun .month-icon { background: #e0f2f1; }
+  .jul .month-icon { background: #fff3e0; }
+  .aug .month-icon { background: #fbe9e7; }
+  .special .month-icon { background: #f9fbe7; }
+  .special { border: 2px solid #c6ff00; }
+  .cwg .month-icon { background: #e8f5e9; }
+  .cwg { border: 2px solid #66bb6a; }
+  .sco .month-icon { background: #e3f2fd; }
+  .sco { border: 2px solid #42a5f5; }
+  .brics .month-icon { background: #fff8e1; }
+  .brics { border: 2px solid #ffc107; }
+  footer { text-align: center; color: #888; font-size: 0.85rem; padding: 20px; }
 </style>
 </head>
 <body>
-<div class="container">
-  <h1>UPSC Maths Optional</h1>
-  <p class="subtitle">13 chapters · 1,473 PYQs · 128 Theorems · 113 Proofs · Years 2000–2026</p>
-
-  <h2>Paper I</h2>
-  <div class="grid">
-
-    <a class="card" href="Paper1_01_Linear_Algebra/01_Proofs_and_PYQ.html">
-      <div class="card-num">P1 · Ch 1</div>
-      <div class="card-title">Linear Algebra</div>
-      <div class="stats">
-        <span class="badge b-pyq">116 PYQs</span>
-        <span class="badge b-thm">15 Theorems</span>
-        <span class="badge b-proof">14 Proofs</span>
-        <span class="badge b-hot">5 Hot Topics</span>
+<header>
+  <h1>📚 Current Affairs MCQs 2026</h1>
+  <p>Parcham Classes | One Shot Monthly CA | English Medium</p>
+  <div class="badge">January – August 2026 | All Months</div>
+</header>
+<main>
+  <div class="exam-alert">Read Re-Read add mnemonics Re-Read Re-read</div>
+  <div class="month-grid">
+    <a href="january_2026_mcqs_english.html" class="month-card jan">
+      <div class="month-header">
+        <div class="month-icon">❄️</div>
+        <div class="month-info">
+          <h2>January 2026</h2>
+          <p>Republic Day · Army Day · Budget Season</p>
+        </div>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper1_01_Linear_Algebra/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div class="month-footer">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper1_02_Calculus/01_Proofs_and_PYQ.html">
-      <div class="card-num">P1 · Ch 2</div>
-      <div class="card-title">Calculus</div>
-      <div class="stats">
-        <span class="badge b-pyq">117 PYQs</span>
-        <span class="badge b-thm">12 Theorems</span>
-        <span class="badge b-proof">11 Proofs</span>
-        <span class="badge b-hot">5 Hot Topics</span>
+    <a href="february_2026_mcqs_english.html" class="month-card feb">
+      <div class="month-header">
+        <div class="month-icon">💙</div>
+        <div class="month-info">
+          <h2>February 2026</h2>
+          <p>Union Budget · Science Day · Maha Shivratri</p>
+        </div>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper1_02_Calculus/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div class="month-footer">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper1_03_Analytic_Geometry/01_Proofs_and_PYQ.html">
-      <div class="card-num">P1 · Ch 3</div>
-      <div class="card-title">Analytic Geometry</div>
-      <div class="stats">
-        <span class="badge b-pyq">111 PYQs</span>
-        <span class="badge b-thm">5 Theorems</span>
-        <span class="badge b-proof">5 Proofs</span>
-        <span class="badge b-hot">4 Hot Topics</span>
+    <a href="march_2026_mcqs_english.html" class="month-card mar">
+      <div class="month-header">
+        <div class="month-icon">🌱</div>
+        <div class="month-info">
+          <h2>March 2026</h2>
+          <p>Holi · Women's Day · World Water Day</p>
+        </div>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper1_03_Analytic_Geometry/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div class="month-footer">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper1_04_Ordinary_Differential_Equations/01_Proofs_and_PYQ.html">
-      <div class="card-num">P1 · Ch 4</div>
-      <div class="card-title">Ordinary Differential Equations</div>
-      <div class="stats">
-        <span class="badge b-pyq">117 PYQs</span>
-        <span class="badge b-thm">6 Theorems</span>
-        <span class="badge b-proof">6 Proofs</span>
-        <span class="badge b-hot">5 Hot Topics</span>
+    <a href="april_2026_mcqs_english.html" class="month-card apr">
+      <div class="month-header">
+        <div class="month-icon">🌸</div>
+        <div class="month-info">
+          <h2>April 2026</h2>
+          <p>Ambedkar Jayanti · Earth Day · IPL Season</p>
+        </div>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper1_04_Ordinary_Differential_Equations/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div class="month-footer">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper1_05_Dynamics_and_Statics/01_Proofs_and_PYQ.html">
-      <div class="card-num">P1 · Ch 5</div>
-      <div class="card-title">Dynamics & Statics</div>
-      <div class="stats">
-        <span class="badge b-pyq">111 PYQs</span>
-        <span class="badge b-thm">7 Theorems</span>
-        <span class="badge b-proof">7 Proofs</span>
-        <span class="badge b-hot">5 Hot Topics</span>
+    <a href="may_2026_mcqs_english.html" class="month-card may">
+      <div class="month-header">
+        <div class="month-icon">🌼</div>
+        <div class="month-info">
+          <h2>May 2026</h2>
+          <p>Labour Day · Buddha Purnima · Mother's Day</p>
+        </div>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper1_05_Dynamics_and_Statics/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div class="month-footer">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper1_06_Vector_Analysis/01_Proofs_and_PYQ.html">
-      <div class="card-num">P1 · Ch 6</div>
-      <div class="card-title">Vector Analysis</div>
-      <div class="stats">
-        <span class="badge b-pyq">119 PYQs</span>
-        <span class="badge b-thm">7 Theorems</span>
-        <span class="badge b-proof">7 Proofs</span>
-        <span class="badge b-hot">4 Hot Topics</span>
+    <a href="june_2026_mcqs_english.html" class="month-card jun">
+      <div class="month-header">
+        <div class="month-icon">🌊</div>
+        <div class="month-info">
+          <h2>June 2026</h2>
+          <p>Yoga Day · Environment Day · Monsoon Onset</p>
+        </div>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper1_06_Vector_Analysis/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div class="month-footer">📝 Open MCQs →</div>
     </a>
-
+    <a href="july_2026_mcqs_english.html" class="month-card jul">
+      <div class="month-header">
+        <div class="month-icon">🌧️</div>
+        <div class="month-info">
+          <h2>July 2026</h2>
+          <p>Kargil Vijay Diwas · Tax Day · NEET</p>
+        </div>
+      </div>
+      <div class="month-footer">📝 Open MCQs →</div>
+    </a>
+    <a href="august_2026_mcqs_english.html" class="month-card aug">
+      <div class="month-header">
+        <div class="month-icon">🇮🇳</div>
+        <div class="month-info">
+          <h2>August 2026</h2>
+          <p>Independence Day · Raksha Bandhan · Hiroshima Day</p>
+        </div>
+      </div>
+      <div class="month-footer">📝 Open MCQs →</div>
+    </a>
   </div>
 
-  <h2>Paper II</h2>
-  <div class="grid">
-
-    <a class="card" href="Paper2_01_Algebra/01_Proofs_and_PYQ.html">
-      <div class="card-num">P2 · Ch 1</div>
-      <div class="card-title">Algebra</div>
-      <div class="stats">
-        <span class="badge b-pyq">113 PYQs</span>
-        <span class="badge b-thm">12 Theorems</span>
-        <span class="badge b-proof">11 Proofs</span>
-        <span class="badge b-hot">5 Hot Topics</span>
+  <div style="margin-top:20px; display:flex; flex-direction:column; gap:12px;">
+    <a href="dance_music_mcqs_english.html" class="month-card special" style="display:flex; align-items:center; gap:14px; padding:18px 20px; text-decoration:none; color:inherit;">
+      <div class="month-icon special" style="background:#f9fbe7; font-size:1.5rem; width:46px; height:46px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎵</div>
+      <div style="flex:1;">
+        <h2 style="font-size:1.1rem; color:#1a237e;">Dance &amp; Music – Special Topic</h2>
+        <p style="font-size:0.82rem; color:#666; margin-top:2px;">99 MCQs | Classical Music · Dance Forms · Instruments · Memory Tricks</p>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper2_01_Algebra/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div style="font-size:0.85rem; color:#7b1fa2; font-weight:700; flex-shrink:0;">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper2_02_Real_Analysis/01_Proofs_and_PYQ.html">
-      <div class="card-num">P2 · Ch 2</div>
-      <div class="card-title">Real Analysis</div>
-      <div class="stats">
-        <span class="badge b-pyq">111 PYQs</span>
-        <span class="badge b-thm">19 Theorems</span>
-        <span class="badge b-proof">19 Proofs</span>
-        <span class="badge b-hot">6 Hot Topics</span>
+    <a href="cwg_2026_mcqs_english.html" class="month-card cwg" style="display:flex; align-items:center; gap:14px; padding:18px 20px; text-decoration:none; color:inherit;">
+      <div class="month-icon" style="background:#e8f5e9; font-size:1.5rem; width:46px; height:46px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🏅</div>
+      <div style="flex:1;">
+        <h2 style="font-size:1.1rem; color:#1a237e;">Commonwealth Games 2026 – Burning Issue</h2>
+        <p style="font-size:0.82rem; color:#666; margin-top:2px;">37 MCQs | Glasgow · India Medals · Boxing · Athletics · Memory Tricks</p>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper2_02_Real_Analysis/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div style="font-size:0.85rem; color:#2e7d32; font-weight:700; flex-shrink:0;">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper2_03_Complex_Analysis/01_Proofs_and_PYQ.html">
-      <div class="card-num">P2 · Ch 3</div>
-      <div class="card-title">Complex Analysis</div>
-      <div class="stats">
-        <span class="badge b-pyq">109 PYQs</span>
-        <span class="badge b-thm">9 Theorems</span>
-        <span class="badge b-proof">9 Proofs</span>
-        <span class="badge b-hot">5 Hot Topics</span>
+    <a href="sco_2026_mcqs_english.html" class="month-card sco" style="display:flex; align-items:center; gap:14px; padding:18px 20px; text-decoration:none; color:inherit;">
+      <div class="month-icon" style="background:#e3f2fd; font-size:1.5rem; width:46px; height:46px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🌏</div>
+      <div style="flex:1;">
+        <h2 style="font-size:1.1rem; color:#1a237e;">SCO Summit 2026 – Burning Issue</h2>
+        <p style="font-size:0.82rem; color:#666; margin-top:2px;">30 MCQs | Bishkek Summit · Members · Bishkek Declaration · Memory Tricks</p>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper2_03_Complex_Analysis/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div style="font-size:0.85rem; color:#1565c0; font-weight:700; flex-shrink:0;">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper2_04_Linear_Programming/01_Proofs_and_PYQ.html">
-      <div class="card-num">P2 · Ch 4</div>
-      <div class="card-title">Linear Programming</div>
-      <div class="stats">
-        <span class="badge b-pyq">106 PYQs</span>
-        <span class="badge b-thm">7 Theorems</span>
-        <span class="badge b-proof">6 Proofs</span>
-        <span class="badge b-hot">4 Hot Topics</span>
+    <a href="brics_mcqs_english.html" class="month-card brics" style="display:flex; align-items:center; gap:14px; padding:18px 20px; text-decoration:none; color:inherit;">
+      <div class="month-icon" style="background:#fff8e1; font-size:1.5rem; width:46px; height:46px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🌍</div>
+      <div style="flex:1;">
+        <h2 style="font-size:1.1rem; color:#1a237e;">BRICS Summit 2026 – Burning Issue</h2>
+        <p style="font-size:0.82rem; color:#666; margin-top:2px;">35 MCQs | 18th Summit New Delhi · Members · Delhi Declaration · Leaders</p>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper2_04_Linear_Programming/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div style="font-size:0.85rem; color:#b71c1c; font-weight:700; flex-shrink:0;">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper2_05_Partial_Differential_Equations/01_Proofs_and_PYQ.html">
-      <div class="card-num">P2 · Ch 5</div>
-      <div class="card-title">Partial Differential Equations</div>
-      <div class="stats">
-        <span class="badge b-pyq">121 PYQs</span>
-        <span class="badge b-thm">6 Theorems</span>
-        <span class="badge b-proof">6 Proofs</span>
-        <span class="badge b-hot">5 Hot Topics</span>
+    <a href="grandslam_2026_mcqs_english.html" class="month-card" style="display:flex; align-items:center; gap:14px; padding:18px 20px; text-decoration:none; color:inherit; border: 2px solid #7b1fa2;">
+      <div class="month-icon" style="background:#f3e5f5; font-size:1.5rem; width:46px; height:46px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎾</div>
+      <div style="flex:1;">
+        <h2 style="font-size:1.1rem; color:#1a237e;">Grand Slams 2026 – Crazy Trick</h2>
+        <p style="font-size:0.82rem; color:#666; margin-top:2px;">12 MCQs | CASA Trick · EMNE Trick · All-Time Records · Indian Tennis</p>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper2_05_Partial_Differential_Equations/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div style="font-size:0.85rem; color:#7b1fa2; font-weight:700; flex-shrink:0;">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper2_06_Numerical_Analysis_and_Computer_Programming/01_Proofs_and_PYQ.html">
-      <div class="card-num">P2 · Ch 6</div>
-      <div class="card-title">Numerical Analysis</div>
-      <div class="stats">
-        <span class="badge b-pyq">111 PYQs</span>
-        <span class="badge b-thm">6 Theorems</span>
-        <span class="badge b-proof">6 Proofs</span>
-        <span class="badge b-hot">4 Hot Topics</span>
+    <a href="gharana_mcqs_english.html" class="month-card" style="display:flex; align-items:center; gap:14px; padding:18px 20px; text-decoration:none; color:inherit; border: 2px solid #4a148c;">
+      <div class="month-icon" style="background:#ede7f6; font-size:1.5rem; width:46px; height:46px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">🎵</div>
+      <div style="flex:1;">
+        <h2 style="font-size:1.1rem; color:#1a237e;">Gharana – Hindustani Classical Music</h2>
+        <p style="font-size:0.82rem; color:#666; margin-top:2px;">15 MCQs | India Map · Khayal · Tabla · Dhrupad · Memory Tricks</p>
       </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper2_06_Numerical_Analysis_and_Computer_Programming/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
+      <div style="font-size:0.85rem; color:#4a148c; font-weight:700; flex-shrink:0;">📝 Open MCQs →</div>
     </a>
-
-    <a class="card" href="Paper2_07_Mechanics_and_Fluid_Dynamics/01_Proofs_and_PYQ.html">
-      <div class="card-num">P2 · Ch 7</div>
-      <div class="card-title">Mechanics & Fluid Dynamics</div>
-      <div class="stats">
-        <span class="badge b-pyq">111 PYQs</span>
-        <span class="badge b-thm">7 Theorems</span>
-        <span class="badge b-proof">7 Proofs</span>
-        <span class="badge b-hot">4 Hot Topics</span>
-      </div>
-      <div class="links" style="margin-top:.5rem">
-        <span class="l1">Proofs + PYQ</span>
-        <a class="l2" href="Paper2_07_Mechanics_and_Fluid_Dynamics/00_Formulae_and_Theorems.html" onclick="event.stopPropagation()">Formulae</a>
-      </div>
-    </a>
-
   </div>
-  <footer>UPSC Mathematics Optional · Saurav Anand · Updated 2024–2026</footer>
-</div>
+</main>
+<footer>Parcham Classes | Current Affairs 2026 | All the best for your exam! 🎯</footer>
 </body>
 </html>
