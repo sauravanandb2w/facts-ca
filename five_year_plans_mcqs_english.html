@@ -79,6 +79,18 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
 .src-tag { display:inline-block; background:#e1f5fe; color:#0277bd; border-radius:6px; padding:1px 8px; font-size:.7rem; font-weight:700; margin-left:6px; vertical-align:middle; }
 .jump { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:12px 0 4px; }
 .jump a { font-size:.78rem; font-weight:700; text-decoration:none; background:#fff; color:#1b5e20; border:1px solid #a5d6a7; padding:5px 12px; border-radius:16px; }
+.toc { background:#fff; border-radius:14px; padding:16px 18px; box-shadow:0 2px 10px rgba(0,0,0,.08); margin-bottom:22px; }
+.toc h2 { font-size:1.05rem; color:#1b5e20; margin-bottom:10px; }
+.toc ol { margin:0 0 0 18px; font-size:.86rem; line-height:1.75; color:#333; }
+.toc a { color:#1565c0; font-weight:600; text-decoration:none; }
+.toc a:hover { text-decoration:underline; }
+.toc .mini { color:#666; font-weight:400; }
+.section-title, .master-trick, .em-box, .mcq-section, #poverty { scroll-margin-top: 10px; }
+.pov-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0 18px; }
+@media(max-width:640px){ .pov-grid { grid-template-columns:1fr; } }
+.pov-card { background:#fff; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,.07); overflow:hidden; }
+.pov-card h3 { padding:10px 14px; color:#fff; font-size:.95rem; }
+.pov-card .pb { padding:12px 14px; font-size:.84rem; line-height:1.65; color:#333; }
 .tl { position:relative; margin:8px 0 28px; padding-left:18px; }
 .tl::before { content:''; position:absolute; left:7px; top:0; bottom:0; width:3px; background:linear-gradient(#2e7d32,#1565c0,#c62828,#3f51b5); border-radius:2px; }
 .tl-item { position:relative; background:#fff; border-radius:10px; padding:10px 14px 10px 16px; margin:0 0 10px 8px; box-shadow:0 1px 6px rgba(0,0,0,.06); font-size:.86rem; line-height:1.55; }
@@ -98,20 +110,27 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
 <header>
   <h1>🗓️ Five Year Plans – India</h1>
   <p>Crazy GK Trick | Akshay Sir | Planning Commission → NITI Aayog</p>
-  <div class="badge">1951–2017 | All 12 Plans + Holidays | PMs + Emergency | NITI 2015–now | MCQs</div>
+  <div class="badge">1951–2017 | 12 Plans | PMs · Emergency | Poverty lines | NITI | MCQs</div>
 </header>
 
 <main>
-<div class="jump">
-  <a href="#plans">12 Plans</a>
-  <a href="#pm-tl">PM timeline</a>
-  <a href="#emergency">Emergency</a>
-  <a href="#niti-tl">NITI Aayog 2015+</a>
-  <a href="#mcqs">MCQs</a>
+<div class="toc" id="toc">
+  <h2>📑 Index — what’s in this HTML</h2>
+  <ol>
+    <li><a href="#tricks">Mnemonics</a> <span class="mini">— Raghu story (1–4), number tricks (5–12), H-M-S models, BRD steel plants</span></li>
+    <li><a href="#plans">All 12 Five Year Plans</a> <span class="mini">— focus, model, growth, extra points, plan holidays / rolling / annual plans</span></li>
+    <li><a href="#table">Quick reference table</a> <span class="mini">— target vs achieved, one-line key fact</span></li>
+    <li><a href="#pm-tl">PM timeline</a> <span class="mini">— Nehru → Modi, who sat on which plan</span></li>
+    <li><a href="#emergency">Emergencies (Art. 352)</a> <span class="mini">— 1962, 1971, internal 1975–77</span></li>
+    <li><a href="#niti-compare">NITI vs Planning Commission</a></li>
+    <li><a href="#niti-tl">NITI Aayog 2015+</a> <span class="mini">— AIM, ADP, SDG Index, MPI, Blocks…</span></li>
+    <li><a href="#poverty">Poverty indicators (extensive)</a> <span class="mini">— Alagh, Lakdawala, <b>Tendulkar</b>, <b>Rangarajan</b>, MPI, HCR, traps</span></li>
+    <li><a href="#mcqs">Practice MCQs</a> <span class="mini">— plans + NITI + poverty lines</span></li>
+  </ol>
 </div>
 
 <!-- NEW MASTER TRICK: RAGHU STORY (PLANS 1-4) -->
-<div class="master-trick">
+<div class="master-trick" id="tricks">
   <h2>🧠 TRICK 1 — राघु की कहानी (Plans 1–4) <span class="src-tag">updated from new video</span></h2>
   <div class="story-box">
     साल <b>1947</b>, भारत आज़ाद हुआ — पर ज़मीन बंजर थी, खाने को अनाज नहीं था। कहानी का हीरो है किसान <b>राघु</b>। "देश आज़ाद हो गया, पर अब लोगों को भूख से आज़ाद करना है" — यहीं से पंचवर्षीय योजनाएँ शुरू होती हैं।
@@ -457,7 +476,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
 </div>
 
 <!-- FULL COMPARISON TABLE -->
-<div class="section-title">📊 All Plans — Quick Reference Table</div>
+<div class="section-title" id="table">📊 All Plans — Quick Reference Table</div>
 <table>
   <tr>
     <th>#</th><th>Period</th><th>Target %</th><th>Achieved %</th><th>Focus Theme</th><th>Key Fact</th>
@@ -510,7 +529,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
 </div>
 
 <!-- NITI AAYOG BOX -->
-<div class="master-trick" style="background:#e8eaf6;border-color:#3f51b5">
+<div class="master-trick" id="niti-compare" style="background:#e8eaf6;border-color:#3f51b5">
   <h2 style="color:#1a237e">🏛️ NITI Aayog vs Planning Commission</h2>
   <div class="trick-decode" style="font-size:.92rem">
     <b>Planning Commission</b> (1950–2014): Allocated funds to states, top-down planning, states = "beggars"<br>
@@ -540,9 +559,113 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
   ⚠️ <b>NITI exam traps:</b> Not a constitutional body (Cabinet resolution). Cannot give grants — that moved to Finance Ministry / Finance Commission. Chairman is always the PM. “Team India Hub” + “Knowledge and Innovation Hub” are the two internal hubs. Aspirational <b>Districts 2018</b> vs Aspirational <b>Blocks 2023</b> — different scales. MPI (NITI–UNDP) ≠ Tendulkar / Rangarajan poverty line.
 </div>
 
+<div class="section-title" id="poverty">📉 Poverty in India — indicators, committees, exam numbers</div>
+<p style="font-size:.86rem;color:#555;margin:-4px 0 12px;">Official poverty in India was a <b>consumption-expenditure line</b> from NSS household surveys — not income. Last official Planning Commission estimates = <b>Tendulkar, 2011–12</b>. Rangarajan (2014) is a parallel expert report, <b>not adopted</b> as the new official line. NITI MPI is a <b>different animal</b> (health/education/living standards, NFHS).</p>
+
+<div class="master-trick">
+  <h2>🧠 Poverty-line timeline (who came after whom)</h2>
+  <div class="trick-sentence" style="font-size:1.05rem">Working Group ’62 → <span>Dandekar–Rath</span> ’71 → <span>Alagh</span> ’79 → <span>Lakdawala</span> ’93 → <span>Tendulkar</span> ’09 → <span>Rangarajan</span> ’14 → <span>NITI MPI</span> ’21</div>
+  <div class="trick-decode">
+    🧠 <b>“DALa TeRa MPI”</b> — <b>D</b>andekar · <b>A</b>lagh · <b>La</b>kdawala · <b>Te</b>ndulkar · <b>Ra</b>ngarajan · then MPI. Calorie era till Lakdawala; Tendulkar = basket (not calorie-only); Rangarajan = calorie+protein+fat + bigger non-food; MPI = multidimensional, not rupees.
+  </div>
+</div>
+
+<div class="pov-grid">
+  <div class="pov-card">
+    <h3 style="background:#546e7a">How poverty is measured (vocab)</h3>
+    <div class="pb">
+      <b>Head Count Ratio (HCR)</b> — % of people below the line. The number UPSC quotes (21.9%, 29.5%).<br>
+      <b>Poverty Gap Ratio</b> — how far the poor are below the line (depth).<br>
+      <b>Squared Poverty Gap</b> — FGT index; extra weight on the poorest.<br>
+      <b>URP</b> — Uniform Recall Period (30 days for all items).<br>
+      <b>MRP</b> — Mixed Recall: 365 days for clothing, durables, education, institutional health; 30 days rest. <b>Tendulkar used MRP.</b><br>
+      <b>MMRP</b> — Modified Mixed: also 7-day recall for some foods. <b>Rangarajan used MMRP.</b><br>
+      Data workhorse: <b>NSSO/NSO Consumer Expenditure Survey</b>. Last official official-line year = <b>2011–12</b> (68th round). SECC 2011 is deprivation/targeting, not this line.
+    </div>
+  </div>
+  <div class="pov-card">
+    <h3 style="background:#00695c">Calorie era — before Tendulkar</h3>
+    <div class="pb">
+      <b>Planning Commission Working Group (1962)</b> — first national calorie-linked line.<br>
+      <b>Dandekar &amp; Rath (1971)</b> — 2250 kcal; NSS-based; often the “academic” start of modern estimates.<br>
+      <b>Y.K. Alagh Task Force (1979)</b> — first lasting <b>official</b> method. Calorie: <b>2400 kcal rural, 2100 urban</b>. Convert calories → monthly consumption expenditure. Same basket updated by prices later.<br>
+      <b>Lakdawala Expert Group (1993)</b> — kept Alagh calories. <b>State-specific lines</b> using CPI-AL (rural) and CPI-IW (urban). No fresh all-India calorie survey. URP. 2004–05 poverty under Lakdawala ≈ <b>27.5%</b> — this looked “too low” vs ground reality, which is why Tendulkar was set up (2005).
+    </div>
+  </div>
+</div>
+
+<div class="pov-grid">
+  <div class="pov-card">
+    <h3 style="background:#1565c0">Suresh Tendulkar Committee (report 2009)</h3>
+    <div class="pb">
+      Shift: <b>away from calorie as the sole anchor</b> to a poverty-line basket (PLB) covering food <b>plus</b> education, health, clothing, footwear, transport, electricity.<br>
+      Used the <b>urban PLB as the reference</b> and priced it in rural and urban areas (same basket, different prices).<br>
+      Recall: <b>MRP</b>. Still consumption, still NSS.<br>
+      <b>Poverty line (per capita / month):</b><br>
+      2004–05: Rural <b>₹446.68</b> · Urban <b>₹578.80</b><br>
+      2011–12: Rural <b>₹816</b> · Urban <b>₹1000</b> (Planning Commission press note, July 2013) ≈ ₹27 rural / ₹33 urban <b>per day</b><br>
+      <b>HCR 2004–05:</b> 37.2% (rural 41.8, urban 21.8) — <em>higher</em> than Lakdawala’s 27.5% for the same year.<br>
+      <b>HCR 2009–10:</b> 29.8%<br>
+      <b>HCR 2011–12 (LAST OFFICIAL):</b> All-India <b>21.9%</b> · Rural <b>25.7%</b> · Urban <b>13.7%</b> · ~27 crore poor.<br>
+      🧠 Trap: Tendulkar did <b>not</b> “abolish calories”; he stopped making calories the <b>only</b> definition. 2011–12 21.9% is Tendulkar, not Rangarajan.
+    </div>
+  </div>
+  <div class="pov-card">
+    <h3 style="background:#6a1b9a">C. Rangarajan Committee (report June 2014)</h3>
+    <div class="pb">
+      Why: political + expert unease that Tendulkar’s line (≈ ₹32 rural / ₹47 urban a day in 2011–12 urban-rural mix of quotes) was too tight.<br>
+      Method: <b>separate rural and urban baskets</b> (not urban-only reference). Food component uses <b>calorie + protein + fat</b> norms. Non-food from observed behaviour (median of a class), not just Tendulkar’s thinner non-food.<br>
+      Recall: <b>MMRP</b> (7-day + 30-day + 365-day).<br>
+      <b>Poverty line 2011–12 (per capita / month):</b> Rural <b>₹972</b> · Urban <b>₹1407</b>
+      ≈ <b>₹32 rural / ₹47 urban per day</b> — this is the pair newspapers called “too low,” but it is <b>Rangarajan’s</b> day-rate, not Tendulkar’s (Tendulkar day-rate ≈ ₹27 rural / ₹33 urban).<br>
+      For a family of 5 (2011–12): rural ~<b>₹4,860</b>/month; urban ~<b>₹7,035</b>/month.<br>
+      <b>HCR 2011–12:</b> All-India <b>29.5%</b> · Rural <b>30.9%</b> · Urban <b>26.4%</b> · ~37 crore poor.<br>
+      <b>Status:</b> Expert group report to Planning Commission. <b>Not notified as the new official poverty line.</b> Last official all-India consumption poverty = Tendulkar 2011–12.
+    </div>
+  </div>
+</div>
+
+<table>
+  <tr><th>Item</th><th>Tendulkar (2009 / used 2011–12)</th><th>Rangarajan (2014)</th></tr>
+  <tr><td>Anchor</td><td>Consumption basket (food + key non-food). Calorie not the sole cut-off</td><td>Food: calorie+protein+fat; plus a fuller non-food basket</td></tr>
+  <tr><td>Rural vs urban basket</td><td>Urban PLB as reference, priced in both</td><td>Separate rural and urban baskets</td></tr>
+  <tr><td>NSS recall</td><td>MRP</td><td>MMRP</td></tr>
+  <tr><td>PL 2011–12 / person / month</td><td>₹816 rural · ₹1000 urban</td><td>₹972 rural · ₹1407 urban</td></tr>
+  <tr><td>HCR 2011–12</td><td><b>21.9%</b> (R 25.7 · U 13.7)</td><td><b>29.5%</b> (R 30.9 · U 26.4)</td></tr>
+  <tr><td>Official status</td><td><b>Yes — last official PC estimates</b></td><td>Report only; not the official successor</td></tr>
+</table>
+
+<div class="pov-grid">
+  <div class="pov-card">
+    <h3 style="background:#37474f">Other poverty / deprivation measures</h3>
+    <div class="pb">
+      <b>NITI–UNDP National MPI</b> (2021, update 2023): Alkire–Foster. Three dimensions — health, education, standard of living — 12 indicators (nutrition, child-adolescent mortality, maternal health, years of schooling, school attendance, cooking fuel, sanitation, drinking water, electricity, housing, assets, bank account). Data: <b>NFHS</b>, not NSS CES. Headcount × intensity. Not comparable 1:1 with 21.9%.<br>
+      <b>Global MPI</b> — UNDP + OPHI; similar idea, slightly different indicator set.<br>
+      <b>World Bank</b> international lines (PPP $) — $1.90 then $2.15 (2017 PPP extreme poverty); India also discussed on higher lines. Different from Tendulkar rupees.<br>
+      <b>SECC 2011</b> — census of rural/urban deprivation (automatic exclusion / inclusion, 7 deprivations). Used to <b>target</b> schemes (PMAY-G, etc.), not to publish a national HCR like 21.9%.<br>
+      <b>BPL census / score cards</b> (1992, 1997, 2002) — administrative targeting, often criticised; not the Planning Commission methodology.
+    </div>
+  </div>
+  <div class="pov-card">
+    <h3 style="background:#bf360c">Hook to Five Year Plans + traps</h3>
+    <div class="pb">
+      4th Plan: Garibi Hatao slogan (1971).<br>
+      5th Plan: poverty removal as explicit objective; 20-point; MNP.<br>
+      6th: IRDP / NREP / TRYSEM — delivery machines for the poor.<br>
+      10th: first monitorable target to <b>halve poverty</b>.<br>
+      11th: inclusive growth; Tendulkar report lands 2009 (during 11th).<br>
+      12th: Rangarajan set up 2012, reports 2014; Planning Commission dies 2015 — no new official line after 2011–12.<br><br>
+      ⚠️ <b>Traps:</b> Lakdawala 2004–05 27.5% ≠ Tendulkar 2004–05 37.2% (same year, different method). Don’t quote Rangarajan 29.5% as “official”. Don’t mix MPI headcount with Tendulkar HCR. Alagh 2400/2100 is calorie, not rupees. Financial Emergency (360) has nothing to do with the poverty line.
+    </div>
+  </div>
+</div>
+<div class="fact-check">
+  ⚠️ <b>After 2011–12:</b> No new official Tendulkar/Rangarajan HCR from the Planning Commission (it was wound up). HCES 2022–23 consumption data exist; various researchers (and some NITI commentary) argue a sharp fall in poverty, but for prelims the <b>safe official pair</b> remains: <b>Tendulkar 2011–12 = 21.9%</b>; <b>Rangarajan 2011–12 = 29.5% (not official)</b>; plus <b>National MPI</b> as a separate NITI–UNDP series.
+</div>
+
 <!-- MCQ SECTION -->
 <div class="mcq-section" id="mcqs">
-  <h2>📝 Practice MCQs — Five Year Plans (26 Questions)</h2>
+  <h2>📝 Practice MCQs — Five Year Plans + Poverty (31 Questions)</h2>
 
   <div class="question" id="q1">
     <div class="q-text">Q1. Which model was used in India's 1st Five Year Plan?</div>
@@ -831,6 +954,61 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
     <div class="explanation" id="exp-q26"><strong>Explanation:</strong> Same as old Planning Commission: <b>PM is Chairman</b>. VC and CEO run the shop day to day. NITI is a Cabinet-resolution think tank, not constitutional.</div>
   </div>
 
+  <div class="question" id="q27">
+    <div class="q-text">Q27. India’s last official Planning Commission poverty estimates (2011–12) used which committee’s method?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q27','A')"><b>A.</b> Lakdawala</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q27','B')"><b>B.</b> Tendulkar</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q27','C')"><b>C.</b> Rangarajan (adopted 2014)</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q27','D')"><b>D.</b> Alagh calorie line only</div>
+    </div>
+    <div class="explanation" id="exp-q27"><strong>Explanation:</strong> <b>Tendulkar, 2011–12, HCR 21.9%</b> is the last official PC series. Rangarajan 2014 was not notified as the new official line.</div>
+  </div>
+
+  <div class="question" id="q28">
+    <div class="q-text">Q28. Tendulkar vs Rangarajan for 2011–12 — which pairing is correct?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q28','A')"><b>A.</b> Both 21.9%; only the rupee line differs</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q28','B')"><b>B.</b> Tendulkar 21.9% (₹816/₹1000); Rangarajan 29.5% (₹972/₹1407) — Rangarajan not official</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q28','C')"><b>C.</b> Rangarajan 21.9%; Tendulkar 29.5%</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q28','D')"><b>D.</b> Tendulkar used MMRP; Rangarajan used only URP</div>
+    </div>
+    <div class="explanation" id="exp-q28"><strong>Explanation:</strong> Tendulkar = <b>MRP</b>, 21.9%, ₹816 rural / ₹1000 urban. Rangarajan = <b>MMRP</b>, 29.5%, ₹972 / ₹1407. Official = Tendulkar.</div>
+  </div>
+
+  <div class="question" id="q29">
+    <div class="q-text">Q29. Alagh (1979) calorie norms that Lakdawala kept were?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q29','A')"><b>A.</b> 1800 rural, 2100 urban</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q29','B')"><b>B.</b> 2400 rural, 2100 urban</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q29','C')"><b>C.</b> 2100 rural, 2400 urban</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q29','D')"><b>D.</b> 2250 for both</div>
+    </div>
+    <div class="explanation" id="exp-q29"><strong>Explanation:</strong> <b>2400 kcal rural, 2100 urban</b> (Alagh). Dandekar–Rath used 2250. Tendulkar moved off calorie-as-sole-anchor.</div>
+  </div>
+
+  <div class="question" id="q30">
+    <div class="q-text">Q30. NITI Aayog National MPI is based primarily on?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q30','A')"><b>A.</b> NSS Consumer Expenditure (same as Tendulkar)</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q30','B')"><b>B.</b> NFHS + Alkire–Foster (health, education, living standards)</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q30','C')"><b>C.</b> SECC 2011 BPL scores</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q30','D')"><b>D.</b> World Bank $2.15 line only</div>
+    </div>
+    <div class="explanation" id="exp-q30"><strong>Explanation:</strong> National MPI = <b>NITI + UNDP</b>, Alkire–Foster, <b>NFHS</b>. Do not equate its headcount with Tendulkar 21.9%.</div>
+  </div>
+
+  <div class="question" id="q31">
+    <div class="q-text">Q31. For the same year 2004–05, Lakdawala vs Tendulkar all-India HCR was roughly?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q31','A')"><b>A.</b> Both 21.9%</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q31','B')"><b>B.</b> Lakdawala ~27.5%; Tendulkar 37.2% (broader basket → more poor)</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q31','C')"><b>C.</b> Tendulkar lower because he dropped health and education</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q31','D')"><b>D.</b> Lakdawala 37.2%; Tendulkar 27.5%</div>
+    </div>
+    <div class="explanation" id="exp-q31"><strong>Explanation:</strong> Same NSS year, different method: Lakdawala <b>~27.5%</b>, Tendulkar <b>37.2%</b>. Adding education/health to the basket raised measured poverty — that gap is why “which committee?” is an exam favourite.</div>
+  </div>
+
 </div>
 </main>
 
@@ -840,7 +1018,8 @@ const answers = {
   q6:'B', q7:'B', q8:'B', q9:'B', q10:'B',
   q11:'B', q12:'C', q13:'C', q14:'B', q15:'B',
   q16:'C', q17:'B', q18:'C', q19:'C', q20:'C', q21:'C',
-  q22:'C', q23:'B', q24:'B', q25:'B', q26:'C'
+  q22:'C', q23:'B', q24:'B', q25:'B', q26:'C',
+  q27:'B', q28:'B', q29:'B', q30:'B', q31:'B'
 };
 function answer(el, qid, chosen) {
   const opts = el.parentElement.querySelectorAll('.opt');

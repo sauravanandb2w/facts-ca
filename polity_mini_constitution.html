@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polity Mini Constitution | Parts · Articles · Schedules · Bodies | CA Notes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c1017; --card:#151b27; --ink:#eef2ff; --muted:#9eacc7;
+  --accent:#e8b84a; --green:#3dd68c; --blue:#6b9fff; --purple:#b388ff; --red:#ff6b8a;
+  --line:rgba(255,255,255,.09); --paper:#f4efe4; --paper-ink:#1c2433;
+}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,'Iowan Old Style','Palatino Linotype',serif;background:var(--bg);color:var(--ink);line-height:1.65}
+body.reading{background:#1a1814}
+header{padding:42px 18px 32px;text-align:center;background:
+  radial-gradient(900px 320px at 15% -10%,rgba(107,159,255,.28),transparent),
+  radial-gradient(700px 280px at 90% 0%,rgba(232,184,74,.2),transparent),
+  linear-gradient(165deg,#141b2b 0%,#0c1017 70%)}
+header h1{font-size:clamp(1.7rem,3.4vw,2.35rem);margin-bottom:10px;letter-spacing:.2px;font-weight:700}
+header p{color:var(--muted);max-width:740px;margin:0 auto;font-size:1.02rem;font-family:'Segoe UI',system-ui,sans-serif}
+.badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px;font-family:'Segoe UI',system-ui,sans-serif}
+.badges span,.badges a{font-size:.78rem;padding:6px 13px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--ink);text-decoration:none}
+.badges a{border-color:rgba(232,184,74,.45);background:rgba(232,184,74,.12);color:#ffe6a8;font-weight:700}
+.badges a:hover{background:var(--accent);color:#111}
+.orig-banner{max-width:1100px;margin:0 auto 8px;padding:0 14px}
+.orig-banner a{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;text-decoration:none;color:var(--ink);background:linear-gradient(120deg,rgba(232,184,74,.14),rgba(107,159,255,.12));border:1px solid rgba(232,184,74,.35);border-radius:16px;padding:14px 18px;font-family:'Segoe UI',system-ui,sans-serif;transition:.2s}
+.orig-banner a:hover{transform:translateY(-2px);border-color:var(--accent)}
+.orig-banner strong{color:var(--accent)}
+.orig-banner span{color:var(--muted);font-size:.86rem}
+.stick{position:sticky;top:0;z-index:40;background:rgba(12,16,23,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:10px 12px;font-family:'Segoe UI',system-ui,sans-serif}
+.stick .row{max-width:1100px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.stick a,.stick button{color:var(--ink);text-decoration:none;font-size:.74rem;font-weight:700;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:6px 10px;border-radius:999px;cursor:pointer;font-family:inherit}
+.stick a:hover,.stick button.on,.stick button:hover{background:var(--accent);color:#111;border-color:var(--accent)}
+#q{flex:1;min-width:180px;background:#0a101c;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:8px 14px;font-size:.88rem}
+main{max-width:1100px;margin:0 auto;padding:18px 14px 70px;font-family:'Segoe UI',system-ui,sans-serif}
+.sec{margin:28px 0 18px;scroll-margin-top:64px}
+.sec h2{font-size:1.2rem;margin-bottom:8px}
+.sec h2 span{color:var(--accent)}
+.lead{color:var(--muted);font-size:.9rem;margin-bottom:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:12px}
+.preamble{background:linear-gradient(145deg,#18233a,#121a2b);border:1px solid rgba(240,180,41,.35)}
+.preamble .kw{display:inline-block;margin:3px 4px;padding:4px 10px;border-radius:999px;background:rgba(240,180,41,.12);border:1px solid rgba(240,180,41,.35);font-size:.8rem;font-weight:700;cursor:pointer}
+.preamble .kw:hover,.preamble .kw.on{background:var(--accent);color:#111}
+.kw-note{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.04);font-size:.86rem;color:#d7e0f5}
+.kw-note.show{display:block}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.part{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.2s}
+.part:hover{border-color:rgba(91,140,255,.45);transform:translateY(-2px)}
+.part summary{list-style:none;cursor:pointer;padding:14px 14px 12px;display:flex;gap:10px;align-items:flex-start}
+.part summary::-webkit-details-marker{display:none}
+.pno{min-width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:800;background:rgba(91,140,255,.15);color:var(--blue);font-size:.85rem}
+.ptitle{font-weight:800;font-size:.95rem}
+.prange{font-size:.75rem;color:var(--muted);margin-top:2px}
+.pdeal{font-size:.8rem;color:#c9d4ef;margin-top:4px}
+.pbody{padding:0 14px 14px;border-top:1px solid var(--line)}
+.mn{margin-top:10px;padding:8px 10px;border-radius:0 10px 10px 0;border-left:3px solid var(--accent);background:rgba(240,180,41,.08);font-size:.82rem;color:#ffe7a3}
+.arts{display:grid;gap:8px;margin-top:10px}
+.art{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.86rem;cursor:pointer;transition:.18s;text-align:left;width:100%;color:inherit;font-family:inherit}
+.art:hover{border-color:rgba(232,184,74,.55);background:rgba(232,184,74,.1);transform:translateX(3px)}
+.art.star{border-color:rgba(232,184,74,.4);background:rgba(232,184,74,.07)}
+.art .anum{font-weight:800;color:var(--accent)}
+.art .alight{color:var(--muted);font-size:.8rem;margin-top:5px;line-height:1.5}
+.art .study{float:right;font-size:.72rem;font-weight:800;color:#111;background:var(--accent);padding:3px 9px;border-radius:999px}
+.hint-click{font-size:.8rem;color:var(--accent);margin:8px 0 0}
+.chip{display:inline-block;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.chip.exam{background:rgba(255,107,138,.15);color:var(--red)}
+.chip.am{background:rgba(61,214,140,.12);color:var(--green)}
+.chip.body{background:rgba(179,136,255,.15);color:var(--purple)}
+table{width:100%;border-collapse:collapse;font-size:.82rem;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);margin-bottom:14px}
+th{background:rgba(91,140,255,.18);text-align:left;padding:10px;color:#dce6ff}
+td{padding:9px 10px;border-top:1px solid var(--line);vertical-align:top;color:#d5def3}
+tr:hover td{background:rgba(255,255,255,.03)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.filters button{border:1px solid var(--line);background:rgba(255,255,255,.04);color:var(--ink);border-radius:999px;padding:6px 12px;font-size:.76rem;font-weight:700;cursor:pointer;font-family:inherit}
+.filters button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.body-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;font-size:.84rem}
+.body-card h3{font-size:.95rem;margin-bottom:6px}
+.body-card .meta{color:var(--muted);font-size:.78rem;margin-bottom:8px}
+.trap{background:rgba(255,107,138,.08);border:1px dashed rgba(255,107,138,.45);border-radius:12px;padding:12px 14px;font-size:.84rem;color:#ffd0da;margin:12px 0}
+.flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.flash{perspective:900px;height:130px;cursor:pointer}
+.flash-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s}
+.flash.flipped .flash-inner{transform:rotateY(180deg)}
+.ff,.fb{position:absolute;inset:0;backface-visibility:hidden;border-radius:12px;padding:12px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.86rem;border:1px solid var(--line)}
+.ff{background:linear-gradient(145deg,#243356,#18233a);font-weight:700}
+.fb{background:#1a2438;color:#ffe7a3;transform:rotateY(180deg);font-size:.8rem;line-height:1.45}
+.mcq{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px}
+.q{font-weight:700;margin-bottom:10px;color:#eef3ff}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:560px){.opts{grid-template-columns:1fr}}
+.opt{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.84rem;cursor:pointer}
+.opt:hover{border-color:var(--blue)}
+.opt.ok{background:rgba(61,214,140,.12);border-color:var(--green);color:var(--green);font-weight:700}
+.opt.bad{background:rgba(255,107,138,.12);border-color:var(--red);color:var(--red)}
+.exp{display:none;margin-top:8px;font-size:.82rem;color:var(--muted)}
+.exp.show{display:block}
+#hits{display:none;margin:10px 0 18px}
+#hits.show{display:block}
+.hit{padding:8px 10px;border-bottom:1px solid var(--line);font-size:.84rem;cursor:pointer}
+.hit:hover{background:rgba(91,140,255,.08)}
+.hit b{color:var(--accent)}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px 10px 40px}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);margin-bottom:10px}
+.hide{display:none!important}
+/* Article study drawer */
+.drawer-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:80;opacity:0;pointer-events:none;transition:.2s}
+.drawer-bg.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(520px,100%);background:linear-gradient(180deg,#1a2233,#121821);z-index:90;transform:translateX(100%);transition:transform .28s ease;border-left:1px solid var(--line);display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(0,0,0,.45)}
+.drawer.on{transform:translateX(0)}
+.drawer header{padding:18px 18px 12px;border-bottom:1px solid var(--line);text-align:left;background:transparent}
+.drawer header h3{font-size:1.25rem;font-family:Georgia,serif;margin:6px 0 4px;color:#fff}
+.drawer .dmeta{font-size:.8rem;color:var(--muted);font-family:'Segoe UI',sans-serif}
+.drawer .dclose{position:absolute;top:14px;right:14px;border:0;background:rgba(255,255,255,.08);color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem}
+.drawer .dbody{padding:18px;overflow:auto;flex:1;font-family:'Segoe UI',sans-serif}
+.drawer .block{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px;font-size:.9rem;line-height:1.6}
+.drawer .block h4{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:6px}
+.drawer .links{display:flex;flex-direction:column;gap:8px}
+.drawer .links a{display:block;padding:11px 14px;border-radius:12px;background:rgba(232,184,74,.12);border:1px solid rgba(232,184,74,.35);color:#ffe6a8;text-decoration:none;font-weight:700;font-size:.86rem}
+.drawer .links a:hover{background:var(--accent);color:#111}
+.drawer .links a.sec{background:rgba(107,159,255,.12);border-color:rgba(107,159,255,.35);color:#cfe0ff}
+.am-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.am-card .ay{font-size:.75rem;font-weight:800;color:var(--accent)}
+.am-card h3{font-size:1rem;margin:4px 0 6px}
+.am-card .actname{font-size:.8rem;color:#cfe0ff;margin-bottom:8px;font-style:italic}
+.parts-layout{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:900px){
+  .parts-layout{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🇮🇳 Polity Mini Constitution</h1>
+  <p>Click any article to study it. Open Parts, Schedules, Writs, Amendment Acts, Bodies — with Hindi mnemonics. Read the original text anytime.</p>
+  <div class="badges">
+    <a href="https://www.constitutionofindia.net/read/" target="_blank" rel="noopener">📖 Read original Constitution →</a>
+    <span>Click articles to study</span>
+    <span>Amendment Acts</span>
+    <span>Writs · Bodies · MCQs</span>
+  </div>
+</header>
+
+<nav class="stick">
+  <div class="row">
+    <input id="q" type="search" placeholder="Search article / part / body / act… e.g. 32, DPSPs, CAG, 42nd" autocomplete="off">
+    <a href="#preamble">Preamble</a>
+    <a href="#parts">Parts</a>
+    <a href="#schedules">Schedules</a>
+    <a href="#writs">Writs</a>
+    <a href="#amendments">Amendments</a>
+    <a href="#bodies">Bodies</a>
+    <a href="#story">Story</a>
+    <a href="#flash">Flash</a>
+    <a href="#mcqs">MCQs</a>
+    <a href="https://www.constitutionofindia.net/read/" target="_blank" rel="noopener">Original ↗</a>
+    <button type="button" id="expandAll">Expand all Parts</button>
+  </div>
+</nav>
+
+<div class="orig-banner">
+  <a href="https://www.constitutionofindia.net/read/" target="_blank" rel="noopener">
+    <div>
+      <strong>Constitution of India — full original text</strong><br>
+      <span>Open the authentic reader on constitutionofindia.net. Use it side-by-side while you click articles here.</span>
+    </div>
+    <span style="font-weight:800;color:var(--accent)">Open reader →</span>
+  </a>
+</div>
+
+<main>
+<div id="hits" class="card"></div>
+
+<!-- Study drawer -->
+<div class="drawer-bg" id="drawerBg"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <header>
+    <button type="button" class="dclose" id="dclose" aria-label="Close">×</button>
+    <div class="dmeta" id="dPart">Part</div>
+    <h3 id="dTitle">Article</h3>
+    <div class="dmeta" id="dSub"></div>
+  </header>
+  <div class="dbody">
+    <div class="block" style="background:rgba(232,184,74,.08);border-color:rgba(232,184,74,.35)"><h4>Original text (Constitution of India)</h4><div id="dOrig" style="white-space:pre-wrap;font-family:Georgia,serif;font-size:.92rem;line-height:1.7;color:#f4efe4"></div></div>
+    <div class="block"><h4>Exam notes</h4><div id="dGist"></div></div>
+    <div class="block"><h4>How to remember</h4><div id="dMn"></div></div>
+    <div class="block"><h4>Part context</h4><div id="dCtx"></div></div>
+    <div class="links" id="dLinks"></div>
+  </div>
+</aside>
+
+<section class="sec" id="toc">
+  <h2>📑 <span>Index</span></h2>
+  <div class="card" style="font-size:.9rem;color:#c9d4ef">
+    <ol style="margin-left:18px;line-height:1.8">
+      <li><a href="#preamble" style="color:var(--accent)">Preamble</a> — keywords, amendments, Berubari / Kesavananda</li>
+      <li><a href="#parts" style="color:var(--accent)">22 Parts</a> — what each deals with + star articles + light map of the rest</li>
+      <li><a href="#schedules" style="color:var(--accent)">12 Schedules</a> — TEARS OF OLD PM mnemonic</li>
+      <li><a href="#writs" style="color:var(--accent)">Writs only</a> — HCMPQ + Art.32 vs 226</li>
+      <li><a href="#amendments" style="color:var(--accent)">Amendment Acts</a> — famous Constitution Amendment Acts (full names)</li>
+      <li><a href="https://www.constitutionofindia.net/read/" target="_blank" rel="noopener" style="color:var(--accent)">Original Constitution reader ↗</a></li>
+      <li><a href="#bodies" style="color:var(--accent)">Bodies</a> — Constitutional / Statutory / Regulatory + parent Act</li>
+      <li><a href="#story" style="color:var(--accent)">Hindi story</a> — one narrative to hold the Constitution skeleton</li>
+      <li><a href="#flash" style="color:var(--accent)">Flashcards</a> + <a href="#mcqs" style="color:var(--accent)">MCQs</a></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="preamble">
+  <h2>📜 <span>Preamble</span> — full original text (tap gold words)</h2>
+  <p class="lead">42nd Amendment (1976) added <b>Socialist, Secular</b> and <b>integrity</b>. Part of the Constitution (Kesavananda Bharati, 1973). Basic structure cannot be destroyed.</p>
+  <div class="card preamble">
+    <p style="font-size:1.05rem;margin-bottom:14px;line-height:1.85;font-family:Georgia,serif">
+      WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India into a
+      <span class="kw" data-k="sovereign">SOVEREIGN</span>
+      <span class="kw" data-k="socialist">SOCIALIST</span>
+      <span class="kw" data-k="secular">SECULAR</span>
+      <span class="kw" data-k="democratic">DEMOCRATIC</span>
+      <span class="kw" data-k="republic">REPUBLIC</span>
+      and to secure to all its citizens:<br><br>
+      <span class="kw" data-k="justice">JUSTICE</span>, social, economic and political;<br>
+      <span class="kw" data-k="liberty">LIBERTY</span> of thought, expression, belief, faith and worship;<br>
+      <span class="kw" data-k="equality">EQUALITY</span> of status and of opportunity;<br>
+      and to promote among them all<br>
+      <span class="kw" data-k="fraternity">FRATERNITY</span>
+      assuring the dignity of the individual and the unity and
+      <span class="kw" data-k="integrity">integrity</span>
+      of the Nation;<br><br>
+      IN OUR CONSTITUENT ASSEMBLY this twenty-sixth day of November, 1949, do
+      HEREBY ADOPT, ENACT AND GIVE TO OURSELVES THIS CONSTITUTION.
+    </p>
+    <div class="kw-note" id="kwNote">Tap a gold keyword for meaning.</div>
+    <div class="mn">🧠 Hindi: <b>“हम लोग → संप्रभु + समाजवादी + धर्मनिरपेक्ष + लोकतांत्रिक गणराज्य”</b> · न्याय–स्वतंत्रता–समानता–बंधुत्व। Date: 26 Nov 1949 (adopted) · Republic Day 26 Jan 1950 (commenced). Also: <a href="https://www.constitutionofindia.net/read/" target="_blank" rel="noopener" style="color:var(--accent)">read full Constitution ↗</a></div>
+  </div>
+</section>
+
+<section class="sec" id="parts">
+  <h2>📚 <span>22 Parts</span> — open any Part</h2>
+  <p class="lead">Legend: <span class="chip exam">EXAM</span> = UPSC favourite. <b>Click any article</b> → study drawer opens with <b>original constitutional wording</b> first, then exam notes.</p>
+  <p class="hint-click">👉 Open a Part → tap <b>Study →</b> on an article. Cross-check anytime on constitutionofindia.net.</p>
+  <div class="legend">
+    <span>Search box also jumps to articles</span>
+  </div>
+  <div class="filters" id="partFilters">
+    <button type="button" class="on" data-f="all">All Parts</button>
+    <button type="button" data-f="rights">Rights / Duties</button>
+    <button type="button" data-f="union">Union Govt</button>
+    <button type="button" data-f="state">States / Local</button>
+    <button type="button" data-f="judiciary">Judiciary</button>
+    <button type="button" data-f="fed">Federal / Finance</button>
+    <button type="button" data-f="emergency">Emergency / Amend</button>
+  </div>
+  <div id="partsMount" class="parts-layout"></div>
+</section>
+
+<section class="sec" id="schedules">
+  <h2>🗓️ <span>12 Schedules</span></h2>
+  <div class="card">
+    <div class="mn" style="margin-top:0">🧠 <b>TEARS OF OLD PM</b><br>
+      <b>T</b>erritory (1) · <b>E</b>moluments (2) · <b>A</b>ffirmations/Oaths (3) · <b>R</b>ajya Sabha allocation (4) · <b>S</b>cheduled Areas &amp; Tribes admin (5) ·
+      <b>O</b>ther tribal areas / Assam etc. (6) · <b>F</b>ederal lists — Union/State/Concurrent (7) ·
+      <b>O</b>fficial Languages (8) · <b>L</b>and reforms / 31B (9) · <b>D</b>efection anti- (10) ·
+      <b>P</b>anchayat (11) · <b>M</b>unicipality (12)<br>
+      Hindi: <b>“टीयर्स ऑफ़ ओल्ड पीएम”</b> — याद रखो पूरा शब्द।
+    </div>
+  </div>
+  <div id="schedMount"></div>
+</section>
+
+<section class="sec" id="writs">
+  <h2>✍️ <span>Writs only</span> — HCMPQ</h2>
+  <p class="lead">Five writs under Art.32 (SC) &amp; Art.226 (HC). Hindi mnemonic: <b>“हैबेअस कोर्पस मांडमस प्रोहिबिशन सर्टिओरारी क्वो वारंटो”</b> → <b>HCMPQ</b>.</p>
+  <div class="card mn" style="margin-bottom:12px">🧠 <b>32 vs 226:</b> SC (32) = only Fundamental Rights · HC (226) = FRs + “any other purpose” (legal rights too). 32 is itself a FR; 226 is constitutional power but not a FR. During Emergency, enforcement of many FRs can be suspended (359) — 44th protects 20 &amp; 21.</div>
+  <div class="grid" id="writsMount"></div>
+  <table>
+    <tr><th>Compare</th><th>Art.32 (SC)</th><th>Art.226 (HC)</th></tr>
+    <tr><td>Against whom / for what</td><td>Primarily State; enforce FRs</td><td>State + wider “any other purpose”</td></tr>
+    <tr><td>Territory</td><td>All-India</td><td>HC territory / cause of action (post-amendment reach)</td></tr>
+    <tr><td>Can Parliament suspend?</td><td>Enforcement suspendable under 359 (with limits)</td><td>Not a FR — different treatment</td></tr>
+    <tr><td>Ambedkar line</td><td>“Heart and soul”</td><td>Workhorse of Indian public law</td></tr>
+  </table>
+</section>
+
+<section class="sec" id="amendments">
+  <h2>🔧 <span>Famous Amendment Acts</span></h2>
+  <p class="lead">Full Act-style names + what changed. Filter by theme. Procedure: Art.368 — special majority; some need ratification by half the States.</p>
+  <div class="filters" id="amFilters">
+    <button type="button" class="on" data-am="all">All</button>
+    <button type="button" data-am="rights">Rights / Duties</button>
+    <button type="button" data-am="fed">Federal / States</button>
+    <button type="button" data-am="local">Local bodies</button>
+    <button type="button" data-am="jud">Judiciary / offices</button>
+    <button type="button" data-am="econ">Property / Economy / GST</button>
+  </div>
+  <div id="amMount"></div>
+  <div class="trap">⚠️ Basic structure (Kesavananda, 1973) limits amending power — e.g. NJAC 99th struck down. 9th Schedule laws still open to basic-structure review after I.R. Coelho (2007).</div>
+</section>
+
+<section class="sec" id="bodies">
+  <h2>🏛️ <span>Bodies</span> — Constitutional · Statutory · Regulatory</h2>
+  <p class="lead">Constitutional = born in Constitution. Statutory = born by an Act of Parliament/State. Regulatory = usually statutory + market/sector control.</p>
+  <div class="filters" id="bodyFilters">
+    <button type="button" class="on" data-b="all">All</button>
+    <button type="button" data-b="const">Constitutional</button>
+    <button type="button" data-b="stat">Statutory</button>
+    <button type="button" data-b="reg">Regulatory</button>
+  </div>
+  <div id="bodiesMount" class="grid"></div>
+  <div class="trap">⚠️ Trap: NITI Aayog / Planning Commission = <b>executive resolution</b>, neither constitutional nor statutory. NHRC = statutory (PHRA 1993). CAG / ECI / UPSC / FC = constitutional. Lokpal = statutory (Lokpal Act 2013).</div>
+</section>
+
+<section class="sec" id="story">
+  <h2>📖 <span>एक कहानी</span> — पूरा कंकाल</h2>
+  <div class="card" style="font-size:.92rem;line-height:1.75;color:#d7e0f5">
+    भारत के लोग एक घर बनाते हैं — नाम <b>संविधान</b>। दरवाज़े पर लिखा है <b>प्रस्तावना</b>: हम स्वतंत्र, समाजवादी, धर्मनिरपेक्ष, लोकतांत्रिक गणराज्य हैं।<br><br>
+    घर में सबसे पहले <b>नागरिक</b> (भाग II) घुसते हैं, फिर दीवारों पर लिखे <b>मूल अधिकार</b> (III) — इनमें दिल है <b>32</b> (संवैधानिक उपचार)। बगल में सलाह की तख्ती <b>DPSP</b> (IV) और नागरिकों के <b>कर्तव्य</b> (IVA)।<br><br>
+    ऊपर बैठता है <b>राष्ट्रपति + संसद + मंत्रिपरिषद</b> (V)। राज्यों में <b>राज्यपाल + विधानमंडल</b> (VI)। दोनों के बीच पुल = <b>केंद्र–राज्य संबंध</b> (XI) और पैसे का बँटवारा <b>वित्त</b> (XII) — <b>वित्त आयोग Art.280</b>।<br><br>
+    झगड़े सुलझाती है <b>न्यायापालिका</b> (SC 124+, HC 214+)। चुनावी पहरेदार <b>ECI 324</b>, नौकरी वाली भर्ती <b>UPSC 315</b>, हिसाब रखने वाला <b>CAG 148</b>। गाँव–शहर की सफाई–सड़क <b>Panchayat 243</b> / <b>Municipality 243P</b>।<br><br>
+    खतरा आए तो <b>आपातकाल 352/356/360</b> (XVIII)। घर की मरम्मत <b>368</b> (XX) से — पर बुनियाद (<b>basic structure</b>) नहीं तोड़ सकते। बारह <b>अनुसूचियाँ</b> = घर की अलमारियाँ (TEARS OF OLD PM)।
+  </div>
+</section>
+
+<section class="sec" id="flash">
+  <h2>🎴 <span>Flashcards</span> <small style="color:var(--muted);font-weight:500">(tap to flip)</small></h2>
+  <div class="flash-grid" id="flashMount"></div>
+</section>
+
+<section class="sec" id="mcqs">
+  <h2>📝 <span>MCQs</span></h2>
+  <div id="mcqMount"></div>
+</section>
+</main>
+<footer>CA Notes · Polity Mini Constitution · NCERT + Laxmikanth + PYQ favourites · Open locally in browser</footer>
+
+<script src="polity_original_text.js"></script>
+<script>
+/* ========== DATA ========== */
+const KW = {
+  sovereign:{t:'Sovereign',d:'No external control. India can make its own laws & foreign policy. Hindi: संप्रभु — कोई बाहरी मालिक नहीं।'},
+  socialist:{t:'Socialist (42nd, 1976)',d:'Social & economic equality direction. Not classical Marxism — mixed economy / welfare tilt. Hindi: समाजवादी — अमीर-गरीब खाई कम।'},
+  secular:{t:'Secular (42nd, 1976)',d:'No state religion; equal respect / non-preference among religions (Indian model). Art.25–28 operationalise it.'},
+  democratic:{t:'Democratic',d:'People’s rule via universal adult franchise + free elections. Representative democracy.'},
+  republic:{t:'Republic',d:'Head of state is elected, not hereditary. President = republican head.'},
+  justice:{t:'Justice — S/E/P',d:'Social (no discrimination), Economic (DPSP, equal pay etc.), Political (franchise, office access).'},
+  liberty:{t:'Liberty',d:'Thought, expression, belief, faith, worship — linked to Art.19 & 25–28.'},
+  equality:{t:'Equality',d:'Status + opportunity — Art.14–18. Affirmative action sits with equality idea.'},
+  fraternity:{t:'Fraternity',d:'Brotherhood → dignity of individual + unity (& integrity after 42nd) of nation.'},
+  integrity:{t:'Integrity (42nd)',d:'Territorial & national integrity emphasised after Emergency-era amendment.'}
+};
+
+const PARTS = [
+{id:'I',n:'I',title:'The Union & its Territory',arts:'1–4',tags:['fed'],deal:'India = Union of States; admission/establishment of new states; alteration of areas/boundaries/names.',
+ mn:'🧠 भाग I = नक्शा। Art.1 India=Union of States (Indestructible Union of destructible states — classic line). Art.3 Parliament can redraw states (Bill needs President’s recommendation; President refers to state legislature — opinion not binding).',
+ star:[
+  {a:'1',t:'Name and territory of the Union',x:1,d:'India, that is Bharat, shall be a Union of States.'},
+  {a:'2',t:'Admission / establishment of new States',x:1,d:'Parliament may admit or establish new States on such terms as it thinks fit.'},
+  {a:'3',t:'Formation of new States; alteration of areas, boundaries, names',x:1,d:'Simple majority of Parliament. State legislature views invited, not binding. No constitutional amendment needed for reorganisation under Art.3.'},
+  {a:'4',t:'Laws under 2 & 3 not “amendments” under 368',x:1,d:'Reorg laws ≠ Art.368 amendments.'}
+ ],
+ light:'Also: schedules of states/UTs linked via First Schedule updates.'},
+{id:'II',n:'II',title:'Citizenship',arts:'5–11',tags:['rights'],deal:'Who was citizen at commencement; Parliament’s power to regulate citizenship by law.',
+ mn:'🧠 भाग II = पासपोर्ट का दरवाज़ा। Constitution gives framework; details = Citizenship Act, 1955 (statutory). OCI/PIO are Act concepts, not Part II articles.',
+ star:[
+  {a:'5',t:'Citizenship at the commencement of the Constitution',x:1},
+  {a:'6',t:'Rights of citizenship of certain persons who have migrated from Pakistan',x:1},
+  {a:'9',t:'Voluntary acquisition of foreign citizenship → ceases to be Indian citizen',x:1},
+  {a:'11',t:'Parliament to regulate citizenship by law',x:1,d:'Constitutional hook for Citizenship Act 1955 / CAA debates.'}
+ ],
+ light:'Arts 7–8 (migrants / persons of Indian origin abroad), 10 (continuance of rights).'},
+{id:'III',n:'III',title:'Fundamental Rights',arts:'12–35',tags:['rights'],deal:'Justiciable rights against the State (Art.12). Heart of the Constitution for exams.',
+ mn:'🧠 “Equality 14–18 · Freedom 19–22 · Exploit 23–24 · Religion 25–28 · Culture 29–30 · Remedies 32–35”. Hindi: समानता–स्वतंत्रता–शोषण–धर्म–संस्कृति–उपचार। Art.32 = heart & soul (Ambedkar).',
+ star:[
+  {a:'12',t:'Definition of State',x:1,d:'Govt & Parliament of India; State govt & legislature; local/other authorities under control of Govt of India. Expands FR horizontal reach vs State.'},
+  {a:'13',t:'Laws inconsistent with FRs void',x:1,d:'Judicial review bedrock. “Law” includes ordinance, bye-law, rule, notification, custom/usage.'},
+  {a:'14',t:'Equality before law & equal protection',x:1},
+  {a:'15',t:'No discrimination on religion, race, caste, sex, place of birth',x:1,d:'15(3) women/children; 15(4) SEBC/SC/ST (1st Am.); 15(5) education (93rd); 15(6) EWS (103rd).'},
+  {a:'16',t:'Equality of opportunity in public employment',x:1,d:'16(4) reservation; 16(4A) promotion (77th); 16(6) EWS (103rd).'},
+  {a:'17',t:'Abolition of Untouchability',x:1},
+  {a:'18',t:'Abolition of titles',x:1,d:'Military/academic distinctions OK. Bharat Ratna etc. are not “titles” in prohibited sense (court view).'},
+  {a:'19',t:'Six freedoms (citizens)',x:1,d:'Speech/expression, assembly, association, movement, residence, profession. 19(1)(f) property deleted by 44th — now Art.300A legal right.'},
+  {a:'20',t:'Protection in respect of conviction',x:1,d:'Ex-post-facto (criminal), double jeopardy, self-incrimination.'},
+  {a:'21',t:'Protection of life & personal liberty',x:1,d:'Expanded: privacy (Puttaswamy), clean environment, speedy trial, livelihood, dignity… Procedure must be fair, just, reasonable (Maneka).'},
+  {a:'21A',t:'Right to Education (6–14 yrs)',x:1,d:'86th Amendment 2002; RTE Act 2009.'},
+  {a:'22',t:'Protection against arrest & detention',x:1,d:'Ordinary arrest rights + preventive detention safeguards.'},
+  {a:'23',t:'Prohibition of traffic in human beings & forced labour',x:1},
+  {a:'24',t:'No child labour in factories etc. under 14',x:1},
+  {a:'25',t:'Freedom of conscience & free profession, practice, propagation of religion',x:1},
+  {a:'26',t:'Freedom to manage religious affairs',x:1},
+  {a:'27',t:'No tax for promotion of any particular religion',x:1},
+  {a:'28',t:'Religious instruction in certain educational institutions',x:1},
+  {a:'29',t:'Protection of interests of minorities (language/script/culture)',x:1},
+  {a:'30',t:'Minorities’ right to establish & administer educational institutions',x:1},
+  {a:'32',t:'Remedies for enforcement of FRs — Supreme Court',x:1,d:'Writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto. Suspendable under Emergency (with 44th limits on Art.21).'},
+  {a:'33',t:'Parliament may modify FRs for armed forces etc.',x:1},
+  {a:'34',t:'Restriction of FRs while martial law in force in any area',x:1},
+  {a:'35',t:'Legislation to give effect to certain FRs',x:1}
+ ],
+ light:'Art.31 omitted (property). Art.31A/31B/31C special savings (land reform, 9th Schedule, DPSP shield — with basic structure limits).'},
+{id:'IV',n:'IV',title:'Directive Principles (DPSP)',arts:'36–51',tags:['rights'],deal:'Non-justiciable socio-economic guidelines. Fundamental in governance (Art.37).',
+ mn:'🧠 DPSP buckets: Socialist (38,39,41,42,43,43A,47) · Gandhian (40,43,46,47,48) · Liberal-Intellectual (44,45,48A,49,50,51). Hindi: समाजवादी–गाँधीवादी–उदार। 42nd added 39A,43A,48A.',
+ star:[
+  {a:'36',t:'Definition of State (same as Art.12 for this Part)',x:1},
+  {a:'37',t:'DPSP non-justiciable but fundamental in governance',x:1},
+  {a:'38',t:'Social order; minimise inequalities',x:1},
+  {a:'39',t:'Policy principles — livelihood, resources, equal pay, child health…',x:1},
+  {a:'39A',t:'Equal justice & free legal aid',x:1},
+  {a:'40',t:'Organisation of village panchayats',x:1,d:'Gandhian — later 73rd operationalised.'},
+  {a:'41',t:'Right to work, education, public assistance',x:1},
+  {a:'44',t:'Uniform Civil Code',x:1},
+  {a:'45',t:'Early childhood care & education (recast by 86th)',x:1},
+  {a:'48',t:'Agriculture, animal husbandry; prohibit cow slaughter (organise)',x:1},
+  {a:'48A',t:'Environment & wildlife (42nd)',x:1},
+  {a:'50',t:'Separation of judiciary from executive',x:1},
+  {a:'51',t:'Promotion of international peace & security',x:1}
+ ],
+ light:'Also 42 (just & humane work; maternity), 43 (living wage), 43A (worker participation — 42nd), 46 (SC/ST/weaker sections), 47 (nutrition/public health; prohibit intoxicating drinks), 49 (monuments).'},
+{id:'IVA',n:'IVA',title:'Fundamental Duties',arts:'51A',tags:['rights'],deal:'Added by 42nd (1976) on Swaran Singh Committee. Originally 10; 11th by 86th (2002) — education of child 6–14.',
+ mn:'🧠 Duties = 51A (a) to (k). Not directly enforceable like FRs, but courts use them to interpret laws. Hindi: कर्तव्य संविधान के “नैतिक कंधे”.',
+ star:[
+  {a:'51A',t:'Fundamental Duties (a)–(k)',x:1,d:'Abide by Constitution & respect ideals/institutions/National Flag & Anthem; cherish freedom struggle ideals; uphold sovereignty/unity/integrity; defend country; promote harmony; preserve heritage; protect environment; develop scientific temper; safeguard public property; strive for excellence; parent/guardian — education opportunity for child 6–14 (k).'}
+ ],
+ light:'Only one article in this Part.'},
+{id:'V',n:'V',title:'The Union',arts:'52–151',tags:['union'],deal:'President, VP, Council of Ministers, Attorney-General, Parliament, Legislative procedure, Judiciary (SC), CAG.',
+ mn:'🧠 भाग V = दिल्ली का पावरहाउस। President 52–62 · COM 74–75 · AG 76 · Parliament 79–122 · SC 124–147 · CAG 148–151. Hindi story: राष्ट्रपति ताज, मंत्रिपरिषद दिमाग, संसद आवाज़, SC तराजू, CAG हिसाब।',
+ star:[
+  {a:'52',t:'President of India',x:1,d:'There shall be a President of India — Union executive head (nominal).'},
+  {a:'53',t:'Executive power of the Union',x:1,d:'Vested in President; exercised directly or through officers subordinate.'},
+  {a:'54',t:'Election of President',x:1,d:'Elected MPs (both Houses) + elected MLAs of States (not nominated MPs/MLAs; UT MLAs as provided).'},
+  {a:'55',t:'Manner of election of President',x:1,d:'Proportional representation by single transferable vote; uniform scale of MLA vote value + MP parity formula.'},
+  {a:'56',t:'Term of office of President',x:1,d:'5 years; eligible for re-election; may resign to VP; continues till successor enters.'},
+  {a:'57',t:'Eligibility for re-election',x:1},
+  {a:'58',t:'Qualifications for election as President',x:1,d:'Citizen; 35+ years; qualified for LS; not hold office of profit (exceptions).'},
+  {a:'59',t:'Conditions of President’s office',x:1,d:'No MP/MLA seat; emoluments (2nd Schedule); no diminution during term.'},
+  {a:'60',t:'Oath / affirmation by the President',x:1},
+  {a:'61',t:'Impeachment of President',x:1,d:'Violation of Constitution; charge in either House; 2/3 of total membership of investigating House; other House investigates.'},
+  {a:'62',t:'Time of holding election to fill vacancy & term of person elected',x:1},
+  {a:'63',t:'Vice-President of India',x:1},
+  {a:'64',t:'VP is ex-officio Chairman of Rajya Sabha',x:1},
+  {a:'65',t:'VP to act as President / discharge functions',x:1,d:'Vacancy / absence / illness of President.'},
+  {a:'66',t:'Election of Vice-President',x:1,d:'Members of both Houses (electoral college differs from President — no MLAs).'},
+  {a:'67',t:'Term of office of Vice-President',x:1,d:'5 years; removal by RS resolution agreed by LS (effective majority rules apply as text).'},
+  {a:'72',t:'Power of President to grant pardons etc.',x:1,d:'Union offences, court-martial, death sentence. Broader than Governor’s Art.161.'},
+  {a:'74',t:'Council of Ministers to aid & advise President',x:1,d:'42nd: advice binding; 44th: may require reconsideration once, then must act.'},
+  {a:'75',t:'Other provisions as to Ministers',x:1,d:'PM appointed by President; others on PM advice; collective responsibility to LS; 91st: COM size ≤ 15% of LS.'},
+  {a:'76',t:'Attorney-General for India',x:1,d:'Qualified to be SC judge; pleasure of President; right of audience in all courts; speak in Parliament, no vote.'},
+  {a:'77',t:'Conduct of business of the Government of India',x:1,d:'Authentication of orders; rules of business.'},
+  {a:'78',t:'Duties of PM as respects furnishing information to President',x:1,d:'Communicate COM decisions; submit for consideration if President requires.'},
+  {a:'79',t:'Constitution of Parliament',x:1,d:'President + Rajya Sabha + Lok Sabha.'},
+  {a:'80',t:'Composition of the Council of States (RS)',x:1,d:'Max 250; 12 nominated by President (art/literature/science/social service); rest elected by State Assemblies.'},
+  {a:'81',t:'Composition of the House of the People (LS)',x:1,d:'Max 550 (530 States + 20 UTs) + erstwhile Anglo-Indian path repealed by 104th.'},
+  {a:'82',t:'Readjustment after each census (delimitation)',x:1,d:'Freeze of seat allocation till first census after 2026 (84th/87th related).'},
+  {a:'83',t:'Duration of Houses of Parliament',x:1,d:'RS permanent (1/3 retire every 2 yrs); LS 5 years unless dissolved; Emergency can extend LS one year at a time.'},
+  {a:'84',t:'Qualification for membership of Parliament',x:1,d:'Citizen; LS 25+, RS 30+; other qualifications by law.'},
+  {a:'85',t:'Sessions of Parliament, prorogation and dissolution',x:1,d:'Max 6 months gap between sessions.'},
+  {a:'86',t:'Right of President to address & send messages',x:1},
+  {a:'87',t:'Special address by the President',x:1,d:'At commencement of first session each year / after general election.'},
+  {a:'88',t:'Rights of Ministers & AG as respects Houses',x:1},
+  {a:'100',t:'Voting in Houses; power of Houses to act notwithstanding vacancies; quorum',x:1,d:'Quorum = 1/10 of total membership of the House.'},
+  {a:'105',t:'Powers, privileges etc. of Houses & members',x:1,d:'Freedom of speech in Parliament; privileges till defined = those of UK Commons at commencement (as adapted by courts/practice).'},
+  {a:'107',t:'Provisions as to introduction & passing of Bills',x:1,d:'Ordinary bills; lapse on dissolution rules.'},
+  {a:'108',t:'Joint sitting of both Houses',x:1,d:'Ordinary bills deadlock only — NOT Money Bills / Constitution Amendment Bills.'},
+  {a:'109',t:'Special procedure for Money Bills',x:1,d:'Only LS introduces; RS 14 days recommendatory.'},
+  {a:'110',t:'Definition of Money Bills',x:1,d:'Speaker’s certificate final. Tax, borrowing, Consolidated Fund…'},
+  {a:'111',t:'Assent to Bills by President',x:1,d:'Assent / withhold / return (except Money Bill) once.'},
+  {a:'112',t:'Annual Financial Statement (Budget)',x:1},
+  {a:'113',t:'Procedure in Parliament with respect to estimates',x:1},
+  {a:'114',t:'Appropriation Bills',x:1},
+  {a:'115',t:'Supplementary, additional or excess grants',x:1},
+  {a:'116',t:'Votes on account, votes of credit, exceptional grants',x:1},
+  {a:'117',t:'Special provisions as to financial Bills',x:1},
+  {a:'118',t:'Rules of procedure',x:1},
+  {a:'120',t:'Language to be used in Parliament',x:1},
+  {a:'121',t:'Restriction on discussion in Parliament (judges’ conduct)',x:1},
+  {a:'122',t:'Courts not to inquire into parliamentary proceedings',x:1},
+  {a:'123',t:'Power of President to promulgate Ordinances',x:1,d:'When both Houses not in session; same force as Act; must be laid; 6 weeks of reassembly max life unless approved.'},
+  {a:'124',t:'Establishment and constitution of Supreme Court',x:1,d:'CJ + other judges (strength by Parliament). Appointment via Collegium practice + NJAC struck down (99th).'},
+  {a:'125',t:'Salaries etc. of Judges',x:1},
+  {a:'126',t:'Appointment of acting Chief Justice',x:1},
+  {a:'127',t:'Appointment of ad hoc Judges',x:1},
+  {a:'128',t:'Attendance of retired Judges at sittings of the SC',x:1},
+  {a:'129',t:'Supreme Court to be a court of record',x:1,d:'Contempt power.'},
+  {a:'130',t:'Seat of Supreme Court',x:1,d:'Delhi; CJ may other place with President approval.'},
+  {a:'131',t:'Original jurisdiction of the Supreme Court',x:1,d:'Centre–State / State–State disputes (with exceptions).'},
+  {a:'132',t:'Appellate jurisdiction — constitutional questions from HC',x:1},
+  {a:'133',t:'Appellate jurisdiction — civil matters from HC',x:1},
+  {a:'134',t:'Appellate jurisdiction — criminal matters from HC',x:1},
+  {a:'134A',t:'Certificate for appeal to the Supreme Court',x:1},
+  {a:'136',t:'Special leave to appeal by the Supreme Court',x:1,d:'SLP — widest residual appellate power; discretionary.'},
+  {a:'137',t:'Review of judgments or orders by the Supreme Court',x:1},
+  {a:'139',t:'Conferment on SC of powers to issue certain writs',x:1,d:'Parliament may confer — Art.32 already gives FR writs.'},
+  {a:'139A',t:'Transfer of certain cases',x:1},
+  {a:'141',t:'Law declared by Supreme Court binding on all courts',x:1},
+  {a:'142',t:'Enforcement of decrees & orders of SC; complete justice',x:1,d:'Famous “complete justice” clause — used carefully.'},
+  {a:'143',t:'Power of President to consult Supreme Court',x:1,d:'Advisory opinion — not binding as precedent in same way, but highly persuasive.'},
+  {a:'144',t:'Civil & judicial authorities to act in aid of the SC',x:1},
+  {a:'145',t:'Rules of Court etc.',x:1,d:'Constitution benches — 5+ judges for substantial constitutional questions (practice/rules).'},
+  {a:'148',t:'Comptroller and Auditor-General of India',x:1,d:'Appointed by President; removal like SC judge; oath; salary charged.'},
+  {a:'149',t:'Duties and powers of the CAG',x:1},
+  {a:'150',t:'Form of accounts of the Union and of the States',x:1,d:'President on CAG advice.'},
+  {a:'151',t:'Audit reports',x:1,d:'Union → President → Parliament; State → Governor → Legislature.'}
+ ],
+ light:'Also: 68–71 (VP misc./disputes on Presidential election — SC), 89–98 (Officers of Houses, Secretariat), 99–104 (voting/seats), 119 financial procedure regulation, 146–147 SC officers/interpretation. Art.32 writs live in Part III but are SC’s signature power.'},
+{id:'VI',n:'VI',title:'The States',arts:'152–237',tags:['state'],deal:'State executive, legislature, High Courts — mirrors Union pattern with differences (Governor, no joint sitting usually, etc.).',
+ mn:'🧠 भाग VI = राज्य की कॉपी-बुक। Governor 153+ · COM 163–164 · AG(S) 165 · Legislature 168+ · HC 214+ · District judges 233+. Hindi: राज्यपाल मुकुट, CM सरकार, विधानसभा आवाज़, HC तराजू।',
+ star:[
+  {a:'152',t:'Definition of “State” for this Part',x:1,d:'Does not include J&K historically in old text path — learn current applicability carefully; generally Part VI applies to States.'},
+  {a:'153',t:'Governors of States',x:1,d:'One Governor per State; same person may be Governor of 2+ States.'},
+  {a:'154',t:'Executive power of State',x:1},
+  {a:'155',t:'Appointment of Governor',x:1,d:'By President (effectively Centre).'},
+  {a:'156',t:'Term of office of Governor',x:1,d:'5 years; holds office during pleasure of President — can be removed anytime.'},
+  {a:'157',t:'Qualifications for appointment as Governor',x:1,d:'Citizen; 35+ years.'},
+  {a:'158',t:'Conditions of Governor’s office',x:1,d:'No MP/MLA; emoluments; no office of profit.'},
+  {a:'159',t:'Oath / affirmation by the Governor',x:1},
+  {a:'160',t:'Discharge of functions of Governor in certain contingencies',x:1},
+  {a:'161',t:'Power of Governor to grant pardons etc.',x:1,d:'Against State law offences. No court-martial; death sentence mercy concurrent issues with Union — President has Art.72 for death.'},
+  {a:'163',t:'Council of Ministers to aid & advise Governor',x:1,d:'Except discretion functions (controversial — Bommai / Nabam Rebia lines).'},
+  {a:'164',t:'Other provisions as to Ministers',x:1,d:'CM appointed by Governor; collective responsibility to Assembly; Tribal Welfare Minister in some States; 91st: COM ≤ 15% of Assembly (min 12).'},
+  {a:'165',t:'Advocate-General for the State',x:1},
+  {a:'166',t:'Conduct of business of the Government of a State',x:1},
+  {a:'167',t:'Duties of Chief Minister — information to Governor',x:1,d:'Mirror of Art.78.'},
+  {a:'168',t:'Constitution of Legislatures in States',x:1,d:'Unicameral or bicameral (Assembly + Council).'},
+  {a:'169',t:'Abolition or creation of Legislative Councils',x:1,d:'Parliament by law if State Assembly resolution (special majority of Assembly).'},
+  {a:'170',t:'Composition of the Legislative Assemblies',x:1},
+  {a:'171',t:'Composition of the Legislative Councils',x:1,d:'Indirectly elected + nominated mix; max 1/3 of Assembly strength.'},
+  {a:'172',t:'Duration of State Legislatures',x:1,d:'Assembly 5 years; Council permanent (like RS pattern).'},
+  {a:'173',t:'Qualification for membership of State Legislature',x:1},
+  {a:'174',t:'Sessions of State Legislature, prorogation and dissolution',x:1,d:'Max 6 months gap — Governor summons.'},
+  {a:'175',t:'Right of Governor to address & send messages',x:1},
+  {a:'176',t:'Special address by the Governor',x:1},
+  {a:'178',t:'Speaker & Deputy Speaker of the Assembly',x:1},
+  {a:'190',t:'Vacation of seats; resignation',x:1},
+  {a:'191',t:'Disqualifications for membership',x:1,d:'Office of profit, unsound mind, etc. + 10th Schedule defection.'},
+  {a:'192',t:'Decision on questions as to disqualification',x:1,d:'Governor’s decision — Election Commission opinion binding (for Art.191 grounds except defection).'},
+  {a:'194',t:'Powers, privileges of Houses & members',x:1,d:'State counterpart of Art.105.'},
+  {a:'198',t:'Special procedure for Money Bills in States',x:1},
+  {a:'199',t:'Definition of Money Bills (State)',x:1},
+  {a:'200',t:'Assent to Bills — Governor',x:1,d:'Assent / withhold / return / reserve for President. Reservation key exam point.'},
+  {a:'201',t:'Bills reserved for consideration of President',x:1,d:'President may assent / withhold / return (if not Money Bill).'},
+  {a:'202',t:'Annual financial statement (State Budget)',x:1},
+  {a:'205',t:'Supplementary etc. grants (State)',x:1},
+  {a:'207',t:'Special provisions as to financial Bills (State)',x:1},
+  {a:'208',t:'Rules of procedure (State)',x:1},
+  {a:'213',t:'Power of Governor to promulgate Ordinances',x:1,d:'When House(s) not in session; instructions from President sometimes required (when Bill would need reservation).'},
+  {a:'214',t:'High Courts for States',x:1},
+  {a:'215',t:'High Courts to be courts of record',x:1,d:'Contempt power.'},
+  {a:'216',t:'Constitution of High Courts',x:1},
+  {a:'217',t:'Appointment & conditions of office of a HC Judge',x:1,d:'President after consultation (Collegium practice). Age 62.'},
+  {a:'222',t:'Transfer of a Judge from one HC to another',x:1},
+  {a:'224',t:'Appointment of additional & acting Judges',x:1},
+  {a:'226',t:'Power of High Courts to issue certain writs',x:1,d:'FRs + “for any other purpose”. Territorial reach — cause of action. Wider than Art.32.'},
+  {a:'227',t:'Power of superintendence over all courts by the HC',x:1},
+  {a:'228',t:'Transfer of certain cases to High Court',x:1},
+  {a:'229',t:'Officers & servants and the expenses of High Courts',x:1},
+  {a:'231',t:'Establishment of a common High Court for two or more States',x:1},
+  {a:'233',t:'Appointment of district judges',x:1,d:'Governor with HC consultation; advocate with 7 yrs practice etc.'},
+  {a:'234',t:'Recruitment of persons other than district judges to judicial service',x:1},
+  {a:'235',t:'Control over subordinate courts',x:1,d:'Vests in High Court — independence of district judiciary.'},
+  {a:'237',t:'Application of provisions to certain classes of magistrates',x:1}
+ ],
+ light:'Also: 179–189 Assembly officers/vacancies; 193–197 Council officers & privileges; 209–212 legislative procedure; 218–221/223/225 HC oath, salaries, acting CJ, jurisdiction; 233A validation. No joint sitting article like 108 for States (Councils differ).'},
+{id:'VIII',n:'VIII',title:'Union Territories',arts:'239–242',tags:['state','fed'],deal:'Admin of UTs; special for Puducherry / Delhi (239A / 239AA).',
+ mn:'🧠 UT = President via Administrator/LG. Delhi = 69th Am. Art.239AA — Legislative Assembly but land/police/public order with Centre (broadly).',
+ star:[
+  {a:'239',t:'Administration of UTs',x:1},
+  {a:'239A',t:'Legislatures/COM for certain UTs (Puducherry)',x:1},
+  {a:'239AA',t:'Special provisions for NCT of Delhi',x:1},
+  {a:'240',t:'President’s power to make regulations for certain UTs',x:1}
+ ],
+ light:'Part VII (Part-B States) repealed. Art.241 HC for UTs.'},
+{id:'IX',n:'IX',title:'The Panchayats',arts:'243–243O',tags:['state'],deal:'73rd Amendment 1992 — constitutional status to rural local bodies.',
+ mn:'🧠 243 = गाँव। Gram Sabha, 3 tiers, reservations, SEC, SFC, 11th Schedule (29 subjects).',
+ star:[
+  {a:'243',t:'Definitions',x:1},
+  {a:'243A',t:'Gram Sabha',x:1},
+  {a:'243B',t:'Constitution of Panchayats',x:1},
+  {a:'243D',t:'Reservation of seats',x:1},
+  {a:'243I',t:'State Finance Commission for Panchayats',x:1},
+  {a:'243K',t:'State Election Commission (Panchayats)',x:1}
+ ],
+ light:'243C–243O: composition, duration (5 yrs), disqualification, powers/authority, elections bar courts (243O), Part not apply certain areas fully (243M).'},
+{id:'IXA',n:'IXA',title:'The Municipalities',arts:'243P–243ZG',tags:['state'],deal:'74th Amendment 1992 — urban local bodies. 12th Schedule (18 subjects).',
+ mn:'🧠 243P onwards = शहर। Nagar Panchayat / Municipal Council / Municipal Corporation.',
+ star:[
+  {a:'243P',t:'Definitions',x:1},
+  {a:'243Q',t:'Constitution of Municipalities',x:1},
+  {a:'243W',t:'Powers/authority/responsibilities of Municipalities',x:1},
+  {a:'243Y',t:'Finance Commission (same SFC can cover municipalities)',x:1},
+  {a:'243ZA',t:'Elections to Municipalities — SEC',x:1}
+ ],
+ light:'Wards committees, reservations, duration, District Planning Committee 243ZD, Metropolitan Planning Committee 243ZE.'},
+{id:'IXB',n:'IXB',title:'Co-operative Societies',arts:'243ZH–243ZT',tags:['state'],deal:'97th Amendment 2011 — right to form co-ops also read with Art.19(1)(c); Part IXB structure.',
+ mn:'🧠 सहकारिता = 97th. Exam: multi-state co-ops still under Union law; Part IXB focuses state co-ops.',
+ star:[{a:'243ZI',t:'Incorporation of co-operative societies',x:1},{a:'243ZJ',t:'Number & term of board members',x:1}],
+ light:'243ZH–ZT full cluster on elections, board supersession, audit, multi-state carve-outs.'},
+{id:'X',n:'X',title:'Scheduled & Tribal Areas',arts:'244–244A',tags:['fed','state'],deal:'5th Schedule (Scheduled Areas/Tribes in states other than Assam etc.) & 6th Schedule (tribal areas in Assam, Meghalaya, Tripura, Mizoram).',
+ mn:'🧠 5th = TEA (Tribal advisory) · 6th = ADC (Autonomous District Councils) in NE four.',
+ star:[
+  {a:'244',t:'Administration of Scheduled Areas & Tribal Areas',x:1},
+  {a:'244A',t:'Formation of autonomous State in Assam',x:1}
+ ],
+ light:'Details live mostly in Schedules 5 & 6.'},
+{id:'XI',n:'XI',title:'Relations between Union & States',arts:'245–263',tags:['fed'],deal:'Legislative & administrative relations; Inter-State Council.',
+ mn:'🧠 लिस्टें 7th Schedule में; लेख 245–255 कानून · 256–263 प्रशासन। Art.249/250/252/253 exam magnets.',
+ star:[
+  {a:'245',t:'Extent of laws by Parliament & State Legislatures',x:1},
+  {a:'246',t:'Subject-matter — Union/State/Concurrent Lists',x:1},
+  {a:'248',t:'Residuary powers of legislation — Parliament',x:1},
+  {a:'249',t:'RS can empower Parliament on State List (national interest)',x:1},
+  {a:'250',t:'Parliament power over State List during Emergency',x:1},
+  {a:'252',t:'Parliament legislates for 2+ states by consent',x:1},
+  {a:'253',t:'Legislation for international agreements',x:1},
+  {a:'254',t:'Inconsistency between Union & State laws (Concurrent)',x:1},
+  {a:'256',t:'States’ obligation — Union executive directions',x:1},
+  {a:'262',t:'Adjudication of inter-State river water disputes',x:1},
+  {a:'263',t:'Inter-State Council',x:1}
+ ],
+ light:'247 (additional courts), 251 (inconsistency during Emergency), 257 (Union control over States for certain matters), 258/258A mutual delegation.'},
+{id:'XII',n:'XII',title:'Finance, Property, Contracts, Suits',arts:'264–300A',tags:['fed'],deal:'Finance Commission, distribution of revenues, GST Council (269A/279A), property, contracts, Art.300A property.',
+ mn:'🧠 पैसा भाग XII। Finance Commission 280 · Consolidated Fund 266 · Contingency Fund 267 · GST Council 279A (101st Am.).',
+ star:[
+  {a:'266',t:'Consolidated Funds & public accounts',x:1},
+  {a:'267',t:'Contingency Fund',x:1},
+  {a:'268',t:'Duties levied by Union but collected/appropriated by States',x:1},
+  {a:'269',t:'Taxes levied & collected by Union but assigned to States',x:1},
+  {a:'270',t:'Taxes levied & distributed between Union and States',x:1},
+  {a:'275',t:'Grants from Union to certain States',x:1},
+  {a:'280',t:'Finance Commission',x:1},
+  {a:'279A',t:'GST Council',x:1},
+  {a:'300A',t:'Persons not to be deprived of property save by authority of law',x:1,d:'Legal right (44th), not FR.'}
+ ],
+ light:'264–300 include borrowing (292–293), property succession, suits by/against Government (300).'},
+{id:'XIII',n:'XIII',title:'Trade, Commerce & Intercourse',arts:'301–307',tags:['fed'],deal:'Freedom of trade throughout India with restrictions.',
+ mn:'🧠 301 = व्यापार की आज़ादी पूरे भारत में; 302–304 = पाबंदियाँ।',
+ star:[{a:'301',t:'Freedom of trade, commerce and intercourse',x:1},{a:'302',t:'Parliament power to impose restrictions in public interest',x:1},{a:'304',t:'State restrictions on trade — non-discriminatory etc.',x:1}],
+ light:'303 (no preference/discrimination between states by Parliament/State, with exceptions), 305–307 savings/authority.'},
+{id:'XIV',n:'XIV',title:'Services under Union & States',arts:'308–323',tags:['union','state'],deal:'Public services; UPSC / SPSC; dismissal safeguards Art.311.',
+ mn:'🧠 UPSC 315–323 · Art.311 = सिविल सेवक को बेवजह मत निकालो (inquiry).',
+ star:[
+  {a:'309',t:'Recruitment & conditions of service — Acts/rules',x:1},
+  {a:'310',t:'Tenure at pleasure of President/Governor',x:1},
+  {a:'311',t:'Dismissal/removal/reduction in rank — protections',x:1},
+  {a:'312',t:'All-India Services',x:1},
+  {a:'315',t:'UPSC & State Public Service Commissions',x:1},
+  {a:'320',t:'Functions of Public Service Commissions',x:1}
+ ],
+ light:'316–319 appointment/removal/eligibility of members; 321–323 reports & expenses.'},
+{id:'XIVA',n:'XIVA',title:'Tribunals',arts:'323A–323B',tags:['judiciary'],deal:'Added by 42nd. Administrative tribunals; other tribunals for certain matters.',
+ mn:'🧠 323A = सेवा ट्रिब्यूनल (Centre/States) · 323B = अन्य विषय (tax, labour, land reforms…). Chandra Kumar: HC judicial review can’t be ousted.',
+ star:[{a:'323A',t:'Administrative tribunals',x:1},{a:'323B',t:'Tribunals for other matters',x:1}],
+ light:'Only these two articles.'},
+{id:'XV',n:'XV',title:'Elections',arts:'324–329A',tags:['union'],deal:'Election Commission; adult suffrage; bar on court interference in electoral matters (with limits).',
+ mn:'🧠 चुनाव = 324 ECI सुपरपावर · 325 एक जनरल इलेक्टोरल रोल · 326 वयस्क मताधिकार · 329 अदालत का बैर (election petition route).',
+ star:[
+  {a:'324',t:'Superintendence of elections — ECI',x:1},
+  {a:'325',t:'No person ineligible for inclusion in electoral roll on grounds of religion etc.',x:1},
+  {a:'326',t:'Elections to LS & Assemblies on adult suffrage',x:1},
+  {a:'327',t:'Parliament power — election laws',x:1},
+  {a:'329',t:'Bar to interference by courts in electoral matters',x:1}
+ ],
+ light:'328 State legislature election laws; 329A repealed (39th related).'},
+{id:'XVI',n:'XVI',title:'Special Provisions relating to certain classes',arts:'330–342A',tags:['rights'],deal:'Political safeguards for SC/ST/Anglo-Indians (Anglo-Indian LS nomination ended 104th); NCSC/NCST/NCBC.',
+ mn:'🧠 आरक्षण सीटें 330/332 · NCSC 338 · NCST 338A · NCBC 338B (102nd) · SEBC 342A.',
+ star:[
+  {a:'330',t:'Reservation of seats for SC/ST in Lok Sabha',x:1},
+  {a:'332',t:'Reservation of seats for SC/ST in State Assemblies',x:1},
+  {a:'335',t:'Claims of SC/ST to services — consistency with efficiency',x:1},
+  {a:'338',t:'National Commission for SCs',x:1},
+  {a:'338A',t:'National Commission for STs',x:1},
+  {a:'338B',t:'National Commission for Backward Classes',x:1},
+  {a:'342',t:'Scheduled Tribes — Presidential notification',x:1},
+  {a:'342A',t:'Socially & educationally backward classes',x:1}
+ ],
+ light:'331/333 Anglo-Indian (largely historical post-104th), 334 time limits extended repeatedly, 340 BC Commission, 341 SC list.'},
+{id:'XVII',n:'XVII',title:'Official Language',arts:'343–351',tags:['union'],deal:'Hindi in Devanagari as Union official language; English continue; Eighth Schedule languages; classical — by statute/policy.',
+ mn:'🧠 343 हिंदी · 348 उच्च न्यायालयों/संसद की भाषा · 351 हिंदी का विकास। 8th Schedule = 22 languages.',
+ star:[
+  {a:'343',t:'Official language of the Union',x:1},
+  {a:'344',t:'Commission & Committee of Parliament on official language',x:1},
+  {a:'348',t:'Language of SC, HCs, Acts, Bills',x:1},
+  {a:'351',t:'Directive for development of Hindi language',x:1}
+ ],
+ light:'345–347 State official languages / special provisions; 349–350 language of representation & grievances; 350A/350B mother tongue instruction & Linguistic Minorities Commissioner.'},
+{id:'XVIII',n:'XVIII',title:'Emergency Provisions',arts:'352–360',tags:['emergency'],deal:'National, State (President’s Rule), Financial Emergencies.',
+ mn:'🧠 352 युद्ध/बाह्य आक्रमण/सशस्त्र विद्रोह · 356 राज्य में संवैधानिक तंत्र फेल · 360 वित्तीय। 44th: “internal disturbance” → armed rebellion; FR21/20 protection.',
+ star:[
+  {a:'352',t:'Proclamation of Emergency (National)',x:1},
+  {a:'353',t:'Effect of Proclamation of Emergency',x:1},
+  {a:'356',t:'President’s Rule in States',x:1,d:'S.R. Bommai — judicial review; floor test; majority.'},
+  {a:'358',t:'Suspension of Art.19 during Emergency',x:1},
+  {a:'359',t:'Suspension of enforcement of FRs during Emergency',x:1},
+  {a:'360',t:'Financial Emergency — never imposed',x:1}
+ ],
+ light:'354–355 (revenue distribution / Union duty to protect States), 357 (powers under 356), 359A repealed.'},
+{id:'XIX',n:'XIX',title:'Miscellaneous',arts:'361–367',tags:['union'],deal:'Protection of President/Governors; abolition of privy purses trail; interpretation.',
+ mn:'🧠 361 = राष्ट्रपति/राज्यपाल पर मुकदमे की ढाल · 365 = दिशा-निर्देश न मानो तो 356 रास्ता · 367 व्याख्या।',
+ star:[
+  {a:'361',t:'Protection of President and Governors',x:1},
+  {a:'365',t:'Effect of failure to comply with Union directions',x:1},
+  {a:'367',t:'Interpretation',x:1}
+ ],
+ light:'361A (parliamentary proceedings publication protection), 362 omitted, 363/363A princely covenants/privy purses, 364 (railways etc.).'},
+{id:'XX',n:'XX',title:'Amendment of the Constitution',arts:'368',tags:['emergency'],deal:'Procedure to amend. Basic structure doctrine limits amending power.',
+ mn:'🧠 सिर्फ एक आर्टिकल — 368। सरल बहुमत वाले विषय 368 के बाहर भी होते हैं (जैसे Art.3)। Basic structure = Kesavananda.',
+ star:[{a:'368',t:'Power of Parliament to amend the Constitution & procedure',x:1,d:'(2) special majority; some need State ratification (federal features). 24th Am. affirmed Parliament’s power; Kesavananda limited destruction of basic structure.'}],
+ light:'Only Art.368 in Part XX.'},
+{id:'XXI',n:'XXI',title:'Temporary, Transitional & Special Provisions',arts:'369–392',tags:['fed','state'],deal:'J&K history (370 — diluted/abrogated in effect 2019), special provisions for States (371–371J), temporary powers.',
+ mn:'🧠 370 = J&K (exam hotspot) · 371A Nagaland · 371G Mizoram · 371J Hyderabad-Karnataka · 371 series = special state packages.',
+ star:[
+  {a:'370',t:'Temporary provisions — Jammu & Kashmir',x:1,d:'2019 presidential orders + reorganisation; still heavily asked historically & currently.'},
+  {a:'371',t:'Special provision — Maharashtra & Gujarat',x:1},
+  {a:'371A',t:'Nagaland',x:1},
+  {a:'371G',t:'Mizoram',x:1},
+  {a:'371J',t:'Karnataka (Hyderabad-Karnataka)',x:1}
+ ],
+ light:'369 temporary Union power; 371B–371I Assam, Manipur, Andhra, Sikkim, Arunachal, Goa etc.; 372 continuance of pre-Constitution laws.'},
+{id:'XXII',n:'XXII',title:'Short Title, Commencement, Authoritative Text…',arts:'393–395',tags:['union'],deal:'Name, commencement (26 Jan 1950), Hindi authoritative text (92nd related pathway), repeals.',
+ mn:'🧠 393 नाम · 394 शुरूआत · 395 Government of India Act 1935 आदि का repeal (with savings).',
+ star:[{a:'393',t:'Short title — “the Constitution of India”',x:1},{a:'394',t:'Commencement',x:1},{a:'395',t:'Repeals',x:1}],
+ light:'394A authoritative text in Hindi.'}
+];
+
+const SCHEDULES = [
+{n:1,t:'Names of States & UTs + territories',d:'Lists States and Union Territories and their territories.',mn:'नक्शा अलमारी'},
+{n:2,t:'Emoluments',d:'Salary/allowances — President, Governors, Speakers, Judges, CAG etc.',mn:'तनख्वाह'},
+{n:3,t:'Forms of Oaths / Affirmations',d:'Oaths for Union/State ministers, MPs, MLAs, judges…',mn:'कसम'},
+{n:4,t:'Allocation of Rajya Sabha seats',d:'Seats to States/UTs in Council of States.',mn:'RS सीटें'},
+{n:5,t:'Scheduled Areas & Scheduled Tribes',d:'Admin & control of Scheduled Areas; Tribes Advisory Council.',mn:'5 = Tribal (mainland pattern)'},
+{n:6,t:'Tribal Areas in Assam, Meghalaya, Tripura, Mizoram',d:'Autonomous District Councils — law-making on land, forest, customs…',mn:'6 = NE ADC'},
+{n:7,t:'Union / State / Concurrent Lists',d:'Federal distribution of legislative subjects (Art.246).',mn:'तीन लिस्टें — सबसे पूछा जाता है'},
+{n:8,t:'Official Languages',d:'22 scheduled languages.',mn:'भाषा सूची'},
+{n:9,t:'Land reform & other Acts protected',d:'Art.31B — Acts placed here immune from FR challenge (basic structure still bites — Waman Rao/I.R. Coelho).',mn:'9 = land / shield'},
+{n:10,t:'Anti-defection (52nd Am., 1985)',d:'Disqualification on defection; 91st tightened. Decision by Speaker/Chairman — judicial review after Kihoto Hollohan with limits.',mn:'दल-बदल'},
+{n:11,t:'Panchayats — 29 subjects',d:'Rural local functional list (Art.243G).',mn:'गाँव 29'},
+{n:12,t:'Municipalities — 18 subjects',d:'Urban local functional list (Art.243W).',mn:'शहर 18'}
+];
+
+const BODIES = [
+{type:'const',name:'Election Commission of India',art:'324',act:'— (Constitution) + RP Acts 1950/1951',meta:'CEC + ECs; independence, removal of CEC like SC judge',trap:'Regional Commissioners possible; State Election Commissions are separate (243K/243ZA).'},
+{type:'const',name:'Union Public Service Commission',art:'315–323',act:'—',meta:'Appointments to All-India & Central Services (recommendatory)',trap:'Advice generally not binding; SPSC is separate.'},
+{type:'const',name:'Finance Commission',art:'280',act:'—',meta:'Tax devolution + grants-in-aid recommendations',trap:'Quasi-judicial flavour; reconstituted ~every 5 years. ≠ NITI.'},
+{type:'const',name:'CAG of India',art:'148–151',act:'CAG (DPC) Act, 1971 (duties detail)',meta:'Appointed by President; removal like SC judge',trap:'Audits Government accounts; reports to President/Governor → Legislature.'},
+{type:'const',name:'Attorney-General',art:'76',act:'—',meta:'Highest law officer; holds office during President’s pleasure',trap:'Not a COM member; right to speak in Parliament, no vote.'},
+{type:'const',name:'Advocate-General (State)',art:'165',act:'—',meta:'State counterpart of AG',trap:'Pleasure of Governor.'},
+{type:'const',name:'National Commission for SCs',art:'338',act:'— (constitutionalised)',meta:'Monitor safeguards for SCs',trap:'Was statutory earlier; now constitutional.'},
+{type:'const',name:'National Commission for STs',art:'338A',act:'—',meta:'ST safeguards',trap:'89th Amendment carved NCST from NCSC.'},
+{type:'const',name:'National Commission for BCs',art:'338B',act:'— (102nd Am.)',meta:'SEBC safeguards',trap:'102nd also Art.342A; 105th restored States’ role in BC lists controversy aftermath.'},
+{type:'const',name:'Special Officer for Linguistic Minorities',art:'350B',act:'—',meta:'Investigate linguistic minority safeguards',trap:'Often forgotten constitutional body.'},
+{type:'const',name:'GST Council',art:'279A',act:'CGST/SGST/IGST Acts operationalise',meta:'Union FM chairs; States’ FMs members',trap:'Constitutional body after 101st Amendment.'},
+{type:'const',name:'Inter-State Council',art:'263',act:'— (Presidential order sets it up)',meta:'Centre-State coordination',trap:'Not permanently detailed in text; established by order (Sarkaria follow-up).'},
+{type:'stat',name:'NHRC',art:'—',act:'Protection of Human Rights Act, 1993',meta:'Chairperson (ex-CJ of India pattern as amended) + members',trap:'Statutory, not constitutional. Can intervene, recommend — limited binding teeth.'},
+{type:'stat',name:'SHRC',art:'—',act:'PHRA 1993',meta:'State human rights commissions',trap:'Same Act family as NHRC.'},
+{type:'stat',name:'Central Information Commission',art:'—',act:'RTI Act, 2005',meta:'Chief + ICs',trap:'Statutory. Landmark: transparency vs Official Secrets.'},
+{type:'stat',name:'Central Vigilance Commission',art:'—',act:'CVC Act, 2003',meta:'Apex vigilance; supervision over CBI in corruption cases (accord framework)',trap:'Was executive earlier; statutory after Vineet Narain aftermath.'},
+{type:'stat',name:'Lokpal',art:'—',act:'Lokpal & Lokayuktas Act, 2013',meta:'Inquiry/prosecution sanction path for corruption — public servants incl. PM (with safeguards)',trap:'Statutory. Lokayukta = state laws.'},
+{type:'stat',name:'National Green Tribunal',art:'—',act:'NGT Act, 2010',meta:'Environmental cases — speedy disposal',trap:'Tribunal ≠ HC replacement; appeal paths exist.'},
+{type:'stat',name:'National Commission for Women',art:'—',act:'NCW Act, 1990',meta:'Recommendatory body for women',trap:'Statutory.'},
+{type:'stat',name:'National Commission for Protection of Child Rights',art:'—',act:'CPCR Act, 2005',meta:'Child rights monitoring',trap:'Statutory.'},
+{type:'stat',name:'National Commission for Minorities',art:'—',act:'NCM Act, 1992',meta:'Minority welfare',trap:'Statutory — don’t confuse with Art.30 minorities (constitutional right).'},
+{type:'stat',name:'Competition Commission of India',art:'—',act:'Competition Act, 2002',meta:'Anti-trust / combinations',trap:'Regulatory + quasi-judicial.'},
+{type:'stat',name:'SEBI',art:'—',act:'SEBI Act, 1992',meta:'Securities market regulator',trap:'Statutory regulator.'},
+{type:'reg',name:'RBI',art:'—',act:'RBI Act, 1934',meta:'Monetary authority; banking regulation',trap:'Statutory corporation; not constitutional.'},
+{type:'reg',name:'TRAI',art:'—',act:'TRAI Act, 1997',meta:'Telecom regulation',trap:'Statutory regulator.'},
+{type:'reg',name:'IRDAI',art:'—',act:'IRDA Act, 1999',meta:'Insurance regulator',trap:'Statutory.'},
+{type:'reg',name:'PFRDA',art:'—',act:'PFRDA Act, 2013',meta:'Pension regulation / NPS',trap:'Statutory.'},
+{type:'reg',name:'CERC / SERCs',art:'—',act:'Electricity Act, 2003',meta:'Electricity regulators',trap:'Statutory.'},
+{type:'stat',name:'NITI Aayog',art:'—',act:'Cabinet Resolution 2015 (NOT an Act)',meta:'Think tank; PM chair',trap:'Neither constitutional nor statutory — executive body. Replaced Planning Commission.'}
+];
+
+const WRITS = [
+{name:'Habeas Corpus', lat:'“You may have the body”', when:'Illegal detention — produce the person before court', against:'Public + private (illegal detention)', mn:'🧠 हैबेअस = “बंदी को अदालत में लाओ”. Most precious for liberty (Art.21).'},
+{name:'Mandamus', lat:'“We command”', when:'Public authority fails a public duty — compel performance', against:'Public officials/bodies; not against private individuals generally; not against President/Governor to exercise discretion as such', mn:'🧠 मांडमस = “कर्तव्य करो”. Like a court order to do your job.'},
+{name:'Prohibition', lat:'“To forbid”', when:'Stop a lower court/tribunal from exceeding jurisdiction — preventive', against:'Judicial / quasi-judicial bodies', mn:'🧠 प्रोहिबिशन = “आगे मत बढ़ो” (preventive).'},
+{name:'Certiorari', lat:'“To be certified / quashed”', when:'Quash an order already passed without jurisdiction / error of law — curative', against:'Judicial / quasi-judicial (and some admin actions as expanded)', mn:'🧠 सर्टिओरारी = “फैसला फाड़ो” (after the act). Prohibition = before; Certiorari = after.'},
+{name:'Quo Warranto', lat:'“By what authority”', when:'Challenge a person’s claim to a public office', against:'Usurper of public office (substantive office created by law)', mn:'🧠 क्वो वारंटो = “किस अधिकार से कुर्सी पर हो?”'}
+];
+
+const AMENDMENTS = [
+{n:'1st',y:'1951',tags:['rights','econ'],act:'The Constitution (First Amendment) Act, 1951',t:'Land reform shield + speech restrictions',d:'Added 19(2) grounds; 31A/31B + 9th Schedule — protect zamindari abolition. Famous: first big FR tweak.'},
+{n:'7th',y:'1956',tags:['fed'],act:'The Constitution (Seventh Amendment) Act, 1956',t:'States Reorganisation',d:'A/B/C States → States & UTs; common High Courts; map rewrite after SRC.'},
+{n:'24th',y:'1971',tags:['rights','jud'],act:'The Constitution (Twenty-fourth Amendment) Act, 1971',t:'Parliament can amend FRs',d:'Reply to Golaknath — amended Arts.13 & 368 affirming amending power.'},
+{n:'25th',y:'1971',tags:['econ'],act:'The Constitution (Twenty-fifth Amendment) Act, 1971',t:'Art.31C introduced',d:'Laws for 39(b)(c) DPSPs get shield from some FR challenges (later trimmed by courts).'},
+{n:'26th',y:'1971',tags:['fed'],act:'The Constitution (Twenty-sixth Amendment) Act, 1971',t:'Abolition of privy purses',d:'Ended purses/privileges of erstwhile princes.'},
+{n:'39th',y:'1975',tags:['jud'],act:'The Constitution (Thirty-ninth Amendment) Act, 1975',t:'PM/Speaker election disputes shielded (Emergency)',d:'Put certain elections beyond judicial review — Emergency-era excess; later undone in effect.'},
+{n:'42nd',y:'1976',tags:['rights','jud','fed'],act:'The Constitution (Forty-second Amendment) Act, 1976',t:'“Mini-Constitution”',d:'Preamble: Socialist, Secular, Integrity; Fundamental Duties; DPSPs 39A/43A/48A; clipped judiciary — partly reversed by 43rd/44th.'},
+{n:'43rd',y:'1977',tags:['jud'],act:'The Constitution (Forty-third Amendment) Act, 1977',t:'Restored some judicial powers',d:'Post-Emergency cleanup of 42nd excesses on judiciary.'},
+{n:'44th',y:'1978',tags:['rights','econ'],act:'The Constitution (Forty-fourth Amendment) Act, 1978',t:'Undid Emergency excesses',d:'Property → Art.300A (legal right); 352 “armed rebellion”; Arts.20 & 21 cannot be suspended.'},
+{n:'52nd',y:'1985',tags:['fed'],act:'The Constitution (Fifty-second Amendment) Act, 1985',t:'Anti-defection — 10th Schedule',d:'Disqualification on defection. Tightened later by 91st.'},
+{n:'61st',y:'1989',tags:['rights'],act:'The Constitution (Sixty-first Amendment) Act, 1988',t:'Voting age 21 → 18',d:'Art.326 — youth franchise.'},
+{n:'69th',y:'1991',tags:['fed'],act:'The Constitution (Sixty-ninth Amendment) Act, 1991',t:'NCT of Delhi — Art.239AA',d:'Legislative Assembly for Delhi.'},
+{n:'73rd',y:'1992',tags:['local'],act:'The Constitution (Seventy-third Amendment) Act, 1992',t:'Panchayats — Part IX + 11th Schedule',d:'Constitutional rural local government; 29 subjects. Related: State Panchayati Raj Acts.'},
+{n:'74th',y:'1992',tags:['local'],act:'The Constitution (Seventy-fourth Amendment) Act, 1992',t:'Municipalities — Part IXA + 12th Schedule',d:'Urban local bodies; 18 subjects.'},
+{n:'77th',y:'1995',tags:['rights'],act:'The Constitution (Seventy-seventh Amendment) Act, 1995',t:'Reservation in promotions — 16(4A)',d:'After Indra Sawhney limits on promotion quota.'},
+{n:'81st',y:'2000',tags:['rights'],act:'The Constitution (Eighty-first Amendment) Act, 2000',t:'Backlog vacancies — 16(4B)',d:'Unfilled SC/ST vacancies carried forward without hitting 50% ceiling that year.'},
+{n:'82nd',y:'2000',tags:['rights'],act:'The Constitution (Eighty-second Amendment) Act, 2000',t:'Relaxation in marks for SC/ST promotions',d:'Proviso to Art.335.'},
+{n:'86th',y:'2002',tags:['rights'],act:'The Constitution (Eighty-sixth Amendment) Act, 2002',t:'Right to Education — Art.21A',d:'Also Art.45 recast + duty 51A(k). Related statute: RTE Act, 2009.'},
+{n:'89th',y:'2003',tags:['rights'],act:'The Constitution (Eighty-ninth Amendment) Act, 2003',t:'NCST — Art.338A',d:'Split from NCSC.'},
+{n:'91st',y:'2003',tags:['fed'],act:'The Constitution (Ninety-first Amendment) Act, 2003',t:'COM size ≤15% + defection tighten',d:'Ministers cap; defectors barred from ministry rewards.'},
+{n:'92nd',y:'2003',tags:['fed'],act:'The Constitution (Ninety-second Amendment) Act, 2003',t:'8th Schedule languages +4',d:'Bodo, Dogri, Maithili, Santhali → 22 languages.'},
+{n:'97th',y:'2011',tags:['local','rights'],act:'The Constitution (Ninety-seventh Amendment) Act, 2011',t:'Co-operative societies — Part IXB',d:'Also 19(1)(c) co-ops; Multi-State Cooperative Societies Act is related central law.'},
+{n:'99th',y:'2014',tags:['jud'],act:'The Constitution (Ninety-ninth Amendment) Act, 2014',t:'NJAC',d:'National Judicial Appointments Commission — struck down 2015 (basic structure).'},
+{n:'100th',y:'2015',tags:['fed'],act:'The Constitution (One Hundredth Amendment) Act, 2015',t:'India–Bangladesh LBA',d:'Enclave exchange; 1st Schedule amended.'},
+{n:'101st',y:'2016',tags:['econ','fed'],act:'The Constitution (One Hundred and First Amendment) Act, 2016',t:'GST',d:'Arts.246A, 269A, 279A. Related Acts: CGST, IGST, SGST, UTGST, Compensation Act.'},
+{n:'102nd',y:'2018',tags:['rights'],act:'The Constitution (One Hundred and Second Amendment) Act, 2018',t:'NCBC constitutional + 342A',d:'Central SEBC list; later clarified by 105th.'},
+{n:'103rd',y:'2019',tags:['rights'],act:'The Constitution (One Hundred and Third Amendment) Act, 2019',t:'EWS reservation — 15(6)/16(6)',d:'Up to 10% EWS. Upheld in Janhit Abhiyan (2022).'},
+{n:'104th',y:'2019',tags:['fed'],act:'The Constitution (One Hundred and Fourth Amendment) Act, 2019',t:'SC/ST seat reservation extended; Anglo-Indian nomination ends',d:'Art.334 changes.'},
+{n:'105th',y:'2021',tags:['rights','fed'],act:'The Constitution (One Hundred and Fifth Amendment) Act, 2021',t:'States can identify SEBCs again',d:'Restored State power after 102nd interpretation issues.'},
+{n:'106th',y:'2023',tags:['rights','fed'],act:'The Constitution (One Hundred and Sixth Amendment) Act, 2023',t:'Women’s reservation 33%',d:'Also called Nari Shakti Vandan Adhiniyam — in force after delimitation as provided.'}
+];
+
+const FLASH = [
+['Art.32 is called?','Heart & soul of the Constitution (Ambedkar) — SC writs for FRs'],
+['Art.226 vs 32?','226 HC: FRs + any other purpose; 32 SC: only FRs (primarily)'],
+['Which Part = DPSP?','Part IV (36–51)'],
+['Fundamental Duties Part?','Part IVA — Art.51A (42nd; 11th duty 86th)'],
+['TEARS OF OLD PM?','12 Schedules mnemonic'],
+['Art.368 basic structure?','Parliament can amend but not destroy basic structure (Kesavananda)'],
+['National Emergency article?','Art.352 (armed rebellion after 44th)'],
+['President’s Rule?','Art.356'],
+['Finance Commission?','Art.280'],
+['GST Council?','Art.279A'],
+['CAG article?','Art.148'],
+['ECI article?','Art.324'],
+['Property is now?','Art.300A legal right (not FR) after 44th'],
+['Anti-defection Schedule?','10th Schedule'],
+['Panchayat Schedule?','11th (29 subjects)'],
+['NHRC created by?','PHRA 1993 — statutory']
+];
+
+const MCQS = [
+{q:'The Preamble was held to be a part of the Constitution in?',opts:['Berubari Union','Kesavananda Bharati','Golaknath','Minerva Mills'],a:1,e:'Kesavananda Bharati (1973) — Preamble is part of the Constitution.'},
+{q:'Which article is called the “heart and soul” of the Constitution?',opts:['14','19','21','32'],a:3,e:'Art.32 — Ambedkar.'},
+{q:'DPSP are:',opts:['Justiciable','Non-justiciable but fundamental in governance','Enforceable as FRs','Only Gandhian'],a:1,e:'Art.37 — non-justiciable, yet fundamental in governance.'},
+{q:'Seventh Schedule deals with:',opts:['Languages','Oaths','Union/State/Concurrent lists','Anti-defection'],a:2,e:'Lists = 7th Schedule.'},
+{q:'Anti-defection provisions are in:',opts:['8th Schedule','9th Schedule','10th Schedule','11th Schedule'],a:2,e:'10th Schedule (52nd Amendment).'},
+{q:'Finance Commission is constituted under:',opts:['Art.263','Art.280','Art.312','Art.324'],a:1,e:'Art.280.'},
+{q:'Which body is constitutional?',opts:['NHRC','SEBI','CAG','NITI Aayog'],a:2,e:'CAG — Art.148. NHRC/SEBI statutory; NITI executive.'},
+{q:'Art.21A was inserted by which Amendment?',opts:['42nd','44th','86th','97th'],a:2,e:'86th Amendment, 2002 — RTE.'},
+{q:'During a National Emergency, Art.19 can be suspended under:',opts:['356','358','360','368'],a:1,e:'Art.358 (with 44th nuances — external emergency automatic; armed rebellion needs order).'},
+{q:'GST Council finds place in:',opts:['Art.263','Art.269A only','Art.279A','7th Schedule List III'],a:2,e:'Art.279A — constitutional body.'},
+{q:'Writ of habeas corpus means:',opts:['Produce the body/person','Quash order','Stop lower court','By what authority'],a:0,e:'Habeas corpus — produce the detained person.'},
+{q:'Part IX of the Constitution deals with:',opts:['Municipalities','Panchayats','Co-operatives','UTs'],a:1,e:'Part IX Panchayats; IXA Municipalities; IXB Co-ops.'},
+{q:'Which writ quashes an already passed order of a lower court/tribunal?',opts:['Prohibition','Mandamus','Certiorari','Quo Warranto'],a:2,e:'Certiorari = quash (after). Prohibition = prevent (before).'},
+{q:'Joint sitting (Art.108) cannot be used for:',opts:['Ordinary Bill deadlock','Money Bill','Constitutional Amendment Bill','Both B and C'],a:3,e:'No joint sitting for Money Bills or Constitution Amendment Bills.'},
+{q:'Which Amendment is called the “Mini-Constitution”?',opts:['44th','42nd','73rd','101st'],a:1,e:'42nd Amendment, 1976.'},
+{q:'Art.226 is wider than Art.32 because HC can issue writs:',opts:['Only for FRs','For FRs and any other purpose','Only against private persons','Only during Emergency'],a:1,e:'226 = FRs + any other purpose.'}
+];
+
+/* ========== ARTICLE DRAWER ========== */
+const ORIG = 'https://www.constitutionofindia.net/read/';
+function artUrl(num){
+  const n = String(num).toLowerCase().replace(/\s+/g,'');
+  // Reader hub + best-effort article page pattern used by the site
+  return {
+    read: ORIG,
+    article: `https://www.constitutionofindia.net/articles/article-${n}/`
+  };
+}
+function openArticle(part, s){
+  const urls = artUrl(s.a);
+  const key = String(s.a);
+  const orig = (window.ORIG_ARTICLES && (ORIG_ARTICLES[key] || ORIG_ARTICLES[key.toUpperCase()])) || null;
+  document.getElementById('dPart').textContent = `Part ${part.n} · Articles ${part.arts} · ${part.title}`;
+  document.getElementById('dTitle').textContent = `Article ${s.a}`;
+  document.getElementById('dSub').textContent = (orig ? orig.title : s.t) + (s.x ? ' · EXAM favourite' : '');
+  const origEl = document.getElementById('dOrig');
+  if (orig && orig.text) {
+    origEl.textContent = orig.text;
+  } else {
+    origEl.innerHTML = `Full official wording for this article is best read on the Constitution reader.\n\nMarginal heading here: ${s.t}\n\n→ Use the gold button below to open the original text.`;
+  }
+  document.getElementById('dGist').innerHTML = s.d || s.t || '—';
+  document.getElementById('dMn').innerHTML = part.mn || '—';
+  document.getElementById('dCtx').innerHTML = `<b>This Part deals with:</b> ${part.deal}<br><br><b>Also in this Part (light map):</b> ${part.light}`;
+  document.getElementById('dLinks').innerHTML = `
+    <a href="${urls.read}" target="_blank" rel="noopener">📖 Read original Constitution (all Parts &amp; Schedules)</a>
+    <a class="sec" href="${urls.article}" target="_blank" rel="noopener">🔎 Article ${s.a} on constitutionofindia.net</a>`;
+  document.getElementById('drawer').classList.add('on');
+  document.getElementById('drawerBg').classList.add('on');
+  document.getElementById('drawer').setAttribute('aria-hidden','false');
+}
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('on');
+  document.getElementById('drawerBg').classList.remove('on');
+  document.getElementById('drawer').setAttribute('aria-hidden','true');
+}
+document.getElementById('dclose').onclick = closeDrawer;
+document.getElementById('drawerBg').onclick = closeDrawer;
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeDrawer(); });
+
+/* ========== RENDER ========== */
+const partsMount = document.getElementById('partsMount');
+function renderParts(filter='all'){
+  partsMount.innerHTML = '';
+  PARTS.forEach(p=>{
+    if(filter!=='all' && !(p.tags||[]).includes(filter)) return;
+    const det = document.createElement('details');
+    det.className = 'part';
+    det.dataset.tags = (p.tags||[]).join(' ');
+    det.innerHTML = `
+      <summary>
+        <div class="pno">${p.n}</div>
+        <div>
+          <div class="ptitle">Part ${p.n}: ${p.title}</div>
+          <div class="prange">Articles ${p.arts}</div>
+          <div class="pdeal">${p.deal}</div>
+        </div>
+      </summary>
+      <div class="pbody">
+        <div class="mn">${p.mn}</div>
+        <p class="hint-click">Click an article to open the study panel →</p>
+        <div class="arts"></div>
+        <div class="art" style="cursor:default;margin-top:8px" tabindex="-1"><b>Light map:</b> <span class="alight">${p.light}</span></div>
+      </div>`;
+    const arts = det.querySelector('.arts');
+    p.star.forEach(s=>{
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'art star';
+      btn.id = 'art-' + s.a.replace(/[^A-Za-z0-9]/g,'');
+      btn.innerHTML = `<span class="study">Study →</span>
+        <div><span class="anum">Art. ${s.a}</span>${s.x?`<span class="chip exam">EXAM</span>`:''} — <b>${s.t}</b></div>
+        ${s.d?`<div class="alight">${s.d}</div>`:''}`;
+      btn.addEventListener('click', ev=>{ ev.preventDefault(); ev.stopPropagation(); openArticle(p,s); });
+      arts.appendChild(btn);
+    });
+    partsMount.appendChild(det);
+  });
+}
+renderParts();
+
+document.getElementById('partFilters').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#partFilters button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on');
+  renderParts(b.dataset.f);
+});
+
+document.getElementById('expandAll').onclick=()=>{
+  document.querySelectorAll('.part').forEach(d=>d.open=true);
+};
+
+document.getElementById('schedMount').innerHTML = `
+<table><tr><th>#</th><th>Schedule</th><th>Deals with</th><th>Memory</th></tr>
+${SCHEDULES.map(s=>`<tr><td><b>${s.n}</b></td><td>${s.t}</td><td>${s.d}</td><td>${s.mn}</td></tr>`).join('')}
+</table>`;
+
+document.getElementById('writsMount').innerHTML = WRITS.map(w=>`
+  <div class="body-card">
+    <h3>${w.name}</h3>
+    <div class="meta">${w.lat}</div>
+    <div><b>When:</b> ${w.when}</div>
+    <div style="margin-top:6px"><b>Against:</b> ${w.against}</div>
+    <div class="mn">${w.mn}</div>
+  </div>`).join('');
+
+const amMount=document.getElementById('amMount');
+function renderAm(f='all'){
+  const rows=AMENDMENTS.filter(a=>f==='all'||(a.tags||[]).includes(f));
+  amMount.innerHTML = rows.map(a=>`
+    <div class="am-card">
+      <div class="ay">${a.n} Amendment · ${a.y}</div>
+      <h3>${a.t}</h3>
+      <div class="actname">${a.act||''}</div>
+      <div style="font-size:.88rem;color:#d5def3;line-height:1.55">${a.d}</div>
+    </div>`).join('');
+}
+renderAm();
+document.getElementById('amFilters').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#amFilters button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); renderAm(b.dataset.am);
+});
+
+const bodiesMount=document.getElementById('bodiesMount');
+function renderBodies(f='all'){
+  bodiesMount.innerHTML='';
+  BODIES.filter(b=>f==='all'||b.type===f).forEach(b=>{
+    const el=document.createElement('div');
+    el.className='body-card';
+    el.innerHTML=`<h3>${b.name} <span class="chip body">${b.type==='const'?'CONSTITUTIONAL':b.type==='stat'?'STATUTORY':'REGULATORY'}</span></h3>
+      <div class="meta">${b.art!=='—'?'Article '+b.art+' · ':''}Act/Source: <b>${b.act}</b></div>
+      <div>${b.meta}</div>
+      <div class="mn" style="margin-top:8px">⚠️ ${b.trap}</div>`;
+    bodiesMount.appendChild(el);
+  });
+}
+renderBodies();
+document.getElementById('bodyFilters').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#bodyFilters button').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); renderBodies(b.dataset.b);
+});
+
+document.getElementById('flashMount').innerHTML = FLASH.map(([f,bk])=>`
+  <div class="flash"><div class="flash-inner">
+    <div class="ff">${f}</div><div class="fb">${bk}</div>
+  </div></div>`).join('');
+document.querySelectorAll('.flash').forEach(f=>f.onclick=()=>f.classList.toggle('flipped'));
+
+const mcqMount=document.getElementById('mcqMount');
+MCQS.forEach((m,i)=>{
+  const id='m'+i;
+  const div=document.createElement('div');
+  div.className='mcq';
+  div.innerHTML=`<div class="q">Q${i+1}. ${m.q}</div><div class="opts">
+    ${m.opts.map((o,j)=>`<div class="opt" data-j="${j}">${String.fromCharCode(65+j)}. ${o}</div>`).join('')}
+  </div><div class="exp" id="exp-${id}"></div>`;
+  div.querySelectorAll('.opt').forEach(opt=>{
+    opt.onclick=()=>{
+      div.querySelectorAll('.opt').forEach(x=>x.style.pointerEvents='none');
+      const j=+opt.dataset.j;
+      div.querySelectorAll('.opt').forEach(x=>{
+        if(+x.dataset.j===m.a) x.classList.add('ok');
+        else if(x===opt) x.classList.add('bad');
+      });
+      const exp=div.querySelector('.exp'); exp.textContent=m.e; exp.classList.add('show');
+    };
+  });
+  mcqMount.appendChild(div);
+});
+
+/* Preamble keywords */
+const kwNote=document.getElementById('kwNote');
+document.querySelectorAll('.preamble .kw').forEach(k=>{
+  k.onclick=()=>{
+    document.querySelectorAll('.preamble .kw').forEach(x=>x.classList.remove('on'));
+    k.classList.add('on');
+    const d=KW[k.dataset.k];
+    kwNote.innerHTML=`<b>${d.t}:</b> ${d.d}`;
+    kwNote.classList.add('show');
+  };
+});
+
+/* Search */
+const hits=document.getElementById('hits');
+const searchIndex=[];
+PARTS.forEach(p=>{
+  searchIndex.push({type:'Part',label:`Part ${p.n}: ${p.title}`,key:`part ${p.n} ${p.title} ${p.deal} ${p.arts}`,go:'#parts',open:p.id});
+  p.star.forEach(s=>{
+    searchIndex.push({type:'Article',label:`Art. ${s.a} — ${s.t}`,key:`art ${s.a} article ${s.a} ${s.t} ${s.d||''} part ${p.n}`,go:`#art-${s.a.replace(/[^A-Za-z0-9]/g,'')}`,open:p.id});
+  });
+});
+SCHEDULES.forEach(s=>searchIndex.push({type:'Schedule',label:`Schedule ${s.n}: ${s.t}`,key:`schedule ${s.n} ${s.t} ${s.d}`,go:'#schedules'}));
+WRITS.forEach(w=>searchIndex.push({type:'Writ',label:w.name,key:`writ ${w.name} ${w.lat} ${w.when} habeas mandamus prohibition certiorari quo warranto`,go:'#writs'}));
+AMENDMENTS.forEach(a=>searchIndex.push({type:'Amendment',label:`${a.n} (${a.y}) — ${a.t}`,key:`amendment ${a.n} ${a.y} ${a.t} ${a.d} ${a.act||''}`,go:'#amendments'}));
+BODIES.forEach(b=>searchIndex.push({type:'Body',label:b.name,key:`${b.name} ${b.act} ${b.art} ${b.type}`,go:'#bodies'}));
+
+document.getElementById('q').addEventListener('input',e=>{
+  const v=e.target.value.trim().toLowerCase();
+  if(v.length<2){hits.classList.remove('show');hits.innerHTML='';return;}
+  const found=searchIndex.filter(x=>x.key.toLowerCase().includes(v)).slice(0,20);
+  hits.classList.add('show');
+  hits.innerHTML=`<b style="color:var(--accent)">Search results</b>`+ (found.length?found.map(f=>`
+    <div class="hit" data-go="${f.go}" data-open="${f.open||''}"><b>${f.type}:</b> ${f.label}</div>`).join(''):`<div class="hit">No hits</div>`);
+  hits.querySelectorAll('.hit[data-go]').forEach(h=>{
+    h.onclick=()=>{
+      const partObj=PARTS.find(p=>p.id===h.dataset.open);
+      if(partObj){
+        document.querySelectorAll('.part').forEach(p=>{
+          if((p.querySelector('.ptitle')||{}).textContent===`Part ${partObj.n}: ${partObj.title}`) p.open=true;
+        });
+        // If this hit is an article, open study drawer
+        const m = (h.textContent||'').match(/Art\.\s*([0-9A-Za-z]+)/);
+        if(m){
+          const art = partObj.star.find(s=>String(s.a)===m[1]);
+          if(art){ openArticle(partObj, art); return; }
+        }
+      }
+      const el=document.querySelector(h.dataset.go);
+      if(el){el.scrollIntoView({behavior:'smooth',block:'center'}); el.style.outline='2px solid var(--accent)'; setTimeout(()=>el.style.outline='',1600);}
+      else location.hash=h.dataset.go;
+    };
+  });
+});
+</script>
+</body>
+</html>
