@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Governors-General & Viceroys of India | Animated Timeline | CA Notes 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bengal: #8d5524; --bengal-light:#fdf1e3;
+  --ggindia:#1565c0; --ggindia-light:#e8f1fb;
+  --viceroy:#6a1b9a; --viceroy-light:#f3e8fb;
+  --free:#2e7d32; --free-light:#e9f7ec;
+  --ink:#1a1a2e;
+}
+html{scroll-behavior:smooth;}
+body{ font-family:'Segoe UI', Arial, sans-serif; background:#0f1021; color:#222; overflow-x:hidden; }
+
+/* ===== HEADER ===== */
+header{
+  position:relative; overflow:hidden; text-align:center; padding:70px 20px 90px;
+  background:linear-gradient(120deg,#1a1a2e,#3a1c53,#8d2f6b,#1a1a2e);
+  background-size:300% 300%;
+  animation:gradientShift 14s ease infinite;
+  color:#fff;
+}
+@keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+header .orb{ position:absolute; border-radius:50%; background:rgba(255,255,255,.08); filter:blur(2px); animation:float 10s ease-in-out infinite; }
+@keyframes float{0%,100%{transform:translateY(0) translateX(0);}50%{transform:translateY(-30px) translateX(15px);}}
+header h1{ font-size:2.3rem; font-weight:800; margin-bottom:10px; letter-spacing:.5px; text-shadow:0 4px 18px rgba(0,0,0,.35);
+  opacity:0; animation:fadeDown 1s ease forwards .2s; }
+header p{ font-size:1.02rem; opacity:.85; opacity:0; animation:fadeDown 1s ease forwards .45s; }
+@keyframes fadeDown{from{opacity:0; transform:translateY(-16px);} to{opacity:1; transform:translateY(0);}}
+.badges{ margin-top:22px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; opacity:0; animation:fadeDown 1s ease forwards .7s; }
+.badges span{ background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.25); backdrop-filter:blur(4px);
+  padding:7px 18px; border-radius:30px; font-size:.82rem; }
+
+/* progress rail */
+#progressRail{ position:fixed; top:0; left:0; height:4px; width:0%; background:linear-gradient(90deg,#ff9800,#8d2f6b,#1565c0); z-index:999; transition:width .1s linear; }
+
+main{ max-width:960px; margin:-50px auto 60px; padding:0 16px 60px; position:relative; z-index:2;}
+
+/* ===== LEGEND ===== */
+.legend{ background:#fff; border-radius:16px; padding:18px 22px; box-shadow:0 10px 30px rgba(0,0,0,.18); display:flex; gap:22px; flex-wrap:wrap; justify-content:center; margin-bottom:40px; }
+.legend div{ display:flex; align-items:center; gap:8px; font-size:.85rem; font-weight:600; color:#333; }
+.legend i{ width:14px; height:14px; border-radius:4px; display:inline-block; }
+
+/* ===== ERA BANNER ===== */
+.era-banner{ position:sticky; top:10px; z-index:5; text-align:center; margin:46px 0 26px; }
+.era-banner span{ display:inline-block; padding:10px 28px; border-radius:30px; color:#fff; font-weight:700; font-size:1.02rem;
+  box-shadow:0 8px 20px rgba(0,0,0,.2); letter-spacing:.3px; }
+.era-bengal span{ background:linear-gradient(135deg,var(--bengal),#c17f3e); }
+.era-ggindia span{ background:linear-gradient(135deg,var(--ggindia),#42a5f5); }
+.era-viceroy span{ background:linear-gradient(135deg,var(--viceroy),#ab47bc); }
+.era-free span{ background:linear-gradient(135deg,var(--free),#66bb6a); }
+
+/* ===== TIMELINE ===== */
+.timeline{ position:relative; padding-left:0; }
+.timeline::before{ content:''; position:absolute; left:50%; top:0; bottom:0; width:4px; transform:translateX(-50%);
+  background:linear-gradient(180deg,#8d5524,#1565c0,#6a1b9a,#2e7d32); border-radius:4px; opacity:.25; }
+@media(max-width:720px){ .timeline::before{ left:22px; } }
+
+.item{ position:relative; width:50%; padding:0 36px 34px; opacity:0; transform:translateY(40px); transition:opacity .7s ease, transform .7s ease; }
+.item.visible{ opacity:1; transform:translateY(0); }
+.item:nth-child(odd){ left:0; text-align:right; }
+.item:nth-child(even){ left:50%; text-align:left; }
+@media(max-width:720px){
+  .item, .item:nth-child(odd), .item:nth-child(even){ width:100%; left:0; text-align:left; padding:0 0 28px 54px; }
+}
+
+.dot{ position:absolute; top:6px; width:18px; height:18px; border-radius:50%; background:#fff; border:4px solid #999; z-index:2;
+  box-shadow:0 0 0 rgba(0,0,0,0); }
+.item:nth-child(odd) .dot{ right:-9px; }
+.item:nth-child(even) .dot{ left:-9px; }
+@media(max-width:720px){ .item .dot{ left:14px !important; right:auto !important; } }
+.item.visible .dot{ animation:pulse 1.8s ease-out 1; }
+@keyframes pulse{ 0%{ box-shadow:0 0 0 0 rgba(0,0,0,.35);} 100%{ box-shadow:0 0 0 14px rgba(0,0,0,0);} }
+
+.bengal .dot{ border-color:var(--bengal); }
+.ggindia .dot{ border-color:var(--ggindia); }
+.viceroy .dot{ border-color:var(--viceroy); }
+.free .dot{ border-color:var(--free); }
+
+.card{ display:inline-block; text-align:left; background:#fff; border-radius:14px; padding:16px 20px; box-shadow:0 8px 24px rgba(0,0,0,.12);
+  max-width:430px; transition:transform .25s ease, box-shadow .25s ease; border-top:4px solid #ccc; }
+.card:hover{ transform:translateY(-4px); box-shadow:0 14px 34px rgba(0,0,0,.2); }
+.bengal .card{ border-top-color:var(--bengal); }
+.ggindia .card{ border-top-color:var(--ggindia); }
+.viceroy .card{ border-top-color:var(--viceroy); }
+.free .card{ border-top-color:var(--free); }
+
+.card .name{ font-size:1.05rem; font-weight:800; color:var(--ink); }
+.card .tenure{ font-size:.78rem; font-weight:700; color:#fff; display:inline-block; padding:2px 10px; border-radius:20px; margin:4px 0 8px; }
+.bengal .tenure{ background:var(--bengal); }
+.ggindia .tenure{ background:var(--ggindia); }
+.viceroy .tenure{ background:var(--viceroy); }
+.free .tenure{ background:var(--free); }
+.card ul{ margin:6px 0 0 18px; font-size:.84rem; line-height:1.55; color:#444; }
+.card .mnemonic{ margin-top:10px; padding:8px 12px; border-radius:0 8px 8px 0; font-size:.82rem; line-height:1.6; color:#5d4037; }
+.bengal .mnemonic{ background:var(--bengal-light); border-left:3px solid var(--bengal); }
+.ggindia .mnemonic{ background:var(--ggindia-light); border-left:3px solid var(--ggindia); }
+.viceroy .mnemonic{ background:var(--viceroy-light); border-left:3px solid var(--viceroy); }
+.free .mnemonic{ background:var(--free-light); border-left:3px solid var(--free); }
+.card .mnemonic b{ color:#c62828; }
+.mini{ font-size:.8rem !important; color:#777 !important; font-style:italic; }
+
+/* ===== HIGHLIGHT REEL ===== */
+.section-title{ font-size:1.25rem; font-weight:800; color:#fff; text-align:center; margin:60px 0 24px; }
+.section-title span{ background:linear-gradient(135deg,#ff9800,#c62828); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.highlight-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-bottom:10px; }
+.highlight-card{ background:#fff; border-radius:14px; padding:18px; box-shadow:0 10px 26px rgba(0,0,0,.18);
+  opacity:0; transform:scale(.92); transition:opacity .6s ease, transform .6s ease; }
+.highlight-card.visible{ opacity:1; transform:scale(1); }
+.highlight-card .yr{ font-weight:800; color:#c62828; font-size:1.3rem; }
+.highlight-card .ti{ font-weight:700; margin:4px 0 6px; color:var(--ink); }
+.highlight-card .de{ font-size:.85rem; color:#555; line-height:1.5; }
+
+/* ===== FLASHCARDS ===== */
+.flash-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-bottom:10px; }
+.flash{ perspective:1000px; height:140px; cursor:pointer; }
+.flash-inner{ position:relative; width:100%; height:100%; transition:transform .6s; transform-style:preserve-3d; }
+.flash.flipped .flash-inner{ transform:rotateY(180deg); }
+.flash-face{ position:absolute; width:100%; height:100%; backface-visibility:hidden; border-radius:12px; padding:14px;
+  display:flex; align-items:center; justify-content:center; text-align:center; font-size:.9rem; box-shadow:0 8px 20px rgba(0,0,0,.18); }
+.flash-front{ background:linear-gradient(135deg,#283593,#5c6bc0); color:#fff; font-weight:700; }
+.flash-back{ background:#fff8e1; color:#5d4037; transform:rotateY(180deg); font-size:.82rem; line-height:1.5; }
+
+footer{ text-align:center; color:rgba(255,255,255,.6); font-size:.8rem; padding:30px 0 50px; }
+</style>
+</head>
+<body>
+
+<div id="progressRail"></div>
+
+<header>
+  <div class="orb" style="width:160px;height:160px; top:10%; left:8%;"></div>
+  <div class="orb" style="width:100px;height:100px; top:60%; left:80%; animation-delay:2s;"></div>
+  <div class="orb" style="width:70px;height:70px; top:20%; left:70%; animation-delay:4s;"></div>
+  <h1>🇮🇳 Governors-General &amp; Viceroys of India</h1>
+  <p>From Warren Hastings to the end of an empire — the full chronological order with key acts, events &amp; Hindi memory tricks</p>
+  <div class="badges">
+    <span>1773 – 1950</span>
+    <span>32 Rulers</span>
+    <span>4 Eras</span>
+    <span>Hindi Mnemonics</span>
+  </div>
+</header>
+
+<main>
+
+<div class="legend">
+  <div><i style="background:var(--bengal)"></i> Governor-General of Bengal (1773–1833)</div>
+  <div><i style="background:var(--ggindia)"></i> Governor-General of India (1833–1858)</div>
+  <div><i style="background:var(--viceroy)"></i> Viceroy of India (1858–1947)</div>
+  <div><i style="background:var(--free)"></i> Free India (1947–1950)</div>
+</div>
+
+<div class="timeline" id="timeline">
+
+<div class="era-banner era-bengal"><span>⚜️ Governors-General of Bengal (1773–1833)</span></div>
+
+<div class="item bengal">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">1. Warren Hastings</div>
+    <div class="tenure">1773 – 1785</div>
+    <ul>
+      <li>First Governor-General of Bengal (post created by Regulating Act, 1773)</li>
+      <li>Pitt's India Act, 1784</li>
+      <li>Rohilla War (1774); First Anglo-Maratha War &amp; Treaty of Salbai (1782)</li>
+      <li>Second Anglo-Mysore War (1780–84)</li>
+      <li>Later impeached in Britain (acquitted)</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "हेस्टिंग्स ने <b>हैसियत</b> बनाई" — पहला Governor-General, सबसे पहले <b>रेगुलेटिंग एक्ट (1773)</b> से पद बना, फिर पिट्स इंडिया एक्ट (1784) से कंपनी पर कंट्रोल कड़ा हुआ।</div>
+  </div>
+</div>
+
+<div class="item bengal">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">2. Sir John Macpherson</div>
+    <div class="tenure">1785 – 1786</div>
+    <div class="mini">Caretaker Governor-General; no major legislative landmark.</div>
+  </div>
+</div>
+
+<div class="item bengal">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">3. Lord Cornwallis</div>
+    <div class="tenure">1786 – 1793</div>
+    <ul>
+      <li>Permanent Settlement of Bengal, 1793 (land revenue system)</li>
+      <li>Cornwallis Code, 1793 — separation of revenue &amp; judicial functions</li>
+      <li>Third Anglo-Mysore War &amp; Treaty of Seringapatam (1792)</li>
+      <li>Father of civil services in India</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "कॉर्नवालिस ने <b>ज़मीन पक्की</b> की" — Permanent यानी <b>परमानेंट सेटलमेंट</b> (ज़मीन बंदोबस्त हमेशा के लिए तय) और सिविल सेवा की नींव रखी।</div>
+  </div>
+</div>
+
+<div class="item bengal">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">4. Sir John Shore</div>
+    <div class="tenure">1793 – 1798</div>
+    <ul><li>Followed Policy of Non-Intervention in Indian states' affairs</li></ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "जॉन <b>शोर</b> को शोर पसंद नहीं" — चुप रहो, किसी रियासत के झगड़े में मत पड़ो नीति (Non-Intervention)।</div>
+  </div>
+</div>
+
+<div class="item bengal">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">5. Lord Wellesley</div>
+    <div class="tenure">1798 – 1805</div>
+    <ul>
+      <li>Introduced the Subsidiary Alliance System, 1798</li>
+      <li>Fourth Anglo-Mysore War, 1799 — defeat &amp; death of Tipu Sultan</li>
+      <li>Second Anglo-Maratha War (1803–05)</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "वेलेज़ली का <b>वेल (अच्छा) दोस्त</b> बनो वरना..." — सब्सिडियरी एलायंस में रियासतें "दोस्ती" करतीं, पर असल में कंपनी की कठपुतली बन जातीं।</div>
+  </div>
+</div>
+
+<div class="item bengal">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">6. Sir George Barlow</div>
+    <div class="tenure">1805 – 1807</div>
+    <div class="mini">Short tenure; Vellore Mutiny (1806) occurred during this period.</div>
+  </div>
+</div>
+
+<div class="item bengal">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">7. Lord Minto I</div>
+    <div class="tenure">1807 – 1813</div>
+    <ul><li>Treaty of Amritsar with Maharaja Ranjit Singh, 1809</li></ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "मिंटो की <b>मीटिंग</b> अमृतसर में" — रणजीत सिंह के साथ संधि करके सतलुज नदी को सीमा तय की।</div>
+  </div>
+</div>
+
+<div class="item bengal">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">8. Lord Hastings (Marquess of Hastings)</div>
+    <div class="tenure">1813 – 1823</div>
+    <ul>
+      <li>Anglo-Nepal War (1814–16) &amp; Treaty of Sagauli, 1816</li>
+      <li>Third Anglo-Maratha War (1817–19) — end of Maratha Confederacy</li>
+      <li>Introduced the Ryotwari Settlement, 1820</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "दूसरा <b>हेस्टिंग्स</b> — नेपाल और मराठा दोनों ठिकाने लगाए" — सगौली संधि (नेपाल) + मराठा संघ खत्म (पूरी तरह से अंग्रेज़ी राज)।</div>
+  </div>
+</div>
+
+<div class="item bengal">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">9. Lord Amherst</div>
+    <div class="tenure">1823 – 1828</div>
+    <ul><li>First Anglo-Burmese War (1824–26)</li></ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "एमहर्स्ट ने बर्मा को <b>हर्ट (चोट)</b> किया" — पहला बर्मा युद्ध जीता।</div>
+  </div>
+</div>
+
+<div class="item bengal">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">10. Lord William Bentinck</div>
+    <div class="tenure">1828 – 1835</div>
+    <ul>
+      <li>Abolition of Sati System, 1829 (with Raja Ram Mohan Roy's support)</li>
+      <li>Suppression of Thuggee</li>
+      <li>Charter Act of 1833 — became first Governor-General of India (1833)</li>
+      <li>English Education Act, 1835 (Macaulay's Minute)</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "बेंटिक ने <b>बेहतर</b> बनाया समाज" — सती प्रथा बंद की, और Charter Act 1833 से बना भारत का पहला <b>Governor-General of India</b>।</div>
+  </div>
+</div>
+
+<div class="era-banner era-ggindia"><span>🏛️ Governors-General of India (1833–1858)</span></div>
+
+<div class="item ggindia">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">11. Charles Metcalfe</div>
+    <div class="tenure">1835 – 1836</div>
+    <ul><li>Liberated the Indian press — called "Liberator of the Indian Press"</li></ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "मेटकाफ ने अखबार <b>आज़ाद</b> किया" — प्रेस पर से पाबंदी हटाई (Press Act, 1835)।</div>
+  </div>
+</div>
+
+<div class="item ggindia">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">12. Lord Auckland</div>
+    <div class="tenure">1836 – 1842</div>
+    <ul><li>First Anglo-Afghan War (1838–42) — a disastrous defeat for the British</li></ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "ऑकलैंड की <b>आफत</b>" — पहला अफगान युद्ध बुरी तरह हारे, बड़ी फौज तबाह हुई।</div>
+  </div>
+</div>
+
+<div class="item ggindia">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">13. Lord Ellenborough</div>
+    <div class="tenure">1842 – 1844</div>
+    <ul><li>Annexation of Sindh, 1843 (Charles Napier)</li></ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "एलनबरो ने <b>सिंध हड़पा</b>" — 1843 में सिंध को अंग्रेज़ी राज में मिलाया।</div>
+  </div>
+</div>
+
+<div class="item ggindia">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">14. Lord Hardinge I</div>
+    <div class="tenure">1844 – 1848</div>
+    <ul>
+      <li>First Anglo-Sikh War (1845–46) &amp; Treaty of Lahore, 1846</li>
+      <li>Social reforms like abolition of female infanticide</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "हार्डिंग की <b>हार्ड (कठिन)</b> लड़ाई" — सिखों से पहला युद्ध कठिन रहा, लाहौर संधि से खत्म हुआ।</div>
+  </div>
+</div>
+
+<div class="item ggindia">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">15. Lord Dalhousie</div>
+    <div class="tenure">1848 – 1856</div>
+    <ul>
+      <li>Second Anglo-Sikh War (1848–49) — annexation of Punjab</li>
+      <li>Doctrine of Lapse — annexed many princely states</li>
+      <li>First railway line (Bombay–Thane, 1853) &amp; telegraph introduced</li>
+      <li>Wood's Despatch, 1854 (education); Public Works Department established</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "डलहौज़ी ने <b>गोद ली रियासतें हड़पीं</b>" — Doctrine of Lapse (बिना वारिस वाली रियासतें कंपनी में मिलाईं) और साथ ही रेल-तार (<b>रेलवे शुरुआत</b>) की सौगात भी दी।</div>
+  </div>
+</div>
+
+<div class="item ggindia">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">16. Lord Canning</div>
+    <div class="tenure">1856 – 1858 (as GG) → 1858–1862 (as 1st Viceroy)</div>
+    <ul>
+      <li>Revolt of 1857 — last major event of Company rule</li>
+      <li>Universities established at Calcutta, Madras, Bombay (1857)</li>
+      <li>Government of India Act, 1858 — Crown took over from the Company</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "कैनिंग के समय ही <b>कंपनी राज खत्म</b>" — 1857 का विद्रोह झेला और बन गए आखिरी Governor-General + पहले Viceroy, दोनों एक ही व्यक्ति!</div>
+  </div>
+</div>
+
+<div class="era-banner era-viceroy"><span>👑 Viceroys of India (1858–1947)</span></div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">17. Lord Canning (as Viceroy)</div>
+    <div class="tenure">1858 – 1862</div>
+    <ul><li>Indian Councils Act, 1861</li></ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "पहला <b>वायसराय</b> भी कैनिंग ही" — एक ही व्यक्ति आख़िरी GG और पहला Viceroy दोनों बना।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">18. Lord Elgin I</div>
+    <div class="tenure">1862 – 1863</div>
+    <div class="mini">Very short tenure; died in office.</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">19. Sir John Lawrence</div>
+    <div class="tenure">1864 – 1869</div>
+    <ul>
+      <li>Bhutan War, 1865</li>
+      <li>High Courts established at Calcutta, Bombay &amp; Madras, 1865</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "लॉरेंस ने <b>लॉ (कानून)</b> मज़बूत किया" — 3 बड़े हाई कोर्ट बनाए।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">20. Lord Mayo</div>
+    <div class="tenure">1869 – 1872</div>
+    <ul><li>Statistical survey of India; financial decentralisation</li><li>Assassinated by a convict in the Andaman Islands (1872)</li></ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "मेयो को <b>मार डाला</b> अंडमान में" — भारत में हत्या होने वाला इकलौता वायसराय।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">21. Lord Northbrook</div>
+    <div class="tenure">1872 – 1876</div>
+    <ul><li>Kuka Movement in Punjab</li></ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "नॉर्थब्रुक के समय <b>कूका आंदोलन</b>" — उत्तर (North) दिशा के पंजाब में भड़का।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">22. Lord Lytton</div>
+    <div class="tenure">1876 – 1880</div>
+    <ul>
+      <li>Vernacular Press Act, 1878 (gagged Indian-language press)</li>
+      <li>Arms Act, 1878</li>
+      <li>Second Anglo-Afghan War (1878–80)</li>
+      <li>Queen Victoria titled "Kaiser-i-Hind" (Empress of India), 1876</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "लिटन ने प्रेस को <b>लीद</b> दिया (दबाया)" — वर्नाक्युलर प्रेस एक्ट से अखबारों की आज़ादी छीनी; रानी बनी <b>कैसर-ए-हिंद</b>।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">23. Lord Ripon</div>
+    <div class="tenure">1880 – 1884</div>
+    <ul>
+      <li>Repealed the Vernacular Press Act, 1882</li>
+      <li>First Factory Act, 1881</li>
+      <li>Resolution on Local Self-Government, 1882 — "Father of Local Self-Government"</li>
+      <li>Ilbert Bill controversy, 1883–84</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "रिपन ने <b>रिपेयर</b> किया" — प्रेस एक्ट हटाया और स्थानीय स्वशासन (Local Self-Govt) की नींव रखी — सबसे उदार वायसराय।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">24. Lord Dufferin</div>
+    <div class="tenure">1884 – 1888</div>
+    <ul>
+      <li>Third Anglo-Burmese War (1885–86)</li>
+      <li>Indian National Congress founded, 1885</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "डफरिन के दरबार में जन्मी <b>कांग्रेस</b>" — 1885 में इन्हीं के कार्यकाल में INC बनी।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">25. Lord Lansdowne</div>
+    <div class="tenure">1888 – 1894</div>
+    <ul>
+      <li>Factory Act, 1891</li>
+      <li>Indian Councils Act, 1892</li>
+      <li>Durand Line fixed with Afghanistan, 1893</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "लैंसडाउन ने <b>लाइन खींची</b>" — ड्यूरंड लाइन से अफगान सीमा तय की।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">26. Lord Elgin II</div>
+    <div class="tenure">1894 – 1899</div>
+    <ul><li>Severe famines and plague outbreak across India</li></ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "एल्गिन द्वितीय के समय <b>अकाल और प्लेग</b>" — सबसे कठिन दौर।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">27. Lord Curzon</div>
+    <div class="tenure">1899 – 1905</div>
+    <ul>
+      <li>Police Commission (1902) &amp; Universities Commission (1902)</li>
+      <li>Indian Universities Act, 1904</li>
+      <li>Partition of Bengal, 1905 — most controversial decision</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "कर्ज़न ने बंगाल को <b>चीर</b> दिया" — 1905 में बंगाल का बंटवारा किया, सबसे विवादित वायसराय माना जाता है।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">28. Lord Minto II</div>
+    <div class="tenure">1905 – 1910</div>
+    <ul>
+      <li>Swadeshi Movement (1905–11); Surat Split of Congress, 1907</li>
+      <li>Muslim League founded, 1906</li>
+      <li>Morley-Minto Reforms (Indian Councils Act), 1909 — separate electorates</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "मिंटो द्वितीय के समय बनी <b>मुस्लिम लीग</b>" — साथ ही मॉर्ले-मिंटो सुधार (अलग निर्वाचक मंडल) भी आए।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">29. Lord Hardinge II</div>
+    <div class="tenure">1910 – 1916</div>
+    <ul>
+      <li>Partition of Bengal annulled, 1911</li>
+      <li>Capital shifted from Calcutta to Delhi, 1911 (Delhi Durbar)</li>
+      <li>Hindu Mahasabha founded, 1915</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "हार्डिंग द्वितीय ने <b>राजधानी बदली</b>" — दिल्ली दरबार में राजधानी कलकत्ता से दिल्ली शिफ्ट की, और बंगाल बंटवारा भी रद्द किया।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">30. Lord Chelmsford</div>
+    <div class="tenure">1916 – 1921</div>
+    <ul>
+      <li>Lucknow Pact, 1916 (Congress-League unity)</li>
+      <li>Montagu's August Declaration, 1917</li>
+      <li>Government of India Act, 1919 (Montagu-Chelmsford Reforms)</li>
+      <li>Rowlatt Act, 1919 &amp; Jallianwala Bagh Massacre, 1919</li>
+      <li>Non-Cooperation &amp; Khilafat Movements launched</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "चेम्सफ़र्ड के समय हुआ <b>जलियांवाला बाग</b>" — 1919 की सबसे दुखद घटना, साथ ही मॉन्टेग्यू-चेम्सफ़र्ड सुधार भी आए।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">31. Lord Reading</div>
+    <div class="tenure">1921 – 1926</div>
+    <ul>
+      <li>Chauri Chaura incident, 1922 → Non-Cooperation Movement withdrawn</li>
+      <li>Swaraj Party formed, 1922</li>
+      <li>Kakori Train Robbery, 1925</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "रीडिंग के समय गांधी जी ने आंदोलन <b>पढ़-समझ</b> कर वापस लिया" — चौरी-चौरा कांड के बाद असहयोग आंदोलन रुका।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">32. Lord Irwin</div>
+    <div class="tenure">1926 – 1931</div>
+    <ul>
+      <li>Simon Commission arrives, 1927 (all-British, boycotted)</li>
+      <li>Nehru Report, 1928; Lahore session — Purna Swaraj resolution, 1929</li>
+      <li>Dandi March &amp; Civil Disobedience Movement, 1930</li>
+      <li>First Round Table Conference, 1930; Gandhi-Irwin Pact, 1931</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "इरविन से गांधी जी ने किया <b>समझौता (पैक्ट)</b>" — डांडी मार्च के बाद गांधी-इरविन पैक्ट, 1931।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">33. Lord Willingdon</div>
+    <div class="tenure">1931 – 1936</div>
+    <ul>
+      <li>Second &amp; Third Round Table Conferences, 1932</li>
+      <li>Communal Award, 1932 → Poona Pact, 1932</li>
+      <li>Government of India Act, 1935</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "विलिंग्डन के समय बना <b>पूना पैक्ट</b>" — कम्युनल अवॉर्ड के विरोध में, साथ ही 1935 एक्ट भी आया।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">34. Lord Linlithgow</div>
+    <div class="tenure">1936 – 1944</div>
+    <ul>
+      <li>India dragged into WWII without consultation, 1939 → Congress ministries resign</li>
+      <li>Lahore Resolution of Muslim League (Pakistan demand), 1940</li>
+      <li>'August Offer', 1940; Cripps Mission, 1942</li>
+      <li>Quit India Movement, 1942</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "लिनलिथगो ने बिना पूछे भारत को <b>जंग में घसीटा</b>" — इसी गुस्से में शुरू हुआ भारत छोड़ो आंदोलन, 1942।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">35. Lord Wavell</div>
+    <div class="tenure">1944 – 1947</div>
+    <ul>
+      <li>Wavell Plan &amp; Simla Conference, 1945</li>
+      <li>Cabinet Mission, 1946</li>
+      <li>Direct Action Day, 1946</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "वेवेल ने शिमला में बनाई <b>योजना</b>" — कैबिनेट मिशन, 1946 से सत्ता हस्तांतरण की बातचीत आगे बढ़ी।</div>
+  </div>
+</div>
+
+<div class="item viceroy">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">36. Lord Mountbatten</div>
+    <div class="tenure">1947 – 1948</div>
+    <ul>
+      <li>Last Viceroy of British India</li>
+      <li>Mountbatten Plan / June 3rd Plan, 1947</li>
+      <li>Indian Independence Act, 1947 — Partition &amp; Independence (15 August 1947)</li>
+      <li>Remained free India's first Governor-General until June 1948</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "माउंटबेटन ने किया <b>सबसे बड़ा</b> काम" — भारत को आज़ाद भी किया और बांटा भी, 15 अगस्त 1947।</div>
+  </div>
+</div>
+
+<div class="era-banner era-free"><span>🕊️ Free India's Governor-General (1947–1950)</span></div>
+
+<div class="item free">
+  <div class="dot"></div>
+  <div class="card">
+    <div class="name">37. C. Rajagopalachari ("Rajaji")</div>
+    <div class="tenure">1948 – 1950</div>
+    <ul>
+      <li>Only Indian (and last) Governor-General of India</li>
+      <li>Office permanently abolished, 26 January 1950, with the Constitution coming into force</li>
+    </ul>
+    <div class="mnemonic">🧠 <b>Hindi Trick:</b> "राजगोपालाचारी — <b>इकलौता भारतीय</b> गवर्नर-जनरल" — आखिरी वाला भी, 1950 में पद ही खत्म हो गया (राष्ट्रपति पद शुरू)।</div>
+  </div>
+</div>
+
+</div><!-- /timeline -->
+
+<div class="section-title">⭐ <span>The Most Exam-Important Milestones</span></div>
+<div class="highlight-grid" id="highlights">
+  <div class="highlight-card"><div class="yr">1773</div><div class="ti">Regulating Act</div><div class="de">Created the post of Governor-General of Bengal; Warren Hastings first to hold it.</div></div>
+  <div class="highlight-card"><div class="yr">1793</div><div class="ti">Permanent Settlement</div><div class="de">Cornwallis fixes Bengal's land revenue system permanently with zamindars.</div></div>
+  <div class="highlight-card"><div class="yr">1829</div><div class="ti">Abolition of Sati</div><div class="de">Bentinck bans Sati with Raja Ram Mohan Roy's support.</div></div>
+  <div class="highlight-card"><div class="yr">1848–56</div><div class="ti">Doctrine of Lapse</div><div class="de">Dalhousie annexes princely states without natural heirs; also starts railways &amp; telegraph.</div></div>
+  <div class="highlight-card"><div class="yr">1858</div><div class="ti">GoI Act 1858</div><div class="de">Canning oversees Crown taking direct control from the East India Company.</div></div>
+  <div class="highlight-card"><div class="yr">1885</div><div class="ti">INC Founded</div><div class="de">Indian National Congress formed during Dufferin's viceroyalty.</div></div>
+  <div class="highlight-card"><div class="yr">1905</div><div class="ti">Partition of Bengal</div><div class="de">Curzon's most controversial act — undone by Hardinge II in 1911.</div></div>
+  <div class="highlight-card"><div class="yr">1919</div><div class="ti">Jallianwala Bagh</div><div class="de">Rowlatt Act &amp; the massacre under Chelmsford; GoI Act 1919 also passed.</div></div>
+  <div class="highlight-card"><div class="yr">1930–32</div><div class="ti">Civil Disobedience</div><div class="de">Dandi March, Round Table Conferences &amp; Poona Pact span Irwin and Willingdon.</div></div>
+  <div class="highlight-card"><div class="yr">1942</div><div class="ti">Quit India Movement</div><div class="de">Launched under Linlithgow after the failed Cripps Mission.</div></div>
+  <div class="highlight-card"><div class="yr">1946</div><div class="ti">Cabinet Mission</div><div class="de">Wavell's key initiative for transfer of power talks.</div></div>
+  <div class="highlight-card"><div class="yr">1947</div><div class="ti">Independence &amp; Partition</div><div class="de">Mountbatten executes the June 3rd Plan — India freed and partitioned.</div></div>
+</div>
+
+<div class="section-title">🎴 <span>Quick Recall Flashcards</span> <span style="display:block;font-size:.6em;color:#bbb;font-weight:400;margin-top:4px;">(tap a card to flip)</span></div>
+<div class="flash-grid" id="flashGrid">
+  <div class="flash"><div class="flash-inner"><div class="flash-face flash-front">Who was the FIRST Governor-General of Bengal?</div><div class="flash-face flash-back">Warren Hastings (1773) — post created by the Regulating Act, 1773.</div></div></div>
+  <div class="flash"><div class="flash-inner"><div class="flash-face flash-front">Who was the FIRST Governor-General of India?</div><div class="flash-face flash-back">Lord William Bentinck (1833) — post renamed by the Charter Act, 1833.</div></div></div>
+  <div class="flash"><div class="flash-inner"><div class="flash-face flash-front">Who was the FIRST Viceroy of India?</div><div class="flash-face flash-back">Lord Canning (1858) — same person as the last Governor-General.</div></div></div>
+  <div class="flash"><div class="flash-inner"><div class="flash-face flash-front">Who was the LAST Viceroy of India?</div><div class="flash-face flash-back">Lord Mountbatten (1947) — oversaw Independence &amp; Partition.</div></div></div>
+  <div class="flash"><div class="flash-inner"><div class="flash-face flash-front">Who partitioned Bengal in 1905?</div><div class="flash-face flash-back">Lord Curzon — later annulled by Lord Hardinge II in 1911.</div></div></div>
+  <div class="flash"><div class="flash-inner"><div class="flash-face flash-front">Under whom was the INC founded?</div><div class="flash-face flash-back">Lord Dufferin (1885).</div></div></div>
+  <div class="flash"><div class="flash-inner"><div class="flash-face flash-front">Who was assassinated in office, in the Andamans?</div><div class="flash-face flash-back">Lord Mayo (1872) — only Viceroy assassinated in India.</div></div></div>
+  <div class="flash"><div class="flash-inner"><div class="flash-face flash-front">Who was the ONLY Indian Governor-General?</div><div class="flash-face flash-back">C. Rajagopalachari (1948–50) — office abolished in 1950.</div></div></div>
+</div>
+
+</main>
+
+<footer>Built for CA Notes 2026 · Sources cross-checked with NCERT Modern History &amp; standard UPSC references</footer>
+
+<script>
+// scroll progress rail
+const rail = document.getElementById('progressRail');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  rail.style.width = scrolled + '%';
+});
+
+// reveal on scroll
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.item, .highlight-card').forEach(el => obs.observe(el));
+
+// flashcard flip
+document.querySelectorAll('.flash').forEach(f => {
+  f.addEventListener('click', () => f.classList.toggle('flipped'));
+});
+</script>
+</body>
+</html>

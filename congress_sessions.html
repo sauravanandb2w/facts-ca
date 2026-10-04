@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INC Sessions – Congress President, Place & Key Facts | UPSC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#faf7f0;color:#2c1a00;overflow-x:hidden}
+
+.hero{
+  background:linear-gradient(135deg,#6d1a00 0%,#a83200 40%,#c8620a 70%,#c8a84b 100%);
+  color:#fff;text-align:center;padding:48px 20px 40px;position:relative;overflow:hidden
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                   radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%)
+}
+.hero-icon{font-size:3.5rem;margin-bottom:10px;display:inline-block;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.6rem);margin-bottom:8px;text-shadow:0 2px 10px rgba(0,0,0,.4);position:relative}
+.hero p{font-size:.93rem;opacity:.9;max-width:580px;margin:0 auto 14px;position:relative}
+.hero-badges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:10px;position:relative}
+.hbadge{background:rgba(255,255,255,.15);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:5px 15px;font-size:.8rem;font-weight:600}
+.hbadge.green{background:rgba(19,136,8,.3);border-color:rgba(19,136,8,.5)}
+.hbadge.orange{background:rgba(255,153,51,.25);border-color:rgba(255,153,51,.5)}
+
+.tabs{display:flex;justify-content:center;gap:6px;padding:14px 16px;background:#fff;border-bottom:2px solid #e8d5a0;flex-wrap:wrap;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.tab{padding:7px 16px;border-radius:20px;font-size:.83rem;font-weight:600;cursor:pointer;border:2px solid transparent;transition:.2s;background:#f5f0e8;color:#5a3a00}
+.tab.active,.tab:hover{background:#FF9933;color:#fff;border-color:#FF9933}
+
+main{max-width:960px;margin:0 auto;padding:24px 14px 80px}
+.section{display:none}.section.active{display:block}
+
+/* FOUNDER */
+.founder-box{
+  background:linear-gradient(135deg,#fff9ee,#fff3d0);
+  border:2px solid #c8a84b;border-radius:16px;
+  padding:20px 24px;margin-bottom:24px;
+  display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap
+}
+.founder-icon{font-size:2.8rem;line-height:1;flex-shrink:0}
+.founder-content h2{font-family:'Playfair Display',serif;color:#6d1a00;font-size:1.15rem;margin-bottom:7px}
+.founder-content p{font-size:.87rem;line-height:1.85;color:#444}
+.founder-content b{color:#6d1a00}
+
+/* TRICK BOX */
+.trick-box{background:#fff8e1;border:2px solid #f9a825;border-radius:12px;padding:15px 18px;margin-bottom:22px}
+.trick-box h3{color:#e65100;font-size:.92rem;margin-bottom:8px;font-weight:700}
+.trick-sentence{font-size:1.15rem;font-weight:800;color:#1b5e20;line-height:1.7;font-family:'Playfair Display',serif}
+.trick-sentence .hi{color:#c62828}
+.trick-decode{font-size:.84rem;color:#555;margin-top:8px;line-height:1.85}
+.trick-story{font-size:.88rem;color:#4a148c;font-style:italic;margin-top:8px;background:rgba(74,20,140,0.05);padding:10px 14px;border-radius:8px;line-height:1.75;border-left:3px solid #7b1fa2}
+
+/* SEARCH */
+.search-box{width:100%;padding:11px 15px;border:2px solid #e8d5a0;border-radius:10px;font-size:.9rem;margin-bottom:18px;outline:none;transition:.2s;background:#fff}
+.search-box:focus{border-color:#FF9933}
+
+/* TIMELINE */
+.tl-wrap{position:relative;padding-left:30px}
+.tl-wrap::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,#FF9933,#138808);border-radius:2px}
+.tl-item{
+  position:relative;margin-bottom:18px;
+  background:#fffdf7;border:1.5px solid #e8d5a0;
+  border-radius:12px;padding:14px 16px;
+  box-shadow:0 2px 6px rgba(0,0,0,.04);
+  opacity:0;transform:translateX(28px);
+  transition:opacity .5s ease,transform .5s ease
+}
+.tl-item.vis{opacity:1;transform:translateX(0)}
+.tl-item::before{
+  content:'';position:absolute;left:-21px;top:18px;
+  width:12px;height:12px;border-radius:50%;
+  background:#FF9933;border:2.5px solid #fff;
+  box-shadow:0 0 0 2px #FF9933
+}
+.tl-item.star::before{background:#138808;box-shadow:0 0 0 2px #138808}
+.tl-item.mega{border-color:#c62828}
+.tl-item.mega::before{background:#c62828;width:16px;height:16px;left:-23px;top:16px;box-shadow:0 0 0 2.5px #c62828}
+.tl-year{font-size:.76rem;font-weight:700;color:#FF9933;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.tl-item.star .tl-year{color:#138808}
+.tl-item.mega .tl-year{color:#c62828}
+.tl-title{font-size:.97rem;font-weight:700;color:#1a0a00;margin-bottom:3px}
+.tl-president{font-size:.84rem;color:#555;margin-bottom:5px}
+.tl-president b{color:#6d1a00}
+.tl-key{font-size:.83rem;color:#333;line-height:1.75;border-top:1px solid #f0e8d0;padding-top:7px;margin-top:5px}
+.tl-trick{background:#fff8e1;border-left:3px solid #ff9800;padding:7px 12px;border-radius:0 8px 8px 0;font-size:.82rem;color:#5d4037;margin-top:8px;line-height:1.7}
+.tl-trick .story{color:#4a148c;font-style:italic;display:block;margin-top:4px}
+.sbadge{display:inline-block;background:#e8f5e9;color:#2e7d32;border-radius:12px;padding:1px 9px;font-size:.7rem;font-weight:700;margin-left:6px}
+.hbadge2{display:inline-block;background:#ffebee;color:#c62828;border-radius:12px;padding:1px 9px;font-size:.7rem;font-weight:700;margin-left:6px}
+
+/* FIRSTS GRID */
+.section-title{font-family:'Playfair Display',serif;font-size:1.15rem;color:#6d1a00;margin:20px 0 14px;border-left:4px solid #FF9933;padding-left:11px}
+.firsts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:24px}
+.first-card{
+  background:#fff;border:1.5px solid #e8d5a0;border-radius:12px;
+  padding:15px;text-align:center;
+  opacity:0;transform:translateY(18px);
+  transition:opacity .4s ease,transform .4s ease,box-shadow .2s
+}
+.first-card.vis{opacity:1;transform:translateY(0)}
+.first-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.09);transform:translateY(-3px)!important}
+.first-card .icon{font-size:1.9rem;margin-bottom:7px}
+.first-card h4{font-size:.85rem;color:#6d1a00;font-weight:700;margin-bottom:3px}
+.first-card p{font-size:.79rem;color:#666;line-height:1.55}
+
+/* TABLE */
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06);font-size:.82rem;margin-bottom:20px}
+th{background:#6d1a00;color:#fff;padding:10px 12px;text-align:left}
+td{padding:8px 12px;border-bottom:1px solid #f5ecd8;vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even) td{background:#fffdf5}
+.hl td{background:#fff3e0;font-weight:600}
+
+/* MCQ */
+.mcq-wrap{background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(0,0,0,.07);padding:22px;margin-top:8px}
+.mcq-wrap h2{font-family:'Playfair Display',serif;color:#6d1a00;font-size:1.1rem;margin-bottom:18px}
+.question{margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #f5ecd8}
+.question:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.q-text{font-weight:600;font-size:.93rem;margin-bottom:9px;color:#1a0a00}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+@media(max-width:500px){.opts{grid-template-columns:1fr}}
+.opt{background:#f9f5ec;border-radius:8px;padding:8px 12px;font-size:.85rem;cursor:pointer;border:2px solid transparent;transition:.15s}
+.opt:hover{background:#fff3e0;border-color:#FF9933}
+.opt.correct{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.opt.wrong{background:#ffebee;border-color:#c62828;color:#b71c1c}
+.exp{margin-top:9px;padding:9px 13px;background:#fff8e1;border-radius:8px;font-size:.83rem;color:#555;display:none;line-height:1.7}
+.exp.show{display:block}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-icon">🪔</div>
+  <h1>Indian National Congress Sessions</h1>
+  <p>President · Place · Key Resolutions · Hindi Story Tricks | UPSC Special</p>
+  <div class="hero-badges">
+    <span class="hbadge">Founded: 1885</span>
+    <span class="hbadge orange">By: A.O. Hume</span>
+    <span class="hbadge">1st Pres: W.C. Bonnerjee</span>
+    <span class="hbadge green">1st Session: Bombay</span>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('timeline',this)">📅 Timeline</div>
+  <div class="tab" onclick="showTab('firsts',this)">🥇 Historic Firsts</div>
+  <div class="tab" onclick="showTab('table',this)">📊 Quick Table</div>
+  <div class="tab" onclick="showTab('tricks',this)">🧠 Hindi Tricks</div>
+  <div class="tab" onclick="showTab('mcq',this)">📝 MCQs</div>
+</div>
+
+<main>
+
+<!-- ════ TIMELINE ════ -->
+<div class="section active" id="tab-timeline">
+
+  <div class="founder-box">
+    <div class="founder-icon">🎩</div>
+    <div class="founder-content">
+      <h2>INC की स्थापना — 1885, Bombay</h2>
+      <p>
+        <b>Founder:</b> A.O. Hume (Allan Octavian Hume) — British ICS officer &amp; ornithologist<br>
+        <b>Safety Valve Theory:</b> Viceroy Dufferin चाहते थे कि Indians का gussa एक "safety valve" में जाए<br>
+        <b>1st Session:</b> Dec 28–31, 1885 | Gokuldas Tejpal Sanskrit College, <b>Bombay</b><br>
+        <b>1st President:</b> <b>Womesh Chandra Bonnerjee</b> | 72 delegates
+      </p>
+    </div>
+  </div>
+
+  <input class="search-box" type="text" id="tlSearch" placeholder="🔍  Search sessions... (e.g. Lahore, Bose, Swaraj, Lucknow)" oninput="filterTL()">
+
+  <div class="tl-wrap" id="tl">
+
+    <div class="tl-item" data-t="1885 bombay bonnerjee first session hume founded">
+      <div class="tl-year">1885 · Bombay</div>
+      <div class="tl-title">1st Session <span class="hbadge2">FIRST EVER</span></div>
+      <div class="tl-president">President: <b>W.C. Bonnerjee</b></div>
+      <div class="tl-key">72 delegates | INC founded by A.O. Hume | Safety valve theory | Gokuldas Tejpal College</div>
+      <div class="tl-trick">🧠 <b>"Bombay में Bonnerjee ने Congress का BIRTHDAY मनाया!"</b>
+        <span class="story">📖 Hindi Story: एक अंग्रेज (Hume) ने Bombay में पार्टी बुलाई, मेहमान थे Bonnerjee साहब — भारत की पहली political party की पहली पार्टी! WC = "Wahini Congress" शुरू!</span>
+      </div>
+    </div>
+
+    <div class="tl-item" data-t="1886 calcutta dadabhai naoroji drain wealth grand old man">
+      <div class="tl-year">1886 · Calcutta</div>
+      <div class="tl-title">2nd Session</div>
+      <div class="tl-president">President: <b>Dadabhai Naoroji</b></div>
+      <div class="tl-key">Grand Old Man of India | Drain of Wealth theory | First to use "Swaraj" concept | 436 delegates</div>
+      <div class="tl-trick">🧠 <b>"Dada (बड़े भाई) Naoroji ने कहा — अंग्रेज हमारा पैसा DRAIN करके ले जा रहे हैं!"</b>
+        <span class="story">📖 Hindi Story: Dada-bhai यानी "India के बड़े भाई" ने Calcutta में खड़े होकर कहा — "ये लोग हमारा पैसा नाले में बहा रहे हैं!" → Drain of Wealth theory जन्मी!</span>
+      </div>
+    </div>
+
+    <div class="tl-item star" data-t="1887 madras badruddin tyabji first muslim president">
+      <div class="tl-year">1887 · Madras</div>
+      <div class="tl-title">3rd Session <span class="sbadge">1st MUSLIM PRES</span></div>
+      <div class="tl-president">President: <b>Badruddin Tyabji</b></div>
+      <div class="tl-key">1st Muslim President of INC | Hindu-Muslim unity promoter | Lawyer from Bombay</div>
+      <div class="tl-trick">🧠 <b>"Tyabji = T for TOGETHER — मुसलमान और हिन्दू एक Congress में!"</b>
+        <span class="story">📖 Hindi Story: Madras में एक मुस्लिम वकील आए — Tyabji साहब। बोले "हम TOGETHER हैं, अलग नहीं!" → पहले Muslim president बने। याद करो: T = Tyabji = Together!</span>
+      </div>
+    </div>
+
+    <div class="tl-item star" data-t="1888 allahabad george yule first british english president">
+      <div class="tl-year">1888 · Allahabad</div>
+      <div class="tl-title">4th Session <span class="sbadge">1st BRITISH PRES</span></div>
+      <div class="tl-president">President: <b>George Yule</b></div>
+      <div class="tl-key">1st &amp; ONLY British/English President of INC | Businessman in Calcutta</div>
+      <div class="tl-trick">🧠 <b>"Yule = 'Yule log' (Christmas) — अंग्रेज आदमी Christmas पर Allahabad आया!"</b>
+        <span class="story">📖 Hindi Story: George Yule एक अंग्रेज businessman थे। 1888 में Allahabad गए। बस एक बार — फिर कभी कोई अंग्रेज Congress president नहीं बना! याद करो: George = "Goraa (गोरा)" president, एक ही बार!</span>
+      </div>
+    </div>
+
+    <div class="tl-item star" data-t="1896 calcutta vande mataram rabindranath tagore bankim chandra">
+      <div class="tl-year">1896 · Calcutta</div>
+      <div class="tl-title">Vande Mataram पहली बार गाया <span class="hbadge2">ICONIC</span></div>
+      <div class="tl-president">President: <b>Rahimtulla Sayani</b></div>
+      <div class="tl-key">Vande Mataram sung for 1st time by <b>Rabindranath Tagore</b> | Written by Bankim Chandra in novel Anandamath (1882)</div>
+      <div class="tl-trick">🧠 <b>"1896 में Tagore ने Calcutta में पहली बार 'Vande Mataram' गाया!"</b>
+        <span class="story">📖 Hindi Story: Rabindranath Tagore Calcutta session में उठे और गाया — "वन्दे मातरम्!" पूरा hall चुप हो गया। Bankim बाबू ने 1882 में लिखा था, Tagore ने 1896 में गाया। याद करो: 96 = "नौ-छह = नव गीत!"</span>
+      </div>
+    </div>
+
+    <div class="tl-item" data-t="1905 banaras gokhale swadeshi movement partition bengal">
+      <div class="tl-year">1905 · Banaras</div>
+      <div class="tl-title">Swadeshi Movement शुरू</div>
+      <div class="tl-president">President: <b>G.K. Gokhale</b></div>
+      <div class="tl-key">Swadeshi movement begins | Curzon का Bengal partition (1905) | विदेशी माल का boycott | Gokhale = Gandhi का political guru</div>
+      <div class="tl-trick">🧠 <b>"Gokhale = Gandhi के GURU — Banaras में SWADESHI की सीख!"</b>
+        <span class="story">📖 Hindi Story: Banaras (काशी) — सबसे पवित्र शहर। यहाँ Gokhale ने कहा "अपना माल अपना!" Gandhi जी ने बाद में कहा "Gokhale मेरे गुरु हैं।" काशी में काशी-जैसी शिक्षा मिली!</span>
+      </div>
+    </div>
+
+    <div class="tl-item mega" data-t="1906 calcutta dadabhai naoroji swaraj muslim league four resolutions">
+      <div class="tl-year">1906 · Calcutta</div>
+      <div class="tl-title">🔥 "SWARAJ" पहली बार! <span class="hbadge2">KEY</span></div>
+      <div class="tl-president">President: <b>Dadabhai Naoroji</b></div>
+      <div class="tl-key"><b>पहली बार "Swaraj" शब्द बोला</b> | Muslim League भी इसी साल बनी (Dhaka, Dec 1906) | 4 Resolutions: Swaraj, Swadeshi, Boycott, National Education</div>
+      <div class="tl-trick">🧠 <b>"1906 में Dada ने कहा — SWARAJ चाहिए! (S for Swaraj, Same year ML bani)"</b>
+        <span class="story">📖 Hindi Story: Dada-bhai Naoroji एक बार फिर Calcutta आए। इस बार उन्होंने एक नया शब्द दिया — "SWARAJ!" सुनकर सब चौंक गए। उसी साल Dhaka में Muslim League भी बनी — जैसे एक ही साल में दो पार्टियाँ पैदा हुईं!</span>
+      </div>
+    </div>
+
+    <div class="tl-item mega" data-t="1907 surat split garam dal naram dal tilak gokhale extremists moderates lal bal pal">
+      <div class="tl-year">1907 · Surat</div>
+      <div class="tl-title">💥 SURAT SPLIT <span class="hbadge2">MOST ASKED</span></div>
+      <div class="tl-president">No clear President (split हो गया)</div>
+      <div class="tl-key"><b>GARAM DAL (Extremists)</b>: Tilak, Lal-Bal-Pal | <b>NARAM DAL (Moderates)</b>: Gokhale, Mehta | INC दो टुकड़ों में | 1916 Lucknow Pact में फिर मिले</div>
+      <div class="tl-trick">🧠 <b>"Surat में Congress की 'सूरत' बिगड़ गई — GARAM और NARAM में झगड़ा!"</b>
+        <span class="story">📖 Hindi Story: Surat शहर में Congress की बैठक हुई। एक तरफ Tilak जी (GARAM — जैसे लाल मिर्च) और दूसरी तरफ Gokhale जी (NARAM — जैसे मक्खन)। दोनों में झगड़ा हुआ — Congress दो हिस्सों में टूट गई! याद करो: LAL-BAL-PAL = GARAM trio!</span>
+      </div>
+    </div>
+
+    <div class="tl-item star" data-t="1911 delhi jana gana mana tagore capital shifted king george">
+      <div class="tl-year">1911 · Delhi</div>
+      <div class="tl-title">Jana Gana Mana पहली बार गाया <span class="hbadge2">ICONIC</span></div>
+      <div class="tl-president">President: <b>Bishan Narayan Dhar</b></div>
+      <div class="tl-key"><b>Jana Gana Mana</b> पहली बार sung by Tagore | Capital Calcutta से Delhi shift | King George V का India visit</div>
+      <div class="tl-trick">🧠 <b>"Delhi 1911 = DOUBLE EVENT: Capital + Anthem दोनों बदले!"</b>
+        <span class="story">📖 Hindi Story: 1911 में King George V India आए। Delhi में Congress session था। Tagore उठे और गाया "जन गण मन अधिनायक जय हे!" और उसी साल capital भी Calcutta से Delhi आ गया। Double bonanza Delhi को!</span>
+      </div>
+    </div>
+
+    <div class="tl-item mega" data-t="1916 lucknow pact ambika charan congress reunited tilak annie besant home rule league">
+      <div class="tl-year">1916 · Lucknow</div>
+      <div class="tl-title">🤝 Lucknow Pact + Congress Reunited <span class="hbadge2">KEY</span></div>
+      <div class="tl-president">President: <b>Ambika Charan Majumdar</b></div>
+      <div class="tl-key"><b>Lucknow Pact</b>: Congress + Muslim League Unity | Tilak + Annie Besant वापस | Muslims को separate electorate | Home Rule League (1916) | 1907 Surat split के 9 साल बाद reunion</div>
+      <div class="tl-trick">🧠 <b>"Lucknow में प्यार हुआ — Congress + League दोस्त बने!"</b>
+        <span class="story">📖 Hindi Story: 9 साल बाद 2007 की Surat की दुश्मनी खत्म! Lucknow में Congress और Muslim League ने हाथ मिलाया। Tilak और Besant भी वापस आए। जैसे पुरानी दोस्ती renewal हो गई Lucknow की तहज़ीब (sophistication) में!</span>
+      </div>
+    </div>
+
+    <div class="tl-item star" data-t="1917 calcutta annie besant first woman president">
+      <div class="tl-year">1917 · Calcutta</div>
+      <div class="tl-title">👩 पहली महिला President <span class="sbadge">FIRST WOMAN</span></div>
+      <div class="tl-president">President: <b>Annie Besant</b></div>
+      <div class="tl-key">INC की पहली महिला President | Irish-British theosophist | Home Rule League founder | "Wake up India" campaign</div>
+      <div class="tl-trick">🧠 <b>"ANNIE = Any woman FIRST — अंग्रेज औरत ने भारतीयों का नेतृत्व किया!"</b>
+        <span class="story">📖 Hindi Story: एक अंग्रेज महिला — Annie Besant — Calcutta आईं। पूरा India चौंक गया: "एक foreign woman हमारी Congress president बनेगी?" बनीं! याद करो: ANNIE = A = Aurat = पहली महिला president, 1917!</span>
+      </div>
+    </div>
+
+    <div class="tl-item" data-t="1919 amritsar motilal nehru jallianwala rowlatt act">
+      <div class="tl-year">1919 · Amritsar</div>
+      <div class="tl-title">Jallianwala के बाद का Session</div>
+      <div class="tl-president">President: <b>Motilal Nehru</b></div>
+      <div class="tl-key">Jallianwala Bagh massacre (Apr 13, 1919) के बाद | Rowlatt Act protests | Gandhi की non-violence adopted | Montague-Chelmsford reforms criticized</div>
+      <div class="tl-trick">🧠 <b>"Amritsar 1919 = 'अमृत' (nectar) खून में बदल गया!"</b>
+        <span class="story">📖 Hindi Story: Amritsar — पवित्र शहर। 13 अप्रैल 1919 को Jallianwala Bagh में खून हुआ। Congress session में Motilal Nehru (Jawaharlal के पिता) ने कहा "यह नहीं सहेंगे!" Amrit (nectar) शहर में massacre — heartbreaking contrast!</span>
+      </div>
+    </div>
+
+    <div class="tl-item mega" data-t="1920 nagpur non cooperation movement charkha congress constitution changed vijayaraghavachariar">
+      <div class="tl-year">1920 · Nagpur</div>
+      <div class="tl-title">Non-Cooperation + Charkha Adopted <span class="hbadge2">KEY</span></div>
+      <div class="tl-president">President: <b>C. Vijayaraghavachariar</b></div>
+      <div class="tl-key"><b>Non-Cooperation Movement</b> approved | Congress का constitution बदला | Provincial Congress committees भाषा के आधार पर | Charkha = Congress symbol | Gandhi dominant leader बने</div>
+      <div class="tl-trick">🧠 <b>"Nagpur 1920 = N for Non-Cooperation + Charkha = Gandhi का नया हथियार!"</b>
+        <span class="story">📖 Hindi Story: Nagpur में Gandhi जी ने एक छोटा Charkha (चरखा) उठाया और बोले "यही है हमारा हथियार!" Congress ने मान लिया — Non-Cooperation शुरू। विदेशी कपड़े जलाओ, Charkha चलाओ! Gandhi = नए boss!</span>
+      </div>
+    </div>
+
+    <div class="tl-item star" data-t="1924 belgaum gandhi president only once">
+      <div class="tl-year">1924 · Belgaum</div>
+      <div class="tl-title">Gandhi President (ONLY ONCE) <span class="sbadge">ONLY TIME</span></div>
+      <div class="tl-president">President: <b>Mahatma Gandhi</b></div>
+      <div class="tl-key">Gandhi सिर्फ एक बार Congress President बने | Belgaum, Karnataka | Hindu-Muslim unity + Khadi focus</div>
+      <div class="tl-trick">🧠 <b>"Belgaum में Bapu एक बार कुर्सी पर बैठे — फिर कभी नहीं!"</b>
+        <span class="story">📖 Hindi Story: 1924 में Belgaum में Gandhi जी को President बनाया गया। वो बोले "ठीक है, एक बार।" बैठे, काम किया, फिर कहा "बस, मुझे यह कुर्सी नहीं चाहिए।" पूरी जिंदगी में सिर्फ एक बार! याद करो: BEL = "एक bel (फल) खाया, बस!"</span>
+      </div>
+    </div>
+
+    <div class="tl-item" data-t="1927 madras complete independence poorna swaraj nehru simon commission boycott">
+      <div class="tl-year">1927 · Madras</div>
+      <div class="tl-title">Complete Independence + Simon Boycott</div>
+      <div class="tl-president">President: <b>M.A. Ansari</b></div>
+      <div class="tl-key">Nehru ने Complete Independence resolution move किया (informal, first time) | Simon Commission boycott declared | Simon = 6 British + 0 Indians</div>
+      <div class="tl-trick">🧠 <b>"Simon Go Back! Madras में rehearsal, Lahore 1929 में असली show!"</b>
+        <span class="story">📖 Hindi Story: Madras में Nehru खड़े हुए और बोले "Poorna Swaraj चाहिए!" (rehearsal था)। Simon Commission आया — सब अंग्रेज, कोई Indian नहीं। India ने कहा "Simon, GO BACK!" Madras ने यह नारा शुरू किया!</span>
+      </div>
+    </div>
+
+    <div class="tl-item mega" data-t="1929 lahore poorna swaraj complete independence jawaharlal nehru tricolour 26 january">
+      <div class="tl-year">1929 · Lahore</div>
+      <div class="tl-title">🚩 POORNA SWARAJ — सबसे Important! <span class="hbadge2">🔥🔥 MOST ASKED</span></div>
+      <div class="tl-president">President: <b>Jawaharlal Nehru</b></div>
+      <div class="tl-key">
+        <b>POORNA SWARAJ</b> (Complete Independence) declared | Tricolour hoisted on Ravi river bank (Dec 31, 1929, midnight!) | <b>26 January</b> = Independence Day declare (1930–46 annually) | Civil Disobedience Movement planned
+      </div>
+      <div class="tl-trick">🧠 <b>"Lahore 1929 = L for Liberty = India का पहला midnight moment!"</b>
+        <span class="story">📖 Hindi Story: 31 दिसंबर 1929, आधी रात को Ravi नदी के किनारे Nehru ने झंडा फहराया और बोले "POORNA SWARAJ!" सारा India रो पड़ा। 26 January को Independence Day घोषित किया — यही बाद में 1950 में Republic Day बना। यह था India का पहला "Tryst with Destiny" moment!</span>
+      </div>
+    </div>
+
+    <div class="tl-item mega" data-t="1931 karachi fundamental rights vallabhbhai patel gandhi irwin pact bhagat singh">
+      <div class="tl-year">1931 · Karachi</div>
+      <div class="tl-title">📜 Fundamental Rights Resolution <span class="hbadge2">KEY</span></div>
+      <div class="tl-president">President: <b>Vallabhbhai Patel</b></div>
+      <div class="tl-key"><b>Fundamental Rights &amp; Economic Policy resolution</b> passed (भविष्य के Constitution का blueprint!) | Gandhi-Irwin Pact ratified | Bhagat Singh, Rajguru, Sukhdev की फाँसी (Mar 23, 1931) | Congress ने commutation माँगा पर असफल</div>
+      <div class="tl-trick">🧠 <b>"Karachi = K for Key Rights = Constitution की नींव Karachi में!"</b>
+        <span class="story">📖 Hindi Story: Karachi में Iron Man Patel ने लिखा — Fundamental Rights! जैसे Constitution की नींव का पहला पत्थर। उसी दिन Bhagat Singh, Rajguru, Sukhdev को फाँसी हुई थी — एक दिन में grief और glory दोनों! Karachi = "Key rights" याद करो!</span>
+      </div>
+    </div>
+
+    <div class="tl-item" data-t="1936 lucknow nehru socialist elections provincial">
+      <div class="tl-year">1936 · Lucknow</div>
+      <div class="tl-title">Socialist Leanings + Elections Prep</div>
+      <div class="tl-president">President: <b>Jawaharlal Nehru</b></div>
+      <div class="tl-key">Socialist policies emphasized | 1937 Provincial elections की तैयारी | Congress 7/11 provinces में majority जीती</div>
+      <div class="tl-trick">🧠 <b>"Nehru = 'N for Naya (New) Socialism' — Lucknow में लाल विचार!"</b>
+        <span class="story">📖 Hindi Story: Lucknow में Nehru ने Congress में socialism की बात की। "गरीबों के लिए काम!" 1937 elections जीते 7 states में। Lucknow की तहज़ीब में Nehru का new vision!</span>
+      </div>
+    </div>
+
+    <div class="tl-item star" data-t="1937 faizpur first village nehru kisan peasant">
+      <div class="tl-year">1937 · Faizpur, Maharashtra</div>
+      <div class="tl-title">🏘️ पहला Village Session <span class="sbadge">FIRST VILLAGE</span></div>
+      <div class="tl-president">President: <b>Jawaharlal Nehru</b></div>
+      <div class="tl-key">Congress का पहला VILLAGE session | Maharashtra का छोटा गाँव | Kisan/peasant issues पर focus | Kisan Sabha formed</div>
+      <div class="tl-trick">🧠 <b>"Faizpur = किसानों को Faiz (फ़ायदा) — Congress गाँव गई!"</b>
+        <span class="story">📖 Hindi Story: पहले Congress हमेशा बड़े शहरों में मिलती थी। 1937 में Nehru ने कहा "इस बार गाँव चलते हैं!" Faizpur नाम का एक छोटा गाँव — Maharashtra में। किसान खुश हो गए — Congress उनके दरवाज़े आई! याद करो: F = Faizpur = Farmers First!</span>
+      </div>
+    </div>
+
+    <div class="tl-item mega" data-t="1938 haripura subhash chandra bose national planning committee nehru chairman">
+      <div class="tl-year">1938 · Haripura, Gujarat</div>
+      <div class="tl-title">Bose President + Planning Committee <span class="hbadge2">KEY</span></div>
+      <div class="tl-president">President: <b>Subhash Chandra Bose</b> (1st time)</div>
+      <div class="tl-key"><b>National Planning Committee</b> formed | Nehru = NPC Chairman | Bose unopposed elected | Gandhi ने support किया</div>
+      <div class="tl-trick">🧠 <b>"HARIPURA = HARI (God) ने BOSE को दिया — Planning का idea!"</b>
+        <span class="story">📖 Hindi Story: Haripura — Gujarat का एक गाँव। Bose जी (Netaji) आए, Gandhi ने उन्हें support किया, unopposed जीते। Bose ने कहा "India को plan चाहिए!" National Planning Committee बनी, Nehru उसके chairman बने। Hari + Pura = भगवान का पूरा आशीर्वाद Bose को!</span>
+      </div>
+    </div>
+
+    <div class="tl-item mega" data-t="1939 tripuri bose gandhi pattabhi sitaramayya forward bloc drama clash">
+      <div class="tl-year">1939 · Tripuri, MP</div>
+      <div class="tl-title">💥 Bose vs Gandhi Drama <span class="hbadge2">🔥 HIGH DRAMA</span></div>
+      <div class="tl-president">President: <b>Subhash Chandra Bose</b> (re-elected)</div>
+      <div class="tl-key">Bose ने Gandhi के candidate <b>Pattabhi Sitaramayya</b> को हराया (1580 vs 1377 votes) | Gandhi: "Pattabhi की हार मेरी हार है" | Bose resign → <b>Forward Bloc</b> (May 3, 1939)</div>
+      <div class="tl-trick">🧠 <b>"TRIPURI = TRI (तीन) DRAMA: Bose जीता, Gandhi हारे, Forward Bloc जन्मा!"</b>
+        <span class="story">📖 Hindi Story: Tripuri में बड़ा नाटक हुआ! Gandhi जी चाहते थे Pattabhi जीतें। लेकिन Bose ने हरा दिया! Gandhi बोले "यह मेरी हार है।" फिर Bose को resign करना पड़ा — अकेले निकल गए और बनाई Forward Bloc! तीन events एक session में — तीन TRI = TRI-puri!</span>
+      </div>
+    </div>
+
+    <div class="tl-item" data-t="1940 ramgarh abul kalam azad individual satyagraha vinoba bhave longest serving">
+      <div class="tl-year">1940 · Ramgarh</div>
+      <div class="tl-title">Individual Satyagraha Planned</div>
+      <div class="tl-president">President: <b>Abul Kalam Azad</b> (6 साल — longest!)</div>
+      <div class="tl-key">Individual Civil Disobedience | Azad = सबसे लंबे serving president (1940-46, 6 years) | Vinoba Bhave = 1st individual satyagrahi | Nehru = 2nd satyagrahi</div>
+      <div class="tl-trick">🧠 <b>"AZAD = 'आज़ाद' — AZAD ने WW2 के दौरान Congress को 6 साल संभाला!"</b>
+        <span class="story">📖 Hindi Story: AZAD नाम ही कहता है — freedom! Abul Kalam Azad 1940 से 1946 तक Congress president रहे — पूरे 6 साल। WW2 का समय था। Ramgarh = Ram + Garh = भगवान का किला — अंदर से लड़ाई जारी थी!</span>
+      </div>
+    </div>
+
+    <div class="tl-item" data-t="1946 meerut kripalani cabinet mission pre independence">
+      <div class="tl-year">1946 · Meerut</div>
+      <div class="tl-title">Pre-Independence Last Major Session</div>
+      <div class="tl-president">President: <b>J.B. Kripalani</b> (Acharya)</div>
+      <div class="tl-key">Cabinet Mission Plan | Interim Government formed | Independence की दहलीज़ पर | Kripalani बाद में opposition leader बने</div>
+      <div class="tl-trick">🧠 <b>"KRIPALANI = 'Kripa (grace) + lani' — Azadi की Kripa आने वाली थी!"</b>
+        <span class="story">📖 Hindi Story: 1946 में Meerut में आखिरी बड़ा session हुआ। Kripalani president थे — "Acharya" (teacher) कहलाते थे। जैसे एक teacher आखिरी class दे रहे हों — अगले साल India आज़ाद होने वाला था!</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════ FIRSTS ════ -->
+<div class="section" id="tab-firsts">
+  <div class="section-title">🥇 INC के ऐतिहासिक "पहले" (Historic Firsts)</div>
+  <div class="firsts-grid">
+    <div class="first-card"><div class="icon">👨‍⚖️</div><h4>पहले President</h4><p><b>W.C. Bonnerjee</b><br>1885, Bombay<br>Womesh Chandra Bonnerjee</p></div>
+    <div class="first-card"><div class="icon">☪️</div><h4>पहले Muslim President</h4><p><b>Badruddin Tyabji</b><br>1887, Madras<br>Hindu-Muslim unity</p></div>
+    <div class="first-card"><div class="icon">🇬🇧</div><h4>एकमात्र British President</h4><p><b>George Yule</b><br>1888, Allahabad<br>Calcutta businessman</p></div>
+    <div class="first-card"><div class="icon">🎵</div><h4>Vande Mataram First Time</h4><p><b>Rabindranath Tagore</b><br>1896, Calcutta<br>Bankim Chandra ने लिखा</p></div>
+    <div class="first-card"><div class="icon">🎼</div><h4>Jana Gana Mana First Time</h4><p><b>Rabindranath Tagore</b><br>1911, Delhi<br>Capital भी shift हुआ!</p></div>
+    <div class="first-card"><div class="icon">👩</div><h4>पहली महिला President</h4><p><b>Annie Besant</b><br>1917, Calcutta<br>Irish-British theosophist</p></div>
+    <div class="first-card"><div class="icon">🕊️</div><h4>Gandhi एकमात्र बार President</h4><p><b>Mahatma Gandhi</b><br>1924, Belgaum<br>सिर्फ एक बार!</p></div>
+    <div class="first-card"><div class="icon">🚩</div><h4>Poorna Swaraj घोषित</h4><p><b>J.L. Nehru (President)</b><br>1929, Lahore<br>26 Jan = Independence Day</p></div>
+    <div class="first-card"><div class="icon">📜</div><h4>Fundamental Rights Resolution</h4><p><b>Vallabhbhai Patel (President)</b><br>1931, Karachi<br>Constitution का blueprint!</p></div>
+    <div class="first-card"><div class="icon">🏘️</div><h4>पहला Village Session</h4><p><b>J.L. Nehru (President)</b><br>1937, Faizpur<br>Kisan (किसान) focus</p></div>
+    <div class="first-card"><div class="icon">📋</div><h4>National Planning Committee</h4><p><b>S.C. Bose (President)</b><br>1938, Haripura<br>Nehru = NPC Chairman</p></div>
+    <div class="first-card"><div class="icon">⚡</div><h4>"Swaraj" शब्द पहली बार</h4><p><b>Dadabhai Naoroji</b><br>1906, Calcutta<br>Muslim League भी same year</p></div>
+  </div>
+</div>
+
+<!-- ════ TABLE ════ -->
+<div class="section" id="tab-table">
+  <div class="section-title">📊 All Key Sessions — Quick Reference</div>
+  <input class="search-box" type="text" id="tblSearch" placeholder="🔍  Search..." oninput="filterTbl()">
+  <table id="stbl">
+    <tr><th>Year</th><th>Place</th><th>President</th><th>Key Fact</th></tr>
+    <tr><td>1885</td><td>Bombay</td><td>W.C. Bonnerjee</td><td>1st Session; INC founded by Hume; 72 delegates</td></tr>
+    <tr><td>1886</td><td>Calcutta</td><td>Dadabhai Naoroji</td><td>Grand Old Man; Drain of Wealth; 436 delegates</td></tr>
+    <tr class="hl"><td>1887</td><td>Madras</td><td>Badruddin Tyabji</td><td>1st Muslim President of INC</td></tr>
+    <tr class="hl"><td>1888</td><td>Allahabad</td><td>George Yule</td><td>1st &amp; only British/English President</td></tr>
+    <tr class="hl"><td>1896</td><td>Calcutta</td><td>Rahimtulla Sayani</td><td>Vande Mataram sung 1st time by Tagore</td></tr>
+    <tr><td>1905</td><td>Banaras</td><td>G.K. Gokhale</td><td>Swadeshi movement; Partition of Bengal response</td></tr>
+    <tr class="hl"><td>1906</td><td>Calcutta</td><td>Dadabhai Naoroji</td><td>"Swaraj" demand 1st time; 4 resolutions; ML founded same year</td></tr>
+    <tr class="hl"><td>1907</td><td>Surat</td><td>—</td><td>SURAT SPLIT: Garam Dal (Tilak) vs Naram Dal (Gokhale)</td></tr>
+    <tr class="hl"><td>1911</td><td>Delhi</td><td>Bishan Narayan Dhar</td><td>Jana Gana Mana sung 1st time; Capital shifted to Delhi</td></tr>
+    <tr class="hl"><td>1916</td><td>Lucknow</td><td>Ambika Charan Majumdar</td><td>Lucknow Pact (Congress + ML); Congress reunited; Home Rule League</td></tr>
+    <tr class="hl"><td>1917</td><td>Calcutta</td><td>Annie Besant</td><td>1st Woman President of INC</td></tr>
+    <tr><td>1919</td><td>Amritsar</td><td>Motilal Nehru</td><td>Post-Jallianwala; Rowlatt Act protests</td></tr>
+    <tr class="hl"><td>1920</td><td>Nagpur</td><td>C. Vijayaraghavachariar</td><td>Non-Cooperation Movement; Charkha adopted; Constitution changed</td></tr>
+    <tr class="hl"><td>1924</td><td>Belgaum</td><td>Mahatma Gandhi</td><td>ONLY time Gandhi was Congress President</td></tr>
+    <tr><td>1927</td><td>Madras</td><td>M.A. Ansari</td><td>Complete independence demand (informal); Boycott Simon Commission</td></tr>
+    <tr class="hl"><td>1929</td><td>Lahore</td><td>Jawaharlal Nehru</td><td>POORNA SWARAJ; 26 Jan as Independence Day; tricolour hoisted</td></tr>
+    <tr class="hl"><td>1931</td><td>Karachi</td><td>Vallabhbhai Patel</td><td>Fundamental Rights resolution; Gandhi-Irwin Pact ratified</td></tr>
+    <tr><td>1936</td><td>Lucknow</td><td>Jawaharlal Nehru</td><td>Socialist orientation; elections preparation</td></tr>
+    <tr class="hl"><td>1937</td><td>Faizpur</td><td>Jawaharlal Nehru</td><td>1st session in a VILLAGE; Kisan Sabha</td></tr>
+    <tr class="hl"><td>1938</td><td>Haripura</td><td>S.C. Bose (1st time)</td><td>National Planning Committee formed; Nehru = NPC Chairman</td></tr>
+    <tr class="hl"><td>1939</td><td>Tripuri</td><td>S.C. Bose (re-elected)</td><td>Bose defeats Gandhi's candidate; resigns; Forward Bloc formed</td></tr>
+    <tr><td>1940</td><td>Ramgarh</td><td>Abul Kalam Azad</td><td>Individual Satyagraha; Azad = longest-serving president (6 yrs)</td></tr>
+    <tr><td>1946</td><td>Meerut</td><td>J.B. Kripalani</td><td>Cabinet Mission; Pre-independence; Interim Govt</td></tr>
+    <tr><td>1948</td><td>Jaipur</td><td>Pattabhi Sitaramayya</td><td>Post-independence; Gandhi assassination (Jan 30, 1948)</td></tr>
+  </table>
+</div>
+
+<!-- ════ TRICKS ════ -->
+<div class="section" id="tab-tricks">
+
+  <div class="trick-box">
+    <h3>🧠 TRICK 1 — "FIRSTS" वाले Presidents (Hindi Story)</h3>
+    <div class="trick-sentence">"<span class="hi">B</span>onnerjee <span class="hi">B</span>ombay में आए, <span class="hi">T</span>yabji मुस्लिम थे, <span class="hi">Y</span>ule गोरे थे, <span class="hi">B</span>esant अंग्रेज़ औरत थी, <span class="hi">G</span>andhi एक बार बैठे, <span class="hi">B</span>ose दो बार जीते!"</div>
+    <div class="trick-story">📖 Hindi Story: "एक session में पहले Bonnerjee आए (1st President), फिर Tyabji (1st Muslim), Yule (1st British), Besant Madam (1st Woman), Gandhi Bapu (only once), Bose Netaji (twice!) — याद करो: B-T-Y-B-G-B = Bring Tea Yellow-mug Before Going Back!"</div>
+    <div class="trick-decode">Bonnerjee (1885 Bombay) → Tyabji (1887 Madras) → Yule (1888 Allahabad) → Besant (1917 Calcutta) → Gandhi (1924 Belgaum) → Bose (1938+1939)</div>
+  </div>
+
+  <div class="trick-box">
+    <h3>🧠 TRICK 2 — BSLT = India की 4 सबसे Important Sessions!</h3>
+    <div class="trick-sentence">"<span class="hi">B</span>ombay में BIRTH, <span class="hi">S</span>urat में SPLIT, <span class="hi">L</span>ahore में LIBERTY, <span class="hi">K</span>arachi में KEY-rights!"</div>
+    <div class="trick-story">📖 Hindi Story: "Congress का life story: Bombay में पैदा हुई → Surat में लड़ाई हुई (split) → Lahore में आज़ादी माँगी → Karachi में rights लिखे। जैसे एक इंसान: जन्म → झगड़ा → सपना → अधिकार!"</div>
+    <div class="trick-decode">B = Bombay 1885 (Born) | S = Surat 1907 (Split) | L = Lahore 1929 (Liberty/Poorna Swaraj) | K = Karachi 1931 (Key Fundamental Rights)</div>
+  </div>
+
+  <div class="trick-box">
+    <h3>🧠 TRICK 3 — Songs की Session: "96 और 11 = Tagore ने दोनों गाए!"</h3>
+    <div class="trick-sentence">"<span class="hi">1896</span> = Vande Mataram | <span class="hi">1911</span> = Jana Gana Mana | <span class="hi">दोनों</span> Tagore ने गाए!"</div>
+    <div class="trick-story">📖 Hindi Story: "Rabindranath Tagore = India का 'music director'! 1896 Calcutta में Vande Mataram गाया (written by Bankim), 1911 Delhi में Jana Gana Mana गाया (written AND sung by Tagore himself). दो session, दो songs, एक Singer = TAGORE!"</div>
+    <div class="trick-decode">1896 Calcutta → Vande Mataram (Bankim Chandra लेखक, Tagore गायक) | 1911 Delhi → Jana Gana Mana (Tagore लेखक + गायक) | Capital shift भी 1911 में!</div>
+  </div>
+
+  <div class="trick-box">
+    <h3>🧠 TRICK 4 — Surat Split: "LAL-BAL-PAL = GARAM, GOKHALE = NARAM"</h3>
+    <div class="trick-sentence">"<span class="hi">L</span>ala Lajpat Rai + <span class="hi">B</span>al Tilak + <span class="hi">P</span>al (Bipin) = GARAM | Gokhale = NARAM | Surat में मिर्च-मक्खन की लड़ाई!"</div>
+    <div class="trick-story">📖 Hindi Story: "Surat में एक hotel में दो tables थीं। एक पर Tilak-Pal-Lala बैठे — खूब गरम (GARAM) मिर्च खाते थे। दूसरी पर Gokhale-Mehta बैठे — नरम (NARAM) मक्खन खाते थे। खाना अलग, विचार अलग, Congress अलग हो गई! 1916 में एक table पर बैठे (Lucknow Pact)।"</div>
+    <div class="trick-decode">GARAM = Tilak, Lal-Bal-Pal (Lala+Bal+Pal), mass agitation चाहते थे | NARAM = Gokhale, Mehta, Naoroji, petitions चाहते थे | 1907 split → 1916 reunion</div>
+  </div>
+
+  <div class="trick-box">
+    <h3>🧠 TRICK 5 — Bose का Drama: "Hari Happy, Tripuri Tragedy, Forward Bloc बना!"</h3>
+    <div class="trick-sentence">"<span class="hi">Haripura</span> में Bose खुश (unopposed जीते) → <span class="hi">Tripuri</span> में दुखी (resign) → <span class="hi">Forward Bloc</span> बनाया!"</div>
+    <div class="trick-story">📖 Hindi Story: "Netaji की love story with Congress: 1938 Haripura में Gandhi ने प्यार से support किया। 1939 Tripuri में Gandhi ने support वापस लिया। Bose ने Gandhi का candidate हराया — Gandhi को गुस्सा आया — Bose को resign करना पड़ा। अकेले निकले, Forward Bloc बनाई। जैसे hero film में अकेला निकल जाता है!"</div>
+    <div class="trick-decode">1938 Haripura = Bose 1st time president (unopposed) | 1939 Tripuri = Bose 2nd time (1580 vs 1377, defeats Pattabhi) → resigns → Forward Bloc (May 3, 1939)</div>
+  </div>
+
+  <div class="trick-box">
+    <h3>🧠 TRICK 6 — Nehru कितनी बार President? "4 बार — LLFL याद करो!"</h3>
+    <div class="trick-sentence">"<span class="hi">L</span>ahore(29) + <span class="hi">L</span>ucknow(36) + <span class="hi">F</span>aizpur(37) + <span class="hi">M</span>eerut(46) = Nehru 4 बार President!"</div>
+    <div class="trick-story">📖 Hindi Story: "Jawaharlal Nehru = Congress का 4 बार champion! 1929 Lahore में सबसे important (Poorna Swaraj), 1936 Lucknow में socialism, 1937 Faizpur में किसानों के बीच, 1946 Meerut में आखिरी बार। याद करो: LLFM = Lahore, Lucknow, Faizpur, Meerut = 'Laal Lakdi Fatafat Mile!'"</div>
+    <div class="trick-decode">1929 Lahore | 1936 Lucknow | 1937 Faizpur | 1946 Meerut → 4 times = most after Gandhi (who was only once!)</div>
+  </div>
+
+</div>
+
+<!-- ════ MCQ ════ -->
+<div class="section" id="tab-mcq">
+  <div class="mcq-wrap">
+    <h2>📝 Practice MCQs — INC Sessions (15 Questions)</h2>
+
+    <div class="question" id="q1">
+      <div class="q-text">Q1. भारतीय राष्ट्रीय कांग्रेस का पहला अधिवेशन (1885) कहाँ हुआ?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q1','A')"><b>A.</b> Calcutta</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q1','B')"><b>B.</b> Bombay</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q1','C')"><b>C.</b> Madras</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q1','D')"><b>D.</b> Allahabad</div>
+      </div>
+      <div class="exp" id="e-q1"><b>✅ Answer: B — Bombay (1885)</b><br>Gokuldas Tejpal Sanskrit College, Bombay। President: W.C. Bonnerjee। A.O. Hume ने founded किया। 72 delegates। 🧠 <b>"Bombay में Bonnerjee ने Congress का BIRTHDAY मनाया!"</b></div>
+    </div>
+
+    <div class="question" id="q2">
+      <div class="q-text">Q2. INC के पहले Muslim President कौन थे?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q2','A')"><b>A.</b> M.A. Ansari</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q2','B')"><b>B.</b> Abul Kalam Azad</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q2','C')"><b>C.</b> Badruddin Tyabji</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q2','D')"><b>D.</b> Rahimtulla Sayani</div>
+      </div>
+      <div class="exp" id="e-q2"><b>✅ Answer: C — Badruddin Tyabji (1887, Madras)</b><br>पहले Muslim President। Hindu-Muslim unity। 🧠 <b>"T for Together = Tyabji ने सबको जोड़ा!"</b></div>
+    </div>
+
+    <div class="question" id="q3">
+      <div class="q-text">Q3. "Surat Split" (1907) किनके बीच था?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q3','A')"><b>A.</b> Congress और Muslim League</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q3','B')"><b>B.</b> Garam Dal (Tilak) और Naram Dal (Gokhale)</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q3','C')"><b>C.</b> Gandhi और Jinnah</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q3','D')"><b>D.</b> Bose और Nehru</div>
+      </div>
+      <div class="exp" id="e-q3"><b>✅ Answer: B — Garam Dal vs Naram Dal</b><br>Garam (Tilak, Lal-Bal-Pal) vs Naram (Gokhale, Mehta)। 1916 Lucknow Pact में reunion। 🧠 <b>"Surat में Congress की 'सूरत' बिगड़ गई!"</b></div>
+    </div>
+
+    <div class="question" id="q4">
+      <div class="q-text">Q4. Vande Mataram पहली बार किस Congress session में गाया गया?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q4','A')"><b>A.</b> 1885, Bombay</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q4','B')"><b>B.</b> 1896, Calcutta</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q4','C')"><b>C.</b> 1906, Calcutta</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q4','D')"><b>D.</b> 1911, Delhi</div>
+      </div>
+      <div class="exp" id="e-q4"><b>✅ Answer: B — 1896, Calcutta</b><br>Rabindranath Tagore ने गाया। लिखा था Bankim Chandra ने (Anandamath, 1882)। 🧠 <b>"96 = नव गीत Tagore ने गाया!"</b></div>
+    </div>
+
+    <div class="question" id="q5">
+      <div class="q-text">Q5. INC के एकमात्र British/English President कौन थे?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q5','A')"><b>A.</b> A.O. Hume</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q5','B')"><b>B.</b> Annie Besant</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q5','C')"><b>C.</b> George Yule</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q5','D')"><b>D.</b> William Wedderburn</div>
+      </div>
+      <div class="exp" id="e-q5"><b>✅ Answer: C — George Yule (1888, Allahabad)</b><br>1st और ONLY British President। A.O. Hume founder था, president नहीं। 🧠 <b>"Yule = Yule log = गोरा आदमी एक बार आया, बस!"</b></div>
+    </div>
+
+    <div class="question" id="q6">
+      <div class="q-text">Q6. "Swaraj" शब्द पहली बार किस INC session में use हुआ?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q6','A')"><b>A.</b> 1905, Banaras</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q6','B')"><b>B.</b> 1906, Calcutta</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q6','C')"><b>C.</b> 1907, Surat</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q6','D')"><b>D.</b> 1916, Lucknow</div>
+      </div>
+      <div class="exp" id="e-q6"><b>✅ Answer: B — 1906, Calcutta</b><br>Dadabhai Naoroji ने "Swaraj" शब्द पहली बार बोला। उसी साल Muslim League बनी (Dhaka)। 🧠 <b>"1906 = S for Swaraj born = Naoroji का नया शब्द!"</b></div>
+    </div>
+
+    <div class="question" id="q7">
+      <div class="q-text">Q7. Jana Gana Mana पहली बार कहाँ गाया गया?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q7','A')"><b>A.</b> 1905, Calcutta</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q7','B')"><b>B.</b> 1911, Delhi</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q7','C')"><b>C.</b> 1896, Calcutta</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q7','D')"><b>D.</b> 1929, Lahore</div>
+      </div>
+      <div class="exp" id="e-q7"><b>✅ Answer: B — 1911, Delhi</b><br>Tagore ने गाया। Capital भी उसी साल Calcutta से Delhi shift हुआ। King George V का visit था। 🧠 <b>"Delhi 1911 = Double event: Capital + National Anthem!"</b></div>
+    </div>
+
+    <div class="question" id="q8">
+      <div class="q-text">Q8. INC की पहली महिला President कौन थीं?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q8','A')"><b>A.</b> Sarojini Naidu</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q8','B')"><b>B.</b> Annie Besant</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q8','C')"><b>C.</b> Indira Gandhi</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q8','D')"><b>D.</b> Vijayalakshmi Pandit</div>
+      </div>
+      <div class="exp" id="e-q8"><b>✅ Answer: B — Annie Besant (1917, Calcutta)</b><br>1st Woman President। Irish-British। Sarojini Naidu 2nd थीं (1925, Kanpur)। 🧠 <b>"ANNIE = A for Aurat = पहली महिला President!"</b></div>
+    </div>
+
+    <div class="question" id="q9">
+      <div class="q-text">Q9. Gandhi सिर्फ एक बार Congress President बने। वो session कहाँ था?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q9','A')"><b>A.</b> Amritsar</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q9','B')"><b>B.</b> Nagpur</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q9','C')"><b>C.</b> Belgaum</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q9','D')"><b>D.</b> Haripura</div>
+      </div>
+      <div class="exp" id="e-q9"><b>✅ Answer: C — Belgaum (1924)</b><br>Gandhi जी सिर्फ 1924 Belgaum में Congress President बने — एक बार और केवल एक बार! 🧠 <b>"BEL = एक bel खाया, बस! Bapu ek baar baithe!"</b></div>
+    </div>
+
+    <div class="question" id="q10">
+      <div class="q-text">Q10. Poorna Swaraj (Complete Independence) किस session में घोषित हुई?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q10','A')"><b>A.</b> 1927, Madras</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q10','B')"><b>B.</b> 1929, Lahore</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q10','C')"><b>C.</b> 1931, Karachi</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q10','D')"><b>D.</b> 1920, Nagpur</div>
+      </div>
+      <div class="exp" id="e-q10"><b>✅ Answer: B — 1929, Lahore</b><br>JL Nehru (President)। Ravi नदी के किनारे midnight को झंडा फहराया। 26 Jan = Independence Day declare। 🧠 <b>"Lahore 1929 = L for Liberty = India का पहला midnight moment!"</b></div>
+    </div>
+
+    <div class="question" id="q11">
+      <div class="q-text">Q11. Fundamental Rights Resolution किस Congress session में passed हुआ?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q11','A')"><b>A.</b> 1929, Lahore</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q11','B')"><b>B.</b> 1931, Karachi</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q11','C')"><b>C.</b> 1920, Nagpur</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q11','D')"><b>D.</b> 1936, Lucknow</div>
+      </div>
+      <div class="exp" id="e-q11"><b>✅ Answer: B — 1931, Karachi</b><br>Vallabhbhai Patel (President)। Future Constitution का blueprint! Gandhi-Irwin Pact ratified। 🧠 <b>"Karachi = K for Key Rights = Constitution की नींव!"</b></div>
+    </div>
+
+    <div class="question" id="q12">
+      <div class="q-text">Q12. Congress का पहला Village session कौनसा था?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q12','A')"><b>A.</b> Haripura, 1938</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q12','B')"><b>B.</b> Faizpur, 1937</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q12','C')"><b>C.</b> Ramgarh, 1940</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q12','D')"><b>D.</b> Tripuri, 1939</div>
+      </div>
+      <div class="exp" id="e-q12"><b>✅ Answer: B — Faizpur, 1937</b><br>Maharashtra का छोटा गाँव। JL Nehru president। Kisan focus। 🧠 <b>"Faizpur = Faiz (फायदा) for Farmers = Congress किसानों के पास गई!"</b></div>
+    </div>
+
+    <div class="question" id="q13">
+      <div class="q-text">Q13. 1939 Tripuri session में Bose ने किसे हराकर President बने?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q13','A')"><b>A.</b> Rajendra Prasad</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q13','B')"><b>B.</b> Jawaharlal Nehru</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q13','C')"><b>C.</b> Pattabhi Sitaramayya</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q13','D')"><b>D.</b> Maulana Azad</div>
+      </div>
+      <div class="exp" id="e-q13"><b>✅ Answer: C — Pattabhi Sitaramayya</b><br>Bose (1580) ने Gandhi के candidate Pattabhi (1377) को हराया। Gandhi बोले "यह मेरी हार है।" Bose ने resign किया → Forward Bloc बनाया। 🧠 <b>"Tripuri = TRI DRAMA: Bose जीता, Gandhi हारे, Forward Bloc जन्मा!"</b></div>
+    </div>
+
+    <div class="question" id="q14">
+      <div class="q-text">Q14. Charkha को Congress का symbol किस session में adopt किया गया?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q14','A')"><b>A.</b> 1916, Lucknow</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q14','B')"><b>B.</b> 1920, Nagpur</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q14','C')"><b>C.</b> 1924, Belgaum</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q14','D')"><b>D.</b> 1929, Lahore</div>
+      </div>
+      <div class="exp" id="e-q14"><b>✅ Answer: B — 1920, Nagpur</b><br>Non-Cooperation Movement launch + Charkha symbol + Congress constitution change। 🧠 <b>"Nagpur 1920 = N for Non-Cooperation + चरखा = Gandhi का नया हथियार!"</b></div>
+    </div>
+
+    <div class="question" id="q15">
+      <div class="q-text">Q15. Lucknow Pact (1916) किसके बीच था?</div>
+      <div class="opts">
+        <div class="opt" data-l="A" onclick="chk(this,'q15','A')"><b>A.</b> Congress और British Government</div>
+        <div class="opt" data-l="B" onclick="chk(this,'q15','B')"><b>B.</b> Garam Dal और Naram Dal</div>
+        <div class="opt" data-l="C" onclick="chk(this,'q15','C')"><b>C.</b> Indian National Congress और Muslim League</div>
+        <div class="opt" data-l="D" onclick="chk(this,'q15','D')"><b>D.</b> Gandhi और Tilak</div>
+      </div>
+      <div class="exp" id="e-q15"><b>✅ Answer: C — INC और Muslim League</b><br>Congress ने Muslims को separate electorate accept किया। Garam+Naram भी reunite हुए। Tilak + Annie Besant also joined। 🧠 <b>"Lucknow में प्यार हुआ — Congress + League दोस्त बने!"</b></div>
+    </div>
+
+  </div>
+</div>
+
+</main>
+
+<script>
+function showTab(id,el){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  el.classList.add('active');
+  setTimeout(triggerAnim,50);
+}
+
+function triggerAnim(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});
+  },{threshold:0.05});
+  document.querySelectorAll('.tl-item:not(.vis),.first-card:not(.vis)').forEach(i=>obs.observe(i));
+}
+window.addEventListener('load',triggerAnim);
+
+const correct={q1:'B',q2:'C',q3:'B',q4:'B',q5:'C',q6:'B',q7:'B',q8:'B',q9:'C',q10:'B',q11:'B',q12:'B',q13:'C',q14:'B',q15:'C'};
+function chk(el,qid,chosen){
+  el.parentElement.querySelectorAll('.opt').forEach(o=>o.style.pointerEvents='none');
+  const c=correct[qid];
+  el.parentElement.querySelectorAll('.opt').forEach(o=>{
+    if(o.dataset.l===c)o.classList.add('correct');
+    else if(o.dataset.l===chosen&&chosen!==c)o.classList.add('wrong');
+  });
+  const exp=document.getElementById('e-'+qid);
+  if(exp)exp.classList.add('show');
+}
+
+function filterTL(){
+  const q=document.getElementById('tlSearch').value.toLowerCase();
+  document.querySelectorAll('.tl-item').forEach(item=>{
+    const t=item.dataset.t||item.textContent;
+    item.style.display=t.toLowerCase().includes(q)?'':'none';
+  });
+}
+function filterTbl(){
+  const q=document.getElementById('tblSearch').value.toLowerCase();
+  document.querySelectorAll('#stbl tr:not(:first-child)').forEach(row=>{
+    row.style.display=row.textContent.toLowerCase().includes(q)?'':'none';
+  });
+}
+</script>
+</body>
+</html>
