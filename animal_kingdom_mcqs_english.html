@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animal Kingdom Classification | GK Trick | CA Notes 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f8; color: #222; }
+header { background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%); color: #fff; padding: 28px 20px 20px; text-align: center; }
+header h1 { font-size: 1.8rem; margin-bottom: 6px; }
+header p { font-size: .95rem; opacity: .88; }
+.badge { display: inline-block; background: rgba(255,255,255,.18); border-radius: 20px; padding: 4px 16px; font-size: .85rem; margin-top: 8px; }
+main { max-width: 860px; margin: 28px auto; padding: 0 14px 60px; }
+
+/* BIG TRICK BOX */
+.master-trick { background: #fff8e1; border: 2.5px solid #f9a825; border-radius: 14px; padding: 20px 24px; margin-bottom: 28px; }
+.master-trick h2 { color: #e65100; font-size: 1.15rem; margin-bottom: 10px; }
+.trick-sentence { font-size: 1.25rem; font-weight: 800; color: #1b5e20; letter-spacing: .5px; line-height: 1.6; }
+.trick-sentence span { color: #c62828; }
+.trick-decode { margin-top: 12px; font-size: .9rem; color: #555; line-height: 1.8; }
+.trick-decode b { color: #1b5e20; }
+
+/* BASIS GRID */
+.basis-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 10px; margin-top: 14px; }
+.basis-card { background: #fff; border-radius: 10px; padding: 10px 14px; font-size: .85rem; line-height: 1.6; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
+.basis-card b.tag { color: #c62828; }
+
+/* PHYLUM CARDS */
+.plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+@media(max-width:620px){ .plan-grid { grid-template-columns: 1fr; } }
+.plan-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,.07); overflow: hidden; }
+.plan-head { padding: 12px 16px; color: #fff; font-weight: 700; font-size: 1rem; display: flex; justify-content: space-between; align-items: center; }
+.plan-body { padding: 14px 16px; font-size: .88rem; line-height: 1.7; }
+.plan-body .focus { font-size: 1rem; font-weight: 700; color: #1a237e; margin-bottom: 6px; }
+.plan-body .model { background: #e8f5e9; border-radius: 6px; padding: 3px 10px; display: inline-block; font-size: .8rem; color: #2e7d32; font-weight: 600; margin-bottom: 8px; }
+.plan-body .stats { display: flex; gap: 8px; margin: 6px 0; flex-wrap: wrap; }
+.stat-pill { background: #f5f5f5; border-radius: 20px; padding: 2px 12px; font-size: .78rem; color: #555; }
+.stat-pill b { color: #c62828; }
+.trick-box { background: #fff3e0; border-left: 3px solid #ff9800; padding: 8px 12px; border-radius: 0 8px 8px 0; margin-top: 10px; font-size: .84rem; color: #5d4037; }
+
+/* SECTION TITLE / TABLE */
+.section-title { font-size: 1.1rem; font-weight: 700; color: #1b5e20; margin: 24px 0 12px; border-left: 4px solid #43a047; padding-left: 10px; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,.07); font-size: .8rem; margin-bottom: 24px; }
+th { background: #2e7d32; color: #fff; padding: 9px 10px; text-align: left; }
+td { padding: 8px 10px; border-bottom: 1px solid #f0f0f0; }
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) td { background: #f9fbe7; }
+
+/* MCQ SECTION */
+.mcq-section { background: #fff; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,.07); padding: 24px; margin-top: 28px; }
+.mcq-section h2 { color: #1b5e20; font-size: 1.15rem; margin-bottom: 20px; }
+.question { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid #f0f0f0; }
+.question:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.q-text { font-weight: 600; font-size: .95rem; margin-bottom: 10px; color: #1a237e; }
+.opts { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+@media(max-width:480px){ .opts { grid-template-columns: 1fr; } }
+.opt { background: #f5f5f5; border-radius: 8px; padding: 8px 12px; font-size: .88rem; cursor: pointer; border: 2px solid transparent; transition: .15s; }
+.opt:hover { background: #e8f5e9; border-color: #43a047; }
+.opt.correct { background: #e8f5e9; border-color: #2e7d32; color: #1b5e20; font-weight: 700; }
+.opt.wrong { background: #ffebee; border-color: #c62828; color: #b71c1c; }
+.explanation { margin-top: 10px; padding: 10px 14px; background: #f9fbe7; border-radius: 8px; font-size: .85rem; color: #555; display: none; line-height: 1.6; }
+.explanation.show { display: block; }
+.gap-note { background: #fff3e0; border: 2px dashed #ef6c00; border-radius: 10px; padding: 12px 18px; margin: 14px 0 28px; font-size: .85rem; color: #5d4037; line-height: 1.7; }
+.gap-note b { color: #bf360c; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🐾 Animal Kingdom Classification</h1>
+  <p>Biology | GK Trick Style | NCERT-based | CA Notes 2026</p>
+  <div class="badge">11 Phyla | Classification Basis | Examples + Mnemonics + MCQs</div>
+</header>
+
+<main>
+
+<div class="gap-note">
+  ⚠️ <b>Note on source:</b> A source video on this exact topic (Crazy GK Trick channel) had unreliable captions/repeated ad-interruptions during extraction, so these notes are built from verified standard NCERT-level biology references and well-established exam mnemonics rather than a verbatim transcript of that video. All facts below are cross-checked against standard sources (cited mentally from NCERT Biology + standard competitive-exam references).
+</div>
+
+<!-- MASTER TRICK: ORDER OF 11 PHYLA -->
+<div class="master-trick">
+  <h2>🧠 MASTER TRICK — Order of the 11 Phyla</h2>
+  <div class="trick-sentence">
+    "<span>P</span>lease <span>C</span>all <span>C</span>an't <span>P</span>lay <span>A</span>t <span>A</span>ll, <span>A</span>unt <span>M</span>ary <span>E</span>njoys <span>H</span>appy <span>C</span>ompany"
+  </div>
+  <div class="trick-decode">
+    <b>P</b>orifera → <b>C</b>oelenterata (Cnidaria) → <b>C</b>tenophora → <b>P</b>latyhelminthes → <b>A</b>schelminthes (Nematoda) → <b>A</b>nnelida → <b>A</b>rthropoda → <b>M</b>ollusca → <b>E</b>chinodermata → <b>H</b>emichordata → <b>C</b>hordata
+  </div>
+</div>
+
+<!-- QUICK KEYWORD TRICK -->
+<div class="master-trick" style="background:#e3f2fd;border-color:#1565c0">
+  <h2 style="color:#0d47a1">🧠 ONE-WORD MEMORY TAGS (phylum → instant keyword)</h2>
+  <div class="basis-grid">
+    <div class="basis-card"><b class="tag">Porifera</b> = PORES (sponges riddled with pores)</div>
+    <div class="basis-card"><b class="tag">Cnidaria</b> = STING (stinging cells / cnidoblasts)</div>
+    <div class="basis-card"><b class="tag">Platyhelminthes</b> = FLAT (flatworms)</div>
+    <div class="basis-card"><b class="tag">Aschelminthes</b> = ROUND (roundworms)</div>
+    <div class="basis-card"><b class="tag">Annelida</b> = RINGS (ringed/segmented body)</div>
+    <div class="basis-card"><b class="tag">Arthropoda</b> = JOINTS (jointed legs)</div>
+    <div class="basis-card"><b class="tag">Mollusca</b> = SHELL (soft body + shell)</div>
+    <div class="basis-card"><b class="tag">Echinodermata</b> = SPINY (spiny skin)</div>
+    <div class="basis-card"><b class="tag">Chordata</b> = BACKBONE / NOTOCHORD</div>
+  </div>
+</div>
+
+<!-- BASIS OF CLASSIFICATION -->
+<div class="section-title">📋 Basis of Classification (the 6 criteria)</div>
+<div class="plan-grid">
+  <div class="plan-card">
+    <div class="plan-head" style="background:#2e7d32"><span>1. Levels of Organisation</span></div>
+    <div class="plan-body">
+      Cellular (Porifera) → Tissue (Coelenterata, Ctenophora) → Organ (Platyhelminthes) → Organ-system (Annelida onwards).
+      <div class="trick-box">🧠 Think of it as a ladder: loose cells → tissues → organs → full organ-systems, getting more complex as you go up the phylum list.</div>
+    </div>
+  </div>
+  <div class="plan-card">
+    <div class="plan-head" style="background:#1565c0"><span>2. Symmetry</span></div>
+    <div class="plan-body">
+      <b>Asymmetrical</b> (Porifera) → <b>Radial</b> (Cnidaria, Ctenophora, adult Echinodermata) → <b>Bilateral</b> (Platyhelminthes to Chordata).
+      <div class="trick-box">🧠 "Radial" phyla all start to feel round/circular (jellyfish, comb jelly, starfish); everything else is left-right symmetric.</div>
+    </div>
+  </div>
+  <div class="plan-card">
+    <div class="plan-head" style="background:#6a1b9a"><span>3. Diploblastic / Triploblastic</span></div>
+    <div class="plan-body">
+      <b>Diploblastic</b> (2 layers: ectoderm + endoderm, with mesoglea between) = Cnidaria, Ctenophora only.
+      <b>Triploblastic</b> (3 layers, true mesoderm) = Platyhelminthes through Chordata.
+      <div class="trick-box">🧠 "Di" = 2 layers, only the 2 radially-symmetric phyla (Cnidaria, Ctenophora); everyone triploblastic comes after.</div>
+    </div>
+  </div>
+  <div class="plan-card">
+    <div class="plan-head" style="background:#bf360c"><span>4. Coelom (body cavity)</span></div>
+    <div class="plan-body">
+      <b>Acoelomate</b> (no cavity) = Platyhelminthes.
+      <b>Pseudocoelomate</b> (cavity not fully lined by mesoderm) = Aschelminthes.
+      <b>Coelomate</b> (true, mesoderm-lined cavity) = Annelida, Mollusca, Arthropoda, Echinodermata, Hemichordata, Chordata.
+      <div class="trick-box">🧠 "A" for Acoelomate = Flatworms (Platyhelminthes); "Pseudo" = Aschelminthes (just one phylum); everything from Annelida onward is a true coelomate.</div>
+    </div>
+  </div>
+  <div class="plan-card">
+    <div class="plan-head" style="background:#00695c"><span>5. Segmentation</span></div>
+    <div class="plan-body">
+      Repeated body segments (metameric segmentation / metamerism) first appear in <b>Annelida</b> (e.g. earthworm) and continue in Arthropoda and Vertebrata.
+      <div class="trick-box">🧠 "Annelid = Annulus" (Latin for little ring) → body made of repeating rings/segments.</div>
+    </div>
+  </div>
+  <div class="plan-card">
+    <div class="plan-head" style="background:#37474f"><span>6. Notochord</span></div>
+    <div class="plan-body">
+      A mesoderm-derived rod on the dorsal side in the embryo. Present only in <b>Chordata</b> → "chordates". Absent in Porifera through Echinodermata/Hemichordata → "non-chordates".
+      <div class="trick-box">🧠 No notochord = Non-chordate (everything before Chordata); Notochord present = Chordate.</div>
+    </div>
+  </div>
+</div>
+
+<!-- STEEL PLANT STYLE TRICK: CHORDATE VS NON-CHORDATE -->
+<div class="master-trick" style="background:#e8eaf6;border-color:#3f51b5">
+  <h2 style="color:#1a237e">🏛️ Chordates vs Non-Chordates — Quick Table</h2>
+  <table style="margin-bottom:0">
+    <tr><th>Feature</th><th>Chordates</th><th>Non-chordates</th></tr>
+    <tr><td>Notochord</td><td>Present</td><td>Absent</td></tr>
+    <tr><td>Nerve cord</td><td>Dorsal, hollow, single</td><td>Ventral, solid, double</td></tr>
+    <tr><td>Pharyngeal gill slits</td><td>Present</td><td>Absent</td></tr>
+    <tr><td>Heart</td><td>Ventral</td><td>Dorsal (if present)</td></tr>
+    <tr><td>Post-anal tail</td><td>Present</td><td>Absent</td></tr>
+  </table>
+</div>
+
+<!-- PHYLUM CARDS WITH EXAMPLES + MNEMONICS -->
+<div class="section-title">🔬 Phylum-wise Features, Examples & Mnemonics</div>
+<div class="plan-grid">
+
+  <div class="plan-card">
+    <div class="plan-head" style="background:#2e7d32"><span>1. Porifera (Sponges)</span></div>
+    <div class="plan-body">
+      <div class="focus">Cellular level · Asymmetrical · Mostly marine</div>
+      <div class="model">Pore (ostia) → spongocoel → osculum (water canal system)</div>
+      Hermaphrodite; skeleton of spicules/spongin fibres; internal fertilisation, indirect development.
+      <b>Examples:</b> Sycon, Spongilla (freshwater sponge), Euspongia (bath sponge)
+      <div class="trick-box">🧠 Mnemonic (examples): "<b>S</b>uper <b>S</b>ponge <b>E</b>xamples" → <b>S</b>ycon, <b>S</b>pongilla, <b>E</b>uspongia</div>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-head" style="background:#1565c0"><span>2. Coelenterata (Cnidaria)</span></div>
+    <div class="plan-body">
+      <div class="focus">Tissue level · Radial symmetry · Diploblastic</div>
+      <div class="model">Cnidoblasts/stinging cells; polyp (Hydra) &amp; medusa (jellyfish) forms; some alternate generations (metagenesis, e.g. Obelia)</div>
+      Single gastro-vascular opening; some colonial (corals).
+      <b>Examples:</b> Physalia, Adamsia, Pennatula, Gorgonia, Meandrina, Aurelia, Obelia
+      <div class="trick-box">🧠 Mnemonic: "Papa Adam's Pen Got Many Awards Often" → <b>P</b>hysalia, <b>A</b>damsia, <b>P</b>ennatula, <b>G</b>orgonia, <b>M</b>eandrina, <b>A</b>urelia, <b>O</b>belia</div>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-head" style="background:#8e24aa"><span>3. Ctenophora (Sea walnuts)</span></div>
+    <div class="plan-body">
+      <div class="focus">Tissue level · Radial symmetry · Diploblastic</div>
+      <div class="model">8 rows of ciliated comb plates for locomotion; bioluminescent; external fertilisation</div>
+      Exclusively marine.
+      <b>Examples:</b> Pleurobrachia, Ctenoplana
+      <div class="trick-box">🧠 Mnemonic: "<b>P</b>ersonal <b>C</b>omputer" → <b>P</b>leurobrachia, <b>C</b>tenoplana</div>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-head" style="background:#6a1b9a"><span>4. Platyhelminthes (Flatworms)</span></div>
+    <div class="plan-body">
+      <div class="focus">Organ level · Bilateral · Triploblastic · Acoelomate</div>
+      <div class="model">Dorsiventrally flattened body; flame cells for excretion; many parasitic (hooks/suckers)</div>
+      High regeneration in free-living forms (Planaria).
+      <b>Examples:</b> Taenia (tapeworm), Fasciola (liver fluke), Planaria
+      <div class="trick-box">🧠 Mnemonic: "The Flat People" → <b>T</b>aenia, <b>F</b>asciola, <b>P</b>lanaria</div>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-head" style="background:#bf360c"><span>5. Aschelminthes (Nematoda / Roundworms)</span></div>
+    <div class="plan-body">
+      <div class="focus">Organ-system level · Bilateral · Triploblastic · Pseudocoelomate</div>
+      <div class="model">Cylindrical, round in cross-section; complete alimentary canal; mostly dioecious (sexes separate)</div>
+      Cause elephantiasis (filarial worm) and intestinal roundworm/hookworm infections.
+      <b>Examples:</b> Ascaris, Wuchereria, Ancylostoma
+      <div class="trick-box">🧠 Mnemonic: "Always Wash Arms" (avoid worm infections!) → <b>A</b>scaris, <b>W</b>uchereria, <b>A</b>ncylostoma</div>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-head" style="background:#00695c"><span>6. Annelida</span></div>
+    <div class="plan-body">
+      <div class="focus">Organ-system level · Bilateral · Triploblastic · Coelomate</div>
+      <div class="model">Metameric segmentation (body = "little rings"); closed circulatory system; nephridia for excretion</div>
+      Nereis is dioecious; earthworms &amp; leeches are monoecious (hermaphrodite).
+      <b>Examples:</b> Nereis, Pheretima (earthworm), Hirudinaria (leech)
+      <div class="trick-box">🧠 Mnemonic: "Nice Pink Hair" → <b>N</b>ereis, <b>P</b>heretima, <b>H</b>irudinaria</div>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-head" style="background:#e65100"><span>7. Arthropoda</span></div>
+    <div class="plan-body">
+      <div class="focus">Organ-system level · Bilateral, segmented · Coelomate (blood-filled)</div>
+      <div class="model">Chitinous exoskeleton; jointed legs; open circulatory system; excretion via Malpighian tubules</div>
+      Largest animal phylum (insects, arachnids, crustaceans).
+      <b>Useful insects:</b> Apis (honeybee), Bombyx (silkworm), Laccifer (lac insect) — "A Busy Life"<br>
+      <b>Mosquito vectors:</b> Anopheles (malaria), Culex (filaria), Aedes (dengue) — "All Cause Evil"
+      <div class="trick-box">🧠 Mnemonic pair: <b>A</b>pis-<b>B</b>ombyx-<b>L</b>accifer = "ABL – A Busy Life"; <b>A</b>nopheles-<b>C</b>ulex-<b>A</b>edes = "ACE – All Cause Evil"</div>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-head" style="background:#0277bd"><span>8. Mollusca</span></div>
+    <div class="plan-body">
+      <div class="focus">Organ-system level · Bilateral · Triploblastic · Coelomate · Little segmentation</div>
+      <div class="model">Calcareous shell; muscular foot; mantle over visceral hump; radula (rasping feeding organ); open circulatory system</div>
+      Second largest animal phylum.
+      <b>Examples:</b> Pila, Pinctada, Sepia, Loligo, Octopus, Aplysia, Dentalium, Chaetopleura
+      <div class="trick-box">🧠 Mnemonic story: "Pizza Pie, Soup Lunch, Old Dad Always Cooks" → <b>P</b>ila, <b>P</b>inctada, <b>S</b>epia, <b>L</b>oligo, <b>O</b>ctopus, <b>D</b>entalium, <b>A</b>plysia, <b>C</b>haetopleura</div>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-head" style="background:#558b2f"><span>9. Echinodermata</span></div>
+    <div class="plan-body">
+      <div class="focus">Organ-system level · Adult radial, larva bilateral · Triploblastic · Coelomate</div>
+      <div class="model">Spiny calcareous endoskeleton (ossicles); water vascular system for locomotion/feeding; no excretory system</div>
+      Sexes separate; usually external fertilisation; indirect development.
+      <b>Examples:</b> Asterias (starfish), Echinus (sea urchin), Antedon (sea lily), Cucumaria (sea cucumber), Ophiura (brittle star)
+      <div class="trick-box">🧠 Mnemonic: "A Star, Echinus, Another star, Cucumber, One more Brittle" → <b>A</b>sterias, <b>E</b>chinus, <b>A</b>ntedon, <b>C</b>ucumaria, <b>O</b>phiura</div>
+    </div>
+  </div>
+
+  <div class="plan-card">
+    <div class="plan-head" style="background:#4527a0"><span>10. Hemichordata</span></div>
+    <div class="plan-body">
+      <div class="focus">Organ-system level · Bilateral · Triploblastic · Coelomate</div>
+      <div class="model">Worm-like marine animals; once classed under Chordata, now a separate non-chordate phylum; open circulatory system; gill respiration</div>
+      Sexes separate; external fertilisation; indirect development.
+      <b>Examples:</b> Balanoglossus, Saccoglossus
+      <div class="trick-box">🧠 Mnemonic: "Big Sack" (both names end in "-glossus" and have worm-like bodies) → <b>B</b>alanoglossus, <b>S</b>accoglossus</div>
+    </div>
+  </div>
+
+  <div class="plan-card" style="grid-column: 1/-1;">
+    <div class="plan-head" style="background:#4a148c"><span>11. Chordata — notochord, dorsal nerve cord, pharyngeal gill slits, post-anal tail</span></div>
+    <div class="plan-body">
+      <div class="focus">Organ-system level · Bilateral · Triploblastic · Coelomate</div>
+      <div class="model">3 subphyla: Urochordata (Tunicata), Cephalochordata, Vertebrata</div>
+      In <b>Urochordata</b>, notochord present only in the larval tail (lost in adult). In <b>Cephalochordata</b>, notochord persists head-to-tail throughout life. <b>Vertebrata</b> have the notochord replaced by a cartilaginous/bony vertebral column in the adult — so "all vertebrates are chordates, but not all chordates are vertebrates."
+      <div class="stats">
+        <div class="stat-pill">Urochordata: Ascidia, Salpa, Doliolum</div>
+        <div class="stat-pill">Cephalochordata: Amphioxus / Branchiostoma (Lancelet)</div>
+      </div>
+      <div class="trick-box">🧠 Urochordata mnemonic: "A Sea Deal" → <b>A</b>scidia, <b>S</b>alpa, <b>D</b>oliolum. Cephalochordata mnemonic: "BAL – Branch And Lance" → <b>B</b>ranchiostoma = <b>A</b>mphioxus = <b>L</b>ancelet (all the same animal, three names!)</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- COMPARISON TABLE -->
+<div class="section-title">📊 Quick Reference Table — All 11 Phyla</div>
+<table>
+  <tr><th>#</th><th>Phylum</th><th>Symmetry</th><th>Body layers</th><th>Coelom</th><th>Level of organisation</th></tr>
+  <tr><td>1</td><td>Porifera</td><td>Asymmetrical</td><td>—</td><td>Absent</td><td>Cellular</td></tr>
+  <tr><td>2</td><td>Coelenterata (Cnidaria)</td><td>Radial</td><td>Diploblastic</td><td>Absent</td><td>Tissue</td></tr>
+  <tr><td>3</td><td>Ctenophora</td><td>Radial</td><td>Diploblastic</td><td>Absent</td><td>Tissue</td></tr>
+  <tr><td>4</td><td>Platyhelminthes</td><td>Bilateral</td><td>Triploblastic</td><td>Acoelomate</td><td>Organ</td></tr>
+  <tr><td>5</td><td>Aschelminthes (Nematoda)</td><td>Bilateral</td><td>Triploblastic</td><td>Pseudocoelomate</td><td>Organ-system</td></tr>
+  <tr><td>6</td><td>Annelida</td><td>Bilateral</td><td>Triploblastic</td><td>Coelomate</td><td>Organ-system</td></tr>
+  <tr><td>7</td><td>Arthropoda</td><td>Bilateral</td><td>Triploblastic</td><td>Coelomate</td><td>Organ-system</td></tr>
+  <tr><td>8</td><td>Mollusca</td><td>Bilateral</td><td>Triploblastic</td><td>Coelomate</td><td>Organ-system</td></tr>
+  <tr><td>9</td><td>Echinodermata</td><td>Radial (adult) / Bilateral (larva)</td><td>Triploblastic</td><td>Coelomate</td><td>Organ-system</td></tr>
+  <tr><td>10</td><td>Hemichordata</td><td>Bilateral</td><td>Triploblastic</td><td>Coelomate</td><td>Organ-system</td></tr>
+  <tr><td>11</td><td>Chordata</td><td>Bilateral</td><td>Triploblastic</td><td>Coelomate</td><td>Organ-system</td></tr>
+</table>
+
+<!-- MCQ SECTION -->
+<div class="mcq-section">
+  <h2>📝 Practice MCQs — Animal Kingdom Classification (15 Questions)</h2>
+
+  <div class="question" id="q1">
+    <div class="q-text">Q1. Which phylum shows only CELLULAR level of organisation?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q1','A')"><b>A.</b> Porifera</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q1','B')"><b>B.</b> Coelenterata</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q1','C')"><b>C.</b> Platyhelminthes</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q1','D')"><b>D.</b> Annelida</div>
+    </div>
+    <div class="explanation" id="exp-q1"><strong>Explanation:</strong> <b>Porifera</b> (sponges) show cellular level of organisation — cells are loose aggregates with only some division of labour.</div>
+  </div>
+
+  <div class="question" id="q2">
+    <div class="q-text">Q2. Diploblastic organisation (ectoderm + endoderm with mesoglea) is found in which TWO phyla?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q2','A')"><b>A.</b> Porifera &amp; Platyhelminthes</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q2','B')"><b>B.</b> Coelenterata &amp; Ctenophora</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q2','C')"><b>C.</b> Annelida &amp; Arthropoda</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q2','D')"><b>D.</b> Mollusca &amp; Echinodermata</div>
+    </div>
+    <div class="explanation" id="exp-q2"><strong>Explanation:</strong> <b>Coelenterata (Cnidaria)</b> and <b>Ctenophora</b> are the only diploblastic, radially symmetrical phyla.</div>
+  </div>
+
+  <div class="question" id="q3">
+    <div class="q-text">Q3. Which phylum is ACOELOMATE (no body cavity)?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q3','A')"><b>A.</b> Aschelminthes</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q3','B')"><b>B.</b> Platyhelminthes</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q3','C')"><b>C.</b> Annelida</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q3','D')"><b>D.</b> Mollusca</div>
+    </div>
+    <div class="explanation" id="exp-q3"><strong>Explanation:</strong> <b>Platyhelminthes</b> (flatworms) are acoelomate — no true internal body cavity between body wall and gut.</div>
+  </div>
+
+  <div class="question" id="q4">
+    <div class="q-text">Q4. Pseudocoelomates (body cavity not lined by mesoderm) belong to which phylum?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q4','A')"><b>A.</b> Aschelminthes</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q4','B')"><b>B.</b> Annelida</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q4','C')"><b>C.</b> Echinodermata</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q4','D')"><b>D.</b> Chordata</div>
+    </div>
+    <div class="explanation" id="exp-q4"><strong>Explanation:</strong> <b>Aschelminthes (Nematoda)</b> has a pseudocoelom — mesoderm present only as scattered pouches, not a true lining.</div>
+  </div>
+
+  <div class="question" id="q5">
+    <div class="q-text">Q5. Metameric segmentation (repeating body rings) is first seen in which phylum?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q5','A')"><b>A.</b> Platyhelminthes</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q5','B')"><b>B.</b> Annelida</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q5','C')"><b>C.</b> Porifera</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q5','D')"><b>D.</b> Coelenterata</div>
+    </div>
+    <div class="explanation" id="exp-q5"><strong>Explanation:</strong> <b>Annelida</b> — the name itself (Latin "annulus" = little ring) reflects metameric segmentation, e.g. in earthworms.</div>
+  </div>
+
+  <div class="question" id="q6">
+    <div class="q-text">Q6. Which structure, when present, defines an animal as a "chordate"?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q6','A')"><b>A.</b> Radula</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q6','B')"><b>B.</b> Notochord</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q6','C')"><b>C.</b> Nephridia</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q6','D')"><b>D.</b> Spicules</div>
+    </div>
+    <div class="explanation" id="exp-q6"><strong>Explanation:</strong> The <b>notochord</b> — a mesoderm-derived dorsal rod formed during embryonic development — defines chordates.</div>
+  </div>
+
+  <div class="question" id="q7">
+    <div class="q-text">Q7. In which subphylum of Chordata does the notochord persist throughout life, from head to tail?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q7','A')"><b>A.</b> Urochordata</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q7','B')"><b>B.</b> Cephalochordata</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q7','C')"><b>C.</b> Vertebrata</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q7','D')"><b>D.</b> None of these</div>
+    </div>
+    <div class="explanation" id="exp-q7"><strong>Explanation:</strong> <b>Cephalochordata</b> (e.g. Amphioxus/Branchiostoma/Lancelet) retains the notochord for life; Urochordata loses it except in the larval tail, and Vertebrata replace it with a vertebral column as adults.</div>
+  </div>
+
+  <div class="question" id="q8">
+    <div class="q-text">Q8. Water vascular system (used for locomotion and feeding) is characteristic of which phylum?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q8','A')"><b>A.</b> Mollusca</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q8','B')"><b>B.</b> Echinodermata</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q8','C')"><b>C.</b> Arthropoda</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q8','D')"><b>D.</b> Porifera</div>
+    </div>
+    <div class="explanation" id="exp-q8"><strong>Explanation:</strong> <b>Echinodermata</b> (starfish, sea urchin etc.) use a water-driven tube/water vascular system for movement, feeding and respiration.</div>
+  </div>
+
+  <div class="question" id="q9">
+    <div class="q-text">Q9. Which phylum was earlier classified as a Chordata subphylum but is now treated as a separate non-chordate phylum?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q9','A')"><b>A.</b> Hemichordata</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q9','B')"><b>B.</b> Echinodermata</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q9','C')"><b>C.</b> Mollusca</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q9','D')"><b>D.</b> Annelida</div>
+    </div>
+    <div class="explanation" id="exp-q9"><strong>Explanation:</strong> <b>Hemichordata</b> (Balanoglossus, Saccoglossus) was once a Chordata subphylum but is now a separate non-chordate phylum.</div>
+  </div>
+
+  <div class="question" id="q10">
+    <div class="q-text">Q10. The radula (rasping feeding organ) is found in which phylum?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q10','A')"><b>A.</b> Mollusca</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q10','B')"><b>B.</b> Arthropoda</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q10','C')"><b>C.</b> Annelida</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q10','D')"><b>D.</b> Ctenophora</div>
+    </div>
+    <div class="explanation" id="exp-q10"><strong>Explanation:</strong> <b>Mollusca</b> have a file-like rasping organ in the mouth called the radula, used for feeding.</div>
+  </div>
+
+  <div class="question" id="q11">
+    <div class="q-text">Q11. Which of these is an example of Urochordata?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q11','A')"><b>A.</b> Branchiostoma</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q11','B')"><b>B.</b> Ascidia</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q11','C')"><b>C.</b> Balanoglossus</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q11','D')"><b>D.</b> Pleurobrachia</div>
+    </div>
+    <div class="explanation" id="exp-q11"><strong>Explanation:</strong> <b>Ascidia</b> (along with Salpa, Doliolum) is a Urochordata example — mnemonic "A Sea Deal".</div>
+  </div>
+
+  <div class="question" id="q12">
+    <div class="q-text">Q12. Excretion via Malpighian tubules is a feature of which phylum?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q12','A')"><b>A.</b> Annelida</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q12','B')"><b>B.</b> Arthropoda</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q12','C')"><b>C.</b> Mollusca</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q12','D')"><b>D.</b> Echinodermata</div>
+    </div>
+    <div class="explanation" id="exp-q12"><strong>Explanation:</strong> <b>Arthropoda</b> excrete through Malpighian tubules; Annelids use nephridia instead.</div>
+  </div>
+
+  <div class="question" id="q13">
+    <div class="q-text">Q13. Which phylum's members are mostly hermaphrodite (sexes not separate) and reproduce asexually by fragmentation as well as sexually?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q13','A')"><b>A.</b> Porifera</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q13','B')"><b>B.</b> Arthropoda</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q13','C')"><b>C.</b> Aschelminthes</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q13','D')"><b>D.</b> Hemichordata</div>
+    </div>
+    <div class="explanation" id="exp-q13"><strong>Explanation:</strong> <b>Porifera</b> are hermaphrodite and reproduce both asexually (fragmentation) and sexually (gametes).</div>
+  </div>
+
+  <div class="question" id="q14">
+    <div class="q-text">Q14. The adult body is radially symmetrical but the larva is bilaterally symmetrical in which phylum?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q14','A')"><b>A.</b> Coelenterata</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q14','B')"><b>B.</b> Echinodermata</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q14','C')"><b>C.</b> Porifera</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q14','D')"><b>D.</b> Platyhelminthes</div>
+    </div>
+    <div class="explanation" id="exp-q14"><strong>Explanation:</strong> <b>Echinodermata</b> — adults are radially symmetrical, but their free-swimming larvae are bilaterally symmetrical.</div>
+  </div>
+
+  <div class="question" id="q15">
+    <div class="q-text">Q15. Which mosquito genus is the vector for malaria (as per the "ACE" mnemonic)?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q15','A')"><b>A.</b> Culex</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q15','B')"><b>B.</b> Aedes</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q15','C')"><b>C.</b> Anopheles</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q15','D')"><b>D.</b> Apis</div>
+    </div>
+    <div class="explanation" id="exp-q15"><strong>Explanation:</strong> <b>Anopheles</b> transmits malaria; Culex transmits filaria; Aedes transmits dengue/yellow fever. Mnemonic: "ACE – All Cause Evil".</div>
+  </div>
+
+</div>
+</main>
+
+<script>
+const answers = {
+  q1:'A', q2:'B', q3:'B', q4:'A', q5:'B',
+  q6:'B', q7:'B', q8:'B', q9:'A', q10:'A',
+  q11:'B', q12:'B', q13:'A', q14:'B', q15:'C'
+};
+function answer(el, qid, chosen) {
+  const opts = el.parentElement.querySelectorAll('.opt');
+  opts.forEach(o => o.style.pointerEvents='none');
+  const correct = answers[qid];
+  opts.forEach(o => {
+    if(o.dataset.l === correct) o.classList.add('correct');
+    else if(o.dataset.l === chosen && chosen !== correct) o.classList.add('wrong');
+  });
+  document.getElementById('exp-' + qid).classList.add('show');
+}
+</script>
+</body>
+</html>
