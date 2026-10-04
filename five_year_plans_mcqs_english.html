@@ -77,16 +77,38 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
 .explanation { margin-top: 10px; padding: 10px 14px; background: #f9fbe7; border-radius: 8px; font-size: .85rem; color: #555; display: none; line-height: 1.6; }
 .explanation.show { display: block; }
 .src-tag { display:inline-block; background:#e1f5fe; color:#0277bd; border-radius:6px; padding:1px 8px; font-size:.7rem; font-weight:700; margin-left:6px; vertical-align:middle; }
+.jump { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin:12px 0 4px; }
+.jump a { font-size:.78rem; font-weight:700; text-decoration:none; background:#fff; color:#1b5e20; border:1px solid #a5d6a7; padding:5px 12px; border-radius:16px; }
+.tl { position:relative; margin:8px 0 28px; padding-left:18px; }
+.tl::before { content:''; position:absolute; left:7px; top:0; bottom:0; width:3px; background:linear-gradient(#2e7d32,#1565c0,#c62828,#3f51b5); border-radius:2px; }
+.tl-item { position:relative; background:#fff; border-radius:10px; padding:10px 14px 10px 16px; margin:0 0 10px 8px; box-shadow:0 1px 6px rgba(0,0,0,.06); font-size:.86rem; line-height:1.55; }
+.tl-item::before { content:''; position:absolute; left:-18px; top:14px; width:11px; height:11px; border-radius:50%; background:#fff; border:3px solid #2e7d32; }
+.tl-item.em::before { border-color:#c62828; }
+.tl-item.niti::before { border-color:#3f51b5; }
+.tl-item .when { font-weight:800; color:#c62828; font-size:.82rem; }
+.tl-item .who { font-weight:700; color:#1a237e; }
+.em-box { background:#ffebee; border:2px solid #c62828; border-radius:12px; padding:14px 16px; margin:12px 0 20px; font-size:.88rem; line-height:1.65; color:#4a148c; }
+.em-box h3 { color:#b71c1c; margin-bottom:6px; font-size:1rem; }
+.more-pts { margin-top:8px; font-size:.82rem; color:#444; }
+.more-pts summary { cursor:pointer; font-weight:700; color:#1565c0; }
+#pm-tl, #niti-tl { scroll-margin-top: 8px; }
 </style>
 </head>
 <body>
 <header>
   <h1>🗓️ Five Year Plans – India</h1>
   <p>Crazy GK Trick | Akshay Sir | Planning Commission → NITI Aayog</p>
-  <div class="badge">1951–2017 | All 12 Plans + Holidays | Raghu-Story + Number Tricks + MCQs</div>
+  <div class="badge">1951–2017 | All 12 Plans + Holidays | PMs + Emergency | NITI 2015–now | MCQs</div>
 </header>
 
 <main>
+<div class="jump">
+  <a href="#plans">12 Plans</a>
+  <a href="#pm-tl">PM timeline</a>
+  <a href="#emergency">Emergency</a>
+  <a href="#niti-tl">NITI Aayog 2015+</a>
+  <a href="#mcqs">MCQs</a>
+</div>
 
 <!-- NEW MASTER TRICK: RAGHU STORY (PLANS 1-4) -->
 <div class="master-trick">
@@ -149,7 +171,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
 </div>
 
 <!-- PLAN CARDS -->
-<div class="section-title">📋 All Five Year Plans — At a Glance</div>
+<div class="section-title" id="plans">📋 All Five Year Plans — At a Glance</div>
 
 <div class="plan-grid">
 
@@ -167,6 +189,9 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       </div>
       <b>Key events:</b> Bhakra-Nangal Dam, Community Dev Programme (1952), National Extension Service<br>
       <b>Chairman:</b> Jawaharlal Nehru<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        Planning Commission set up 15 Mar 1950 (K.C. Neogi 1st Deputy Chairman). IIT Kharagpur 1951. Community Development 2 Oct 1952. National Extension Service 1953. Food was the political emergency of the 1950s — Harrod-Domar = savings → investment → growth.
+      </details>
       <div class="trick-box">🧠 राघु ने खेत जोते, नहरें बनाईं — "पेट भरना और खेत सींचना" ही पहली योजना का मकसद था। Model सीक्वेंस: <b>H</b>arrod-Domar (पहला अक्षर)</div>
     </div>
   </div>
@@ -186,6 +211,9 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <b>Steel Plants:</b> Bhilai (Russia), Rourkela (Germany), Durgapur (UK)<br>
       <b>Key:</b> Industrial Policy Resolution 1956, Atomic Energy Act<br>
       <b>Chairman:</b> Nehru<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        IPR 1956 = “socialistic pattern” (Avadi). Three public steel plants + later Bokaro (USSR, 4th plan era). IITs expand. Heavy-industry bias is why agriculture lagged going into the 3rd plan.
+      </details>
       <div class="trick-box">🧠 राघु को अब औज़ार चाहिए थे → फैक्ट्रियाँ खुलीं, स्टील बना, मशीनें बनीं = भारी उद्योग। Model सीक्वेंस: <b>M</b>ahalanobis (दूसरा अक्षर)</div>
     </div>
   </div>
@@ -204,6 +232,9 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       </div>
       <b>Why failed?</b> China war (1962) + Pakistan war (1965) + Droughts<br>
       <b>Chairman:</b> Nehru (died 1964) → Lal Bahadur Shastri<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        Also called <b>Gadgil Yojana</b>. First National Emergency (Art. 352) after China war, 26 Oct 1962. Shastri’s Jai Jawan Jai Kisan. Food crisis → HYV thinking that becomes Green Revolution in the holiday years.
+      </details>
       <div class="trick-box">🧠 राघु बोला "अब खेती भी अपनी, उद्योग भी अपना, मेहनत भी अपनी" = आत्मनिर्भरता। Model सीक्वेंस: <b>S</b>ukhamoy Chakravarty (तीसरा अक्षर) → H-M-S पूरा!</div>
     </div>
   </div>
@@ -232,6 +263,9 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       </div>
       <b>Key:</b> 14 Banks nationalized (1969), Green Revolution results, Garibi Hatao slogan (1971), IADP<br>
       <b>Chairman:</b> Indira Gandhi<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        1971 Bangladesh war + second National Emergency (external, Dec 1971). Bank nationalisation 19 Jul 1969; MRTP Act 1969. “Garibi Hatao” is the 1971 election, late in this plan. Green Revolution pays off in wheat.
+      </details>
       <div class="trick-box">🧠 राघु की आत्मनिर्भरता को अब और मज़बूत करना था ताकि कोई झटका आए तो देश डगमगाए नहीं → Stability + Self-Reliance</div>
     </div>
   </div>
@@ -251,6 +285,9 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <b>Key:</b> 20-point Programme (Indira), Minimum Needs Programme (MNP), SFDA<br>
       <b>Terminated early (1978)</b> by Janata govt (was to end 1979)<br>
       <b>Chairman:</b> Indira Gandhi<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        <b>Internal Emergency 25 Jun 1975 – 21 Mar 1977</b> falls inside this plan (Art. 352). 20-Point Programme 1975; 42nd Amendment 1976. Oil shock 1973 just before start. Janata wins 1977 → plan killed 1978, Rolling Plan follows.
+      </details>
       <div class="trick-box">🧠 <b>5 = पंच (मुक्का)</b> → सबने महंगाई और ग़रीबी को पंच मारा — "गरीबी हटाओ, महंगाई कम करो!"</div>
     </div>
   </div>
@@ -276,8 +313,10 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
         <div class="stat-pill">Target: 5.2%</div>
         <div class="stat-pill achieved-good">Achieved: 5.7% ✅</div>
       </div>
-      <b>Key:</b> IRDP (Integrated Rural Development Programme), NREP, TRYSEM, Anti-Poverty programme<br>
       <b>Chairman:</b> Indira Gandhi<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        First plan after Indira’s 1980 return. NABARD 1982. Sixth Plan is when poverty-line / IRDP machinery becomes a system. Operation Flood (White Revolution) is in full swing (Verghese Kurien).
+      </details>
       <div class="trick-box">🧠 <b>6 = सिक्स्थ सेंस (दिमाग़)</b> → अब दिमाग़ लगाने और तकनीक अपनाने का जमाना → Modernisation & Technology</div>
     </div>
   </div>
@@ -294,8 +333,10 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
         <div class="stat-pill">Target: 5%</div>
         <div class="stat-pill achieved-good">Achieved: 6% ✅</div>
       </div>
-      <b>Key:</b> Technology Mission, JRY (Jawahar Rozgar Yojana), Modernization focus<br>
       <b>Chairman:</b> Rajiv Gandhi<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        Indira assassinated 31 Oct 1984 just before this plan. Computerisation / telecom (C-DOT, Sam Pitroda). JRY 1989. Plan ends into 1989–91 political chaos (VP Singh, Mandal, Rath Yatra).
+      </details>
       <div class="trick-box">🧠 <b>7 = साथ (Together)</b> → गाँव-शहर, सबको साथ लेकर चलना, विकास को "मिलाना" → क्षेत्रीय असमानता घटाना</div>
     </div>
   </div>
@@ -321,8 +362,10 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
         <div class="stat-pill">Target: 5.6%</div>
         <div class="stat-pill achieved-good">Achieved: 6.8% ✅</div>
       </div>
-      <b>Key:</b> LPG Reforms (1991), Narasimha Rao + Manmohan Singh, Panchayati Raj (73rd Amendment 1992), Modernization<br>
       <b>Chairman:</b> PV Narasimha Rao<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        New Industrial Policy 24 Jul 1991 is <i>before</i> 8th plan starts (1992). 73rd &amp; 74th Amendments 1992–93. SEBI statutory 1992. WTO 1995 during this plan.
+      </details>
       <div class="trick-box">🧠 <b>8 = आठवां अजूबा</b> → एक शिक्षित व स्किल्ड भारतीय नागरिक दुनिया का 8वाँ अजूबा है → Human Resource Development, साथ में 1991 की नई आर्थिक नीति</div>
     </div>
   </div>
@@ -341,6 +384,9 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       </div>
       <b>Key:</b> Kargil War 1999, PMGSY (rural roads), Sarva Shiksha Abhiyan<br>
       <b>PMs:</b> Deve Gowda → Gujral → Vajpayee<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        Three PMs in one plan. Pokhran-II 1998 (Vajpayee). Kargil 1999. SSA designed 2000–01, national roll-out 2001–02. PMGSY 2000.
+      </details>
       <div class="trick-box">🧠 <b>9 = न्याय</b> (नौ ≈ न्याय) → Social Justice & Equality पर फोकस — पर Kargil war ने achieved growth गिरा दी (5.4%)</div>
     </div>
   </div>
@@ -357,8 +403,10 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
         <div class="stat-pill">Target: 8%</div>
         <div class="stat-pill achieved-good">Achieved: 7.6% ✅</div>
       </div>
-      <b>Key:</b> Bharat Nirman, NREGA launched (2005), RTI (2005), SSA, Monitorable targets for 1st time<br>
       <b>Chairman:</b> Atal Bihari Vajpayee → Manmohan Singh<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        UPA-I from May 2004 mid-plan. NREGA 2005, RTI 2005, Forest Rights Act 2006. Bharat Nirman 2005. First plan with a hard “monitorable targets” scorecard.
+      </details>
       <div class="trick-box">🧠 <b>10 = टॉप गियर / फुल स्पीड</b> → देश को मैक्सिमम पावर से दौड़ाना है → फुल एनर्जी से ग्रोथ, गरीबी आधी करो</div>
     </div>
   </div>
@@ -375,8 +423,10 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
         <div class="stat-pill">Target: 9%</div>
         <div class="stat-pill achieved-good">Achieved: 8% ✅ (HIGHEST!)</div>
       </div>
-      <b>Key:</b> RTE (Right to Education 2009), MNREGA in full swing, Aadhaar started (2009), Global recession 2008<br>
       <b>Chairman:</b> Manmohan Singh<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        RTE Act 2009; Aadhaar 2009; Food Security Bill process begins (NFSA is 2013, next plan). Global Financial Crisis 2008 — growth still highest among all FYPs.
+      </details>
       <div class="trick-box">🧠 पिछली 10 योजनाओं की ग्रोथ को संभालते हुए, समझदारी से, सस्टेनेबल तरीक़े से आगे बढ़ाना — बिना एनवायरनमेंट/एनर्जी/वाटर बर्बाद किए</div>
     </div>
   </div>
@@ -397,6 +447,9 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <b>Key:</b> Planning Commission dissolved Jan 1, 2015 → <b>NITI Aayog</b> formed (National Institution for Transforming India)<br>
       NITI Aayog ≠ Planning Commission: No fund allocation, only think tank / advisory body<br>
       Vice Chairman: Arvind Panagariya (1st), Rajiv Kumar (2nd), Suman Bery (current)<br>
+      <details class="more-pts"><summary>+ extra points</summary>
+        Planning Commission shut by Cabinet resolution, NITI born 1 Jan 2015 — 12th plan still “on paper” till 2017. Finance Commission + Finance Ministry take the fund-transfer seat NITI vacated. NFSA 2013, Jan Dhan 2014 sit on this plan’s calendar.
+      </details>
       <div class="trick-box">🧠 11वीं की "Faster + Inclusive" ग्रोथ में बस एक शब्द और जोड़ दो — <b>Sustainable</b> → यही 12वीं यानी आख़िरी योजना का फोकस है</div>
     </div>
   </div>
@@ -426,6 +479,36 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
   <tr><td><b>12th</b></td><td>2012–17</td><td>8.0</td><td class="achieved-bad">6.7</td><td>Faster+Inclusive+Sustainable</td><td>LAST PLAN; NITI Aayog 2015</td></tr>
 </table>
 
+<div class="section-title" id="pm-tl">🇮🇳 Prime Ministers vs Plans (who sat in the chair)</div>
+<p style="font-size:.84rem;color:#555;margin:-4px 0 12px;">Planning Commission Chairman = the PM. Use this rail to map wars, Emergency, and plan holidays.</p>
+<div class="tl">
+  <div class="tl-item"><span class="when">15 Aug 1947 – 27 May 1964</span> · <span class="who">Jawaharlal Nehru</span><br>Plans 1, 2, most of 3. Planning Commission 15 Mar 1950. Died in office.</div>
+  <div class="tl-item"><span class="when">27 May – 9 Jun 1964 &amp; 11–24 Jan 1966</span> · <span class="who">Gulzarilal Nanda</span> (acting, twice)<br>Also 1st Deputy Chairman of Planning Commission. Bridged Nehru→Shastri and Shastri→Indira.</div>
+  <div class="tl-item"><span class="when">9 Jun 1964 – 11 Jan 1966</span> · <span class="who">Lal Bahadur Shastri</span><br>Tail of 3rd plan; 1965 war; Tashkent. Died in office. Food slogan: Jai Jawan Jai Kisan.</div>
+  <div class="tl-item"><span class="when">24 Jan 1966 – 24 Mar 1977</span> · <span class="who">Indira Gandhi (1st stint)</span><br>Plan Holiday 1966–69 → 4th → 5th. Bank nationalisation 1969. Bangladesh 1971. <b>Internal Emergency 1975–77.</b></div>
+  <div class="tl-item"><span class="when">24 Mar 1977 – 28 Jul 1979</span> · <span class="who">Morarji Desai</span><br>Janata. Kills 5th plan (1978). Rolling Plan 1978–80. DT Lakdawala.</div>
+  <div class="tl-item"><span class="when">28 Jul 1979 – 14 Jan 1980</span> · <span class="who">Charan Singh</span><br>Never faced Lok Sabha. Rolling Plan still on.</div>
+  <div class="tl-item"><span class="when">14 Jan 1980 – 31 Oct 1984</span> · <span class="who">Indira Gandhi (2nd stint)</span><br>6th Plan. Assassinated 31 Oct 1984.</div>
+  <div class="tl-item"><span class="when">31 Oct 1984 – 2 Dec 1989</span> · <span class="who">Rajiv Gandhi</span><br>7th Plan: Food, Work, Productivity; tech missions; JRY.</div>
+  <div class="tl-item"><span class="when">2 Dec 1989 – 10 Nov 1990</span> · <span class="who">V.P. Singh</span><br>Annual-plan gap begins. Mandal Commission implementation.</div>
+  <div class="tl-item"><span class="when">10 Nov 1990 – 21 Jun 1991</span> · <span class="who">Chandra Shekhar</span><br>BOP crisis; pledge gold; path to 1991 reforms.</div>
+  <div class="tl-item"><span class="when">21 Jun 1991 – 16 May 1996</span> · <span class="who">P.V. Narasimha Rao</span><br>LPG (Manmohan Singh FM). 8th Plan 1992–97.</div>
+  <div class="tl-item"><span class="when">16 May – 1 Jun 1996</span> · <span class="who">Atal Bihari Vajpayee</span> (13 days)</div>
+  <div class="tl-item"><span class="when">1 Jun 1996 – 21 Apr 1997</span> · <span class="who">H.D. Deve Gowda</span> · 9th Plan starts 1997.</div>
+  <div class="tl-item"><span class="when">21 Apr 1997 – 19 Mar 1998</span> · <span class="who">I.K. Gujral</span></div>
+  <div class="tl-item"><span class="when">19 Mar 1998 – 22 May 2004</span> · <span class="who">Atal Bihari Vajpayee</span><br>Rest of 9th + start of 10th. Pokhran-II, Kargil, PMGSY, Golden Quadrilateral.</div>
+  <div class="tl-item"><span class="when">22 May 2004 – 26 May 2014</span> · <span class="who">Manmohan Singh</span><br>End of 10th, all of 11th, start of 12th. NREGA, RTI, RTE, Aadhaar, NFSA.</div>
+  <div class="tl-item"><span class="when">26 May 2014 – continuing</span> · <span class="who">Narendra Modi</span><br>Rest of 12th. Planning Commission wound up; NITI Aayog 1 Jan 2015. No 13th FYP.</div>
+</div>
+
+<div class="em-box" id="emergency">
+  <h3>⚠️ Three National Emergencies (Art. 352) — don’t mix them</h3>
+  <b>1. 26 Oct 1962 – 10 Jan 1968</b> — China war. External. Falls on 3rd plan + start of Plan Holiday.<br>
+  <b>2. 3 Dec 1971 – 21 Mar 1977</b> — Pakistan / Bangladesh war. External. Declared during 4th plan, runs into 5th.<br>
+  <b>3. 25 Jun 1975 – 21 Mar 1977</b> — <b>Internal Emergency</b> (the one people mean). Indira Gandhi; President Fakhruddin Ali Ahmed. 5th Plan. 20-Point Programme, press censorship, 42nd Amendment 1976. Lifted as Janata comes in; both 1971 and 1975 proclamations end 21 Mar 1977.<br>
+  🧠 Trap: 1975 is <b>internal</b>; 1962 and 1971 are <b>external</b>. Financial Emergency (Art. 360) has <b>never</b> been imposed. President’s Rule = Art. 356, not “the Emergency”.
+</div>
+
 <!-- NITI AAYOG BOX -->
 <div class="master-trick" style="background:#e8eaf6;border-color:#3f51b5">
   <h2 style="color:#1a237e">🏛️ NITI Aayog vs Planning Commission</h2>
@@ -439,9 +522,27 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
   </div>
 </div>
 
+<div class="section-title" id="niti-tl">🏛️ NITI Aayog after 2015 — work timeline</div>
+<p style="font-size:.84rem;color:#555;margin:-4px 0 12px;">Not a Planning Commission 2.0. Famous public products, indices, and missions (exam list). Structure in one line: PM = Chair; VC (full-time); CEO (secretary-rank); Governing Council = all CMs + LGs.</p>
+<div class="tl">
+  <div class="tl-item niti"><span class="when">1 Jan 2015</span> · <span class="who">Born</span><br>Cabinet resolution replaces Planning Commission. First VC <b>Arvind Panagariya</b>; first CEO <b>Sindhushree Khullar</b>. Motto: cooperative + competitive federalism, bottom-up, no plan-fund transfers.</div>
+  <div class="tl-item niti"><span class="when">2016</span> · <span class="who">Atal Innovation Mission (AIM)</span> + CEO <b>Amitabh Kant</b><br>Atal Tinkering Labs in schools; Atal Incubation Centres. This is NITI’s most-cited “doing” arm, not just papers.</div>
+  <div class="tl-item niti"><span class="when">2017</span> · <span class="who">Three-Year Action Agenda (2017–20)</span><br>Fills the hole after 12th plan. Also <b>National Nutrition Strategy</b> (feeds POSHAN Abhiyaan). First <b>NITI–MoHFW Health Index</b> of states. VC becomes <b>Rajiv Kumar</b> (Aug 2017).</div>
+  <div class="tl-item niti"><span class="when">2018</span> · <span class="who">Aspirational Districts Programme</span> (115 districts)<br>Real-time delta ranking on health, education, agri, financial inclusion, basic infra. Same year: first <b>SDG India Index</b>, <b>Composite Water Management Index</b>, <b>Strategy for New India @75</b> (target 2022), <b>Women Entrepreneurship Platform</b>.</div>
+  <div class="tl-item niti"><span class="when">2019</span> · <span class="who">India Innovation Index</span> + School Education Quality Index (SEQI)<br>SDG India Index 2.0. Export Preparedness Index pipeline starts. AIM scales ATLs nationwide.</div>
+  <div class="tl-item niti"><span class="when">2020</span> · <span class="who">COVID strategy cell / output dashboards</span><br>SDG Index 2020–21. <b>Export Preparedness Index</b> 2020. Behavioural insights / nudge work for mask-vaccine compliance. Health-systems papers for “New India”.</div>
+  <div class="tl-item niti"><span class="when">2021</span> · <span class="who">National Multidimensional Poverty Index</span> (with UNDP)<br>Alkire-Foster method, NFHS-based — not just income poverty. PM announces <b>LiFE – Lifestyle for Environment</b> at COP26; NITI is the domestic shepherd. AIM iCREST / mentors of change.</div>
+  <div class="tl-item niti"><span class="when">2022</span> · <span class="who">National Data &amp; Analytics Platform (NDAP)</span><br>Open government datasets, machine-readable. VC <b>Suman Bery</b> (May 2022). State Energy Index / energy dashboards. Shoonya (zero-pollution delivery) campaign with RMI.</div>
+  <div class="tl-item niti"><span class="when">2023</span> · <span class="who">Aspirational Blocks Programme</span> (~500 blocks) + G20 year<br>CEO <b>B.V.R. Subrahmanyam</b> (Feb 2023). National MPI 2023 update (poverty drop headline). SDG India Index 2023–24. NITI as knowledge partner in India’s G20 presidency.</div>
+  <div class="tl-item niti"><span class="when">2024–26</span> · <span class="who">Viksit Bharat @2047</span> workstream<br>Frontier tech / AI papers, state support mission, continued ADP/ABP delta rankings, SDG localisation with states. Still <b>no Five-Year Plan</b> — Finance Commission + Union Budget do money; NITI does strategy, ranking, and hand-holding of lagging districts.</div>
+</div>
+<div class="fact-check">
+  ⚠️ <b>NITI exam traps:</b> Not a constitutional body (Cabinet resolution). Cannot give grants — that moved to Finance Ministry / Finance Commission. Chairman is always the PM. “Team India Hub” + “Knowledge and Innovation Hub” are the two internal hubs. Aspirational <b>Districts 2018</b> vs Aspirational <b>Blocks 2023</b> — different scales. MPI (NITI–UNDP) ≠ Tendulkar / Rangarajan poverty line.
+</div>
+
 <!-- MCQ SECTION -->
-<div class="mcq-section">
-  <h2>📝 Practice MCQs — Five Year Plans (21 Questions)</h2>
+<div class="mcq-section" id="mcqs">
+  <h2>📝 Practice MCQs — Five Year Plans (26 Questions)</h2>
 
   <div class="question" id="q1">
     <div class="q-text">Q1. Which model was used in India's 1st Five Year Plan?</div>
@@ -675,6 +776,61 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
     <div class="explanation" id="exp-q21"><strong>Explanation:</strong> The 12th (and last) Five Year Plan's theme was <b>"Faster, More Inclusive and Sustainable Development"</b> (तीव्र, अधिक समावेशी व सतत विकास).</div>
   </div>
 
+  <div class="question" id="q22">
+    <div class="q-text">Q22. The Internal Emergency (Art. 352) was in force during which period?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q22','A')"><b>A.</b> 26 Oct 1962 – 10 Jan 1968</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q22','B')"><b>B.</b> 3 Dec 1971 – 21 Mar 1977 only (external)</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q22','C')"><b>C.</b> 25 Jun 1975 – 21 Mar 1977</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q22','D')"><b>D.</b> 25 Jun 1975 – 31 Oct 1984</div>
+    </div>
+    <div class="explanation" id="exp-q22"><strong>Explanation:</strong> The famous <b>internal</b> Emergency is <b>25 June 1975 – 21 March 1977</b> (5th Plan, Indira). 1962 and 1971 were external emergencies.</div>
+  </div>
+
+  <div class="question" id="q23">
+    <div class="q-text">Q23. Atal Innovation Mission (Atal Tinkering Labs) is an initiative of?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q23','A')"><b>A.</b> Ministry of Education alone</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q23','B')"><b>B.</b> NITI Aayog (launched 2016)</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q23','C')"><b>C.</b> Planning Commission, 12th Plan</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q23','D')"><b>D.</b> ISRO</div>
+    </div>
+    <div class="explanation" id="exp-q23"><strong>Explanation:</strong> <b>AIM</b> sits in <b>NITI Aayog</b> (2016), under CEO Amitabh Kant’s years — ATLs, incubation centres. Not a Planning Commission scheme.</div>
+  </div>
+
+  <div class="question" id="q24">
+    <div class="q-text">Q24. Aspirational Districts Programme (2018) vs Aspirational Blocks Programme (2023) — which is correct?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q24','A')"><b>A.</b> Both are Finance Commission grant schemes</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q24','B')"><b>B.</b> Districts 2018 (115); Blocks 2023 (~500) — NITI ranking / convergence, not a new CSS pot of money</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q24','C')"><b>C.</b> Blocks came first in 2015</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q24','D')"><b>D.</b> Only Aspirational Districts exist; Blocks is a state scheme</div>
+    </div>
+    <div class="explanation" id="exp-q24"><strong>Explanation:</strong> NITI’s ADP <b>2018, 115 districts</b>; ABP <b>2023, about 500 blocks</b>. Delta ranking + saturation of existing schemes. NITI does not allocate plan funds.</div>
+  </div>
+
+  <div class="question" id="q25">
+    <div class="q-text">Q25. India’s National Multidimensional Poverty Index is published by?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q25','A')"><b>A.</b> RBI</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q25','B')"><b>B.</b> NITI Aayog with UNDP (NFHS data, Alkire-Foster)</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q25','C')"><b>C.</b> Tendulkar Committee every year</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q25','D')"><b>D.</b> World Bank only, no Indian agency</div>
+    </div>
+    <div class="explanation" id="exp-q25"><strong>Explanation:</strong> <b>NITI + UNDP</b> National MPI (2021, update 2023). Different from Tendulkar/Rangarajan consumption poverty lines.</div>
+  </div>
+
+  <div class="question" id="q26">
+    <div class="q-text">Q26. Who is the Chairman of NITI Aayog?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q26','A')"><b>A.</b> Vice Chairman (Suman Bery)</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q26','B')"><b>B.</b> CEO (B.V.R. Subrahmanyam)</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q26','C')"><b>C.</b> The Prime Minister</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q26','D')"><b>D.</b> Finance Minister</div>
+    </div>
+    <div class="explanation" id="exp-q26"><strong>Explanation:</strong> Same as old Planning Commission: <b>PM is Chairman</b>. VC and CEO run the shop day to day. NITI is a Cabinet-resolution think tank, not constitutional.</div>
+  </div>
+
 </div>
 </main>
 
@@ -683,7 +839,8 @@ const answers = {
   q1:'B', q2:'D', q3:'C', q4:'C', q5:'C',
   q6:'B', q7:'B', q8:'B', q9:'B', q10:'B',
   q11:'B', q12:'C', q13:'C', q14:'B', q15:'B',
-  q16:'C', q17:'B', q18:'C', q19:'C', q20:'C', q21:'C'
+  q16:'C', q17:'B', q18:'C', q19:'C', q20:'C', q21:'C',
+  q22:'C', q23:'B', q24:'B', q25:'B', q26:'C'
 };
 function answer(el, qid, chosen) {
   const opts = el.parentElement.querySelectorAll('.opt');
