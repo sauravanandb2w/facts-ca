@@ -16,10 +16,23 @@ main { max-width: 860px; margin: 28px auto; padding: 0 14px 60px; }
 /* BIG TRICK BOX */
 .master-trick { background: #fff8e1; border: 2.5px solid #f9a825; border-radius: 14px; padding: 20px 24px; margin-bottom: 28px; }
 .master-trick h2 { color: #e65100; font-size: 1.15rem; margin-bottom: 10px; }
-.trick-sentence { font-size: 1.45rem; font-weight: 800; color: #1b5e20; letter-spacing: .5px; line-height: 1.6; }
+.trick-sentence { font-size: 1.3rem; font-weight: 800; color: #1b5e20; letter-spacing: .5px; line-height: 1.6; }
 .trick-sentence span { color: #c62828; }
 .trick-decode { margin-top: 12px; font-size: .9rem; color: #555; line-height: 1.8; }
 .trick-decode b { color: #1b5e20; }
+
+/* STORY BOX */
+.story-box { background: #fff; border-radius: 10px; padding: 14px 18px; margin: 10px 0; font-size: .9rem; line-height: 1.8; color: #333; border-left: 4px solid #f9a825; }
+.story-box b { color: #e65100; }
+
+/* NUMBER TRICK GRID */
+.num-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 10px; margin-top: 14px; }
+.num-card { background: #fff; border-radius: 10px; padding: 10px 14px; font-size: .85rem; line-height: 1.6; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
+.num-card b.n { color: #c62828; font-size: 1.05rem; }
+
+/* FACT-CHECK NOTE */
+.fact-check { background: #fff3e0; border: 2px dashed #ef6c00; border-radius: 10px; padding: 12px 18px; margin: 14px 0 28px; font-size: .85rem; color: #5d4037; line-height: 1.7; }
+.fact-check b { color: #bf360c; }
 
 /* PLAN CARDS */
 .plan-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
@@ -63,45 +76,62 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
 .opt.wrong { background: #ffebee; border-color: #c62828; color: #b71c1c; }
 .explanation { margin-top: 10px; padding: 10px 14px; background: #f9fbe7; border-radius: 8px; font-size: .85rem; color: #555; display: none; line-height: 1.6; }
 .explanation.show { display: block; }
+.src-tag { display:inline-block; background:#e1f5fe; color:#0277bd; border-radius:6px; padding:1px 8px; font-size:.7rem; font-weight:700; margin-left:6px; vertical-align:middle; }
 </style>
 </head>
 <body>
 <header>
   <h1>🗓️ Five Year Plans – India</h1>
   <p>Crazy GK Trick | Akshay Sir | Planning Commission → NITI Aayog</p>
-  <div class="badge">1951–2017 | All 12 Plans + Holidays | Memory Tricks + MCQs</div>
+  <div class="badge">1951–2017 | All 12 Plans + Holidays | Raghu-Story + Number Tricks + MCQs</div>
 </header>
 
 <main>
 
-<!-- MASTER TRICK -->
+<!-- NEW MASTER TRICK: RAGHU STORY (PLANS 1-4) -->
 <div class="master-trick">
-  <h2>🧠 MASTER TRICK — याद करो सभी 12 Plans (Crazy GK Trick Style)</h2>
-  <div class="trick-sentence">
-    "<span>A</span>nna <span>H</span>ate <span>S</span>elfie — <span>G</span>row <span>P</span>oor — <span>P</span>oor — <span>F</span>ind <span>H</span>uman <span>G</span>rowth <span>I</span>nclusive <span>F</span>astest <span>S</span>ustainable"
+  <h2>🧠 TRICK 1 — राघु की कहानी (Plans 1–4) <span class="src-tag">updated from new video</span></h2>
+  <div class="story-box">
+    साल <b>1947</b>, भारत आज़ाद हुआ — पर ज़मीन बंजर थी, खाने को अनाज नहीं था। कहानी का हीरो है किसान <b>राघु</b>। "देश आज़ाद हो गया, पर अब लोगों को भूख से आज़ाद करना है" — यहीं से पंचवर्षीय योजनाएँ शुरू होती हैं।
   </div>
-  <div class="trick-decode">
-    <b>A</b>nna (1st – Agriculture) →
-    <b>H</b>ate (2nd – Heavy Industries) →
-    <b>S</b>elfie (3rd – Self-reliance, FAILED) →
-    <b>[Plan Holiday 1966–69]</b> →
-    <b>G</b>row (4th – Growth with Stability) →
-    <b>P</b>oor (5th – Poverty Removal) →
-    <b>[Rolling Plan 1978–80]</b> →
-    <b>P</b>oor (6th – Poverty Alleviation) →
-    <b>[Annual Plans 1990–92]</b> →
-    <b>F</b>ind (7th – Food, Work, Productivity) →
-    <b>H</b>uman (8th – Human Development) →
-    <b>G</b>rowth (9th – Growth with Social Justice) →
-    <b>I</b>nclusive (10th – Inclusive + Poverty ½) →
-    <b>F</b>astest (11th – Faster Inclusive Growth) →
-    <b>S</b>ustainable (12th – Faster + Inclusive + Sustainable → LAST PLAN)
+  <div class="num-grid">
+    <div class="num-card"><b class="n">1st</b> — राघु ने खेत जोते, नहरें बनीं, पहली बार पेट भरकर खाया। फोकस: <b>कृषि + सिंचाई</b> ("पेट भरना और खेत सींचना")</div>
+    <div class="num-card"><b class="n">2nd</b> — अब राघु को औज़ार चाहिए। फैक्ट्रियाँ खुलीं, स्टील बना, मशीनें बनीं। फोकस: <b>भारी उद्योग (Heavy Industries)</b></div>
+    <div class="num-card"><b class="n">3rd</b> — राघु बोला "अब खेती भी अपनी, उद्योग भी अपना, मेहनत भी अपनी।" फोकस: <b>आत्मनिर्भरता (Self-Reliance)</b></div>
+    <div class="num-card"><b class="n">4th</b> — 1962 युद्ध में फसलें-संसाधन दोनों प्रभावित (बीच में गैप = Plan Holiday)। फिर आत्मनिर्भरता को और मज़बूत करना था ताकि झटका आए तो देश डगमगाए नहीं। फोकस: <b>Stability + Self-Reliance</b></div>
   </div>
 </div>
 
-<!-- STEEL PLANT TRICK -->
+<!-- NEW MASTER TRICK: NUMBER-SOUND TRICKS (PLANS 5-12) -->
+<div class="master-trick" style="background:#f1f8e9;border-color:#689f38">
+  <h2 style="color:#33691e">🧠 TRICK 2 — नंबर से जुड़ी ट्रिक्स, Plans 5–12 <span class="src-tag">updated from new video</span></h2>
+  <div class="num-grid">
+    <div class="num-card"><b class="n">5 → पंच</b> (मुक्का/Punch) — सब लोगों ने महँगाई और ग़रीबी को पंच मारा। फोकस: <b>गरीबी हटाओ, महंगाई कम करो</b></div>
+    <div class="num-card"><b class="n">6 → सिक्स्थ सेंस</b> (दिमाग़) — अब दिमाग़ लगाने, तकनीक अपनाने का जमाना। फोकस: <b>Modernisation & Technology</b></div>
+    <div class="num-card"><b class="n">7 → साथ</b> (Together) — गाँव-शहर, अमीर-ग़रीब सबको साथ लेकर चलना, विकास को "मिलाना"। फोकस: <b>क्षेत्रीय असमानता घटाना (Regional Balance)</b></div>
+    <div class="num-card"><b class="n">8 → आठवां अजूबा</b> (8th Wonder) — एक शिक्षित व स्किल्ड भारतीय नागरिक ही आठवां अजूबा है। फोकस: <b>Human Resource Development</b> (1991 नई आर्थिक नीति के साथ)</div>
+    <div class="num-card"><b class="n">9 → न्याय</b> (Justice; नौ≈न्याय) — फोकस: <b>Social Justice & Equality</b></div>
+    <div class="num-card"><b class="n">10 → टॉप गियर / फुल स्पीड</b> — देश को मैक्सिमम पावर से दौड़ाना है। फोकस: <b>Growth & Energy, पूरी स्पीड</b></div>
+    <div class="num-card"><b class="n">11 →</b> पिछली ग्रोथ को समझदारी से, सस्टेनेबल तरीक़े से आगे बढ़ाना। फोकस: <b>Faster + Inclusive Growth</b></div>
+    <div class="num-card"><b class="n">12 →</b> 11वीं वाली ग्रोथ में "Sustainable" जोड़ दो — आख़िरी योजना। फोकस: <b>Faster, More Inclusive & Sustainable Growth</b></div>
+  </div>
+</div>
+
+<!-- MODEL TRICK: H-M-S SEQUENCE -->
 <div class="master-trick" style="background:#e3f2fd;border-color:#1565c0">
-  <h2 style="color:#0d47a1">🧠 TRICK 2 — 2nd Plan Steel Plants (BRD = Bhilai-Rourkela-Durgapur)</h2>
+  <h2 style="color:#0d47a1">🧠 TRICK 3 — Plan Models 1-2-3 = H-M-S Sequence <span class="src-tag">updated from new video</span></h2>
+  <div class="trick-sentence" style="color:#0d47a1;font-size:1.1rem">
+    <span style="color:#c62828">H</span>arrod-Domar → <span style="color:#c62828">M</span>ahalanobis → <span style="color:#c62828">S</span>ukhamoy Chakravarty
+  </div>
+  <div class="trick-decode">
+    हर मॉडल के पहले अक्षर से सीक्वेंस बनाओ: <b>H</b>(1st) → <b>M</b>(2nd) → <b>S</b>(3rd). 🧠 <b>"पहले H, फिर M, फिर S"</b> — बस यही क्रम याद रखो।<br>
+    <b>1st:</b> Harrod-Domar Model &nbsp; <b>2nd:</b> P.C. Mahalanobis Model &nbsp; <b>3rd:</b> John Sandee &amp; Sukhamoy Chakravarty ("SC") Model
+  </div>
+</div>
+
+<!-- STEEL PLANT TRICK (unchanged, unaffected by new video) -->
+<div class="master-trick" style="background:#e3f2fd;border-color:#1565c0">
+  <h2 style="color:#0d47a1">🧠 TRICK 4 — 2nd Plan Steel Plants (BRD = Bhilai-Rourkela-Durgapur)</h2>
   <div class="trick-sentence" style="color:#0d47a1">
     "<span style='color:#c62828'>B</span>harat <span style='color:#c62828'>R</span>ussa <span style='color:#c62828'>D</span>eutschland"
   </div>
@@ -111,6 +141,11 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
     <b>D</b>urgapur → <b>UK (Britain)</b> helped
     <br>🧠 <b>BRD</b> = Bhilai-Rourkela-Durgapur | <b>"Bhai Russia Dekh"</b>
   </div>
+</div>
+
+<!-- FACT-CHECK NOTE on 7th vs 8th plan model -->
+<div class="fact-check">
+  ⚠️ <b>Fact-check note (7th vs 8th Plan model):</b> The source video ties the <b>John W. Mellor Model</b> trick to the <b>7th Plan</b> (via the "मिलाना/साथ" regional-balance story). However, several standard exam references (coaching question banks) instead attribute the <b>John W. Mellor / "Miller" Model</b> to the <b>8th Plan</b> (1992–97, liberalized economy), with the 7th Plan shown under a generic "Planning Commission Model". This is a known point of disagreement across GK sources — verify against your specific exam's source material before relying on either version. Below, the 8th Plan card uses the standard-reference attribution (Mellor Model), and the video's 7th-Plan trick is kept as a separate memory aid only.
 </div>
 
 <!-- PLAN CARDS -->
@@ -132,7 +167,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       </div>
       <b>Key events:</b> Bhakra-Nangal Dam, Community Dev Programme (1952), National Extension Service<br>
       <b>Chairman:</b> Jawaharlal Nehru<br>
-      <div class="trick-box">🧠 <b>1 = "ANN"</b> → First need = FOOD → Agriculture first → Like a baby, India's first need was FOOD!</div>
+      <div class="trick-box">🧠 राघु ने खेत जोते, नहरें बनाईं — "पेट भरना और खेत सींचना" ही पहली योजना का मकसद था। Model सीक्वेंस: <b>H</b>arrod-Domar (पहला अक्षर)</div>
     </div>
   </div>
 
@@ -151,7 +186,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <b>Steel Plants:</b> Bhilai (Russia), Rourkela (Germany), Durgapur (UK)<br>
       <b>Key:</b> Industrial Policy Resolution 1956, Atomic Energy Act<br>
       <b>Chairman:</b> Nehru<br>
-      <div class="trick-box">🧠 <b>2 = "BHARI" (Heavy)</b> → Mahalanobis = Maha + Loh (Metal) → BIG METAL PLAN! → 3 steel plants in ONE plan!</div>
+      <div class="trick-box">🧠 राघु को अब औज़ार चाहिए थे → फैक्ट्रियाँ खुलीं, स्टील बना, मशीनें बनीं = भारी उद्योग। Model सीक्वेंस: <b>M</b>ahalanobis (दूसरा अक्षर)</div>
     </div>
   </div>
 
@@ -162,14 +197,14 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
     </div>
     <div class="plan-body">
       <div class="focus">💪 Self-Reliance + Agriculture</div>
-      <div class="model">John Sandee / Gadgil approach</div>
+      <div class="model">John Sandee & Sukhamoy Chakravarty ("SC") Model</div>
       <div class="stats">
         <div class="stat-pill">Target: 5.6%</div>
         <div class="stat-pill achieved-bad">Achieved: 2.84% ❌ FAILED</div>
       </div>
       <b>Why failed?</b> China war (1962) + Pakistan war (1965) + Droughts<br>
       <b>Chairman:</b> Nehru (died 1964) → Lal Bahadur Shastri<br>
-      <div class="trick-box">🧠 <b>3 = "TEEN DUSHMAN"</b> → THREE problems: China + Pakistan + Drought = Plan FAILED = "Selfie bhi kharaab aaya!"</div>
+      <div class="trick-box">🧠 राघु बोला "अब खेती भी अपनी, उद्योग भी अपना, मेहनत भी अपनी" = आत्मनिर्भरता। Model सीक्वेंस: <b>S</b>ukhamoy Chakravarty (तीसरा अक्षर) → H-M-S पूरा!</div>
     </div>
   </div>
 
@@ -178,7 +213,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
 
 <div class="break-card">
   ⛔ <b>Plan Holiday (1966–69)</b> — 3 Annual Plans. Reason: Wars (1962, 1965) + Drought + Rupee devalued (1966).
-  Green Revolution STARTED during this period. 🧠 <b>Trick: "Teen saal chhutti kyun? Teen problems ke baad!"</b>
+  Green Revolution STARTED during this period. 🧠 <b>राघु की कहानी में यही वो गैप है — बीच में कोई नई योजना नहीं बनी!</b>
 </div>
 
 <div class="plan-grid">
@@ -197,7 +232,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       </div>
       <b>Key:</b> 14 Banks nationalized (1969), Green Revolution results, Garibi Hatao slogan (1971), IADP<br>
       <b>Chairman:</b> Indira Gandhi<br>
-      <div class="trick-box">🧠 <b>4 = "CHAR BANK"</b> → 14 banks nationalized (CHAR+10!) → Indira = India ki BANK wali PM → 1969 mein banks ka CHAR baja diya!</div>
+      <div class="trick-box">🧠 राघु की आत्मनिर्भरता को अब और मज़बूत करना था ताकि कोई झटका आए तो देश डगमगाए नहीं → Stability + Self-Reliance</div>
     </div>
   </div>
 
@@ -216,7 +251,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <b>Key:</b> 20-point Programme (Indira), Minimum Needs Programme (MNP), SFDA<br>
       <b>Terminated early (1978)</b> by Janata govt (was to end 1979)<br>
       <b>Chairman:</b> Indira Gandhi<br>
-      <div class="trick-box">🧠 <b>5 = "PAANCH SAAL"</b> → But only 4 saal chala! → Janata govt ne 1 saal pehle terminate kiya! → "Paanch wada, chaar diya" = Poverty pe focus, kaam adhura!</div>
+      <div class="trick-box">🧠 <b>5 = पंच (मुक्का)</b> → सबने महंगाई और ग़रीबी को पंच मारा — "गरीबी हटाओ, महंगाई कम करो!"</div>
     </div>
   </div>
 
@@ -243,7 +278,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       </div>
       <b>Key:</b> IRDP (Integrated Rural Development Programme), NREP, TRYSEM, Anti-Poverty programme<br>
       <b>Chairman:</b> Indira Gandhi<br>
-      <div class="trick-box">🧠 <b>6 = "CHHA gaye garib"</b> → IRDP launched to integrate garib rural people → "Chha schemes for garib" → IRDP = I Reduce Daridrya Programme!</div>
+      <div class="trick-box">🧠 <b>6 = सिक्स्थ सेंस (दिमाग़)</b> → अब दिमाग़ लगाने और तकनीक अपनाने का जमाना → Modernisation & Technology</div>
     </div>
   </div>
 
@@ -254,14 +289,14 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
     </div>
     <div class="plan-body">
       <div class="focus">🍚💼📊 Food + Work + Productivity</div>
-      <div class="model">Rajiv Gandhi era</div>
+      <div class="model">Planning Commission Model (video's trick ties John W. Mellor Model here — see Fact-Check note above)</div>
       <div class="stats">
         <div class="stat-pill">Target: 5%</div>
         <div class="stat-pill achieved-good">Achieved: 6% ✅</div>
       </div>
       <b>Key:</b> Technology Mission, JRY (Jawahar Rozgar Yojana), Modernization focus<br>
       <b>Chairman:</b> Rajiv Gandhi<br>
-      <div class="trick-box">🧠 <b>7 = "SAAT = Computer wala plan"</b> → Rajiv Gandhi = Computer + Technology → Food Work Productivity = "SAAT rang ka development" → India goes modern in 7th!</div>
+      <div class="trick-box">🧠 <b>7 = साथ (Together)</b> → गाँव-शहर, सबको साथ लेकर चलना, विकास को "मिलाना" → क्षेत्रीय असमानता घटाना</div>
     </div>
   </div>
 
@@ -281,14 +316,14 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
     </div>
     <div class="plan-body">
       <div class="focus">👤 Human Development (FIRST TIME!)</div>
-      <div class="model">JN Mishra model; LPG Reforms era</div>
+      <div class="model">John W. Mellor Model (liberalized economy) — per standard references; LPG Reforms era</div>
       <div class="stats">
         <div class="stat-pill">Target: 5.6%</div>
         <div class="stat-pill achieved-good">Achieved: 6.8% ✅</div>
       </div>
       <b>Key:</b> LPG Reforms (1991), Narasimha Rao + Manmohan Singh, Panchayati Raj (73rd Amendment 1992), Modernization<br>
       <b>Chairman:</b> PV Narasimha Rao<br>
-      <div class="trick-box">🧠 <b>8 = "AATH dimensions of HUMAN"</b> → 8th plan = HUMAN Development FIRST TIME → Manmohan Singh opened economy = "Aath kholo, duniya ko!" → LPG = Light, Power, Gas = liberalization!</div>
+      <div class="trick-box">🧠 <b>8 = आठवां अजूबा</b> → एक शिक्षित व स्किल्ड भारतीय नागरिक दुनिया का 8वाँ अजूबा है → Human Resource Development, साथ में 1991 की नई आर्थिक नीति</div>
     </div>
   </div>
 
@@ -306,7 +341,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       </div>
       <b>Key:</b> Kargil War 1999, PMGSY (rural roads), Sarva Shiksha Abhiyan<br>
       <b>PMs:</b> Deve Gowda → Gujral → Vajpayee<br>
-      <div class="trick-box">🧠 <b>9 = "NAU greh, NYAY chahiye"</b> → Social Justice = 9 planets aligned for equity → But Kargil war disturbed → achieved only 5.4%!</div>
+      <div class="trick-box">🧠 <b>9 = न्याय</b> (नौ ≈ न्याय) → Social Justice & Equality पर फोकस — पर Kargil war ने achieved growth गिरा दी (5.4%)</div>
     </div>
   </div>
 
@@ -324,7 +359,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       </div>
       <b>Key:</b> Bharat Nirman, NREGA launched (2005), RTI (2005), SSA, Monitorable targets for 1st time<br>
       <b>Chairman:</b> Atal Bihari Vajpayee → Manmohan Singh<br>
-      <div class="trick-box">🧠 <b>10 = "DAS percent DOWN karo Garibi"</b> → Halve poverty = garibi ko DAS (10) se 5 karo → NREGA launched = "Roz kaam, roz paisa!"</div>
+      <div class="trick-box">🧠 <b>10 = टॉप गियर / फुल स्पीड</b> → देश को मैक्सिमम पावर से दौड़ाना है → फुल एनर्जी से ग्रोथ, गरीबी आधी करो</div>
     </div>
   </div>
 
@@ -342,7 +377,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       </div>
       <b>Key:</b> RTE (Right to Education 2009), MNREGA in full swing, Aadhaar started (2009), Global recession 2008<br>
       <b>Chairman:</b> Manmohan Singh<br>
-      <div class="trick-box">🧠 <b>11 = "GYARAH = SABKO milega"</b> → 11 fingers for INCLUSIVE → Highest achieved growth = "Gyarah baj gaye sabko khush karne mein!" → RTE = Right to Eleven (educate all 11 year olds)!</div>
+      <div class="trick-box">🧠 पिछली 10 योजनाओं की ग्रोथ को संभालते हुए, समझदारी से, सस्टेनेबल तरीक़े से आगे बढ़ाना — बिना एनवायरनमेंट/एनर्जी/वाटर बर्बाद किए</div>
     </div>
   </div>
 
@@ -362,7 +397,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <b>Key:</b> Planning Commission dissolved Jan 1, 2015 → <b>NITI Aayog</b> formed (National Institution for Transforming India)<br>
       NITI Aayog ≠ Planning Commission: No fund allocation, only think tank / advisory body<br>
       Vice Chairman: Arvind Panagariya (1st), Rajiv Kumar (2nd), Suman Bery (current)<br>
-      <div class="trick-box">🧠 <b>12 = "BARAH baj gaye Planning Commission ke!"</b> → Last plan → 2015 mein dissolve → NITI Aayog born = "Naya India, Transforming India" → FYP era KHATAM = India entered Modi era!</div>
+      <div class="trick-box">🧠 11वीं की "Faster + Inclusive" ग्रोथ में बस एक शब्द और जोड़ दो — <b>Sustainable</b> → यही 12वीं यानी आख़िरी योजना का फोकस है</div>
     </div>
   </div>
 
@@ -406,7 +441,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
 
 <!-- MCQ SECTION -->
 <div class="mcq-section">
-  <h2>📝 Practice MCQs — Five Year Plans (15 Questions)</h2>
+  <h2>📝 Practice MCQs — Five Year Plans (21 Questions)</h2>
 
   <div class="question" id="q1">
     <div class="q-text">Q1. Which model was used in India's 1st Five Year Plan?</div>
@@ -416,7 +451,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q1','C')"><b>C.</b> John Sandee Model</div>
       <div class="opt" data-l="D" onclick="answer(this,'q1','D')"><b>D.</b> DP Dhar Model</div>
     </div>
-    <div class="explanation" id="exp-q1"><strong>Explanation:</strong> The <b>Harrod-Domar model</b> was used in the 1st FYP (1951–56) which focused on Agriculture. The Mahalanobis model came in the 2nd FYP (Heavy Industries). 🧠 Trick: <b>1st plan = 1st things = Food = Agriculture = H-D (Harrod-Domar) like "Hard work for food!"</b></div>
+    <div class="explanation" id="exp-q1"><strong>Explanation:</strong> The <b>Harrod-Domar model</b> was used in the 1st FYP (1951–56) which focused on Agriculture. 🧠 H-M-S trick: <b>H</b>(1st)→<b>M</b>(2nd)→<b>S</b>(3rd).</div>
   </div>
 
   <div class="question" id="q2">
@@ -427,7 +462,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q2','C')"><b>C.</b> USA</div>
       <div class="opt" data-l="D" onclick="answer(this,'q2','D')"><b>D.</b> Soviet Union (USSR)</div>
     </div>
-    <div class="explanation" id="exp-q2"><strong>Explanation:</strong> <b>Bhilai → USSR (Russia)</b>, Rourkela → Germany (West), Durgapur → UK. 🧠 Trick: <b>BRD = Bhilai-Russia-Durgapur; or "Bharat Russia Dekh" = Bhilai with Russia!</b></div>
+    <div class="explanation" id="exp-q2"><strong>Explanation:</strong> <b>Bhilai → USSR (Russia)</b>, Rourkela → Germany (West), Durgapur → UK. 🧠 Trick: <b>BRD = Bhilai-Russia-Durgapur; "Bharat Russia Dekh"</b></div>
   </div>
 
   <div class="question" id="q3">
@@ -438,7 +473,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q3','C')"><b>C.</b> China war + Pakistan war + Droughts</div>
       <div class="opt" data-l="D" onclick="answer(this,'q3','D')"><b>D.</b> Oil crisis</div>
     </div>
-    <div class="explanation" id="exp-q3"><strong>Explanation:</strong> 3rd FYP failed due to <b>THREE reasons</b>: (1) India-China War 1962, (2) India-Pakistan War 1965, (3) Severe droughts. Achieved only 2.84% against 5.6% target. 🧠 Trick: <b>3rd plan = 3 TEEN DUSHMAN = 3 enemies (China + Pak + Drought)</b></div>
+    <div class="explanation" id="exp-q3"><strong>Explanation:</strong> 3rd FYP failed due to <b>THREE reasons</b>: China War 1962, Pakistan War 1965, severe droughts. Achieved only 2.84% against 5.6% target.</div>
   </div>
 
   <div class="question" id="q4">
@@ -449,7 +484,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q4','C')"><b>C.</b> 14 banks</div>
       <div class="opt" data-l="D" onclick="answer(this,'q4','D')"><b>D.</b> 20 banks</div>
     </div>
-    <div class="explanation" id="exp-q4"><strong>Explanation:</strong> In 1969 (4th FYP period), <b>14 major commercial banks</b> were nationalized under Indira Gandhi. 🧠 Trick: <b>"CHAR(4) + DAS(10) = 14 banks nationalized!"</b></div>
+    <div class="explanation" id="exp-q4"><strong>Explanation:</strong> In 1969 (4th FYP period), <b>14 major commercial banks</b> were nationalized under Indira Gandhi.</div>
   </div>
 
   <div class="question" id="q5">
@@ -460,7 +495,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q5','C')"><b>C.</b> 5th Five Year Plan</div>
       <div class="opt" data-l="D" onclick="answer(this,'q5','D')"><b>D.</b> 6th Five Year Plan</div>
     </div>
-    <div class="explanation" id="exp-q5"><strong>Explanation:</strong> The <b>5th FYP (1974–79)</b> was terminated in 1978 (1 year early) by the Janata Party government under Morarji Desai. 🧠 Trick: <b>"5th plan ka 5th year cancel by Janata = Paanch wada, chaar diya!"</b></div>
+    <div class="explanation" id="exp-q5"><strong>Explanation:</strong> The <b>5th FYP (1974–79)</b> was terminated in 1978 (1 year early) by the Janata Party government under Morarji Desai.</div>
   </div>
 
   <div class="question" id="q6">
@@ -471,7 +506,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q6','C')"><b>C.</b> Rajiv Gandhi govt</div>
       <div class="opt" data-l="D" onclick="answer(this,'q6','D')"><b>D.</b> VP Singh govt</div>
     </div>
-    <div class="explanation" id="exp-q6"><strong>Explanation:</strong> The Rolling Plan was introduced by the <b>Janata Party (Morarji Desai)</b>. It was designed by <b>D.T. Lakdawala</b>. The idea: revise plan targets annually. 🧠 Trick: <b>"Janata ROLLING karte rahe, koi fixed plan nahi!"</b></div>
+    <div class="explanation" id="exp-q6"><strong>Explanation:</strong> The Rolling Plan was introduced by the <b>Janata Party (Morarji Desai)</b>, designed by <b>D.T. Lakdawala</b>.</div>
   </div>
 
   <div class="question" id="q7">
@@ -482,7 +517,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q7','C')"><b>C.</b> 7th FYP</div>
       <div class="opt" data-l="D" onclick="answer(this,'q7','D')"><b>D.</b> 8th FYP</div>
     </div>
-    <div class="explanation" id="exp-q7"><strong>Explanation:</strong> IRDP was a flagship scheme of the <b>6th FYP (1980–85)</b>. Also launched: NREP (National Rural Employment Programme) and TRYSEM. 🧠 Trick: <b>"6 = CHHA schemes for garib = IRDP = I Reduce Daridrya Programme!"</b></div>
+    <div class="explanation" id="exp-q7"><strong>Explanation:</strong> IRDP was a flagship scheme of the <b>6th FYP (1980–85)</b>, along with NREP and TRYSEM.</div>
   </div>
 
   <div class="question" id="q8">
@@ -493,7 +528,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q8','C')"><b>C.</b> 9th FYP</div>
       <div class="opt" data-l="D" onclick="answer(this,'q8','D')"><b>D.</b> 10th FYP</div>
     </div>
-    <div class="explanation" id="exp-q8"><strong>Explanation:</strong> The <b>8th FYP (1992–97)</b> was the FIRST plan to focus on Human Development. This also coincided with the LPG Reforms (Narasimha Rao + Manmohan Singh). 🧠 Trick: <b>"8 = AATH dimensions of HUMAN Development = 1st HUMAN plan!"</b></div>
+    <div class="explanation" id="exp-q8"><strong>Explanation:</strong> The <b>8th FYP (1992–97)</b> was the FIRST plan to focus on Human Development — "an educated, skilled citizen is the 8th wonder." Coincided with LPG Reforms.</div>
   </div>
 
   <div class="question" id="q9">
@@ -504,7 +539,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q9','C')"><b>C.</b> 12th FYP (6.7%)</div>
       <div class="opt" data-l="D" onclick="answer(this,'q9','D')"><b>D.</b> 8th FYP (6.8%)</div>
     </div>
-    <div class="explanation" id="exp-q9"><strong>Explanation:</strong> The <b>11th FYP (2007–12)</b> achieved the highest growth rate of <b>8%</b> (target was 9%). This was under PM Manmohan Singh. RTE 2009 and Aadhaar 2009 were launched during this period. 🧠 Trick: <b>"GYARAH (11) = Sabse GYAADA (highest) growth = 8% = Inclusive ka best result!"</b></div>
+    <div class="explanation" id="exp-q9"><strong>Explanation:</strong> The <b>11th FYP (2007–12)</b> achieved the highest growth rate of <b>8%</b> (target 9%), under PM Manmohan Singh.</div>
   </div>
 
   <div class="question" id="q10">
@@ -515,7 +550,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q10','C')"><b>C.</b> August 15, 2014</div>
       <div class="opt" data-l="D" onclick="answer(this,'q10','D')"><b>D.</b> March 1, 2015</div>
     </div>
-    <div class="explanation" id="exp-q10"><strong>Explanation:</strong> Planning Commission was dissolved and <b>NITI Aayog was formed on January 1, 2015</b>. Full form: National Institution for Transforming India. PM Modi is its ex-officio chairman. 🧠 Trick: <b>"New Year 2015 = New India = NITI Aayog = Planning Commission GONE on New Year's Day!"</b></div>
+    <div class="explanation" id="exp-q10"><strong>Explanation:</strong> Planning Commission was dissolved and <b>NITI Aayog formed on January 1, 2015</b>.</div>
   </div>
 
   <div class="question" id="q11">
@@ -526,7 +561,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q11','C')"><b>C.</b> Human development</div>
       <div class="opt" data-l="D" onclick="answer(this,'q11','D')"><b>D.</b> Heavy industries</div>
     </div>
-    <div class="explanation" id="exp-q11"><strong>Explanation:</strong> 7th FYP (1985–90) under Rajiv Gandhi focused on <b>Food, Work, and Productivity</b>. JRY (Jawahar Rozgar Yojana) and Technology Mission were key. 🧠 Trick: <b>"7 = SAAT = Rajiv Gandhi's 3 pillars: KHANA (food), KAAM (work), KAMAAL (productivity)!"</b></div>
+    <div class="explanation" id="exp-q11"><strong>Explanation:</strong> 7th FYP (1985–90) under Rajiv Gandhi focused on <b>Food, Work, and Productivity</b>; JRY and Technology Mission were key. 🧠 "7 = साथ" trick also ties regional-balance reduction here.</div>
   </div>
 
   <div class="question" id="q12">
@@ -537,7 +572,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q12','C')"><b>C.</b> Sustainable</div>
       <div class="opt" data-l="D" onclick="answer(this,'q12','D')"><b>D.</b> More</div>
     </div>
-    <div class="explanation" id="exp-q12"><strong>Explanation:</strong> 11th plan = "Faster and More Inclusive Growth". 12th plan added <b>"Sustainable"</b> → "Faster, More Inclusive and <b>Sustainable</b> Growth". This was the last FYP. 🧠 Trick: <b>"12th = LAST plan adds SUSTAINABILITY = Earth bhi bachao, plan bhi khatam!"</b></div>
+    <div class="explanation" id="exp-q12"><strong>Explanation:</strong> 11th plan = "Faster and More Inclusive Growth". 12th plan added <b>"Sustainable"</b>. This was the last FYP.</div>
   </div>
 
   <div class="question" id="q13">
@@ -548,7 +583,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q13','C')"><b>C.</b> Green Revolution</div>
       <div class="opt" data-l="D" onclick="answer(this,'q13','D')"><b>D.</b> Yellow Revolution</div>
     </div>
-    <div class="explanation" id="exp-q13"><strong>Explanation:</strong> The <b>Green Revolution</b> began during the Plan Holiday (1966–69) with HYV (High Yielding Variety) seeds introduced by MS Swaminathan + Norman Borlaug. Punjab, Haryana, UP benefited most. 🧠 Trick: <b>"Plan Holiday = CHHUTTI = Green grass grows during holiday = Green Revolution!"</b></div>
+    <div class="explanation" id="exp-q13"><strong>Explanation:</strong> The <b>Green Revolution</b> began during the Plan Holiday (1966–69) with HYV seeds (MS Swaminathan + Norman Borlaug). Punjab, Haryana, UP benefited most.</div>
   </div>
 
   <div class="question" id="q14">
@@ -559,7 +594,7 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q14','C')"><b>C.</b> 11th FYP</div>
       <div class="opt" data-l="D" onclick="answer(this,'q14','D')"><b>D.</b> 8th FYP</div>
     </div>
-    <div class="explanation" id="exp-q14"><strong>Explanation:</strong> The <b>10th FYP (2002–07)</b> introduced "Monitorable Targets" for the first time — specific measurable goals like halving poverty ratio, reducing IMR, increasing literacy. 🧠 Trick: <b>"10 = DAS targets monitor karo = 10th plan measures EVERYTHING with numbers!"</b></div>
+    <div class="explanation" id="exp-q14"><strong>Explanation:</strong> The <b>10th FYP (2002–07)</b> introduced "Monitorable Targets" for the first time — halving poverty ratio, reducing IMR, increasing literacy.</div>
   </div>
 
   <div class="question" id="q15">
@@ -570,7 +605,74 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
       <div class="opt" data-l="C" onclick="answer(this,'q15','C')"><b>C.</b> Finance Commission members</div>
       <div class="opt" data-l="D" onclick="answer(this,'q15','D')"><b>D.</b> RBI Governor + Chief Ministers</div>
     </div>
-    <div class="explanation" id="exp-q15"><strong>Explanation:</strong> NITI Aayog's <b>Governing Council</b> = All Chief Ministers of states + Lt. Governors of UTs (with legislature). PM is Chairman. This embodies cooperative federalism. 🧠 Trick: <b>"NITI = All CMs in ONE room = States have VOICE now = Cooperative Federalism!"</b></div>
+    <div class="explanation" id="exp-q15"><strong>Explanation:</strong> NITI Aayog's <b>Governing Council</b> = All Chief Ministers + Lt. Governors of UTs. PM is Chairman — cooperative federalism.</div>
+  </div>
+
+  <!-- NEW QUESTIONS FROM THE LATEST VIDEO (PYQ-style, as discussed by the instructor) -->
+  <div class="question" id="q16">
+    <div class="q-text">Q16. <span class="src-tag">New</span> Match the Plan with its correct focus: (i) 2nd Plan, (ii) 5th Plan, (iii) 9th Plan — Heavy Industries / Garibi Hatao / Social Justice. Which matching is CORRECT?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q16','A')"><b>A.</b> 2nd–Social Justice, 5th–Heavy Industries, 9th–Garibi Hatao</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q16','B')"><b>B.</b> 2nd–Garibi Hatao, 5th–Social Justice, 9th–Heavy Industries</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q16','C')"><b>C.</b> 2nd–Heavy Industries, 5th–Garibi Hatao, 9th–Social Justice</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q16','D')"><b>D.</b> 2nd–Heavy Industries, 5th–Social Justice, 9th–Agriculture</div>
+    </div>
+    <div class="explanation" id="exp-q16"><strong>Explanation:</strong> Correct pairing is <b>2nd–Heavy Industries, 5th–Garibi Hatao (poverty removal), 9th–Social Justice (नौ=न्याय)</b>. 🧠 Number tricks: 2=भारी उद्योग, 5=पंच (गरीबी पर मुक्का), 9=न्याय.</div>
+  </div>
+
+  <div class="question" id="q17">
+    <div class="q-text">Q17. <span class="src-tag">New</span> Which Five Year Plan came immediately after the Plan Holiday (1966–69)?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q17','A')"><b>A.</b> 3rd Five Year Plan</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q17','B')"><b>B.</b> 4th Five Year Plan</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q17','C')"><b>C.</b> 5th Five Year Plan</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q17','D')"><b>D.</b> 6th Five Year Plan</div>
+    </div>
+    <div class="explanation" id="exp-q17"><strong>Explanation:</strong> Sequence: 3rd Plan (1961–66) → Plan Holiday (1966–69) → <b>4th Plan (1969–74)</b>. In Raghu's story, the gap sits right between Plan 3 and Plan 4.</div>
+  </div>
+
+  <div class="question" id="q18">
+    <div class="q-text">Q18. <span class="src-tag">New</span> Which was India's very first Five Year Plan, and what was its model based on?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q18','A')"><b>A.</b> 2nd Plan — Mahalanobis Model</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q18','B')"><b>B.</b> 1st Plan — Mahalanobis Model</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q18','C')"><b>C.</b> 1st Plan — Harrod-Domar Model</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q18','D')"><b>D.</b> 3rd Plan — Harrod-Domar Model</div>
+    </div>
+    <div class="explanation" id="exp-q18"><strong>Explanation:</strong> India's <b>1st Five Year Plan (1951–56)</b> was based on the <b>Harrod-Domar Model</b>, focused on agriculture and irrigation.</div>
+  </div>
+
+  <div class="question" id="q19">
+    <div class="q-text">Q19. <span class="src-tag">New</span> Which Five Year Plan (started in 1992) included Human Resource Development as a main focus for the first time?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q19','A')"><b>A.</b> 6th Five Year Plan</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q19','B')"><b>B.</b> 7th Five Year Plan</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q19','C')"><b>C.</b> 8th Five Year Plan</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q19','D')"><b>D.</b> 9th Five Year Plan</div>
+    </div>
+    <div class="explanation" id="exp-q19"><strong>Explanation:</strong> The <b>8th Five Year Plan (1992–97)</b> started in 1992 and introduced Human Resource Development as a core focus — "8 = आठवां अजूबा" trick.</div>
+  </div>
+
+  <div class="question" id="q20">
+    <div class="q-text">Q20. <span class="src-tag">New</span> Reducing regional inequality (bringing villages and cities to a similar level of development) was the main objective of which Five Year Plan?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q20','A')"><b>A.</b> 5th Five Year Plan</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q20','B')"><b>B.</b> 6th Five Year Plan</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q20','C')"><b>C.</b> 7th Five Year Plan</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q20','D')"><b>D.</b> 8th Five Year Plan</div>
+    </div>
+    <div class="explanation" id="exp-q20"><strong>Explanation:</strong> The <b>7th Five Year Plan (1985–90)</b> aimed to reduce regional inequality — "7 = साथ (together)" trick: bring villages and cities together.</div>
+  </div>
+
+  <div class="question" id="q21">
+    <div class="q-text">Q21. <span class="src-tag">New</span> India's last (final) Five Year Plan was the 12th — what was its central theme?</div>
+    <div class="opts">
+      <div class="opt" data-l="A" onclick="answer(this,'q21','A')"><b>A.</b> Self-Reliance and Stability</div>
+      <div class="opt" data-l="B" onclick="answer(this,'q21','B')"><b>B.</b> Human Resource Development</div>
+      <div class="opt" data-l="C" onclick="answer(this,'q21','C')"><b>C.</b> Faster, More Inclusive and Sustainable Development</div>
+      <div class="opt" data-l="D" onclick="answer(this,'q21','D')"><b>D.</b> Growth with Social Justice</div>
+    </div>
+    <div class="explanation" id="exp-q21"><strong>Explanation:</strong> The 12th (and last) Five Year Plan's theme was <b>"Faster, More Inclusive and Sustainable Development"</b> (तीव्र, अधिक समावेशी व सतत विकास).</div>
   </div>
 
 </div>
@@ -580,7 +682,8 @@ td:nth-child(3), td:nth-child(4) { text-align: center; }
 const answers = {
   q1:'B', q2:'D', q3:'C', q4:'C', q5:'C',
   q6:'B', q7:'B', q8:'B', q9:'B', q10:'B',
-  q11:'B', q12:'C', q13:'C', q14:'B', q15:'B'
+  q11:'B', q12:'C', q13:'C', q14:'B', q15:'B',
+  q16:'C', q17:'B', q18:'C', q19:'C', q20:'C', q21:'C'
 };
 function answer(el, qid, chosen) {
   const opts = el.parentElement.querySelectorAll('.opt');
