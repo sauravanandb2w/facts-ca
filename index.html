@@ -148,6 +148,44 @@
     color: var(--amber); background: var(--amber-soft); padding: 2px 6px; border-radius: 999px;
   }
 
+  /* Home index — collapsible lanes + sub-parts */
+  .home-index { display: flex; flex-direction: column; gap: 14px; margin-bottom: 8px; }
+  details.home-acc {
+    border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.82);
+    box-shadow: var(--shadow); overflow: hidden;
+  }
+  details.home-acc[open] { border-color: #9fc9b3; }
+  details.home-acc summary {
+    list-style: none; cursor: pointer; padding: 16px 18px;
+    display: flex; gap: 10px; align-items: center; font-weight: 700;
+    color: var(--forest); font-size: 1.1rem; font-family: "Fraunces", serif;
+    background: linear-gradient(180deg, #f7fbf8, #fff);
+  }
+  details.home-acc summary::-webkit-details-marker { display: none; }
+  details.home-acc summary::after {
+    content: "+"; margin-left: auto; font-size: 1.3rem; color: var(--teal); font-family: "Sora", sans-serif;
+  }
+  details.home-acc[open] summary::after { content: "−"; }
+  .home-acc-body { padding: 4px 18px 18px; }
+  .home-acc-body.grid-2, .home-acc-body.stack { padding-top: 14px; }
+  .home-sub {
+    appearance: none; width: 100%; text-align: left; border: 1px solid var(--line); cursor: pointer;
+    font: inherit; font-weight: 600; font-size: .92rem; color: var(--ink);
+    background: #fff; padding: 12px 14px; border-radius: 12px; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 10px; transition: background .2s, border-color .2s;
+  }
+  .home-sub:last-child { margin-bottom: 0; }
+  .home-sub:hover:not(:disabled) { background: var(--sand); border-color: #9fc9b3; }
+  .home-sub:disabled { opacity: .5; cursor: not-allowed; }
+  .home-sub small { font-size: .68rem; font-weight: 500; opacity: .75; }
+  .breadcrumb { margin-bottom: 4px; }
+  .breadcrumb button {
+    appearance: none; border: 0; cursor: pointer; font: inherit; font-weight: 700; font-size: .85rem;
+    color: #fff; padding: 10px 16px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--forest), var(--teal));
+    box-shadow: 0 8px 18px rgba(27,94,69,.25);
+  }
+
   .panel { display: none; animation: fadeUp .35s ease; }
   .panel.active { display: block; }
   @keyframes fadeUp {
@@ -468,117 +506,126 @@
 </header>
 
 <div class="shell">
-  <div class="lane-bar">
-    <label for="lane-select">Lane</label>
-    <select id="lane-select" class="lane-select" aria-label="Revision lane">
-      <option value="upsc" selected>UPSC</option>
-      <option value="ca">Current Affairs — Monthly</option>
-      <option value="factual">Factual Exams</option>
-    </select>
+  <div class="breadcrumb" id="breadcrumb" hidden>
+    <button type="button" onclick="goHome()">← Index</button>
   </div>
 
-  <!-- ===================== TAB 1: CA MONTHLY ===================== -->
-  <section id="panel-ca" class="panel" role="tabpanel" hidden>
+  <!-- ===================== HOME INDEX ===================== -->
+  <section id="home-index" class="home-index" hidden>
     <div class="panel-intro">
-      <h2>Current Affairs — Monthly Facts</h2>
-      <p>One-shot monthly CA MCQ sets (English). Open a month, revise, re-read, add mnemonics.</p>
+      <h2>Index</h2>
+      <p>Pick a track below, then a topic inside it.</p>
     </div>
-    <div class="grid-2">
-      <a class="card tone-jan" href="january_2026_mcqs_english.html">
-        <div class="card-body"><div class="card-icon">❄️</div><div><h3>January 2026</h3><p>Republic Day · Army Day · Budget Season</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a class="card tone-feb" href="february_2026_mcqs_english.html">
-        <div class="card-body"><div class="card-icon">💙</div><div><h3>February 2026</h3><p>Union Budget · Science Day · Maha Shivratri</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a class="card tone-mar" href="march_2026_mcqs_english.html">
-        <div class="card-body"><div class="card-icon">🌱</div><div><h3>March 2026</h3><p>Holi · Women's Day · World Water Day</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a class="card tone-apr" href="april_2026_mcqs_english.html">
-        <div class="card-body"><div class="card-icon">🌸</div><div><h3>April 2026</h3><p>Ambedkar Jayanti · Earth Day · IPL Season</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a class="card tone-may" href="may_2026_mcqs_english.html">
-        <div class="card-body"><div class="card-icon">🌼</div><div><h3>May 2026</h3><p>Labour Day · Buddha Purnima · Mother's Day</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a class="card tone-jun" href="june_2026_mcqs_english.html">
-        <div class="card-body"><div class="card-icon">🌊</div><div><h3>June 2026</h3><p>Yoga Day · Environment Day · Monsoon Onset</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a class="card tone-jul" href="july_2026_mcqs_english.html">
-        <div class="card-body"><div class="card-icon">🌧️</div><div><h3>July 2026</h3><p>Kargil Vijay Diwas · Tax Day · NEET</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a class="card tone-aug" href="august_2026_mcqs_english.html">
-        <div class="card-body"><div class="card-icon">🇮🇳</div><div><h3>August 2026</h3><p>Independence Day · Raksha Bandhan · Hiroshima Day</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-    </div>
+
+    <details class="home-acc" open>
+      <summary>UPSC — Static + Current Bridges</summary>
+      <div class="home-acc-body">
+        <button class="home-sub" type="button" onclick="goToUpsc('env')">Environment <small>Conventions · COPs</small></button>
+        <button class="home-sub" type="button" disabled>Polity <small>Bridges</small> <span class="soon">Soon</span></button>
+        <button class="home-sub" type="button" disabled>IR <small>Organisations</small> <span class="soon">Soon</span></button>
+        <button class="home-sub" type="button" disabled>Economy <small>Reports</small> <span class="soon">Soon</span></button>
+      </div>
+    </details>
+
+    <details class="home-acc">
+      <summary>Current Affairs — Monthly</summary>
+      <div class="home-acc-body grid-2">
+        <a class="card tone-jan" href="january_2026_mcqs_english.html">
+          <div class="card-body"><div class="card-icon">❄️</div><div><h3>January 2026</h3><p>Republic Day · Army Day · Budget Season</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a class="card tone-feb" href="february_2026_mcqs_english.html">
+          <div class="card-body"><div class="card-icon">💙</div><div><h3>February 2026</h3><p>Union Budget · Science Day · Maha Shivratri</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a class="card tone-mar" href="march_2026_mcqs_english.html">
+          <div class="card-body"><div class="card-icon">🌱</div><div><h3>March 2026</h3><p>Holi · Women's Day · World Water Day</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a class="card tone-apr" href="april_2026_mcqs_english.html">
+          <div class="card-body"><div class="card-icon">🌸</div><div><h3>April 2026</h3><p>Ambedkar Jayanti · Earth Day · IPL Season</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a class="card tone-may" href="may_2026_mcqs_english.html">
+          <div class="card-body"><div class="card-icon">🌼</div><div><h3>May 2026</h3><p>Labour Day · Buddha Purnima · Mother's Day</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a class="card tone-jun" href="june_2026_mcqs_english.html">
+          <div class="card-body"><div class="card-icon">🌊</div><div><h3>June 2026</h3><p>Yoga Day · Environment Day · Monsoon Onset</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a class="card tone-jul" href="july_2026_mcqs_english.html">
+          <div class="card-body"><div class="card-icon">🌧️</div><div><h3>July 2026</h3><p>Kargil Vijay Diwas · Tax Day · NEET</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a class="card tone-aug" href="august_2026_mcqs_english.html">
+          <div class="card-body"><div class="card-icon">🇮🇳</div><div><h3>August 2026</h3><p>Independence Day · Raksha Bandhan · Hiroshima Day</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a class="card tone-aug" href="september_2026_mcqs_english.html">
+          <div class="card-body"><div class="card-icon">🍂</div><div><h3>September 2026</h3><p>129 MCQs · Appointments · Defence · Awards · Mnemonics</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+      </div>
+    </details>
+
+    <details class="home-acc">
+      <summary>Factual Exams — Special Topics</summary>
+      <div class="home-acc-body stack">
+        <a href="dance_music_mcqs_english.html" class="card accent-lime">
+          <div class="card-body"><div class="card-icon" style="background:#f9fbe7">🎵</div><div><h3>Dance &amp; Music</h3><p>99 MCQs · Classical music · Dance forms · Instruments · Memory tricks</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a href="cwg_2026_mcqs_english.html" class="card accent-green">
+          <div class="card-body"><div class="card-icon" style="background:#e8f5e9">🏅</div><div><h3>Commonwealth Games 2026</h3><p>37 MCQs · Glasgow · India medals · Boxing · Athletics</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a href="sco_2026_mcqs_english.html" class="card accent-blue">
+          <div class="card-body"><div class="card-icon" style="background:#e3f2fd">🌏</div><div><h3>SCO Summit 2026</h3><p>30 MCQs · Bishkek · Members · Bishkek Declaration</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a href="brics_mcqs_english.html" class="card accent-gold">
+          <div class="card-body"><div class="card-icon" style="background:#fff8e1">🌍</div><div><h3>BRICS Summit 2026</h3><p>35 MCQs · 18th Summit New Delhi · Delhi Declaration · Leaders</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a href="grandslam_2026_mcqs_english.html" class="card accent-purple">
+          <div class="card-body"><div class="card-icon" style="background:#f3e5f5">🎾</div><div><h3>Grand Slams 2026</h3><p>12 MCQs · CASA · EMNE · All-time records · Indian tennis</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a href="gharana_mcqs_english.html" class="card accent-indigo">
+          <div class="card-body"><div class="card-icon" style="background:#ede7f6">🎶</div><div><h3>Gharana — Hindustani Classical</h3><p>15 MCQs · Map · Khayal · Tabla · Dhrupad</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a href="five_year_plans_mcqs_english.html" class="card accent-forest">
+          <div class="card-body"><div class="card-icon" style="background:#e8f5e9">🗓️</div><div><h3>Five Year Plans — India</h3><p>15 MCQs · All 12 plans · BRD steel · NITI Aayog</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a href="congress_sessions.html" class="card accent-terra">
+          <div class="card-body"><div class="card-icon" style="background:#fff9ee">🪔</div><div><h3>INC Sessions — Congress History</h3><p>15 MCQs · President · Place · 1885–1946 · Hindi story tricks</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a href="plant_animal_kingdom_ncert.html" class="card accent-forest">
+          <div class="card-body"><div class="card-icon" style="background:#e8f5e9">🌿</div><div><h3>Plant &amp; Animal Kingdom — NCERT</h3><p>Ch.2–4 · Every NCERT genus · Characters · 18 MCQs</p></div></div>
+          <div class="card-foot">Open notes →</div>
+        </a>
+        <a href="animal_kingdom_mcqs_english.html" class="card accent-forest">
+          <div class="card-body"><div class="card-icon" style="background:#e0f2f1">🦋</div><div><h3>Animal Kingdom MCQs</h3><p>Classification drills · Prelims-style recall</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+        <a href="polity_mini_constitution.html" class="card accent-navy">
+          <div class="card-body"><div class="card-icon" style="background:#e3f2fd">📜</div><div><h3>Polity Mini Constitution</h3><p>Parts V/VI · Writs · Amendments · Schedules · Bodies · Search</p></div></div>
+          <div class="card-foot">Open →</div>
+        </a>
+        <a href="governors_general_viceroys_india.html" class="card accent-navy">
+          <div class="card-body"><div class="card-icon" style="background:#e3f2fd">👑</div><div><h3>Governors General &amp; Viceroys</h3><p>MCQs · Key Acts · Reforms · 1773–1947</p></div></div>
+          <div class="card-foot">Open MCQs →</div>
+        </a>
+      </div>
+    </details>
   </section>
 
-  <!-- ===================== TAB 2: FACTUAL ===================== -->
-  <section id="panel-factual" class="panel" role="tabpanel" hidden>
-    <div class="panel-intro">
-      <h2>Factual Exams — Special Topics</h2>
-      <p>Static + burning-issue banks that reward memory tricks: culture, sports, organisations, polity, history, biology.</p>
-    </div>
-    <div class="stack">
-      <a href="dance_music_mcqs_english.html" class="card accent-lime">
-        <div class="card-body"><div class="card-icon" style="background:#f9fbe7">🎵</div><div><h3>Dance &amp; Music</h3><p>99 MCQs · Classical music · Dance forms · Instruments · Memory tricks</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a href="cwg_2026_mcqs_english.html" class="card accent-green">
-        <div class="card-body"><div class="card-icon" style="background:#e8f5e9">🏅</div><div><h3>Commonwealth Games 2026</h3><p>37 MCQs · Glasgow · India medals · Boxing · Athletics</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a href="sco_2026_mcqs_english.html" class="card accent-blue">
-        <div class="card-body"><div class="card-icon" style="background:#e3f2fd">🌏</div><div><h3>SCO Summit 2026</h3><p>30 MCQs · Bishkek · Members · Bishkek Declaration</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a href="brics_mcqs_english.html" class="card accent-gold">
-        <div class="card-body"><div class="card-icon" style="background:#fff8e1">🌍</div><div><h3>BRICS Summit 2026</h3><p>35 MCQs · 18th Summit New Delhi · Delhi Declaration · Leaders</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a href="grandslam_2026_mcqs_english.html" class="card accent-purple">
-        <div class="card-body"><div class="card-icon" style="background:#f3e5f5">🎾</div><div><h3>Grand Slams 2026</h3><p>12 MCQs · CASA · EMNE · All-time records · Indian tennis</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a href="gharana_mcqs_english.html" class="card accent-indigo">
-        <div class="card-body"><div class="card-icon" style="background:#ede7f6">🎶</div><div><h3>Gharana — Hindustani Classical</h3><p>15 MCQs · Map · Khayal · Tabla · Dhrupad</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a href="five_year_plans_mcqs_english.html" class="card accent-forest">
-        <div class="card-body"><div class="card-icon" style="background:#e8f5e9">🗓️</div><div><h3>Five Year Plans — India</h3><p>15 MCQs · All 12 plans · BRD steel · NITI Aayog</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a href="congress_sessions.html" class="card accent-terra">
-        <div class="card-body"><div class="card-icon" style="background:#fff9ee">🪔</div><div><h3>INC Sessions — Congress History</h3><p>15 MCQs · President · Place · 1885–1946 · Hindi story tricks</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a href="plant_animal_kingdom_ncert.html" class="card accent-forest">
-        <div class="card-body"><div class="card-icon" style="background:#e8f5e9">🌿</div><div><h3>Plant &amp; Animal Kingdom — NCERT</h3><p>Ch.2–4 · Every NCERT genus · Characters · 18 MCQs</p></div></div>
-        <div class="card-foot">Open notes →</div>
-      </a>
-      <a href="animal_kingdom_mcqs_english.html" class="card accent-forest">
-        <div class="card-body"><div class="card-icon" style="background:#e0f2f1">🦋</div><div><h3>Animal Kingdom MCQs</h3><p>Classification drills · Prelims-style recall</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-      <a href="polity_mini_constitution.html" class="card accent-navy">
-        <div class="card-body"><div class="card-icon" style="background:#e3f2fd">📜</div><div><h3>Polity Mini Constitution</h3><p>Parts V/VI · Writs · Amendments · Schedules · Bodies · Search</p></div></div>
-        <div class="card-foot">Open →</div>
-      </a>
-      <a href="governors_general_viceroys_india.html" class="card accent-navy">
-        <div class="card-body"><div class="card-icon" style="background:#e3f2fd">👑</div><div><h3>Governors General &amp; Viceroys</h3><p>MCQs · Key Acts · Reforms · 1773–1947</p></div></div>
-        <div class="card-foot">Open MCQs →</div>
-      </a>
-    </div>
-  </section>
-
-  <!-- ===================== TAB 3: UPSC (default) ===================== -->
-  <section id="panel-upsc" class="panel active" role="tabpanel">
+  <!-- ===================== UPSC CONTENT (hidden until chosen from index) ===================== -->
+  <section id="panel-upsc" class="panel" role="tabpanel" hidden>
     <div class="panel-intro">
       <h2>UPSC — Static + Current Bridges</h2>
       <p>Pick a subtab below. Environment conventions &amp; COPs are live; more GS modules will unlock in the same row.</p>
@@ -1556,32 +1603,29 @@
 
 <script>
 (function () {
-  const panels = {
-    ca: document.getElementById("panel-ca"),
-    factual: document.getElementById("panel-factual"),
-    upsc: document.getElementById("panel-upsc"),
-  };
-  const laneSelect = document.getElementById("lane-select");
+  const panelUpsc = document.getElementById("panel-upsc");
+  const homeIndex = document.getElementById("home-index");
+  const breadcrumb = document.getElementById("breadcrumb");
 
-  function showLane(id) {
-    Object.entries(panels).forEach(([key, el]) => {
-      const on = key === id;
-      el.classList.toggle("active", on);
-      if (on) el.removeAttribute("hidden");
-      else el.setAttribute("hidden", "");
-    });
-    if (laneSelect && [...laneSelect.options].some((o) => o.value === id)) {
-      laneSelect.value = id;
-    }
-    history.replaceState(null, "", "#" + id);
+  function showHome() {
+    panelUpsc.classList.remove("active");
+    panelUpsc.setAttribute("hidden", "");
+    homeIndex.removeAttribute("hidden");
+    breadcrumb.setAttribute("hidden", "");
+    history.replaceState(null, "", location.pathname + location.search);
   }
-
-  // Default lane: UPSC
-  const hash = (location.hash || "").replace("#", "");
-  if (hash === "ca" || hash === "factual" || hash === "upsc") showLane(hash);
-  else showLane("upsc");
-
-  laneSelect?.addEventListener("change", () => showLane(laneSelect.value));
+  function showUpscPanel() {
+    homeIndex.setAttribute("hidden", "");
+    breadcrumb.removeAttribute("hidden");
+    panelUpsc.classList.add("active");
+    panelUpsc.removeAttribute("hidden");
+  }
+  window.goHome = showHome;
+  window.goToUpsc = function (sub) {
+    showUpscPanel();
+    document.querySelector('.sub-tab[data-upsc="' + sub + '"]:not(:disabled)')?.click();
+    history.replaceState(null, "", "#upsc-" + sub);
+  };
 
   // UPSC subtabs
   const subTabs = document.querySelectorAll(".sub-tab");
@@ -1602,17 +1646,21 @@
       Object.entries(upscPanes).forEach(([key, el]) => {
         el?.classList.toggle("active", key === id);
       });
+      showUpscPanel();
       history.replaceState(null, "", "#upsc-" + id);
     });
   });
 
+  // Only drill into content on an explicit deep link; otherwise land on the index.
+  const hash = (location.hash || "").replace("#", "");
   if (hash.startsWith("upsc-")) {
-    showLane("upsc");
     const sub = hash.slice(5);
+    showUpscPanel();
     document.querySelector('.sub-tab[data-upsc="' + sub + '"]:not(:disabled)')?.click();
   } else if (hash === "env" || hash === "environment") {
-    showLane("upsc");
-    document.querySelector('.sub-tab[data-upsc="env"]')?.click();
+    window.goToUpsc("env");
+  } else {
+    showHome();
   }
 
   // Env filters
