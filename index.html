@@ -624,6 +624,11 @@
     </details>
   </section>
 
+  <!-- ===================== EMBEDDED CONTENT (CA / Factual pages, shown in-place) ===================== -->
+  <section id="panel-frame" class="panel" role="tabpanel" hidden>
+    <iframe id="content-frame" title="Content" style="width:100%;min-height:82vh;border:0;border-radius:16px;background:#fff;box-shadow:var(--shadow)" loading="lazy"></iframe>
+  </section>
+
   <!-- ===================== UPSC CONTENT (hidden until chosen from index) ===================== -->
   <section id="panel-upsc" class="panel" role="tabpanel" hidden>
     <div class="panel-intro">
@@ -1604,21 +1609,36 @@
 <script>
 (function () {
   const panelUpsc = document.getElementById("panel-upsc");
+  const panelFrame = document.getElementById("panel-frame");
+  const contentFrame = document.getElementById("content-frame");
   const homeIndex = document.getElementById("home-index");
   const breadcrumb = document.getElementById("breadcrumb");
 
   function showHome() {
     panelUpsc.classList.remove("active");
     panelUpsc.setAttribute("hidden", "");
+    panelFrame.setAttribute("hidden", "");
+    contentFrame.src = "about:blank";
     homeIndex.removeAttribute("hidden");
     breadcrumb.setAttribute("hidden", "");
     history.replaceState(null, "", location.pathname + location.search);
   }
   function showUpscPanel() {
     homeIndex.setAttribute("hidden", "");
+    panelFrame.setAttribute("hidden", "");
+    contentFrame.src = "about:blank";
     breadcrumb.removeAttribute("hidden");
     panelUpsc.classList.add("active");
     panelUpsc.removeAttribute("hidden");
+  }
+  function openFrame(url) {
+    homeIndex.setAttribute("hidden", "");
+    panelUpsc.classList.remove("active");
+    panelUpsc.setAttribute("hidden", "");
+    contentFrame.src = url;
+    panelFrame.removeAttribute("hidden");
+    breadcrumb.removeAttribute("hidden");
+    history.replaceState(null, "", "#frame");
   }
   window.goHome = showHome;
   window.goToUpsc = function (sub) {
@@ -1626,6 +1646,16 @@
     document.querySelector('.sub-tab[data-upsc="' + sub + '"]:not(:disabled)')?.click();
     history.replaceState(null, "", "#upsc-" + sub);
   };
+
+  // CA / Factual cards: load in-place (same page) instead of navigating away.
+  // Ctrl/Cmd/Shift/middle-click still opens the real page in a new tab as normal.
+  document.querySelectorAll("#home-index .home-acc-body a.card[href]").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+      e.preventDefault();
+      openFrame(a.getAttribute("href"));
+    });
+  });
 
   // UPSC subtabs
   const subTabs = document.querySelectorAll(".sub-tab");
