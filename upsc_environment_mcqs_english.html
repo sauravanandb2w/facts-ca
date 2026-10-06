@@ -27,6 +27,7 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
   body {
     font-family: "Sora", sans-serif;
     background:
@@ -271,6 +272,12 @@
   .section-head p { color: var(--muted); font-size: .88rem; max-width: 560px; }
 
   .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 16px; }
+  .chip-row.sticky-tabs {
+    position: sticky; top: 0; z-index: 30;
+    background: rgba(255,255,255,.92); backdrop-filter: blur(8px);
+    border: 1px solid var(--line); border-radius: 14px; padding: 8px;
+    box-shadow: var(--shadow);
+  }
   .chip {
     border: 1px solid var(--line); background: #fff; color: var(--muted);
     border-radius: 999px; padding: 7px 12px; font: inherit; font-size: .78rem;
@@ -495,7 +502,9 @@
 </head>
 
 <body>
+<a href="index.html" style="display:inline-flex;margin:12px 16px 0;font-size:.82rem;font-weight:700;color:#0d7a6f;text-decoration:none">← Back to Index</a>
 <header class="site-header">
+  <div class="hero-icon" style="font-size:3.2rem;line-height:1;margin-bottom:6px;display:inline-block;animation:bob 2.4s ease-in-out infinite">🌿</div>
   <div class="eyebrow">Parcham Classes · Revision Hub</div>
   <h1>UPSC — Environment</h1>
   <p>Conventions, Protocols &amp; COPs — full revision notes, applied traps, and practice MCQs.</p>
@@ -515,6 +524,20 @@
     <h2>Environment — Conventions, Protocols &amp; COPs</h2>
   </div>
 
+      <div class="map-box" style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap;background:linear-gradient(135deg,#fff,#eef8f2);border:2px solid #b9e0c8;border-radius:16px;padding:18px 20px;margin-bottom:16px">
+        <div style="font-size:2.6rem;line-height:1">🧭</div>
+        <div>
+          <h2 style="font-family:Fraunces,serif;color:#1b5e45;font-size:1.15rem;margin-bottom:6px">Environment memory map</h2>
+          <p style="font-size:.88rem;line-height:1.7;color:#3a4d63;margin:0">
+            🌡️ <b>Climate</b> = UNFCCC → Kyoto → Paris · 🔬 IPCC<br>
+            🦋 <b>Bio</b> = CBD + Cartagena + Nagoya · 🦒 CITES · 🦅 CMS<br>
+            💧 <b>Wet/Land</b> = Ramsar · 🏜️ UNCCD<br>
+            🧪 <b>Chemicals</b> = Basel · Rotterdam · Stockholm · Minamata<br>
+            🌊 <b>Ocean/Ozone</b> = UNCLOS · BBNJ · Montreal/Kigali
+          </p>
+          <p class="mnemonic" style="margin-top:10px">रिओ तीन भाई — जलवायु, जैव विविधता, मरुस्थल। रसायन BRS — कचरा, रज़ामंदी, रोक।</p>
+        </div>
+      </div>
       <div class="section-head">
         <div>
           <h2>Environment — Conventions, Protocols &amp; COPs</h2>
@@ -522,12 +545,12 @@
         </div>
       </div>
 
-      <div class="chip-row" id="env-filters">
-        <button class="chip active" data-filter="all">All</button>
-        <button class="chip" data-filter="climate">Climate</button>
+      <div class="chip-row sticky-tabs" id="env-filters">
+        <button class="chip active" data-filter="all">🌍 All</button>
+        <button class="chip" data-filter="climate">🌡️ Climate</button>
         <button class="chip" data-filter="bio">Biodiversity</button>
         <button class="chip" data-filter="wet">Wetlands &amp; Land</button>
-        <button class="chip" data-filter="chem">Chemicals &amp; Waste</button>
+        <button class="chip" data-filter="chem">🧪 Chemicals &amp; Waste</button>
         <button class="chip" data-filter="ocean">Oceans &amp; Ozone</button>
       </div>
 
@@ -815,7 +838,7 @@
             <div class="conv-grid" id="conv-grid">
 
               <details class="conv" data-cat="climate" open>
-                <summary>1. UNFCCC — United Nations Framework Convention on Climate Change</summary>
+                <summary>🌡️ 1. UNFCCC — United Nations Framework Convention on Climate Change</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 1992 · Rio Earth Summit</span>
@@ -841,7 +864,7 @@
               </details>
 
               <details class="conv" data-cat="climate" open>
-                <summary>2. Kyoto Protocol — design, mechanisms, commitment periods</summary>
+                <summary>📜 2. Kyoto Protocol — design, mechanisms, commitment periods</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 1997 · COP3 Kyoto</span>
@@ -863,7 +886,7 @@
               </details>
 
               <details class="conv" data-cat="climate" open>
-                <summary>3. Paris Agreement — articles, cycles, India NDCs</summary>
+                <summary>🌍 3. Paris Agreement — articles, cycles, India NDCs</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 12 Dec 2015 · COP21</span>
@@ -892,7 +915,7 @@
               </details>
 
               <details class="conv" data-cat="climate" open>
-                <summary>4. IPCC — science body, not a treaty</summary>
+                <summary>🔬 4. IPCC — science body, not a treaty</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Established 1988</span>
@@ -914,7 +937,7 @@
               </details>
 
               <details class="conv" data-cat="bio" open>
-                <summary>5. CBD — Convention on Biological Diversity</summary>
+                <summary>🦋 5. CBD — Convention on Biological Diversity</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 1992 Rio</span>
@@ -937,7 +960,7 @@
               </details>
 
               <details class="conv" data-cat="bio" open>
-                <summary>6. Cartagena Protocol on Biosafety</summary>
+                <summary>🧬 6. Cartagena Protocol on Biosafety</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 2000</span>
@@ -959,7 +982,7 @@
               </details>
 
               <details class="conv" data-cat="bio" open>
-                <summary>7. Nagoya Protocol on Access and Benefit Sharing</summary>
+                <summary>🤝 7. Nagoya Protocol on Access and Benefit Sharing</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 2010 · Nagoya, Japan</span>
@@ -982,7 +1005,7 @@
               </details>
 
               <details class="conv" data-cat="bio" open>
-                <summary>8. CITES — trade in endangered species</summary>
+                <summary>🦒 8. CITES — trade in endangered species</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 1973 Washington</span>
@@ -1004,7 +1027,7 @@
               </details>
 
               <details class="conv" data-cat="bio" open>
-                <summary>9. CMS — Convention on Migratory Species (Bonn Convention)</summary>
+                <summary>🦅 9. CMS — Convention on Migratory Species (Bonn Convention)</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 1979 Bonn</span>
@@ -1025,7 +1048,7 @@
               </details>
 
               <details class="conv" data-cat="bio" open>
-                <summary>10. IUCN Red List — categories (instrument of science, not a treaty)</summary>
+                <summary>📕 10. IUCN Red List — categories (instrument of science, not a treaty)</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>IUCN (NGO + government members)</span>
@@ -1039,7 +1062,7 @@
               </details>
 
               <details class="conv" data-cat="wet" open>
-                <summary>11. Ramsar Convention — wetlands in depth</summary>
+                <summary>💧 11. Ramsar Convention — wetlands in depth</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 2 Feb 1971 · Ramsar, Iran</span>
@@ -1070,7 +1093,7 @@
               </details>
 
               <details class="conv" data-cat="wet" open>
-                <summary>12. UNCCD — desertification, land degradation &amp; drought</summary>
+                <summary>🏜️ 12. UNCCD — desertification, land degradation &amp; drought</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 1994 Paris</span>
@@ -1088,7 +1111,7 @@
               </details>
 
               <details class="conv" data-cat="ocean" open>
-                <summary>13. Vienna Convention, Montreal Protocol &amp; Kigali Amendment</summary>
+                <summary>🛡️ 13. Vienna Convention, Montreal Protocol &amp; Kigali Amendment</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Vienna 1985 (framework)</span>
@@ -1110,7 +1133,7 @@
               </details>
 
               <details class="conv" data-cat="chem" open>
-                <summary>14. Basel Convention — hazardous wastes &amp; plastics</summary>
+                <summary>🚚 14. Basel Convention — hazardous wastes &amp; plastics</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 1989</span>
@@ -1130,7 +1153,7 @@
               </details>
 
               <details class="conv" data-cat="chem" open>
-                <summary>15. Rotterdam Convention — Prior Informed Consent for chemicals</summary>
+                <summary>✅ 15. Rotterdam Convention — Prior Informed Consent for chemicals</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 1998</span>
@@ -1145,7 +1168,7 @@
               </details>
 
               <details class="conv" data-cat="chem" open>
-                <summary>16. Stockholm Convention — Persistent Organic Pollutants (POPs)</summary>
+                <summary>☠️ 16. Stockholm Convention — Persistent Organic Pollutants (POPs)</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 2001</span>
@@ -1166,7 +1189,7 @@
               </details>
 
               <details class="conv" data-cat="chem" open>
-                <summary>17. Minamata Convention — mercury</summary>
+                <summary>⚗️ 17. Minamata Convention — mercury</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 2013 · Kumamoto, Japan</span>
@@ -1181,7 +1204,7 @@
               </details>
 
               <details class="conv" data-cat="chem" open>
-                <summary>18. BRS cluster — how Basel, Rotterdam &amp; Stockholm work together</summary>
+                <summary>🔗 18. BRS cluster — how Basel, Rotterdam &amp; Stockholm work together</summary>
                 <div class="conv-body">
                   <p>The three conventions share a chemicals-and-waste family resemblance and often hold <strong>coordinated COPs</strong> (BRS COPs) to exploit administrative synergies. Still, their legal triggers differ:</p>
                   <div class="table-scroll">
@@ -1199,7 +1222,7 @@
               </details>
 
               <details class="conv" data-cat="ocean" open>
-                <summary>19. UNCLOS — zones, rights, institutions (full ladder)</summary>
+                <summary>⚓ 19. UNCLOS — zones, rights, institutions (full ladder)</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 1982 Montego Bay</span>
@@ -1236,7 +1259,7 @@
               </details>
 
               <details class="conv" data-cat="ocean" open>
-                <summary>20. BBNJ Agreement — High Seas Treaty (2023)</summary>
+                <summary>🌊 20. BBNJ Agreement — High Seas Treaty (2023)</summary>
                 <div class="conv-body">
                   <div class="meta-row">
                     <span>Adopted 19 June 2023</span>

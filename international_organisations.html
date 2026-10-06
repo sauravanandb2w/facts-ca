@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>International Organisations | IMF · WB · WTO · UN · Groups | UPSC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0f1b2d; --muted:#5a6a7d; --paper:#f2f5fa;
+  --navy:#0b3d5c; --ocean:#1565a8; --gold:#c9a227;
+  --card:#fff; --line:#d5deea; --red:#c62828;
+  --soft:#e8f1fa; --shadow:0 10px 28px rgba(15,27,45,.1);
+}
+body{font-family:"Sora",sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden}
+a{color:inherit}
+
+.back{display:inline-flex;gap:6px;align-items:center;margin:12px 16px 0;font-size:.82rem;font-weight:700;color:var(--ocean);text-decoration:none}
+.back:hover{text-decoration:underline}
+
+.hero{
+  background:linear-gradient(135deg,#071a2e 0%,#0b3d5c 45%,#1565a8 100%);
+  color:#fff;text-align:center;padding:44px 18px 36px;position:relative;overflow:hidden
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 18% 40%,rgba(255,255,255,.08),transparent 40%),
+    radial-gradient(circle at 82% 20%,rgba(201,162,39,.16),transparent 42%);
+}
+.hero>*{position:relative}
+.hero-icon{font-size:3.4rem;display:inline-block;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.55rem,4vw,2.55rem);margin:8px 0;line-height:1.15}
+.hero p{opacity:.92;max-width:620px;margin:0 auto;font-size:.93rem;line-height:1.5}
+.badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 13px;font-size:.78rem;font-weight:600}
+.badge.gold{background:rgba(201,162,39,.25);border-color:rgba(201,162,39,.5)}
+
+.tabs{
+  display:flex;justify-content:center;gap:6px;flex-wrap:wrap;
+  padding:12px 12px;background:rgba(255,255,255,.92);border-bottom:2px solid var(--line);
+  position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(0,0,0,.06)
+}
+.tab{
+  padding:8px 14px;border-radius:999px;border:2px solid transparent;cursor:pointer;
+  font:inherit;font-size:.8rem;font-weight:700;background:#eef3f9;color:#3a4d63
+}
+.tab:hover,.tab.active{background:var(--ocean);color:#fff;border-color:var(--ocean)}
+
+main{max-width:980px;margin:0 auto;padding:22px 14px 80px}
+.section{display:none}.section.active{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.map-box{
+  display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap;
+  background:linear-gradient(135deg,#fff,#eef6ff);border:2px solid #c5d8ef;
+  border-radius:16px;padding:18px 20px;margin-bottom:18px
+}
+.map-box .ico{font-size:2.6rem;line-height:1}
+.map-box h2{font-family:"Fraunces",serif;color:var(--navy);font-size:1.15rem;margin-bottom:6px}
+.map-box p{font-size:.88rem;line-height:1.7;color:#3a4d63}
+.map-box b{color:var(--navy)}
+
+.trick{
+  background:#fff8e1;border:2px solid #f0c36d;border-radius:12px;padding:14px 16px;margin-bottom:18px
+}
+.trick h3{color:#e65100;font-size:.9rem;margin-bottom:6px}
+.trick .line{font-family:"Fraunces",serif;font-size:1.05rem;font-weight:800;color:var(--red);line-height:1.55}
+.trick .decode{font-size:.84rem;color:#555;margin-top:7px;line-height:1.7}
+
+.search{
+  width:100%;padding:11px 14px;border:2px solid var(--line);border-radius:10px;
+  font:inherit;font-size:.9rem;margin-bottom:16px;outline:none;background:#fff
+}
+.search:focus{border-color:var(--ocean)}
+
+.org-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.org{
+  background:var(--card);border:1.5px solid var(--line);border-radius:16px;
+  padding:16px 18px;box-shadow:var(--shadow);
+  opacity:0;transform:translateY(16px);transition:.45s ease
+}
+.org.vis{opacity:1;transform:none}
+.org:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(15,27,45,.12)}
+.org-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:10px}
+.org-emoji{
+  width:54px;height:54px;border-radius:14px;display:grid;place-items:center;
+  font-size:1.7rem;background:var(--soft);flex-shrink:0
+}
+.org h3{font-family:"Fraunces",serif;font-size:1.12rem;color:var(--navy);line-height:1.2}
+.org .meta{font-size:.78rem;color:var(--muted);margin-top:3px;line-height:1.45}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 10px}
+.pill{
+  font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:999px;
+  background:#eef3f9;color:#345;border:1px solid #d5deea
+}
+.pill.hq{background:#e3f2fd;color:#0d47a1}
+.pill.yr{background:#fff3e0;color:#e65100}
+.pill.in{background:#e8f5e9;color:#1b5e20}
+.facts{font-size:.87rem;line-height:1.65;color:#2a3544;padding-left:18px;margin-bottom:8px}
+.facts li{margin-bottom:5px}
+.facts b{color:var(--navy)}
+.mnemonic{
+  margin-top:10px;padding:10px 12px;border-radius:0 10px 10px 0;
+  background:#fff1f0;border-left:4px solid var(--red);
+  color:var(--red);font-size:.86rem;font-weight:700;line-height:1.55
+}
+.mnemonic::before{content:"🧠 निमोनिक · "}
+
+.compare{overflow-x:auto;border-radius:12px;border:1px solid var(--line);margin:14px 0 18px;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:680px;font-size:.82rem}
+th{background:linear-gradient(135deg,var(--navy),var(--ocean));color:#fff;text-align:left;padding:10px 12px}
+td{padding:9px 12px;border-bottom:1px solid #e8eef5;vertical-align:top;line-height:1.45}
+tr:nth-child(even) td{background:#f7faff}
+
+.section-title{
+  font-family:"Fraunces",serif;font-size:1.2rem;color:var(--navy);
+  border-left:4px solid var(--gold);padding-left:10px;margin:8px 0 14px
+}
+
+.mcq{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px}
+.mcq .q{font-weight:700;font-size:.9rem;margin-bottom:8px}
+.opts{display:grid;gap:6px}
+.opt{
+  background:#f4f7fb;border:2px solid transparent;border-radius:8px;
+  padding:8px 12px;font-size:.84rem;cursor:pointer
+}
+.opt:hover{border-color:#90caf9;background:#e3f2fd}
+.opt.correct{background:#e8f5e9;border-color:#2e7d32;color:#1b5e20;font-weight:700}
+.opt.wrong{background:#ffebee;border-color:#c62828;color:#b71c1c}
+.exp{display:none;margin-top:8px;padding:9px 12px;background:#fff8e1;border-radius:8px;font-size:.82rem;line-height:1.65;color:#555}
+.exp.show{display:block}
+
+.family{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin:12px 0 18px
+}
+.family .f{
+  background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:12px;text-align:center
+}
+.family .f .e{font-size:1.6rem}
+.family .f h4{font-size:.82rem;color:var(--navy);margin:5px 0 3px}
+.family .f p{font-size:.72rem;color:var(--muted);line-height:1.4}
+
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28px}
+
+@media(max-width:700px){
+  .org-head{gap:10px}
+  .tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}
+  .tab{white-space:nowrap}
+}
+</style>
+</head>
+<body>
+
+<a class="back" href="index.html">← Back to Index</a>
+
+<header class="hero">
+  <div class="hero-icon">🌍</div>
+  <h1>International Organisations</h1>
+  <p>Category-wise memory map — HQ · Year · Purpose · Voting · India angle · Hindi mnemonics</p>
+  <div class="badges">
+    <span class="badge">Bretton Woods</span>
+    <span class="badge">Trade &amp; Forums</span>
+    <span class="badge">UN Family</span>
+    <span class="badge gold">Groups · G20 · BRICS</span>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-tab="map">🗺️ Memory Map</button>
+  <button class="tab" data-tab="money">💰 Money</button>
+  <button class="tab" data-tab="trade">📦 Trade</button>
+  <button class="tab" data-tab="banks">🏦 Dev Banks</button>
+  <button class="tab" data-tab="un">🇺🇳 UN Core</button>
+  <button class="tab" data-tab="agency">🩺 UN Agencies</button>
+  <button class="tab" data-tab="groups">🤝 Groups</button>
+  <button class="tab" data-tab="watch">☢️ Watchdogs</button>
+  <button class="tab" data-tab="mcq">📝 MCQs</button>
+</nav>
+
+<main>
+
+<!-- MAP -->
+<section class="section active" id="tab-map">
+  <div class="map-box">
+    <div class="ico">🧭</div>
+    <div>
+      <h2>How to remember the zoo of organisations</h2>
+      <p>Think in <b>jobs</b>, not random names:<br>
+      <b>💰 Money crisis / surveillance</b> → IMF<br>
+      <b>🏗️ Long-term development loans</b> → World Bank Group<br>
+      <b>📦 Trade rules &amp; disputes</b> → WTO<br>
+      <b>🗣️ Davos talk-shop of elites</b> → WEF<br>
+      <b>🏦 Regional/new lenders</b> → ADB · AIIB · NDB<br>
+      <b>🇺🇳 World parliament + security</b> → UN<br>
+      <b>🩺 Special jobs</b> → WHO health, UNESCO education/culture, ILO labour…<br>
+      <b>🤝 Clubs of countries</b> → G20, G7, BRICS, SCO, ASEAN, QUAD
+      </p>
+    </div>
+  </div>
+
+  <div class="trick">
+    <h3>Master Hindi scaffold</h3>
+    <div class="line">“पैसे IMF, निर्माण WB, व्यापार WTO, बातचीत WEF — बाकी क्लब और UN परिवार!”</div>
+    <div class="decode">IMF = firefighter for balance-of-payments · WB = builder with project loans · WTO = referee of trade · WEF = annual networking summit (not a treaty org like WTO).</div>
+  </div>
+
+  <h2 class="section-title">Quick HQ cheatsheet</h2>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Org</th><th>HQ</th><th>Born</th><th>One-line job</th><th>Emoji hook</th></tr></thead>
+      <tbody>
+        <tr><td><b>IMF</b></td><td>Washington DC</td><td>1944/45</td><td>Macro stability, BOP support, surveillance</td><td>🚑 fire brigade</td></tr>
+        <tr><td><b>World Bank (IBRD)</b></td><td>Washington DC</td><td>1944/45</td><td>Development / reconstruction finance</td><td>🏗️ builder</td></tr>
+        <tr><td><b>WTO</b></td><td>Geneva</td><td>1995 (GATT 1947)</td><td>Trade rules + dispute settlement</td><td>⚖️ referee</td></tr>
+        <tr><td><b>WEF</b></td><td>Cologny/Geneva (Davos meet)</td><td>1971</td><td>Public–private dialogue forum</td><td>🏔️ Davos chat</td></tr>
+        <tr><td><b>ADB</b></td><td>Manila</td><td>1966</td><td>Asia-Pacific development bank</td><td>🌏 Asia bank</td></tr>
+        <tr><td><b>AIIB</b></td><td>Beijing</td><td>2015/16</td><td>Infrastructure investment bank</td><td>🧱 infra bank</td></tr>
+        <tr><td><b>NDB</b></td><td>Shanghai</td><td>2014/15</td><td>BRICS New Development Bank</td><td>🆕 BRICS bank</td></tr>
+        <tr><td><b>UN HQ</b></td><td>New York</td><td>1945</td><td>Peace, rights, cooperation</td><td>🕊️ world body</td></tr>
+        <tr><td><b>WHO</b></td><td>Geneva</td><td>1948</td><td>Global public health</td><td>🩺 health</td></tr>
+        <tr><td><b>UNESCO</b></td><td>Paris</td><td>1945</td><td>Education, science, culture, heritage</td><td>🏛️ culture</td></tr>
+        <tr><td><b>ILO</b></td><td>Geneva</td><td>1919</td><td>Labour standards (tripartite)</td><td>👷 workers</td></tr>
+        <tr><td><b>FAO</b></td><td>Rome</td><td>1945</td><td>Food &amp; agriculture</td><td>🌾 food</td></tr>
+        <tr><td><b>IAEA</b></td><td>Vienna</td><td>1957</td><td>Atoms for peace + safeguards</td><td>⚛️ atoms</td></tr>
+        <tr><td><b>OPCW</b></td><td>The Hague</td><td>1997</td><td>Chemical Weapons Convention body</td><td>🧪 no chem war</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="mnemonic">HQ ट्रिक: “वॉशिंगटन में पैसे (IMF+WB), जिनेवा में नियम व सेहत (WTO/WHO/ILO), पेरिस में संस्कृति (UNESCO), मनीला Asia bank, बीजिंग AIIB, शंघाई NDB, न्यूयॉर्क UN, वियना परमाणु, हेग केमिकल।”</p>
+</section>
+
+<!-- MONEY -->
+<section class="section" id="tab-money">
+  <div class="trick">
+    <h3>Bretton Woods twin</h3>
+    <div class="line">“1944 ब्रेटन वुड्स — जुड़वाँ जन्मे: IMF बचाए, WB बनाए!”</div>
+    <div class="decode">Both HQ Washington DC. Same birth story, different jobs. Don’t mix SDRs (IMF) with IBRD project loans (WB).</div>
+  </div>
+  <input class="search" placeholder="🔍 Search IMF / World Bank / quota / IDA…" data-filter="money">
+
+  <div class="org-grid" data-group="money">
+    <article class="org" data-t="imf international monetary fund washington sdr quota article iv">
+      <div class="org-head">
+        <div class="org-emoji">🚑</div>
+        <div>
+          <h3>IMF — International Monetary Fund</h3>
+          <div class="meta">Bretton Woods twin · Crisis firefighter · Surveillance of economies</div>
+        </div>
+      </div>
+      <div class="pills">
+        <span class="pill yr">1944 · in force 1945</span>
+        <span class="pill hq">HQ: Washington DC</span>
+        <span class="pill in">India: founding member</span>
+      </div>
+      <ul class="facts">
+        <li><b>Job:</b> global monetary cooperation, exchange stability, temporary BOP financing, capacity development.</li>
+        <li><b>Resources:</b> member <b>quotas</b> (subscription) — decide voting power + access to finance. Quotas reviewed periodically.</li>
+        <li><b>SDR (Special Drawing Rights):</b> international reserve asset created by IMF; value from a basket of currencies (USD, EUR, CNY, JPY, GBP).</li>
+        <li><b>Surveillance:</b> Article IV consultations — regular health-check of member economies.</li>
+        <li><b>Lending:</b> Stand-By Arrangement, Extended Fund Facility, Rapid Financing Instrument, poverty-reduction tools, etc. Often with <b>conditionality</b>.</li>
+        <li><b>Leadership:</b> Managing Director (conventionally European in older practice — know as a political convention, not a treaty rule carved in stone).</li>
+        <li><b>India angle:</b> major emerging shareholder; uses IMF data/reports heavily in economy CA; not a “project builder” like WB.</li>
+      </ul>
+      <div class="mnemonic">IMF = “इमरजेंसी मनी फायरमैन” — कोटा = वोट + लोन की लिमिट; SDR = टोकरी वाली रिज़र्व मुद्रा इकाई।</div>
+    </article>
+
+    <article class="org" data-t="world bank ibrd ida ifc miga icsid washington">
+      <div class="org-head">
+        <div class="org-emoji">🏗️</div>
+        <div>
+          <h3>World Bank Group</h3>
+          <div class="meta">Development &amp; reconstruction lender family — 5 institutions</div>
+        </div>
+      </div>
+      <div class="pills">
+        <span class="pill yr">1944/45</span>
+        <span class="pill hq">HQ: Washington DC</span>
+        <span class="pill in">India: major borrower + partner</span>
+      </div>
+      <div class="family">
+        <div class="f"><div class="e">🏛️</div><h4>IBRD</h4><p>Loans to middle-income / creditworthy countries</p></div>
+        <div class="f"><div class="e">🤝</div><h4>IDA</h4><p>Soft credits/grants to poorest countries</p></div>
+        <div class="f"><div class="e">🏭</div><h4>IFC</h4><p>Private sector finance</p></div>
+        <div class="f"><div class="e">🛡️</div><h4>MIGA</h4><p>Political risk insurance</p></div>
+        <div class="f"><div class="e">⚖️</div><h4>ICSID</h4><p>Investment dispute settlement</p></div>
+      </div>
+      <ul class="facts">
+        <li><b>“World Bank”</b> in casual talk often = IBRD + IDA.</li>
+        <li><b>President:</b> traditionally US nominee (political convention).</li>
+        <li><b>Vs IMF:</b> WB = long-term development/projects; IMF = short-to-medium macro / BOP stability.</li>
+        <li><b>India:</b> historic large borrower; many state projects, human development, infra, climate-tagged lending in CA.</li>
+      </ul>
+      <div class="mnemonic">WB परिवार — “IBRD उधार, IDA गरीब मदद, IFC प्राइवेट, MIGA बीमा, ICSID झगड़ा निपटाओ”।</div>
+    </article>
+  </div>
+
+  <div class="compare">
+    <table>
+      <thead><tr><th></th><th>IMF</th><th>World Bank</th></tr></thead>
+      <tbody>
+        <tr><td>Core metaphor</td><td>🚑 Ambulance / fire brigade</td><td>🏗️ Construction company</td></tr>
+        <tr><td>Typical finance</td><td>BOP / macro support</td><td>Project &amp; program development finance</td></tr>
+        <tr><td>Time horizon</td><td>Shorter, crisis + adjustment</td><td>Longer, development</td></tr>
+        <tr><td>Key unit</td><td>Quota, SDR</td><td>IBRD/IDA credits, project portfolio</td></tr>
+        <tr><td>HQ</td><td>Washington DC</td><td>Washington DC</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- TRADE -->
+<section class="section" id="tab-trade">
+  <div class="trick">
+    <h3>Trade vs talk-shop</h3>
+    <div class="line">“WTO अदालत + नियम किताब है; WEF पहाड़ी मेला (Davos) है!”</div>
+    <div class="decode">WTO = member-driven treaty org with dispute settlement. WEF = Swiss foundation / forum — influential, but not a UN specialized agency.</div>
+  </div>
+  <input class="search" placeholder="🔍 Search WTO / GATT / WEF / Davos…" data-filter="trade">
+  <div class="org-grid" data-group="trade">
+    <article class="org" data-t="wto world trade organization geneva gatt dispute settlement doha">
+      <div class="org-head"><div class="org-emoji">⚖️</div><div>
+        <h3>WTO — World Trade Organization</h3>
+        <div class="meta">Global trade rule-book + dispute settlement</div>
+      </div></div>
+      <div class="pills">
+        <span class="pill yr">Born 1995 · GATT 1947</span>
+        <span class="pill hq">HQ: Geneva</span>
+        <span class="pill in">India: member</span>
+      </div>
+      <ul class="facts">
+        <li><b>Predecessor:</b> GATT 1947 (agreement, not a full org). Uruguay Round → Marrakesh Agreement → WTO 1995.</li>
+        <li><b>Principles:</b> MFN, National Treatment, reciprocity, transparency, binding tariffs (know the names).</li>
+        <li><b>Pillars often tested:</b> goods (GATT), services (GATS), IP (TRIPS), Dispute Settlement Understanding (DSU).</li>
+        <li><b>Ministerial Conference:</b> top decision body; decisions usually by consensus.</li>
+        <li><b>India hot buttons:</b> agriculture (food security/public stockholding), fisheries subsidies, e-commerce moratorium debates, special &amp; differential treatment.</li>
+      </ul>
+      <div class="mnemonic">WTO = “व्यापार की अदालत जिनेवा में” — GATT पुरानी किताब, 1995 में संस्था बनी। MFN + National Treatment याद रखो।</div>
+    </article>
+
+    <article class="org" data-t="wef world economic forum davos schwab cologny">
+      <div class="org-head"><div class="org-emoji">🏔️</div><div>
+        <h3>WEF — World Economic Forum</h3>
+        <div class="meta">Public–private cooperation platform · Davos Annual Meeting</div>
+      </div></div>
+      <div class="pills">
+        <span class="pill yr">Founded 1971</span>
+        <span class="pill hq">Cologny, Switzerland</span>
+        <span class="pill">Not a treaty org</span>
+      </div>
+      <ul class="facts">
+        <li>Founded by <b>Klaus Schwab</b>.</li>
+        <li>Famous for <b>Davos</b> annual meeting — leaders from business, government, civil society.</li>
+        <li>Publishes reports (e.g. Global Competitiveness / risks style products — verify latest titles in CA).</li>
+        <li><b>Trap:</b> WEF ≠ WTO ≠ World Bank. No binding trade dispute powers.</li>
+      </ul>
+      <div class="mnemonic">WEF = “पर्वत पर पिकनिक” (Davos) — बातें बहुत, कानून WTO जितने बाध्यकारी नहीं।</div>
+    </article>
+
+    <article class="org" data-t="unctad geneva trade development">
+      <div class="org-head"><div class="org-emoji">📉</div><div>
+        <h3>UNCTAD</h3>
+        <div class="meta">UN Conference on Trade and Development</div>
+      </div></div>
+      <div class="pills"><span class="pill yr">1964</span><span class="pill hq">Geneva</span><span class="pill">UN body</span></div>
+      <ul class="facts">
+        <li>Focus: trade–development link for developing countries; reports on investment, commodities, digital economy.</li>
+        <li>Often appears when CA discusses Global South trade/finance narratives.</li>
+      </ul>
+      <div class="mnemonic">UNCTAD = “विकासशील देशों की व्यापार-पुस्तिका” — जिनेवा, UN परिवार।</div>
+    </article>
+  </div>
+</section>
+
+<!-- DEV BANKS -->
+<section class="section" id="tab-banks">
+  <div class="trick">
+    <h3>Three banks people mix up</h3>
+    <div class="line">“मनीला ADB, बीजिंग AIIB, शंघाई NDB — तीन बैंक, तीन शहर!”</div>
+    <div class="decode">ADB = older Asia-Pacific MDB · AIIB = China-led infra bank · NDB = BRICS bank.</div>
+  </div>
+  <input class="search" placeholder="🔍 Search ADB / AIIB / NDB…" data-filter="banks">
+  <div class="org-grid" data-group="banks">
+    <article class="org" data-t="adb asian development bank manila">
+      <div class="org-head"><div class="org-emoji">🌏</div><div><h3>ADB — Asian Development Bank</h3><div class="meta">Asia-Pacific multilateral development bank</div></div></div>
+      <div class="pills"><span class="pill yr">1966</span><span class="pill hq">Manila, Philippines</span><span class="pill in">India: founding member</span></div>
+      <ul class="facts">
+        <li>Promotes social &amp; economic development in Asia-Pacific via loans, grants, advice.</li>
+        <li>Japan &amp; US are among the largest shareholders historically — classic Prelims fact family.</li>
+        <li>India is both shareholder and major borrower for state infra / urban / energy projects.</li>
+      </ul>
+      <div class="mnemonic">ADB = “एशिया का पुराना बैंक मनीला में”।</div>
+    </article>
+
+    <article class="org" data-t="aiib asian infrastructure investment bank beijing">
+      <div class="org-head"><div class="org-emoji">🧱</div><div><h3>AIIB — Asian Infrastructure Investment Bank</h3><div class="meta">Infrastructure-focused MDB</div></div></div>
+      <div class="pills"><span class="pill yr">Proposed 2013 · opened 2016</span><span class="pill hq">Beijing</span><span class="pill in">India: second-largest shareholder (often cited)</span></div>
+      <ul class="facts">
+        <li>China-initiated; open to members beyond Asia.</li>
+        <li>Focus: sustainable infrastructure connectivity.</li>
+        <li><b>India:</b> founding member, major shareholder, also borrower — useful Mains line on engaging China-led institutions while protecting interests.</li>
+      </ul>
+      <div class="mnemonic">AIIB = “इन्फ्रा के लिए बीजिंग वाला नया बैंक” — India बड़ा शेयरधारक।</div>
+    </article>
+
+    <article class="org" data-t="ndb new development bank brics shanghai">
+      <div class="org-head"><div class="org-emoji">🆕</div><div><h3>NDB — New Development Bank</h3><div class="meta">BRICS bank</div></div></div>
+      <div class="pills"><span class="pill yr">Fortaleza 2014 · HQ open Shanghai</span><span class="pill hq">Shanghai</span><span class="pill in">India: founding BRICS member</span></div>
+      <ul class="facts">
+        <li>Established by BRICS to mobilize resources for infra &amp; sustainable development.</li>
+        <li>Equal shareholding among founding BRICS in the original design narrative (know the founding story).</li>
+        <li>Has expanded membership debates/CA — track latest members before exam.</li>
+        <li>Related: Contingent Reserve Arrangement (CRA) is a separate BRICS finance safety tool — not the same as NDB.</li>
+      </ul>
+      <div class="mnemonic">NDB = “BRICS का बैंक शंघाई” — CRA अलग आपातकालीन मुद्रा व्यवस्था है।</div>
+    </article>
+  </div>
+</section>
+
+<!-- UN CORE -->
+<section class="section" id="tab-un">
+  <div class="trick">
+    <h3>UN principal organs</h3>
+    <div class="line">“छह अंग याद रखो: असेम्बली, सुरक्षा, परिषद(ECOSOC), ट्रस्टीशिप(निष्क्रिय), कोर्ट, सचिवालय!”</div>
+    <div class="decode">UN Charter 1945, San Francisco. HQ New York. Trusteeship Council is inactive (no trust territories left).</div>
+  </div>
+  <input class="search" placeholder="🔍 Search UNSC / UNGA / veto / ICJ…" data-filter="un">
+  <div class="org-grid" data-group="un">
+    <article class="org" data-t="united nations unga unsc ecosoc icj secretariat 1945">
+      <div class="org-head"><div class="org-emoji">🕊️</div><div><h3>United Nations</h3><div class="meta">Charter 1945 · HQ New York</div></div></div>
+      <div class="pills"><span class="pill yr">24 Oct 1945</span><span class="pill hq">New York</span><span class="pill in">India: founding member</span></div>
+      <ul class="facts">
+        <li><b>UNGA:</b> all members; one country one vote; recommendations (budget &amp; some elections important).</li>
+        <li><b>UNSC:</b> primary responsibility for peace &amp; security; 5 permanent (US UK France Russia China) with veto + 10 non-permanent (2-year terms).</li>
+        <li><b>ECOSOC:</b> economic &amp; social coordination; links to specialized agencies.</li>
+        <li><b>ICJ:</b> Hague — principal judicial organ; states are parties to cases.</li>
+        <li><b>Secretariat:</b> Secretary-General + staff; SG is “chief administrative officer,” elected via UNSC recommendation + UNGA appointment.</li>
+        <li><b>India CA:</b> UNSC reform demand (G4), peacekeeping contributions, elected UNSC terms in recent years.</li>
+      </ul>
+      <div class="mnemonic">UNSC = “पाँच वीटो राजा + दस मेहमान (2 साल)”। ICJ = हेग की अदालत।</div>
+    </article>
+  </div>
+</section>
+
+<!-- UN AGENCIES -->
+<section class="section" id="tab-agency">
+  <div class="trick">
+    <h3>Agency emoji strip</h3>
+    <div class="line">🩺 WHO · 🏛️ UNESCO · 👷 ILO · 🌾 FAO · 👶 UNICEF · 🌱 UNEP · 📈 UNDP</div>
+    <div class="decode">Link each emoji to HQ city in the cards below.</div>
+  </div>
+  <input class="search" placeholder="🔍 Search WHO / UNESCO / ILO / FAO…" data-filter="agency">
+  <div class="org-grid" data-group="agency">
+    <article class="org" data-t="who world health organization geneva pandemic ihr">
+      <div class="org-head"><div class="org-emoji">🩺</div><div><h3>WHO</h3><div class="meta">World Health Organization</div></div></div>
+      <div class="pills"><span class="pill yr">1948</span><span class="pill hq">Geneva</span></div>
+      <ul class="facts">
+        <li>Directing &amp; coordinating authority on international health within UN system.</li>
+        <li>World Health Assembly is the supreme decision body.</li>
+        <li>IHR (International Health Regulations), PHEIC declarations — pandemic CA favourites.</li>
+      </ul>
+      <div class="mnemonic">WHO = “सेहत की राजधानी जिनेवा”।</div>
+    </article>
+
+    <article class="org" data-t="unesco paris world heritage">
+      <div class="org-head"><div class="org-emoji">🏛️</div><div><h3>UNESCO</h3><div class="meta">Education, Science, Culture</div></div></div>
+      <div class="pills"><span class="pill yr">1945</span><span class="pill hq">Paris</span></div>
+      <ul class="facts">
+        <li>World Heritage Sites, intangible cultural heritage, education agendas, press freedom indices debates.</li>
+        <li>India has many WH sites — CA often pairs new inscriptions with UNESCO.</li>
+      </ul>
+      <div class="mnemonic">UNESCO = “पेरिस में विरासत और शिक्षा”।</div>
+    </article>
+
+    <article class="org" data-t="ilo geneva labour tripartite 1919">
+      <div class="org-head"><div class="org-emoji">👷</div><div><h3>ILO</h3><div class="meta">International Labour Organization</div></div></div>
+      <div class="pills"><span class="pill yr">1919 (League era) · UN specialized later</span><span class="pill hq">Geneva</span></div>
+      <ul class="facts">
+        <li><b>Tripartite:</b> governments + employers + workers — unique structure.</li>
+        <li>Conventions/recommendations on labour standards; India ratification questions appear.</li>
+        <li>Nobel Peace Prize 1969 (classic static fact).</li>
+      </ul>
+      <div class="mnemonic">ILO = “तीन पक्ष — सरकार, मालिक, मजदूर” (tripartite)।</div>
+    </article>
+
+    <article class="org" data-t="fao rome food agriculture">
+      <div class="org-head"><div class="org-emoji">🌾</div><div><h3>FAO</h3><div class="meta">Food &amp; Agriculture Organization</div></div></div>
+      <div class="pills"><span class="pill yr">1945</span><span class="pill hq">Rome</span></div>
+      <ul class="facts">
+        <li>Defeat hunger, improve nutrition, advance agriculture/fisheries/forestry.</li>
+        <li>Often paired with WFP (Rome) and IFAD (Rome) as the “Rome food hub.”</li>
+      </ul>
+      <div class="mnemonic">FAO = “रोम में अन्न” — Rome food triangle: FAO + WFP + IFAD.</div>
+    </article>
+
+    <article class="org" data-t="unicef new york children">
+      <div class="org-head"><div class="org-emoji">👶</div><div><h3>UNICEF</h3><div class="meta">UN Children’s Fund</div></div></div>
+      <div class="pills"><span class="pill hq">New York</span><span class="pill">Fund (not specialized agency in the same sense as WHO)</span></div>
+      <ul class="facts"><li>Child rights, health, education, emergencies. Funded by voluntary contributions.</li></ul>
+      <div class="mnemonic">UNICEF = “बच्चों का फंड”।</div>
+    </article>
+
+    <article class="org" data-t="undp new york development hdi">
+      <div class="org-head"><div class="org-emoji">📈</div><div><h3>UNDP</h3><div class="meta">UN Development Programme</div></div></div>
+      <div class="pills"><span class="pill hq">New York</span></div>
+      <ul class="facts"><li>Development network; associated with Human Development Report / HDI tradition in UPSC economy–society questions.</li></ul>
+      <div class="mnemonic">UNDP = “विकास + HDI रिपोर्ट वाली याद”।</div>
+    </article>
+
+    <article class="org" data-t="unep nairobi environment">
+      <div class="org-head"><div class="org-emoji">🌱</div><div><h3>UNEP</h3><div class="meta">UN Environment Programme</div></div></div>
+      <div class="pills"><span class="pill yr">1972</span><span class="pill hq">Nairobi</span></div>
+      <ul class="facts"><li>Environmental agenda-setting; hosts/linked to many MEA secretariats’ UN environment work; only major global env body HQ in Africa (classic fact).</li></ul>
+      <div class="mnemonic">UNEP = “नैरोबी में पर्यावरण” — Africa HQ याद रखो।</div>
+    </article>
+  </div>
+</section>
+
+<!-- GROUPS -->
+<section class="section" id="tab-groups">
+  <div class="trick">
+    <h3>Clubs vs organisations</h3>
+    <div class="line">“G20 मेज़ है, UN घर है — क्लब में सदस्यता, संधि-संगठन में क़ानून!”</div>
+    <div class="decode">G20/G7 are forums. ASEAN/SCO have charters/secretariats. NATO is a military alliance. Don’t call WEF a UN agency or G20 a treaty court.</div>
+  </div>
+  <input class="search" placeholder="🔍 Search G20 / BRICS / SCO / ASEAN / QUAD…" data-filter="groups">
+  <div class="org-grid" data-group="groups">
+    <article class="org" data-t="g20 group twenty troika presidency">
+      <div class="org-head"><div class="org-emoji">🌐</div><div><h3>G20</h3><div class="meta">Premier forum for international economic cooperation</div></div></div>
+      <div class="pills"><span class="pill yr">Finance 1999 · Leaders 2008+</span><span class="pill in">India Presidency 2023</span></div>
+      <ul class="facts">
+        <li>19 countries + EU (+ African Union membership recent CA — verify latest composition list before exam).</li>
+        <li>No permanent secretariat like UN; presidency rotates; troika continuity.</li>
+        <li>India 2023: “Vasudhaiva Kutumbakam” theme / New Delhi Leaders’ Declaration — high-yield CA.</li>
+      </ul>
+      <div class="mnemonic">G20 = “दुनिया की आर्थिक मेज़” — प्रेसीडेंसी घूमती है, सचिवालय UN जैसा नहीं।</div>
+    </article>
+
+    <article class="org" data-t="g7 g8 canada france germany italy japan uk us eu">
+      <div class="org-head"><div class="org-emoji">7️⃣</div><div><h3>G7</h3><div class="meta">Advanced economies forum</div></div></div>
+      <div class="pills"><span class="pill">US, UK, France, Germany, Italy, Canada, Japan (+ EU)</span></div>
+      <ul class="facts"><li>Informal; Russia was in G8 then suspended — know the storyline. Not a universal body.</li></ul>
+      <div class="mnemonic">G7 = “सात अमीर क्लब” (EU अतिथि/भागीदार)।</div>
+    </article>
+
+    <article class="org" data-t="brics brazil russia india china south africa ndb">
+      <div class="org-head"><div class="org-emoji">🔶</div><div><h3>BRICS</h3><div class="meta">Emerging economies grouping</div></div></div>
+      <div class="pills"><span class="pill">NDB + CRA</span><span class="pill in">India founding</span></div>
+      <ul class="facts">
+        <li>Original BRIC + South Africa → BRICS; expansion of new members is live CA — revise current list before prelims.</li>
+        <li>Financial arms: NDB &amp; CRA.</li>
+      </ul>
+      <div class="mnemonic">BRICS = “दक्षिण का क्लब + शंघाई बैंक (NDB)”। सदस्य सूची परीक्षा से पहले अपडेट करो।</div>
+    </article>
+
+    <article class="org" data-t="sco shanghai cooperation organisation rats beijing">
+      <div class="org-head"><div class="org-emoji">🛰️</div><div><h3>SCO</h3><div class="meta">Shanghai Cooperation Organisation</div></div></div>
+      <div class="pills"><span class="pill hq">Beijing secretariat</span><span class="pill">RATS: Tashkent</span></div>
+      <ul class="facts">
+        <li>Eurasian political/security/econ cooperation; originated from Shanghai Five.</li>
+        <li>India &amp; Pakistan joined as full members in 2017 (classic fact).</li>
+        <li>RATS = Regional Anti-Terrorist Structure.</li>
+      </ul>
+      <div class="mnemonic">SCO = “शंघाई परिवार” — सचिवालय बीजिंग, आतंक इकाई RATS ताशकंद।</div>
+    </article>
+
+    <article class="org" data-t="asean jakarta southeast asia">
+      <div class="org-head"><div class="org-emoji">🌿</div><div><h3>ASEAN</h3><div class="meta">Association of Southeast Asian Nations</div></div></div>
+      <div class="pills"><span class="pill yr">1967 Bangkok Declaration</span><span class="pill hq">Jakarta</span></div>
+      <ul class="facts">
+        <li>10 Southeast Asian members (know the list pattern); centrality in Indo-Pacific.</li>
+        <li>India: Dialogue Partner; Act East Policy hinge.</li>
+      </ul>
+      <div class="mnemonic">ASEAN = “दक्षिण-पूर्व एशिया का परिवार — जैकार्ता सचिवालय”।</div>
+    </article>
+
+    <article class="org" data-t="quad quadrilateral india us japan australia">
+      <div class="org-head"><div class="org-emoji">🔷</div><div><h3>QUAD</h3><div class="meta">Quadrilateral Security Dialogue</div></div></div>
+      <div class="pills"><span class="pill">India · US · Japan · Australia</span></div>
+      <ul class="facts">
+        <li>Informal strategic forum; free and open Indo-Pacific; working groups on vaccines, climate, critical tech, maritime etc.</li>
+        <li><b>Trap:</b> not a military alliance like NATO.</li>
+      </ul>
+      <div class="mnemonic">QUAD = “चार दोस्त इंडो-पैसिफिक” — IUJA: India, US, Japan, Australia। NATO नहीं।</div>
+    </article>
+
+    <article class="org" data-t="nato north atlantic brussels article 5">
+      <div class="org-head"><div class="org-emoji">🛡️</div><div><h3>NATO</h3><div class="meta">North Atlantic Treaty Organization</div></div></div>
+      <div class="pills"><span class="pill yr">1949</span><span class="pill hq">Brussels</span></div>
+      <ul class="facts">
+        <li>Collective defence — Article 5 (attack on one = attack on all).</li>
+        <li>India is not a member; appears in IR comparative questions.</li>
+      </ul>
+      <div class="mnemonic">NATO = “अनुच्छेद 5 वाली ढाल — ब्रसेल्स”।</div>
+    </article>
+  </div>
+</section>
+
+<!-- WATCHDOGS -->
+<section class="section" id="tab-watch">
+  <input class="search" placeholder="🔍 Search IAEA / OPCW…" data-filter="watch">
+  <div class="org-grid" data-group="watch">
+    <article class="org" data-t="iaea vienna atoms for peace safeguards npt">
+      <div class="org-head"><div class="org-emoji">⚛️</div><div><h3>IAEA</h3><div class="meta">International Atomic Energy Agency</div></div></div>
+      <div class="pills"><span class="pill yr">1957</span><span class="pill hq">Vienna</span></div>
+      <ul class="facts">
+        <li>“Atoms for Peace” — promote peaceful nuclear tech + safeguards against diversion to weapons.</li>
+        <li>Reports to UNGA/UNSC as needed; central to Iran nuclear CA historically.</li>
+        <li>India: unique civil nuclear engagement / safeguards arrangements — know at high level.</li>
+      </ul>
+      <div class="mnemonic">IAEA = “वियना में परमाणु पहरा” — शांति के लिए परमाणु + सुरक्षा जाँच।</div>
+    </article>
+
+    <article class="org" data-t="opcw hague chemical weapons convention">
+      <div class="org-head"><div class="org-emoji">🧪</div><div><h3>OPCW</h3><div class="meta">Organisation for the Prohibition of Chemical Weapons</div></div></div>
+      <div class="pills"><span class="pill yr">1997</span><span class="pill hq">The Hague</span><span class="pill">Nobel 2013</span></div>
+      <ul class="facts">
+        <li>Implementing body of the Chemical Weapons Convention (CWC).</li>
+        <li>Verification, inspections, destruction oversight.</li>
+      </ul>
+      <div class="mnemonic">OPCW = “हेग में केमिकल हथियार पर ताला”।</div>
+    </article>
+  </div>
+</section>
+
+<!-- MCQ -->
+<section class="section" id="tab-mcq">
+  <h2 class="section-title">Practice MCQs</h2>
+  <div class="mcq" data-a="1">
+    <div class="q">1. Bretton Woods twins with HQ in Washington DC are:</div>
+    <div class="opts">
+      <div class="opt" onclick="ans(this,false)">a) WTO and WEF</div>
+      <div class="opt" onclick="ans(this,true)">b) IMF and World Bank</div>
+      <div class="opt" onclick="ans(this,false)">c) ADB and AIIB</div>
+      <div class="opt" onclick="ans(this,false)">d) UNDP and UNEP</div>
+    </div>
+    <div class="exp"><b>Answer: b.</b> IMF + World Bank Group were created at Bretton Woods; both headquartered in Washington DC.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">2. Which organisation is headquartered in Manila?</div>
+    <div class="opts">
+      <div class="opt" onclick="ans(this,true)">a) Asian Development Bank</div>
+      <div class="opt" onclick="ans(this,false)">b) AIIB</div>
+      <div class="opt" onclick="ans(this,false)">c) New Development Bank</div>
+      <div class="opt" onclick="ans(this,false)">d) WTO</div>
+    </div>
+    <div class="exp"><b>Answer: a.</b> ADB = Manila; AIIB = Beijing; NDB = Shanghai; WTO = Geneva.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">3. Special Drawing Rights (SDRs) are associated with:</div>
+    <div class="opts">
+      <div class="opt" onclick="ans(this,true)">a) IMF</div>
+      <div class="opt" onclick="ans(this,false)">b) WTO Dispute Settlement Body</div>
+      <div class="opt" onclick="ans(this,false)">c) UNESCO</div>
+      <div class="opt" onclick="ans(this,false)">d) OPCW</div>
+    </div>
+    <div class="exp"><b>Answer: a.</b> SDRs are an IMF reserve asset.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">4. WEF is best described as:</div>
+    <div class="opts">
+      <div class="opt" onclick="ans(this,false)">a) A UN specialized agency for trade disputes</div>
+      <div class="opt" onclick="ans(this,true)">b) A public–private forum known for the Davos meeting</div>
+      <div class="opt" onclick="ans(this,false)">c) A military alliance under Article 5</div>
+      <div class="opt" onclick="ans(this,false)">d) The secretariat of G20</div>
+    </div>
+    <div class="exp"><b>Answer: b.</b> WEF is not WTO, NATO, or the G20 secretariat.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">5. Which pair is correctly matched?</div>
+    <div class="opts">
+      <div class="opt" onclick="ans(this,false)">a) UNESCO — Geneva</div>
+      <div class="opt" onclick="ans(this,false)">b) FAO — Paris</div>
+      <div class="opt" onclick="ans(this,true)">c) UNEP — Nairobi</div>
+      <div class="opt" onclick="ans(this,false)">d) ILO — Rome</div>
+    </div>
+    <div class="exp"><b>Answer: c.</b> UNESCO Paris, FAO Rome, ILO Geneva, UNEP Nairobi.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">6. IDA is part of:</div>
+    <div class="opts">
+      <div class="opt" onclick="ans(this,false)">a) IMF</div>
+      <div class="opt" onclick="ans(this,true)">b) World Bank Group</div>
+      <div class="opt" onclick="ans(this,false)">c) WTO</div>
+      <div class="opt" onclick="ans(this,false)">d) AIIB only</div>
+    </div>
+    <div class="exp"><b>Answer: b.</b> IDA = soft-window arm of the World Bank Group.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">7. RATS (anti-terror structure) is associated with:</div>
+    <div class="opts">
+      <div class="opt" onclick="ans(this,false)">a) NATO</div>
+      <div class="opt" onclick="ans(this,true)">b) SCO</div>
+      <div class="opt" onclick="ans(this,false)">c) QUAD</div>
+      <div class="opt" onclick="ans(this,false)">d) ASEAN</div>
+    </div>
+    <div class="exp"><b>Answer: b.</b> SCO’s RATS is in Tashkent.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">8. OPCW implements which convention?</div>
+    <div class="opts">
+      <div class="opt" onclick="ans(this,false)">a) NPT</div>
+      <div class="opt" onclick="ans(this,true)">b) Chemical Weapons Convention</div>
+      <div class="opt" onclick="ans(this,false)">c) BTWC only (biological)</div>
+      <div class="opt" onclick="ans(this,false)">d) UNCLOS</div>
+    </div>
+    <div class="exp"><b>Answer: b.</b> OPCW = CWC implementing body, The Hague.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">9. Which is NOT a principal organ of the UN?</div>
+    <div class="opts">
+      <div class="opt" onclick="ans(this,false)">a) ICJ</div>
+      <div class="opt" onclick="ans(this,false)">b) ECOSOC</div>
+      <div class="opt" onclick="ans(this,true)">c) WHO</div>
+      <div class="opt" onclick="ans(this,false)">d) Secretariat</div>
+    </div>
+    <div class="exp"><b>Answer: c.</b> WHO is a specialized agency, not one of the six principal organs.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">10. New Development Bank HQ is in:</div>
+    <div class="opts">
+      <div class="opt" onclick="ans(this,false)">a) New Delhi</div>
+      <div class="opt" onclick="ans(this,false)">b) Beijing</div>
+      <div class="opt" onclick="ans(this,true)">c) Shanghai</div>
+      <div class="opt" onclick="ans(this,false)">d) Moscow</div>
+    </div>
+    <div class="exp"><b>Answer: c.</b> NDB — Shanghai.</div>
+  </div>
+</section>
+
+</main>
+<footer>Parcham Classes · International Organisations · UPSC Facts · Linked from Index</footer>
+
+<script>
+(function(){
+  const tabs=[...document.querySelectorAll('.tab')];
+  const sections=[...document.querySelectorAll('.section')];
+  function show(id){
+    tabs.forEach(t=>t.classList.toggle('active', t.dataset.tab===id));
+    sections.forEach(s=>s.classList.toggle('active', s.id==='tab-'+id));
+    reveal();
+    history.replaceState(null,'','#'+id);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
+  const hash=(location.hash||'').replace('#','');
+  if(hash && document.getElementById('tab-'+hash)) show(hash);
+
+  function reveal(){
+    document.querySelectorAll('.section.active .org').forEach((el,i)=>{
+      el.classList.remove('vis');
+      setTimeout(()=>el.classList.add('vis'), 40+i*50);
+    });
+  }
+  reveal();
+
+  document.querySelectorAll('.search').forEach(inp=>{
+    inp.addEventListener('input',()=>{
+      const q=inp.value.trim().toLowerCase();
+      const group=inp.dataset.filter;
+      document.querySelectorAll('[data-group="'+group+'"] .org').forEach(card=>{
+        const hay=(card.dataset.t||'')+' '+card.innerText.toLowerCase();
+        card.style.display = !q || hay.includes(q) ? '' : 'none';
+      });
+    });
+  });
+})();
+
+function ans(el, ok){
+  const box=el.closest('.mcq');
+  box.querySelectorAll('.opt').forEach(o=>{o.onclick=null;});
+  el.classList.add(ok?'correct':'wrong');
+  if(!ok){
+    // highlight first correct if marked via data - scan siblings with true handler already used
+  }
+  // mark correct option: re-find by checking which has green path - store on click
+  box.querySelectorAll('.opt').forEach(o=>{
+    if(o.getAttribute('onclick') && o.getAttribute('onclick').includes('true')) o.classList.add('correct');
+  });
+  box.querySelector('.exp')?.classList.add('show');
+}
+</script>
+</body>
+</html>
