@@ -213,6 +213,26 @@
   .io-layer-table a { font-weight: 600; color: var(--forest); text-decoration: none; }
   .io-layer-table a:hover { text-decoration: underline; }
   .io-layer-table td small { display: block; color: var(--muted); font-weight: 500; margin-top: 2px; }
+
+  details.io-layer-acc {
+    margin-top: 12px; border: 1px solid var(--line); border-radius: 12px;
+    background: linear-gradient(180deg, #f7fbf8, #fff); overflow: hidden;
+  }
+  details.io-layer-acc summary {
+    list-style: none; cursor: pointer; padding: 12px 14px;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: .84rem; font-weight: 700; color: var(--ink);
+  }
+  details.io-layer-acc summary::-webkit-details-marker { display: none; }
+  details.io-layer-acc summary small { font-weight: 500; color: var(--muted); font-size: .74rem; }
+  details.io-layer-acc summary::after {
+    content: "+"; flex: none; font-size: 1.15rem; color: var(--teal); line-height: 1;
+  }
+  details.io-layer-acc[open] summary::after { content: "−"; }
+  details.io-layer-acc[open] summary { border-bottom: 1px solid var(--line); }
+  details.io-layer-acc .io-layer-acc-body { padding: 10px 12px 14px; overflow-x: auto; }
+  details.io-layer-acc .io-layer-table { margin-top: 0; }
+
   .home-sub {
     appearance: none; text-align: left; border: 1px solid var(--line); border-left: 4px solid var(--teal);
     cursor: pointer; text-decoration: none;
@@ -559,16 +579,23 @@
       </summary>
       <div class="home-acc-body">
         <a class="home-sub span-full" href="un_system_master.html#hub">🗺️ International organisations — 5-layer index <small>Start here: UN → env → Bretton/WTO → clubs &amp; regional IO → MCQs</small></a>
-        <table class="io-layer-table" aria-label="International track layers">
-          <thead><tr><th>Layer</th><th>Page</th><th>Open</th></tr></thead>
-          <tbody>
-            <tr><td>L1</td><td>UN Charter system<small>Birth · elections · offices · organs · PKO</small></td><td><a href="un_system_master.html#birth">UN master</a></td></tr>
-            <tr><td>L2</td><td>Environment architecture<small>Summits · UNEP · COP · mega treaty table</small></td><td><a href="un_environment_architecture.html">Env map</a></td></tr>
-            <tr><td>L3</td><td>Bretton Woods &amp; trade<small>IMF · WB · WTO · dev banks</small></td><td><a href="international_organisations.html">IO sheet</a></td></tr>
-            <tr><td>L4</td><td>IR clubs &amp; regional IO<small>G20/BRICS/SCO · SAARC/AU/EU…</small></td><td><a href="un_system_master.html#layer4-index">Layer 4 index</a> · <a href="international_organisations.html#groups">Groups</a> · <a href="international_organisations.html#regional">Regional</a></td></tr>
-            <tr><td>L5</td><td>Practice<small>Env conventions MCQs</small></td><td><a href="upsc_environment_mcqs_english.html">Env MCQs</a></td></tr>
-          </tbody>
-        </table>
+        <details class="io-layer-acc" id="io-layer-table" open>
+          <summary>
+            <span>International track <small>L1–L5 · Layer · Page · Open</small></span>
+          </summary>
+          <div class="io-layer-acc-body">
+            <table class="io-layer-table" aria-label="International track layers">
+              <thead><tr><th>Layer</th><th>Page</th><th>Open</th></tr></thead>
+              <tbody>
+                <tr><td>L1</td><td>UN Charter system<small>Birth · elections · offices · organs · PKO</small></td><td><a href="un_system_master.html#birth">UN master</a></td></tr>
+                <tr><td>L2</td><td>Environment architecture<small>Summits · UNEP · COP · mega treaty table</small></td><td><a href="un_environment_architecture.html">Env map</a></td></tr>
+                <tr><td>L3</td><td>Bretton Woods &amp; trade<small>IMF · WB · WTO · dev banks</small></td><td><a href="international_organisations.html">IO sheet</a></td></tr>
+                <tr><td>L4</td><td>IR clubs &amp; regional IO<small>G20/BRICS/SCO · SAARC/AU/EU…</small></td><td><a href="un_system_master.html#layer4-index">Layer 4 index</a> · <a href="international_organisations.html#groups">Groups</a> · <a href="international_organisations.html#regional">Regional</a></td></tr>
+                <tr><td>L5</td><td>Practice<small>Env conventions MCQs</small></td><td><a href="upsc_environment_mcqs_english.html">Env MCQs</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
         <div class="home-sub-grid" style="margin-top:14px">
           <a class="home-sub" href="polity_mini_constitution.html">Polity mini-Constitution <small>Preamble · articles · drawer</small></a>
           <button class="home-sub" type="button" disabled>Economy <small>Reports</small> <span class="soon">Soon</span></button>
