@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ca-flowcharts.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -51,7 +52,14 @@ main{max-width:980px;margin:0 auto;padding:18px 14px 72px}
 .fc-root{max-width:380px;margin:0 auto;text-align:center;background:linear-gradient(135deg,#0d3d2e,#1b5e45);color:#fff;border-radius:14px;padding:12px 16px;box-shadow:0 6px 20px rgba(27,94,69,.2)}
 .fc-root strong{display:block;font-family:"Fraunces",serif;font-size:1.05rem}
 .fc-root span{font-size:.76rem;opacity:.92}
-.fc-vline{width:3px;height:20px;background:linear-gradient(180deg,var(--teal),#9fd4b8);margin:0 auto;border-radius:2px}
+.fc-vline{
+  width:4px;height:22px;margin:0 auto;border-radius:4px;
+  background:linear-gradient(180deg,var(--teal),#9fd4b8,var(--teal));
+  background-size:100% 200%;animation:afc-flow-y 1.8s linear infinite
+}
+.fc-root{animation:afc-rise .55s ease both,afc-pulse 3.2s ease-in-out infinite .5s}
+.fc-layer{animation:afc-rise .5s ease both}
+.fc-layer:nth-of-type(1){animation-delay:.15s}
 .fc-layer{max-width:520px;margin:8px auto;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;position:relative}
 .fc-layer::before{content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:3px;height:12px;background:#9fd4b8}
 .fc-layer h4{font-family:"Fraunces",serif;font-size:.92rem;color:var(--forest);margin-bottom:4px}
@@ -82,7 +90,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 @media(max-width:700px){.tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.tab{white-space:nowrap}}
 </style>
 </head>
-<body>
+<body class="theme-env">
 
 <a class="back" href="index.html">← Index</a>
 <a class="back" href="un_system_master.html" style="margin-left:8px">🇺🇳 UN System</a>
@@ -121,7 +129,8 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <div class="line">UN = घर · UNEP = पर्यावरण कक्ष · UNFCCC/CBD = अलग संधि + COP बैठक</div>
     <div class="decode">News says “UN climate summit” — legally it is often <b>COP of UNFCCC</b>. Stockholm/Rio were <b>UN conferences</b> that <b>created or launched</b> institutions and treaties.</div>
   </div>
-  <div class="flowchart" role="img" aria-label="Three layers UN environment">
+  <div class="flowchart afc-wrap" role="img" aria-label="Three layers UN environment">
+    <div class="afc-legend"><span>Type 6 · System flow</span> UN → programme → treaties</div>
     <div class="fc-root">
       <strong>Layer 1 · United Nations</strong>
       <span>Charter 1945 — see <a href="un_system_master.html#hub" style="color:#b8f0d8">family tree ↗</a></span>
@@ -140,12 +149,35 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       <b>Not the same:</b> IPCC = science (no law) · COP ≠ UN organ · Stockholm <em>Convention</em> (POPs) ≠ Stockholm <em>Conference</em> 1972
     </div>
   </div>
+
+  <div class="afc-wrap" aria-label="Environmental data flow">
+    <div class="afc-legend"><span>Type 3 · Data flow</span> science → negotiation → law</div>
+    <div class="afc-data">
+      <div class="afc-bubble"><h5>IPCC / science</h5>Assessments (no law)</div>
+      <div class="afc-bubble"><h5>UNFCCC COP</h5>Parties decide targets</div>
+      <div class="afc-bubble"><h5>National law</h5>NDCs · reporting</div>
+    </div>
+  </div>
   <div class="warn"><b>Trap:</b> <em>Stockholm Conference 1972</em> → UNEP. <em>Stockholm Convention 2001</em> → persistent organic pollutants (POPs). Same city name, different instrument.</div>
   <a class="cta" href="upsc_environment_mcqs_english.html">Full convention notes + long MCQ bank → Environment page</a>
 </section>
 
 <section class="section" id="tab-summits">
   <h2 class="section-title">Landmark UN environment conferences (political spine)</h2>
+  <div class="afc-wrap" aria-label="Summit process timeline">
+    <div class="afc-legend"><span>Type 1 · Process</span> political spine 1972–2015</div>
+    <div class="afc-pipeline">
+      <div class="afc-step"><b>1972</b>Stockholm · UNEP</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>1992</b>Rio · UNFCCC CBD UNCCD</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>2002</b>Johannesburg</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>2012</b>Rio+20 · SDGs</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-end"><b>2015</b>Paris</div>
+    </div>
+  </div>
   <div class="timeline">
     <div class="t"><span class="yr">1972</span> <b>Stockholm</b> — UN Conference on the Human Environment. Theme: development vs environment. <b>Created UNEP</b>; “Only One Earth”; catalysed national env ministries &amp; laws.</div>
     <div class="t"><span class="yr">1987</span> <b>Brundtland Report</b> — “Our Common Future”; sustainable development vocabulary (not a COP).</div>
@@ -191,6 +223,26 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 
 <section class="section" id="tab-cop">
   <h2 class="section-title">COP and parallel acronyms</h2>
+  <div class="afc-wrap" aria-label="COP vs UN decision">
+    <div class="afc-legend"><span>Type 5 · Decision</span> what does “COP” mean here?</div>
+    <div class="afc-branch">
+      <div class="afc-decision">Headline says<br>“UN climate COP”</div>
+    </div>
+    <div class="afc-branch" style="margin-top:8px">
+      <div class="afc-branch-col">
+        <span class="afc-branch-label">Treaty meeting</span>
+        <div class="afc-step"><b>COP</b>Conference of Parties to <b>UNFCCC</b></div>
+      </div>
+      <div class="afc-branch-col">
+        <span class="afc-branch-label">Not this</span>
+        <div class="afc-step"><b>UNGA</b>Charter organ · Sept NY</div>
+      </div>
+      <div class="afc-branch-col">
+        <span class="afc-branch-label">Related</span>
+        <div class="afc-step"><b>UNEP</b>Programme · Nairobi</div>
+      </div>
+    </div>
+  </div>
   <div class="compare">
     <table>
       <thead><tr><th>Acronym</th><th>Full form</th><th>Belongs to</th></tr></thead>
@@ -245,6 +297,18 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   <div class="trick">
     <h3>Rio 1992 — three brothers</h3>
     <div class="line">जलवायु UNFCCC · जीवन CBD · मरुस्थल UNCCD</div>
+  </div>
+  <div class="afc-wrap" aria-label="Rio trio product flow">
+    <div class="afc-legend"><span>Type 8 · Product flow</span> one summit → three treaties</div>
+    <div class="afc-pipeline">
+      <div class="afc-start">Rio 1992<br>UNCED</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>UNFCCC</b>Climate</div>
+      <div class="afc-step"><b>CBD</b>Biodiversity</div>
+      <div class="afc-step"><b>UNCCD</b>Land / desert</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-end">Separate<br>COPs</div>
+    </div>
   </div>
   <div class="compare">
     <table>

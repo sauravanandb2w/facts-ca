@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ca-flowcharts.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -49,86 +50,214 @@ main{max-width:960px;margin:0 auto;padding:20px 14px 72px}
 .card b{color:var(--navy)}
 .pills{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
 .pill{font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:999px;background:#eef3f9;border:1px solid var(--line)}
-.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin:12px 0}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:12px 0}
 .hub{
-  background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px;transition:.2s
+  background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px;transition:.2s;
+  min-width:0;overflow:hidden
 }
 .hub:hover{border-color:var(--un);transform:translateY(-2px);box-shadow:var(--shadow)}
 .hub .tag{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--un)}
 .hub h4{font-family:"Fraunces",serif;font-size:1rem;margin:6px 0;color:var(--navy)}
-.hub p{font-size:.82rem;color:var(--muted);line-height:1.5}
+.hub p{font-size:.82rem;color:var(--muted);line-height:1.45;margin:0}
+.hub p,.hub a{overflow-wrap:anywhere;word-break:break-word}
 .hub.live{border-color:#90caf9;background:linear-gradient(180deg,#fff,#f5faff)}
 .hub.soon{opacity:.85;border-style:dashed}
-/* UN family tree flowchart */
+.hub-layer4{
+  background:#fff;border:2px solid #90caf9;border-radius:14px;padding:14px 16px;margin:4px 0 12px;
+  background:linear-gradient(180deg,#fff,#f5faff)
+}
+.hub-layer4 h3{font-family:"Fraunces",serif;font-size:1.05rem;color:var(--navy);margin:0 0 6px}
+.hub-layer4 .hub-note{font-size:.8rem;color:var(--muted);margin:0 0 10px;line-height:1.45}
+.layer4-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.layer4-col h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--un);margin:0 0 6px}
+.layer4-col h4 a{color:inherit;text-decoration:none}
+.layer4-col h4 a:hover{text-decoration:underline}
+.layer4-col ul{margin:0;padding-left:16px;font-size:.78rem;line-height:1.5;color:var(--ink)}
+.layer4-col li{margin:3px 0}
+.layer4-col .mcq-links{list-style:none;padding:0}
+.layer4-col .mcq-links li{margin:4px 0}
+.layer4-col .mcq-links a{font-size:.78rem;font-weight:600;color:var(--navy)}
+/* Hub: study track rail */
+.track-rail{
+  display:flex;flex-wrap:wrap;gap:0;align-items:stretch;justify-content:center;
+  margin:14px 0 18px;padding:4px;background:#fff;border:2px solid var(--line);border-radius:16px;
+  box-shadow:var(--shadow);overflow:hidden
+}
+.track-step{
+  flex:1 1 100px;min-width:88px;text-align:center;padding:12px 8px;text-decoration:none;color:var(--ink);
+  border-right:1px solid var(--line);transition:background .2s,transform .2s;position:relative
+}
+.track-step:last-child{border-right:0}
+.track-step small{display:block;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--un);margin-bottom:4px}
+.track-step strong{display:block;font-size:.78rem;line-height:1.25;color:var(--navy)}
+.track-step:hover{background:#f0f8ff}
+.track-step.current{background:linear-gradient(180deg,#e8f6ff,#fff);box-shadow:inset 0 -3px 0 var(--un)}
+details.hub-acc{border:2px solid #c5d8ef;border-radius:14px;margin:12px 0;background:#fff;overflow:hidden}
+details.hub-acc summary{
+  cursor:pointer;list-style:none;padding:12px 16px;font-weight:700;font-size:.88rem;color:var(--navy);
+  background:linear-gradient(180deg,#f5faff,#fff);display:flex;align-items:center;gap:8px
+}
+details.hub-acc summary::-webkit-details-marker{display:none}
+details.hub-acc summary::after{content:"+";margin-left:auto;font-size:1.1rem;color:var(--un);font-weight:800}
+details.hub-acc[open] summary::after{content:"−"}
+details.hub-acc .hub-acc-body{padding:0 14px 14px}
+
+/* UN family tree — animated flowchart */
+@keyframes fc-rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes fc-pulse{
+  0%,100%{box-shadow:0 8px 28px rgba(0,158,219,.2),0 0 0 0 rgba(0,158,219,.35)}
+  50%{box-shadow:0 12px 36px rgba(0,158,219,.35),0 0 0 8px rgba(0,158,219,0)}
+}
+@keyframes fc-flow-y{
+  0%{background-position:0 0}
+  100%{background-position:0 200%}
+}
+@keyframes fc-shimmer{
+  0%{background-position:0% 50%}
+  100%{background-position:200% 50%}
+}
+@keyframes fc-dash{to{stroke-dashoffset:0}}
+.flowchart-hero{margin:4px 0 20px}
+.flowchart-hero .fc-lead{
+  font-size:.84rem;color:var(--muted);margin:-6px 0 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center
+}
+.flowchart-hero .fc-lead a{font-size:.82rem}
 .flowchart{
-  background:linear-gradient(180deg,#fff 0%,#f5faff 100%);
-  border:2px solid #c5d8ef;border-radius:16px;padding:20px 16px 24px;margin:8px 0 16px;
-  position:relative;overflow:hidden
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.97) 0%,rgba(245,250,255,.98) 100%);
+  border:2px solid transparent;border-radius:20px;padding:22px 14px 26px;margin:0;
+  position:relative;overflow:hidden;
+  background-clip:padding-box;
+  box-shadow:0 16px 48px rgba(10,45,74,.12),inset 0 1px 0 rgba(255,255,255,.9)
 }
 .flowchart::before{
+  content:"";position:absolute;inset:0;border-radius:20px;padding:2px;
+  background:linear-gradient(120deg,#009edb,#1565a8,#c9a227,#009edb);
+  background-size:200% 200%;
+  animation:fc-shimmer 8s ease infinite;
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  pointer-events:none
+}
+.flowchart::after{
   content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(circle at 50% 0%,rgba(0,158,219,.08),transparent 55%)
+  background:
+    radial-gradient(circle at 15% 20%,rgba(0,158,219,.09),transparent 42%),
+    radial-gradient(circle at 85% 75%,rgba(21,101,168,.08),transparent 40%),
+    repeating-linear-gradient(90deg,rgba(0,158,219,.03) 0 1px,transparent 1px 48px),
+    repeating-linear-gradient(0deg,rgba(0,158,219,.025) 0 1px,transparent 1px 48px)
 }
 .fc-root{
-  max-width:420px;margin:0 auto;text-align:center;
-  background:linear-gradient(135deg,#0a2d4a,#1565a8);color:#fff;
-  border-radius:14px;padding:14px 18px;box-shadow:0 8px 24px rgba(10,45,74,.25);position:relative;z-index:1
+  max-width:440px;margin:0 auto;text-align:center;
+  background:linear-gradient(135deg,#041e33,#0a2d4a 40%,#0077b6);
+  color:#fff;border-radius:16px;padding:16px 20px;
+  position:relative;z-index:2;
+  animation:fc-rise .6s ease both,fc-pulse 3.5s ease-in-out infinite .6s
 }
-.fc-root strong{display:block;font-family:"Fraunces",serif;font-size:1.15rem;margin-bottom:4px}
-.fc-root span{font-size:.78rem;opacity:.92}
-.fc-vline{width:3px;height:22px;background:linear-gradient(180deg,var(--un),#90caf9);margin:0 auto;border-radius:2px}
-.fc-vline.short{height:14px}
-.fc-tier{margin:0 auto;max-width:920px;position:relative;z-index:1}
+.fc-root strong{display:block;font-family:"Fraunces",serif;font-size:1.2rem;margin-bottom:4px}
+.fc-root span{font-size:.78rem;opacity:.93}
+.fc-vline{
+  width:4px;height:26px;margin:0 auto;border-radius:4px;position:relative;z-index:2;
+  background:linear-gradient(180deg,var(--un),#7dd3fc,var(--un),#90caf9);
+  background-size:100% 200%;
+  animation:fc-flow-y 1.8s linear infinite
+}
+.fc-vline.short{height:16px}
+.fc-tier{margin:0 auto;max-width:920px;position:relative;z-index:2}
 .fc-tier-label{
-  text-align:center;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
-  color:var(--un);margin:6px 0 10px
+  text-align:center;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--un);margin:8px 0 12px;
+  animation:fc-rise .5s ease both
 }
 .fc-tier-label.warn{color:#c62828}
-.fc-hline-wrap{display:flex;align-items:flex-start;gap:0;justify-content:center;position:relative;padding-top:8px}
-.fc-hline-wrap::before{
-  content:"";position:absolute;top:0;left:8%;right:8%;height:3px;background:#b8d4f0;border-radius:2px
-}
-.fc-organs-wrap{position:relative;padding-top:16px;margin-top:2px}
+.fc-organs-wrap{position:relative;padding-top:18px;margin-top:4px}
 .fc-organs-wrap::before{
-  content:"";position:absolute;top:0;left:5%;right:5%;height:3px;background:#b8d4f0;border-radius:2px
+  content:"";position:absolute;top:0;left:6%;right:6%;height:4px;border-radius:4px;
+  background:linear-gradient(90deg,transparent,#b8d4f0,#009edb,#b8d4f0,transparent);
+  animation:fc-shimmer 4s linear infinite;background-size:200% 100%
 }
-.fc-organs{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:10px
-}
+.fc-organs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 @media(max-width:640px){.fc-organs{grid-template-columns:repeat(2,1fr)}}
 .fc-node{
-  background:#fff;border:2px solid #d5e3f5;border-radius:12px;padding:10px 10px 10px 12px;
+  background:rgba(255,255,255,.92);backdrop-filter:blur(6px);
+  border:2px solid #d5e3f5;border-radius:14px;padding:11px 12px;
   font-size:.78rem;line-height:1.4;color:#1a2a3a;position:relative;
-  box-shadow:0 4px 12px rgba(15,27,45,.06);transition:border-color .15s,transform .15s
+  box-shadow:0 6px 18px rgba(15,27,45,.08);
+  transition:border-color .2s,transform .25s,box-shadow .25s;
+  animation:fc-rise .55s ease both;cursor:default
 }
-.fc-node:hover{border-color:var(--un);transform:translateY(-2px)}
+.fc-node.fc-click{cursor:pointer}
+.fc-node.fc-click:hover{border-color:var(--un);transform:translateY(-4px) scale(1.02);box-shadow:0 12px 28px rgba(0,158,219,.18)}
+.fc-organs .fc-node:nth-child(1){animation-delay:.15s}
+.fc-organs .fc-node:nth-child(2){animation-delay:.22s}
+.fc-organs .fc-node:nth-child(3){animation-delay:.29s}
+.fc-organs .fc-node:nth-child(4){animation-delay:.36s}
+.fc-organs .fc-node:nth-child(5){animation-delay:.43s}
+.fc-organs .fc-node:nth-child(6){animation-delay:.5s}
 .fc-organs .fc-node::before{
-  content:"";position:absolute;top:-16px;left:50%;transform:translateX(-50%);
-  width:3px;height:16px;background:#b8d4f0
+  content:"";position:absolute;top:-18px;left:50%;transform:translateX(-50%);
+  width:4px;height:18px;border-radius:2px;
+  background:linear-gradient(180deg,#b8d4f0,var(--un));opacity:.85
 }
-.fc-node .ico{font-size:1.1rem;margin-bottom:2px}
-.fc-node b{display:block;color:var(--navy);font-size:.8rem}
-.fc-node.muted{background:#f8fafc;border-style:dashed;color:var(--muted)}
+.fc-node .ico{font-size:1.15rem;margin-bottom:3px;display:block}
+.fc-node b{display:block;color:var(--navy);font-size:.82rem;font-weight:700}
+.fc-node.muted{background:rgba(248,250,252,.9);border-style:dashed;color:var(--muted);animation-delay:.4s}
 .fc-node.muted b{color:#64748b}
-.fc-node.ext{border-color:#f0c36d;background:#fffdf6}
-.fc-node.ext{margin-top:0}
+.fc-node.ext{
+  border-color:#f0c36d;background:linear-gradient(180deg,#fffdf8,#fff);
+  animation:fc-rise .6s ease both .55s
+}
 .fc-node.ext::before{display:none}
-.fc-stem{display:flex;flex-direction:column;align-items:center;flex:1;min-width:0}
-.fc-stem .fc-node{width:100%;margin-top:11px}
-.fc-stem .fc-node::before{top:-11px}
-.fc-row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+.fc-row3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
 @media(max-width:720px){.fc-row3{grid-template-columns:1fr}}
 .fc-block{
-  background:#fff;border:2px solid #d5e3f5;border-radius:12px;padding:12px 14px;font-size:.78rem;line-height:1.55
+  background:rgba(255,255,255,.9);backdrop-filter:blur(4px);
+  border:2px solid #d5e3f5;border-radius:14px;padding:14px 14px;font-size:.78rem;line-height:1.55;
+  animation:fc-rise .6s ease both;
+  transition:transform .2s,border-color .2s
 }
-.fc-block h5{font-family:"Fraunces",serif;font-size:.88rem;color:var(--navy);margin-bottom:6px}
-.fc-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
-.fc-chip{background:#eef6ff;border:1px solid #c5d8ef;border-radius:999px;padding:3px 8px;font-size:.68rem;font-weight:600;color:#1e3a5f}
+.fc-block.fc-click{cursor:pointer}
+.fc-block:hover{border-color:#90caf9;transform:translateY(-2px)}
+.fc-row3 .fc-block:nth-child(1){animation-delay:.45s}
+.fc-row3 .fc-block:nth-child(2){animation-delay:.52s}
+.fc-row3 .fc-block:nth-child(3){animation-delay:.59s}
+.fc-block h5{font-family:"Fraunces",serif;font-size:.9rem;color:var(--navy);margin-bottom:6px}
+.fc-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.fc-chip{
+  background:#eef6ff;border:1px solid #c5d8ef;border-radius:999px;padding:4px 9px;
+  font-size:.68rem;font-weight:600;color:#1e3a5f;
+  transition:transform .15s,background .15s
+}
+.fc-chip:hover{transform:scale(1.04);background:#dff0ff}
 .fc-chip.dim{background:#f1f5f9;border-color:#e2e8f0;color:#64748b}
-.fc-legend{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:14px;font-size:.72rem;color:var(--muted)}
+.fc-legend{
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:18px;
+  font-size:.72rem;color:var(--muted);position:relative;z-index:2;
+  animation:fc-rise .5s ease both .65s
+}
 .fc-legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:4px;border:2px solid #d5e3f5;background:#fff}
 .fc-legend i.dash{border-style:dashed;background:#f8fafc}
 .fc-legend i.gold{border-color:#f0c36d;background:#fffdf6}
+.fc-ext-row{max-width:680px;margin:10px auto 0;position:relative;z-index:2}
+.timeline{position:relative;margin:12px 0 18px;padding:4px 0 4px 18px;border-left:4px solid var(--un)}
+.timeline-item{margin:0 0 14px;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:.84rem;line-height:1.55;box-shadow:0 4px 12px rgba(15,27,45,.04)}
+.timeline-item .yr{display:inline-block;font-weight:800;font-size:.75rem;color:#fff;background:var(--un);padding:2px 8px;border-radius:6px;margin-right:8px}
+.proc-steps{list-style:none;margin:12px 0;padding:0;counter-reset:ustep}
+.proc-steps li{
+  counter-increment:ustep;position:relative;padding:12px 14px 12px 44px;margin-bottom:8px;font-size:.84rem;line-height:1.55;
+  background:#fff;border:1px solid var(--line);border-radius:12px
+}
+.proc-steps li::before{
+  content:counter(ustep);position:absolute;left:12px;top:12px;width:24px;height:24px;border-radius:50%;
+  background:linear-gradient(135deg,var(--un),#1565a8);color:#fff;font-size:.72rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center
+}
+.source-note{font-size:.72rem;color:var(--muted);margin:8px 0 16px}
+.source-note a{font-weight:600}
+@media(prefers-reduced-motion:reduce){
+  .flowchart::before,.fc-root,.fc-vline,.fc-organs-wrap::before,.fc-node,.fc-block,.fc-tier-label,.fc-legend{animation:none!important}
+}
 .compare{overflow-x:auto;border-radius:12px;border:1px solid var(--line);margin:12px 0;background:#fff}
 table{width:100%;border-collapse:collapse;min-width:520px;font-size:.8rem}
 th{background:linear-gradient(135deg,var(--navy),#1565a8);color:#fff;text-align:left;padding:9px 11px}
@@ -151,7 +280,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 @media(max-width:700px){.tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.tab{white-space:nowrap}}
 </style>
 </head>
-<body>
+<body class="theme-un">
 
 <a class="back" href="index.html">← CA Facts Index</a>
 <a class="back" href="international_organisations.html" style="margin-left:8px">↗ Bretton Woods · WTO · Groups</a>
@@ -159,18 +288,20 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 <header class="hero">
   <div style="font-size:2.8rem">🇺🇳</div>
   <h1>UN System — Master Sheet</h1>
-  <p>Read this <b>before</b> env treaties (UNFCCC/COP) or IR clubs (SCO/BRICS). One place for: why UN exists, six organs, what “groups” mean, funds vs agencies, and what is <em>not</em> the UN.</p>
+  <p>The <b>full UN guide</b>: how it was created, how elections &amp; membership work, where offices sit, six organs, funds vs agencies, peacekeeping, and what is <em>not</em> the UN. Read before env treaties or IR clubs.</p>
   <div class="badges">
     <span class="badge">Charter 1945</span>
     <span class="badge">6 principal organs</span>
     <span class="badge">15 specialized agencies</span>
-    <span class="badge gold">Site map → Hub tab</span>
+    <span class="badge gold">Birth · Elections · Offices</span>
   </div>
 </header>
 
 <nav class="tabs" id="tabs">
   <button class="tab active" data-tab="hub">🗺️ Site map</button>
-  <button class="tab" data-tab="why">📜 Why UN</button>
+  <button class="tab" data-tab="birth">🏛️ Birth &amp; Charter</button>
+  <button class="tab" data-tab="how">🗳️ How it runs</button>
+  <button class="tab" data-tab="where">📍 Where</button>
   <button class="tab" data-tab="organs">⚖️ 6 organs</button>
   <button class="tab" data-tab="groups">👥 “Groups”</button>
   <button class="tab" data-tab="family">🌳 UN family</button>
@@ -186,55 +317,11 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 
 <!-- ========== HUB: how all IO HTML is organized ========== -->
 <section class="section active" id="tab-hub">
-  <div class="trick">
-    <h3>How CA_Notes splits “international” (read this once)</h3>
-    <div class="line">UN घर है → पर्यावरण संधियाँ अलमारी → Bretton Woods/WTO दुकान → SCO/BRICS मेला</div>
-    <div class="decode">Don’t study everything in one file. Each page has one job. Links below.</div>
-  </div>
+  <div class="flowchart-hero">
+    <h2 class="section-title">UN system — family tree</h2>
+    <p class="fc-lead">Top → bottom = Charter hierarchy. <span>Tap an organ for detail.</span> <a href="#organs" class="fc-jump-organs">Six organs tab ↗</a></p>
 
-  <h2 class="section-title">Planned HTML structure (international track)</h2>
-  <div class="hub-grid">
-    <a class="hub live" href="un_system_master.html">
-      <div class="tag">Layer 1 · You are here</div>
-      <h4>🇺🇳 un_system_master.html</h4>
-      <p><b>UN only:</b> Charter, 6 organs, regional groups, G77/G4, funds vs specialized agencies (15), <b>subsidiary bodies</b>, peacekeeping, SG, “not the UN”. No IMF trade math, no SCO members list.</p>
-    </a>
-    <a class="hub live" href="un_environment_architecture.html">
-      <div class="tag">Layer 2 · Live</div>
-      <h4>🌿 un_environment_architecture.html</h4>
-      <p><b>Env lens:</b> 3 layers, summits, COP glossary, <b>Mega table</b> (30+ treaties). Deep COP notes → Environment MCQs.</p>
-    </a>
-    <a class="hub live" href="international_organisations.html">
-      <div class="tag">Layer 3 · Economics &amp; trade</div>
-      <h4>🌍 international_organisations.html</h4>
-      <p><b>IMF, World Bank, WTO, dev banks (ADB/AIIB/NDB), WEF, quick agency HQ mnemonics, watchdogs (IAEA/OPCW).</b> Short UN tabs point here → full UN on master sheet.</p>
-    </a>
-    <a class="hub live" href="international_organisations.html#groups">
-      <div class="tag">Layer 4 · IR clubs (not UN)</div>
-      <h4>🤝 IO page → Groups + Regional IO tabs</h4>
-      <p><b>G20, G7, BRICS, SCO, QUAD, NATO</b> (Groups) · <b>SAARC, AU, EU, GCC, OIC, ASEAN…</b> (Regional IO). Monthly: <code>brics_mcqs_english.html</code>, <code>sco_2026_mcqs_english.html</code>.</p>
-    </a>
-    <a class="hub live" href="upsc_environment_mcqs_english.html">
-      <div class="tag">Layer 5 · Practice</div>
-      <h4>📝 upsc_environment_mcqs_english.html</h4>
-      <p>MCQs on conventions, biodiversity, pollution — tag each answer to Layer 2 treaty when architecture page is live.</p>
-    </a>
-  </div>
-
-  <div class="card">
-    <h3>Decision rule (which page to open?)</h3>
-    <ul>
-      <li>Question mentions <b>veto, UNSC, UNGA, ICJ, Secretary-General, peacekeeping</b> → this file.</li>
-      <li><b>UNEP Nairobi, COP, Paris Agreement, Kyoto, Rio 1992, Stockholm 1972</b> → env architecture (Layer 2).</li>
-      <li><b>Quota, SDR, BOP, IBRD, IDA, dispute settlement, MFN</b> → international_organisations (money/trade).</li>
-      <li><b>India presidency G20, SCO summit host, BRICS expansion</b> → Groups tab or monthly MCQ HTML.</li>
-    </ul>
-  </div>
-
-  <h2 class="section-title">One-page family tree (UN system only)</h2>
-  <p style="font-size:.84rem;color:var(--muted);margin:-4px 0 10px">Top → bottom = legal hierarchy. Hover cards on desktop. <a href="#organs">Open 6 organs tab ↗</a></p>
-
-  <div class="flowchart" role="img" aria-label="UN system family tree flowchart">
+    <div class="flowchart" role="img" aria-label="UN system family tree flowchart">
     <div class="fc-root">
       <strong>🇺🇳 United Nations</strong>
       <span>Charter 1945 · HQ New York · ~193 member states</span>
@@ -245,12 +332,12 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       <div class="fc-tier-label">Principal organs — only these six (Charter)</div>
       <div class="fc-organs-wrap">
       <div class="fc-organs">
-        <div class="fc-node"><span class="ico">🗳️</span><b>UNGA</b>General Assembly</div>
-        <div class="fc-node"><span class="ico">🛡️</span><b>UNSC</b>Security Council · P5 veto</div>
-        <div class="fc-node"><span class="ico">📊</span><b>ECOSOC</b>Economic &amp; Social Council</div>
-        <div class="fc-node muted" title="Oversaw trust territories until independence; last was Palau 1994"><span class="ico">📋</span><b>Trusteeship</b>Inactive organ · Palau 1994 last trust territory</div>
-        <div class="fc-node"><span class="ico">⚖️</span><b>ICJ</b>The Hague · states’ disputes</div>
-        <div class="fc-node"><span class="ico">✍️</span><b>Secretariat</b>SG + international civil service</div>
+        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">🗳️</span><b>UNGA</b>General Assembly</div>
+        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">🛡️</span><b>UNSC</b>Security Council · P5 veto</div>
+        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">📊</span><b>ECOSOC</b>Economic &amp; Social Council</div>
+        <div class="fc-node muted fc-click" data-go="organs" tabindex="0" role="button" title="Oversaw trust territories until independence; last was Palau 1994"><span class="ico">📋</span><b>Trusteeship</b>Inactive · Palau 1994</div>
+        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">⚖️</span><b>ICJ</b>The Hague · states’ disputes</div>
+        <div class="fc-node fc-click" data-go="ops" tabindex="0" role="button"><span class="ico">✍️</span><b>Secretariat</b>SG + civil service</div>
       </div>
       </div>
     </div>
@@ -260,7 +347,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <div class="fc-vline short" aria-hidden="true"></div>
 
     <div class="fc-tier fc-row3">
-      <div class="fc-block">
+      <div class="fc-block fc-click" data-go="funds" tabindex="0" role="button">
         <h5>💼 Funds &amp; programmes</h5>
         Created by <b>UNGA</b> — part of “UN proper”
         <div class="fc-chips">
@@ -269,7 +356,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
           <span class="fc-chip">UNEP</span><span class="fc-chip">UN-Habitat</span><span class="fc-chip dim">…</span>
         </div>
       </div>
-      <div class="fc-block">
+      <div class="fc-block fc-click" data-go="agencies" tabindex="0" role="button">
         <h5>🏛️ 15 specialized agencies</h5>
         Separate treaties · coordinated via <b>ECOSOC</b>
         <div class="fc-chips">
@@ -279,7 +366,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
           <span class="fc-chip dim">+6 → Agencies tab</span>
         </div>
       </div>
-      <div class="fc-block">
+      <div class="fc-block fc-click" data-go="subsidiary" tabindex="0" role="button">
         <h5>🔗 Subsidiary bodies</h5>
         Under GA / SC / ECOSOC — many committees
         <div class="fc-chips">
@@ -292,12 +379,12 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 
     <div class="fc-vline" aria-hidden="true"></div>
     <div class="fc-tier-label warn">Linked — not UN organs</div>
-    <div class="fc-tier" style="max-width:640px">
-      <div class="fc-node ext" style="margin-top:8px;max-width:100%">
+    <div class="fc-ext-row">
+      <div class="fc-node ext">
         <span class="ico">🌿</span>
         <b>MEAs (treaties)</b>
         UNFCCC · CBD · CITES… — <b>COP</b> = Parties’ meeting, not a Charter organ.
-        <a href="un_environment_architecture.html" style="font-size:.76rem;display:inline-block;margin-top:6px">Env architecture page →</a>
+        <a href="un_environment_architecture.html">UN Environment Architecture →</a>
       </div>
       <div class="fc-chips" style="justify-content:center;margin-top:10px">
         <span class="fc-chip">IAEA</span><span class="fc-chip">WTO</span><span class="fc-chip">ICC</span>
@@ -310,26 +397,385 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       <span><i class="dash"></i> Inactive / committee bucket</span>
       <span><i class="gold"></i> Treaty / outside organ</span>
     </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">International track — five layers</h2>
+  <nav class="track-rail" aria-label="Study layers">
+    <div class="track-step current"><small>Layer 1</small><strong>🇺🇳 UN Master</strong></div>
+    <a class="track-step" href="un_environment_architecture.html"><small>Layer 2</small><strong>🌿 Env MEAs</strong></a>
+    <a class="track-step" href="international_organisations.html"><small>Layer 3</small><strong>💰 IMF · WTO</strong></a>
+    <a class="track-step" href="#layer4-index"><small>Layer 4</small><strong>🤝 Clubs · regions</strong></a>
+    <a class="track-step" href="upsc_environment_mcqs_english.html"><small>Layer 5</small><strong>📝 Env MCQs</strong></a>
+  </nav>
+
+  <details class="hub-acc" id="layer4-index">
+    <summary>Layer 4 · IR clubs &amp; regional IO (expand index)</summary>
+    <div class="hub-acc-body hub-layer4" style="border:0;padding:0;margin:0;background:transparent">
+    <p class="hub-note">Forums (G20) ≠ treaty organisations (ASEAN) ≠ military alliances (NATO). Full cards on <a href="international_organisations.html">International Organisations</a>.</p>
+    <div class="layer4-grid">
+      <div class="layer4-col">
+        <h4><a href="international_organisations.html#groups">Groups tab</a></h4>
+        <ul>
+          <li><b>G20</b> — economic forum; rotating presidency; no UN-style secretariat</li>
+          <li><b>G7</b> — advanced economies (+ EU)</li>
+          <li><b>BRICS</b> — NDB, CRA; member list = live CA</li>
+          <li><b>SCO</b> — Beijing; RATS Tashkent; India/Pakistan 2017</li>
+          <li><b>QUAD</b> — India, US, Japan, Australia; not NATO</li>
+          <li><b>NATO</b> — Art. 5; Brussels</li>
+        </ul>
+      </div>
+      <div class="layer4-col">
+        <h4><a href="international_organisations.html#regional">Regional IO — South &amp; West Asia</a></h4>
+        <ul>
+          <li>SAARC · BIMSTEC · IORA · GCC · OIC</li>
+        </ul>
+        <h4 style="margin-top:10px"><a href="international_organisations.html#regional">Asia–Pacific</a></h4>
+        <ul>
+          <li>ASEAN (10) · APEC · Pacific Islands Forum</li>
+        </ul>
+      </div>
+      <div class="layer4-col">
+        <h4><a href="international_organisations.html#regional">Europe &amp; Eurasia</a></h4>
+        <ul>
+          <li>EU · Council of Europe (≠ EU) · CIS · EAEU · CSTO · Arctic Council</li>
+        </ul>
+        <h4 style="margin-top:10px"><a href="international_organisations.html#regional">Africa &amp; Americas</a></h4>
+        <ul>
+          <li>AU · ECOWAS · SADC · OAS · MERCOSUR · CARICOM · Arab League</li>
+        </ul>
+      </div>
+      <div class="layer4-col">
+        <h4>Cross-cutting</h4>
+        <ul>
+          <li>Commonwealth · Francophonie</li>
+        </ul>
+        <h4 style="margin-top:10px">Monthly CA MCQs</h4>
+        <ul class="mcq-links">
+          <li><a href="brics_mcqs_english.html">BRICS MCQs</a></li>
+          <li><a href="sco_2026_mcqs_english.html">SCO 2026 MCQs</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </details>
+
+  <div class="trick" style="margin-top:8px">
+    <h3>Which layer to open?</h3>
+    <div class="line">UN घर है → पर्यावरण संधियाँ अलमारी → Bretton Woods/WTO दुकान → SCO/BRICS मेला</div>
+    <div class="decode">
+      <b>UNGA/veto/peacekeeping</b> → this sheet ·
+      <b>COP/UNEP/Rio</b> → Layer 2 ·
+      <b>IMF/WTO/SDR</b> → Layer 3 ·
+      <b>G20/SCO/SAARC</b> → Layer 4 ·
+      <b>Practice</b> → Env MCQs
+    </div>
+  </div>
+
+  <div class="afc-wrap" aria-label="Which study layer decision tree">
+    <div class="afc-legend"><span>Type 5 · Decision</span> open which layer?</div>
+    <div class="afc-branch">
+      <div class="afc-decision">Keyword in<br>question?</div>
+    </div>
+    <div class="afc-branch" style="margin-top:8px">
+      <div class="afc-branch-col"><div class="afc-step"><b>L1</b>UNGA · veto · ICJ</div></div>
+      <div class="afc-branch-col"><div class="afc-step"><b>L2</b>COP · UNEP · Rio</div></div>
+      <div class="afc-branch-col"><div class="afc-step"><b>L3</b>IMF · WTO</div></div>
+      <div class="afc-branch-col"><div class="afc-step"><b>L4</b>G20 · SCO</div></div>
+    </div>
   </div>
 </section>
 
-<!-- ========== WHY ========== -->
-<section class="section" id="tab-why">
+<!-- ========== BIRTH & CHARTER ========== -->
+<section class="section" id="tab-birth">
   <div class="trick">
-    <h3>Why "UN" at all?</h3>
-    <div class="line">1945 = युद्ध के बाद — शांति, सहयोग, कानून; League of Nations की जगह मजबूत संस्था</div>
-    <div class="decode">League of Nations (1919) failed to stop WWII. San Francisco Conference adopted the <b>UN Charter</b>. USSR &amp; USA both founding members. India = founding member.</div>
+    <h3>From war to Charter — the full birth story</h3>
+    <div class="line">लीग फेल → डम्बारटन ओक्स खाका → सैन फ्रांसिस्को में संविधान → 24 अक्टूबर 1945 से UN “जीवित”</div>
+    <div class="decode">Sources: <a href="https://www.un.org/en/about-us/history-of-the-un" rel="noopener">UN history</a>, <a href="https://www.un.org/en/about-us/history-of-the-un/san-francisco-conference" rel="noopener">San Francisco Conference</a>, <a href="https://www.un.org/en/about-us/un-charter/full-text" rel="noopener">Charter full text</a>.</div>
   </div>
+
+  <h2 class="section-title">Timeline — how the UN was made</h2>
+  <div class="timeline">
+    <div class="timeline-item"><span class="yr">Aug 1941</span> <b>Atlantic Charter</b> (US &amp; UK) — ideas of collective security &amp; cooperation after WWII.</div>
+    <div class="timeline-item"><span class="yr">1 Jan 1942</span> <b>Declaration by United Nations</b> — 26 states at war with Axis pledge to fight together; name “United Nations” enters diplomacy.</div>
+    <div class="timeline-item"><span class="yr">1943</span> <b>Moscow Declaration</b> &amp; <b>Tehran</b> — Allies commit to a general international organization.</div>
+    <div class="timeline-item"><span class="yr">Aug–Oct 1944</span> <b>Dumbarton Oaks</b> (Washington) — US, UK, USSR, China draft <b>Proposals for a General International Organization</b> (working text for San Francisco).</div>
+    <div class="timeline-item"><span class="yr">Feb 1945</span> <b>Yalta</b> — agreement on calling the San Francisco conference &amp; formula for <b>Security Council voting</b> (P5 + non-permanent members).</div>
+    <div class="timeline-item"><span class="yr">25 Apr – 26 Jun 1945</span> <b>UN Conference on International Organization</b>, San Francisco — 50 delegations; adopt &amp; sign <b>UN Charter</b> + <b>ICJ Statute</b> (26 June).</div>
+    <div class="timeline-item"><span class="yr">15 Oct 1945</span> <b>Poland</b> signs (no govt at conference date) → <b>51 founding members</b>.</div>
+    <div class="timeline-item"><span class="yr">24 Oct 1945</span> Charter <b>enters into force</b> after ratification by P5 + majority of signatories → <b>UN Day</b>.</div>
+  </div>
+
+  <div class="afc-wrap" aria-label="UN founding process">
+    <div class="afc-legend"><span>Type 2 · Workflow</span> milestones to living organization</div>
+    <div class="afc-pipeline">
+      <div class="afc-start">1942<br>Declaration</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>1944</b>Dumbarton Oaks draft</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>1945</b>San Francisco sign</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>Ratify</b>P5 + majority</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-end">UN Day<br>24 Oct</div>
+    </div>
+  </div>
+
   <div class="card">
-    <h3>Charter anchors (static)</h3>
+    <h3>Who wrote the Charter?</h3>
     <ul>
-      <li><b>Purposes (Art. 1):</b> maintain peace &amp; security; friendly relations; international cooperation; harmonize actions.</li>
-      <li><b>Principles (Art. 2):</b> sovereign equality; fulfil obligations in good faith; peaceful settlement; no threat of force; assist UN; <b>non-intervention</b> in domestic jurisdiction (with SC exception).</li>
-      <li><b>Commenced:</b> 24 October 1945 → <b>UN Day</b>.</li>
-      <li><b>HQ:</b> New York (land = international territory style arrangement).</li>
+      <li><b>Four sponsors</b> at San Francisco: China, Soviet Union, United Kingdom, United States.</li>
+      <li>Delegates worked from Dumbarton Oaks proposals, Yalta understandings, and <b>hundreds of amendments</b> proposed by governments.</li>
+      <li>Charter has a <b>Preamble</b> + <b>111 Articles</b> in <b>19 Chapters</b> + <b>ICJ Statute</b> annexed.</li>
+      <li><b>India</b> participated as a founding member (Indian delegation under British India at the conference — high-yield static + polity link).</li>
     </ul>
   </div>
-  <div class="warn"><b>Common mistake:</b> Treating every global meeting as "the UN". A <b>COP</b> is a meeting of <b>parties to a treaty</b> (e.g. UNFCCC). UNEP is a <b>UN programme</b>. WHO is a <b>specialized agency</b>. All are in the "UN system" loosely, but legally different.</div>
+
+  <h2 class="section-title">Charter — purposes, principles, membership</h2>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Article</th><th>What it says (exam core)</th></tr></thead>
+      <tbody>
+        <tr><td><b>Art. 1</b></td><td>Purposes: peace &amp; security; friendly relations; cooperation; harmonize state action.</td></tr>
+        <tr><td><b>Art. 2</b></td><td>Principles: sovereign equality; good faith; peaceful settlement; no threat of force; assist UN; <b>non-intervention</b> in domestic jurisdiction (SC enforcement exception).</td></tr>
+        <tr><td><b>Art. 3</b></td><td>Original members = states at San Francisco + signatories of 1942 Declaration (as specified).</td></tr>
+        <tr><td><b>Art. 4</b></td><td>New members: peace-loving states accepting obligations → <b>SC recommendation</b> + <b>GA decision</b> (see How it runs tab).</td></tr>
+        <tr><td><b>Art. 5–6</b></td><td>Suspension / expulsion of members (rare; SC central).</td></tr>
+        <tr><td><b>Art. 108–109</b></td><td>Charter amendment: 2/3 GA + ratification including all P5.</td></tr>
+        <tr><td><b>Art. 111</b></td><td>Official languages: <b>Arabic, Chinese, English, French, Russian, Spanish</b>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>League of Nations → UN (why the redesign?)</h3>
+    <p>League (1919) lacked universal membership, had weak enforcement, and the US never joined. WWII proved the need for a stronger body with a <b>Security Council</b> able to act on threats, a <b>General Assembly</b> for universal voice, and a permanent <b>Secretariat</b>. The UN is not a world government — it is a <b>member-state organization</b> bound by the Charter.</p>
+  </div>
+
+  <div class="warn"><b>Recognition vs membership:</b> The UN does <em>not</em> “recognize” new states like a government does. It admits members or accepts credentials of representatives. (<a href="https://www.un.org/en/about-us/about-un-membership" rel="noopener">UN membership FAQ</a>)</div>
+</section>
+
+<!-- ========== HOW IT RUNS ========== -->
+<section class="section" id="tab-how">
+  <div class="trick">
+    <h3>Elections, votes, money — how the machine works</h3>
+    <div class="line">सदस्यता = SC सिफारिश + GA दो-तिहाई · SG = SC नाम + GA नियुक्ति · UNSC गैर-स्थायी = हर साल GA चुनाव</div>
+    <div class="decode">Charter + GA Rules of Procedure. Not every post is “elected by all countries equally” — regional groups matter.</div>
+  </div>
+
+  <h2 class="section-title">1. Admitting a new member state</h2>
+  <ol class="proc-steps">
+    <li>State sends <b>application to the Secretary-General</b> with formal acceptance of Charter obligations (GA Rule 134).</li>
+    <li>SG circulates application to GA members / SC.</li>
+    <li><b>Security Council</b> considers whether the state is peace-loving and able/willing to meet obligations; usually via a committee of the whole (35+ days before GA session per SC rules).</li>
+    <li>SC recommendation needs <b>9 affirmative votes</b> among 15 members; <b>no P5 veto against</b> the applicant.</li>
+    <li><b>General Assembly</b> decides by <b>two-thirds majority</b> of members present and voting (Rule 136).</li>
+    <li>Membership effective the date GA adopts the admission resolution.</li>
+  </ol>
+  <p class="source-note">Art. 4 · <a href="https://www.un.org/en/about-us/about-un-membership" rel="noopener">About UN membership</a></p>
+
+  <div class="afc-wrap afc-type-process" aria-label="New member admission process flow">
+    <div class="afc-legend"><span>Type 1 · Process flow</span> start → steps → end</div>
+    <div class="afc-pipeline">
+      <div class="afc-start">State applies<br>to SG</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>SC committee</b>Reviews peace-loving capacity</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>SC vote</b>9 yes · no P5 veto</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>GA vote</b>2/3 present &amp; voting</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-end">Member<br>effective</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">2. Secretary-General — selection &amp; role</h2>
+  <div class="card">
+    <ul>
+      <li><b>Art. 97:</b> Appointed by <b>GA on recommendation of SC</b>; chief administrative officer.</li>
+      <li><b>Process:</b> Member states may nominate candidates → SC private meetings &amp; straw polls (modern practice) → SC resolution recommending one name → GA private meeting, <b>secret ballot</b> (since 1946, res. 11(I)).</li>
+      <li><b>Term:</b> Five years, renewable (custom). <b>Regional rotation</b> is strong informal norm (e.g. Western Europe, Africa, Asia-Pacific, Latin America).</li>
+      <li><b>Art. 99:</b> May bring to SC attention any matter threatening international peace.</li>
+      <li><b>Art. 100:</b> Staff independent — no instructions from any government.</li>
+      <li>GA resolutions <b>73/341</b>, <b>79/327</b> — more transparency in selection; next appointment cycle follows joint PGA–SC letters (e.g. 2026 process).</li>
+      <li>Current SG: <b>António Guterres</b> (Portugal); appointed 2016, re-appointed 2021.</li>
+    </ul>
+  </div>
+  <p class="source-note"><a href="https://www.un.org/sg/en/content/appointment-secretary-general" rel="noopener">UN — Appointment of SG</a></p>
+
+  <div class="afc-wrap" aria-label="SG appointment swimlane">
+    <div class="afc-legend"><span>Type 4 · Swimlane</span> who acts at each step</div>
+    <div class="afc-swim">
+      <div class="afc-swim-hdr"><div>Member states</div><div>Security Council</div><div>General Assembly</div></div>
+      <div class="afc-swim-row">
+        <div class="afc-swim-cell">Nominate candidates · lobby · regional rotation politics</div>
+        <div class="afc-swim-cell accent">Private meetings · straw polls · <b>recommend one name</b> (Art. 97)</div>
+        <div class="afc-swim-cell">Private session · <b>secret ballot</b> appoints SG</div>
+      </div>
+      <div class="afc-swim-row">
+        <div class="afc-swim-cell">Transparency hearings (modern GA practice)</div>
+        <div class="afc-swim-cell">SC resolution transmits recommendation</div>
+        <div class="afc-swim-cell accent">Oath of office · 5-year term</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">3. President of the General Assembly (PGA)</h2>
+  <div class="card">
+    <ul>
+      <li>Elected for <b>one session</b> (about a year, Sept–Sept rhythm) in <b>personal capacity</b>, represents whole membership.</li>
+      <li>Elected at least <b>three months before</b> session opens (often mid-June) — GA Rule 30.</li>
+      <li><b>Rotates among five regional groups</b> (equitable geographical rotation — GA res. 33/138 pattern).</li>
+      <li>Regional group usually agrees on <b>one candidate</b> (“clean slate”) → election by acclamation or simple majority.</li>
+      <li>Also elects <b>21 Vice-Presidents</b> and coordinates with chairs of six Main Committees.</li>
+      <li><b>Convention:</b> Permanent SC members do not field candidates for PGA.</li>
+      <li>Example (CA): PGA for 81st session (2026–27) from Asia-Pacific — elected June 2026.</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">4. Security Council — non-permanent members</h2>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Rule</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Size</td><td><b>15</b> total = 5 permanent + <b>10</b> non-permanent (since 1965, GA res. 1991 A (XVIII)).</td></tr>
+        <tr><td>Term</td><td><b>2 years</b>; not immediately eligible for re-election to next term.</td></tr>
+        <tr><td>Election</td><td><b>GA</b> elects <b>5 each year</b> at regular session (Rule 142).</td></tr>
+        <tr><td>Regional seats (10)</td><td><b>3</b> Africa · <b>2</b> Asia-Pacific · <b>2</b> Latin America &amp; Caribbean · <b>2</b> WEOG · <b>1</b> Eastern Europe.</td></tr>
+        <tr><td>Voting in SC</td><td><b>9 yes</b> needed; on substantive matters P5 <b>concurring votes</b> required (veto). Abstention by P5 ≠ veto.</td></tr>
+        <tr><td>ICJ election in SC</td><td><b>No veto</b> — 8/15 absolute majority; same for other SC elections.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">5. ICJ judges — parallel election</h2>
+  <div class="card">
+    <ul>
+      <li><b>15 judges</b>, <b>9-year</b> terms; <b>one-third</b> elected every <b>3 years</b> (triennial election, autumn NY).</li>
+      <li><b>GA and SC vote separately but simultaneously</b> — must win <b>absolute majority in both</b> (e.g. 97/193 in GA, 8/15 in SC).</li>
+      <li>Nomination route includes national groups in <b>Permanent Court of Arbitration</b> lists.</li>
+      <li>No two judges of same nationality; informal regional balance.</li>
+      <li>Court elects its <b>President &amp; Vice-President</b> for 3 years; seat: <b>Peace Palace, The Hague</b>.</li>
+      <li>India: <b>Dalveer Bhandari</b> re-elected 2017 after GA–SC deadlock with UK candidate (classic IR case study).</li>
+    </ul>
+  </div>
+
+  <div class="afc-wrap" aria-label="ICJ election data flow">
+    <div class="afc-legend"><span>Type 3 · Data flow</span> parallel ballots</div>
+    <div class="afc-data">
+      <div class="afc-bubble"><h5>PCA national groups</h5>Nominee lists</div>
+      <div class="afc-bubble"><h5>GA ballot</h5>Absolute majority (e.g. 97/193)</div>
+      <div class="afc-bubble"><h5>SC ballot</h5>8/15 · <b>no veto</b></div>
+      <div class="afc-bubble" style="grid-column:1/-1;max-width:360px;margin:0 auto"><h5>Same person wins both</h5>→ 9-year term from 6 Feb</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">6. ECOSOC &amp; Human Rights Council</h2>
+  <div class="card">
+    <ul>
+      <li><b>ECOSOC:</b> <b>54 members</b>, elected by GA for <b>3-year</b> terms; regional distribution; coordinates agencies &amp; commissions.</li>
+      <li><b>HRC:</b> <b>47 members</b>, elected by <b>absolute majority of GA</b> (secret ballot); regional groups; <b>3-year</b> terms (not immediately re-eligible); meets Geneva; <b>Universal Periodic Review</b>.</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">7. How the General Assembly votes</h2>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Type</th><th>Majority</th><th>Examples</th></tr></thead>
+      <tbody>
+        <tr><td>Important questions (Art. 18)</td><td><b>Two-thirds</b> present &amp; voting</td><td>Peace/security, membership, budget, trusteeship, serious Charter questions</td></tr>
+        <tr><td>Other matters</td><td><b>Simple majority</b></td><td>Most resolutions</td></tr>
+        <tr><td>Admission of members</td><td><b>Two-thirds</b></td><td>After SC recommendation</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="afc-wrap" aria-label="GA voting decision tree">
+    <div class="afc-legend"><span>Type 5 · Decision tree</span> which majority?</div>
+    <div class="afc-branch">
+      <div class="afc-decision">GA vote<br>on what?</div>
+    </div>
+    <div class="afc-branch" style="margin-top:10px">
+      <div class="afc-branch-col">
+        <span class="afc-branch-label">Yes → Art. 18 important</span>
+        <div class="afc-arrow-v" aria-hidden="true"></div>
+        <div class="afc-step"><b>Two-thirds</b>Membership · budget · peace/security questions</div>
+      </div>
+      <div class="afc-branch-col">
+        <span class="afc-branch-label">No → ordinary</span>
+        <div class="afc-arrow-v" aria-hidden="true"></div>
+        <div class="afc-step"><b>Simple majority</b>Most resolutions</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">8. Budget &amp; assessments</h2>
+  <div class="card">
+    <ul>
+      <li><b>Regular budget</b> approved by GA (Fifth Committee prepares; Committee on Contributions sets scales).</li>
+      <li><b>Peacekeeping</b> — separate scale; SC authorizes missions; GA approves resources.</li>
+      <li>Assessed contributions based on capacity to pay; <b>P5</b> pay largest shares on regular budget (with ceilings/discounts — know concept).</li>
+      <li>Art. 17: expenses borne by members as apportioned by GA.</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">9. How a GA session runs (sketch)</h2>
+  <div class="card">
+    <ul>
+      <li><b>Main session</b> opens annually (September); <b>General Debate</b> — heads of state/government speak.</li>
+      <li>Work split into <b>six Main Committees</b> + plenary; PGA chairs plenary; bureau of VPs.</li>
+      <li><b>Special sessions</b> or <b>emergency special sessions</b> (Uniting for Peace procedure — GA action when SC deadlocked) — know for IR.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== WHERE ========== -->
+<section class="section" id="tab-where">
+  <div class="trick">
+    <h3>Where the UN lives — offices you must map</h3>
+    <div class="line">न्यूयॉर्क = दिल · जिनेवा = मानवाधिकार/स्वास्थ्य · नैरोबी = UNEP · हेग = ICJ</div>
+  </div>
+
+  <h2 class="section-title">Main UN offices (“duty stations”)</h2>
+  <div class="compare">
+    <table>
+      <thead><tr><th>City</th><th>UN presence</th><th>What to remember</th></tr></thead>
+      <tbody>
+        <tr><td><b>New York</b></td><td><b>UN Headquarters</b> — GA, SC, Secretariat</td><td>Host: USA; HQ Agreement 1947; “international” character of HQ area.</td></tr>
+        <tr><td><b>Geneva</b></td><td>UN Office at Geneva (UNOG)</td><td>HRC, UNHCR, WHO, WIPO, WMO, ILO, UNCTAD; many conferences.</td></tr>
+        <tr><td><b>Vienna</b></td><td>UN Office at Vienna (UNOV)</td><td>IAEA, UNODC, OOSA; “UN City”.</td></tr>
+        <tr><td><b>Nairobi</b></td><td>UNON — only major HQ in Global South</td><td><b>UNEP</b>, <b>UN-Habitat</b> (prelims favourite).</td></tr>
+        <tr><td><b>The Hague</b></td><td>Not a “UN HQ” but judicial hub</td><td><b>ICJ</b> Peace Palace; ICC (not UN); OPCW.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">Specialized agencies &amp; programmes — usual seats</h2>
+  <div class="compare">
+    <table>
+      <thead><tr><th>HQ</th><th>Entities (sample)</th></tr></thead>
+      <tbody>
+        <tr><td><b>Rome</b></td><td>FAO, WFP, IFAD</td></tr>
+        <tr><td><b>Paris</b></td><td>UNESCO, OECD (not UN)</td></tr>
+        <tr><td><b>London</b></td><td>IMO, Commonwealth Secretariat (not UN)</td></tr>
+        <tr><td><b>Washington DC</b></td><td>IMF, World Bank, OAS HQ</td></tr>
+        <tr><td><b>Montreal</b></td><td>ICAO</td></tr>
+        <tr><td><b>Madrid</b></td><td>UN Tourism (UNWTO)</td></tr>
+        <tr><td><b>Bern</b></td><td>UPU</td></tr>
+        <tr><td><b>Addis Ababa</b></td><td>AU HQ; UNECA (regional commission)</td></tr>
+        <tr><td><b>Bangkok</b></td><td>ESCAP</td></tr>
+        <tr><td><b>Santiago</b></td><td>ECLAC</td></tr>
+        <tr><td><b>Beirut</b></td><td>ESCWA</td></tr>
+        <tr><td><b>Bonn</b></td><td>UNFCCC secretariat (treaty body, not UN HQ)</td></tr>
+        <tr><td><b>Copenhagen</b></td><td>UN City — UNDP Nordic hub</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Regional commissions (under ECOSOC)</h3>
+    <p><b>UNECE</b> (Geneva) · <b>ESCAP</b> (Bangkok) · <b>ECA</b> (Addis Ababa) · <b>ECLAC</b> (Santiago) · <b>ESCWA</b> (Beirut) — five regional economic commissions under ECOSOC.</p>
+  </div>
 </section>
 
 <!-- ========== SIX ORGANS ========== -->
@@ -341,21 +787,24 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   <div class="org-grid">
     <article class="org">
       <h4>1. General Assembly (UNGA)</h4>
-      <div class="sub">All member states · one country, one vote</div>
+      <div class="sub">Charter Ch. IV · All member states · one country, one vote</div>
       <ul>
-        <li>Deliberative, policy-making, representative body.</li>
-        <li>Discusses any matter within Charter scope; <b>recommends</b> (binding mainly on budget, scales of assessment, some elections).</li>
-        <li>Elects non-permanent UNSC members, ECOSOC members, judges (with SC), approves <b>UN budget</b>.</li>
+        <li>Deliberative, policy-making, representative body — <b>193 members</b> today.</li>
+        <li>Discusses any matter within Charter scope (Art. 10); <b>recommends</b> on most issues; binding on budget, assessment scales, internal GA decisions, elections it conducts.</li>
+        <li>Elects non-permanent UNSC members, ECOSOC, ICJ judges (with SC), approves <b>UN budget</b>; admits members on SC recommendation.</li>
+        <li><b>Art. 18:</b> important questions need 2/3 majority; others simple majority.</li>
+        <li>Annual session Sept–Dec (+ resumed); PGA elected from regional rotation.</li>
       </ul>
     </article>
     <article class="org">
       <h4>2. Security Council (UNSC)</h4>
-      <div class="sub">Primary responsibility: international peace &amp; security</div>
+      <div class="sub">Charter Ch. V · Primary responsibility: peace &amp; security (Art. 24)</div>
       <ul>
-        <li><b>5 permanent</b> (P5): USA, UK, France, Russia, China — <b>veto</b> on substantive resolutions.</li>
-        <li><b>10 non-permanent</b> — 2-year terms; regional rotation.</li>
-        <li>Can authorize sanctions, peacekeeping, use of force (Chapter VII).</li>
-        <li><b>India:</b> largest troop contributor historically; demands permanent seat (G4 narrative).</li>
+        <li><b>15 members:</b> P5 + 10 elected by GA for 2 years (regional seats).</li>
+        <li><b>P5:</b> USA, UK, France, Russia, China — <b>veto</b> on substantive resolutions (not procedural).</li>
+        <li><b>Ch. VI:</b> call parties, recommend settlement; <b>Ch. VII:</b> sanctions &amp; force.</li>
+        <li>Establishes PKO mandates; sanctions committees; monthly rotating presidency.</li>
+        <li><b>India:</b> 8th term as non-permanent member (2021–22 recent); permanent seat demand via G4.</li>
       </ul>
     </article>
     <article class="org">
@@ -559,27 +1008,75 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 
 <!-- ========== OPS ========== -->
 <section class="section" id="tab-ops">
+  <div class="trick">
+    <h3>Peace, force &amp; the Secretariat in action</h3>
+    <div class="line">शांति अभियान = SC आदेश · सैनिक देश देते हैं · SG प्रशासन चलाता है</div>
+    <div class="decode">Elections &amp; budget detail → <a href="#how" class="fc-jump-how">How it runs</a> tab.</div>
+  </div>
   <div class="card">
-    <h3>Peacekeeping</h3>
+    <h3>Peacekeeping — how a mission is born</h3>
+    <ol class="proc-steps">
+      <li><b>UNSC resolution</b> defines mandate (observe, protect civilians, support peace agreements, etc.).</li>
+      <li><b>Member states volunteer</b> military, police, experts — UN has <b>no standing army</b>.</li>
+      <li><b>Department of Peace Operations</b> (field missions) &amp; political missions under Secretariat management.</li>
+      <li>Financed by <b>peacekeeping budget</b> (GA-approved; separate assessment scale from regular budget).</li>
+      <li>Mission ends when SC ends mandate or situation stabilizes.</li>
+    </ol>
+    <div class="afc-wrap" aria-label="Peacekeeping workflow">
+      <div class="afc-legend"><span>Type 2 · Workflow</span> mandate to mission</div>
+      <div class="afc-workflow">
+        <div class="afc-step"><b>UNSC</b>Threat to peace · resolution</div>
+        <div class="afc-arrow-v" aria-hidden="true"></div>
+        <div class="afc-step"><b>GA / SC</b>Budget &amp; mandate design</div>
+        <div class="afc-arrow-v" aria-hidden="true"></div>
+        <div class="afc-step"><b>States</b>Contribute troops · police · experts</div>
+        <div class="afc-arrow-v" aria-hidden="true"></div>
+        <div class="afc-step"><b>DPO</b>Deploy · blue helmets</div>
+        <div class="afc-arrow-v" aria-hidden="true"></div>
+        <div class="afc-end">Mandate ends</div>
+      </div>
+    </div>
+    <p style="font-size:.84rem;margin-top:8px"><b>Three principles</b> (classic doctrine): consent of parties; impartiality; minimum use of force except in self-defence and defence of the mandate.</p>
+    <p style="font-size:.84rem"><b>India:</b> among the largest troop &amp; police contributors for decades — pairs with UNSC reform debates.</p>
+  </div>
+  <div class="card">
+    <h3>When peace fails — Chapter VII toolkit</h3>
     <ul>
-      <li>Authorized by <b>UNSC</b>; troops/police contributed by member states — <b>no standing UN army</b>.</li>
-      <li>Blue helmets; principles: consent of parties, impartiality, minimum use of force except self-defence / mandate.</li>
-      <li><b>India:</b> among largest contributors — favourite CA/static pairing with UNSC reform.</li>
+      <li><b>Art. 41:</b> measures not involving armed force (sanctions, embargoes, breaking relations).</li>
+      <li><b>Art. 42:</b> armed action by member states or UN as SC decides.</li>
+      <li><b>Sanctions committees</b> under SC monitor compliance (country-specific lists — track CA).</li>
+      <li><b>Uniting for Peace (1950):</b> if SC deadlocked, GA can recommend collective action on peace &amp; security (emergency special sessions).</li>
+    </ul>
+  </div>
+  <div class="afc-wrap" aria-label="Chapter VI vs VII">
+    <div class="afc-legend"><span>Type 5 · Decision</span> peaceful or enforcement?</div>
+    <div class="afc-branch">
+      <div class="afc-decision">Dispute<br>escalates?</div>
+    </div>
+    <div class="afc-branch" style="margin-top:8px">
+      <div class="afc-branch-col">
+        <span class="afc-branch-label">Ch. VI</span>
+        <div class="afc-step"><b>Mediate · ICJ</b>Consent · good offices</div>
+      </div>
+      <div class="afc-branch-col">
+        <span class="afc-branch-label">Ch. VII</span>
+        <div class="afc-step"><b>Sanctions · force</b>SC binding action</div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Trusteeship Council — what it did</h3>
+    <ul>
+      <li>Supervised <b>trust territories</b> (former mandates/colonies) until self-government or independence.</li>
+      <li>Last territory: <b>Palau (1994)</b>; Council suspended operations but remains a <b>sixth principal organ</b> in the Charter.</li>
     </ul>
   </div>
   <div class="card">
-    <h3>Budget &amp; assessment</h3>
+    <h3>Secretariat — day-to-day UN</h3>
     <ul>
-      <li><b>Regular budget</b> — assessed contributions; Fifth Committee (GA) deals with budget.</li>
-      <li><b>Peacekeeping</b> — separate assessment scale.</li>
-      <li>P5 pay larger share on regular budget (with discounts/ceilings — know concept, not every %).</li>
-    </ul>
-  </div>
-  <div class="card">
-    <h3>Secretary-General (quick)</h3>
-    <ul>
-      <li>5-year term, renewable; practice of regional rotation.</li>
-      <li>Art. 99: may bring to SC attention any matter threatening peace.</li>
+      <li>International civil service under SG; prepares studies, runs field offices, implements GA/SC decisions.</li>
+      <li><b>Art. 100:</b> staff must not seek/receive instructions from any government.</li>
+      <li>SG selection, oath, five-year term → see <a href="#how">How it runs</a>.</li>
     </ul>
   </div>
 </section>
@@ -715,17 +1212,57 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <div class="exp"><b>b)</b> See Agencies tab table.</div>
   </div>
   <div class="mcq">
-    <div class="q">8. Peacekeeping forces are authorized by:</div>
+    <div class="q">8. UN Charter entered into force on:</div>
+    <div class="opt" onclick="pick(this,false)">a) 26 June 1945</div>
+    <div class="opt" onclick="pick(this,true)">b) 24 October 1945</div>
+    <div class="opt" onclick="pick(this,false)">c) 1 January 1942</div>
+    <div class="opt" onclick="pick(this,false)">d) 15 October 1945</div>
+    <div class="exp"><b>b)</b> UN Day. Charter signed 26 June; Poland signed 15 Oct.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">9. Secretary-General is appointed under:</div>
+    <div class="opt" onclick="pick(this,false)">a) GA alone</div>
+    <div class="opt" onclick="pick(this,true)">b) GA on recommendation of Security Council</div>
+    <div class="opt" onclick="pick(this,false)">c) ICJ nomination</div>
+    <div class="opt" onclick="pick(this,false)">d) ECOSOC vote</div>
+    <div class="exp"><b>b)</b> Art. 97.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">10. Peacekeeping forces are authorized by:</div>
     <div class="opt" onclick="pick(this,false)">a) UNGA alone always</div>
     <div class="opt" onclick="pick(this,true)">b) UNSC (primary)</div>
     <div class="opt" onclick="pick(this,false)">c) ICJ</div>
     <div class="opt" onclick="pick(this,false)">d) WHO</div>
     <div class="exp"><b>b)</b> SC mandates; GA role in some financing/policy debates.</div>
   </div>
+  <div class="mcq">
+    <div class="q">11. How many official UN languages under the Charter?</div>
+    <div class="opt" onclick="pick(this,false)">a) 4</div>
+    <div class="opt" onclick="pick(this,true)">b) 6</div>
+    <div class="opt" onclick="pick(this,false)">c) 5</div>
+    <div class="opt" onclick="pick(this,false)">d) 2</div>
+    <div class="exp"><b>b)</b> Art. 111 — Arabic, Chinese, English, French, Russian, Spanish.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">12. New UN membership requires GA vote of:</div>
+    <div class="opt" onclick="pick(this,false)">a) Simple majority</div>
+    <div class="opt" onclick="pick(this,true)">b) Two-thirds of members present and voting</div>
+    <div class="opt" onclick="pick(this,false)">c) Unanimity</div>
+    <div class="opt" onclick="pick(this,false)">d) SC only</div>
+    <div class="exp"><b>b)</b> After SC recommendation (Art. 4, GA Rule 136).</div>
+  </div>
+  <div class="mcq">
+    <div class="q">13. ICJ judges serve for:</div>
+    <div class="opt" onclick="pick(this,false)">a) 5 years</div>
+    <div class="opt" onclick="pick(this,true)">b) 9 years</div>
+    <div class="opt" onclick="pick(this,false)">c) Life</div>
+    <div class="opt" onclick="pick(this,false)">d) 6 years</div>
+    <div class="exp"><b>b)</b> One-third elected every 3 years.</div>
+  </div>
 </section>
 
 </main>
-<footer>CA Notes · UN System Master · Read Hub tab for full international HTML map</footer>
+<footer>CA Notes · UN System Master · Hub = map · Birth / How / Where = complete UN mechanics</footer>
 
 <script>
 (function(){
@@ -738,8 +1275,25 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     window.scrollTo({top:0,behavior:'smooth'});
   }
   tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
+  document.querySelectorAll('.fc-click[data-go]').forEach(el=>{
+    const go=()=>show(el.dataset.go);
+    el.addEventListener('click',go);
+    el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+  });
+  document.querySelectorAll('a.fc-jump-organs,[href="#organs"]').forEach(a=>{
+    a.addEventListener('click',e=>{e.preventDefault();show('organs');});
+  });
+  document.querySelectorAll('a.fc-jump-how,[href="#how"]').forEach(a=>{
+    a.addEventListener('click',e=>{if(a.getAttribute('href')==='#how'){e.preventDefault();show('how');}});
+  });
   const hash=(location.hash||'').replace('#','');
-  if(hash && document.getElementById('tab-'+hash)) show(hash);
+  if(hash==='layer4-index'){
+    tabs.forEach(t=>t.classList.toggle('active', t.dataset.tab==='hub'));
+    sections.forEach(s=>s.classList.toggle('active', s.id==='tab-hub'));
+    const det=document.getElementById('layer4-index');
+    if(det && det.open !== undefined) det.open=true;
+    requestAnimationFrame(()=>det?.scrollIntoView({behavior:'smooth',block:'start'}));
+  }else if(hash && document.getElementById('tab-'+hash)) show(hash);
 })();
 function pick(el,ok){
   const box=el.closest('.mcq');

@@ -202,6 +202,17 @@
   .home-acc-body.grid-2, .home-acc-body.stack { padding-top: 14px; }
 
   .home-sub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .home-sub.span-full { grid-column: 1 / -1; border-left-color: var(--forest); background: linear-gradient(180deg, #f7fbf8, #fff); }
+  .io-layer-table {
+    width: 100%; border-collapse: collapse; font-size: .78rem; margin-top: 10px;
+  }
+  .io-layer-table th, .io-layer-table td {
+    padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top;
+  }
+  .io-layer-table th { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  .io-layer-table a { font-weight: 600; color: var(--forest); text-decoration: none; }
+  .io-layer-table a:hover { text-decoration: underline; }
+  .io-layer-table td small { display: block; color: var(--muted); font-weight: 500; margin-top: 2px; }
   .home-sub {
     appearance: none; text-align: left; border: 1px solid var(--line); border-left: 4px solid var(--teal);
     cursor: pointer; text-decoration: none;
@@ -544,15 +555,22 @@
       <summary>
         <span class="acc-icon">🧭</span>
         <span class="acc-title"><strong>UPSC — Static + Current Bridges</strong><span>Prelims/Mains static modules</span></span>
-        <span class="acc-count">4 live · 2 soon</span>
+        <span class="acc-count">5-layer IO index + modules</span>
       </summary>
       <div class="home-acc-body">
-        <div class="home-sub-grid">
-          <a class="home-sub" href="un_system_master.html">UN System Master <small>Organs · 15 agencies · groups</small></a>
-          <a class="home-sub" href="un_environment_architecture.html">UN Environment Architecture <small>Stockholm · Rio · MEAs · COP</small></a>
-          <a class="home-sub" href="upsc_environment_mcqs_english.html">Environment MCQs <small>Deep notes · practice</small></a>
-          <a class="home-sub" href="international_organisations.html">International Organisations <small>IMF · WB · WTO · Groups</small></a>
-          <button class="home-sub" type="button" disabled>Polity <small>Bridges</small> <span class="soon">Soon</span></button>
+        <a class="home-sub span-full" href="un_system_master.html#hub">🗺️ International organisations — 5-layer index <small>Start here: UN → env → Bretton/WTO → clubs &amp; regional IO → MCQs</small></a>
+        <table class="io-layer-table" aria-label="International track layers">
+          <thead><tr><th>Layer</th><th>Page</th><th>Open</th></tr></thead>
+          <tbody>
+            <tr><td>L1</td><td>UN Charter system<small>Birth · elections · offices · organs · PKO</small></td><td><a href="un_system_master.html#birth">UN master</a></td></tr>
+            <tr><td>L2</td><td>Environment architecture<small>Summits · UNEP · COP · mega treaty table</small></td><td><a href="un_environment_architecture.html">Env map</a></td></tr>
+            <tr><td>L3</td><td>Bretton Woods &amp; trade<small>IMF · WB · WTO · dev banks</small></td><td><a href="international_organisations.html">IO sheet</a></td></tr>
+            <tr><td>L4</td><td>IR clubs &amp; regional IO<small>G20/BRICS/SCO · SAARC/AU/EU…</small></td><td><a href="un_system_master.html#layer4-index">Layer 4 index</a> · <a href="international_organisations.html#groups">Groups</a> · <a href="international_organisations.html#regional">Regional</a></td></tr>
+            <tr><td>L5</td><td>Practice<small>Env conventions MCQs</small></td><td><a href="upsc_environment_mcqs_english.html">Env MCQs</a></td></tr>
+          </tbody>
+        </table>
+        <div class="home-sub-grid" style="margin-top:14px">
+          <a class="home-sub" href="polity_mini_constitution.html">Polity mini-Constitution <small>Preamble · articles · drawer</small></a>
           <button class="home-sub" type="button" disabled>Economy <small>Reports</small> <span class="soon">Soon</span></button>
         </div>
       </div>

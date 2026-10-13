@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ca-flowcharts.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -154,7 +155,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
 }
 </style>
 </head>
-<body>
+<body class="theme-io">
 
 <a class="back" href="index.html">← Back to Index</a>
 <a class="back" href="un_system_master.html" style="margin-left:8px">🇺🇳 UN System</a>
@@ -245,6 +246,18 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
     <div class="line">“1944 ब्रेटन वुड्स — जुड़वाँ जन्मे: IMF बचाए, WB बनाए!”</div>
     <div class="decode">Both HQ Washington DC. Same birth story, different jobs. Don’t mix SDRs (IMF) with IBRD project loans (WB).</div>
   </div>
+  <div class="afc-wrap" aria-label="Bretton Woods workflow">
+    <div class="afc-legend"><span>Type 2 · Workflow</span> twin institutions</div>
+    <div class="afc-pipeline">
+      <div class="afc-start">1944<br>Bretton Woods</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>IMF</b>BOP · SDR · surveillance</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>World Bank</b>Projects · IDA/IBRD</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-end">Member<br>states</div>
+    </div>
+  </div>
   <input class="search" placeholder="🔍 Search IMF / World Bank / quota / IDA…" data-filter="money">
 
   <div class="org-grid" data-group="money">
@@ -323,6 +336,17 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
     <h3>Trade vs talk-shop</h3>
     <div class="line">“WTO अदालत + नियम किताब है; WEF पहाड़ी मेला (Davos) है!”</div>
     <div class="decode">WTO = member-driven treaty org with dispute settlement. WEF = Swiss foundation / forum — influential, but not a UN specialized agency.</div>
+  </div>
+  <div class="afc-wrap" aria-label="WTO dispute swimlane">
+    <div class="afc-legend"><span>Type 4 · Swimlane</span> dispute settlement</div>
+    <div class="afc-swim">
+      <div class="afc-swim-hdr"><div>Complainant</div><div>WTO panels / AB</div><div>Respondent</div></div>
+      <div class="afc-swim-row">
+        <div class="afc-swim-cell">Request consultations</div>
+        <div class="afc-swim-cell accent">Panel report · rulings on GATT rules</div>
+        <div class="afc-swim-cell">Implement or face retaliation</div>
+      </div>
+    </div>
   </div>
   <input class="search" placeholder="🔍 Search WTO / GATT / WEF / Davos…" data-filter="trade">
   <div class="org-grid" data-group="trade">
