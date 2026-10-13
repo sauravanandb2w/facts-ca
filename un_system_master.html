@@ -813,15 +813,15 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   <div class="afc-wrap dyn-flow" aria-label="UN regular budget document flow">
     <div class="afc-legend"><span>Type 7 · Document</span> draft → review → GA decision</div>
     <div class="afc-doc">
-      <div class="afc-doc-step"><b>SG proposes</b>Programme budget outline</div>
+      <div class="afc-doc-step"><b>SG proposes</b><span class="afc-sub">Programme budget outline</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-doc-step"><b>Fifth Committee</b>Line-by-line negotiation</div>
+      <div class="afc-doc-step"><b>Fifth Committee</b><span class="afc-sub">Line-by-line negotiation</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-doc-step"><b>ACABQ</b>Advisory review</div>
+      <div class="afc-doc-step"><b>ACABQ</b><span class="afc-sub">Advisory review</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-doc-step"><b>GA resolution</b>Approves budget</div>
+      <div class="afc-doc-step"><b>GA resolution</b><span class="afc-sub">Approves budget</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-doc-step"><b>Contributions</b>Assessment letters to states</div>
+      <div class="afc-doc-step"><b>Contributions</b><span class="afc-sub">Assessment letters to states</span></div>
     </div>
   </div>
 
@@ -1449,16 +1449,16 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     </ol>
     <div class="afc-wrap dyn-flow" aria-label="Peacekeeping workflow">
       <div class="afc-legend"><span>Type 2 · Workflow</span> mandate to mission</div>
-      <div class="afc-workflow">
-        <div class="afc-step"><b>UNSC</b>Threat to peace · resolution</div>
+      <div class="afc-decision-flow">
+        <div class="afc-step afc-wide"><b>1 · UNSC</b><span class="afc-sub">Threat to peace → resolution defines mandate</span></div>
         <div class="afc-arrow-v" aria-hidden="true"></div>
-        <div class="afc-step"><b>GA / SC</b>Budget &amp; mandate design</div>
+        <div class="afc-step afc-wide"><b>2 · Budget</b><span class="afc-sub">GA approves peacekeeping assessment scale</span></div>
         <div class="afc-arrow-v" aria-hidden="true"></div>
-        <div class="afc-step"><b>States</b>Contribute troops · police · experts</div>
+        <div class="afc-step afc-wide"><b>3 · Troop contributors</b><span class="afc-sub">Member states volunteer forces (no UN army)</span></div>
         <div class="afc-arrow-v" aria-hidden="true"></div>
-        <div class="afc-step"><b>DPO</b>Deploy · blue helmets</div>
+        <div class="afc-step afc-wide"><b>4 · DPO</b><span class="afc-sub">Deploy blue helmets · political missions</span></div>
         <div class="afc-arrow-v" aria-hidden="true"></div>
-        <div class="afc-end">Mandate ends</div>
+        <div class="afc-end">Mandate ends<br><span class="afc-sub" style="opacity:.9">SC closes mission</span></div>
       </div>
     </div>
     <p style="font-size:.84rem;margin-top:8px"><b>Three principles</b> (classic doctrine): consent of parties; impartiality; minimum use of force except in self-defence and defence of the mandate.</p>
@@ -1472,6 +1472,26 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       <li><b>Sanctions committees</b> under SC monitor compliance (country-specific lists — track CA).</li>
       <li><b>Uniting for Peace (1950):</b> if SC deadlocked, GA can recommend collective action on peace &amp; security (emergency special sessions).</li>
     </ul>
+  </div>
+  <div class="afc-wrap dyn-flow" aria-label="Chapter VII sanctions events">
+    <div class="afc-legend"><span>Type 11 · Event storm</span> Art. 41 toolkit (simplified)</div>
+    <div class="afc-events">
+      <div class="afc-event c1"><b>SC resolution</b><span class="afc-sub">Ch. VII basis</span></div>
+      <div class="afc-event c2"><b>Sanctions</b><span class="afc-sub">Assets · travel · arms</span></div>
+      <div class="afc-event c2"><b>Committee</b><span class="afc-sub">Lists · exemptions</span></div>
+      <div class="afc-event c3"><b>States</b><span class="afc-sub">National enforcement</span></div>
+      <div class="afc-event c4"><b>Review</b><span class="afc-sub">Lift or tighten</span></div>
+    </div>
+  </div>
+  <div class="afc-wrap dyn-flow" aria-label="Uniting for Peace use case">
+    <div class="afc-legend"><span>Type 10 · Use case</span> SC deadlock → GA</div>
+    <div class="afc-usecase">
+      <div class="afc-actor"><b>UNSC</b><span class="afc-sub">Veto deadlock</span></div>
+      <div class="afc-uc-arrow" aria-hidden="true">→</div>
+      <div class="afc-system-box"><b>UNGA</b><span class="afc-sub">Emergency special session</span></div>
+      <div class="afc-uc-arrow" aria-hidden="true">→</div>
+      <div class="afc-outcome"><b>Outcome</b><span class="afc-sub">Recommend collective action (1950)</span></div>
+    </div>
   </div>
   <div class="afc-wrap dyn-flow" aria-label="Chapter VI vs VII">
     <div class="afc-legend"><span>Type 5 · Decision</span> peaceful or enforcement?</div>
@@ -1520,13 +1540,48 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   <div class="afc-wrap dyn-flow" aria-label="UNSC sanctions listing document flow">
     <div class="afc-legend"><span>Type 7 · Document</span> SC resolution → sanctions list</div>
     <div class="afc-doc">
-      <div class="afc-doc-step"><b>SC resolution</b>Creates / extends regime</div>
+      <div class="afc-doc-step"><b>SC resolution</b><span class="afc-sub">Creates / extends regime</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-doc-step"><b>Committee</b>Designations · exemptions</div>
+      <div class="afc-doc-step"><b>Committee</b><span class="afc-sub">Designations · exemptions</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-doc-step"><b>Panel of Experts</b>Reports (where mandated)</div>
+      <div class="afc-doc-step"><b>Panel of Experts</b><span class="afc-sub">Reports (if mandated)</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-doc-step"><b>Member states</b>Implement nationally</div>
+      <div class="afc-doc-step"><b>Member states</b><span class="afc-sub">Implement nationally</span></div>
+    </div>
+  </div>
+
+  <div class="afc-wrap dyn-flow" aria-label="Which organ parents this body">
+    <div class="afc-legend"><span>Type 5 · Decision</span> subsidiary sits under…</div>
+    <div class="afc-decision-flow">
+      <div class="afc-decision">Who created<br>this body?</div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-split-3">
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">UNSC</span>
+          <div class="afc-step"><b>PKO · sanctions</b><span class="afc-sub">Ch. VII mandates</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">UNGA</span>
+          <div class="afc-step"><b>6 Main Committees</b><span class="afc-sub">HRC · budget · legal</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">ECOSOC</span>
+          <div class="afc-step"><b>Commissions</b><span class="afc-sub">ESCAP · CSW · drugs</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="afc-wrap dyn-flow" aria-label="GA resolution document flow">
+    <div class="afc-legend"><span>Type 7 · Document</span> draft → committee → plenary</div>
+    <div class="afc-doc">
+      <div class="afc-doc-step"><b>Draft resolution</b><span class="afc-sub">Member / Secretariat text</span></div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-doc-step"><b>Main Committee</b><span class="afc-sub">1st–6th (e.g. 5th = budget)</span></div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-doc-step"><b>Plenary GA</b><span class="afc-sub">Debate · vote</span></div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-doc-step"><b>Adopted</b><span class="afc-sub">Recommendation or decision</span></div>
     </div>
   </div>
 
@@ -1701,7 +1756,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 </section>
 
 </main>
-<footer>CA Notes · UN System Master · build v7 (flowchart layout fix)</footer>
+<footer>CA Notes · UN System Master · build v9 (ops + subsidiary flows)</footer>
 
 <script>
 (function(){
