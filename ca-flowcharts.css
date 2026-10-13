@@ -1,7 +1,8 @@
-/* CA Notes — Figma 17 flowchart types (resource-library/types-of-flow-charts)
-   1 process · 2 workflow · 3 data · 4 swimlane · 5 decision · 6 system · 7 document
-   8 product · 9 PERT · 10 use case · 11 event · 12 journey · 13 production · 14 logical
-   15 code · 16 e-commerce · 17 sitemap — 15–16 N/A for this study set */
+/* CA Notes — study flowcharts (shared steps, connectors, swimlanes) */
+:root{
+  --afc-arrow-right:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 12'%3E%3Cpath d='M0 6h22M18 1.5 26 6 18 10.5' fill='none' stroke='%23009edb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --afc-arrow-down:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 32'%3E%3Cpath d='M6 0v22M1.5 18 6 26 10.5 18' fill='none' stroke='%23009edb' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
 
 @keyframes afc-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes afc-flow-x{0%{background-position:0 0}100%{background-position:200% 0}}
@@ -34,12 +35,8 @@
 }
 .afc-wrap > *{position:relative;z-index:1}
 .afc-legend{
-  display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;
-  font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
-  color:var(--afc-a);margin-bottom:12px
-}
-.afc-legend span{
-  background:rgba(255,255,255,.85);border:1px solid var(--afc-line);border-radius:999px;padding:4px 10px
+  font-size:.8rem;font-weight:600;line-height:1.4;text-align:center;
+  color:var(--afc-muted);margin:0 0 12px;padding:0 6px
 }
 
 .afc-start,.afc-end{
@@ -66,16 +63,15 @@
 .afc-step .afc-sub,.afc-doc-step .afc-sub,.afc-hint{display:block;font-size:.68rem;color:var(--afc-muted);font-weight:500;line-height:1.35;margin-top:2px}
 .afc-start .afc-sub,.afc-end .afc-sub{color:rgba(255,255,255,.9)}
 
-.afc-arrow-h{
-  flex:0 0 28px;height:4px;margin:0 2px;align-self:center;border-radius:4px;
-  background:linear-gradient(90deg,var(--afc-line),var(--afc-a),var(--afc-line));
-  background-size:200% 100%;animation:afc-flow-x 1.6s linear infinite
+.afc-arrow-h,.afc-conn-h{
+  flex:0 0 32px;width:32px;height:14px;margin:0 2px;align-self:center;
+  background:var(--afc-arrow-right) center/contain no-repeat;opacity:.92
 }
-.afc-arrow-v{
-  width:4px;height:22px;margin:4px auto;border-radius:4px;
-  background:linear-gradient(180deg,var(--afc-line),var(--afc-a),var(--afc-line));
-  background-size:100% 200%;animation:afc-flow-y 1.6s linear infinite
+.afc-arrow-v,.afc-conn-v{
+  flex:0 0 32px;width:14px;height:32px;margin:4px auto;
+  background:var(--afc-arrow-down) center/contain no-repeat;opacity:.92
 }
+.afc-conn-h,.afc-conn-v{animation:none}
 
 .afc-pipeline{
   display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:8px;padding:4px 0;
@@ -216,8 +212,11 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
 }
 
 @media(max-width:640px){
-  .afc-pipeline{flex-direction:column}
-  .afc-arrow-h{width:4px;height:20px;flex:0 0 20px;background:linear-gradient(180deg,var(--afc-line),var(--afc-a),var(--afc-line));background-size:100% 200%;animation:afc-flow-y 1.6s linear infinite}
+  .afc-pipeline{flex-direction:column;align-items:center}
+  .afc-pipeline .afc-arrow-h{
+    width:14px;height:32px;flex:0 0 32px;
+    background:var(--afc-arrow-down) center/contain no-repeat
+  }
 }
 
 /* Type 9 · PERT / milestone track */
@@ -234,9 +233,8 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
 .afc-pert-node.done{border-style:solid;border-color:var(--afc-a);background:linear-gradient(180deg,#f0f9ff,#fff)}
 .afc-pert-node.now{border-color:#c9a227;border-style:solid;background:#fffdf6;box-shadow:0 6px 16px rgba(201,162,39,.2)}
 .afc-pert-connector{
-  flex:0 1 28px;min-width:16px;height:4px;margin-top:22px;border-radius:4px;
-  background:linear-gradient(90deg,var(--afc-a),var(--afc-line));
-  background-size:200% 100%;animation:afc-flow-x 2s linear infinite
+  flex:0 0 28px;width:28px;height:14px;margin-top:22px;align-self:flex-start;
+  background:var(--afc-arrow-right) center/contain no-repeat;opacity:.9
 }
 .afc-pert-note{font-size:.74rem;color:var(--afc-muted);text-align:center;margin-top:10px;line-height:1.45}
 
@@ -425,29 +423,25 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
 .afc-actor{border-color:#e8c878;background:linear-gradient(180deg,#fffdf6,#fff)}
 .afc-system-box{border-color:var(--afc-a);background:linear-gradient(180deg,#f0f9ff,#fff)}
 .afc-outcome{border-color:#66bb6a;background:linear-gradient(180deg,#f1f8f4,#fff)}
-.afc-uc-arrow{font-size:1.1rem;color:var(--afc-a);font-weight:800;text-align:center}
 
-/* Type 11 · Event storming — readable steps (no 96px overlap) */
+/* Event sequence (5 steps + SVG arrows between) */
 .afc-events{
-  display:grid;gap:10px;width:100%;max-width:100%;padding:8px 0 12px;
-  grid-template-columns:repeat(auto-fit,minmax(132px,1fr));align-items:stretch
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 2px;
+  width:100%;max-width:100%;padding:8px 0 12px
 }
-@media(min-width:720px){
-  .afc-events--seq5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.afc-events--seq5{flex-wrap:nowrap;gap:0 2px;justify-content:space-between}
+@media(max-width:720px){
+  .afc-events--seq5{flex-wrap:wrap;gap:8px;justify-content:center}
+  .afc-events--seq5 .afc-conn-h{display:none}
+  .afc-events--seq5 .afc-event{flex:1 1 calc(50% - 8px);max-width:none}
 }
 .afc-event{
-  min-width:0;padding:10px 10px 10px 28px;border-radius:10px;margin:0;
-  background:#fff;border:2px solid var(--afc-line);font-size:.68rem;line-height:1.4;text-align:left;
-  position:relative;animation:afc-rise .45s ease both;overflow-wrap:anywhere;word-break:break-word;
-  counter-increment:afc-ev
+  flex:1 1 110px;min-width:0;max-width:168px;padding:10px 10px;border-radius:10px;margin:0;
+  background:#fff;border:2px solid var(--afc-line);font-size:.68rem;line-height:1.4;text-align:center;
+  position:relative;animation:afc-rise .45s ease both;overflow-wrap:anywhere;word-break:break-word
 }
-.afc-events{counter-reset:afc-ev}
-.afc-event::before{
-  content:counter(afc-ev);position:absolute;left:8px;top:10px;
-  width:16px;height:16px;border-radius:50%;font-size:.58rem;font-weight:800;line-height:16px;text-align:center;
-  color:#fff;background:var(--afc-a)
-}
-.afc-event::after{display:none}
+.afc-events--seq5 .afc-event{flex:1 1 0;max-width:none;min-width:0}
+.afc-event::before,.afc-event::after{display:none}
 .afc-event b{display:block;font-size:.72rem;color:var(--afc-b);margin-bottom:3px;line-height:1.25}
 .afc-event .afc-sub{display:block;font-size:.64rem;color:var(--afc-muted);line-height:1.35;margin-top:0;font-weight:500}
 .afc-event.c1{border-top:4px solid var(--afc-a)}
@@ -464,7 +458,11 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
 }
 .afc-touch strong{display:block;font-size:.68rem;color:var(--afc-b);margin-bottom:3px}
 .afc-touch .afc-sub{font-size:.62rem;color:var(--afc-muted);line-height:1.25;display:block}
-.afc-journey .afc-arrow-h{flex:0 0 16px;min-width:12px}
+.afc-journey .afc-arrow-h{flex:0 0 24px;min-width:20px}
+.afc-uc-arrow{
+  width:32px;height:14px;margin:0 auto;
+  background:var(--afc-arrow-right) center/contain no-repeat
+}
 
 /* Type 13 · Production / order flow */
 .afc-prod{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;padding:4px 0}
@@ -498,9 +496,3 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
 .afc-site-node:hover,.afc-site-node:focus{border-color:var(--afc-a);background:#e8f6ff;outline:none}
 .afc-site-node.root{background:linear-gradient(135deg,#041e33,var(--afc-b));color:#fff;border-color:transparent}
 .afc-site-node.dim{opacity:.92;border-style:dashed;font-weight:600}
-.afc-type-index{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;
-  font-size:.72rem;line-height:1.45;margin-top:10px
-}
-.afc-type-index div{padding:8px 10px;border-radius:10px;border:1px solid var(--afc-line);background:rgba(255,255,255,.9)}
-.afc-type-index b{color:var(--afc-b);font-size:.74rem}
