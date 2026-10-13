@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="ca-flowcharts.css?v=4">
+<link rel="stylesheet" href="ca-flowcharts.css?v=5">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -833,89 +833,276 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   <div class="trick">
     <h3>Six principal organs — exam must-know</h3>
     <div class="line">GA · SC · ECOSOC · Trusteeship(मृत) · ICJ · Secretariat — छह, सात नहीं!</div>
+    <div class="decode">Poster diagram = live SVG (Figma-style flow). To use <b>your</b> Figma art: Export frame as SVG → save as <code>assets/un-six-organs.svg</code> (or paste the Figma share link in chat).</div>
   </div>
 
   <div class="organ-explorer dyn-flow" id="organ-explorer">
-    <div class="organ-map">
-      <svg class="organ-wires" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true">
-        <path class="wire-flow" d="M150,42 L50,120" style="animation-delay:0s"/>
-        <path class="wire-flow" d="M150,42 L150,120" style="animation-delay:.2s"/>
-        <path class="wire-flow" d="M150,42 L250,120" style="animation-delay:.4s"/>
-        <path class="wire-flow" d="M150,42 L50,175" style="animation-delay:.6s"/>
-        <path class="wire-flow" d="M150,42 L150,175" style="animation-delay:.8s"/>
-        <path class="wire-flow" d="M150,42 L250,175" style="animation-delay:1s"/>
+    <figure class="organ-chart-wrap">
+      <svg class="organ-chart" viewBox="0 0 560 300" role="img" aria-label="Six principal organs under the UN Charter">
+        <defs>
+          <linearGradient id="organHubGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#041e33"/><stop offset="100%" stop-color="#1565a8"/>
+          </linearGradient>
+        </defs>
+        <path class="wire-flow organ-trunk" d="M280,78 L280,88"/>
+        <path class="wire-flow" d="M48,88 L512,88" style="animation-delay:.25s"/>
+        <g aria-hidden="true">
+          <path class="wire-flow" d="M64,88 L64,100" style="animation-delay:.1s"/>
+          <path class="wire-flow" d="M148,88 L148,100" style="animation-delay:.2s"/>
+          <path class="wire-flow" d="M232,88 L232,100" style="animation-delay:.3s"/>
+          <path class="wire-flow" d="M316,88 L316,100" style="animation-delay:.4s"/>
+          <path class="wire-flow" d="M400,88 L400,100" style="animation-delay:.5s"/>
+          <path class="wire-flow" d="M484,88 L484,100" style="animation-delay:.6s"/>
+        </g>
+        <circle class="on-hub" cx="280" cy="48" r="28"/>
+        <text class="on-hub-t" x="280" y="46">UN Charter</text>
+        <text class="on-hub-s" x="280" y="58">6 principal organs</text>
+        <g class="organ-node active" data-organ="unga" role="button" tabindex="0" aria-pressed="true">
+          <rect class="on-box" x="24" y="100" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="64" y="128" text-anchor="middle">🗳️</text>
+          <text class="on-label" x="64" y="148" text-anchor="middle">UNGA</text>
+          <text class="on-sub" x="64" y="162" text-anchor="middle">Ch. IV</text>
+        </g>
+        <g class="organ-node" data-organ="unsc" role="button" tabindex="0" aria-pressed="false">
+          <rect class="on-box" x="108" y="100" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="148" y="128" text-anchor="middle">🛡️</text>
+          <text class="on-label" x="148" y="148" text-anchor="middle">UNSC</text>
+          <text class="on-sub" x="148" y="162" text-anchor="middle">Ch. V</text>
+        </g>
+        <g class="organ-node" data-organ="ecosoc" role="button" tabindex="0" aria-pressed="false">
+          <rect class="on-box" x="192" y="100" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="232" y="128" text-anchor="middle">📊</text>
+          <text class="on-label" x="232" y="148" text-anchor="middle">ECOSOC</text>
+          <text class="on-sub" x="232" y="162" text-anchor="middle">Agencies</text>
+        </g>
+        <g class="organ-node" data-organ="trust" role="button" tabindex="0" aria-pressed="false">
+          <rect class="on-box dim" x="276" y="100" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="316" y="128" text-anchor="middle">📋</text>
+          <text class="on-label" x="316" y="148" text-anchor="middle">Trust</text>
+          <text class="on-sub" x="316" y="162" text-anchor="middle">inactive</text>
+        </g>
+        <g class="organ-node" data-organ="icj" role="button" tabindex="0" aria-pressed="false">
+          <rect class="on-box" x="360" y="100" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="400" y="128" text-anchor="middle">⚖️</text>
+          <text class="on-label" x="400" y="148" text-anchor="middle">ICJ</text>
+          <text class="on-sub" x="400" y="162" text-anchor="middle">Hague</text>
+        </g>
+        <g class="organ-node" data-organ="sec" role="button" tabindex="0" aria-pressed="false">
+          <rect class="on-box" x="444" y="100" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="484" y="128" text-anchor="middle">✍️</text>
+          <text class="on-label" x="484" y="148" text-anchor="middle">Secretariat</text>
+          <text class="on-sub" x="484" y="162" text-anchor="middle">SG</text>
+        </g>
+        <text x="280" y="218" text-anchor="middle" class="on-sub" style="font-size:9px">Tap a box — graphic + notes below</text>
+        <g transform="translate(40,228)">
+          <rect x="0" y="0" width="72" height="28" rx="8" fill="#e8f6ff" stroke="#90caf9"/>
+          <text x="36" y="18" text-anchor="middle" class="on-sub" style="font-size:8px">Recommend</text>
+          <rect x="88" y="0" width="72" height="28" rx="8" fill="#fff3e0" stroke="#ffb74d"/>
+          <text x="124" y="18" text-anchor="middle" class="on-sub" style="font-size:8px">Binding VII</text>
+          <rect x="176" y="0" width="72" height="28" rx="8" fill="#f3e8ff" stroke="#b39ddb"/>
+          <text x="212" y="18" text-anchor="middle" class="on-sub" style="font-size:8px">Judicial</text>
+          <rect x="264" y="0" width="72" height="28" rx="8" fill="#e8f5e9" stroke="#81c784"/>
+          <text x="300" y="18" text-anchor="middle" class="on-sub" style="font-size:8px">Coordinate</text>
+          <rect x="352" y="0" width="88" height="28" rx="8" fill="#eceff1" stroke="#90a4ae"/>
+          <text x="396" y="18" text-anchor="middle" class="on-sub" style="font-size:8px">Admin</text>
+        </g>
       </svg>
-      <div class="organ-core">🇺🇳 Charter organs<span>Tap one — detail below</span></div>
-      <nav class="organ-ring" aria-label="Select principal organ">
-        <button type="button" class="organ-pill active" data-organ="unga"><span class="ico">🗳️</span><b>UNGA</b><small>Ch. IV · 193 states</small></button>
-        <button type="button" class="organ-pill" data-organ="unsc"><span class="ico">🛡️</span><b>UNSC</b><small>Ch. V · P5 veto</small></button>
-        <button type="button" class="organ-pill" data-organ="ecosoc"><span class="ico">📊</span><b>ECOSOC</b><small>Agencies hub</small></button>
-        <button type="button" class="organ-pill muted-org" data-organ="trust"><span class="ico">📋</span><b>Trusteeship</b><small>Inactive · still 6th</small></button>
-        <button type="button" class="organ-pill" data-organ="icj"><span class="ico">⚖️</span><b>ICJ</b><small>The Hague</small></button>
-        <button type="button" class="organ-pill" data-organ="sec"><span class="ico">✍️</span><b>Secretariat</b><small>SG + staff</small></button>
+      <nav class="organ-thumb-strip" aria-label="Jump to organ">
+        <button type="button" class="organ-thumb active" data-organ="unga">UNGA</button>
+        <button type="button" class="organ-thumb" data-organ="unsc">UNSC</button>
+        <button type="button" class="organ-thumb" data-organ="ecosoc">ECOSOC</button>
+        <button type="button" class="organ-thumb" data-organ="trust">Trust</button>
+        <button type="button" class="organ-thumb" data-organ="icj">ICJ</button>
+        <button type="button" class="organ-thumb" data-organ="sec">Secretariat</button>
       </nav>
-    </div>
+    </figure>
     <div class="organ-panels">
       <article class="organ-panel active" data-organ="unga">
-        <h4>General Assembly (UNGA)</h4>
-        <div class="sub">Charter Ch. IV · All member states · one country, one vote</div>
-        <ul>
-          <li>Deliberative, policy-making body — <b>193 members</b> today.</li>
-          <li>Discusses Charter matters (Art. 10); <b>recommends</b> on most issues; binding on budget, assessments, internal GA decisions.</li>
-          <li>Elects non-permanent UNSC, ECOSOC, ICJ judges (with SC); admits members on SC recommendation.</li>
-          <li><b>Art. 18:</b> important questions 2/3; others simple majority.</li>
-        </ul>
-        <div class="tags"><span>Mostly recommend</span><span>No veto</span><span>New York</span></div>
+        <div class="organ-split">
+          <div class="organ-viz" aria-hidden="true">
+            <svg viewBox="0 0 200 130">
+              <text class="viz-cap" x="100" y="14">One state · one vote</text>
+              <circle cx="100" cy="68" r="42" fill="#e3f2fd" stroke="#009edb" stroke-width="2"/>
+              <text x="100" y="62" text-anchor="middle" font-size="22" font-weight="800" fill="#0a2d4a">193</text>
+              <text x="100" y="78" text-anchor="middle" font-size="9" fill="#5a6a7d">members</text>
+              <circle cx="52" cy="68" r="8" fill="#90caf9"/><circle cx="148" cy="68" r="8" fill="#90caf9"/>
+              <text x="100" y="118" text-anchor="middle" font-size="8" fill="#1565a8">Art. 18: 2/3 vs simple majority</text>
+            </svg>
+          </div>
+          <div class="organ-copy">
+            <h4>General Assembly (UNGA)</h4>
+            <div class="sub">Charter Ch. IV · All member states · one country, one vote</div>
+            <div class="organ-stats">
+              <div class="ostat"><span class="olab">Members</span><strong>193</strong><div class="ometer"><i style="--p:100%"></i></div></div>
+              <div class="ostat"><span class="olab">Binding</span><strong>Budget</strong><div class="ometer gold"><i style="--p:35%"></i></div></div>
+              <div class="ostat"><span class="olab">Veto</span><strong>No</strong><div class="ometer mute"><i style="--p:0%"></i></div></div>
+            </div>
+            <ul>
+              <li>Deliberative, policy-making body — universal membership.</li>
+              <li>Art. 10: discusses Charter scope; <b>recommends</b> on most issues.</li>
+              <li>Elects UNSC (non-perm), ECOSOC, ICJ judges; admits members on SC nod.</li>
+              <li><b>Art. 18:</b> important questions 2/3; others simple majority.</li>
+            </ul>
+            <div class="tags"><span>Mostly recommend</span><span>New York</span></div>
+          </div>
+        </div>
       </article>
       <article class="organ-panel" data-organ="unsc">
-        <h4>Security Council (UNSC)</h4>
-        <div class="sub">Ch. V · Primary responsibility: peace &amp; security (Art. 24)</div>
-        <ul>
-          <li><b>15 members:</b> P5 + 10 elected by GA (2-year, regional seats).</li>
-          <li><b>P5 veto</b> on substantive resolutions (USA, UK, France, Russia, China).</li>
-          <li><b>Ch. VI</b> settlement · <b>Ch. VII</b> sanctions &amp; force; PKO mandates.</li>
-          <li><b>India:</b> frequent non-permanent member; G4 push for permanent seat.</li>
-        </ul>
-        <div class="tags"><span>Binding Ch. VII</span><span>P5 veto</span><span>New York</span></div>
+        <div class="organ-split">
+          <div class="organ-viz" aria-hidden="true">
+            <svg viewBox="0 0 200 130">
+              <text class="viz-cap" x="100" y="14">15 seats · P5 gold</text>
+              <g fill="#c9a227" stroke="#a67c00"><circle cx="40" cy="52" r="10"/><circle cx="70" cy="52" r="10"/><circle cx="100" cy="52" r="10"/><circle cx="130" cy="52" r="10"/><circle cx="160" cy="52" r="10"/></g>
+              <text x="100" y="56" text-anchor="middle" font-size="7" fill="#fff" font-weight="700">P5</text>
+              <g fill="#bbdefb" stroke="#1565a8"><circle cx="30" cy="88" r="7"/><circle cx="55" cy="88" r="7"/><circle cx="80" cy="88" r="7"/><circle cx="105" cy="88" r="7"/><circle cx="130" cy="88" r="7"/><circle cx="155" cy="88" r="7"/><circle cx="180" cy="88" r="7"/><circle cx="67" cy="108" r="7"/><circle cx="92" cy="108" r="7"/><circle cx="117" cy="108" r="7"/></g>
+              <text x="100" y="124" text-anchor="middle" font-size="8" fill="#c62828">Ch. VII → binding</text>
+            </svg>
+          </div>
+          <div class="organ-copy">
+            <h4>Security Council (UNSC)</h4>
+            <div class="sub">Ch. V · Peace &amp; security (Art. 24)</div>
+            <div class="organ-stats">
+              <div class="ostat"><span class="olab">Members</span><strong>15</strong><div class="ometer"><i style="--p:25%"></i></div></div>
+              <div class="ostat"><span class="olab">Binding</span><strong>Ch. VII</strong><div class="ometer gold"><i style="--p:95%"></i></div></div>
+              <div class="ostat"><span class="olab">Veto</span><strong>P5</strong><div class="ometer gold"><i style="--p:100%"></i></div></div>
+            </div>
+            <ul>
+              <li><b>P5 veto</b> on substantive resolutions (not procedural).</li>
+              <li><b>Ch. VI</b> peaceful settlement · <b>Ch. VII</b> sanctions &amp; force.</li>
+              <li>PKO mandates, sanctions committees, rotating presidency.</li>
+              <li><b>India:</b> non-permanent terms; G4 for permanent seat.</li>
+            </ul>
+            <div class="tags"><span>Binding Ch. VII</span><span>New York</span></div>
+          </div>
+        </div>
       </article>
       <article class="organ-panel" data-organ="ecosoc">
-        <h4>ECOSOC</h4>
-        <div class="sub">Economic and Social Council — coordination hub</div>
-        <ul>
-          <li>Coordinates economic, social, environmental work; links UN to <b>specialized agencies</b> &amp; NGOs.</li>
-          <li>Regional commissions (UNECE, ESCAP…) report here.</li>
-          <li>Climate <b>law</b> = UNFCCC treaty — not “ECOSOC runs COP”.</li>
-        </ul>
-        <div class="tags"><span>Coordination</span><span>54 members</span><span>New York</span></div>
+        <div class="organ-split">
+          <div class="organ-viz" aria-hidden="true">
+            <svg viewBox="0 0 200 130">
+              <text class="viz-cap" x="100" y="14">Coordination hub</text>
+              <circle cx="100" cy="70" r="22" fill="#1565a8"/><text x="100" y="74" text-anchor="middle" fill="#fff" font-size="9" font-weight="700">ECOSOC</text>
+              <line x1="100" y1="48" x2="100" y2="28" stroke="#009edb" stroke-width="2"/>
+              <line x1="118" y1="70" x2="168" y2="70" stroke="#009edb" stroke-width="2"/>
+              <line x1="82" y1="70" x2="32" y2="70" stroke="#009edb" stroke-width="2"/>
+              <line x1="115" y1="85" x2="150" y2="110" stroke="#009edb" stroke-width="2"/>
+              <line x1="85" y1="85" x2="50" y2="110" stroke="#009edb" stroke-width="2"/>
+              <rect x="78" y="18" width="44" height="18" rx="6" fill="#e8f6ff" stroke="#90caf9"/><text x="100" y="30" text-anchor="middle" font-size="7">UNGA</text>
+              <rect x="8" y="62" width="36" height="16" rx="5" fill="#fff" stroke="#b8d4f0"/><text x="26" y="73" text-anchor="middle" font-size="6">WHO</text>
+              <rect x="156" y="62" width="36" height="16" rx="5" fill="#fff" stroke="#b8d4f0"/><text x="174" y="73" text-anchor="middle" font-size="6">FAO</text>
+              <rect x="28" y="108" width="40" height="16" rx="5" fill="#fff" stroke="#b8d4f0"/><text x="48" y="119" text-anchor="middle" font-size="6">ESCAP</text>
+              <rect x="132" y="108" width="40" height="16" rx="5" fill="#fff" stroke="#b8d4f0"/><text x="152" y="119" text-anchor="middle" font-size="6">UNEP</text>
+            </svg>
+          </div>
+          <div class="organ-copy">
+            <h4>ECOSOC</h4>
+            <div class="sub">Economic and Social Council</div>
+            <div class="organ-stats">
+              <div class="ostat"><span class="olab">Members</span><strong>54</strong><div class="ometer"><i style="--p:28%"></i></div></div>
+              <div class="ostat"><span class="olab">Binding</span><strong>Low</strong><div class="ometer mute"><i style="--p:20%"></i></div></div>
+              <div class="ostat"><span class="olab">Link</span><strong>15</strong><div class="ometer"><i style="--p:75%"></i></div></div>
+            </div>
+            <ul>
+              <li>Coordinates econ, social, env work; bridges to <b>specialized agencies</b>.</li>
+              <li>Regional commissions (UNECE, ESCAP…) sit here.</li>
+              <li><b>UNFCCC/COP</b> = treaty — not “ECOSOC runs climate law”.</li>
+            </ul>
+            <div class="tags"><span>Coordinate</span><span>New York</span></div>
+          </div>
+        </div>
       </article>
       <article class="organ-panel" data-organ="trust">
-        <h4>Trusteeship Council</h4>
-        <div class="sub">Inactive — still one of the six principal organs</div>
-        <ul>
-          <li>Supervised <b>trust territories</b> until self-rule; last territory <b>Palau (1994)</b>.</li>
-          <li>Operations <b>suspended</b> — exam trap: count it in the six, don’t call it “abolished”.</li>
-        </ul>
-        <div class="tags"><span>Suspended</span><span>Palau 1994</span></div>
+        <div class="organ-split">
+          <div class="organ-viz" aria-hidden="true">
+            <svg viewBox="0 0 200 130">
+              <text class="viz-cap" x="100" y="14">Suspended · still organ #4</text>
+              <path d="M30,100 Q100,40 170,100" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 4"/>
+              <circle cx="30" cy="100" r="6" fill="#cbd5e1"/><circle cx="170" cy="100" r="6" fill="#009edb"/>
+              <text x="30" y="118" text-anchor="middle" font-size="7" fill="#64748b">1945</text>
+              <text x="170" y="118" text-anchor="middle" font-size="7" fill="#1565a8">Palau 1994</text>
+              <rect x="70" y="58" width="60" height="36" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-dasharray="4 3"/>
+              <text x="100" y="80" text-anchor="middle" font-size="9" fill="#64748b">No active</text>
+            </svg>
+          </div>
+          <div class="organ-copy">
+            <h4>Trusteeship Council</h4>
+            <div class="sub">Inactive — still one of the six</div>
+            <div class="organ-stats">
+              <div class="ostat"><span class="olab">Status</span><strong>Off</strong><div class="ometer mute"><i style="--p:5%"></i></div></div>
+              <div class="ostat"><span class="olab">Last</span><strong>1994</strong><div class="ometer mute"><i style="--p:100%"></i></div></div>
+              <div class="ostat"><span class="olab">Count?</span><strong>Yes</strong><div class="ometer gold"><i style="--p:100%"></i></div></div>
+            </div>
+            <ul>
+              <li>Supervised <b>trust territories</b> until self-government.</li>
+              <li>Last territory <b>Palau (1994)</b>; operations suspended.</li>
+              <li>Exam trap: still among the <b>six</b> — not abolished.</li>
+            </ul>
+            <div class="tags"><span>Suspended</span><span>Palau 1994</span></div>
+          </div>
+        </div>
       </article>
       <article class="organ-panel" data-organ="icj">
-        <h4>ICJ</h4>
-        <div class="sub">International Court of Justice · The Hague</div>
-        <ul>
-          <li>Principal <b>judicial</b> organ; <b>state vs state</b> disputes with consent.</li>
-          <li><b>Advisory opinions</b> for UN organs/agencies.</li>
-          <li>15 judges · 9-year terms · not ICC (individual crimes).</li>
-        </ul>
-        <div class="tags"><span>Binding if jurisdiction</span><span>The Hague</span></div>
+        <div class="organ-split">
+          <div class="organ-viz" aria-hidden="true">
+            <svg viewBox="0 0 200 130">
+              <text class="viz-cap" x="100" y="14">Judicial organ</text>
+              <line x1="100" y1="95" x2="100" y2="38" stroke="#5a6a7d" stroke-width="3"/>
+              <line x1="60" y1="38" x2="140" y2="38" stroke="#5a6a7d" stroke-width="3"/>
+              <path d="M60,38 L75,58 L45,58 Z" fill="#e3f2fd" stroke="#1565a8"/>
+              <path d="M140,38 L125,58 L155,58 Z" fill="#e3f2fd" stroke="#1565a8"/>
+              <rect x="72" y="95" width="56" height="22" rx="6" fill="#1565a8"/><text x="100" y="110" text-anchor="middle" fill="#fff" font-size="8">15 judges</text>
+              <text x="100" y="124" text-anchor="middle" font-size="7" fill="#5a6a7d">≠ ICC (individuals)</text>
+            </svg>
+          </div>
+          <div class="organ-copy">
+            <h4>ICJ</h4>
+            <div class="sub">International Court of Justice · The Hague</div>
+            <div class="organ-stats">
+              <div class="ostat"><span class="olab">Judges</span><strong>15</strong><div class="ometer"><i style="--p:100%"></i></div></div>
+              <div class="ostat"><span class="olab">Term</span><strong>9 yr</strong><div class="ometer gold"><i style="--p:66%"></i></div></div>
+              <div class="ostat"><span class="olab">Parties</span><strong>States</strong><div class="ometer"><i style="--p:80%"></i></div></div>
+            </div>
+            <ul>
+              <li><b>State vs state</b> disputes where jurisdiction accepted.</li>
+              <li><b>Advisory opinions</b> for UN organs and agencies.</li>
+              <li>Not ICC — criminal liability of individuals.</li>
+            </ul>
+            <div class="tags"><span>Binding if jurisdiction</span><span>The Hague</span></div>
+          </div>
+        </div>
       </article>
       <article class="organ-panel" data-organ="sec">
-        <h4>Secretariat</h4>
-        <div class="sub">International civil service</div>
-        <ul>
-          <li><b>Secretary-General</b> — chief administrative officer (not world government).</li>
-          <li>UNSC recommendation + UNGA appointment; Art. 99 → may alert SC.</li>
-          <li>Staff implement GA/SC decisions worldwide.</li>
-        </ul>
-        <div class="tags"><span>Administrative</span><span>Art. 99</span><span>New York</span></div>
+        <div class="organ-split">
+          <div class="organ-viz" aria-hidden="true">
+            <svg viewBox="0 0 200 130">
+              <text class="viz-cap" x="100" y="14">Art. 99 · admin</text>
+              <rect x="75" y="22" width="50" height="28" rx="8" fill="#041e33"/><text x="100" y="40" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">SG</text>
+              <line x1="100" y1="50" x2="100" y2="62" stroke="#009edb" stroke-width="2"/>
+              <line x1="100" y1="62" x2="40" y2="78" stroke="#b8d4f0" stroke-width="2"/>
+              <line x1="100" y1="62" x2="100" y2="78" stroke="#b8d4f0" stroke-width="2"/>
+              <line x1="100" y1="62" x2="160" y2="78" stroke="#b8d4f0" stroke-width="2"/>
+              <rect x="20" y="78" width="40" height="22" rx="6" fill="#e8f6ff" stroke="#90caf9"/><text x="40" y="92" text-anchor="middle" font-size="6">PKO</text>
+              <rect x="80" y="78" width="40" height="22" rx="6" fill="#e8f6ff" stroke="#90caf9"/><text x="100" y="92" text-anchor="middle" font-size="6">GA vote</text>
+              <rect x="140" y="78" width="40" height="22" rx="6" fill="#e8f6ff" stroke="#90caf9"/><text x="160" y="92" text-anchor="middle" font-size="6">Offices</text>
+              <text x="100" y="118" text-anchor="middle" font-size="7" fill="#1565a8">UNSC → GA appoints SG</text>
+            </svg>
+          </div>
+          <div class="organ-copy">
+            <h4>Secretariat</h4>
+            <div class="sub">International civil service</div>
+            <div class="organ-stats">
+              <div class="ostat"><span class="olab">Head</span><strong>SG</strong><div class="ometer gold"><i style="--p:100%"></i></div></div>
+              <div class="ostat"><span class="olab">Binding</span><strong>Admin</strong><div class="ometer mute"><i style="--p:15%"></i></div></div>
+              <div class="ostat"><span class="olab">Art. 99</span><strong>Alert SC</strong><div class="ometer"><i style="--p:70%"></i></div></div>
+            </div>
+            <ul>
+              <li><b>Secretary-General</b> — chief administrative officer.</li>
+              <li>UNSC recommendation + UNGA appointment.</li>
+              <li>Staff carry out GA/SC decisions globally.</li>
+            </ul>
+            <div class="tags"><span>Administrative</span><span>New York</span></div>
+          </div>
+        </div>
       </article>
     </div>
   </div>
@@ -1352,7 +1539,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 </section>
 
 </main>
-<footer>CA Notes · UN System Master · build v4 (organ explorer + live flows)</footer>
+<footer>CA Notes · UN System Master · build v5 (organ poster + viz)</footer>
 
 <script>
 (function(){
@@ -1377,18 +1564,26 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   }
   const explorer=document.getElementById('organ-explorer');
   if(explorer){
-    const pills=[...explorer.querySelectorAll('.organ-pill')];
     const panels=[...explorer.querySelectorAll('.organ-panel')];
-    pills.forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        const key=btn.dataset.organ;
-        pills.forEach(p=>p.classList.toggle('active', p===btn));
-        panels.forEach(p=>p.classList.toggle('active', p.dataset.organ===key));
-        explorer.classList.remove('is-live');
-        void explorer.offsetWidth;
-        explorer.classList.add('is-live');
+    const nodes=[...explorer.querySelectorAll('.organ-node')];
+    const thumbs=[...explorer.querySelectorAll('.organ-thumb')];
+    function selectOrgan(key){
+      nodes.forEach(n=>{
+        const on=n.dataset.organ===key;
+        n.classList.toggle('active', on);
+        n.setAttribute('aria-pressed', on?'true':'false');
       });
+      thumbs.forEach(t=>t.classList.toggle('active', t.dataset.organ===key));
+      panels.forEach(p=>p.classList.toggle('active', p.dataset.organ===key));
+      explorer.classList.remove('is-live');
+      void explorer.offsetWidth;
+      explorer.classList.add('is-live');
+    }
+    nodes.forEach(n=>{
+      n.addEventListener('click',()=>selectOrgan(n.dataset.organ));
+      n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectOrgan(n.dataset.organ);}});
     });
+    thumbs.forEach(t=>t.addEventListener('click',()=>selectOrgan(t.dataset.organ)));
   }
   tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
   document.querySelectorAll('.fc-click[data-go]').forEach(el=>{

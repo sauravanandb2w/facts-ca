@@ -219,12 +219,71 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
   display:none;background:#fff;border:2px solid #c5d8ef;border-radius:16px;padding:16px 18px;
   box-shadow:0 10px 28px rgba(15,27,45,.08);animation:afc-rise .35s ease
 }
-.organ-panel.active{display:block}
+.organ-panel.active{display:grid}
 .organ-panel h4{font-family:"Fraunces",serif;color:#0a2d4a;margin:0 0 6px;font-size:1.05rem}
 .organ-panel .sub{font-size:.78rem;color:#5a6a7d;margin-bottom:10px}
 .organ-panel ul{margin:0;padding-left:18px;font-size:.84rem;line-height:1.6}
 .organ-panel .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
 .organ-panel .tags span{font-size:.68rem;font-weight:700;padding:4px 8px;border-radius:999px;background:#eef6ff;border:1px solid #c5d8ef}
+
+/* Figma-style organ poster + split viz / text */
+.organ-chart-wrap{
+  margin:0 0 12px;padding:14px 10px 8px;border-radius:18px;overflow-x:auto;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(0,158,219,.12),transparent 55%),
+    linear-gradient(180deg,#f8fbff,#fff);
+  border:2px solid #c5d8ef;position:relative;overflow:hidden
+}
+.organ-chart-wrap::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background:repeating-linear-gradient(90deg,rgba(0,158,219,.04) 0 1px,transparent 1px 24px),
+    repeating-linear-gradient(0deg,rgba(0,158,219,.03) 0 1px,transparent 1px 24px)
+}
+.organ-chart{display:block;width:100%;min-width:min(560px,100%);max-width:640px;margin:0 auto;position:relative;z-index:1}
+.organ-chart .on-box{
+  fill:#fff;stroke:#b8d4f0;stroke-width:2;transition:fill .2s,stroke .2s,filter .2s
+}
+.organ-chart .on-box.dim{fill:#f8fafc;stroke-dasharray:6 4;stroke:#94a3b8}
+.organ-chart .on-ico{font-size:18px}
+.organ-chart .on-label{font-size:11px;font-weight:800;fill:#0a2d4a}
+.organ-chart .on-sub{font-size:8.5px;font-weight:600;fill:#5a6a7d}
+.organ-chart .on-hub{fill:url(#organHubGrad);stroke:#009edb;stroke-width:2}
+.organ-chart .on-hub-t{font-size:11px;font-weight:800;fill:#fff;text-anchor:middle}
+.organ-chart .on-hub-s{font-size:8px;font-weight:600;fill:rgba(255,255,255,.9);text-anchor:middle}
+.organ-node{cursor:pointer}
+.organ-node:focus{outline:none}
+.organ-node:focus .on-box,.organ-node:hover .on-box{stroke:#009edb;filter:drop-shadow(0 4px 10px rgba(0,158,219,.25))}
+.organ-node.active .on-box{fill:#e8f6ff;stroke:#009edb;stroke-width:2.5}
+.organ-chart .organ-trunk{stroke:#009edb;stroke-width:2}
+.organ-thumb-strip{
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0 4px;position:relative;z-index:1
+}
+.organ-thumb{
+  appearance:none;border:2px solid #d5e3f5;background:#fff;border-radius:999px;padding:6px 12px;
+  font-size:.72rem;font-weight:700;color:#0a2d4a;cursor:pointer;font:inherit
+}
+.organ-thumb.active{border-color:#009edb;background:#e8f6ff}
+.organ-split{
+  display:grid;grid-template-columns:minmax(140px,200px) 1fr;gap:16px;align-items:start
+}
+@media(max-width:560px){.organ-split{grid-template-columns:1fr}}
+.organ-viz{
+  border-radius:14px;border:2px solid #d5e3f5;background:linear-gradient(180deg,#f0f9ff,#fff);
+  padding:8px;min-height:120px
+}
+.organ-viz svg{display:block;width:100%;height:auto}
+.organ-viz .viz-cap{font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+  fill:#1565a8;text-anchor:middle}
+.organ-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:8px 0 12px}
+@media(max-width:480px){.organ-stats{grid-template-columns:1fr}}
+.ostat{background:#f5faff;border:1px solid #d5e3f5;border-radius:10px;padding:8px 10px;text-align:center}
+.ostat .olab{display:block;font-size:.62rem;font-weight:800;text-transform:uppercase;color:#5a6a7d;letter-spacing:.04em}
+.ostat strong{display:block;font-size:.95rem;color:#0a2d4a;margin:2px 0 6px}
+.ometer{height:5px;border-radius:99px;background:#e2e8f0;overflow:hidden}
+.ometer i{display:block;height:100%;width:var(--p,50%);border-radius:99px;background:linear-gradient(90deg,#009edb,#1565a8)}
+.ometer.gold i{background:linear-gradient(90deg,#c9a227,#e8b84a)}
+.ometer.mute i{background:#94a3b8}
+.organ-copy ul{margin:0;padding-left:18px;font-size:.84rem;line-height:1.6}
 
 .fc-vline.dyn-pipe{position:relative}
 .fc-vline.dyn-pipe::after{
