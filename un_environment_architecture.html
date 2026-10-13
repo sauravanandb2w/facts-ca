@@ -109,6 +109,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   <button class="tab" data-tab="bio">🦋 Bio &amp; trade</button>
   <button class="tab" data-tab="other">🧪 Ozone · BRS · Sea</button>
   <button class="tab" data-tab="india">🇮🇳 India</button>
+  <button class="tab" data-tab="mega">📊 Mega table</button>
   <button class="tab" data-tab="mcq">📝 MCQs</button>
 </nav>
 
@@ -321,6 +322,64 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   </div>
 </section>
 
+
+<!-- MEGA TABLE -->
+<section class="section" id="tab-mega">
+  <div class="trick">
+    <h3>Mega index — environmental &amp; related treaties</h3>
+    <div class="line">एक तालिका · विस्तृत नोट्स → Environment MCQs पेज</div>
+    <div class="decode">Filter chips below. For COP narratives &amp; traps, use <a href="upsc_environment_mcqs_english.html">Environment MCQs</a> (no need to duplicate long prose here).</div>
+  </div>
+  <div class="pills" id="mega-filters" style="margin-bottom:12px">
+    <button type="button" class="pill" data-mf="all" style="cursor:pointer;border:none">All</button>
+    <button type="button" class="pill" data-mf="climate" style="cursor:pointer;border:none">Climate</button>
+    <button type="button" class="pill" data-mf="bio" style="cursor:pointer;border:none">Biodiversity</button>
+    <button type="button" class="pill" data-mf="wet" style="cursor:pointer;border:none">Wet/Land</button>
+    <button type="button" class="pill" data-mf="ocean" style="cursor:pointer;border:none">Ocean</button>
+    <button type="button" class="pill" data-mf="ozone" style="cursor:pointer;border:none">Ozone</button>
+    <button type="button" class="pill" data-mf="chem" style="cursor:pointer;border:none">Chemicals</button>
+    <button type="button" class="pill" data-mf="health" style="cursor:pointer;border:none">Health</button>
+    <button type="button" class="pill" data-mf="other" style="cursor:pointer;border:none">Other</button>
+  </div>
+  <div class="compare">
+    <table id="mega-table">
+      <thead><tr><th>Instrument</th><th>Adopted / in force</th><th>Secretariat</th><th>India</th><th>Governs</th></tr></thead>
+      <tbody>
+      <tr data-cat="climate"><td><b>UNFCCC</b></td><td>1992 Rio / force 1994</td><td>Bonn · COP/SBI/SBSTA</td><td>Party</td><td>Parent climate treaty; CBDR-RC</td></tr>
+      <tr data-cat="climate"><td><b>Kyoto Protocol</b></td><td>1997 / force 2005</td><td>UNFCCC · CMP</td><td>Party (no QELRO)</td><td>Annex-I binding targets; CDM/JI/ET</td></tr>
+      <tr data-cat="climate"><td><b>Paris Agreement</b></td><td>2015 COP21 / force 2016</td><td>UNFCCC · CMA</td><td>Party (2016)</td><td>NDCs; 1.5/2°C; GST; Art.6</td></tr>
+      <tr data-cat="climate"><td><b>IPCC</b></td><td>1988 WMO+UNEP</td><td>Geneva</td><td>Member via WMO</td><td>Science only — not treaty</td></tr>
+      <tr data-cat="climate"><td><b>Doha Amendment</b></td><td>2012</td><td>Kyoto 2nd period</td><td>Party</td><td>Second commitment period Kyoto</td></tr>
+      <tr data-cat="bio"><td><b>CBD</b></td><td>1992 Rio / 1993</td><td>Montreal · COP</td><td>Party</td><td>Biodiversity conservation; ABS</td></tr>
+      <tr data-cat="bio"><td><b>Cartagena Protocol</b></td><td>2000 / 2003</td><td>CBD · COP-MOP</td><td>Party</td><td>LMO biosafety</td></tr>
+      <tr data-cat="bio"><td><b>Nagoya Protocol</b></td><td>2010 / 2014</td><td>CBD · COP-MOP</td><td>Party</td><td>Genetic resources ABS</td></tr>
+      <tr data-cat="bio"><td><b>CITES</b></td><td>1973 / 1975</td><td>Geneva UNEP</td><td>Party since 1976</td><td>Trade in endangered species</td></tr>
+      <tr data-cat="bio"><td><b>CMS (Bonn)</b></td><td>1979 / 1983</td><td>Bonn UNEP</td><td>Party</td><td>Migratory species</td></tr>
+      <tr data-cat="bio"><td><b>ITPGRFA (Plant Treaty)</b></td><td>2001 / 2004</td><td>FAO Rome</td><td>Party</td><td>Crop genetic resources for food</td></tr>
+      <tr data-cat="bio"><td><b>World Heritage Convention</b></td><td>1972</td><td>UNESCO Paris</td><td>Party</td><td>Natural & cultural sites — not UNEP treaty</td></tr>
+      <tr data-cat="wet"><td><b>Ramsar</b></td><td>1971 / 1975</td><td>Gland IUCN</td><td>Party since 1982</td><td>Wetlands of international importance</td></tr>
+      <tr data-cat="wet"><td><b>UNCCD</b></td><td>1994 / 1996</td><td>Bonn</td><td>Party</td><td>Desertification; LDN</td></tr>
+      <tr data-cat="ocean"><td><b>UNCLOS</b></td><td>1982 / 1994</td><td>DOALOS · ITLOS · ISA</td><td>Party 1995</td><td>Law of the sea</td></tr>
+      <tr data-cat="ocean"><td><b>BBNJ Treaty</b></td><td>2023</td><td>Under UNCLOS</td><td>Signed</td><td>High seas biodiversity</td></tr>
+      <tr data-cat="ocean"><td><b>MARPOL</b></td><td>1973/78 IMO</td><td>IMO London</td><td>Party</td><td>Marine pollution from ships</td></tr>
+      <tr data-cat="ocean"><td><b>London Convention</b></td><td>1972</td><td>IMO</td><td>Party</td><td>Dumping at sea</td></tr>
+      <tr data-cat="ozone"><td><b>Vienna Convention</b></td><td>1985</td><td>Nairobi ozone sec.</td><td>Party</td><td>Ozone layer framework</td></tr>
+      <tr data-cat="ozone"><td><b>Montreal Protocol</b></td><td>1987</td><td>UNEP</td><td>Party</td><td>ODS phase-out</td></tr>
+      <tr data-cat="ozone"><td><b>Kigali Amendment</b></td><td>2016</td><td>UNEP</td><td>Party</td><td>HFC phasedown</td></tr>
+      <tr data-cat="chem"><td><b>Basel Convention</b></td><td>1989 / 1992</td><td>Geneva BRS</td><td>Party</td><td>Hazardous waste shipments</td></tr>
+      <tr data-cat="chem"><td><b>Rotterdam</b></td><td>1998 / 2004</td><td>FAO-UNEP</td><td>Party</td><td>PIC chemicals trade</td></tr>
+      <tr data-cat="chem"><td><b>Stockholm POPs</b></td><td>2001 / 2004</td><td>Geneva</td><td>Party</td><td>Persistent organic pollutants</td></tr>
+      <tr data-cat="chem"><td><b>Minamata</b></td><td>2013 / 2017</td><td>Geneva</td><td>Party</td><td>Mercury lifecycle</td></tr>
+      <tr data-cat="chem"><td><b>Strategic Approach (SAICM)</b></td><td>2006</td><td>UNEP</td><td>Participant</td><td>Chemicals beyond 2020 process</td></tr>
+      <tr data-cat="health"><td><b>WHO FCTC</b></td><td>2003 / 2005</td><td>WHO Geneva</td><td>Party</td><td>Tobacco control framework</td></tr>
+      <tr data-cat="other"><td><b>Convention on Migratory Species</b></td><td>1979</td><td>see CMS</td><td>—</td><td>alias CMS</td></tr>
+      <tr data-cat="other"><td><b>Bonn Agreement</b></td><td>1983</td><td>North Sea oil spills</td><td>—</td><td>Regional marine pollution</td></tr>
+      <tr data-cat="other"><td><b>Espoo Convention</b></td><td>1991 UNECE</td><td>Geneva</td><td>Party if ratified</td><td>EIA in transboundary context</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
 <section class="section" id="tab-mcq">
   <div class="mcq">
     <div class="q">1. UNEP was an outcome of:</div>
@@ -406,6 +465,16 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   const hash=(location.hash||'').replace('#','');
   if(hash && document.getElementById('tab-'+hash)) show(hash);
 })();
+
+document.querySelectorAll('#mega-filters [data-mf]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const f=btn.dataset.mf;
+    document.querySelectorAll('#mega-table tbody tr').forEach(tr=>{
+      tr.style.display=(f==='all'||tr.dataset.cat===f)?'':'none';
+    });
+  });
+});
+
 function pick(el,ok){
   const box=el.closest('.mcq');
   box.querySelectorAll('.opt').forEach(o=>{o.onclick=null;});
