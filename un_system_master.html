@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="ca-flowcharts.css?v=6">
+<link rel="stylesheet" href="ca-flowcharts.css?v=7">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -263,6 +263,7 @@ details.hub-acc .hub-acc-body{padding:0 14px 14px}
   .flowchart::before,.fc-root,.fc-vline,.fc-organs-wrap::before,.fc-node,.fc-block,.fc-tier-label,.fc-legend{animation:none!important}
 }
 .compare{overflow-x:auto;border-radius:12px;border:1px solid var(--line);margin:12px 0;background:#fff}
+.compare th,.compare td{overflow-wrap:anywhere;word-break:break-word;hyphens:auto}
 table{width:100%;border-collapse:collapse;min-width:520px;font-size:.8rem}
 th{background:linear-gradient(135deg,var(--navy),#1565a8);color:#fff;text-align:left;padding:9px 11px}
 td{padding:8px 11px;border-bottom:1px solid #e8eef5;vertical-align:top;line-height:1.45}
@@ -537,15 +538,16 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   </div>
 
   <div class="afc-wrap dyn-flow" aria-label="Which study layer decision tree">
-    <div class="afc-legend"><span>Type 5 · Decision</span> open which layer?</div>
-    <div class="afc-branch">
-      <div class="afc-decision">Keyword in<br>question?</div>
-    </div>
-    <div class="afc-branch" style="margin-top:8px">
-      <div class="afc-branch-col"><div class="afc-step"><b>L1</b>UNGA · veto · ICJ</div></div>
-      <div class="afc-branch-col"><div class="afc-step"><b>L2</b>COP · UNEP · Rio</div></div>
-      <div class="afc-branch-col"><div class="afc-step"><b>L3</b>IMF · WTO</div></div>
-      <div class="afc-branch-col"><div class="afc-step"><b>L4</b>G20 · SCO</div></div>
+    <div class="afc-legend"><span>Type 5 · Decision</span> keyword → layer</div>
+    <div class="afc-decision-flow">
+      <div class="afc-decision">What keyword<br>in the question?</div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-split-2" style="max-width:720px">
+        <div class="afc-branch-col"><div class="afc-step"><b>L1 · UN Charter</b><span class="afc-sub">UNGA, veto, ICJ, PKO</span></div></div>
+        <div class="afc-branch-col"><div class="afc-step"><b>L2 · Environment</b><span class="afc-sub">COP, UNEP, Rio treaties</span></div></div>
+        <div class="afc-branch-col"><div class="afc-step"><b>L3 · Money &amp; trade</b><span class="afc-sub">IMF, WB, WTO</span></div></div>
+        <div class="afc-branch-col"><div class="afc-step"><b>L4 · IR clubs</b><span class="afc-sub">G20, BRICS, SCO, ASEAN</span></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -575,11 +577,11 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <div class="afc-pipeline">
       <div class="afc-start">1942<br>Declaration</div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-step"><b>1944</b>Dumbarton Oaks draft</div>
+      <div class="afc-step"><b>1944</b><span class="afc-sub">Dumbarton Oaks draft</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-step"><b>1945</b>San Francisco sign</div>
+      <div class="afc-step"><b>1945</b><span class="afc-sub">San Francisco sign</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-step"><b>Ratify</b>P5 + majority</div>
+      <div class="afc-step"><b>Ratify</b><span class="afc-sub">P5 + majority</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
       <div class="afc-end">UN Day<br>24 Oct</div>
     </div>
@@ -643,11 +645,11 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <div class="afc-pipeline">
       <div class="afc-start">State applies<br>to SG</div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-step"><b>SC committee</b>Reviews peace-loving capacity</div>
+      <div class="afc-step"><b>SC committee</b><span class="afc-sub">Peace-loving capacity</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-step"><b>SC vote</b>9 yes · no P5 veto</div>
+      <div class="afc-step"><b>SC vote</b><span class="afc-sub">9 yes · no P5 veto</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-step"><b>GA vote</b>2/3 present &amp; voting</div>
+      <div class="afc-step"><b>GA vote</b><span class="afc-sub">2/3 present &amp; voting</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
       <div class="afc-end">Member<br>effective</div>
     </div>
@@ -687,11 +689,11 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   <div class="afc-wrap dyn-flow" aria-label="Secretary-General Art 99 use case">
     <div class="afc-legend"><span>Type 10 · Use case</span> SG spots a threat → SC acts</div>
     <div class="afc-usecase">
-      <div class="afc-actor"><b>Secretary-General</b>Sees threat to peace (Art. 99)</div>
+      <div class="afc-actor"><b>Secretary-General</b><span class="afc-sub">Threat to peace (Art. 99)</span></div>
       <div class="afc-uc-arrow" aria-hidden="true">→</div>
-      <div class="afc-system-box"><b>Security Council</b>Convenes · debates · Ch. VI / VII options</div>
+      <div class="afc-system-box"><b>Security Council</b><span class="afc-sub">Debate · Ch. VI / VII</span></div>
       <div class="afc-uc-arrow" aria-hidden="true">→</div>
-      <div class="afc-outcome"><b>Outcome</b>Resolution · PKO mandate · sanctions · or deadlock</div>
+      <div class="afc-outcome"><b>Outcome</b><span class="afc-sub">Resolution, PKO, sanctions, or deadlock</span></div>
     </div>
   </div>
 
@@ -736,12 +738,25 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   </div>
 
   <div class="afc-wrap dyn-flow" aria-label="ICJ election data flow">
-    <div class="afc-legend"><span>Type 3 · Data flow</span> parallel ballots</div>
-    <div class="afc-data">
-      <div class="afc-bubble"><h5>PCA national groups</h5>Nominee lists</div>
-      <div class="afc-bubble"><h5>GA ballot</h5>Absolute majority (e.g. 97/193)</div>
-      <div class="afc-bubble"><h5>SC ballot</h5>8/15 · <b>no veto</b></div>
-      <div class="afc-bubble" style="grid-column:1/-1;max-width:360px;margin:0 auto"><h5>Same person wins both</h5>→ 9-year term from 6 Feb</div>
+    <div class="afc-legend"><span>Type 3 · Data flow</span> same person must win GA and SC</div>
+    <div class="afc-decision-flow">
+      <div class="afc-step afc-wide"><b>Step 1 · Nominees</b><span class="afc-sub">PCA national groups submit candidate lists</span></div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-step afc-wide"><b>Step 2 · Parallel ballots</b><span class="afc-sub">GA and SC vote separately on the same day</span></div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-parallel">
+        <div class="afc-parallel-lane">
+          <span class="afc-lane-tag">GA</span>
+          <div class="afc-step"><b>Absolute majority</b><span class="afc-sub">e.g. 97 of 193</span></div>
+        </div>
+        <div class="afc-parallel-mid">Same name wins both</div>
+        <div class="afc-parallel-lane">
+          <span class="afc-lane-tag">SC</span>
+          <div class="afc-step"><b>8 of 15</b><span class="afc-sub">No P5 veto</span></div>
+        </div>
+      </div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-merge">Judge elected · 9-year term (from 6 Feb)</div>
     </div>
   </div>
 
@@ -766,20 +781,21 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   </div>
 
   <div class="afc-wrap dyn-flow" aria-label="GA voting decision tree">
-    <div class="afc-legend"><span>Type 5 · Decision tree</span> which majority?</div>
-    <div class="afc-branch">
-      <div class="afc-decision">GA vote<br>on what?</div>
-    </div>
-    <div class="afc-branch" style="margin-top:10px">
-      <div class="afc-branch-col">
-        <span class="afc-branch-label">Yes → Art. 18 important</span>
-        <div class="afc-arrow-v" aria-hidden="true"></div>
-        <div class="afc-step"><b>Two-thirds</b>Membership · budget · peace/security questions</div>
-      </div>
-      <div class="afc-branch-col">
-        <span class="afc-branch-label">No → ordinary</span>
-        <div class="afc-arrow-v" aria-hidden="true"></div>
-        <div class="afc-step"><b>Simple majority</b>Most resolutions</div>
+    <div class="afc-legend"><span>Type 5 · Decision tree</span> Art. 18 important question?</div>
+    <div class="afc-decision-flow">
+      <div class="afc-decision">Is it an Art. 18<br>important question?</div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-split-2">
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Yes</span>
+          <div class="afc-step"><b>Two-thirds</b><span class="afc-sub">Present &amp; voting</span></div>
+          <p class="afc-hint">Membership, budget, peace &amp; security, trusteeship</p>
+        </div>
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">No</span>
+          <div class="afc-step"><b>Simple majority</b><span class="afc-sub">Ordinary matters</span></div>
+          <p class="afc-hint">Most GA resolutions</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1194,12 +1210,25 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 
   <div class="afc-wrap dyn-flow" aria-label="Which organ handles this issue">
     <div class="afc-legend"><span>Type 2 · Workflow</span> peace &amp; security vs everything else</div>
-    <div class="afc-workflow">
-      <div class="afc-decision">Issue type?</div>
-      <div class="afc-branch">
-        <div class="afc-branch-col"><div class="afc-step accent"><b>Peace &amp; security</b>threat / breach</div><div class="afc-arrow-v" aria-hidden="true"></div><div class="afc-step"><b>UNSC</b>Ch. VI / VII</div></div>
-        <div class="afc-branch-col"><div class="afc-step"><b>Budget · members · most policy</b></div><div class="afc-arrow-v" aria-hidden="true"></div><div class="afc-step"><b>UNGA</b>recommend / decide</div></div>
-        <div class="afc-branch-col"><div class="afc-step"><b>Econ · social · agencies</b></div><div class="afc-arrow-v" aria-hidden="true"></div><div class="afc-step"><b>ECOSOC</b>coordinate</div></div>
+    <div class="afc-decision-flow">
+      <div class="afc-decision">What kind of issue?</div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-split-3">
+        <div class="afc-branch-col">
+          <div class="afc-step accent"><b>Peace &amp; security</b><span class="afc-sub">Threat or breach</span></div>
+          <div class="afc-arrow-v" aria-hidden="true"></div>
+          <div class="afc-step"><b>→ UNSC</b><span class="afc-sub">Ch. VI or VII</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <div class="afc-step"><b>Budget · members</b><span class="afc-sub">Most policy</span></div>
+          <div class="afc-arrow-v" aria-hidden="true"></div>
+          <div class="afc-step"><b>→ UNGA</b><span class="afc-sub">Recommend or decide</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <div class="afc-step"><b>Econ · social</b><span class="afc-sub">Agencies link</span></div>
+          <div class="afc-arrow-v" aria-hidden="true"></div>
+          <div class="afc-step"><b>→ ECOSOC</b><span class="afc-sub">Coordinate</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1446,17 +1475,18 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   </div>
   <div class="afc-wrap dyn-flow" aria-label="Chapter VI vs VII">
     <div class="afc-legend"><span>Type 5 · Decision</span> peaceful or enforcement?</div>
-    <div class="afc-branch">
-      <div class="afc-decision">Dispute<br>escalates?</div>
-    </div>
-    <div class="afc-branch" style="margin-top:8px">
-      <div class="afc-branch-col">
-        <span class="afc-branch-label">Ch. VI</span>
-        <div class="afc-step"><b>Mediate · ICJ</b>Consent · good offices</div>
-      </div>
-      <div class="afc-branch-col">
-        <span class="afc-branch-label">Ch. VII</span>
-        <div class="afc-step"><b>Sanctions · force</b>SC binding action</div>
+    <div class="afc-decision-flow">
+      <div class="afc-decision">SC response<br>level?</div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-split-2">
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Ch. VI</span>
+          <div class="afc-step"><b>Peaceful means</b><span class="afc-sub">Mediation, ICJ (consent), good offices</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Ch. VII</span>
+          <div class="afc-step"><b>Enforcement</b><span class="afc-sub">Sanctions or force — binding</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1671,7 +1701,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 </section>
 
 </main>
-<footer>CA Notes · UN System Master · build v6 (Figma 17-type flows)</footer>
+<footer>CA Notes · UN System Master · build v7 (flowchart layout fix)</footer>
 
 <script>
 (function(){

@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="ca-flowcharts.css?v=6">
+<link rel="stylesheet" href="ca-flowcharts.css?v=7">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -152,10 +152,12 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 
   <div class="afc-wrap dyn-flow is-live" aria-label="Environmental data flow">
     <div class="afc-legend"><span>Type 3 · Data flow</span> science → negotiation → law</div>
-    <div class="afc-data">
-      <div class="afc-bubble"><h5>IPCC / science</h5>Assessments (no law)</div>
-      <div class="afc-bubble"><h5>UNFCCC COP</h5>Parties decide targets</div>
-      <div class="afc-bubble"><h5>National law</h5>NDCs · reporting</div>
+    <div class="afc-pipeline">
+      <div class="afc-step"><b>IPCC / science</b><span class="afc-sub">Assessments — not law</span></div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>UNFCCC COP</b><span class="afc-sub">Parties set targets</span></div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-end"><b>National law</b><span class="afc-sub" style="opacity:.9">NDCs · reporting</span></div>
     </div>
   </div>
 
@@ -168,7 +170,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       </div>
       <div class="afc-sys-mid">
         <div class="afc-arrow-h" aria-hidden="true"></div>
-        <div class="afc-sys-core"><b>UNFCCC</b>COP decisions · transparency framework · global stocktake</div>
+        <div class="afc-sys-core"><b>UNFCCC</b><span class="afc-sub">COP · transparency · stocktake</span></div>
         <div class="afc-arrow-h" aria-hidden="true"></div>
       </div>
       <div class="afc-sys-out">
@@ -253,22 +255,23 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 <section class="section" id="tab-cop">
   <h2 class="section-title">COP and parallel acronyms</h2>
   <div class="afc-wrap dyn-flow is-live" aria-label="COP vs UN decision">
-    <div class="afc-legend"><span>Type 5 · Decision</span> what does “COP” mean here?</div>
-    <div class="afc-branch">
-      <div class="afc-decision">Headline says<br>“UN climate COP”</div>
-    </div>
-    <div class="afc-branch" style="margin-top:8px">
-      <div class="afc-branch-col">
-        <span class="afc-branch-label">Treaty meeting</span>
-        <div class="afc-step"><b>COP</b>Conference of Parties to <b>UNFCCC</b></div>
-      </div>
-      <div class="afc-branch-col">
-        <span class="afc-branch-label">Not this</span>
-        <div class="afc-step"><b>UNGA</b>Charter organ · Sept NY</div>
-      </div>
-      <div class="afc-branch-col">
-        <span class="afc-branch-label">Related</span>
-        <div class="afc-step"><b>UNEP</b>Programme · Nairobi</div>
+    <div class="afc-legend"><span>Type 5 · Decision</span> “UN climate COP” in news?</div>
+    <div class="afc-decision-flow">
+      <div class="afc-decision">Headline:<br>“UN climate COP”</div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-split-3">
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Usually this</span>
+          <div class="afc-step"><b>COP</b><span class="afc-sub">Parties meet under UNFCCC treaty</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Not this</span>
+          <div class="afc-step"><b>UNGA</b><span class="afc-sub">Charter organ · New York</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Related</span>
+          <div class="afc-step"><b>UNEP</b><span class="afc-sub">Programme · Nairobi</span></div>
+        </div>
       </div>
     </div>
   </div>
