@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="ca-flowcharts.css?v=2">
+<link rel="stylesheet" href="ca-flowcharts.css?v=3">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -15,7 +15,8 @@
   --navy:#0a2d4a;--un:#009edb;--gold:#c9a227;
   --card:#fff;--line:#d5deea;--red:#c62828;--soft:#e3f2fd;--shadow:0 10px 28px rgba(15,27,45,.1);
 }
-body{font-family:"Sora",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+body{font-family:"Sora",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;overflow-x:hidden}
+main{max-width:960px;margin:0 auto;padding:20px 14px 72px;overflow-x:clip}
 a{color:#1565a8;font-weight:600;text-decoration:none}
 a:hover{text-decoration:underline}
 .back{display:inline-flex;gap:6px;align-items:center;margin:12px 16px 0;font-size:.82rem}
@@ -35,7 +36,6 @@ a:hover{text-decoration:underline}
 }
 .tab{padding:7px 12px;border-radius:999px;border:2px solid transparent;cursor:pointer;font:inherit;font-size:.76rem;font-weight:700;background:#eef3f9;color:#3a4d63}
 .tab:hover,.tab.active{background:var(--un);color:#fff;border-color:var(--un)}
-main{max-width:960px;margin:0 auto;padding:20px 14px 72px}
 .section{display:none}.section.active{display:block;animation:fade .25s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .trick{background:#fff8e1;border:2px solid #f0c36d;border-radius:12px;padding:14px 16px;margin-bottom:16px}
@@ -84,8 +84,9 @@ main{max-width:960px;margin:0 auto;padding:20px 14px 72px}
   box-shadow:var(--shadow);overflow:hidden
 }
 .track-step{
-  flex:1 1 100px;min-width:88px;text-align:center;padding:12px 8px;text-decoration:none;color:var(--ink);
-  border-right:1px solid var(--line);transition:background .2s,transform .2s;position:relative
+  flex:1 1 100px;min-width:0;max-width:100%;text-align:center;padding:12px 8px;text-decoration:none;color:var(--ink);
+  border-right:1px solid var(--line);transition:background .2s;position:relative;
+  overflow-wrap:anywhere;word-break:break-word
 }
 .track-step:last-child{border-right:0}
 .track-step small{display:block;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--un);margin-bottom:4px}
@@ -126,8 +127,9 @@ details.hub-acc .hub-acc-body{padding:0 14px 14px}
   background:
     linear-gradient(180deg,rgba(255,255,255,.97) 0%,rgba(245,250,255,.98) 100%);
   border:2px solid transparent;border-radius:20px;padding:22px 14px 26px;margin:0;
-  position:relative;overflow:hidden;
+  position:relative;overflow:visible;
   background-clip:padding-box;
+  max-width:100%;box-sizing:border-box
   box-shadow:0 16px 48px rgba(10,45,74,.12),inset 0 1px 0 rgba(255,255,255,.9)
 }
 .flowchart::before{
@@ -188,7 +190,7 @@ details.hub-acc .hub-acc-body{padding:0 14px 14px}
   animation:fc-rise .55s ease both;cursor:default
 }
 .fc-node.fc-click{cursor:pointer}
-.fc-node.fc-click:hover{border-color:var(--un);transform:translateY(-4px) scale(1.02);box-shadow:0 12px 28px rgba(0,158,219,.18)}
+.fc-node.fc-click:hover{border-color:var(--un);transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,158,219,.18)}
 .fc-organs .fc-node:nth-child(1){animation-delay:.15s}
 .fc-organs .fc-node:nth-child(2){animation-delay:.22s}
 .fc-organs .fc-node:nth-child(3){animation-delay:.29s}
@@ -201,7 +203,9 @@ details.hub-acc .hub-acc-body{padding:0 14px 14px}
   background:linear-gradient(180deg,#b8d4f0,var(--un));opacity:.85
 }
 .fc-node .ico{font-size:1.15rem;margin-bottom:3px;display:block}
-.fc-node b{display:block;color:var(--navy);font-size:.82rem;font-weight:700}
+.fc-node b{display:block;color:var(--navy);font-size:.82rem;font-weight:700;margin-bottom:2px}
+.fc-node{overflow-wrap:anywhere;word-break:break-word;min-width:0}
+.fc-block,.fc-ext-row .fc-node{overflow-wrap:anywhere;word-break:break-word}
 .fc-node.muted{background:rgba(248,250,252,.9);border-style:dashed;color:var(--muted);animation-delay:.4s}
 .fc-node.muted b{color:#64748b}
 .fc-node.ext{
@@ -332,12 +336,12 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       <div class="fc-tier-label">Principal organs — only these six (Charter)</div>
       <div class="fc-organs-wrap">
       <div class="fc-organs">
-        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">🗳️</span><b>UNGA</b>General Assembly</div>
-        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">🛡️</span><b>UNSC</b>Security Council · P5 veto</div>
-        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">📊</span><b>ECOSOC</b>Economic &amp; Social Council</div>
-        <div class="fc-node muted fc-click" data-go="organs" tabindex="0" role="button" title="Oversaw trust territories until independence; last was Palau 1994"><span class="ico">📋</span><b>Trusteeship</b>Inactive · Palau 1994</div>
-        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">⚖️</span><b>ICJ</b>The Hague · states’ disputes</div>
-        <div class="fc-node fc-click" data-go="ops" tabindex="0" role="button"><span class="ico">✍️</span><b>Secretariat</b>SG + civil service</div>
+        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">🗳️</span><b>UNGA</b><span>General Assembly</span></div>
+        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">🛡️</span><b>UNSC</b><span>Security Council · P5 veto</span></div>
+        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">📊</span><b>ECOSOC</b><span>Economic &amp; Social Council</span></div>
+        <div class="fc-node muted fc-click" data-go="organs" tabindex="0" role="button" title="Oversaw trust territories until independence; last was Palau 1994"><span class="ico">📋</span><b>Trusteeship</b><span>Inactive · Palau 1994</span></div>
+        <div class="fc-node fc-click" data-go="organs" tabindex="0" role="button"><span class="ico">⚖️</span><b>ICJ</b><span>The Hague · states’ disputes</span></div>
+        <div class="fc-node fc-click" data-go="ops" tabindex="0" role="button"><span class="ico">✍️</span><b>Secretariat</b><span>SG + civil service</span></div>
       </div>
       </div>
     </div>
@@ -1308,7 +1312,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 </section>
 
 </main>
-<footer>CA Notes · UN System Master · v2026.10 · Hub = map · Birth / How / Where · animated charts need <code>ca-flowcharts.css</code> beside this file</footer>
+<footer>CA Notes · UN System Master · build v3 (layout fix)</footer>
 
 <script>
 (function(){
