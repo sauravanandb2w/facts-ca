@@ -1,5 +1,7 @@
-/* CA Notes — animated flowcharts (process · swimlane · decision · workflow)
-   Design cues: clear start/end, arrows, decision nodes, logical order (Figma flowchart guide) */
+/* CA Notes — Figma 17 flowchart types (resource-library/types-of-flow-charts)
+   1 process · 2 workflow · 3 data · 4 swimlane · 5 decision · 6 system · 7 document
+   8 product · 9 PERT · 10 use case · 11 event · 12 journey · 13 production · 14 logical
+   15 code · 16 e-commerce · 17 sitemap — 15–16 N/A for this study set */
 
 @keyframes afc-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes afc-flow-x{0%{background-position:0 0}100%{background-position:200% 0}}
@@ -143,7 +145,8 @@ body.theme-env{--fc-accent:#0d7a6f;--fc-accent2:#1b5e45}
 body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
 
 @media(prefers-reduced-motion:reduce){
-  .afc-wrap::before,.afc-start,.afc-end,.afc-step,.afc-decision,.afc-arrow-h,.afc-arrow-v,.afc-svg-arrows path{animation:none!important}
+  .afc-wrap::before,.afc-start,.afc-end,.afc-step,.afc-decision,.afc-arrow-h,.afc-arrow-v,.afc-svg-arrows path,
+  .afc-doc-step,.afc-event,.afc-touch,.afc-log-col,.afc-actor,.afc-system-box,.afc-outcome{animation:none!important}
 }
 
 @media(max-width:640px){
@@ -293,3 +296,118 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
 }
 .dyn-flow.is-live .fc-vline.dyn-pipe::after{animation:pipe-dot 1.4s ease-in-out infinite}
 @keyframes pipe-dot{0%{top:0;opacity:1}100%{top:calc(100% - 8px);opacity:.35}}
+
+/* Type 6 · System flowchart */
+.afc-system{
+  display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:center;width:100%
+}
+@media(max-width:560px){.afc-system{grid-template-columns:1fr}}
+.afc-sys-in,.afc-sys-out{display:flex;flex-direction:column;gap:8px}
+.afc-sys-io{
+  font-size:.72rem;padding:8px 10px;border-radius:10px;border:2px solid var(--afc-line);
+  background:#fff;text-align:center;line-height:1.35;overflow-wrap:anywhere
+}
+.afc-sys-io.ext{border-color:#90caf9;background:linear-gradient(180deg,#f0f9ff,#fff)}
+.afc-sys-core{
+  padding:14px 12px;border-radius:16px;border:2px solid var(--afc-b);
+  background:linear-gradient(180deg,#eef6ff,#fff);font-size:.76rem;text-align:center;line-height:1.4;min-width:0
+}
+.afc-sys-core b{display:block;color:var(--afc-b);margin-bottom:4px}
+.afc-sys-mid{display:flex;flex-direction:column;align-items:center;gap:4px}
+.afc-sys-mid .afc-arrow-h{width:40px}
+
+/* Type 7 · Document flowchart */
+.afc-doc{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;padding:4px 0}
+.afc-doc-step{
+  position:relative;padding:10px 10px 10px 16px;min-width:0;flex:1 1 100px;max-width:150px;
+  font-size:.72rem;line-height:1.35;text-align:center;overflow-wrap:anywhere;
+  background:#fff;border:2px solid var(--afc-line);border-radius:4px 12px 12px 4px;
+  box-shadow:3px 3px 0 rgba(184,212,240,.5);animation:afc-rise .5s ease both
+}
+.afc-doc-step::before{
+  content:"";position:absolute;left:5px;top:8px;bottom:8px;width:3px;background:var(--afc-a);border-radius:2px
+}
+.afc-doc-step b{display:block;font-size:.74rem;color:var(--afc-b);margin-bottom:3px}
+.afc-doc .afc-arrow-h{flex:0 0 18px}
+
+/* Type 10 · Use case */
+.afc-usecase{
+  display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:center;width:100%
+}
+@media(max-width:560px){
+  .afc-usecase{grid-template-columns:1fr;justify-items:center}
+  .afc-uc-arrow{transform:rotate(90deg)}
+}
+.afc-actor,.afc-system-box,.afc-outcome{
+  padding:10px 8px;border-radius:12px;font-size:.72rem;text-align:center;line-height:1.4;border:2px solid var(--afc-line);
+  background:#fff;min-width:0;overflow-wrap:anywhere;animation:afc-rise .5s ease both
+}
+.afc-actor{border-color:#e8c878;background:linear-gradient(180deg,#fffdf6,#fff)}
+.afc-system-box{border-color:var(--afc-a);background:linear-gradient(180deg,#f0f9ff,#fff)}
+.afc-outcome{border-color:#66bb6a;background:linear-gradient(180deg,#f1f8f4,#fff)}
+.afc-uc-arrow{font-size:1.1rem;color:var(--afc-a);font-weight:800;text-align:center}
+
+/* Type 11 · Event storming */
+.afc-events{
+  display:flex;gap:0;overflow-x:auto;padding:8px 2px 12px;align-items:stretch;-webkit-overflow-scrolling:touch
+}
+.afc-event{
+  flex:0 0 96px;min-width:88px;padding:8px 6px;border-radius:10px;margin-right:12px;
+  background:#fff;border:2px solid var(--afc-line);font-size:.67rem;line-height:1.35;text-align:center;
+  position:relative;animation:afc-rise .45s ease both;overflow-wrap:anywhere
+}
+.afc-event::after{
+  content:"→";position:absolute;right:-11px;top:50%;transform:translateY(-50%);
+  color:var(--afc-a);font-weight:800;font-size:.85rem
+}
+.afc-event:last-child{margin-right:0}
+.afc-event:last-child::after{display:none}
+.afc-event b{display:block;font-size:.7rem;color:var(--afc-b);margin-bottom:4px}
+.afc-event.c1{border-top:4px solid var(--afc-a)}
+.afc-event.c2{border-top:4px solid #c9a227}
+.afc-event.c3{border-top:4px solid #2e7d32}
+.afc-event.c4{border-top:4px solid #c62828}
+
+/* Type 12 · Customer / stakeholder journey */
+.afc-journey{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px;padding:6px 0}
+.afc-touch{
+  flex:0 1 76px;min-width:64px;text-align:center;font-size:.64rem;line-height:1.25;padding:10px 6px;
+  border-radius:999px;border:2px solid var(--afc-line);background:#fff;margin:2px;
+  animation:afc-rise .5s ease both;overflow-wrap:anywhere
+}
+.afc-touch strong{display:block;font-size:.68rem;color:var(--afc-b);margin-bottom:2px}
+.afc-journey .afc-arrow-h{flex:0 0 16px;min-width:12px}
+
+/* Type 13 · Production / order flow */
+.afc-prod{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;padding:4px 0}
+.afc-prod .afc-step{flex:1 1 100px;max-width:160px}
+
+/* Type 14 · Logical model (IPO + outcome) */
+.afc-logical{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;align-items:stretch;width:100%}
+@media(max-width:720px){.afc-logical{grid-template-columns:repeat(2,1fr)}}
+.afc-log-col{
+  padding:10px;border-radius:12px;border:2px solid var(--afc-line);background:#fff;min-width:0;
+  animation:afc-rise .5s ease both
+}
+.afc-log-col h6{margin:0 0 8px;font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;color:var(--afc-muted)}
+.afc-log-col ul{margin:0;padding-left:16px;font-size:.71rem;line-height:1.45}
+.afc-log-col.proc{border-color:var(--afc-a);background:linear-gradient(180deg,#f8fcff,#fff)}
+.afc-log-col.out{border-color:#2e7d32;background:linear-gradient(180deg,#f6fff8,#fff)}
+
+/* Type 17 · Website / study sitemap */
+.afc-sitemap{display:flex;flex-direction:column;align-items:center;gap:8px;padding:8px 0}
+.afc-site-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;align-items:center}
+.afc-site-node{
+  font-size:.72rem;font-weight:700;padding:8px 12px;border-radius:10px;
+  border:2px solid var(--afc-line);background:#fff;text-decoration:none;color:var(--afc-ink);
+  transition:border-color .2s,background .2s;cursor:pointer;font-family:inherit
+}
+.afc-site-node:hover,.afc-site-node:focus{border-color:var(--afc-a);background:#e8f6ff;outline:none}
+.afc-site-node.root{background:linear-gradient(135deg,#041e33,var(--afc-b));color:#fff;border-color:transparent}
+.afc-site-node.dim{opacity:.92;border-style:dashed;font-weight:600}
+.afc-type-index{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;
+  font-size:.72rem;line-height:1.45;margin-top:10px
+}
+.afc-type-index div{padding:8px 10px;border-radius:10px;border:1px solid var(--afc-line);background:rgba(255,255,255,.9)}
+.afc-type-index b{color:var(--afc-b);font-size:.74rem}

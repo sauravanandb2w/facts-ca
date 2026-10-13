@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="ca-flowcharts.css?v=5">
+<link rel="stylesheet" href="ca-flowcharts.css?v=6">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -413,6 +413,48 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <a class="track-step" href="upsc_environment_mcqs_english.html"><small>Layer 5</small><strong>📝 Env MCQs</strong></a>
   </nav>
 
+  <details class="hub-acc" id="flowchart-types">
+    <summary>17 Figma flowchart types — where each appears on this site</summary>
+    <div class="hub-acc-body">
+      <p class="hub-note" style="margin-bottom:10px">Based on <a href="https://www.figma.com/resource-library/types-of-flow-charts/" rel="noopener">Figma’s flowchart guide</a>. Types 15–16 (code / e-commerce) skipped — not used in UPSC IO notes.</p>
+      <div class="afc-wrap dyn-flow">
+        <div class="afc-legend"><span>Type 17 · Sitemap</span> study pages on facts-ca</div>
+        <div class="afc-sitemap">
+          <div class="afc-site-row"><span class="afc-site-node root">index.html</span></div>
+          <div class="afc-arrow-v" aria-hidden="true"></div>
+          <div class="afc-site-row">
+            <button type="button" class="afc-site-node" data-go="hub">UN Master</button>
+            <a class="afc-site-node" href="un_environment_architecture.html">Env MEAs</a>
+            <a class="afc-site-node" href="international_organisations.html">IMF · WTO · clubs</a>
+          </div>
+          <div class="afc-site-row" style="margin-top:4px">
+            <button type="button" class="afc-site-node dim" data-go="birth">Birth</button>
+            <button type="button" class="afc-site-node dim" data-go="how">How it runs</button>
+            <button type="button" class="afc-site-node dim" data-go="organs">6 organs</button>
+            <button type="button" class="afc-site-node dim" data-go="ops">PKO</button>
+            <button type="button" class="afc-site-node dim" data-go="mcq">MCQs</button>
+          </div>
+        </div>
+        <div class="afc-type-index">
+          <div><b>1 Process</b> Founding · membership · env summits</div>
+          <div><b>2 Workflow</b> PKO mandate · Bretton Woods</div>
+          <div><b>3 Data flow</b> ICJ ballots · science→COP</div>
+          <div><b>4 Swimlane</b> SG pick · WTO dispute · Layer 4</div>
+          <div><b>5 Decision</b> GA majority · Ch. VI/VII · COP trap</div>
+          <div><b>6 System</b> UN env layers · NDC reporting</div>
+          <div><b>7 Document</b> UN budget approval chain</div>
+          <div><b>8 Product</b> Rio trio · UNDP delivery</div>
+          <div><b>9 PERT</b> UNSC reform timeline</div>
+          <div><b>10 Use case</b> Art. 99 SG → SC</div>
+          <div><b>11 Event</b> UNSC seat election · COP year</div>
+          <div><b>12 Journey</b> Delegate at UN HQ</div>
+          <div><b>13 Production</b> WTO goods pipeline</div>
+          <div><b>14 Logical</b> UN family IPO · IMF quota</div>
+        </div>
+      </div>
+    </div>
+  </details>
+
   <details class="hub-acc" id="layer4-index">
     <summary>Layer 4 · IR clubs &amp; regional IO (expand index)</summary>
     <div class="hub-acc-body hub-layer4" style="border:0;padding:0;margin:0;background:transparent">
@@ -529,7 +571,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   </div>
 
   <div class="afc-wrap dyn-flow" aria-label="UN founding process">
-    <div class="afc-legend"><span>Type 2 · Workflow</span> milestones to living organization</div>
+    <div class="afc-legend"><span>Type 1 · Process</span> milestones to living organization</div>
     <div class="afc-pipeline">
       <div class="afc-start">1942<br>Declaration</div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
@@ -596,7 +638,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   </ol>
   <p class="source-note">Art. 4 · <a href="https://www.un.org/en/about-us/about-un-membership" rel="noopener">About UN membership</a></p>
 
-  <div class="afc-wrap afc-type-process" aria-label="New member admission process flow">
+  <div class="afc-wrap dyn-flow afc-type-process" aria-label="New member admission process flow">
     <div class="afc-legend"><span>Type 1 · Process flow</span> start → steps → end</div>
     <div class="afc-pipeline">
       <div class="afc-start">State applies<br>to SG</div>
@@ -639,6 +681,17 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
         <div class="afc-swim-cell">SC resolution transmits recommendation</div>
         <div class="afc-swim-cell accent">Oath of office · 5-year term</div>
       </div>
+    </div>
+  </div>
+
+  <div class="afc-wrap dyn-flow" aria-label="Secretary-General Art 99 use case">
+    <div class="afc-legend"><span>Type 10 · Use case</span> SG spots a threat → SC acts</div>
+    <div class="afc-usecase">
+      <div class="afc-actor"><b>Secretary-General</b>Sees threat to peace (Art. 99)</div>
+      <div class="afc-uc-arrow" aria-hidden="true">→</div>
+      <div class="afc-system-box"><b>Security Council</b>Convenes · debates · Ch. VI / VII options</div>
+      <div class="afc-uc-arrow" aria-hidden="true">→</div>
+      <div class="afc-outcome"><b>Outcome</b>Resolution · PKO mandate · sanctions · or deadlock</div>
     </div>
   </div>
 
@@ -741,6 +794,21 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     </ul>
   </div>
 
+  <div class="afc-wrap dyn-flow" aria-label="UN regular budget document flow">
+    <div class="afc-legend"><span>Type 7 · Document</span> draft → review → GA decision</div>
+    <div class="afc-doc">
+      <div class="afc-doc-step"><b>SG proposes</b>Programme budget outline</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-doc-step"><b>Fifth Committee</b>Line-by-line negotiation</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-doc-step"><b>ACABQ</b>Advisory review</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-doc-step"><b>GA resolution</b>Approves budget</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-doc-step"><b>Contributions</b>Assessment letters to states</div>
+    </div>
+  </div>
+
   <h2 class="section-title">9. How a GA session runs (sketch)</h2>
   <div class="card">
     <ul>
@@ -798,6 +866,23 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
         <tr><td><b>The Hague</b></td><td>Not a “UN HQ” but judicial hub</td><td><b>ICJ</b> Peace Palace; ICC (not UN); OPCW.</td></tr>
       </tbody>
     </table>
+  </div>
+
+  <div class="afc-wrap dyn-flow" aria-label="Delegate journey at UN HQ">
+    <div class="afc-legend"><span>Type 12 · Journey</span> one mission’s UN week</div>
+    <div class="afc-journey">
+      <div class="afc-touch"><strong>Credentials</strong>GA admit</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-touch"><strong>Debate</strong>Plenary</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-touch"><strong>Committee</strong>1st–6th</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-touch"><strong>Negotiate</strong>Blocs</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-touch"><strong>Vote</strong>GA / SC</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-touch"><strong>Report</strong>Capital</div>
+    </div>
   </div>
 
   <h2 class="section-title">Specialized agencies &amp; programmes — usual seats</h2>
@@ -1108,7 +1193,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   </div>
 
   <div class="afc-wrap dyn-flow" aria-label="Which organ handles this issue">
-    <div class="afc-legend"><span>Live flow</span> peace &amp; security vs everything else</div>
+    <div class="afc-legend"><span>Type 2 · Workflow</span> peace &amp; security vs everything else</div>
     <div class="afc-workflow">
       <div class="afc-decision">Issue type?</div>
       <div class="afc-branch">
@@ -1156,6 +1241,17 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     </table>
   </div>
 
+  <div class="afc-wrap dyn-flow" aria-label="UNSC non-permanent election events">
+    <div class="afc-legend"><span>Type 11 · Event storm</span> rotating seat — sequence of events</div>
+    <div class="afc-events">
+      <div class="afc-event c1"><b>Regional group</b>Agrees candidate</div>
+      <div class="afc-event c2"><b>SC election</b>GA secret ballot</div>
+      <div class="afc-event c2"><b>2/3 majority</b>Of members present</div>
+      <div class="afc-event c3"><b>2-year term</b>Starts 1 Jan</div>
+      <div class="afc-event c4"><b>Rotate</b>Seat not immediate re-election</div>
+    </div>
+  </div>
+
   <h2 class="section-title">B. Political blocs at the UN (not Charter organs)</h2>
   <div class="card">
     <ul>
@@ -1197,6 +1293,16 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <h3>Chief Executives Board (CEB)</h3>
     <p>Heads of UN entities meet to coordinate — shows "system" unity, but doesn't erase legal differences between programme vs agency vs treaty secretariat.</p>
   </div>
+
+  <div class="afc-wrap dyn-flow" aria-label="UN family logical model">
+    <div class="afc-legend"><span>Type 14 · Logical model</span> inputs → process → outputs → exam outcome</div>
+    <div class="afc-logical">
+      <div class="afc-log-col"><h6>Inputs</h6><ul><li>Charter 1945</li><li>Member states</li><li>Assessed + voluntary funds</li></ul></div>
+      <div class="afc-log-col proc"><h6>Process</h6><ul><li>6 organs decide / coordinate</li><li>ECOSOC links agencies</li><li>GA creates programmes</li></ul></div>
+      <div class="afc-log-col"><h6>Outputs</h6><ul><li>Resolutions · mandates</li><li>PKO · aid delivery</li><li>Treaty secretariats (MEAs)</li></ul></div>
+      <div class="afc-log-col out"><h6>Remember</h6><ul><li>WHO ≠ organ</li><li>COP ≠ UNGA</li><li>IMF = agency</li></ul></div>
+    </div>
+  </div>
 </section>
 
 <!-- ========== FUNDS ========== -->
@@ -1218,6 +1324,19 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     </table>
   </div>
   <div class="warn">Read <a href="un_environment_architecture.html">UN Environment Architecture</a> for <b>UNEP → UNFCCC/CBD/COP</b>. UNEP coordinates; treaties bind Parties.</div>
+
+  <div class="afc-wrap dyn-flow" aria-label="UNDP programme product flow">
+    <div class="afc-legend"><span>Type 8 · Product flow</span> money → programme → impact</div>
+    <div class="afc-prod">
+      <div class="afc-start">GA approves<br>funds</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>UNDP</b>Country programme</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>Delivery</b>Projects · HDI data</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-end">Development<br>outcomes</div>
+    </div>
+  </div>
 </section>
 
 <!-- ========== 15 AGENCIES ========== -->
@@ -1366,6 +1485,19 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <h3>Subsidiary bodies — not principal organs</h3>
     <div class="line">मुख्य 6 अंग के नीचे कमेटियाँ — UNSC संकेत, GA छह समितियाँ, ECOSOC कमीशन</div>
     <div class="decode">Prelims: know <b>categories + famous names</b>, not every committee roster.</div>
+  </div>
+
+  <div class="afc-wrap dyn-flow" aria-label="UNSC sanctions listing document flow">
+    <div class="afc-legend"><span>Type 7 · Document</span> SC resolution → sanctions list</div>
+    <div class="afc-doc">
+      <div class="afc-doc-step"><b>SC resolution</b>Creates / extends regime</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-doc-step"><b>Committee</b>Designations · exemptions</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-doc-step"><b>Panel of Experts</b>Reports (where mandated)</div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-doc-step"><b>Member states</b>Implement nationally</div>
+    </div>
   </div>
 
   <h2 class="section-title">Under Security Council</h2>
@@ -1539,7 +1671,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 </section>
 
 </main>
-<footer>CA Notes · UN System Master · build v5 (organ poster + viz)</footer>
+<footer>CA Notes · UN System Master · build v6 (Figma 17-type flows)</footer>
 
 <script>
 (function(){
@@ -1586,7 +1718,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     thumbs.forEach(t=>t.addEventListener('click',()=>selectOrgan(t.dataset.organ)));
   }
   tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
-  document.querySelectorAll('.fc-click[data-go]').forEach(el=>{
+  document.querySelectorAll('.fc-click[data-go],.afc-site-node[data-go]').forEach(el=>{
     const go=()=>show(el.dataset.go);
     el.addEventListener('click',go);
     el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
