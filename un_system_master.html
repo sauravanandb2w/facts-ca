@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="ca-flowcharts.css">
+<link rel="stylesheet" href="ca-flowcharts.css?v=2">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -413,6 +413,24 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <summary>Layer 4 · IR clubs &amp; regional IO (expand index)</summary>
     <div class="hub-acc-body hub-layer4" style="border:0;padding:0;margin:0;background:transparent">
     <p class="hub-note">Forums (G20) ≠ treaty organisations (ASEAN) ≠ military alliances (NATO). Full cards on <a href="international_organisations.html">International Organisations</a>.</p>
+
+    <div class="afc-wrap" aria-label="Layer 4 legal types swimlane">
+      <div class="afc-legend"><span>Type 4 · Swimlane</span> forum vs treaty org vs alliance</div>
+      <div class="afc-swim">
+        <div class="afc-swim-hdr"><div>Economic / political forum</div><div>Treaty-based organisation</div><div>Military alliance</div></div>
+        <div class="afc-swim-row">
+          <div class="afc-swim-cell accent"><b>G20</b> · G7 · BRICS summits<br><small>No Charter · rotating host</small></div>
+          <div class="afc-swim-cell"><b>ASEAN</b> · AU · EU · SAARC<br><small>Secretariat · member states</small></div>
+          <div class="afc-swim-cell"><b>NATO</b> · CSTO<br><small>Art. 5 style collective defence</small></div>
+        </div>
+        <div class="afc-swim-row">
+          <div class="afc-swim-cell"><b>QUAD</b> — strategic dialogue<br><small>Not NATO; informal</small></div>
+          <div class="afc-swim-cell"><b>SCO</b> — charter + RATS<br><small>Security + cooperation</small></div>
+          <div class="afc-swim-cell"><b>Trap:</b> QUAD ≠ military alliance</div>
+        </div>
+      </div>
+    </div>
+
     <div class="layer4-grid">
       <div class="layer4-col">
         <h4><a href="international_organisations.html#groups">Groups tab</a></h4>
@@ -725,6 +743,34 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       <li><b>Main session</b> opens annually (September); <b>General Debate</b> — heads of state/government speak.</li>
       <li>Work split into <b>six Main Committees</b> + plenary; PGA chairs plenary; bureau of VPs.</li>
       <li><b>Special sessions</b> or <b>emergency special sessions</b> (Uniting for Peace procedure — GA action when SC deadlocked) — know for IR.</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">10. UNSC reform — PERT-style timeline</h2>
+  <div class="afc-wrap" aria-label="UNSC reform milestones">
+    <div class="afc-legend"><span>Type 9 · PERT</span> milestones · dependencies · stall points</div>
+    <div class="afc-pert-track">
+      <div class="afc-pert-node done"><b>1945</b>Charter · P5 veto</div>
+      <div class="afc-pert-connector" aria-hidden="true"></div>
+      <div class="afc-pert-node done"><b>1965</b>SC → 15 members</div>
+      <div class="afc-pert-connector" aria-hidden="true"></div>
+      <div class="afc-pert-node done"><b>2005</b>World Summit reform talk</div>
+      <div class="afc-pert-connector" aria-hidden="true"></div>
+      <div class="afc-pert-node now"><b>G4</b>India · Brazil · Germany · Japan</div>
+      <div class="afc-pert-connector" aria-hidden="true"></div>
+      <div class="afc-pert-node"><b>Block</b>Coffee Club · Ezulwini</div>
+      <div class="afc-pert-connector" aria-hidden="true"></div>
+      <div class="afc-pert-node"><b>Art. 108</b>2/3 GA + all P5 ratify</div>
+    </div>
+    <p class="afc-pert-note">No Charter amendment without P5 consent → reform stays political negotiation, not yet achieved.</p>
+  </div>
+  <div class="card">
+    <h3>Reform camps (mains one-pager)</h3>
+    <ul>
+      <li><b>G4</b> — permanent seats for four; mutual support.</li>
+      <li><b>Uniting for Consensus</b> — more elected seats, not G4 permanents.</li>
+      <li><b>African Union (Ezulwini)</b> — two permanent African seats with veto.</li>
+      <li><b>India</b> — troop contributor, nuclear state outside NPT; links reform to credibility of SC.</li>
     </ul>
   </div>
 </section>
@@ -1262,7 +1308,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 </section>
 
 </main>
-<footer>CA Notes · UN System Master · Hub = map · Birth / How / Where = complete UN mechanics</footer>
+<footer>CA Notes · UN System Master · v2026.10 · Hub = map · Birth / How / Where · animated charts need <code>ca-flowcharts.css</code> beside this file</footer>
 
 <script>
 (function(){

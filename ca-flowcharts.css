@@ -136,3 +136,22 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
   .afc-pipeline{flex-direction:column}
   .afc-arrow-h{width:4px;height:20px;flex:0 0 20px;background:linear-gradient(180deg,var(--afc-line),var(--afc-a),var(--afc-line));background-size:100% 200%;animation:afc-flow-y 1.6s linear infinite}
 }
+
+/* Type 9 · PERT / milestone track */
+.afc-pert-track{
+  display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:4px 6px;padding:8px 2px
+}
+.afc-pert-node{
+  flex:1 1 88px;max-width:120px;text-align:center;font-size:.7rem;line-height:1.35;padding:10px 6px;
+  border-radius:12px;border:2px dashed var(--afc-line);background:#fff;color:var(--afc-ink);
+  animation:afc-rise .5s ease both
+}
+.afc-pert-node b{display:block;font-size:.72rem;color:var(--afc-b);margin-bottom:3px}
+.afc-pert-node.done{border-style:solid;border-color:var(--afc-a);background:linear-gradient(180deg,#f0f9ff,#fff)}
+.afc-pert-node.now{border-color:#c9a227;border-style:solid;background:#fffdf6;box-shadow:0 6px 16px rgba(201,162,39,.2)}
+.afc-pert-connector{
+  flex:0 1 28px;min-width:16px;height:4px;margin-top:22px;border-radius:4px;
+  background:linear-gradient(90deg,var(--afc-a),var(--afc-line));
+  background-size:200% 100%;animation:afc-flow-x 2s linear infinite
+}
+.afc-pert-note{font-size:.74rem;color:var(--afc-muted);text-align:center;margin-top:10px;line-height:1.45}
