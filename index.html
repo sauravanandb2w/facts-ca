@@ -214,24 +214,34 @@
   .io-layer-table a:hover { text-decoration: underline; }
   .io-layer-table td small { display: block; color: var(--muted); font-weight: 500; margin-top: 2px; }
 
-  details.io-layer-acc {
-    margin-top: 12px; border: 1px solid var(--line); border-radius: 12px;
-    background: linear-gradient(180deg, #f7fbf8, #fff); overflow: hidden;
+  details.home-sub.io-layer-acc {
+    display: block; padding: 0; overflow: hidden;
+    background: linear-gradient(180deg, #f7fbf8, #fff);
+    border-left-color: var(--forest);
   }
-  details.io-layer-acc summary {
+  details.home-sub.io-layer-acc:hover { transform: none; }
+  details.home-sub.io-layer-acc summary {
     list-style: none; cursor: pointer; padding: 12px 14px;
     display: flex; align-items: center; justify-content: space-between; gap: 10px;
-    font-size: .84rem; font-weight: 700; color: var(--ink);
   }
-  details.io-layer-acc summary::-webkit-details-marker { display: none; }
-  details.io-layer-acc summary small { font-weight: 500; color: var(--muted); font-size: .74rem; }
-  details.io-layer-acc summary::after {
-    content: "+"; flex: none; font-size: 1.15rem; color: var(--teal); line-height: 1;
+  details.home-sub.io-layer-acc summary::-webkit-details-marker { display: none; }
+  details.home-sub.io-layer-acc .io-layer-summary-text {
+    display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0;
+    font-weight: 600; font-size: .92rem; color: var(--ink);
   }
-  details.io-layer-acc[open] summary::after { content: "−"; }
-  details.io-layer-acc[open] summary { border-bottom: 1px solid var(--line); }
-  details.io-layer-acc .io-layer-acc-body { padding: 10px 12px 14px; overflow-x: auto; }
-  details.io-layer-acc .io-layer-table { margin-top: 0; }
+  details.home-sub.io-layer-acc summary small { font-weight: 500; color: var(--muted); font-size: .72rem; }
+  details.home-sub.io-layer-acc summary::after {
+    content: "+"; flex: none; font-size: 1.2rem; color: var(--teal); line-height: 1;
+  }
+  details.home-sub.io-layer-acc[open] summary::after { content: "−"; }
+  details.home-sub.io-layer-acc[open] summary { border-bottom: 1px solid var(--line); }
+  details.home-sub.io-layer-acc .io-layer-acc-body { padding: 10px 14px 14px; overflow-x: auto; }
+  details.home-sub.io-layer-acc .io-layer-hub {
+    margin: 0 0 10px; font-size: .78rem;
+  }
+  details.home-sub.io-layer-acc .io-layer-hub a { font-weight: 600; color: var(--forest); text-decoration: none; }
+  details.home-sub.io-layer-acc .io-layer-hub a:hover { text-decoration: underline; }
+  details.home-sub.io-layer-acc .io-layer-table { margin-top: 0; }
 
   .home-sub {
     appearance: none; text-align: left; border: 1px solid var(--line); border-left: 4px solid var(--teal);
@@ -578,12 +588,12 @@
         <span class="acc-count">5-layer IO index + modules</span>
       </summary>
       <div class="home-acc-body">
-        <a class="home-sub span-full" href="un_system_master.html#hub">🗺️ International organisations — 5-layer index <small>Start here: UN → env → Bretton/WTO → clubs &amp; regional IO → MCQs</small></a>
-        <details class="io-layer-acc" id="io-layer-table" open>
+        <details class="home-sub span-full io-layer-acc" id="io-layer-table">
           <summary>
-            <span>International track <small>L1–L5 · Layer · Page · Open</small></span>
+            <span class="io-layer-summary-text">🗺️ International organisations — 5-layer index <small>Start here: UN → env → Bretton/WTO → clubs &amp; regional IO → MCQs · tap + for L1–L5 links</small></span>
           </summary>
           <div class="io-layer-acc-body">
+            <p class="io-layer-hub"><a href="un_system_master.html#hub">Open UN Master site map (family tree) →</a></p>
             <table class="io-layer-table" aria-label="International track layers">
               <thead><tr><th>Layer</th><th>Page</th><th>Open</th></tr></thead>
               <tbody>
