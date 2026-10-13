@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="ca-flowcharts.css?v=9">
+<link rel="stylesheet" href="ca-flowcharts.css?v=10">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -39,7 +39,7 @@ a:hover{text-decoration:underline}
 .section{display:none}.section.active{display:block;animation:fade .25s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .trick{background:#fff8e1;border:2px solid #f0c36d;border-radius:12px;padding:14px 16px;margin-bottom:16px}
-.trick h3{color:#e65100;font-size:.88rem;margin-bottom:6px}
+.trick h3{color:#e65100;font-size:.88rem;margin-bottom:6px;overflow-wrap:anywhere;line-height:1.35}
 .trick .line{font-family:"Fraunces",serif;font-size:1.02rem;font-weight:800;color:var(--red);line-height:1.5}
 .trick .decode{font-size:.84rem;color:#555;margin-top:8px;line-height:1.65}
 .section-title{font-family:"Fraunces",serif;font-size:1.15rem;color:var(--navy);border-left:4px solid var(--gold);padding-left:10px;margin:16px 0 12px}
@@ -945,54 +945,57 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
             <stop offset="0%" stop-color="#041e33"/><stop offset="100%" stop-color="#1565a8"/>
           </linearGradient>
         </defs>
-        <path class="wire-flow organ-trunk" d="M280,78 L280,88"/>
-        <path class="wire-flow" d="M48,88 L512,88" style="animation-delay:.25s"/>
+        <path class="wire-flow organ-trunk" d="M280,82 L280,92"/>
+        <path class="wire-flow" d="M48,92 L512,92" style="animation-delay:.25s"/>
         <g aria-hidden="true">
-          <path class="wire-flow" d="M64,88 L64,100" style="animation-delay:.1s"/>
-          <path class="wire-flow" d="M148,88 L148,100" style="animation-delay:.2s"/>
-          <path class="wire-flow" d="M232,88 L232,100" style="animation-delay:.3s"/>
-          <path class="wire-flow" d="M316,88 L316,100" style="animation-delay:.4s"/>
-          <path class="wire-flow" d="M400,88 L400,100" style="animation-delay:.5s"/>
-          <path class="wire-flow" d="M484,88 L484,100" style="animation-delay:.6s"/>
+          <path class="wire-flow" d="M64,92 L64,104" style="animation-delay:.1s"/>
+          <path class="wire-flow" d="M148,92 L148,104" style="animation-delay:.2s"/>
+          <path class="wire-flow" d="M232,92 L232,104" style="animation-delay:.3s"/>
+          <path class="wire-flow" d="M316,92 L316,104" style="animation-delay:.4s"/>
+          <path class="wire-flow" d="M400,92 L400,104" style="animation-delay:.5s"/>
+          <path class="wire-flow" d="M484,92 L484,104" style="animation-delay:.6s"/>
         </g>
-        <circle class="on-hub" cx="280" cy="48" r="28"/>
-        <text class="on-hub-t" x="280" y="46">UN Charter</text>
-        <text class="on-hub-s" x="280" y="58">6 principal organs</text>
+        <circle class="on-hub" cx="280" cy="50" r="32"/>
+        <text class="on-hub-t" x="280" y="44">UN Charter</text>
+        <text class="on-hub-s" x="280" y="52">
+          <tspan x="280" dy="0">6 principal</tspan>
+          <tspan x="280" dy="7">organs</tspan>
+        </text>
         <g class="organ-node active" data-organ="unga" role="button" tabindex="0" aria-pressed="true">
-          <rect class="on-box" x="24" y="100" width="80" height="72" rx="14"/>
-          <text class="on-ico" x="64" y="128" text-anchor="middle">🗳️</text>
-          <text class="on-label" x="64" y="148" text-anchor="middle">UNGA</text>
-          <text class="on-sub" x="64" y="162" text-anchor="middle">Ch. IV</text>
+          <rect class="on-box" x="24" y="104" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="64" y="132" text-anchor="middle">🗳️</text>
+          <text class="on-label" x="64" y="152" text-anchor="middle">UNGA</text>
+          <text class="on-sub" x="64" y="166" text-anchor="middle">Ch. IV</text>
         </g>
         <g class="organ-node" data-organ="unsc" role="button" tabindex="0" aria-pressed="false">
-          <rect class="on-box" x="108" y="100" width="80" height="72" rx="14"/>
-          <text class="on-ico" x="148" y="128" text-anchor="middle">🛡️</text>
-          <text class="on-label" x="148" y="148" text-anchor="middle">UNSC</text>
-          <text class="on-sub" x="148" y="162" text-anchor="middle">Ch. V</text>
+          <rect class="on-box" x="108" y="104" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="148" y="132" text-anchor="middle">🛡️</text>
+          <text class="on-label" x="148" y="152" text-anchor="middle">UNSC</text>
+          <text class="on-sub" x="148" y="166" text-anchor="middle">Ch. V</text>
         </g>
         <g class="organ-node" data-organ="ecosoc" role="button" tabindex="0" aria-pressed="false">
-          <rect class="on-box" x="192" y="100" width="80" height="72" rx="14"/>
-          <text class="on-ico" x="232" y="128" text-anchor="middle">📊</text>
-          <text class="on-label" x="232" y="148" text-anchor="middle">ECOSOC</text>
-          <text class="on-sub" x="232" y="162" text-anchor="middle">Agencies</text>
+          <rect class="on-box" x="192" y="104" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="232" y="132" text-anchor="middle">📊</text>
+          <text class="on-label" x="232" y="152" text-anchor="middle">ECOSOC</text>
+          <text class="on-sub" x="232" y="166" text-anchor="middle">Agencies</text>
         </g>
         <g class="organ-node" data-organ="trust" role="button" tabindex="0" aria-pressed="false">
-          <rect class="on-box dim" x="276" y="100" width="80" height="72" rx="14"/>
-          <text class="on-ico" x="316" y="128" text-anchor="middle">📋</text>
-          <text class="on-label" x="316" y="148" text-anchor="middle">Trust</text>
-          <text class="on-sub" x="316" y="162" text-anchor="middle">inactive</text>
+          <rect class="on-box dim" x="276" y="104" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="316" y="132" text-anchor="middle">📋</text>
+          <text class="on-label" x="316" y="152" text-anchor="middle">Trust</text>
+          <text class="on-sub" x="316" y="166" text-anchor="middle">inactive</text>
         </g>
         <g class="organ-node" data-organ="icj" role="button" tabindex="0" aria-pressed="false">
-          <rect class="on-box" x="360" y="100" width="80" height="72" rx="14"/>
-          <text class="on-ico" x="400" y="128" text-anchor="middle">⚖️</text>
-          <text class="on-label" x="400" y="148" text-anchor="middle">ICJ</text>
-          <text class="on-sub" x="400" y="162" text-anchor="middle">Hague</text>
+          <rect class="on-box" x="360" y="104" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="400" y="132" text-anchor="middle">⚖️</text>
+          <text class="on-label" x="400" y="152" text-anchor="middle">ICJ</text>
+          <text class="on-sub" x="400" y="166" text-anchor="middle">Hague</text>
         </g>
         <g class="organ-node" data-organ="sec" role="button" tabindex="0" aria-pressed="false">
-          <rect class="on-box" x="444" y="100" width="80" height="72" rx="14"/>
-          <text class="on-ico" x="484" y="128" text-anchor="middle">✍️</text>
-          <text class="on-label" x="484" y="148" text-anchor="middle">Secretariat</text>
-          <text class="on-sub" x="484" y="162" text-anchor="middle">SG</text>
+          <rect class="on-box" x="444" y="104" width="80" height="72" rx="14"/>
+          <text class="on-ico" x="484" y="132" text-anchor="middle">✍️</text>
+          <text class="on-label on-label-tight" x="484" y="152" text-anchor="middle">Secretariat</text>
+          <text class="on-sub" x="484" y="166" text-anchor="middle">SG</text>
         </g>
         <text x="280" y="218" text-anchor="middle" class="on-sub" style="font-size:9px">Tap a box — graphic + notes below</text>
         <g transform="translate(40,228)">

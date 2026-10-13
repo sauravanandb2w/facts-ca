@@ -78,8 +78,9 @@
 
 .afc-pipeline{
   display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:8px;padding:4px 0;
-  width:100%
+  width:100%;max-width:100%;min-width:0
 }
+.afc-pipeline--six .afc-step{flex:1 1 88px;max-width:min(160px,48%)}
 .afc-pipeline .afc-step:nth-child(4){animation-delay:.08s}
 .afc-pipeline .afc-step:nth-child(6){animation-delay:.16s}
 .afc-pipeline .afc-step:nth-child(8){animation-delay:.24s}
@@ -272,18 +273,19 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
 
 /* Figma-style organ poster + split viz / text */
 .organ-chart-wrap{
-  margin:0 0 12px;padding:14px 10px 8px;border-radius:18px;overflow-x:auto;
+  margin:0 0 12px;padding:14px 10px 8px;border-radius:18px;
+  max-width:100%;overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;
   background:
     radial-gradient(circle at 50% 0%,rgba(0,158,219,.12),transparent 55%),
     linear-gradient(180deg,#f8fbff,#fff);
-  border:2px solid #c5d8ef;position:relative;overflow:hidden
+  border:2px solid #c5d8ef;position:relative
 }
 .organ-chart-wrap::after{
   content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
   background:repeating-linear-gradient(90deg,rgba(0,158,219,.04) 0 1px,transparent 1px 24px),
     repeating-linear-gradient(0deg,rgba(0,158,219,.03) 0 1px,transparent 1px 24px)
 }
-.organ-chart{display:block;width:100%;min-width:min(560px,100%);max-width:640px;margin:0 auto;position:relative;z-index:1}
+.organ-chart{display:block;width:100%;max-width:640px;min-width:0;height:auto;margin:0 auto;position:relative;z-index:1}
 .organ-chart .on-box{
   fill:#fff;stroke:#b8d4f0;stroke-width:2;transition:fill .2s,stroke .2s,filter .2s
 }
@@ -293,7 +295,9 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
 .organ-chart .on-sub{font-size:8.5px;font-weight:600;fill:#5a6a7d}
 .organ-chart .on-hub{fill:url(#organHubGrad);stroke:#009edb;stroke-width:2}
 .organ-chart .on-hub-t{font-size:11px;font-weight:800;fill:#fff;text-anchor:middle}
-.organ-chart .on-hub-s{font-size:8px;font-weight:600;fill:rgba(255,255,255,.9);text-anchor:middle}
+.organ-chart .on-hub-s{font-size:7px;font-weight:600;fill:rgba(255,255,255,.92);text-anchor:middle}
+.organ-chart .on-hub-s tspan{font-size:inherit}
+.organ-chart .on-label-tight{font-size:9px}
 .organ-node{cursor:pointer}
 .organ-node:focus{outline:none}
 .organ-node:focus .on-box,.organ-node:hover .on-box{stroke:#009edb;filter:drop-shadow(0 4px 10px rgba(0,158,219,.25))}
