@@ -121,6 +121,7 @@
   font-size:.74rem;line-height:1.45;display:flex;align-items:flex-start;justify-content:center;text-align:center;
   min-width:0;overflow-wrap:anywhere;word-break:break-word
 }
+.afc-swim-cell b{display:block;margin-bottom:4px;font-size:.76rem;color:var(--afc-b)}
 .afc-swim-cell small{display:block;margin-top:4px;font-size:.68rem;color:var(--afc-muted);line-height:1.35}
 .afc-swim-cell:last-child{border-right:0}
 .afc-swim-row:last-child .afc-swim-cell{border-bottom:0}
@@ -425,7 +426,8 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
   border-radius:999px;border:2px solid var(--afc-line);background:#fff;margin:2px;
   animation:afc-rise .5s ease both;overflow-wrap:anywhere
 }
-.afc-touch strong{display:block;font-size:.68rem;color:var(--afc-b);margin-bottom:2px}
+.afc-touch strong{display:block;font-size:.68rem;color:var(--afc-b);margin-bottom:3px}
+.afc-touch .afc-sub{font-size:.62rem;color:var(--afc-muted);line-height:1.25;display:block}
 .afc-journey .afc-arrow-h{flex:0 0 16px;min-width:12px}
 
 /* Type 13 · Production / order flow */

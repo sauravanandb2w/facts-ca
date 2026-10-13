@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="ca-flowcharts.css?v=7">
+<link rel="stylesheet" href="ca-flowcharts.css?v=8">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -115,7 +115,8 @@ main{max-width:980px;margin:0 auto;padding:22px 14px 80px}
 .compare{overflow-x:auto;border-radius:12px;border:1px solid var(--line);margin:14px 0 18px;background:#fff}
 table{width:100%;border-collapse:collapse;min-width:680px;font-size:.82rem}
 th{background:linear-gradient(135deg,var(--navy),var(--ocean));color:#fff;text-align:left;padding:10px 12px}
-td{padding:9px 12px;border-bottom:1px solid #e8eef5;vertical-align:top;line-height:1.45}
+td{padding:9px 12px;border-bottom:1px solid #e8eef5;vertical-align:top;line-height:1.45;overflow-wrap:anywhere;word-break:break-word}
+th{overflow-wrap:anywhere}
 tr:nth-child(even) td{background:#f7faff}
 
 .section-title{
@@ -218,11 +219,13 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
         <span class="afc-site-node root" style="cursor:default">This page</span>
       </div>
       <div class="afc-site-row">
-        <a class="afc-site-node dim" href="#money">Money</a>
-        <a class="afc-site-node dim" href="#trade">Trade</a>
-        <a class="afc-site-node dim" href="#groups">Groups</a>
-        <a class="afc-site-node dim" href="#agency">Agencies</a>
-        <a class="afc-site-node dim" href="#mcq">MCQs</a>
+        <button type="button" class="afc-site-node dim" data-tab="money">Money</button>
+        <button type="button" class="afc-site-node dim" data-tab="trade">Trade</button>
+        <button type="button" class="afc-site-node dim" data-tab="banks">Dev banks</button>
+        <button type="button" class="afc-site-node dim" data-tab="groups">Groups</button>
+        <button type="button" class="afc-site-node dim" data-tab="regional">Regional</button>
+        <button type="button" class="afc-site-node dim" data-tab="agency">Agencies</button>
+        <button type="button" class="afc-site-node dim" data-tab="mcq">MCQs</button>
       </div>
     </div>
   </div>
@@ -270,9 +273,9 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
     <div class="afc-pipeline">
       <div class="afc-start">1944<br>Bretton Woods</div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-step"><b>IMF</b>BOP · SDR · surveillance</div>
+      <div class="afc-step"><b>IMF</b><span class="afc-sub">BOP · SDR · surveillance</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-step"><b>World Bank</b>Projects · IDA/IBRD</div>
+      <div class="afc-step"><b>World Bank</b><span class="afc-sub">Projects · IDA / IBRD</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
       <div class="afc-end">Member<br>states</div>
     </div>
@@ -284,6 +287,23 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
       <div class="afc-log-col proc"><h6>Process</h6><ul><li>Art. IV surveillance</li><li>Lending programmes</li><li>Conditionality</li></ul></div>
       <div class="afc-log-col"><h6>Outputs</h6><ul><li>Stabilization</li><li>Policy advice</li><li>SDR liquidity</li></ul></div>
       <div class="afc-log-col out"><h6>Trap</h6><ul><li>IMF ≠ WB</li><li>HQ Washington</li><li>Not UN organ</li></ul></div>
+    </div>
+  </div>
+  <div class="afc-wrap dyn-flow is-live" aria-label="IMF or World Bank decision">
+    <div class="afc-legend"><span>Type 5 · Decision</span> which twin do you need?</div>
+    <div class="afc-decision-flow">
+      <div class="afc-decision">Macro crisis or<br>long-term project?</div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-split-2">
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">BOP / macro</span>
+          <div class="afc-step accent"><b>→ IMF</b><span class="afc-sub">Quota · SDR · short adjustment</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Development</span>
+          <div class="afc-step"><b>→ World Bank</b><span class="afc-sub">IBRD / IDA projects</span></div>
+        </div>
+      </div>
     </div>
   </div>
   <input class="search" placeholder="🔍 Search IMF / World Bank / quota / IDA…" data-filter="money">
@@ -365,25 +385,42 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
     <div class="line">“WTO अदालत + नियम किताब है; WEF पहाड़ी मेला (Davos) है!”</div>
     <div class="decode">WTO = member-driven treaty org with dispute settlement. WEF = Swiss foundation / forum — influential, but not a UN specialized agency.</div>
   </div>
-  <div class="afc-wrap dyn-flow is-live" aria-label="WTO dispute swimlane">
-    <div class="afc-legend"><span>Type 4 · Swimlane</span> dispute settlement</div>
-    <div class="afc-swim">
-      <div class="afc-swim-hdr"><div>Complainant</div><div>WTO panels / AB</div><div>Respondent</div></div>
-      <div class="afc-swim-row">
-        <div class="afc-swim-cell">Request consultations</div>
-        <div class="afc-swim-cell accent">Panel report · rulings on GATT rules</div>
-        <div class="afc-swim-cell">Implement or face retaliation</div>
+  <div class="afc-wrap dyn-flow is-live" aria-label="WTO dispute settlement workflow">
+    <div class="afc-legend"><span>Type 2 · Workflow</span> DSU steps (simplified)</div>
+    <div class="afc-decision-flow">
+      <div class="afc-step afc-wide"><b>1 · Consultations</b><span class="afc-sub">Complainant &amp; respondent negotiate (DSU)</span></div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-step afc-wide"><b>2 · Panel</b><span class="afc-sub">Ruling on GATT / GATS / TRIPS</span></div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-step afc-wide"><b>3 · Implementation</b><span class="afc-sub">Comply or face authorized retaliation</span></div>
+      <p class="afc-hint">Appellate Body paralysis is live CA — panels still issue reports.</p>
+    </div>
+  </div>
+  <div class="afc-wrap dyn-flow is-live" aria-label="WTO vs WEF decision">
+    <div class="afc-legend"><span>Type 5 · Decision</span> binding trade law or Davos forum?</div>
+    <div class="afc-decision-flow">
+      <div class="afc-decision">Question about<br>trade rules?</div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-split-2">
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Yes · law</span>
+          <div class="afc-step accent"><b>WTO</b><span class="afc-sub">Geneva · DSU · MFN / NT</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Elite summit</span>
+          <div class="afc-step"><b>WEF</b><span class="afc-sub">Davos · non-binding dialogue</span></div>
+        </div>
       </div>
     </div>
   </div>
   <div class="afc-wrap dyn-flow is-live" aria-label="WTO goods production flow">
     <div class="afc-legend"><span>Type 13 · Production</span> order → border → delivery</div>
-    <div class="afc-prod">
+    <div class="afc-pipeline">
       <div class="afc-start">Export<br>order</div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-step"><b>Customs</b>MFN · rules of origin</div>
+      <div class="afc-step"><b>Customs</b><span class="afc-sub">MFN · origin rules</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-step"><b>WTO rules</b>Tariffs · SPS/TBT</div>
+      <div class="afc-step"><b>WTO rules</b><span class="afc-sub">Tariffs · SPS / TBT</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
       <div class="afc-end">Import<br>market</div>
     </div>
@@ -450,6 +487,17 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
     <h3>Three banks people mix up</h3>
     <div class="line">“मनीला ADB, बीजिंग AIIB, शंघाई NDB — तीन बैंक, तीन शहर!”</div>
     <div class="decode">ADB = older Asia-Pacific MDB · AIIB = China-led infra bank · NDB = BRICS bank.</div>
+  </div>
+  <div class="afc-wrap dyn-flow is-live" aria-label="Development banks HQ map">
+    <div class="afc-legend"><span>Type 1 · Process</span> three banks · three HQs</div>
+    <div class="afc-pipeline">
+      <div class="afc-step"><b>ADB</b><span class="afc-sub">Manila · Asia-Pacific MDB (1966)</span></div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>AIIB</b><span class="afc-sub">Beijing · infra focus (2016)</span></div>
+      <div class="afc-arrow-h" aria-hidden="true"></div>
+      <div class="afc-step"><b>NDB</b><span class="afc-sub">Shanghai · BRICS (2015)</span></div>
+    </div>
+    <p class="afc-hint">Exam trap: HQ city ≠ membership story (India in all three).</p>
   </div>
   <input class="search" placeholder="🔍 Search ADB / AIIB / NDB…" data-filter="banks">
   <div class="org-grid" data-group="banks">
@@ -600,29 +648,29 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
     <div class="afc-swim">
       <div class="afc-swim-hdr"><div>Forum</div><div>Treaty IO</div><div>Alliance</div></div>
       <div class="afc-swim-row">
-        <div class="afc-swim-cell accent">G20 · G7 · BRICS</div>
-        <div class="afc-swim-cell">ASEAN · SCO</div>
-        <div class="afc-swim-cell">NATO</div>
+        <div class="afc-swim-cell accent"><b>Forum</b><small>G20 · G7 · BRICS summits</small></div>
+        <div class="afc-swim-cell"><b>Treaty IO</b><small>ASEAN · SCO · AU</small></div>
+        <div class="afc-swim-cell"><b>Alliance</b><small>NATO · CSTO</small></div>
       </div>
       <div class="afc-swim-row">
-        <div class="afc-swim-cell">QUAD (informal)</div>
-        <div class="afc-swim-cell">EU · AU</div>
-        <div class="afc-swim-cell">CSTO</div>
+        <div class="afc-swim-cell"><b>Informal</b><small>QUAD dialogue</small></div>
+        <div class="afc-swim-cell"><b>Union</b><small>EU (supranational)</small></div>
+        <div class="afc-swim-cell"><b>Trap</b><small>QUAD ≠ NATO</small></div>
       </div>
     </div>
   </div>
   <div class="afc-wrap dyn-flow is-live" aria-label="G20 presidency journey">
     <div class="afc-legend"><span>Type 12 · Journey</span> host year touchpoints</div>
     <div class="afc-journey">
-      <div class="afc-touch"><strong>Troika</strong>Handover</div>
+      <div class="afc-touch"><strong>Troika</strong><span class="afc-sub">Handover</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-touch"><strong>Sherpas</strong>Prep</div>
+      <div class="afc-touch"><strong>Sherpas</strong><span class="afc-sub">Prep</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-touch"><strong>Ministerials</strong>Sectors</div>
+      <div class="afc-touch"><strong>Ministerials</strong><span class="afc-sub">Sectors</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-touch"><strong>Summit</strong>Leaders</div>
+      <div class="afc-touch"><strong>Summit</strong><span class="afc-sub">Leaders</span></div>
       <div class="afc-arrow-h" aria-hidden="true"></div>
-      <div class="afc-touch"><strong>Declaration</strong>Non-binding</div>
+      <div class="afc-touch"><strong>Declaration</strong><span class="afc-sub">Non-binding</span></div>
     </div>
   </div>
   <input class="search" placeholder="🔍 Search G20 / BRICS / SCO / ASEAN / QUAD…" data-filter="groups">
@@ -706,6 +754,27 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
     <h3>Regional &amp; cross-regional organisations</h3>
     <div class="line">क्षेत्रीय = संविधान/सचिवालय · G20/QUAD = मेज़ (Groups tab)</div>
     <div class="decode">India lens: neighbourhood (SAARC, BIMSTEC), Indo-Pacific (IORA, QUAD in Groups), Africa/Gulf for CA.</div>
+  </div>
+  <div class="afc-wrap dyn-flow is-live" aria-label="India neighbourhood org picker">
+    <div class="afc-legend"><span>Type 5 · Decision</span> South Asia vs Bay vs Indian Ocean</div>
+    <div class="afc-decision-flow">
+      <div class="afc-decision">Which<br>region?</div>
+      <div class="afc-arrow-v" aria-hidden="true"></div>
+      <div class="afc-split-3">
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">South Asia</span>
+          <div class="afc-step"><b>SAARC</b><span class="afc-sub">Kathmandu · 8 members</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Bay of Bengal</span>
+          <div class="afc-step"><b>BIMSTEC</b><span class="afc-sub">Dhaka · 7 members</span></div>
+        </div>
+        <div class="afc-branch-col">
+          <span class="afc-branch-label">Indian Ocean</span>
+          <div class="afc-step"><b>IORA</b><span class="afc-sub">Mauritius sec. · rim states</span></div>
+        </div>
+      </div>
+    </div>
   </div>
   <input class="search" placeholder="🔍 Search SAARC / AU / EU / GCC / OIC…" data-filter="regional">
 
@@ -962,7 +1031,7 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
 </section>
 
 </main>
-<footer>Parcham Classes · International Organisations · UPSC Facts · Linked from Index</footer>
+<footer>Parcham Classes · International Organisations · flowcharts v8 · Linked from Index</footer>
 
 <script>
 (function(){
@@ -976,6 +1045,9 @@ footer{text-align:center;color:var(--muted);font-size:.8rem;padding:8px 16px 28p
     window.scrollTo({top:0,behavior:'smooth'});
   }
   tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
+  document.querySelectorAll('.afc-site-node[data-tab]').forEach(btn=>{
+    btn.addEventListener('click',()=>show(btn.dataset.tab));
+  });
   const hash=(location.hash||'').replace('#','');
   if(hash && document.getElementById('tab-'+hash)) show(hash);
 
