@@ -20,9 +20,10 @@
   box-shadow:0 12px 36px rgba(15,27,45,.1);
   overflow:visible;
   max-width:100%;
-  box-sizing:border-box
+  box-sizing:border-box;
 }
-.afc-wrap *{box-sizing:border-box;max-width:100%}
+.afc-wrap,.afc-wrap *{box-sizing:border-box}
+.afc-wrap .afc-step,.afc-wrap .afc-site-node,.afc-wrap .afc-decision,.afc-wrap .afc-bubble,.afc-wrap .afc-doc-step{min-width:0;max-width:100%}
 .afc-wrap::before{
   content:"";position:absolute;inset:0;border-radius:18px;padding:2px;
   background:linear-gradient(110deg,var(--afc-a),var(--afc-b),#c9a227,var(--afc-a));
@@ -454,17 +455,22 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
 
 /* Type 17 · Website / study sitemap */
 .afc-sitemap{display:flex;flex-direction:column;align-items:center;gap:8px;padding:8px 0}
-.afc-site-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;align-items:center}
+.afc-site-row{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px;align-items:stretch;
+  width:100%;max-width:100%
+}
 .afc-site-node{
+  flex:0 1 auto;max-width:100%;
   font-size:.72rem;font-weight:700;padding:8px 12px;border-radius:10px;
   border:2px solid var(--afc-line);background:#fff;text-decoration:none;color:var(--afc-ink);
-  transition:border-color .2s,background .2s;cursor:pointer;font-family:inherit
+  transition:border-color .2s,background .2s;cursor:pointer;font-family:inherit;
+  text-align:center;line-height:1.35;overflow-wrap:anywhere;word-break:break-word
 }
 .afc-site-node:hover,.afc-site-node:focus{border-color:var(--afc-a);background:#e8f6ff;outline:none}
 .afc-site-node.root{background:linear-gradient(135deg,#041e33,var(--afc-b));color:#fff;border-color:transparent}
 .afc-site-node.dim{opacity:.92;border-style:dashed;font-weight:600}
 .afc-type-index{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;
   font-size:.72rem;line-height:1.45;margin-top:10px
 }
 .afc-type-index div{padding:8px 10px;border-radius:10px;border:1px solid var(--afc-line);background:rgba(255,255,255,.9)}

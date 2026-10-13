@@ -214,34 +214,46 @@
   .io-layer-table a:hover { text-decoration: underline; }
   .io-layer-table td small { display: block; color: var(--muted); font-weight: 500; margin-top: 2px; }
 
-  details.home-sub.io-layer-acc {
-    display: block; padding: 0; overflow: hidden;
+  .io-layer-block {
+    grid-column: 1 / -1; margin-bottom: 4px;
+    padding: 14px 16px 16px; border-radius: 14px;
+    border: 1px solid var(--line); border-left: 4px solid var(--forest);
     background: linear-gradient(180deg, #f7fbf8, #fff);
-    border-left-color: var(--forest);
   }
-  details.home-sub.io-layer-acc:hover { transform: none; }
-  details.home-sub.io-layer-acc summary {
-    list-style: none; cursor: pointer; padding: 12px 14px;
-    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  .io-layer-block h3 {
+    font-family: "Fraunces", serif; font-size: 1rem; color: var(--ink); margin: 0 0 4px;
   }
-  details.home-sub.io-layer-acc summary::-webkit-details-marker { display: none; }
-  details.home-sub.io-layer-acc .io-layer-summary-text {
-    display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0;
-    font-weight: 600; font-size: .92rem; color: var(--ink);
+  .io-layer-block .io-layer-lead {
+    font-size: .78rem; color: var(--muted); margin: 0 0 12px; line-height: 1.45;
   }
-  details.home-sub.io-layer-acc summary small { font-weight: 500; color: var(--muted); font-size: .72rem; }
-  details.home-sub.io-layer-acc summary::after {
-    content: "+"; flex: none; font-size: 1.2rem; color: var(--teal); line-height: 1;
+  .io-layer-block .io-layer-lead a { color: var(--forest); font-weight: 600; text-decoration: none; }
+  .io-layer-block .io-layer-lead a:hover { text-decoration: underline; }
+  .io-layer-cards {
+    display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px;
   }
-  details.home-sub.io-layer-acc[open] summary::after { content: "−"; }
-  details.home-sub.io-layer-acc[open] summary { border-bottom: 1px solid var(--line); }
-  details.home-sub.io-layer-acc .io-layer-acc-body { padding: 10px 14px 14px; overflow-x: auto; }
-  details.home-sub.io-layer-acc .io-layer-hub {
-    margin: 0 0 10px; font-size: .78rem;
+  @media (max-width: 900px) { .io-layer-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 480px) { .io-layer-cards { grid-template-columns: 1fr; } }
+  a.io-layer-card {
+    display: flex; flex-direction: column; gap: 4px; min-width: 0; min-height: 100%;
+    padding: 12px 12px 10px; border-radius: 12px; text-decoration: none; color: var(--ink);
+    border: 1px solid var(--line); background: #fff;
+    transition: border-color .15s, box-shadow .15s, transform .15s;
   }
-  details.home-sub.io-layer-acc .io-layer-hub a { font-weight: 600; color: var(--forest); text-decoration: none; }
-  details.home-sub.io-layer-acc .io-layer-hub a:hover { text-decoration: underline; }
-  details.home-sub.io-layer-acc .io-layer-table { margin-top: 0; }
+  a.io-layer-card:hover {
+    border-color: var(--teal); box-shadow: 0 6px 18px rgba(15, 45, 30, .08); transform: translateY(-1px);
+  }
+  .io-layer-card .io-layer-n {
+    align-self: flex-start; font-size: .65rem; font-weight: 800; letter-spacing: .06em;
+    text-transform: uppercase; color: #fff; background: var(--forest); padding: 2px 8px; border-radius: 6px;
+  }
+  .io-layer-card strong { font-size: .82rem; line-height: 1.3; color: var(--ink); }
+  .io-layer-card small {
+    font-size: .7rem; font-weight: 500; color: var(--muted); line-height: 1.4;
+    overflow-wrap: anywhere; word-break: break-word;
+  }
+  .io-layer-card .io-layer-extra {
+    margin-top: 4px; font-size: .68rem; font-weight: 600; color: var(--teal);
+  }
 
   .home-sub {
     appearance: none; text-align: left; border: 1px solid var(--line); border-left: 4px solid var(--teal);
@@ -558,6 +570,9 @@
     .sub-tab small { display: inline; margin-left: 6px; }
     .grid-2, .compare, .link-map { grid-template-columns: 1fr; }
     .kv { grid-template-columns: 1fr; }
+    .home-sub-grid { grid-template-columns: 1fr; }
+    details.home-acc summary { flex-wrap: wrap; row-gap: 8px; }
+    .acc-count { margin-left: 0; }
   }
 </style>
 </head>
@@ -588,24 +603,38 @@
         <span class="acc-count">5-layer IO index + modules</span>
       </summary>
       <div class="home-acc-body">
-        <details class="home-sub span-full io-layer-acc" id="io-layer-table">
-          <summary>
-            <span class="io-layer-summary-text">🗺️ International organisations — 5-layer index <small>Start here: UN → env → Bretton/WTO → clubs &amp; regional IO → MCQs · tap + for L1–L5 links</small></span>
-          </summary>
-          <div class="io-layer-acc-body">
-            <p class="io-layer-hub"><a href="un_system_master.html#hub">Open UN Master site map (family tree) →</a></p>
-            <table class="io-layer-table" aria-label="International track layers">
-              <thead><tr><th>Layer</th><th>Page</th><th>Open</th></tr></thead>
-              <tbody>
-                <tr><td>L1</td><td>UN Charter system<small>Birth · elections · offices · organs · PKO</small></td><td><a href="un_system_master.html#birth">UN master</a> · <a href="un_system_master.html#groups">5 regional groups</a></td></tr>
-                <tr><td>L2</td><td>Environment architecture<small>Summits · UNEP · COP · mega treaty table</small></td><td><a href="un_environment_architecture.html">Env map</a></td></tr>
-                <tr><td>L3</td><td>Bretton Woods &amp; trade<small>IMF · WB · WTO · dev banks</small></td><td><a href="international_organisations.html">IO sheet</a></td></tr>
-                <tr><td>L4</td><td>IR clubs &amp; regional IO<small>G20/BRICS/SCO · SAARC/AU/EU…</small></td><td><a href="un_system_master.html#layer4-index">Layer 4 index</a> · <a href="international_organisations.html#groups">Groups</a> · <a href="international_organisations.html#regional">Regional</a></td></tr>
-                <tr><td>L5</td><td>Practice<small>Env conventions MCQs</small></td><td><a href="upsc_environment_mcqs_english.html">Env MCQs</a></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </details>
+        <div class="io-layer-block" id="io-layer-table">
+          <h3>🗺️ International organisations — 5 layers</h3>
+          <p class="io-layer-lead">Study order left to right. <a href="un_system_master.html#hub">UN Master site map</a> · <a href="un_system_master.html#groups">5 UN regional groups</a> (election caucuses, not G20).</p>
+          <nav class="io-layer-cards" aria-label="International track layers L1 to L5">
+            <a class="io-layer-card" href="un_system_master.html#hub">
+              <span class="io-layer-n">L1</span>
+              <strong>UN Charter system</strong>
+              <small>Birth · elections · 6 organs · PKO</small>
+            </a>
+            <a class="io-layer-card" href="un_environment_architecture.html">
+              <span class="io-layer-n">L2</span>
+              <strong>Environment architecture</strong>
+              <small>UNEP · COP · treaty mega table</small>
+            </a>
+            <a class="io-layer-card" href="international_organisations.html">
+              <span class="io-layer-n">L3</span>
+              <strong>Bretton Woods &amp; trade</strong>
+              <small>IMF · World Bank · WTO · dev banks</small>
+            </a>
+            <a class="io-layer-card" href="un_system_master.html#layer4-index">
+              <span class="io-layer-n">L4</span>
+              <strong>Clubs &amp; regional IO</strong>
+              <small>G20 · BRICS · ASEAN · AU · EU…</small>
+              <span class="io-layer-extra">IO groups &amp; regional tabs →</span>
+            </a>
+            <a class="io-layer-card" href="upsc_environment_mcqs_english.html">
+              <span class="io-layer-n">L5</span>
+              <strong>Practice MCQs</strong>
+              <small>Environment conventions set</small>
+            </a>
+          </nav>
+        </div>
         <div class="home-sub-grid" style="margin-top:14px">
           <a class="home-sub" href="polity_mini_constitution.html">Polity mini-Constitution <small>Preamble · articles · drawer</small></a>
           <button class="home-sub" type="button" disabled>Economy <small>Reports</small> <span class="soon">Soon</span></button>
