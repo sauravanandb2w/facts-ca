@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="ca-flowcharts.css?v=3">
+<link rel="stylesheet" href="ca-flowcharts.css?v=4">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -325,12 +325,12 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <h2 class="section-title">UN system — family tree</h2>
     <p class="fc-lead">Top → bottom = Charter hierarchy. <span>Tap an organ for detail.</span> <a href="#organs" class="fc-jump-organs">Six organs tab ↗</a></p>
 
-    <div class="flowchart" role="img" aria-label="UN system family tree flowchart">
+    <div class="flowchart dyn-flow is-live" role="img" aria-label="UN system family tree flowchart">
     <div class="fc-root">
       <strong>🇺🇳 United Nations</strong>
       <span>Charter 1945 · HQ New York · ~193 member states</span>
     </div>
-    <div class="fc-vline" aria-hidden="true"></div>
+    <div class="fc-vline dyn-pipe" aria-hidden="true"></div>
 
     <div class="fc-tier">
       <div class="fc-tier-label">Principal organs — only these six (Charter)</div>
@@ -346,9 +346,9 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       </div>
     </div>
 
-    <div class="fc-vline" aria-hidden="true"></div>
+    <div class="fc-vline dyn-pipe" aria-hidden="true"></div>
     <div class="fc-tier-label">UN family — hangs off organs (especially ECOSOC &amp; GA)</div>
-    <div class="fc-vline short" aria-hidden="true"></div>
+    <div class="fc-vline short dyn-pipe" aria-hidden="true"></div>
 
     <div class="fc-tier fc-row3">
       <div class="fc-block fc-click" data-go="funds" tabindex="0" role="button">
@@ -381,7 +381,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       </div>
     </div>
 
-    <div class="fc-vline" aria-hidden="true"></div>
+    <div class="fc-vline dyn-pipe" aria-hidden="true"></div>
     <div class="fc-tier-label warn">Linked — not UN organs</div>
     <div class="fc-ext-row">
       <div class="fc-node ext">
@@ -418,7 +418,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <div class="hub-acc-body hub-layer4" style="border:0;padding:0;margin:0;background:transparent">
     <p class="hub-note">Forums (G20) ≠ treaty organisations (ASEAN) ≠ military alliances (NATO). Full cards on <a href="international_organisations.html">International Organisations</a>.</p>
 
-    <div class="afc-wrap" aria-label="Layer 4 legal types swimlane">
+    <div class="afc-wrap dyn-flow" aria-label="Layer 4 legal types swimlane">
       <div class="afc-legend"><span>Type 4 · Swimlane</span> forum vs treaty org vs alliance</div>
       <div class="afc-swim">
         <div class="afc-swim-hdr"><div>Economic / political forum</div><div>Treaty-based organisation</div><div>Military alliance</div></div>
@@ -494,7 +494,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     </div>
   </div>
 
-  <div class="afc-wrap" aria-label="Which study layer decision tree">
+  <div class="afc-wrap dyn-flow" aria-label="Which study layer decision tree">
     <div class="afc-legend"><span>Type 5 · Decision</span> open which layer?</div>
     <div class="afc-branch">
       <div class="afc-decision">Keyword in<br>question?</div>
@@ -528,7 +528,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <div class="timeline-item"><span class="yr">24 Oct 1945</span> Charter <b>enters into force</b> after ratification by P5 + majority of signatories → <b>UN Day</b>.</div>
   </div>
 
-  <div class="afc-wrap" aria-label="UN founding process">
+  <div class="afc-wrap dyn-flow" aria-label="UN founding process">
     <div class="afc-legend"><span>Type 2 · Workflow</span> milestones to living organization</div>
     <div class="afc-pipeline">
       <div class="afc-start">1942<br>Declaration</div>
@@ -625,7 +625,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   </div>
   <p class="source-note"><a href="https://www.un.org/sg/en/content/appointment-secretary-general" rel="noopener">UN — Appointment of SG</a></p>
 
-  <div class="afc-wrap" aria-label="SG appointment swimlane">
+  <div class="afc-wrap dyn-flow" aria-label="SG appointment swimlane">
     <div class="afc-legend"><span>Type 4 · Swimlane</span> who acts at each step</div>
     <div class="afc-swim">
       <div class="afc-swim-hdr"><div>Member states</div><div>Security Council</div><div>General Assembly</div></div>
@@ -682,7 +682,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     </ul>
   </div>
 
-  <div class="afc-wrap" aria-label="ICJ election data flow">
+  <div class="afc-wrap dyn-flow" aria-label="ICJ election data flow">
     <div class="afc-legend"><span>Type 3 · Data flow</span> parallel ballots</div>
     <div class="afc-data">
       <div class="afc-bubble"><h5>PCA national groups</h5>Nominee lists</div>
@@ -712,7 +712,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     </table>
   </div>
 
-  <div class="afc-wrap" aria-label="GA voting decision tree">
+  <div class="afc-wrap dyn-flow" aria-label="GA voting decision tree">
     <div class="afc-legend"><span>Type 5 · Decision tree</span> which majority?</div>
     <div class="afc-branch">
       <div class="afc-decision">GA vote<br>on what?</div>
@@ -751,7 +751,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
   </div>
 
   <h2 class="section-title">10. UNSC reform — PERT-style timeline</h2>
-  <div class="afc-wrap" aria-label="UNSC reform milestones">
+  <div class="afc-wrap dyn-flow" aria-label="UNSC reform milestones">
     <div class="afc-legend"><span>Type 9 · PERT</span> milestones · dependencies · stall points</div>
     <div class="afc-pert-track">
       <div class="afc-pert-node done"><b>1945</b>Charter · P5 veto</div>
@@ -834,65 +834,104 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     <h3>Six principal organs — exam must-know</h3>
     <div class="line">GA · SC · ECOSOC · Trusteeship(मृत) · ICJ · Secretariat — छह, सात नहीं!</div>
   </div>
-  <div class="org-grid">
-    <article class="org">
-      <h4>1. General Assembly (UNGA)</h4>
-      <div class="sub">Charter Ch. IV · All member states · one country, one vote</div>
-      <ul>
-        <li>Deliberative, policy-making, representative body — <b>193 members</b> today.</li>
-        <li>Discusses any matter within Charter scope (Art. 10); <b>recommends</b> on most issues; binding on budget, assessment scales, internal GA decisions, elections it conducts.</li>
-        <li>Elects non-permanent UNSC members, ECOSOC, ICJ judges (with SC), approves <b>UN budget</b>; admits members on SC recommendation.</li>
-        <li><b>Art. 18:</b> important questions need 2/3 majority; others simple majority.</li>
-        <li>Annual session Sept–Dec (+ resumed); PGA elected from regional rotation.</li>
-      </ul>
-    </article>
-    <article class="org">
-      <h4>2. Security Council (UNSC)</h4>
-      <div class="sub">Charter Ch. V · Primary responsibility: peace &amp; security (Art. 24)</div>
-      <ul>
-        <li><b>15 members:</b> P5 + 10 elected by GA for 2 years (regional seats).</li>
-        <li><b>P5:</b> USA, UK, France, Russia, China — <b>veto</b> on substantive resolutions (not procedural).</li>
-        <li><b>Ch. VI:</b> call parties, recommend settlement; <b>Ch. VII:</b> sanctions &amp; force.</li>
-        <li>Establishes PKO mandates; sanctions committees; monthly rotating presidency.</li>
-        <li><b>India:</b> 8th term as non-permanent member (2021–22 recent); permanent seat demand via G4.</li>
-      </ul>
-    </article>
-    <article class="org">
-      <h4>3. ECOSOC</h4>
-      <div class="sub">Economic and Social Council — coordination hub</div>
-      <ul>
-        <li>Coordinates economic, social, environmental work; links UN to <b>specialized agencies</b> &amp; NGOs.</li>
-        <li>Regional commissions (e.g. UNECE, ESCAP) sit under ECOSOC.</li>
-        <li>Not the same as running climate law — that's <b>UNFCCC treaty</b> (separate page later).</li>
-      </ul>
-    </article>
-    <article class="org">
-      <h4>4. Trusteeship Council</h4>
-      <div class="sub">Inactive Charter organ — brief</div>
-      <ul>
-        <li>Supervised <b>trust territories</b> until self-rule; last was <b>Palau (1994)</b>.</li>
-        <li>Operations <b>suspended</b> — still counts among the <b>six</b> principal organs (exam trap).</li>
-      </ul>
-    </article>
-    <article class="org">
-      <h4>5. ICJ</h4>
-      <div class="sub">International Court of Justice · The Hague</div>
-      <ul>
-        <li>Principal <b>judicial</b> organ; disputes between <b>states</b> that consent.</li>
-        <li><b>Advisory opinions</b> to UN organs/agencies (e.g. GA, SC).</li>
-        <li>15 judges; 9-year terms; separate from ICC (criminal individuals).</li>
-      </ul>
-    </article>
-    <article class="org">
-      <h4>6. Secretariat</h4>
-      <div class="sub">International civil service</div>
-      <ul>
-        <li><b>Secretary-General</b> — chief administrative officer; not world government.</li>
-        <li>Appointed: UNSC recommendation (often P5 consensus politics) + UNGA appointment.</li>
-        <li>Staff implement GA/SC decisions; SG can bring matters to SC attention (Art. 99).</li>
-      </ul>
-    </article>
+
+  <div class="organ-explorer dyn-flow" id="organ-explorer">
+    <div class="organ-map">
+      <svg class="organ-wires" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true">
+        <path class="wire-flow" d="M150,42 L50,120" style="animation-delay:0s"/>
+        <path class="wire-flow" d="M150,42 L150,120" style="animation-delay:.2s"/>
+        <path class="wire-flow" d="M150,42 L250,120" style="animation-delay:.4s"/>
+        <path class="wire-flow" d="M150,42 L50,175" style="animation-delay:.6s"/>
+        <path class="wire-flow" d="M150,42 L150,175" style="animation-delay:.8s"/>
+        <path class="wire-flow" d="M150,42 L250,175" style="animation-delay:1s"/>
+      </svg>
+      <div class="organ-core">🇺🇳 Charter organs<span>Tap one — detail below</span></div>
+      <nav class="organ-ring" aria-label="Select principal organ">
+        <button type="button" class="organ-pill active" data-organ="unga"><span class="ico">🗳️</span><b>UNGA</b><small>Ch. IV · 193 states</small></button>
+        <button type="button" class="organ-pill" data-organ="unsc"><span class="ico">🛡️</span><b>UNSC</b><small>Ch. V · P5 veto</small></button>
+        <button type="button" class="organ-pill" data-organ="ecosoc"><span class="ico">📊</span><b>ECOSOC</b><small>Agencies hub</small></button>
+        <button type="button" class="organ-pill muted-org" data-organ="trust"><span class="ico">📋</span><b>Trusteeship</b><small>Inactive · still 6th</small></button>
+        <button type="button" class="organ-pill" data-organ="icj"><span class="ico">⚖️</span><b>ICJ</b><small>The Hague</small></button>
+        <button type="button" class="organ-pill" data-organ="sec"><span class="ico">✍️</span><b>Secretariat</b><small>SG + staff</small></button>
+      </nav>
+    </div>
+    <div class="organ-panels">
+      <article class="organ-panel active" data-organ="unga">
+        <h4>General Assembly (UNGA)</h4>
+        <div class="sub">Charter Ch. IV · All member states · one country, one vote</div>
+        <ul>
+          <li>Deliberative, policy-making body — <b>193 members</b> today.</li>
+          <li>Discusses Charter matters (Art. 10); <b>recommends</b> on most issues; binding on budget, assessments, internal GA decisions.</li>
+          <li>Elects non-permanent UNSC, ECOSOC, ICJ judges (with SC); admits members on SC recommendation.</li>
+          <li><b>Art. 18:</b> important questions 2/3; others simple majority.</li>
+        </ul>
+        <div class="tags"><span>Mostly recommend</span><span>No veto</span><span>New York</span></div>
+      </article>
+      <article class="organ-panel" data-organ="unsc">
+        <h4>Security Council (UNSC)</h4>
+        <div class="sub">Ch. V · Primary responsibility: peace &amp; security (Art. 24)</div>
+        <ul>
+          <li><b>15 members:</b> P5 + 10 elected by GA (2-year, regional seats).</li>
+          <li><b>P5 veto</b> on substantive resolutions (USA, UK, France, Russia, China).</li>
+          <li><b>Ch. VI</b> settlement · <b>Ch. VII</b> sanctions &amp; force; PKO mandates.</li>
+          <li><b>India:</b> frequent non-permanent member; G4 push for permanent seat.</li>
+        </ul>
+        <div class="tags"><span>Binding Ch. VII</span><span>P5 veto</span><span>New York</span></div>
+      </article>
+      <article class="organ-panel" data-organ="ecosoc">
+        <h4>ECOSOC</h4>
+        <div class="sub">Economic and Social Council — coordination hub</div>
+        <ul>
+          <li>Coordinates economic, social, environmental work; links UN to <b>specialized agencies</b> &amp; NGOs.</li>
+          <li>Regional commissions (UNECE, ESCAP…) report here.</li>
+          <li>Climate <b>law</b> = UNFCCC treaty — not “ECOSOC runs COP”.</li>
+        </ul>
+        <div class="tags"><span>Coordination</span><span>54 members</span><span>New York</span></div>
+      </article>
+      <article class="organ-panel" data-organ="trust">
+        <h4>Trusteeship Council</h4>
+        <div class="sub">Inactive — still one of the six principal organs</div>
+        <ul>
+          <li>Supervised <b>trust territories</b> until self-rule; last territory <b>Palau (1994)</b>.</li>
+          <li>Operations <b>suspended</b> — exam trap: count it in the six, don’t call it “abolished”.</li>
+        </ul>
+        <div class="tags"><span>Suspended</span><span>Palau 1994</span></div>
+      </article>
+      <article class="organ-panel" data-organ="icj">
+        <h4>ICJ</h4>
+        <div class="sub">International Court of Justice · The Hague</div>
+        <ul>
+          <li>Principal <b>judicial</b> organ; <b>state vs state</b> disputes with consent.</li>
+          <li><b>Advisory opinions</b> for UN organs/agencies.</li>
+          <li>15 judges · 9-year terms · not ICC (individual crimes).</li>
+        </ul>
+        <div class="tags"><span>Binding if jurisdiction</span><span>The Hague</span></div>
+      </article>
+      <article class="organ-panel" data-organ="sec">
+        <h4>Secretariat</h4>
+        <div class="sub">International civil service</div>
+        <ul>
+          <li><b>Secretary-General</b> — chief administrative officer (not world government).</li>
+          <li>UNSC recommendation + UNGA appointment; Art. 99 → may alert SC.</li>
+          <li>Staff implement GA/SC decisions worldwide.</li>
+        </ul>
+        <div class="tags"><span>Administrative</span><span>Art. 99</span><span>New York</span></div>
+      </article>
+    </div>
   </div>
+
+  <div class="afc-wrap dyn-flow" aria-label="Which organ handles this issue">
+    <div class="afc-legend"><span>Live flow</span> peace &amp; security vs everything else</div>
+    <div class="afc-workflow">
+      <div class="afc-decision">Issue type?</div>
+      <div class="afc-branch">
+        <div class="afc-branch-col"><div class="afc-step accent"><b>Peace &amp; security</b>threat / breach</div><div class="afc-arrow-v" aria-hidden="true"></div><div class="afc-step"><b>UNSC</b>Ch. VI / VII</div></div>
+        <div class="afc-branch-col"><div class="afc-step"><b>Budget · members · most policy</b></div><div class="afc-arrow-v" aria-hidden="true"></div><div class="afc-step"><b>UNGA</b>recommend / decide</div></div>
+        <div class="afc-branch-col"><div class="afc-step"><b>Econ · social · agencies</b></div><div class="afc-arrow-v" aria-hidden="true"></div><div class="afc-step"><b>ECOSOC</b>coordinate</div></div>
+      </div>
+    </div>
+  </div>
+
   <div class="compare">
     <table>
       <thead><tr><th>Organ</th><th>Binding power?</th><th>Veto?</th><th>HQ / seat</th></tr></thead>
@@ -901,6 +940,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
         <tr><td>UNSC</td><td>Yes (Charter Ch. VII)</td><td>P5 yes</td><td>New York</td></tr>
         <tr><td>ECOSOC</td><td>Coordination</td><td>No</td><td>New York</td></tr>
         <tr><td>ICJ</td><td>Judgments binding if parties accepted jurisdiction</td><td>No</td><td>The Hague</td></tr>
+        <tr><td>Trusteeship</td><td>— (inactive)</td><td>No</td><td>—</td></tr>
         <tr><td>Secretariat</td><td>Administrative</td><td>No</td><td>New York</td></tr>
       </tbody>
     </table>
@@ -1072,7 +1112,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       <li>Financed by <b>peacekeeping budget</b> (GA-approved; separate assessment scale from regular budget).</li>
       <li>Mission ends when SC ends mandate or situation stabilizes.</li>
     </ol>
-    <div class="afc-wrap" aria-label="Peacekeeping workflow">
+    <div class="afc-wrap dyn-flow" aria-label="Peacekeeping workflow">
       <div class="afc-legend"><span>Type 2 · Workflow</span> mandate to mission</div>
       <div class="afc-workflow">
         <div class="afc-step"><b>UNSC</b>Threat to peace · resolution</div>
@@ -1098,7 +1138,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
       <li><b>Uniting for Peace (1950):</b> if SC deadlocked, GA can recommend collective action on peace &amp; security (emergency special sessions).</li>
     </ul>
   </div>
-  <div class="afc-wrap" aria-label="Chapter VI vs VII">
+  <div class="afc-wrap dyn-flow" aria-label="Chapter VI vs VII">
     <div class="afc-legend"><span>Type 5 · Decision</span> peaceful or enforcement?</div>
     <div class="afc-branch">
       <div class="afc-decision">Dispute<br>escalates?</div>
@@ -1312,17 +1352,43 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 </section>
 
 </main>
-<footer>CA Notes · UN System Master · build v3 (layout fix)</footer>
+<footer>CA Notes · UN System Master · build v4 (organ explorer + live flows)</footer>
 
 <script>
 (function(){
   const tabs=[...document.querySelectorAll('.tab')];
   const sections=[...document.querySelectorAll('.section')];
+  function activateFlows(sectionEl){
+    if(!sectionEl) return;
+    requestAnimationFrame(()=>{
+      sectionEl.querySelectorAll('.dyn-flow').forEach(d=>d.classList.add('is-live'));
+    });
+  }
   function show(id){
     tabs.forEach(t=>t.classList.toggle('active', t.dataset.tab===id));
-    sections.forEach(s=>s.classList.toggle('active', s.id==='tab-'+id));
+    sections.forEach(s=>{
+      const on=s.id==='tab-'+id;
+      s.classList.toggle('active', on);
+      s.querySelectorAll('.dyn-flow').forEach(d=>d.classList.remove('is-live'));
+    });
+    activateFlows(document.getElementById('tab-'+id));
     history.replaceState(null,'','#'+id);
     window.scrollTo({top:0,behavior:'smooth'});
+  }
+  const explorer=document.getElementById('organ-explorer');
+  if(explorer){
+    const pills=[...explorer.querySelectorAll('.organ-pill')];
+    const panels=[...explorer.querySelectorAll('.organ-panel')];
+    pills.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const key=btn.dataset.organ;
+        pills.forEach(p=>p.classList.toggle('active', p===btn));
+        panels.forEach(p=>p.classList.toggle('active', p.dataset.organ===key));
+        explorer.classList.remove('is-live');
+        void explorer.offsetWidth;
+        explorer.classList.add('is-live');
+      });
+    });
   }
   tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
   document.querySelectorAll('.fc-click[data-go]').forEach(el=>{
@@ -1344,6 +1410,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
     if(det && det.open !== undefined) det.open=true;
     requestAnimationFrame(()=>det?.scrollIntoView({behavior:'smooth',block:'start'}));
   }else if(hash && document.getElementById('tab-'+hash)) show(hash);
+  else activateFlows(document.querySelector('.section.active'));
 })();
 function pick(el,ok){
   const box=el.closest('.mcq');

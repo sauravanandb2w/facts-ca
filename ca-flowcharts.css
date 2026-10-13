@@ -170,3 +170,67 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
   background-size:200% 100%;animation:afc-flow-x 2s linear infinite
 }
 .afc-pert-note{font-size:.74rem;color:var(--afc-muted);text-align:center;margin-top:10px;line-height:1.45}
+
+/* Dynamic flow — animate when section is active (.is-live) */
+.dyn-flow:not(.is-live) .afc-wrap::before,
+.dyn-flow:not(.is-live) .afc-arrow-h,
+.dyn-flow:not(.is-live) .afc-arrow-v,
+.dyn-flow:not(.is-live) .afc-pert-connector,
+.dyn-flow:not(.is-live) .wire-flow{animation-play-state:paused!important}
+.dyn-flow.is-live .afc-step,.dyn-flow.is-live .afc-bubble{animation:afc-rise .55s ease both}
+
+@keyframes wire-draw{from{stroke-dashoffset:120}to{stroke-dashoffset:0}}
+@keyframes organ-glow{0%,100%{box-shadow:0 0 0 0 rgba(0,158,219,.35)}50%{box-shadow:0 0 0 10px rgba(0,158,219,0)}}
+
+.organ-explorer{margin:12px 0 18px}
+.organ-map{
+  position:relative;padding:16px 12px 12px;border-radius:18px;
+  background:linear-gradient(180deg,#f0f8ff,#fff);border:2px solid #c5d8ef
+}
+.organ-core{
+  text-align:center;padding:12px;margin:0 auto 14px;max-width:200px;
+  background:linear-gradient(135deg,#041e33,#1565a8);color:#fff;border-radius:14px;
+  font-weight:800;font-size:.9rem;box-shadow:0 8px 24px rgba(10,45,74,.2)
+}
+.organ-core span{display:block;font-size:.72rem;font-weight:600;opacity:.9;margin-top:4px}
+.organ-wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55}
+.organ-wires .wire-flow{
+  fill:none;stroke:var(--fc-accent,#009edb);stroke-width:.6;stroke-linecap:round;
+  stroke-dasharray:8 6;stroke-dashoffset:120;animation:wire-draw 2.5s ease-in-out infinite
+}
+.organ-ring{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative;z-index:1}
+@media(max-width:520px){.organ-ring{grid-template-columns:repeat(2,1fr)}}
+.organ-pill{
+  appearance:none;border:2px solid #d5e3f5;background:#fff;border-radius:14px;padding:10px 8px;
+  cursor:pointer;font:inherit;text-align:center;transition:border-color .2s,transform .2s,background .2s;
+  min-width:0;overflow-wrap:anywhere;line-height:1.35
+}
+.organ-pill .ico{font-size:1.25rem;display:block;margin-bottom:4px}
+.organ-pill b{display:block;font-size:.78rem;color:#0a2d4a}
+.organ-pill small{display:block;font-size:.68rem;color:#5a6a7d;margin-top:2px}
+.organ-pill:hover{border-color:#90caf9;transform:translateY(-2px)}
+.organ-pill.active{
+  border-color:var(--fc-accent,#009edb);background:linear-gradient(180deg,#e8f6ff,#fff);
+  animation:organ-glow 2.5s ease-in-out infinite
+}
+.organ-pill.muted-org{opacity:.88;border-style:dashed}
+.organ-panels{margin-top:14px;position:relative;min-height:120px}
+.organ-panel{
+  display:none;background:#fff;border:2px solid #c5d8ef;border-radius:16px;padding:16px 18px;
+  box-shadow:0 10px 28px rgba(15,27,45,.08);animation:afc-rise .35s ease
+}
+.organ-panel.active{display:block}
+.organ-panel h4{font-family:"Fraunces",serif;color:#0a2d4a;margin:0 0 6px;font-size:1.05rem}
+.organ-panel .sub{font-size:.78rem;color:#5a6a7d;margin-bottom:10px}
+.organ-panel ul{margin:0;padding-left:18px;font-size:.84rem;line-height:1.6}
+.organ-panel .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.organ-panel .tags span{font-size:.68rem;font-weight:700;padding:4px 8px;border-radius:999px;background:#eef6ff;border:1px solid #c5d8ef}
+
+.fc-vline.dyn-pipe{position:relative}
+.fc-vline.dyn-pipe::after{
+  content:"";position:absolute;left:50%;top:0;width:8px;height:8px;margin-left:-4px;border-radius:50%;
+  background:var(--un,#009edb);box-shadow:0 0 8px rgba(0,158,219,.8);
+  animation:afc-flow-y 1.2s linear infinite
+}
+.dyn-flow.is-live .fc-vline.dyn-pipe::after{animation:pipe-dot 1.4s ease-in-out infinite}
+@keyframes pipe-dot{0%{top:0;opacity:1}100%{top:calc(100% - 8px);opacity:.35}}
