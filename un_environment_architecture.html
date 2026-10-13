@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UN Environment Architecture | Stockholm · Rio · MEAs · COP | UPSC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#14231c;--muted:#5a6b62;--paper:#eef4ef;
+  --forest:#1b5e45;--teal:#0d7a6f;--leaf:#2f9e6b;--gold:#c47a12;
+  --card:#fff;--line:#d5e0d8;--red:#b5442e;--shadow:0 10px 28px rgba(20,35,28,.08);
+}
+body{font-family:"Sora",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+a{color:var(--teal);font-weight:600;text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-flex;margin:12px 16px 0;font-size:.82rem}
+.hero{
+  background:linear-gradient(135deg,#0d3d2e,#1b5e45 45%,#0d7a6f);
+  color:#fff;text-align:center;padding:38px 16px 30px
+}
+.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.45rem,4vw,2.35rem);margin:6px 0}
+.hero p{opacity:.93;max-width:660px;margin:0 auto;font-size:.9rem}
+.badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 12px;font-size:.74rem;font-weight:600}
+.tabs{
+  display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px 12px;
+  background:rgba(255,255,255,.95);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:40;
+  backdrop-filter:blur(8px)
+}
+.tab{padding:7px 11px;border-radius:999px;border:2px solid transparent;cursor:pointer;font:inherit;font-size:.74rem;font-weight:700;background:#e8f0e6;color:#2a4035}
+.tab:hover,.tab.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+main{max-width:980px;margin:0 auto;padding:18px 14px 72px}
+.section{display:none}.section.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.trick{background:#fff4e0;border:2px solid #e8c878;border-radius:12px;padding:14px 16px;margin-bottom:14px}
+.trick h3{color:#a65d0a;font-size:.86rem;margin-bottom:6px}
+.trick .line{font-family:"Fraunces",serif;font-size:1.02rem;font-weight:800;color:var(--red);line-height:1.5}
+.trick .decode{font-size:.84rem;color:#555;margin-top:8px;line-height:1.65}
+.section-title{font-family:"Fraunces",serif;font-size:1.12rem;color:var(--forest);border-left:4px solid var(--gold);padding-left:10px;margin:14px 0 10px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:15px 17px;margin-bottom:11px;box-shadow:var(--shadow)}
+.card h3,.card h4{font-family:"Fraunces",serif;color:var(--forest);margin-bottom:6px}
+.card p,.card li{font-size:.87rem;line-height:1.65}
+.card ul{padding-left:18px;margin-top:6px}
+.flowchart{
+  background:linear-gradient(180deg,#fff,#f0f7f2);border:2px solid #b9e0c8;border-radius:16px;padding:18px 14px 20px;margin:10px 0
+}
+.fc-root{max-width:380px;margin:0 auto;text-align:center;background:linear-gradient(135deg,#0d3d2e,#1b5e45);color:#fff;border-radius:14px;padding:12px 16px;box-shadow:0 6px 20px rgba(27,94,69,.2)}
+.fc-root strong{display:block;font-family:"Fraunces",serif;font-size:1.05rem}
+.fc-root span{font-size:.76rem;opacity:.92}
+.fc-vline{width:3px;height:20px;background:linear-gradient(180deg,var(--teal),#9fd4b8);margin:0 auto;border-radius:2px}
+.fc-layer{max-width:520px;margin:8px auto;background:#fff;border:2px solid var(--line);border-radius:12px;padding:12px 14px;position:relative}
+.fc-layer::before{content:"";position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:3px;height:12px;background:#9fd4b8}
+.fc-layer h4{font-family:"Fraunces",serif;font-size:.92rem;color:var(--forest);margin-bottom:4px}
+.fc-layer p{font-size:.8rem;color:#3a4d44;margin:0}
+.fc-layer.l3{border-color:#f0c36d;background:#fffdf8}
+.fc-not{margin:12px auto 0;max-width:520px;font-size:.78rem;padding:10px 12px;background:#fff1f0;border-radius:10px;border-left:4px solid var(--red)}
+.compare{overflow-x:auto;border-radius:12px;border:1px solid var(--line);margin:10px 0;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:.78rem}
+th{background:linear-gradient(135deg,var(--forest),var(--teal));color:#fff;text-align:left;padding:8px 10px}
+td{padding:7px 10px;border-bottom:1px solid #e5ebe6;vertical-align:top;line-height:1.45}
+tr:nth-child(even) td{background:#f6faf7}
+.timeline{border-left:3px solid var(--leaf);margin:12px 0 12px 8px;padding-left:16px}
+.t{margin-bottom:12px}
+.t b{color:var(--forest)}
+.t .yr{display:inline-block;min-width:52px;font-weight:800;color:var(--teal)}
+.warn{background:#fff1f0;border-left:4px solid var(--red);padding:10px 12px;border-radius:0 10px 10px 0;font-size:.84rem;margin:10px 0}
+.mcq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:9px}
+.mcq .q{font-weight:700;font-size:.86rem;margin-bottom:7px}
+.opt{background:#f4f7f5;border:2px solid transparent;border-radius:8px;padding:7px 10px;font-size:.82rem;cursor:pointer;margin-bottom:4px}
+.opt:hover{border-color:#7bc4a8}
+.opt.correct{background:#e8f5e9;border-color:#2e7d32;font-weight:700}
+.opt.wrong{background:#ffebee;border-color:#c62828}
+.exp{display:none;margin-top:7px;padding:8px;background:#fff4e0;border-radius:8px;font-size:.81rem}
+.exp.show{display:block}
+.cta{display:block;text-align:center;margin:16px 0;padding:14px;background:linear-gradient(135deg,var(--forest),var(--teal));color:#fff;border-radius:12px;font-weight:700}
+.cta:hover{color:#fff;text-decoration:none;opacity:.95}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24px}
+@media(max-width:700px){.tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.tab{white-space:nowrap}}
+</style>
+</head>
+<body>
+
+<a class="back" href="index.html">← Index</a>
+<a class="back" href="un_system_master.html" style="margin-left:8px">🇺🇳 UN System</a>
+<a class="back" href="international_organisations.html" style="margin-left:8px">💰 IMF/WTO</a>
+
+<header class="hero">
+  <div style="font-size:2.6rem">🌿</div>
+  <h1>UN &amp; Environment — Architecture</h1>
+  <p>From <b>Stockholm 1972</b> to <b>Rio 1992</b> to <b>COP</b> headlines: how UNEP, UNFCCC, CBD, and the rest fit together. Ecology/prelims lens — not SCO/BRICS IR.</p>
+  <div class="badges">
+    <span class="badge">3 layers: UN → UNEP → MEAs</span>
+    <span class="badge">Rio trio</span>
+    <span class="badge">COP ≠ UNGA</span>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-tab="layers">🧱 3 layers</button>
+  <button class="tab" data-tab="summits">📅 Summits</button>
+  <button class="tab" data-tab="unep">🌱 UNEP</button>
+  <button class="tab" data-tab="cop">🎤 COP &amp; bodies</button>
+  <button class="tab" data-tab="climate">🌡️ Climate</button>
+  <button class="tab" data-tab="rio">🇧🇷 Rio trio</button>
+  <button class="tab" data-tab="bio">🦋 Bio &amp; trade</button>
+  <button class="tab" data-tab="other">🧪 Ozone · BRS · Sea</button>
+  <button class="tab" data-tab="india">🇮🇳 India</button>
+  <button class="tab" data-tab="mcq">📝 MCQs</button>
+</nav>
+
+<main>
+
+<section class="section active" id="tab-layers">
+  <div class="trick">
+    <h3>Declutter in one breath</h3>
+    <div class="line">UN = घर · UNEP = पर्यावरण कक्ष · UNFCCC/CBD = अलग संधि + COP बैठक</div>
+    <div class="decode">News says “UN climate summit” — legally it is often <b>COP of UNFCCC</b>. Stockholm/Rio were <b>UN conferences</b> that <b>created or launched</b> institutions and treaties.</div>
+  </div>
+  <div class="flowchart" role="img" aria-label="Three layers UN environment">
+    <div class="fc-root">
+      <strong>Layer 1 · United Nations</strong>
+      <span>Charter 1945 — see <a href="un_system_master.html#hub" style="color:#b8f0d8">family tree ↗</a></span>
+    </div>
+    <div class="fc-vline"></div>
+    <div class="fc-layer">
+      <h4>Layer 2 · UNEP (programme)</h4>
+      <p><b>Stockholm 1972</b> → created UNEP · HQ <b>Nairobi</b> · coordinates env work in UN system</p>
+    </div>
+    <div class="fc-vline"></div>
+    <div class="fc-layer l3">
+      <h4>Layer 3 · MEAs (treaties)</h4>
+      <p>States = <b>Parties</b> · meet at <b>COP</b> · UNFCCC, CBD, UNCCD, CITES, Montreal, Ramsar…</p>
+    </div>
+    <div class="fc-not">
+      <b>Not the same:</b> IPCC = science (no law) · COP ≠ UN organ · Stockholm <em>Convention</em> (POPs) ≠ Stockholm <em>Conference</em> 1972
+    </div>
+  </div>
+  <div class="warn"><b>Trap:</b> <em>Stockholm Conference 1972</em> → UNEP. <em>Stockholm Convention 2001</em> → persistent organic pollutants (POPs). Same city name, different instrument.</div>
+  <a class="cta" href="upsc_environment_mcqs_english.html">Full convention notes + long MCQ bank → Environment page</a>
+</section>
+
+<section class="section" id="tab-summits">
+  <h2 class="section-title">Landmark UN environment conferences (political spine)</h2>
+  <div class="timeline">
+    <div class="t"><span class="yr">1972</span> <b>Stockholm</b> — UN Conference on the Human Environment. Theme: development vs environment. <b>Created UNEP</b>; “Only One Earth”; catalysed national env ministries &amp; laws.</div>
+    <div class="t"><span class="yr">1987</span> <b>Brundtland Report</b> — “Our Common Future”; sustainable development vocabulary (not a COP).</div>
+    <div class="t"><span class="yr">1992</span> <b>Rio Earth Summit (UNCED)</b> — Rio de Janeiro. <b>Rio trio signed/opened:</b> UNFCCC, CBD, UNCCD framework. Also Agenda 21, Rio Declaration (27 principles — CBDR, precautionary idea).</div>
+    <div class="t"><span class="yr">2002</span> <b>Johannesburg (Rio+10)</b> — World Summit on Sustainable Development; implementation focus.</div>
+    <div class="t"><span class="yr">2012</span> <b>Rio+20</b> — renewed political commitment; SDGs process accelerated.</div>
+    <div class="t"><span class="yr">2015</span> <b>Paris</b> — Paris Agreement under UNFCCC (COP21), not a new “UN organ”.</div>
+  </div>
+  <div class="card">
+    <h3>Exam sorting question</h3>
+    <ul>
+      <li><b>Conference</b> = diplomatic moment (Stockholm, Rio).</li>
+      <li><b>Convention / treaty</b> = ongoing legal regime (UNFCCC, CBD).</li>
+      <li><b>Protocol</b> = treaty under a convention (Kyoto under UNFCCC; Montreal under Vienna).</li>
+      <li><b>COP</b> = annual (or periodic) meeting of Parties to that convention.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="tab-unep">
+  <div class="trick">
+    <h3>UNEP in one card</h3>
+    <div class="line">1972 Stockholm ने जन्म दिया · Nairobi में बैठता है · संधियों का मकान-मालिक नहीं, संयोजक</div>
+  </div>
+  <div class="card">
+    <h3>What UNEP does</h3>
+    <ul>
+      <li>Sets global environmental agenda within the UN system.</li>
+      <li>Coordinates reporting, science-policy interfaces (with partners).</li>
+      <li>Hosts or supports secretariats (e.g. ozone secretariat historically; many MEAs “in the UN family”).</li>
+      <li><b>Does not</b> replace UNFCCC — climate law lives in the climate convention.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>UNEP vs UNFCCC (most common confusion)</h3>
+    <table style="width:100%;font-size:.85rem;border-collapse:collapse">
+      <tr><td style="padding:6px;border:1px solid var(--line)"><b>UNEP</b></td><td style="padding:6px;border:1px solid var(--line)">UN programme; broad environment</td></tr>
+      <tr><td style="padding:6px;border:1px solid var(--line)"><b>UNFCCC</b></td><td style="padding:6px;border:1px solid var(--line)">Treaty; climate change; COP every year</td></tr>
+      <tr><td style="padding:6px;border:1px solid var(--line)"><b>Secretariat</b></td><td style="padding:6px;border:1px solid var(--line)">UNFCCC secretariat in Bonn — works under convention, linked to UN system</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="section" id="tab-cop">
+  <h2 class="section-title">COP and parallel acronyms</h2>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Acronym</th><th>Full form</th><th>Belongs to</th></tr></thead>
+      <tbody>
+        <tr><td><b>COP</b></td><td>Conference of the Parties</td><td>Parent convention (UNFCCC, CBD, CITES…)</td></tr>
+        <tr><td><b>CMP</b></td><td>Conference of Parties serving as Meeting of Kyoto Protocol</td><td>Kyoto (under UNFCCC)</td></tr>
+        <tr><td><b>CMA</b></td><td>Conference of Parties serving as Meeting of Paris Agreement</td><td>Paris (under UNFCCC)</td></tr>
+        <tr><td><b>COP-MOP</b></td><td>COP acting as Meeting of Parties to a protocol</td><td>e.g. Cartagena, Nagoya under CBD</td></tr>
+        <tr><td><b>MOP</b></td><td>Meeting of Parties</td><td>Ozone (Montreal Protocol)</td></tr>
+        <tr><td><b>CoP</b></td><td>Conference of Parties</td><td>CITES spelling variant in books</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Subsidiary bodies (climate — high yield)</h3>
+    <ul>
+      <li><b>SBI</b> — implementation (Subsidiary Body for Implementation)</li>
+      <li><b>SBSTA</b> — scientific &amp; technological advice</li>
+    </ul>
+    <p style="margin-top:8px;font-size:.86rem">IPCC feeds science into politics; <b>IPCC does not run COP</b>.</p>
+  </div>
+</section>
+
+<section class="section" id="tab-climate">
+  <h2 class="section-title">Climate ladder</h2>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Step</th><th>Year</th><th>What it is</th><th>UPSC hook</th></tr></thead>
+      <tbody>
+        <tr><td><b>UNFCCC</b></td><td>1992 Rio / force 1994</td><td>Framework; CBDR-RC; COP</td><td>Parent treaty</td></tr>
+        <tr><td><b>Kyoto Protocol</b></td><td>1997 COP3 / force 2005</td><td>Annex-I binding targets; CDM/JI/ET</td><td>India: no QELRO as developing</td></tr>
+        <tr><td><b>Paris Agreement</b></td><td>2015 COP21 / force 2016</td><td>NDCs; 1.5/2°C; GST; Art. 6</td><td>India ratified 2016</td></tr>
+        <tr><td><b>IPCC</b></td><td>1988</td><td>Assessment reports</td><td>WMO + UNEP; not a treaty</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>COP headlines (memory spine)</h3>
+    <ul>
+      <li><b>COP3 Kyoto 1997</b> — binding period for developed countries</li>
+      <li><b>COP21 Paris 2015</b> — Paris Agreement adopted</li>
+      <li><b>COP26 Glasgow 2021</b> — coal “phase down” language; Article 6 rules</li>
+      <li><b>COP27 2022</b> — Loss &amp; Damage Fund</li>
+      <li><b>COP28 2023</b> — first Global Stocktake</li>
+      <li><b>COP29 2024</b> — NCQG finance focus (Baku)</li>
+      <li><b>COP30 2025</b> — Belém / Amazon–nature interface (track CA)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="tab-rio">
+  <div class="trick">
+    <h3>Rio 1992 — three brothers</h3>
+    <div class="line">जलवायु UNFCCC · जीवन CBD · मरुस्थल UNCCD</div>
+  </div>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Treaty</th><th>Issue</th><th>Secretariat (usual)</th><th>COP nickname</th></tr></thead>
+      <tbody>
+        <tr><td><b>UNFCCC</b></td><td>Climate / GHGs</td><td>Bonn</td><td>COP (e.g. COP30)</td></tr>
+        <tr><td><b>CBD</b></td><td>Biodiversity, ABS</td><td>Montreal</td><td>COP (e.g. COP16 Cali 2024)</td></tr>
+        <tr><td><b>UNCCD</b></td><td>Desertification, land degradation</td><td>Bonn</td><td>COP; LDN targets</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>CBD protocols (under CBD roof)</h3>
+    <ul>
+      <li><b>Cartagena</b> — biosafety (LMOs)</li>
+      <li><b>Nagoya</b> — access &amp; benefit sharing (genetic resources)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="tab-bio">
+  <h2 class="section-title">Biodiversity &amp; species trade (outside Rio trio but linked)</h2>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Instrument</th><th>Focus</th><th>HQ / host</th></tr></thead>
+      <tbody>
+        <tr><td><b>CITES</b></td><td>Trade in endangered species (Appendices I–III)</td><td>Geneva (UNEP)</td></tr>
+        <tr><td><b>CMS (Bonn)</b></td><td>Migratory species</td><td>Bonn (UNEP)</td></tr>
+        <tr><td><b>Ramsar</b></td><td>Wetlands of international importance</td><td>Gland (IUCN hosts)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:.84rem;color:var(--muted)">CITES 1973 Washington — predates Rio; still “UN system” via UNEP admin.</p>
+</section>
+
+<section class="section" id="tab-other">
+  <h2 class="section-title">Ozone ladder</h2>
+  <div class="card">
+    <ul>
+      <li><b>Vienna Convention 1985</b> — framework for ozone layer protection</li>
+      <li><b>Montreal Protocol 1987</b> — binding phase-out of ODS (CFCs etc.)</li>
+      <li><b>Kigali Amendment 2016</b> — HFC phasedown (climate co-benefit)</li>
+      <li>Secretariat: <b>Nairobi (UNEP ozone secretariat)</b></li>
+    </ul>
+  </div>
+  <h2 class="section-title">Chemicals &amp; waste — BRS cluster</h2>
+  <div class="card">
+    <ul>
+      <li><b>Basel</b> — hazardous waste across borders</li>
+      <li><b>Rotterdam</b> — PIC for traded chemicals/pesticides (FAO–UNEP)</li>
+      <li><b>Stockholm Convention</b> — POPs (not Stockholm 1972 conference!)</li>
+      <li><b>Minamata</b> — mercury lifecycle</li>
+    </ul>
+    <p class="mnemonic" style="margin-top:8px;font-weight:700;color:var(--red)">BRS: Basel कचरा · Rotterdam रज़ामंदी · Stockholm POPs रोक</p>
+  </div>
+  <h2 class="section-title">Oceans</h2>
+  <div class="card">
+    <ul>
+      <li><b>UNCLOS 1982</b> — “constitution of the oceans”; ISA, ITLOS</li>
+      <li><b>BBNJ / High Seas Treaty 2023</b> — biodiversity beyond national jurisdiction (implementing agreement under UNCLOS)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="tab-india">
+  <div class="card">
+    <h3>India — static hooks</h3>
+    <ul>
+      <li>Party to UNFCCC, Kyoto, Paris; NDC updates; Panchamrit / net-zero 2070 (diplomatic timeline COP26).</li>
+      <li>CBD, Cartagena, Nagoya; Biological Diversity Act 2002.</li>
+      <li>CITES since 1976; CMS, Ramsar, UNCCD parties.</li>
+      <li>Montreal/Kigali — successful phase-out narrative in exams.</li>
+      <li>Hosts / COP presidencies — verify in current CA before exam year.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" id="tab-mcq">
+  <div class="mcq">
+    <div class="q">1. UNEP was an outcome of:</div>
+    <div class="opt" onclick="pick(this,true)">a) Stockholm Conference 1972</div>
+    <div class="opt" onclick="pick(this,false)">b) Rio Earth Summit 1992</div>
+    <div class="opt" onclick="pick(this,false)">c) Paris Agreement 2015</div>
+    <div class="opt" onclick="pick(this,false)">d) Montreal Protocol 1987</div>
+    <div class="exp"><b>a)</b> Rio gave UNFCCC/CBD/UNCCD, not UNEP's birth.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">2. The “Rio trio” (1992) refers to:</div>
+    <div class="opt" onclick="pick(this,true)">a) UNFCCC, CBD, UNCCD</div>
+    <div class="opt" onclick="pick(this,false)">b) UNEP, UNDP, UNICEF</div>
+    <div class="opt" onclick="pick(this,false)">c) Basel, Rotterdam, Stockholm</div>
+    <div class="opt" onclick="pick(this,false)">d) IMF, WB, WTO</div>
+    <div class="exp"><b>a)</b> Three conventions from Earth Summit.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">3. COP under UNFCCC is:</div>
+    <div class="opt" onclick="pick(this,false)">a) A principal organ of the UN</div>
+    <div class="opt" onclick="pick(this,true)">b) Supreme body of the climate convention</div>
+    <div class="opt" onclick="pick(this,false)">c) Same as UN General Assembly</div>
+    <div class="opt" onclick="pick(this,false)">d) IPCC plenary</div>
+    <div class="exp"><b>b)</b> Treaty body, not Charter organ.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">4. IPCC is best described as:</div>
+    <div class="opt" onclick="pick(this,true)">a) Scientific assessment body (WMO + UNEP)</div>
+    <div class="opt" onclick="pick(this,false)">b) Executive agency of UNFCCC</div>
+    <div class="opt" onclick="pick(this,false)">c) Court for climate disputes</div>
+    <div class="opt" onclick="pick(this,false)">d) Binding emissions treaty</div>
+    <div class="exp"><b>a)</b> Science, not law.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">5. Montreal Protocol deals with:</div>
+    <div class="opt" onclick="pick(this,false)">a) Climate NDCs</div>
+    <div class="opt" onclick="pick(this,true)">b) Ozone-depleting substances</div>
+    <div class="opt" onclick="pick(this,false)">c) Wetlands</div>
+    <div class="opt" onclick="pick(this,false)">d) Desertification</div>
+    <div class="exp"><b>b)</b> Under Vienna Convention framework.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">6. Stockholm Convention (2001) controls:</div>
+    <div class="opt" onclick="pick(this,true)">a) Persistent organic pollutants</div>
+    <div class="opt" onclick="pick(this,false)">b) Creation of UNEP</div>
+    <div class="opt" onclick="pick(this,false)">c) Sea-bed mining only</div>
+    <div class="opt" onclick="pick(this,false)">d) UNESCO heritage</div>
+    <div class="exp"><b>a)</b> Don't confuse with Stockholm 1972 conference.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">7. CITES regulates:</div>
+    <div class="opt" onclick="pick(this,true)">a) International trade in listed wild species</div>
+    <div class="opt" onclick="pick(this,false)">b) GHG emissions</div>
+    <div class="opt" onclick="pick(this,false)">c) Nuclear safety</div>
+    <div class="opt" onclick="pick(this,false)">d) WTO tariffs</div>
+    <div class="exp"><b>a)</b> Washington 1973.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">8. Paris Agreement was adopted at:</div>
+    <div class="opt" onclick="pick(this,false)">a) COP15 Copenhagen</div>
+    <div class="opt" onclick="pick(this,true)">b) COP21 Paris</div>
+    <div class="opt" onclick="pick(this,false)">c) COP28 Dubai</div>
+    <div class="opt" onclick="pick(this,false)">d) Rio 1992</div>
+    <div class="exp"><b>b)</b> 2015.</div>
+  </div>
+  <a class="cta" href="upsc_environment_mcqs_english.html" style="margin-top:14px">50+ more env MCQs →</a>
+</section>
+
+</main>
+<footer>CA Notes · UN Environment Architecture · Pair with UN System Master + Environment MCQs</footer>
+
+<script>
+(function(){
+  const tabs=[...document.querySelectorAll('.tab')];
+  const sections=[...document.querySelectorAll('.section')];
+  function show(id){
+    tabs.forEach(t=>t.classList.toggle('active', t.dataset.tab===id));
+    sections.forEach(s=>s.classList.toggle('active', s.id==='tab-'+id));
+    history.replaceState(null,'','#'+id);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
+  const hash=(location.hash||'').replace('#','');
+  if(hash && document.getElementById('tab-'+hash)) show(hash);
+})();
+function pick(el,ok){
+  const box=el.closest('.mcq');
+  box.querySelectorAll('.opt').forEach(o=>{o.onclick=null;});
+  el.classList.add(ok?'correct':'wrong');
+  if(!ok) box.querySelectorAll('.opt').forEach(o=>{
+    if(o.getAttribute('onclick')&&o.getAttribute('onclick').includes('true')) o.classList.add('correct');
+  });
+  box.querySelector('.exp')?.classList.add('show');
+}
+</script>
+</body>
+</html>

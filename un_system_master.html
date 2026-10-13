@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UN System Master | Organs · Family · Groups | UPSC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0f1b2d;--muted:#5a6a7d;--paper:#f0f4f9;
+  --navy:#0a2d4a;--un:#009edb;--gold:#c9a227;
+  --card:#fff;--line:#d5deea;--red:#c62828;--soft:#e3f2fd;--shadow:0 10px 28px rgba(15,27,45,.1);
+}
+body{font-family:"Sora",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+a{color:#1565a8;font-weight:600;text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-flex;gap:6px;align-items:center;margin:12px 16px 0;font-size:.82rem}
+.hero{
+  background:linear-gradient(135deg,#041e33,#0a2d4a 40%,#0077b6);
+  color:#fff;text-align:center;padding:40px 16px 32px;position:relative;overflow:hidden
+}
+.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.5rem,4vw,2.4rem);margin:6px 0}
+.hero p{opacity:.93;max-width:640px;margin:0 auto;font-size:.92rem}
+.badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 12px;font-size:.76rem;font-weight:600}
+.badge.gold{background:rgba(201,162,39,.22);border-color:rgba(201,162,39,.45)}
+.tabs{
+  display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px 12px;
+  background:rgba(255,255,255,.95);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:40;
+  backdrop-filter:blur(8px);box-shadow:0 2px 10px rgba(0,0,0,.05)
+}
+.tab{padding:7px 12px;border-radius:999px;border:2px solid transparent;cursor:pointer;font:inherit;font-size:.76rem;font-weight:700;background:#eef3f9;color:#3a4d63}
+.tab:hover,.tab.active{background:var(--un);color:#fff;border-color:var(--un)}
+main{max-width:960px;margin:0 auto;padding:20px 14px 72px}
+.section{display:none}.section.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.trick{background:#fff8e1;border:2px solid #f0c36d;border-radius:12px;padding:14px 16px;margin-bottom:16px}
+.trick h3{color:#e65100;font-size:.88rem;margin-bottom:6px}
+.trick .line{font-family:"Fraunces",serif;font-size:1.02rem;font-weight:800;color:var(--red);line-height:1.5}
+.trick .decode{font-size:.84rem;color:#555;margin-top:8px;line-height:1.65}
+.section-title{font-family:"Fraunces",serif;font-size:1.15rem;color:var(--navy);border-left:4px solid var(--gold);padding-left:10px;margin:16px 0 12px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px;box-shadow:var(--shadow)}
+.card h3{font-family:"Fraunces",serif;color:var(--navy);font-size:1.05rem;margin-bottom:8px}
+.card p,.card li{font-size:.88rem;color:#2a3544;line-height:1.65}
+.card ul{padding-left:18px;margin-top:6px}
+.card b{color:var(--navy)}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.pill{font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:999px;background:#eef3f9;border:1px solid var(--line)}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin:12px 0}
+.hub{
+  background:#fff;border:2px solid var(--line);border-radius:14px;padding:14px 16px;transition:.2s
+}
+.hub:hover{border-color:var(--un);transform:translateY(-2px);box-shadow:var(--shadow)}
+.hub .tag{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--un)}
+.hub h4{font-family:"Fraunces",serif;font-size:1rem;margin:6px 0;color:var(--navy)}
+.hub p{font-size:.82rem;color:var(--muted);line-height:1.5}
+.hub.live{border-color:#90caf9;background:linear-gradient(180deg,#fff,#f5faff)}
+.hub.soon{opacity:.85;border-style:dashed}
+/* UN family tree flowchart */
+.flowchart{
+  background:linear-gradient(180deg,#fff 0%,#f5faff 100%);
+  border:2px solid #c5d8ef;border-radius:16px;padding:20px 16px 24px;margin:8px 0 16px;
+  position:relative;overflow:hidden
+}
+.flowchart::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 50% 0%,rgba(0,158,219,.08),transparent 55%)
+}
+.fc-root{
+  max-width:420px;margin:0 auto;text-align:center;
+  background:linear-gradient(135deg,#0a2d4a,#1565a8);color:#fff;
+  border-radius:14px;padding:14px 18px;box-shadow:0 8px 24px rgba(10,45,74,.25);position:relative;z-index:1
+}
+.fc-root strong{display:block;font-family:"Fraunces",serif;font-size:1.15rem;margin-bottom:4px}
+.fc-root span{font-size:.78rem;opacity:.92}
+.fc-vline{width:3px;height:22px;background:linear-gradient(180deg,var(--un),#90caf9);margin:0 auto;border-radius:2px}
+.fc-vline.short{height:14px}
+.fc-tier{margin:0 auto;max-width:920px;position:relative;z-index:1}
+.fc-tier-label{
+  text-align:center;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--un);margin:6px 0 10px
+}
+.fc-tier-label.warn{color:#c62828}
+.fc-hline-wrap{display:flex;align-items:flex-start;gap:0;justify-content:center;position:relative;padding-top:8px}
+.fc-hline-wrap::before{
+  content:"";position:absolute;top:0;left:8%;right:8%;height:3px;background:#b8d4f0;border-radius:2px
+}
+.fc-organs-wrap{position:relative;padding-top:16px;margin-top:2px}
+.fc-organs-wrap::before{
+  content:"";position:absolute;top:0;left:5%;right:5%;height:3px;background:#b8d4f0;border-radius:2px
+}
+.fc-organs{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px
+}
+@media(max-width:640px){.fc-organs{grid-template-columns:repeat(2,1fr)}}
+.fc-node{
+  background:#fff;border:2px solid #d5e3f5;border-radius:12px;padding:10px 10px 10px 12px;
+  font-size:.78rem;line-height:1.4;color:#1a2a3a;position:relative;
+  box-shadow:0 4px 12px rgba(15,27,45,.06);transition:border-color .15s,transform .15s
+}
+.fc-node:hover{border-color:var(--un);transform:translateY(-2px)}
+.fc-organs .fc-node::before{
+  content:"";position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  width:3px;height:16px;background:#b8d4f0
+}
+.fc-node .ico{font-size:1.1rem;margin-bottom:2px}
+.fc-node b{display:block;color:var(--navy);font-size:.8rem}
+.fc-node.muted{background:#f8fafc;border-style:dashed;color:var(--muted)}
+.fc-node.muted b{color:#64748b}
+.fc-node.ext{border-color:#f0c36d;background:#fffdf6}
+.fc-node.ext{margin-top:0}
+.fc-node.ext::before{display:none}
+.fc-stem{display:flex;flex-direction:column;align-items:center;flex:1;min-width:0}
+.fc-stem .fc-node{width:100%;margin-top:11px}
+.fc-stem .fc-node::before{top:-11px}
+.fc-row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+@media(max-width:720px){.fc-row3{grid-template-columns:1fr}}
+.fc-block{
+  background:#fff;border:2px solid #d5e3f5;border-radius:12px;padding:12px 14px;font-size:.78rem;line-height:1.55
+}
+.fc-block h5{font-family:"Fraunces",serif;font-size:.88rem;color:var(--navy);margin-bottom:6px}
+.fc-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.fc-chip{background:#eef6ff;border:1px solid #c5d8ef;border-radius:999px;padding:3px 8px;font-size:.68rem;font-weight:600;color:#1e3a5f}
+.fc-chip.dim{background:#f1f5f9;border-color:#e2e8f0;color:#64748b}
+.fc-legend{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:14px;font-size:.72rem;color:var(--muted)}
+.fc-legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:4px;border:2px solid #d5e3f5;background:#fff}
+.fc-legend i.dash{border-style:dashed;background:#f8fafc}
+.fc-legend i.gold{border-color:#f0c36d;background:#fffdf6}
+.compare{overflow-x:auto;border-radius:12px;border:1px solid var(--line);margin:12px 0;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:520px;font-size:.8rem}
+th{background:linear-gradient(135deg,var(--navy),#1565a8);color:#fff;text-align:left;padding:9px 11px}
+td{padding:8px 11px;border-bottom:1px solid #e8eef5;vertical-align:top;line-height:1.45}
+tr:nth-child(even) td{background:#f7faff}
+.org-grid{display:grid;gap:12px}
+.org{background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px}
+.org h4{font-family:"Fraunces",serif;color:var(--navy);font-size:1rem;margin-bottom:4px}
+.org .sub{font-size:.78rem;color:var(--muted);margin-bottom:8px}
+.warn{background:#fff1f0;border-left:4px solid var(--red);padding:10px 12px;border-radius:0 10px 10px 0;font-size:.84rem;margin:12px 0;color:#5c1a1a}
+.mcq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.mcq .q{font-weight:700;font-size:.88rem;margin-bottom:8px}
+.opt{background:#f4f7fb;border:2px solid transparent;border-radius:8px;padding:7px 11px;font-size:.83rem;cursor:pointer;margin-bottom:5px}
+.opt:hover{border-color:#90caf9}
+.opt.correct{background:#e8f5e9;border-color:#2e7d32;font-weight:700}
+.opt.wrong{background:#ffebee;border-color:#c62828}
+.exp{display:none;margin-top:8px;padding:8px 10px;background:#fff8e1;border-radius:8px;font-size:.82rem}
+.exp.show{display:block}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24px}
+@media(max-width:700px){.tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.tab{white-space:nowrap}}
+</style>
+</head>
+<body>
+
+<a class="back" href="index.html">← CA Facts Index</a>
+<a class="back" href="international_organisations.html" style="margin-left:8px">↗ Bretton Woods · WTO · Groups</a>
+
+<header class="hero">
+  <div style="font-size:2.8rem">🇺🇳</div>
+  <h1>UN System — Master Sheet</h1>
+  <p>Read this <b>before</b> env treaties (UNFCCC/COP) or IR clubs (SCO/BRICS). One place for: why UN exists, six organs, what “groups” mean, funds vs agencies, and what is <em>not</em> the UN.</p>
+  <div class="badges">
+    <span class="badge">Charter 1945</span>
+    <span class="badge">6 principal organs</span>
+    <span class="badge">15 specialized agencies</span>
+    <span class="badge gold">Site map → Hub tab</span>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-tab="hub">🗺️ Site map</button>
+  <button class="tab" data-tab="why">📜 Why UN</button>
+  <button class="tab" data-tab="organs">⚖️ 6 organs</button>
+  <button class="tab" data-tab="groups">👥 “Groups”</button>
+  <button class="tab" data-tab="family">🌳 UN family</button>
+  <button class="tab" data-tab="funds">💼 Funds</button>
+  <button class="tab" data-tab="agencies">🏛️ 15 agencies</button>
+  <button class="tab" data-tab="other">🔗 Not quite UN</button>
+  <button class="tab" data-tab="ops">🪖 Ops &amp; SG</button>
+  <button class="tab" data-tab="mcq">📝 MCQs</button>
+</nav>
+
+<main>
+
+<!-- ========== HUB: how all IO HTML is organized ========== -->
+<section class="section active" id="tab-hub">
+  <div class="trick">
+    <h3>How CA_Notes splits “international” (read this once)</h3>
+    <div class="line">UN घर है → पर्यावरण संधियाँ अलमारी → Bretton Woods/WTO दुकान → SCO/BRICS मेला</div>
+    <div class="decode">Don’t study everything in one file. Each page has one job. Links below.</div>
+  </div>
+
+  <h2 class="section-title">Planned HTML structure (international track)</h2>
+  <div class="hub-grid">
+    <a class="hub live" href="un_system_master.html">
+      <div class="tag">Layer 1 · You are here</div>
+      <h4>🇺🇳 un_system_master.html</h4>
+      <p><b>UN only:</b> Charter, 6 organs, regional groups, G77/G4, funds vs specialized agencies (15), peacekeeping, SG, “not the UN”. No IMF trade math, no SCO members list.</p>
+    </a>
+    <a class="hub live" href="un_environment_architecture.html">
+      <div class="tag">Layer 2 · Live</div>
+      <h4>🌿 un_environment_architecture.html</h4>
+      <p><b>Env &amp; ecology lens:</b> Stockholm → UNEP; Rio → UNFCCC/CBD/UNCCD; Montreal, CITES, Ramsar; COP vs convention; IPCC role. Bridges from UNEP (programme) to MEAs (treaties).</p>
+    </a>
+    <a class="hub live" href="international_organisations.html">
+      <div class="tag">Layer 3 · Economics &amp; trade</div>
+      <h4>🌍 international_organisations.html</h4>
+      <p><b>IMF, World Bank, WTO, dev banks (ADB/AIIB/NDB), WEF, quick agency HQ mnemonics, watchdogs (IAEA/OPCW).</b> Short UN tabs point here → full UN on master sheet.</p>
+    </a>
+    <a class="hub live" href="international_organisations.html#groups">
+      <div class="tag">Layer 4 · IR clubs (not UN)</div>
+      <h4>🤝 IO page → Groups tab + CA MCQs</h4>
+      <p><b>G20, G7, BRICS, SCO, ASEAN, QUAD</b> — forums &amp; regional geo-economy. Separate from UN Charter bodies. Monthly: <code>brics_mcqs_english.html</code>, <code>sco_2026_mcqs_english.html</code>.</p>
+    </a>
+    <a class="hub live" href="upsc_environment_mcqs_english.html">
+      <div class="tag">Layer 5 · Practice</div>
+      <h4>📝 upsc_environment_mcqs_english.html</h4>
+      <p>MCQs on conventions, biodiversity, pollution — tag each answer to Layer 2 treaty when architecture page is live.</p>
+    </a>
+  </div>
+
+  <div class="card">
+    <h3>Decision rule (which page to open?)</h3>
+    <ul>
+      <li>Question mentions <b>veto, UNSC, UNGA, ICJ, Secretary-General, peacekeeping</b> → this file.</li>
+      <li><b>UNEP Nairobi, COP, Paris Agreement, Kyoto, Rio 1992, Stockholm 1972</b> → env architecture (Layer 2).</li>
+      <li><b>Quota, SDR, BOP, IBRD, IDA, dispute settlement, MFN</b> → international_organisations (money/trade).</li>
+      <li><b>India presidency G20, SCO summit host, BRICS expansion</b> → Groups tab or monthly MCQ HTML.</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">One-page family tree (UN system only)</h2>
+  <p style="font-size:.84rem;color:var(--muted);margin:-4px 0 10px">Top → bottom = legal hierarchy. Hover cards on desktop. <a href="#organs">Open 6 organs tab ↗</a></p>
+
+  <div class="flowchart" role="img" aria-label="UN system family tree flowchart">
+    <div class="fc-root">
+      <strong>🇺🇳 United Nations</strong>
+      <span>Charter 1945 · HQ New York · ~193 member states</span>
+    </div>
+    <div class="fc-vline" aria-hidden="true"></div>
+
+    <div class="fc-tier">
+      <div class="fc-tier-label">Principal organs — only these six (Charter)</div>
+      <div class="fc-organs-wrap">
+      <div class="fc-organs">
+        <div class="fc-node"><span class="ico">🗳️</span><b>UNGA</b>General Assembly</div>
+        <div class="fc-node"><span class="ico">🛡️</span><b>UNSC</b>Security Council · P5 veto</div>
+        <div class="fc-node"><span class="ico">📊</span><b>ECOSOC</b>Economic &amp; Social Council</div>
+        <div class="fc-node muted"><span class="ico">📋</span><b>Trusteeship</b>Inactive (exam trap)</div>
+        <div class="fc-node"><span class="ico">⚖️</span><b>ICJ</b>The Hague · states’ disputes</div>
+        <div class="fc-node"><span class="ico">✍️</span><b>Secretariat</b>SG + international civil service</div>
+      </div>
+      </div>
+    </div>
+
+    <div class="fc-vline" aria-hidden="true"></div>
+    <div class="fc-tier-label">UN family — hangs off organs (especially ECOSOC &amp; GA)</div>
+    <div class="fc-vline short" aria-hidden="true"></div>
+
+    <div class="fc-tier fc-row3">
+      <div class="fc-block">
+        <h5>💼 Funds &amp; programmes</h5>
+        Created by <b>UNGA</b> — part of “UN proper”
+        <div class="fc-chips">
+          <span class="fc-chip">UNDP</span><span class="fc-chip">UNICEF</span><span class="fc-chip">UNHCR</span>
+          <span class="fc-chip">WFP</span><span class="fc-chip">UNFPA</span><span class="fc-chip">UN Women</span>
+          <span class="fc-chip">UNEP</span><span class="fc-chip">UN-Habitat</span><span class="fc-chip dim">…</span>
+        </div>
+      </div>
+      <div class="fc-block">
+        <h5>🏛️ 15 specialized agencies</h5>
+        Separate treaties · coordinated via <b>ECOSOC</b>
+        <div class="fc-chips">
+          <span class="fc-chip">WHO</span><span class="fc-chip">FAO</span><span class="fc-chip">UNESCO</span>
+          <span class="fc-chip">ILO</span><span class="fc-chip">IMF</span><span class="fc-chip">World Bank</span>
+          <span class="fc-chip">ICAO</span><span class="fc-chip">IMO</span><span class="fc-chip">ITU</span>
+          <span class="fc-chip dim">+6 → Agencies tab</span>
+        </div>
+      </div>
+      <div class="fc-block">
+        <h5>🔗 Subsidiary bodies</h5>
+        Under GA / SC / ECOSOC — many committees
+        <div class="fc-chips">
+          <span class="fc-chip dim">UNSC sanctions</span>
+          <span class="fc-chip dim">Human rights treaty bodies</span>
+          <span class="fc-chip dim">Regional commissions</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="fc-vline" aria-hidden="true"></div>
+    <div class="fc-tier-label warn">Linked — not UN organs</div>
+    <div class="fc-tier" style="max-width:640px">
+      <div class="fc-node ext" style="margin-top:8px;max-width:100%">
+        <span class="ico">🌿</span>
+        <b>MEAs (treaties)</b>
+        UNFCCC · CBD · CITES… — <b>COP</b> = Parties’ meeting, not a Charter organ.
+        <a href="un_environment_architecture.html" style="font-size:.76rem;display:inline-block;margin-top:6px">Env architecture page →</a>
+      </div>
+      <div class="fc-chips" style="justify-content:center;margin-top:10px">
+        <span class="fc-chip">IAEA</span><span class="fc-chip">WTO</span><span class="fc-chip">ICC</span>
+        <span class="fc-chip dim">special relationship</span>
+      </div>
+    </div>
+
+    <div class="fc-legend">
+      <span><i></i> Charter body</span>
+      <span><i class="dash"></i> Inactive / committee bucket</span>
+      <span><i class="gold"></i> Treaty / outside organ</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY ========== -->
+<section class="section" id="tab-why">
+  <div class="trick">
+    <h3>Why "UN" at all?</h3>
+    <div class="line">1945 = युद्ध के बाद — शांति, सहयोग, कानून; League of Nations की जगह मजबूत संस्था</div>
+    <div class="decode">League of Nations (1919) failed to stop WWII. San Francisco Conference adopted the <b>UN Charter</b>. USSR &amp; USA both founding members. India = founding member.</div>
+  </div>
+  <div class="card">
+    <h3>Charter anchors (static)</h3>
+    <ul>
+      <li><b>Purposes (Art. 1):</b> maintain peace &amp; security; friendly relations; international cooperation; harmonize actions.</li>
+      <li><b>Principles (Art. 2):</b> sovereign equality; fulfil obligations in good faith; peaceful settlement; no threat of force; assist UN; <b>non-intervention</b> in domestic jurisdiction (with SC exception).</li>
+      <li><b>Commenced:</b> 24 October 1945 → <b>UN Day</b>.</li>
+      <li><b>HQ:</b> New York (land = international territory style arrangement).</li>
+    </ul>
+  </div>
+  <div class="warn"><b>Common mistake:</b> Treating every global meeting as "the UN". A <b>COP</b> is a meeting of <b>parties to a treaty</b> (e.g. UNFCCC). UNEP is a <b>UN programme</b>. WHO is a <b>specialized agency</b>. All are in the "UN system" loosely, but legally different.</div>
+</section>
+
+<!-- ========== SIX ORGANS ========== -->
+<section class="section" id="tab-organs">
+  <div class="trick">
+    <h3>Six principal organs — exam must-know</h3>
+    <div class="line">GA · SC · ECOSOC · Trusteeship(मृत) · ICJ · Secretariat — छह, सात नहीं!</div>
+  </div>
+  <div class="org-grid">
+    <article class="org">
+      <h4>1. General Assembly (UNGA)</h4>
+      <div class="sub">All member states · one country, one vote</div>
+      <ul>
+        <li>Deliberative, policy-making, representative body.</li>
+        <li>Discusses any matter within Charter scope; <b>recommends</b> (binding mainly on budget, scales of assessment, some elections).</li>
+        <li>Elects non-permanent UNSC members, ECOSOC members, judges (with SC), approves <b>UN budget</b>.</li>
+      </ul>
+    </article>
+    <article class="org">
+      <h4>2. Security Council (UNSC)</h4>
+      <div class="sub">Primary responsibility: international peace &amp; security</div>
+      <ul>
+        <li><b>5 permanent</b> (P5): USA, UK, France, Russia, China — <b>veto</b> on substantive resolutions.</li>
+        <li><b>10 non-permanent</b> — 2-year terms; regional rotation.</li>
+        <li>Can authorize sanctions, peacekeeping, use of force (Chapter VII).</li>
+        <li><b>India:</b> largest troop contributor historically; demands permanent seat (G4 narrative).</li>
+      </ul>
+    </article>
+    <article class="org">
+      <h4>3. ECOSOC</h4>
+      <div class="sub">Economic and Social Council — coordination hub</div>
+      <ul>
+        <li>Coordinates economic, social, environmental work; links UN to <b>specialized agencies</b> &amp; NGOs.</li>
+        <li>Regional commissions (e.g. UNECE, ESCAP) sit under ECOSOC.</li>
+        <li>Not the same as running climate law — that's <b>UNFCCC treaty</b> (separate page later).</li>
+      </ul>
+    </article>
+    <article class="org">
+      <h4>4. Trusteeship Council</h4>
+      <div class="sub">Inactive — trick question favourite</div>
+      <ul>
+        <li>Oversaw trust territories; last territory (Palau) ended trusteeship.</li>
+        <li>Council suspended operations — still listed as principal organ in Charter.</li>
+      </ul>
+    </article>
+    <article class="org">
+      <h4>5. ICJ</h4>
+      <div class="sub">International Court of Justice · The Hague</div>
+      <ul>
+        <li>Principal <b>judicial</b> organ; disputes between <b>states</b> that consent.</li>
+        <li><b>Advisory opinions</b> to UN organs/agencies (e.g. GA, SC).</li>
+        <li>15 judges; 9-year terms; separate from ICC (criminal individuals).</li>
+      </ul>
+    </article>
+    <article class="org">
+      <h4>6. Secretariat</h4>
+      <div class="sub">International civil service</div>
+      <ul>
+        <li><b>Secretary-General</b> — chief administrative officer; not world government.</li>
+        <li>Appointed: UNSC recommendation (often P5 consensus politics) + UNGA appointment.</li>
+        <li>Staff implement GA/SC decisions; SG can bring matters to SC attention (Art. 99).</li>
+      </ul>
+    </article>
+  </div>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Organ</th><th>Binding power?</th><th>Veto?</th><th>HQ / seat</th></tr></thead>
+      <tbody>
+        <tr><td>UNGA</td><td>Mostly recommendations</td><td>No</td><td>New York</td></tr>
+        <tr><td>UNSC</td><td>Yes (Charter Ch. VII)</td><td>P5 yes</td><td>New York</td></tr>
+        <tr><td>ECOSOC</td><td>Coordination</td><td>No</td><td>New York</td></tr>
+        <tr><td>ICJ</td><td>Judgments binding if parties accepted jurisdiction</td><td>No</td><td>The Hague</td></tr>
+        <tr><td>Secretariat</td><td>Administrative</td><td>No</td><td>New York</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== GROUPS ========== -->
+<section class="section" id="tab-groups">
+  <div class="trick">
+    <h3>"How many groups in the UN?" — four meanings</h3>
+    <div class="line">क्षेत्रीय समूह · G77 जैसे ब्लॉक · UN परिवार · उपसमितियाँ — एक शब्द, चार मतलब!</div>
+  </div>
+
+  <h2 class="section-title">A. Five UN regional groups (for elections)</h2>
+  <p style="font-size:.88rem;margin-bottom:10px">Not separate organizations — caucuses for rotating seats (UNSC non-permanent, ECOSOC, etc.). <b>India = Asia-Pacific Group.</b></p>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Group</th><th>Typical role</th></tr></thead>
+      <tbody>
+        <tr><td><b>African Group</b></td><td>54 states — large bloc in GA</td></tr>
+        <tr><td><b>Asia-Pacific Group (APG)</b></td><td>Includes India, China, Japan, etc.</td></tr>
+        <tr><td><b>Eastern European Group</b></td><td>Smallest group; UNSC seat often reserved here</td></tr>
+        <tr><td><b>Latin American &amp; Caribbean (GRULAC)</b></td><td>Regional candidacies</td></tr>
+        <tr><td><b>Western European &amp; Others (WEOG)</b></td><td>Includes US, Canada, Australia, NZ, Israel (arrangement)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">B. Political blocs at the UN (not Charter organs)</h2>
+  <div class="card">
+    <ul>
+      <li><b>G77 + China</b> — developing countries' coalition in UN economic negotiations (not 77 members today).</li>
+      <li><b>NAM</b> — Non-Aligned Movement; Cold War legacy; consultative, not a UN body.</li>
+      <li><b>G4</b> — India, Brazil, Germany, Japan — mutual support for UNSC permanent seats.</li>
+      <li><b>P5</b> — permanent UNSC members with veto (not a "group" in Charter, but exam shorthand).</li>
+      <li><b>EU</b> — coordinates voting at UN on many issues (27 states).</li>
+    </ul>
+  </div>
+
+  <h2 class="section-title">C. Subsidiary &amp; functional bodies (examples)</h2>
+  <p style="font-size:.88rem;margin-bottom:8px">Dozens exist — learn categories, not every name.</p>
+  <ul style="font-size:.88rem;padding-left:18px;line-height:1.65">
+    <li><b>Under UNSC:</b> sanctions committees, peacekeeping mandates.</li>
+    <li><b>Under GA:</b> Sixth Committee (legal), Fifth Committee (budget), human rights bodies.</li>
+    <li><b>Under ECOSOC:</b> functional commissions (statistics, population, etc.).</li>
+  </ul>
+</section>
+
+<!-- ========== FAMILY ========== -->
+<section class="section" id="tab-family">
+  <div class="trick">
+    <h3>UN "family" = three legal buckets</h3>
+    <div class="line">Organs (6) → Funds/Programmes (UNGA) → Specialized Agencies (अलग संधि)</div>
+  </div>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Bucket</th><th>Created how</th><th>Examples</th><th>UPSC trap</th></tr></thead>
+      <tbody>
+        <tr><td><b>Principal organs</b></td><td>Charter</td><td>UNGA, UNSC, …</td><td>WHO is <em>not</em> an organ</td></tr>
+        <tr><td><b>Funds &amp; programmes</b></td><td>UNGA resolution</td><td>UNDP, UNICEF, UNEP</td><td>UNEP ≠ UNFCCC</td></tr>
+        <tr><td><b>Specialized agencies</b></td><td>Separate treaty; ECOSOC link</td><td>WHO, FAO, IMF</td><td>IMF is agency, not "WB department"</td></tr>
+        <tr><td><b>Related orgs</b></td><td>Varies</td><td>IAEA, WTO</td><td>Not counted in the 15</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h3>Chief Executives Board (CEB)</h3>
+    <p>Heads of UN entities meet to coordinate — shows "system" unity, but doesn't erase legal differences between programme vs agency vs treaty secretariat.</p>
+  </div>
+</section>
+
+<!-- ========== FUNDS ========== -->
+<section class="section" id="tab-funds">
+  <h2 class="section-title">Funds &amp; programmes (high-yield)</h2>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Name</th><th>Job</th><th>HQ (memory)</th></tr></thead>
+      <tbody>
+        <tr><td><b>UNDP</b></td><td>Development network; HDI / Human Development Report tradition</td><td>New York</td></tr>
+        <tr><td><b>UNICEF</b></td><td>Children; emergencies; child rights</td><td>New York</td></tr>
+        <tr><td><b>UNHCR</b></td><td>Refugees, stateless, displacement</td><td>Geneva</td></tr>
+        <tr><td><b>WFP</b></td><td>Food assistance (Nobel 2020 — CA)</td><td>Rome</td></tr>
+        <tr><td><b>UNFPA</b></td><td>Population, reproductive health</td><td>New York</td></tr>
+        <tr><td><b>UN Women</b></td><td>Gender equality</td><td>New York</td></tr>
+        <tr><td><b>UNEP</b></td><td>Environmental coordination; born <b>Stockholm 1972</b></td><td><b>Nairobi</b> (Africa — classic Q)</td></tr>
+        <tr><td><b>UN-Habitat</b></td><td>Sustainable cities</td><td>Nairobi</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="warn">Read <a href="un_environment_architecture.html">UN Environment Architecture</a> for <b>UNEP → UNFCCC/CBD/COP</b>. UNEP coordinates; treaties bind Parties.</div>
+</section>
+
+<!-- ========== 15 AGENCIES ========== -->
+<section class="section" id="tab-agencies">
+  <h2 class="section-title">15 UN specialized agencies (official count)</h2>
+  <p style="font-size:.86rem;margin-bottom:10px">Each has its own founding treaty &amp; membership. Coordinated through <b>ECOSOC</b>. Memorize HQ in round 2 on <a href="international_organisations.html#agency">IO page → Agencies tab</a>.</p>
+  <div class="compare">
+    <table>
+      <thead><tr><th>#</th><th>Agency</th><th>Domain</th><th>HQ (usual)</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><b>FAO</b></td><td>Food &amp; agriculture</td><td>Rome</td></tr>
+        <tr><td>2</td><td><b>ICAO</b></td><td>Civil aviation</td><td>Montreal</td></tr>
+        <tr><td>3</td><td><b>IFAD</b></td><td>Agricultural development finance</td><td>Rome</td></tr>
+        <tr><td>4</td><td><b>ILO</b></td><td>Labour (tripartite: gov + employers + workers)</td><td>Geneva</td></tr>
+        <tr><td>5</td><td><b>IMF</b></td><td>Monetary stability, BOP (see IO money tab)</td><td>Washington DC</td></tr>
+        <tr><td>6</td><td><b>IMO</b></td><td>Shipping</td><td>London</td></tr>
+        <tr><td>7</td><td><b>ITU</b></td><td>Telecom / ICT</td><td>Geneva</td></tr>
+        <tr><td>8</td><td><b>UNESCO</b></td><td>Education, science, culture, heritage</td><td>Paris</td></tr>
+        <tr><td>9</td><td><b>UNIDO</b></td><td>Industrial development</td><td>Vienna</td></tr>
+        <tr><td>10</td><td><b>UN Tourism (UNWTO)</b></td><td>Tourism</td><td>Madrid</td></tr>
+        <tr><td>11</td><td><b>UPU</b></td><td>Postal services</td><td>Bern</td></tr>
+        <tr><td>12</td><td><b>World Bank Group</b></td><td>Development finance (IBRD, IDA, IFC…)</td><td>Washington DC</td></tr>
+        <tr><td>13</td><td><b>WHO</b></td><td>International public health</td><td>Geneva</td></tr>
+        <tr><td>14</td><td><b>WIPO</b></td><td>Intellectual property</td><td>Geneva</td></tr>
+        <tr><td>15</td><td><b>WMO</b></td><td>Weather &amp; climate services</td><td>Geneva</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ========== NOT QUITE UN ========== -->
+<section class="section" id="tab-other">
+  <div class="trick">
+    <h3>Linked to "UN" in news — but different legal animal</h3>
+    <div class="line">COP = संधि की बैठक · IAEA = परमाणु · WTO = व्यापार · ICC = अपराध अदालत</div>
+  </div>
+  <div class="org-grid">
+    <article class="org">
+      <h4>Multilateral Environmental Agreements (MEAs)</h4>
+      <div class="sub">UNFCCC, CBD, CITES, Montreal Protocol, Ramsar…</div>
+      <p>States are <b>Parties</b>. Supreme body often called <b>COP</b> (Conference of the Parties). Secretariats may be hosted in UN system (e.g. climate secretariat linked to UNEP history) but <b>the treaty is boss</b>. Full ladder → <a href="un_environment_architecture.html">UN Environment Architecture</a>.</p>
+    </article>
+    <article class="org">
+      <h4>IAEA</h4>
+      <div class="sub">International Atomic Energy Agency — Vienna</div>
+      <p>Autonomous; reports to UNGA &amp; UNSC. Safeguards, nuclear verification. Not one of 15 specialized agencies in the classic list sense — "related organization".</p>
+    </article>
+    <article class="org">
+      <h4>WTO</h4>
+      <div class="sub">World Trade Organization — Geneva</div>
+      <p>Trade rules; successor to GATT 1947. Cooperates with UN system but <b>not</b> a UN specialized agency. Details → <a href="international_organisations.html#trade">IO trade tab</a>.</p>
+    </article>
+    <article class="org">
+      <h4>ICC</h4>
+      <div class="sub">International Criminal Court — The Hague</div>
+      <p><b>Rome Statute 1998</b> — tries individuals for genocide, crimes against humanity, war crimes. <b>Not a UN organ</b> (often confused with ICJ).</p>
+    </article>
+    <article class="org">
+      <h4>IPCC</h4>
+      <div class="sub">Intergovernmental Panel on Climate Change</div>
+      <p>Scientific assessments for policymakers; supports UNFCCC negotiations. <b>Does not set law</b> or run COP.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ========== OPS ========== -->
+<section class="section" id="tab-ops">
+  <div class="card">
+    <h3>Peacekeeping</h3>
+    <ul>
+      <li>Authorized by <b>UNSC</b>; troops/police contributed by member states — <b>no standing UN army</b>.</li>
+      <li>Blue helmets; principles: consent of parties, impartiality, minimum use of force except self-defence / mandate.</li>
+      <li><b>India:</b> among largest contributors — favourite CA/static pairing with UNSC reform.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Budget &amp; assessment</h3>
+    <ul>
+      <li><b>Regular budget</b> — assessed contributions; Fifth Committee (GA) deals with budget.</li>
+      <li><b>Peacekeeping</b> — separate assessment scale.</li>
+      <li>P5 pay larger share on regular budget (with discounts/ceilings — know concept, not every %).</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Secretary-General (quick)</h3>
+    <ul>
+      <li>5-year term, renewable; practice of regional rotation.</li>
+      <li>Art. 99: may bring to SC attention any matter threatening peace.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== MCQs ========== -->
+<section class="section" id="tab-mcq">
+  <div class="mcq">
+    <div class="q">1. How many principal organs does the UN have under the Charter?</div>
+    <div class="opt" onclick="pick(this,true)">a) Six</div>
+    <div class="opt" onclick="pick(this,false)">b) Seven</div>
+    <div class="opt" onclick="pick(this,false)">c) Fifteen</div>
+    <div class="opt" onclick="pick(this,false)">d) Same as specialized agencies</div>
+    <div class="exp"><b>a)</b> GA, SC, ECOSOC, Trusteeship, ICJ, Secretariat. WHO is an agency, not an organ.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">2. Which principal organ is inactive but still in the Charter?</div>
+    <div class="opt" onclick="pick(this,false)">a) ECOSOC</div>
+    <div class="opt" onclick="pick(this,true)">b) Trusteeship Council</div>
+    <div class="opt" onclick="pick(this,false)">c) ICJ</div>
+    <div class="opt" onclick="pick(this,false)">d) UNGA</div>
+    <div class="exp"><b>b)</b> No trust territories remain.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">3. India sits in which UN regional group for electoral purposes?</div>
+    <div class="opt" onclick="pick(this,true)">a) Asia-Pacific Group</div>
+    <div class="opt" onclick="pick(this,false)">b) WEOG</div>
+    <div class="opt" onclick="pick(this,false)">c) African Group</div>
+    <div class="opt" onclick="pick(this,false)">d) GRULAC</div>
+    <div class="exp"><b>a)</b> APG.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">4. UNEP headquarters is in:</div>
+    <div class="opt" onclick="pick(this,false)">a) Geneva</div>
+    <div class="opt" onclick="pick(this,false)">b) New York</div>
+    <div class="opt" onclick="pick(this,true)">c) Nairobi</div>
+    <div class="opt" onclick="pick(this,false)">d) Paris</div>
+    <div class="exp"><b>c)</b> Programme born from Stockholm 1972 conference.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">5. COP (Conference of the Parties) usually refers to:</div>
+    <div class="opt" onclick="pick(this,false)">a) UN General Assembly annual session</div>
+    <div class="opt" onclick="pick(this,true)">b) Supreme body of a multilateral treaty such as UNFCCC</div>
+    <div class="opt" onclick="pick(this,false)">c) UNSC meeting</div>
+    <div class="opt" onclick="pick(this,false)">d) WTO ministerial</div>
+    <div class="exp"><b>b)</b> Treaty parties, not UN organ.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">6. ICJ is located in:</div>
+    <div class="opt" onclick="pick(this,false)">a) New York</div>
+    <div class="opt" onclick="pick(this,true)">b) The Hague</div>
+    <div class="opt" onclick="pick(this,false)">c) Geneva</div>
+    <div class="opt" onclick="pick(this,false)">d) Vienna</div>
+    <div class="exp"><b>b)</b> ICC is also Hague but different court (individuals).</div>
+  </div>
+  <div class="mcq">
+    <div class="q">7. How many UN specialized agencies are in the standard UN list?</div>
+    <div class="opt" onclick="pick(this,false)">a) 6</div>
+    <div class="opt" onclick="pick(this,true)">b) 15</div>
+    <div class="opt" onclick="pick(this,false)">c) 193</div>
+    <div class="opt" onclick="pick(this,false)">d) 77</div>
+    <div class="exp"><b>b)</b> See Agencies tab table.</div>
+  </div>
+  <div class="mcq">
+    <div class="q">8. Peacekeeping forces are authorized by:</div>
+    <div class="opt" onclick="pick(this,false)">a) UNGA alone always</div>
+    <div class="opt" onclick="pick(this,true)">b) UNSC (primary)</div>
+    <div class="opt" onclick="pick(this,false)">c) ICJ</div>
+    <div class="opt" onclick="pick(this,false)">d) WHO</div>
+    <div class="exp"><b>b)</b> SC mandates; GA role in some financing/policy debates.</div>
+  </div>
+</section>
+
+</main>
+<footer>CA Notes · UN System Master · Read Hub tab for full international HTML map</footer>
+
+<script>
+(function(){
+  const tabs=[...document.querySelectorAll('.tab')];
+  const sections=[...document.querySelectorAll('.section')];
+  function show(id){
+    tabs.forEach(t=>t.classList.toggle('active', t.dataset.tab===id));
+    sections.forEach(s=>s.classList.toggle('active', s.id==='tab-'+id));
+    history.replaceState(null,'','#'+id);
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
+  const hash=(location.hash||'').replace('#','');
+  if(hash && document.getElementById('tab-'+hash)) show(hash);
+})();
+function pick(el,ok){
+  const box=el.closest('.mcq');
+  box.querySelectorAll('.opt').forEach(o=>{o.onclick=null;});
+  el.classList.add(ok?'correct':'wrong');
+  if(!ok){
+    box.querySelectorAll('.opt').forEach(o=>{
+      if(o.getAttribute('onclick')&&o.getAttribute('onclick').includes('true')) o.classList.add('correct');
+    });
+  }
+  box.querySelector('.exp')?.classList.add('show');
+}
+</script>
+</body>
+</html>
