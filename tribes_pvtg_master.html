@@ -278,7 +278,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
         <h3>⚡ Special lenses</h3>
         <p>Cross-cutting prelims / mains themes.</p>
         <div class="flow-chips">
-          <button type="button" class="flow-chip" data-goto="map"><span class="hl">PVTGs</span> (75)</button>
+          <button type="button" class="flow-chip" data-goto="flow" data-scroll="pvtg-def"><span class="hl">PVTGs</span> (75)</button>
           <button type="button" class="flow-chip" data-goto="law">PM-JANMAN</button>
           <button type="button" class="flow-chip" data-goto="law">FRA · PESA</button>
           <button type="button" class="flow-chip" data-goto="india">MoTA 16</button>
@@ -305,6 +305,16 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
       <button type="button" data-goto="india">MoTA</button><span>→</span>
       <button type="button" data-goto="world">World</button><span>→</span>
       <button type="button" data-goto="law">Law</button>
+    </div>
+  </div>
+
+  <div class="trick" id="pvtg-def">
+    <h3>What are PVTGs?</h3>
+    <div class="decode" style="line-height:1.65">
+      <p style="margin:0 0 10px"><b>Particularly Vulnerable Tribal Groups</b> — a <span class="hl">subset of Scheduled Tribes</span> on a separate MoTA list (not every ST is a PVTG). Earlier called <b>Primitive Tribal Groups (PTGs)</b>; renamed <b>PVTG</b> by the Government (MoTA).</p>
+      <p style="margin:0 0 10px"><b>Why a special category?</b> ST communities that need <b>higher-priority</b> protection and development — typically very small populations, geographic isolation, subsistence livelihoods, low literacy, and high vulnerability to displacement (forests, dams, conservation projects).</p>
+      <p style="margin:0 0 10px"><b>Identification (prelims):</b> MoTA uses vulnerability indicators such as — <span class="hl">pre-agricultural level of technology</span>; <span class="hl">stagnant or declining population</span>; <span class="hl">extremely low literacy</span>; <span class="hl">subsistence-level economy</span>. List is reviewed and updated (e.g. <b>75 groups</b> on the 2023 list).</p>
+      <p style="margin:0"><b>Timeline:</b> <b>Dhebar Commission</b> (1960–61) stressed special focus on the most “primitive” tribal groups → <b>1975</b> central <span class="hl">PVTG development programme</span> (started with 52 groups) → expanded to <b>75</b>. <b>Odisha</b> has the highest number of PVTGs among states. Policy links on Law tab: <span class="hl">FRA habitat rights</span>, <span class="hl">PM-JANMAN</span> (2023).</p>
     </div>
   </div>
 
@@ -957,7 +967,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 
 </main>
 
-<footer>CA Notes · Tribes &amp; PVTG Master · build tribes-2026-10-14j · cross-check MoTA &amp; Census</footer>
+<footer>CA Notes · Tribes &amp; PVTG Master · build tribes-2026-10-14k · cross-check MoTA &amp; Census</footer>
 
 <script>
 (function(){
@@ -970,7 +980,11 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     window.scrollTo({top:0,behavior:'smooth'});
   }
   tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
-  document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.goto)));
+  document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>{
+    show(b.dataset.goto);
+    const id=b.dataset.scroll;
+    if(id) requestAnimationFrame(()=>document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'}));
+  }));
   const h=(location.hash||'').replace('#','');
   if(h&&document.getElementById('tab-'+h)) show(h);
   else show('flow');
