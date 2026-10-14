@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="ca-build" content="tribes-2026-10-14e">
+<meta name="ca-build" content="tribes-2026-10-14f">
 <title>Indian Tribes · PVTGs · Global Indigenous Peoples | UPSC Master</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,12 +105,18 @@ td b{color:var(--earth)}
 .tribe-cols h4{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--forest);margin:0 0 8px}
 .tribe-cols ul{margin:0;padding-left:18px;font-size:.84rem;line-height:1.55}
 .tribe-cols ul.pvtg-list{color:#8b2e20}
-.poster-ref{margin-top:18px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.poster-stack{margin-top:20px;display:grid;gap:16px}
+@media(min-width:900px){.poster-stack{grid-template-columns:1fr 1fr;align-items:start}}
+.poster-ref{border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
 .poster-ref summary{
   cursor:pointer;padding:12px 16px;font-weight:700;font-size:.85rem;background:#faf6ef;list-style:none
 }
 .poster-ref summary::-webkit-details-marker{display:none}
 .poster-ref .poster-ref-img{display:block;width:100%;height:auto}
+.poster-ref .poster-cap{font-size:.7rem;color:var(--muted);padding:8px 12px 12px;line-height:1.45;border-top:1px solid var(--line)}
+.poster-ref--primary summary{background:linear-gradient(180deg,#fff3e0,#faf6ef);color:var(--earth)}
+.poster-ref--primary{border:2px solid var(--ochre)}
+.census-map{display:block;width:100%;height:auto;max-height:70vh}
 .goto-link{font:inherit;font-weight:700;color:var(--teal);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0}
 .world-profiles.is-filtered .profile{display:none}
 .world-profiles.is-filtered .profile.is-visible{display:block}
@@ -211,13 +217,13 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 <!-- PART 2 -->
 <section class="section active" id="tab-map">
   <h2 class="section-title">India — one region at a time</h2>
-  <p class="note">Tap a region below. The full Drishti map is optional reference only — no hover layers on the image.</p>
+  <p class="note">Tap a region below for a short list. <b>Your Drishti poster is still on this page</b> (open by default under the picker) — we did not delete it.</p>
 
   <div class="sources-box" id="sources">
     <h3>Where your tribal doc &amp; poster live on this page</h3>
     <ul>
       <li><b>MoTA — <em>Tribal Faces in India</em> (PDF you shared)</b> — not copied into the repo (government publication). Linked in the hero and <a href="https://tribal.nic.in/downloads/Livelihood/Resource%20and%20Publications/tribalFaces.pdf" rel="noopener">here</a>. Used for the <b>16-tribe summary table</b> below (names, states, exam points from MoTA text) and facts like Santhal <b>Manjhi-Paragana</b>.</li>
-      <li><b>Your Drishti poster</b> — <code>assets/major-tribes-india-reference.jpg</code> opens under <b>Full poster reference</b>; tribe names by region are in the picker lists (from the poster).</li>
+      <li><b>Your Drishti poster</b> — <code>assets/major-tribes-india-reference.jpg</code> (study map + facts). We did <b>not</b> pull random coaching posters from the web (copyright); added an official <b>Census 2011 ST % by state</b> map (CC BY-SA, Wikimedia) next to yours for state-level clarity.</li>
       <li><b>Profiles tab</b> — expanded UPSC cards (Santhal, Gond, …); only partly overlapping the 16 MoTA profiles — open the PDF for portraits &amp; full official write-ups.</li>
     </ul>
   </div>
@@ -233,10 +239,18 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
       </div>
       <p class="zone-exam" data-zone-exam></p>
     </div>
-    <details class="poster-ref">
-      <summary>Full poster reference — Major Tribes in India (Drishti-style)</summary>
-      <img class="poster-ref-img" src="assets/major-tribes-india-reference.jpg?v=5" width="999" height="1024" alt="Major Tribes in India map and facts">
-    </details>
+    <div class="poster-stack">
+      <details class="poster-ref poster-ref--primary" open>
+        <summary>Your poster — Major Tribes in India (shared study sheet)</summary>
+        <img class="poster-ref-img" src="assets/major-tribes-india-reference.jpg?v=5" width="999" height="1024" alt="Major Tribes in India map and facts from your Drishti-style reference">
+        <p class="poster-cap">File: <code>assets/major-tribes-india-reference.jpg</code> · Tribe names in the region picker are aligned to this map.</p>
+      </details>
+      <details class="poster-ref" open>
+        <summary>Official supplement — ST population % by state (Census 2011)</summary>
+        <img class="census-map" src="assets/census-2011-st-population-by-state.svg" width="800" height="900" alt="India map showing Scheduled Tribe population percentage by state, Census 2011">
+        <p class="poster-cap">Source: Census of India 2011 via <a href="https://commons.wikimedia.org/wiki/File:2011_Census_Scheduled_Tribes_distribution_map_India_by_state_and_union_territory.svg" rel="noopener">Wikimedia Commons</a> (CC BY-SA 3.0). Use for <b>which states are ST-heavy</b>; your poster for <b>tribe names</b>.</p>
+      </details>
+    </div>
   </div>
   <p class="note">MoTA portraits — <a href="https://tribal.nic.in/downloads/Livelihood/Resource%20and%20Publications/tribalFaces.pdf" rel="noopener">Tribal Faces in India (PDF)</a>.</p>
 
@@ -694,7 +708,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 
 </main>
 
-<footer>CA Notes · Tribes &amp; PVTG Master · build tribes-2026-10-14e · cross-check MoTA &amp; Census</footer>
+<footer>CA Notes · Tribes &amp; PVTG Master · build tribes-2026-10-14f · cross-check MoTA &amp; Census</footer>
 
 <script>
 (function(){
