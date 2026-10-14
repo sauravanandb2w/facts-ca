@@ -77,20 +77,41 @@ td b{color:var(--earth)}
   background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow)
 }
 @media(min-width:720px){.map-stage{grid-template-columns:1.1fr .9fr;align-items:start}}
-.india-svg{width:100%;max-width:420px;margin:0 auto;display:block}
-.india-svg .india-silhouette{fill:#f0dcc8;stroke:#a67c52;stroke-width:1.2}
-.zone-dot{cursor:pointer;stroke:#fff;stroke-width:1.5}
-.zone-dot{animation:map-pulse 2.4s ease-in-out infinite}
-.zone-dot.z1{animation-delay:0s}.zone-dot.z2{animation-delay:.35s}.zone-dot.z3{animation-delay:.7s}
-.zone-dot.z4{animation-delay:1.05s}.zone-dot.z5{animation-delay:1.4s}.zone-dot.z6{animation-delay:1.75s}
-@keyframes map-pulse{0%,100%{r:5;opacity:.85}50%{r:8;opacity:1}}
-.zone-dot.active{fill:var(--ochre);stroke:var(--earth)}
+.india-svg{width:100%;max-width:480px;margin:0 auto;display:block;touch-action:manipulation}
+.india-svg .map-base{fill:#f5e6d8;stroke:#a67c52;stroke-width:1.4;pointer-events:none}
+.india-svg .map-region{
+  fill:var(--rz,#c47a12);opacity:.22;stroke:#fff;stroke-width:1.2;
+  cursor:pointer;transition:opacity .18s,filter .18s
+}
+.india-svg .map-region:hover,.india-svg .map-region.is-on{opacity:.62;filter:drop-shadow(0 2px 6px rgba(0,0,0,.12))}
+.india-svg .map-region:focus{outline:2px solid var(--earth);outline-offset:1px}
+.india-svg .map-lbl{
+  font-size:7px;font-weight:800;fill:#3d2914;pointer-events:none;text-anchor:middle;
+  opacity:.55;font-family:"Sora",sans-serif
+}
+.india-svg .map-region.is-on + .map-lbl,.india-svg g.map-zone.is-on .map-lbl{opacity:1}
+.zone-dot{cursor:pointer;stroke:#fff;stroke-width:1.5;pointer-events:none}
+.zone-dot{animation:map-pulse 2.6s ease-in-out infinite}
+@keyframes map-pulse{0%,100%{r:3.5;opacity:.7}50%{r:5.5;opacity:1}}
 .map-panel{
-  min-height:120px;padding:12px 14px;border-radius:12px;background:linear-gradient(180deg,#faf6ef,#fff);
+  min-height:200px;max-height:min(420px,70vh);overflow-y:auto;
+  padding:12px 14px;border-radius:12px;background:linear-gradient(180deg,#faf6ef,#fff);
   border:1px solid var(--line);font-size:.8rem;line-height:1.5
 }
-.map-panel h4{font-family:"Fraunces",serif;font-size:.95rem;color:var(--earth);margin:0 0 6px}
-.map-panel ul{margin:6px 0 0;padding-left:16px}
+.map-panel h4{font-family:"Fraunces",serif;font-size:.95rem;color:var(--earth);margin:0 0 4px}
+.map-panel .map-hint{font-size:.72rem;color:var(--muted);margin:0 0 8px}
+.tribe-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.tribe-chips span{
+  font-size:.66rem;font-weight:600;padding:4px 8px;border-radius:8px;
+  background:#fff;border:1px solid #e0d5c4;color:#3d3528;line-height:1.25
+}
+.tribe-chips span.pvtg-chip{border-color:#e8b4a8;background:#fff5f2;color:#8b2e20}
+.map-legend-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px}
+.map-legend-row button{
+  font:inherit;font-size:.68rem;font-weight:700;padding:5px 10px;border-radius:999px;
+  border:2px solid var(--line);background:#fff;cursor:pointer;color:var(--ink)
+}
+.map-legend-row button:hover,.map-legend-row button.active{border-color:var(--earth);background:#faf6ef}
 .ref-poster{margin:14px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
 .ref-poster img{display:block;width:100%;height:auto}
 .ref-poster figcaption{font-size:.72rem;color:var(--muted);padding:8px 12px;line-height:1.45}
@@ -177,27 +198,57 @@ graph TD
 
 <!-- PART 2 -->
 <section class="section" id="tab-map">
-  <h2 class="section-title">Distribution map (animated + your reference)</h2>
-  <p class="note">Tap a <b>pulsing dot</b> on the simplified India map — tribe clusters update on the right. Below: your shared infographic + MoTA facts.</p>
+  <h2 class="section-title">Hover map — tribes by region (poster-style)</h2>
+  <p class="note"><b>Hover or tap</b> a coloured zone on the map (or use buttons below) — tribe names appear as chips on the right, like a Drishti-style distribution map.</p>
+
+  <div class="map-legend-row" id="mapZoneBtns" aria-label="Jump to region"></div>
 
   <div class="map-stage">
-    <svg class="india-svg" viewBox="0 0 360 420" role="img" aria-label="Simplified India map with tribal zones">
-      <path class="india-silhouette" d="M48,52 L92,38 L128,48 L148,72 L168,68 L188,88 L210,82 L232,98 L248,120 L262,118 L278,132 L292,128 L308,148 L318,172 L312,198 L298,218 L286,248 L272,268 L258,298 L242,318 L228,348 L208,368 L188,378 L168,392 L148,400 L128,388 L108,368 L88,348 L72,318 L58,288 L52,258 L44,228 L40,198 L42,168 L44,138 L48,108 Z"/>
-      <path class="india-silhouette" d="M300,328 L318,322 L332,338 L328,358 L312,368 L298,352 Z" opacity=".9"/>
-      <path class="india-silhouette" d="M318,368 L338,362 L348,378 L340,392 L322,388 Z" opacity=".9"/>
-      <g aria-hidden="false">
-        <circle class="zone-dot z1" data-zone="nw" cx="118" cy="118" r="6" fill="#c47a12"/>
-        <circle class="zone-dot z2" data-zone="central" cx="168" cy="198" r="6" fill="#8b4513"/>
-        <circle class="zone-dot z3" data-zone="ne" cx="278" cy="142" r="6" fill="#2d5a3d"/>
-        <circle class="zone-dot z4" data-zone="east" cx="218" cy="188" r="6" fill="#6b4423"/>
-        <circle class="zone-dot z5" data-zone="south" cx="158" cy="298" r="6" fill="#1a6b5c"/>
-        <circle class="zone-dot z6" data-zone="islands" cx="328" cy="378" r="6" fill="#a63d2f"/>
+    <svg class="india-svg" viewBox="0 0 360 420" role="application" aria-label="India tribal regions hover map">
+      <path class="map-base" d="M48,52 L92,38 L128,48 L148,72 L168,68 L188,88 L210,82 L232,98 L248,120 L262,118 L278,132 L292,128 L308,148 L318,172 L312,198 L298,218 L286,248 L272,268 L258,298 L242,318 L228,348 L208,368 L188,378 L168,392 L148,400 L128,388 L108,368 L88,348 L72,318 L58,288 L52,258 L44,228 L40,198 L42,168 L44,138 L48,108 Z"/>
+      <path class="map-base" d="M300,328 L318,322 L332,338 L328,358 L312,368 L298,352 Z"/>
+      <path class="map-base" d="M318,368 L338,362 L348,378 L340,392 L322,388 Z"/>
+
+      <g class="map-zone" data-zone="him">
+        <path class="map-region" tabindex="0" style="--rz:#7eb8da" d="M52,54 L128,46 L148,70 L142,98 L118,108 L72,100 L50,88 Z"/>
+        <text class="map-lbl" x="100" y="78">Himalaya</text>
+        <circle class="zone-dot" cx="100" cy="78" r="4" fill="#7eb8da"/>
+      </g>
+      <g class="map-zone" data-zone="nw">
+        <path class="map-region" tabindex="0" style="--rz:#c47a12" d="M72,100 L142,98 L158,138 L148,178 L108,188 L72,168 L58,130 Z"/>
+        <text class="map-lbl" x="108" y="148">NW</text>
+        <circle class="zone-dot" cx="108" cy="148" r="4" fill="#c47a12"/>
+      </g>
+      <g class="map-zone" data-zone="central">
+        <path class="map-region" tabindex="0" style="--rz:#8b5a2b" d="M108,188 L198,178 L228,228 L208,288 L158,298 L118,268 L108,220 Z"/>
+        <text class="map-lbl" x="168" y="238">Central</text>
+        <circle class="zone-dot" cx="168" cy="238" r="4" fill="#8b5a2b"/>
+      </g>
+      <g class="map-zone" data-zone="east">
+        <path class="map-region" tabindex="0" style="--rz:#6b4423" d="M198,178 L248,168 L268,208 L248,248 L208,248 L198,210 Z"/>
+        <text class="map-lbl" x="232" y="212">East</text>
+        <circle class="zone-dot" cx="232" cy="212" r="4" fill="#6b4423"/>
+      </g>
+      <g class="map-zone" data-zone="ne">
+        <path class="map-region" tabindex="0" style="--rz:#2d5a3d" d="M248,118 L312,148 L302,198 L258,188 L238,148 L248,118 Z"/>
+        <text class="map-lbl" x="278" y="162">NE</text>
+        <circle class="zone-dot" cx="278" cy="162" r="4" fill="#2d5a3d"/>
+      </g>
+      <g class="map-zone" data-zone="south">
+        <path class="map-region" tabindex="0" style="--rz:#1a6b5c" d="M118,268 L208,288 L218,338 L188,388 L128,392 L98,328 L108,288 Z"/>
+        <text class="map-lbl" x="158" y="338">South</text>
+        <circle class="zone-dot" cx="158" cy="338" r="4" fill="#1a6b5c"/>
+      </g>
+      <g class="map-zone" data-zone="islands">
+        <path class="map-region" tabindex="0" style="--rz:#a63d2f" d="M296,318 L348,312 L352,392 L308,398 L292,362 Z"/>
+        <text class="map-lbl" x="322" y="358">Islands</text>
+        <circle class="zone-dot" cx="322" cy="358" r="4" fill="#a63d2f"/>
       </g>
     </svg>
     <div class="map-panel" id="mapPanel">
-      <h4>North-West &amp; Himalayas</h4>
-      <p>Bhil, Meena, Garasia, Damor, Gujjar, Bakarwal, Gaddi, Bhotia, Monpa, Lepcha…</p>
-      <ul><li>Rajasthan · Gujarat · MP west · Himalayan states</li><li>Aravalli, Rann, transhumance belts</li></ul>
+      <h4>Himalayan &amp; northern belt</h4>
+      <p class="map-hint">Hover a zone on the map</p>
+      <div class="tribe-chips" id="mapChips"></div>
     </div>
   </div>
 
@@ -664,25 +715,58 @@ graph TD
 })();
 (function(){
   const zones={
-    nw:{title:'North-West & Himalayas',html:'<p>Bhil, Meena, Garasia, Damor, Patelia, Sahariya, Gujjar, Bakarwal, Gaddi…</p><ul><li>Rajasthan, Gujarat, west MP, HP, UK, Ladakh</li><li>Transhumance, Aravalli, Rann of Kutch</li></ul>'},
-    central:{title:'Central India (tribal belt)',html:'<p>Gond, Baiga, Bhil, Korku, Kol, Maria, Muria, Bhumij, Halba, Paharia…</p><ul><li>MP, Chhattisgarh, east Maharashtra</li><li>Satpura–Vindhya, Kanha, Bastar, Bewar/Podu</li></ul>'},
-    ne:{title:'North-East',html:'<p>Naga, Khasi, Garo, Mizo, Bodo, Apatani, Mishmi, Monpa, Deori, Karbi…</p><ul><li>Sixth Schedule ADCs; jhum cultivation</li><li>Brahmaputra valley, Patkai hills</li></ul>'},
-    east:{title:'Eastern India',html:'<p>Santhal, Munda, Oraon, Ho, Kharia, Bhumij, Lodha…</p><ul><li>Jharkhand, Odisha, West Bengal</li><li>Chotanagpur plateau, Manjhi-Paragana</li></ul>'},
-    south:{title:'Southern India',html:'<p>Toda, Kota, Irula, Kurumba, Chenchu, Paniya, Yerukala, Soliga…</p><ul><li>Nilgiris, Western &amp; Eastern Ghats</li><li>Nilgiri BR, Nallamala (Chenchu PVTG)</li></ul>'},
-    islands:{title:'Andaman & Nicobar',html:'<p>Great Andamanese, Onge, Jarawa, Sentinelese, Shompen, Nicobarese</p><ul><li>PVTG concentration; tribal reserves</li><li>North Sentinel — protected contact</li></ul>'}
+    him:{title:'Himalayan / Northern',states:'J&K · Ladakh · HP · UK · Sikkim · Arunachal (hills)',tribes:['Gaddi','Gujjar','Bakarwal','Bhotia','Monpa','Lepcha','Bhutia','Lahaula','Spiti','Sherpa','Kinnaura','Tharu'],pvtg:['Border-hill PVTG pockets']},
+    nw:{title:'North-West & desert',states:'Rajasthan · Gujarat · west MP',tribes:['Bhil','Damor','Dhanka','Meena (Minas)','Patelia','Sahariya','Garasia','Rathwa','Damaria','Naikda','Siddi (Gir)','Bhilala','Tadvi'],pvtg:['Sahariya','Kathodi']},
+    central:{title:'Central tribal belt',states:'MP · Chhattisgarh · east Maharashtra',tribes:['Gond','Bhil','Baiga','Bharia','Kol','Korku','Maria','Muria','Halba','Paharia','Bison Horn Maria','Abhuj Maria','Madia Gond','Kamar','Pahari Korwa','Birhor','Katkari'],pvtg:['Baiga','Birhor','Paharia','Abhuj Maria','Katkari','Kamar']},
+    east:{title:'Eastern plateau',states:'Jharkhand · Odisha · West Bengal · Bihar',tribes:['Santhal','Munda','Oraon','Ho','Kharia','Bhumij','Lodha','Bonda','Juang','Dongria Kondh','Kondh','Savar','Parhaiya'],pvtg:['Birhor','Bonda','Juang','Paharia','Lodha']},
+    ne:{title:'North-East',states:'Seven sisters + Sikkim',tribes:['Naga','Khasi','Garo','Mizo','Bodo','Apatani','Mishmi','Adi','Deori','Karbi','Dimasa','Hmar','Kuki','Singpho','Rabha','Tripuri','Lushai'],pvtg:['Mishings','Asur']},
+    south:{title:'Southern & Deccan hills',states:'TN · Kerala · Karnataka · AP · Telangana',tribes:['Toda','Kota','Irula','Kurumba','Chenchu','Paniya','Yerukala','Soliga','Kadar','Malai Arayan','Urali','Siddi','Koya','Yanadi'],pvtg:['Chenchu','Kadar','Kattunayakan','Koraga']},
+    islands:{title:'Andaman & Nicobar',states:'A&N Islands (UT)',tribes:['Great Andamanese','Onge','Jarawa','Sentinelese','Shompen','Nicobarese'],pvtg:['Great Andamanese','Onge','Jarawa','Sentinelese','Shompen']}
   };
   const panel=document.getElementById('mapPanel');
-  const dots=document.querySelectorAll('.zone-dot');
+  const chipsEl=document.getElementById('mapChips');
+  const btnRow=document.getElementById('mapZoneBtns');
+  const groups=document.querySelectorAll('.map-zone');
+  const pvtgSet=new Set();
+  Object.values(zones).forEach(z=>(z.pvtg||[]).forEach(t=>pvtgSet.add(t)));
+  function renderChips(z){
+    if(!chipsEl) return;
+    chipsEl.innerHTML=z.tribes.map(t=>{
+      const c=pvtgSet.has(t)?' pvtg-chip':'';
+      return '<span class="'+c+'">'+t+'</span>';
+    }).join('');
+  }
   function pick(key){
     const z=zones[key]; if(!z||!panel) return;
-    panel.innerHTML='<h4>'+z.title+'</h4>'+z.html;
-    dots.forEach(d=>d.classList.toggle('active',d.dataset.zone===key));
+    panel.querySelector('h4').textContent=z.title;
+    const hint=panel.querySelector('.map-hint');
+    if(hint) hint.textContent=z.states+(z.pvtg?.length?' · PVTG: '+z.pvtg.join(', '):'');
+    renderChips(z);
+    groups.forEach(g=>{
+      const on=g.dataset.zone===key;
+      g.classList.toggle('is-on',on);
+      g.querySelector('.map-region')?.classList.toggle('is-on',on);
+    });
+    btnRow?.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.zone===key));
   }
-  dots.forEach(d=>{
-    d.addEventListener('click',()=>pick(d.dataset.zone));
-    d.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(d.dataset.zone);}});
-    d.setAttribute('tabindex','0'); d.setAttribute('role','button');
+  Object.keys(zones).forEach(key=>{
+    const b=document.createElement('button');
+    b.type='button'; b.dataset.zone=key;
+    b.textContent={him:'Himalaya',nw:'NW',central:'Central',east:'East',ne:'NE',south:'South',islands:'Islands'}[key]||key;
+    b.title=zones[key].title;
+    b.addEventListener('click',()=>pick(key));
+    btnRow?.appendChild(b);
   });
+  groups.forEach(g=>{
+    const key=g.dataset.zone;
+    const path=g.querySelector('.map-region');
+    const enter=()=>pick(key);
+    path?.addEventListener('mouseenter',enter);
+    path?.addEventListener('focus',enter);
+    path?.addEventListener('click',enter);
+    path?.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();enter();}});
+  });
+  pick('central');
 })();
 </script>
 </body>
