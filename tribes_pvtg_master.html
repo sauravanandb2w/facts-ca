@@ -72,6 +72,29 @@ td b{color:var(--earth)}
 .pill{display:inline-block;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:999px;background:#e8f0e6;color:var(--forest);margin-right:4px}
 .pill.pvtg{background:#fde8e4;color:#8b2e20}
 .pill.dnt{background:#eee8f8;color:#4a3a6b}
+.map-stage{
+  display:grid;grid-template-columns:1fr;gap:14px;margin:12px 0;
+  background:#fff;border:2px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--shadow)
+}
+@media(min-width:720px){.map-stage{grid-template-columns:1.1fr .9fr;align-items:start}}
+.india-svg{width:100%;max-width:420px;margin:0 auto;display:block}
+.india-svg .india-silhouette{fill:#f0dcc8;stroke:#a67c52;stroke-width:1.2}
+.zone-dot{cursor:pointer;stroke:#fff;stroke-width:1.5}
+.zone-dot{animation:map-pulse 2.4s ease-in-out infinite}
+.zone-dot.z1{animation-delay:0s}.zone-dot.z2{animation-delay:.35s}.zone-dot.z3{animation-delay:.7s}
+.zone-dot.z4{animation-delay:1.05s}.zone-dot.z5{animation-delay:1.4s}.zone-dot.z6{animation-delay:1.75s}
+@keyframes map-pulse{0%,100%{r:5;opacity:.85}50%{r:8;opacity:1}}
+.zone-dot.active{fill:var(--ochre);stroke:var(--earth)}
+.map-panel{
+  min-height:120px;padding:12px 14px;border-radius:12px;background:linear-gradient(180deg,#faf6ef,#fff);
+  border:1px solid var(--line);font-size:.8rem;line-height:1.5
+}
+.map-panel h4{font-family:"Fraunces",serif;font-size:.95rem;color:var(--earth);margin:0 0 6px}
+.map-panel ul{margin:6px 0 0;padding-left:16px}
+.ref-poster{margin:14px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+.ref-poster img{display:block;width:100%;height:auto}
+.ref-poster figcaption{font-size:.72rem;color:var(--muted);padding:8px 12px;line-height:1.45}
+.mota-tag{font-size:.65rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.04em}
 footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 @media(max-width:640px){.tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.tab{white-space:nowrap}}
 </style>
@@ -154,7 +177,77 @@ graph TD
 
 <!-- PART 2 -->
 <section class="section" id="tab-map">
-  <h2 class="section-title">PART 2 — India: region × tribes × landscape</h2>
+  <h2 class="section-title">Distribution map (animated + your reference)</h2>
+  <p class="note">Tap a <b>pulsing dot</b> on the simplified India map — tribe clusters update on the right. Below: your shared infographic + MoTA facts.</p>
+
+  <div class="map-stage">
+    <svg class="india-svg" viewBox="0 0 360 420" role="img" aria-label="Simplified India map with tribal zones">
+      <path class="india-silhouette" d="M48,52 L92,38 L128,48 L148,72 L168,68 L188,88 L210,82 L232,98 L248,120 L262,118 L278,132 L292,128 L308,148 L318,172 L312,198 L298,218 L286,248 L272,268 L258,298 L242,318 L228,348 L208,368 L188,378 L168,392 L148,400 L128,388 L108,368 L88,348 L72,318 L58,288 L52,258 L44,228 L40,198 L42,168 L44,138 L48,108 Z"/>
+      <path class="india-silhouette" d="M300,328 L318,322 L332,338 L328,358 L312,368 L298,352 Z" opacity=".9"/>
+      <path class="india-silhouette" d="M318,368 L338,362 L348,378 L340,392 L322,388 Z" opacity=".9"/>
+      <g aria-hidden="false">
+        <circle class="zone-dot z1" data-zone="nw" cx="118" cy="118" r="6" fill="#c47a12"/>
+        <circle class="zone-dot z2" data-zone="central" cx="168" cy="198" r="6" fill="#8b4513"/>
+        <circle class="zone-dot z3" data-zone="ne" cx="278" cy="142" r="6" fill="#2d5a3d"/>
+        <circle class="zone-dot z4" data-zone="east" cx="218" cy="188" r="6" fill="#6b4423"/>
+        <circle class="zone-dot z5" data-zone="south" cx="158" cy="298" r="6" fill="#1a6b5c"/>
+        <circle class="zone-dot z6" data-zone="islands" cx="328" cy="378" r="6" fill="#a63d2f"/>
+      </g>
+    </svg>
+    <div class="map-panel" id="mapPanel">
+      <h4>North-West &amp; Himalayas</h4>
+      <p>Bhil, Meena, Garasia, Damor, Gujjar, Bakarwal, Gaddi, Bhotia, Monpa, Lepcha…</p>
+      <ul><li>Rajasthan · Gujarat · MP west · Himalayan states</li><li>Aravalli, Rann, transhumance belts</li></ul>
+    </div>
+  </div>
+
+  <figure class="ref-poster">
+    <img src="assets/major-tribes-india-reference.jpg" alt="Major Tribes in India — reference infographic with map and facts" width="1200" height="800" loading="lazy">
+    <figcaption>Your shared study poster (static reference). For official portraits &amp; text see MoTA PDF below — not a substitute for <a href="https://tribal.nic.in/downloads/Livelihood/Resource%20and%20Publications/tribalFaces.pdf" rel="noopener">Tribal Faces in India</a>.</figcaption>
+  </figure>
+
+  <div class="trick">
+    <h3>Exam facts capsule (poster + Census / Constitution)</h3>
+    <div class="decode">
+      <ul style="margin:0;padding-left:18px;line-height:1.65">
+        <li><b>ST population:</b> 8.6% of India (2011 Census).</li>
+        <li><b>PVTGs:</b> 75 groups (2023 list); <b>Odisha</b> has the highest number of PVTGs among states.</li>
+        <li><b>Bhil</b> — largest ST community by population (often cited ~38% of ST population in infographic sources — verify with Census tables).</li>
+        <li><b>Madhya Pradesh</b> — highest ST population among states (2011).</li>
+        <li><b>Santhal</b> — <b>Manjhi-Paragana</b> traditional governance (MoTA); clusters of 50–200 villages.</li>
+        <li><b>Lakshadweep</b> — indigenous population notified as ST.</li>
+        <li><b>Art. 342</b> — President specifies ST list; <b>Art. 275(1)</b> — grants for Scheduled Areas / ST welfare.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="section-title">MoTA — <em>Tribal Faces in India</em> (official profiles)</h2>
+  <p class="note"><span class="mota-tag">Ministry of Tribal Affairs</span> Photo-essay PDF — tribes below are summarised from government text (not exhaustive).</p>
+  <div class="compare">
+    <table>
+      <thead><tr><th>Tribe (MoTA)</th><th>States / region</th><th>High-yield points from MoTA doc</th></tr></thead>
+      <tbody>
+        <tr><td><b>Bhil</b></td><td>CG, GJ, KA, MP, MH, AP, RJ</td><td>Name from <em>billu</em> (bow); archers; Budwa/Huvarki/Vaidu healers; Toranmal festival.</td></tr>
+        <tr><td><b>Gond</b></td><td>MP, CG, MH, AP, TS, OD…</td><td>Among largest tribal groups globally; Raj/Madia/Dhurve/Khatulwar sub-groups; staple <em>kodo</em> &amp; <em>kutki</em> millet.</td></tr>
+        <tr><td><b>Santhal</b></td><td>AS, BR, CG, JH, OD, WB</td><td><b>Manjhi-Paragana</b>; Marang Buru / Bonga; sacred grove; sericulture &amp; hunting heritage.</td></tr>
+        <tr><td><b>Munda</b></td><td>Chotanagpur — JH, CG, MP, OD, TR, WB</td><td>Surname from nature; <b>Nupur</b> dance; Magha/Ba festival; <em>sasandiri</em> burial stone.</td></tr>
+        <tr><td><b>Baiga</b> <span class="pill pvtg">PVTG</span></td><td>CG, JH, BR, OD, WB, MP, UP</td><td>“Sorcerers”; slash-and-burn; tattoos by age; leave house after death, build new.</td></tr>
+        <tr><td><b>Birhor</b> <span class="pill pvtg">PVTG</span></td><td>JH + neighbours</td><td>Nomadic; <em>tanda</em> settlements; monkey nets; honey; barter economy.</td></tr>
+        <tr><td><b>Korku</b></td><td>MP, MH (Melghat), CG</td><td>Potato/coffee pioneers; <b>UNESCO endangered language</b>; flute at Diwali; <em>Munda</em> memorial pillar.</td></tr>
+        <tr><td><b>Madia Gond</b></td><td>CG, MH, MP, OD</td><td>Bada/Chota Madia; <b>Ghotul</b>; groom carves <em>Mundha</em> pillar for marriage.</td></tr>
+        <tr><td><b>Abhuj Maria</b></td><td>Bastar, CG</td><td>Isolated Gond sub-tribe; iron neck rings; Kaksar (June) &amp; Kudin festivals.</td></tr>
+        <tr><td><b>Bison Horn Maria</b></td><td>Bastar, CG, MH, MP</td><td>Bison-horn headdress at weddings; shifting cultivation; clan god at village edge.</td></tr>
+        <tr><td><b>Warli</b></td><td>MH, GJ, KA, Goa, DNH &amp; DD</td><td>Warli painting transmits beliefs; nature worship; rice, pulses, toddy/mahua.</td></tr>
+        <tr><td><b>Kokna</b></td><td>GJ, MH, KA, RJ, DNH</td><td>Konkan link; <b>Bohada</b> mask festival; traditional panchayat.</td></tr>
+        <tr><td><b>Ka Thakar</b></td><td>MH (Thane, Raigad…)</td><td><em>Thakarwadi</em> settlements; Chibra-lamp Diwali; bamboo artisans.</td></tr>
+        <tr><td><b>Koli Dhor</b></td><td>Western Ghats, Mumbai region</td><td><em>dhor</em> = cattle; hide tanning → wage labour migration.</td></tr>
+        <tr><td><b>Pahari Korwa</b></td><td>CG (Jashpur, Sarguja)</td><td>Mundari branch; forest medicine; dhank/mandar music.</td></tr>
+        <tr><td><b>Kamar</b></td><td>CG, MP</td><td>Bamboo crafts; foothill/forest villages; family god as iron chain + peacock feathers.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title">PART 2 — Region × tribes × landscape (table)</h2>
   <div class="compare">
     <table>
       <thead><tr><th>Region / State / UT</th><th>Major tribes &amp; PVTGs</th><th>Landmarks &amp; protected areas</th><th>Migration / livelihood</th></tr></thead>
@@ -205,7 +298,7 @@ graph TD
       <dl>
         <dt>Location</dt><dd>Chotanagpur plateau, Rajmahal hills; one of India’s largest ST communities.</dd>
         <dt>Socio-cultural</dt><dd>Patrilineal clans; <b>Santhal rebellion (1855)</b> under Sidhu-Kanhu; festivals <b>Sohrai</b>, Karam; music <b>Chadar Badar</b>.</dd>
-        <dt>Economy</dt><dd>Agriculture, forest produce; traditional <b>Parha</b> / village council system.</dd>
+        <dt>Economy</dt><dd>Agriculture, forest produce, sericulture; <b>Manjhi-Paragana</b> governance (MoTA).</dd>
         <dt>Status</dt><dd>ST; not PVTG. Literacy improving but displacement from mining/dams remains an issue.</dd>
         <dt>Protected overlap</dt><dd><b>Fifth Schedule</b> areas in Jharkhand; Dalma Wildlife Sanctuary region.</dd>
       </dl>
@@ -568,6 +661,28 @@ graph TD
   tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
   const h=(location.hash||'').replace('#','');
   if(h&&document.getElementById('tab-'+h)) show(h);
+})();
+(function(){
+  const zones={
+    nw:{title:'North-West & Himalayas',html:'<p>Bhil, Meena, Garasia, Damor, Patelia, Sahariya, Gujjar, Bakarwal, Gaddi…</p><ul><li>Rajasthan, Gujarat, west MP, HP, UK, Ladakh</li><li>Transhumance, Aravalli, Rann of Kutch</li></ul>'},
+    central:{title:'Central India (tribal belt)',html:'<p>Gond, Baiga, Bhil, Korku, Kol, Maria, Muria, Bhumij, Halba, Paharia…</p><ul><li>MP, Chhattisgarh, east Maharashtra</li><li>Satpura–Vindhya, Kanha, Bastar, Bewar/Podu</li></ul>'},
+    ne:{title:'North-East',html:'<p>Naga, Khasi, Garo, Mizo, Bodo, Apatani, Mishmi, Monpa, Deori, Karbi…</p><ul><li>Sixth Schedule ADCs; jhum cultivation</li><li>Brahmaputra valley, Patkai hills</li></ul>'},
+    east:{title:'Eastern India',html:'<p>Santhal, Munda, Oraon, Ho, Kharia, Bhumij, Lodha…</p><ul><li>Jharkhand, Odisha, West Bengal</li><li>Chotanagpur plateau, Manjhi-Paragana</li></ul>'},
+    south:{title:'Southern India',html:'<p>Toda, Kota, Irula, Kurumba, Chenchu, Paniya, Yerukala, Soliga…</p><ul><li>Nilgiris, Western &amp; Eastern Ghats</li><li>Nilgiri BR, Nallamala (Chenchu PVTG)</li></ul>'},
+    islands:{title:'Andaman & Nicobar',html:'<p>Great Andamanese, Onge, Jarawa, Sentinelese, Shompen, Nicobarese</p><ul><li>PVTG concentration; tribal reserves</li><li>North Sentinel — protected contact</li></ul>'}
+  };
+  const panel=document.getElementById('mapPanel');
+  const dots=document.querySelectorAll('.zone-dot');
+  function pick(key){
+    const z=zones[key]; if(!z||!panel) return;
+    panel.innerHTML='<h4>'+z.title+'</h4>'+z.html;
+    dots.forEach(d=>d.classList.toggle('active',d.dataset.zone===key));
+  }
+  dots.forEach(d=>{
+    d.addEventListener('click',()=>pick(d.dataset.zone));
+    d.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(d.dataset.zone);}});
+    d.setAttribute('tabindex','0'); d.setAttribute('role','button');
+  });
 })();
 </script>
 </body>
