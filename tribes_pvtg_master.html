@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="ca-build" content="tribes-2026-10-14h">
+<meta name="ca-build" content="tribes-2026-10-14i">
 <title>Indian Tribes · PVTGs · Global Indigenous Peoples | UPSC Master</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,6 +80,46 @@ td b{color:var(--earth)}
 .h-card li{margin:4px 0}
 .h-card.h-wide{grid-column:1/-1;border-color:var(--ochre);background:linear-gradient(180deg,#fffaf0,#fff)}
 .h-card.h-wide h3{color:var(--red)}
+.flow-chart{
+  margin:14px 0 22px;padding:18px 14px 22px;background:#fff;border:2px solid var(--earth);
+  border-radius:16px;box-shadow:var(--shadow)
+}
+.flow-chart h2{
+  font-family:"Fraunces",serif;font-size:1rem;color:var(--earth);margin:0 0 14px;text-align:center
+}
+.flow-root{
+  text-align:center;font-family:"Fraunces",serif;font-weight:800;font-size:clamp(.95rem,2.5vw,1.15rem);
+  padding:14px 16px;border-radius:12px;color:#fff;
+  background:linear-gradient(120deg,#5c3d1e,#6b4423 40%,#2d5a3d)
+}
+.flow-stem{display:flex;justify-content:center;padding:6px 0;color:var(--earth);font-size:1.25rem;line-height:1}
+.flow-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-items:stretch}
+.flow-box{
+  flex:1 1 240px;max-width:360px;padding:14px 16px;border-radius:12px;border:2px solid var(--line);
+  background:linear-gradient(180deg,#faf8f4,#fff);text-align:left
+}
+.flow-box h3{font-family:"Fraunces",serif;font-size:.88rem;margin:0 0 8px;color:var(--earth)}
+.flow-box p{font-size:.76rem;color:var(--muted);margin:0 0 10px;line-height:1.45}
+.flow-chips{display:flex;flex-wrap:wrap;gap:5px}
+.flow-chip{
+  font-size:.66rem;font-weight:600;padding:5px 9px;border-radius:8px;border:1px solid #ddd5c8;
+  background:#fff;color:var(--ink);cursor:pointer;font-family:inherit
+}
+.flow-chip:hover{border-color:var(--earth);background:#faf6ef}
+.flow-box--india{border-color:#a06830}
+.flow-box--spec{border-color:var(--ochre);background:linear-gradient(180deg,#fffaf0,#fff)}
+.flow-box--world{border-color:var(--teal)}
+.flow-journey{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 4px;
+  margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:.72rem;font-weight:700
+}
+.flow-journey span{color:var(--muted);font-weight:500}
+.flow-journey button{
+  font:inherit;font-size:.72rem;font-weight:700;padding:6px 12px;border-radius:999px;
+  border:2px solid var(--line);background:#fff;cursor:pointer;color:var(--earth)
+}
+.flow-journey button:hover{border-color:var(--earth)}
+.flow-svg{width:100%;max-width:920px;margin:0 auto 8px;display:block;height:auto}
 .declutter-explorer{margin:14px 0 20px}
 .region-grid{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px
@@ -179,8 +219,8 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 </header>
 
 <nav class="tabs" id="tabs">
-  <button class="tab" data-tab="flow">📋 Overview</button>
-  <button class="tab active" data-tab="map">🇮🇳 India</button>
+  <button class="tab active" data-tab="flow">📋 Overview</button>
+  <button class="tab" data-tab="map">🇮🇳 India</button>
   <button class="tab" data-tab="india">📖 MoTA profiles</button>
   <button class="tab" data-tab="world">🌍 World</button>
   <button class="tab" data-tab="law">⚖️ Law</button>
@@ -189,16 +229,68 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 <main>
 
 <!-- PART 1 -->
-<section class="section" id="tab-flow">
+<section class="section active" id="tab-flow">
   <div class="trick">
     <h3>Prelims hook</h3>
     <div class="line">भील = सबसे बड़ा ST समूह · MP = सबसे अधिक ST जनसंख्या · ओडिशा = सबसे अधिक PVTG · लक्षद्वीप = ST (मलदीवी मूल)</div>
     <div class="decode">Lakshadweep: entire UT notified as ST (Malayali/Mahls). Article <b>342</b> = President notifies ST list; <b>342A</b> (104th Amendment area) = SEBC — don’t confuse with ST.</div>
   </div>
 
-  <h2 class="section-title">How to use this sheet (decluttered)</h2>
-  <p class="note"><b>India tab</b> — pick <em>one</em> region; only that tribe list shows (no map hover). <b>World tab</b> — pick one continent/zone. Your Drishti poster stays under “Full poster” for reference.</p>
-  <p class="note">Jump: <button type="button" class="goto-link" data-goto="map">Open India by region →</button> · <button type="button" class="goto-link" data-goto="world">Open World zones →</button></p>
+  <div class="flow-chart" id="master-flow">
+    <h2>Master flowchart — tribes &amp; indigenous peoples (UPSC)</h2>
+    <div class="flow-root">Indian &amp; global indigenous peoples · GS-I / II · Anthropology</div>
+    <svg class="flow-svg" viewBox="0 0 900 56" aria-hidden="true">
+      <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#6b4423"/></marker></defs>
+      <path d="M450,4 L450,22 M120,22 L780,22 M120,22 L120,52 M450,22 L450,52 M780,22 L780,52" fill="none" stroke="#6b4423" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arr)"/>
+    </svg>
+    <div class="flow-row">
+      <div class="flow-box flow-box--india">
+        <h3>🇮🇳 India — 8 regions</h3>
+        <p>One region at a time · Drishti poster + MoTA table on India tab.</p>
+        <div class="flow-chips">
+          <button type="button" class="flow-chip" data-goto="map">Himalaya</button>
+          <button type="button" class="flow-chip" data-goto="map">NW</button>
+          <button type="button" class="flow-chip" data-goto="map">Central</button>
+          <button type="button" class="flow-chip" data-goto="map">East</button>
+          <button type="button" class="flow-chip" data-goto="map">NE</button>
+          <button type="button" class="flow-chip" data-goto="map">South</button>
+          <button type="button" class="flow-chip" data-goto="map">A&amp;N</button>
+          <button type="button" class="flow-chip" data-goto="map">Lakshadweep</button>
+        </div>
+      </div>
+      <div class="flow-box flow-box--spec">
+        <h3>⚡ Special lenses</h3>
+        <p>Cross-cutting prelims / mains themes.</p>
+        <div class="flow-chips">
+          <button type="button" class="flow-chip" data-goto="map"><span class="hl">PVTGs</span> (75)</button>
+          <button type="button" class="flow-chip" data-goto="law">PM-JANMAN</button>
+          <button type="button" class="flow-chip" data-goto="law">FRA · PESA</button>
+          <button type="button" class="flow-chip" data-goto="india">MoTA 16</button>
+          <button type="button" class="flow-chip" data-goto="india">DNT</button>
+          <button type="button" class="flow-chip" data-goto="map">Matrilineal NE</button>
+        </div>
+      </div>
+      <div class="flow-box flow-box--world">
+        <h3>🌍 World — 5 zones</h3>
+        <p>Africa · Arctic · Asia · Americas · Oceania — filtered profiles.</p>
+        <div class="flow-chips">
+          <button type="button" class="flow-chip" data-goto="world">Africa</button>
+          <button type="button" class="flow-chip" data-goto="world">Arctic</button>
+          <button type="button" class="flow-chip" data-goto="world">Asia</button>
+          <button type="button" class="flow-chip" data-goto="world">Americas</button>
+          <button type="button" class="flow-chip" data-goto="world">Oceania</button>
+        </div>
+      </div>
+    </div>
+    <div class="flow-journey" aria-label="Tabs on this page">
+      <span>Study path:</span>
+      <button type="button" data-goto="flow">Overview</button><span>→</span>
+      <button type="button" data-goto="map">India</button><span>→</span>
+      <button type="button" data-goto="india">MoTA</button><span>→</span>
+      <button type="button" data-goto="world">World</button><span>→</span>
+      <button type="button" data-goto="law">Law</button>
+    </div>
+  </div>
 
   <div class="poster-facts" aria-label="Facts from bottom of poster">
     <p class="poster-fact"><b>8.6%</b> — ST share of India (Census 2011), as on your poster.</p>
@@ -207,21 +299,10 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     <p class="poster-fact"><b>MP</b> — highest ST population · <b>Santhal</b> — Manjhi-Paragana · <b>Lakshadweep</b> ST · <b>Art. 342 &amp; 275</b>.</p>
   </div>
 
-  <h2 class="section-title">UPSC spine (India + world)</h2>
-  <div class="hierarchy">
-    <div class="h-card h-wide">
-      <h3>One screen at a time</h3>
-      <ul>
-        <li><b>India:</b> 8 regions → major tribes + PVTGs separately</li>
-        <li><b>Special:</b> PVTGs (75) · DNT · matrilineal (Khasi, Garo) · PM-JANMAN</li>
-        <li><b>World:</b> 5 zones → key peoples + short profiles below</li>
-      </ul>
-    </div>
-  </div>
 </section>
 
 <!-- PART 2 -->
-<section class="section active" id="tab-map">
+<section class="section" id="tab-map">
   <h2 class="section-title">India — one region at a time</h2>
   <p class="note">Tap a region below for a short list. <b>Your Drishti poster is still on this page</b> (open by default under the picker) — we did not delete it.</p>
 
@@ -852,7 +933,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 
 </main>
 
-<footer>CA Notes · Tribes &amp; PVTG Master · build tribes-2026-10-14h · cross-check MoTA &amp; Census</footer>
+<footer>CA Notes · Tribes &amp; PVTG Master · build tribes-2026-10-14i · cross-check MoTA &amp; Census</footer>
 
 <script>
 (function(){
@@ -868,6 +949,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
   document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.goto)));
   const h=(location.hash||'').replace('#','');
   if(h&&document.getElementById('tab-'+h)) show(h);
+  else show('flow');
 })();
 (function(){
   const indiaZones={
