@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="ca-build" content="tribes-2026-10-14d">
+<meta name="ca-build" content="tribes-2026-10-14e">
 <title>Indian Tribes · PVTGs · Global Indigenous Peoples | UPSC Master</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,26 +80,40 @@ td b{color:var(--earth)}
 .h-card li{margin:4px 0}
 .h-card.h-wide{grid-column:1/-1;border-color:var(--ochre);background:linear-gradient(180deg,#fffaf0,#fff)}
 .h-card.h-wide h3{color:var(--red)}
-.poster-interactive{margin:12px 0}
-.poster-map-shell{
-  position:relative;width:min(98vw,calc(94vh * 999 / 1024));max-width:100%;margin:0 auto;
-  border-radius:10px;overflow:hidden;
-  box-shadow:0 14px 40px rgba(40,25,10,.18);border:3px solid #8b4513;background:#f4c4a8;
-  aspect-ratio:999/1024
+.declutter-explorer{margin:14px 0 20px}
+.region-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px
 }
-.poster-map-shell img{
-  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;user-select:none
+.region-btn{
+  font:inherit;text-align:left;padding:12px 14px;border-radius:12px;cursor:pointer;
+  border:2px solid var(--line);background:#fff;font-weight:700;font-size:.78rem;line-height:1.35;
+  border-left:5px solid var(--accent,var(--earth));box-shadow:0 2px 8px rgba(0,0,0,.04);
+  transition:background .15s,border-color .15s,transform .1s
 }
-.poster-overlay{
-  position:absolute;inset:0;width:100%;height:100%;z-index:2
+.region-btn:hover{transform:translateY(-1px);border-color:var(--earth)}
+.region-btn.active{background:#faf6ef;border-color:var(--earth);box-shadow:0 4px 14px rgba(107,68,35,.12)}
+.region-btn small{display:block;font-weight:500;color:var(--muted);font-size:.68rem;margin-top:4px}
+.zone-card{
+  margin-top:16px;padding:18px 20px;border-radius:16px;background:#fff;
+  border:2px solid var(--earth);box-shadow:var(--shadow)
 }
-.poster-overlay .map-region{
-  fill:var(--rz,#c47a12);stroke:#fff;stroke-width:2;opacity:0;cursor:pointer;
-  transition:opacity .2s,fill .2s
+.zone-card h3{font-family:"Fraunces",serif;font-size:1.15rem;color:var(--earth);margin:0 0 6px}
+.zone-card .zone-states{font-size:.8rem;color:var(--muted);margin:0 0 14px;line-height:1.45}
+.zone-card .zone-exam{font-size:.82rem;background:#fff8e6;border-radius:10px;padding:10px 12px;margin-top:14px;line-height:1.5}
+.tribe-cols{display:grid;gap:14px}
+@media(min-width:560px){.tribe-cols{grid-template-columns:1fr 1fr}}
+.tribe-cols h4{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--forest);margin:0 0 8px}
+.tribe-cols ul{margin:0;padding-left:18px;font-size:.84rem;line-height:1.55}
+.tribe-cols ul.pvtg-list{color:#8b2e20}
+.poster-ref{margin-top:18px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.poster-ref summary{
+  cursor:pointer;padding:12px 16px;font-weight:700;font-size:.85rem;background:#faf6ef;list-style:none
 }
-.poster-overlay g.map-zone.is-on .map-region,.poster-overlay .map-region:hover{opacity:.42}
-.poster-overlay g.map-zone.is-on .map-region{opacity:.48;stroke:#2d2418;stroke-width:2.5}
-.poster-overlay .map-region:focus{outline:3px solid var(--teal);outline-offset:-1px;opacity:.35}
+.poster-ref summary::-webkit-details-marker{display:none}
+.poster-ref .poster-ref-img{display:block;width:100%;height:auto}
+.goto-link{font:inherit;font-weight:700;color:var(--teal);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0}
+.world-profiles.is-filtered .profile{display:none}
+.world-profiles.is-filtered .profile.is-visible{display:block}
 .poster-facts{
   display:grid;gap:8px;margin:16px 0 0
 }
@@ -128,29 +142,6 @@ td b{color:var(--earth)}
 .pill{display:inline-block;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:999px;background:#e8f0e6;color:var(--forest);margin-right:4px}
 .pill.pvtg{background:#fde8e4;color:#8b2e20}
 .pill.dnt{background:#eee8f8;color:#4a3a6b}
-.map-stage{
-  display:flex;flex-direction:column;gap:14px;margin:0;align-items:stretch
-}
-.map-panel{
-  width:100%;min-height:0;max-height:none;overflow-y:visible;
-  padding:14px 16px;border-radius:10px;background:#fff;
-  border:2px solid #e0d5c4;font-size:.84rem;line-height:1.5;box-shadow:inset 0 0 0 1px #faf6ef
-}
-.map-panel h4{font-family:"Fraunces",serif;font-size:1.08rem;color:var(--earth);margin:0 0 6px}
-.map-panel .map-hint{font-size:.76rem;color:var(--muted);margin:0 0 10px;line-height:1.45}
-.tribe-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.tribe-chips span{
-  font-size:.72rem;font-weight:600;padding:5px 10px;border-radius:8px;
-  background:#fff;border:1.5px solid #d8cbb8;color:#2a2418;line-height:1.3
-}
-.tribe-chips span.pvtg-chip{border-color:#d4826f;background:#fff0eb;color:#8b2e20;font-weight:700}
-.map-legend-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px;justify-content:center}
-.map-legend-row button{
-  font:inherit;font-size:.74rem;font-weight:700;padding:7px 14px;border-radius:999px;
-  border:2px solid var(--line);background:#fff;cursor:pointer;color:var(--ink);box-shadow:0 2px 6px rgba(0,0,0,.04)
-}
-.map-legend-row button:hover,.map-legend-row button.active{border-color:var(--earth);background:#faf6ef;color:var(--earth)}
-.map-chip-key{font-size:.7rem;color:var(--muted);margin-top:10px;padding-top:8px;border-top:1px dashed var(--line)}
 .ref-poster{margin:14px 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
 .ref-poster img{display:block;width:100%;height:auto}
 .ref-poster figcaption{font-size:.72rem;color:var(--muted);padding:8px 12px;line-height:1.45}
@@ -176,115 +167,78 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 </header>
 
 <nav class="tabs" id="tabs">
-  <button class="tab active" data-tab="flow">🗺️ Flowchart</button>
-  <button class="tab" data-tab="map">📍 Regions</button>
-  <button class="tab" data-tab="india">🇮🇳 Profiles</button>
-  <button class="tab" data-tab="world">🌍 Global</button>
-  <button class="tab" data-tab="law">⚖️ Law &amp; schemes</button>
+  <button class="tab" data-tab="flow">📋 Overview</button>
+  <button class="tab active" data-tab="map">🇮🇳 India</button>
+  <button class="tab" data-tab="india">📖 MoTA profiles</button>
+  <button class="tab" data-tab="world">🌍 World</button>
+  <button class="tab" data-tab="law">⚖️ Law</button>
 </nav>
 
 <main>
 
 <!-- PART 1 -->
-<section class="section active" id="tab-flow">
+<section class="section" id="tab-flow">
   <div class="trick">
     <h3>Prelims hook</h3>
     <div class="line">भील = सबसे बड़ा ST समूह · MP = सबसे अधिक ST जनसंख्या · ओडिशा = सबसे अधिक PVTG · लक्षद्वीप = ST (मलदीवी मूल)</div>
     <div class="decode">Lakshadweep: entire UT notified as ST (Malayali/Mahls). Article <b>342</b> = President notifies ST list; <b>342A</b> (104th Amendment area) = SEBC — don’t confuse with ST.</div>
   </div>
 
-  <h2 class="section-title">PART 1 — Your map (interactive)</h2>
-  <p class="note">Uses <b>your Drishti “Major Tribes in India” poster</b> as the base image. Hover coloured zones on the map (or tap a region button) — tribe names from the poster appear in the panel.</p>
+  <h2 class="section-title">How to use this sheet (decluttered)</h2>
+  <p class="note"><b>India tab</b> — pick <em>one</em> region; only that tribe list shows (no map hover). <b>World tab</b> — pick one continent/zone. Your Drishti poster stays under “Full poster” for reference.</p>
+  <p class="note">Jump: <button type="button" class="goto-link" data-goto="map">Open India by region →</button> · <button type="button" class="goto-link" data-goto="world">Open World zones →</button></p>
 
-  <div class="poster-interactive">
-    <div class="map-legend-row" data-zone-btns aria-label="Jump to region"></div>
-    <div class="map-stage">
-      <div class="poster-map-shell">
-        <img src="assets/major-tribes-india-reference.jpg?v=4" width="999" height="1024" alt="Major Tribes in India — reference map with tribal distribution">
-        <svg class="poster-overlay" viewBox="0 0 999 1024" preserveAspectRatio="xMidYMid meet" role="application" aria-label="Tribal regions on poster map">
-          <g class="map-zone" data-zone="him"><polygon class="map-region" tabindex="0" style="--rz:#5ba3d0" points="235,168 745,162 735,258 255,272 210,218"/></g>
-          <g class="map-zone" data-zone="nw"><polygon class="map-region" tabindex="0" style="--rz:#e09b2d" points="155,228 365,212 405,418 205,448 135,328"/></g>
-          <g class="map-zone" data-zone="ne"><polygon class="map-region" tabindex="0" style="--rz:#3d8f5c" points="575,188 935,238 905,398 585,358 548,248"/></g>
-          <g class="map-zone" data-zone="central"><polygon class="map-region" tabindex="0" style="--rz:#a06830" points="295,268 545,252 585,448 395,478 285,398"/></g>
-          <g class="map-zone" data-zone="east"><polygon class="map-region" tabindex="0" style="--rz:#7a4f28" points="495,278 665,268 688,438 518,458 468,368"/></g>
-          <g class="map-zone" data-zone="south"><polygon class="map-region" tabindex="0" style="--rz:#1a8a78" points="195,408 565,428 548,608 255,598 175,508"/></g>
-          <g class="map-zone" data-zone="islands"><polygon class="map-region" tabindex="0" style="--rz:#c44a38" points="728,458 968,442 988,598 748,612"/></g>
-          <g class="map-zone" data-zone="coast"><polygon class="map-region" tabindex="0" style="--rz:#6b8cff" points="52,498 118,488 128,548 58,562"/></g>
-        </svg>
-      </div>
-      <div class="map-panel" data-panel>
-        <h4>Central tribal belt</h4>
-        <p class="map-hint" data-hint>Hover a zone on your poster map</p>
-        <div class="tribe-chips" data-chips></div>
-        <p class="map-chip-key"><span style="color:#8b2e20;font-weight:700">Coral</span> = PVTG / poster PVTG-heavy names</p>
-      </div>
-    </div>
-    <div class="poster-facts" aria-label="Facts from bottom of poster">
-      <p class="poster-fact"><b>8.6%</b> — ST share of India (Census 2011), as on your poster.</p>
-      <p class="poster-fact"><b>PVTGs</b> — 75 groups; <b>Odisha</b> has the highest count among states.</p>
-      <p class="poster-fact"><b>Bhil</b> — largest ST group (~38% of ST pop. in poster); then <b>Gond</b>.</p>
-      <p class="poster-fact"><b>MP</b> — highest ST population by state · <b>Santhal</b> — Manjhi-Paragana · <b>Lakshadweep</b> ST · <b>Art. 342 &amp; 275</b>.</p>
-    </div>
+  <div class="poster-facts" aria-label="Facts from bottom of poster">
+    <p class="poster-fact"><b>8.6%</b> — ST share of India (Census 2011), as on your poster.</p>
+    <p class="poster-fact"><b>PVTGs</b> — 75 groups; <b>Odisha</b> has the highest count among states.</p>
+    <p class="poster-fact"><b>Bhil</b> — largest ST group (~38% of ST pop. in poster); then <b>Gond</b>.</p>
+    <p class="poster-fact"><b>MP</b> — highest ST population · <b>Santhal</b> — Manjhi-Paragana · <b>Lakshadweep</b> ST · <b>Art. 342 &amp; 275</b>.</p>
   </div>
 
-  <h2 class="section-title">PART 1b — UPSC master hierarchy (readable tree)</h2>
-  <p class="note">Replaces the old Mermaid box — same logic, bigger type. Global detail on the <b>Global</b> tab.</p>
+  <h2 class="section-title">UPSC spine (India + world)</h2>
   <div class="hierarchy">
     <div class="h-card h-wide">
-      <h3>Indian &amp; global indigenous — UPSC lens</h3>
+      <h3>One screen at a time</h3>
       <ul>
-        <li><b>India:</b> regional tribes (map above) + <b>PVTGs</b> (75, PM-JANMAN) + DNT + matrilineal pockets</li>
-        <li><b>Global:</b> Africa · Asia · Americas · Oceania · Arctic (see Global tab)</li>
+        <li><b>India:</b> 8 regions → major tribes + PVTGs separately</li>
+        <li><b>Special:</b> PVTGs (75) · DNT · matrilineal (Khasi, Garo) · PM-JANMAN</li>
+        <li><b>World:</b> 5 zones → key peoples + short profiles below</li>
       </ul>
     </div>
-    <div class="h-card"><h3>Himalayan / Northern</h3><ul><li>Gaddi, Gujjar, Bakarwal, Bhotia, Monpa, Lepcha, Bhutia, Lahaula, Swangla</li></ul></div>
-    <div class="h-card"><h3>Central belt</h3><ul><li>Bhil, Gond, Baiga, Korku, Kol, Saharia, Maria, Birhor, Paharia, Katkari</li></ul></div>
-    <div class="h-card"><h3>North-East</h3><ul><li>Naga, Khasi, Garo, Mizo, Bodo, Apatani, Adi, Mishmi, Singpho, Deori</li></ul></div>
-    <div class="h-card"><h3>East plateau</h3><ul><li>Santhal, Munda, Oraon, Ho, Bhumij, Kondh, Bonda, Juang</li></ul></div>
-    <div class="h-card"><h3>South &amp; Deccan</h3><ul><li>Toda, Kota, Irula, Kurumba, Chenchu, Yerukala, Soliga, Siddi</li></ul></div>
-    <div class="h-card"><h3>Islands &amp; coasts</h3><ul><li>Andamanese, Onge, Jarawa, Sentinelese, Shompen, Nicobarese; Lakshadweep ST</li></ul></div>
   </div>
 </section>
 
 <!-- PART 2 -->
-<section class="section" id="tab-map">
-  <h2 class="section-title">Hover map — tribes by region (poster-style)</h2>
-  <p class="note"><b>Hover or tap</b> a coloured zone (or the buttons) — tribe chips update on the right. Stylised map for study; use your poster + MoTA PDF for exact names.</p>
+<section class="section active" id="tab-map">
+  <h2 class="section-title">India — one region at a time</h2>
+  <p class="note">Tap a region below. The full Drishti map is optional reference only — no hover layers on the image.</p>
 
   <div class="sources-box" id="sources">
     <h3>Where your tribal doc &amp; poster live on this page</h3>
     <ul>
       <li><b>MoTA — <em>Tribal Faces in India</em> (PDF you shared)</b> — not copied into the repo (government publication). Linked in the hero and <a href="https://tribal.nic.in/downloads/Livelihood/Resource%20and%20Publications/tribalFaces.pdf" rel="noopener">here</a>. Used for the <b>16-tribe summary table</b> below (names, states, exam points from MoTA text) and facts like Santhal <b>Manjhi-Paragana</b>.</li>
-      <li><b>Your Drishti-style “Major Tribes in India” poster</b> — <code>assets/major-tribes-india-reference.jpg</code> is the <b>interactive map background</b> (Flow + Regions tabs). Hover chips list poster-aligned tribe names by zone.</li>
+      <li><b>Your Drishti poster</b> — <code>assets/major-tribes-india-reference.jpg</code> opens under <b>Full poster reference</b>; tribe names by region are in the picker lists (from the poster).</li>
       <li><b>Profiles tab</b> — expanded UPSC cards (Santhal, Gond, …); only partly overlapping the 16 MoTA profiles — open the PDF for portraits &amp; full official write-ups.</li>
     </ul>
   </div>
 
-  <div class="poster-interactive">
-    <div class="map-legend-row" data-zone-btns aria-label="Jump to region"></div>
-    <div class="map-stage">
-      <div class="poster-map-shell">
-        <img src="assets/major-tribes-india-reference.jpg?v=4" width="999" height="1024" alt="Major Tribes in India — reference map with tribal distribution">
-        <svg class="poster-overlay" viewBox="0 0 999 1024" preserveAspectRatio="xMidYMid meet" role="application" aria-label="Tribal regions on poster map">
-          <g class="map-zone" data-zone="him"><polygon class="map-region" tabindex="0" style="--rz:#5ba3d0" points="235,168 745,162 735,258 255,272 210,218"/></g>
-          <g class="map-zone" data-zone="nw"><polygon class="map-region" tabindex="0" style="--rz:#e09b2d" points="155,228 365,212 405,418 205,448 135,328"/></g>
-          <g class="map-zone" data-zone="ne"><polygon class="map-region" tabindex="0" style="--rz:#3d8f5c" points="575,188 935,238 905,398 585,358 548,248"/></g>
-          <g class="map-zone" data-zone="central"><polygon class="map-region" tabindex="0" style="--rz:#a06830" points="295,268 545,252 585,448 395,478 285,398"/></g>
-          <g class="map-zone" data-zone="east"><polygon class="map-region" tabindex="0" style="--rz:#7a4f28" points="495,278 665,268 688,438 518,458 468,368"/></g>
-          <g class="map-zone" data-zone="south"><polygon class="map-region" tabindex="0" style="--rz:#1a8a78" points="195,408 565,428 548,608 255,598 175,508"/></g>
-          <g class="map-zone" data-zone="islands"><polygon class="map-region" tabindex="0" style="--rz:#c44a38" points="728,458 968,442 988,598 748,612"/></g>
-          <g class="map-zone" data-zone="coast"><polygon class="map-region" tabindex="0" style="--rz:#6b8cff" points="52,498 118,488 128,548 58,562"/></g>
-        </svg>
+  <div class="declutter-explorer" data-explorer="india">
+    <div class="region-grid" data-region-grid aria-label="Indian regions"></div>
+    <div class="zone-card" data-zone-card hidden>
+      <h3 data-zone-title>Region</h3>
+      <p class="zone-states" data-zone-states></p>
+      <div class="tribe-cols">
+        <div><h4>Major tribes (poster)</h4><ul data-zone-major></ul></div>
+        <div><h4>PVTG / exam-heavy</h4><ul class="pvtg-list" data-zone-pvtg></ul></div>
       </div>
-      <div class="map-panel" data-panel>
-        <h4>Central tribal belt</h4>
-        <p class="map-hint" data-hint>Hover a zone on your poster map</p>
-        <div class="tribe-chips" data-chips></div>
-        <p class="map-chip-key"><span style="color:#8b2e20;font-weight:700">Coral</span> = PVTG / poster PVTG-heavy names</p>
-      </div>
+      <p class="zone-exam" data-zone-exam></p>
     </div>
+    <details class="poster-ref">
+      <summary>Full poster reference — Major Tribes in India (Drishti-style)</summary>
+      <img class="poster-ref-img" src="assets/major-tribes-india-reference.jpg?v=5" width="999" height="1024" alt="Major Tribes in India map and facts">
+    </details>
   </div>
-  <p class="note">Poster file: <code>assets/major-tribes-india-reference.jpg</code> · MoTA PDF for official portraits — <a href="https://tribal.nic.in/downloads/Livelihood/Resource%20and%20Publications/tribalFaces.pdf" rel="noopener">Tribal Faces in India</a>.</p>
+  <p class="note">MoTA portraits — <a href="https://tribal.nic.in/downloads/Livelihood/Resource%20and%20Publications/tribalFaces.pdf" rel="noopener">Tribal Faces in India (PDF)</a>.</p>
 
   <div class="trick">
     <h3>Exam facts capsule (poster + Census / Constitution)</h3>
@@ -536,9 +490,26 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 
 <!-- PART 4 -->
 <section class="section" id="tab-world">
-  <h2 class="section-title">PART 4 — Global indigenous profiles</h2>
+  <h2 class="section-title">World — one zone at a time</h2>
+  <p class="note">Pick a zone; only matching short profiles show below. No wall of open accordions.</p>
 
-  <details class="profile" open>
+  <div class="declutter-explorer" data-explorer="world">
+    <div class="region-grid" data-region-grid aria-label="World zones"></div>
+    <div class="zone-card" data-zone-card hidden>
+      <h3 data-zone-title>Zone</h3>
+      <p class="zone-states" data-zone-states></p>
+      <div class="tribe-cols">
+        <div><h4>Key peoples</h4><ul data-zone-major></ul></div>
+        <div><h4>Biome / lens</h4><p data-zone-biome style="margin:0;font-size:.84rem;line-height:1.55"></p></div>
+      </div>
+      <p class="zone-exam" data-zone-exam></p>
+    </div>
+  </div>
+
+  <h2 class="section-title" style="margin-top:20px">Profiles (filtered by zone)</h2>
+  <div class="world-profiles" data-world-profiles>
+
+  <details class="profile is-visible" data-world-zone="africa" open>
     <summary>Maasai — Kenya &amp; Tanzania</summary>
     <div class="profile-body">
       <dl>
@@ -549,7 +520,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
-  <details class="profile">
+  <details class="profile" data-world-zone="arctic">
     <summary>Inuit — Arctic (Canada, Greenland, Alaska, Chukotka)</summary>
     <div class="profile-body">
       <dl>
@@ -560,7 +531,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
-  <details class="profile">
+  <details class="profile" data-world-zone="asia">
     <summary>Bedouin — Arabian &amp; Saharan deserts</summary>
     <div class="profile-body">
       <dl>
@@ -571,7 +542,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
-  <details class="profile">
+  <details class="profile" data-world-zone="africa">
     <summary>San (Basarwa) — Southern Africa</summary>
     <div class="profile-body">
       <dl>
@@ -582,7 +553,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
-  <details class="profile">
+  <details class="profile" data-world-zone="americas">
     <summary>Yanomami — Amazon (Brazil / Venezuela)</summary>
     <div class="profile-body">
       <dl>
@@ -593,7 +564,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
-  <details class="profile">
+  <details class="profile" data-world-zone="africa">
     <summary>Tuareg — Sahara (Mali, Niger, Algeria, Libya)</summary>
     <div class="profile-body">
       <dl>
@@ -604,7 +575,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
-  <details class="profile">
+  <details class="profile" data-world-zone="asia">
     <summary>Ainu — Japan (Hokkaido)</summary>
     <div class="profile-body">
       <dl>
@@ -615,7 +586,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
-  <details class="profile">
+  <details class="profile" data-world-zone="oceania">
     <summary>Māori — Aotearoa (New Zealand)</summary>
     <div class="profile-body">
       <dl>
@@ -626,7 +597,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
-  <details class="profile">
+  <details class="profile" data-world-zone="asia">
     <summary>Kazakhs — Kazakhstan &amp; Central Asia</summary>
     <div class="profile-body">
       <dl>
@@ -637,7 +608,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
-  <details class="profile">
+  <details class="profile" data-world-zone="arctic">
     <summary>Sami — Fennoscandia</summary>
     <div class="profile-body">
       <dl>
@@ -648,7 +619,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
-  <details class="profile">
+  <details class="profile" data-world-zone="oceania">
     <summary>Aboriginal Australians</summary>
     <div class="profile-body">
       <dl>
@@ -659,6 +630,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     </div>
   </details>
 
+  </div>
   <p class="note">UN lens: <b>UNDRIP 2007</b> (non-binding); ILO Convention <b>169</b> (binding where ratified — India not ratified). Useful for IR / society essays.</p>
 </section>
 
@@ -722,7 +694,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 
 </main>
 
-<footer>CA Notes · Tribes &amp; PVTG Master · build tribes-2026-10-14d · cross-check MoTA &amp; Census</footer>
+<footer>CA Notes · Tribes &amp; PVTG Master · build tribes-2026-10-14e · cross-check MoTA &amp; Census</footer>
 
 <script>
 (function(){
@@ -735,74 +707,76 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     window.scrollTo({top:0,behavior:'smooth'});
   }
   tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
+  document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>show(b.dataset.goto)));
   const h=(location.hash||'').replace('#','');
   if(h&&document.getElementById('tab-'+h)) show(h);
 })();
 (function(){
-  const zones={
-    him:{title:'Himalayan / Northern (poster)',states:'J&K · Ladakh · HP · UK · Sikkim · hill Arunachal',tribes:['Swangla','Gujjars','Lahaulas','Gaddis','Pangwala','Lamba','Khas','Monpa','Lepcha','Bhutia','Bhotia','Bakarwal','Sherpa','Kinnaura'],pvtg:[]},
-    nw:{title:'North-West & desert (poster)',states:'Rajasthan · Gujarat · Malwa',tribes:['Bhils','Damaria','Dhanka','Meenas','Patelia','Sahariya','Garasia','Rathwa','Naikda','Bhilala','Tadvi','Warli','Kathodi','Damor'],pvtg:['Sahariya','Kathodi']},
-    central:{title:'Central tribal belt (poster)',states:'MP · Chhattisgarh · Vidarbha',tribes:['Gonds','Bhils','Baiga','Bharia','Kol','Korku','Muria','Halba','Maria','Abhuj Maria','Bison Horn Maria','Madia Gond','Pahari Korwa','Kamar','Birhor','Katkari','Saharia'],pvtg:['Baiga','Birhor','Paharia','Abhuj Maria','Katkari','Kamar']},
-    east:{title:'Eastern plateau (poster)',states:'JH · OD · WB · BR · CG',tribes:['Santhals','Mundas','Oraons','Ho','Kharia','Bhumij','Lodha','Kondh','Bonda','Juang','Dongria Kondh','Bhuiya','Parhaiya','Savar'],pvtg:['Birhor','Bonda','Juang','Lodha','Paharia']},
-    ne:{title:'North-East (poster)',states:'Seven sisters + Sikkim',tribes:['Nagas','Khasis','Garos','Mizos','Bodos','Apatanis','Mishmis','Adis','Deoris','Karbi','Dimasa','Singpho','Rabha','Tripuri','Bru (Reang)','Hmar','Kuki','Abor'],pvtg:['Mishings','Asur']},
-    south:{title:'South & Deccan (poster)',states:'TN · KL · KA · AP · TS',tribes:['Todas','Kotas','Irular','Kurumbas','Chenchus','Paniyas','Yerukala','Soliga','Kadar','Malai Arayan','Koya','Yanadi','Siddi'],pvtg:['Chenchu','Kadar','Kattunayakan','Koraga']},
-    islands:{title:'Andaman & Nicobar (poster)',states:'A&N UT — map inset',tribes:['Great Andamanese','Onge','Jarawa','Sentinelese','Shompen','Nicobarese'],pvtg:['Great Andamanese','Onge','Jarawa','Sentinelese','Shompen']},
-    coast:{title:'Lakshadweep & west coast (poster)',states:'Lakshadweep · Konkan coast',tribes:['Lakshadweep (ST)','Koli','Mahadev Koli','Konkan Koli','Malayali Mahls'],pvtg:[]}
+  const indiaZones={
+    him:{label:'Himalaya',short:'HP · UK · Ladakh · Sikkim',accent:'#5ba3d0',title:'Himalayan / Northern',states:'J&K · Ladakh · HP · UK · Sikkim · hill Arunachal',major:['Gaddi','Gujjar','Bakarwal','Bhotia','Monpa','Lepcha','Bhutia','Lahaula','Swangla','Sherpa'],pvtg:['Hill-border PVTG pockets'],exam:'Transhumance (Gujjar/Bakarwal) · alpine pastoralism'},
+    nw:{label:'NW & desert',short:'RJ · GJ · Malwa',accent:'#e09b2d',title:'North-West & desert',states:'Rajasthan · Gujarat · west MP',major:['Bhil','Damoria','Dhanka','Meena','Garasia','Rathwa','Warli','Naikda','Siddi (Gir)'],pvtg:['Sahariya','Kathodi'],exam:'Bhil = largest ST group · Rann & Gir contexts'},
+    central:{label:'Central belt',short:'MP · CG · MH',accent:'#a06830',title:'Central tribal belt',states:'MP · Chhattisgarh · Vidarbha',major:['Gond','Bhil','Korku','Muria','Halba','Madia Gond','Maria'],pvtg:['Baiga','Birhor','Paharia','Abhuj Maria','Katkari','Kamar'],exam:'Ghotul · Bewar · Kanha/Bastar · Fifth Schedule'},
+    east:{label:'East plateau',short:'JH · OD · WB',accent:'#7a4f28',title:'Eastern plateau',states:'Jharkhand · Odisha · West Bengal · Bihar',major:['Santhal','Munda','Oraon','Ho','Kharia','Kondh'],pvtg:['Bonda','Juang','Lodha','Birhor','Paharia'],exam:'Odisha = most PVTGs · Santhal Parha · Chotanagpur'},
+    ne:{label:'North-East',short:'7 sisters',accent:'#3d8f5c',title:'North-East',states:'Seven sisters + Sikkim',major:['Naga','Khasi','Garo','Mizo','Bodo','Apatani','Singpho','Deori'],pvtg:['Mishings','Asur'],exam:'6th Schedule · Jhum · Khasi/Garo matrilineal'},
+    south:{label:'South',short:'Nilgiri · Ghats',accent:'#1a8a78',title:'South & Deccan',states:'TN · KL · KA · AP · Telangana',major:['Toda','Kota','Irula','Kurumba','Soliga','Koya','Yerukala'],pvtg:['Chenchu','Kadar','Kattunayakan','Koraga'],exam:'Nilgiri mosaic · Nallamala Chenchu'},
+    islands:{label:'A&N',short:'Islands UT',accent:'#c44a38',title:'Andaman & Nicobar',states:'Andaman & Nicobar Islands',major:['Nicobarese'],pvtg:['Great Andamanese','Onge','Jarawa','Sentinelese','Shompen'],exam:'Jarawa/Sentinelese isolation · tribal reserves'},
+    coast:{label:'Lakshadweep',short:'Islands · coast',accent:'#6b8cff',title:'Lakshadweep & west coast',states:'Lakshadweep UT · Konkan',major:['Malayali Mahls (Lakshadweep ST)','Koli','Mahadev Koli'],pvtg:['— entire Lakshadweep indigenous ST'],exam:'Only UT with whole population as ST list'}
   };
-  const btnLabels={him:'Himalaya',nw:'NW',central:'Central',east:'East',ne:'NE',south:'South',islands:'A&N',coast:'Lakshadweep'};
-  const pvtgSet=new Set();
-  Object.values(zones).forEach(z=>(z.pvtg||[]).forEach(t=>pvtgSet.add(t)));
-  function isPvtgChip(name){
-    if(pvtgSet.has(name)) return true;
-    const n=name.toLowerCase();
-    return [...pvtgSet].some(p=>n.includes(p.toLowerCase())||p.toLowerCase().includes(n));
+  const worldZones={
+    africa:{label:'Africa',short:'Savanna · Sahara · Kalahari',accent:'#c47a12',title:'Africa',states:'East · Southern · Sahel',major:['Maasai','San (Basarwa)','Tuareg','Himba','Pygmies'],biome:'Savanna pastoralism; Kalahari hunters; desert caravans',exam:'Cattle culture · persistence hunting · climate & reserves'},
+    arctic:{label:'Arctic',short:'Tundra · sea ice',accent:'#5ba3d0',title:'Arctic & Sub-arctic',states:'Canada · Greenland · Fennoscandia',major:['Inuit','Sami','Chukchi'],biome:'Tundra; reindeer herding; seal hunting',exam:'Fastest warming · ILO 169 politics'},
+    asia:{label:'Asia',short:'Desert · steppe · Hokkaido',accent:'#8b5a2b',title:'Asia',states:'Arabia · Central Asia · Japan',major:['Bedouin','Kazakhs','Ainu','Kyrgyz (eagle hunting)'],biome:'Desert nomads; steppe yurt pastoralism',exam:'Ainu recognition law · Silk Road pastoralists'},
+    americas:{label:'Americas',short:'Amazon · Andes',accent:'#2d5a3d',title:'Americas',states:'Amazon · Andes · Arctic Americas',major:['Yanomami','Quechua','Maya','Inuit (Americas)'],biome:'Rainforest shifting cultivation; highland agriculture',exam:'Illegal mining · UNDRIP'},
+    oceania:{label:'Oceania',short:'Australia · Pacific',accent:'#1a6b5c',title:'Oceania',states:'Australia · Aotearoa · Melanesia',major:['Aboriginal nations','Māori','Papuans'],biome:'Desert to reef; maritime islands',exam:'Treaty of Waitangi · songlines · fire-stick farming'}
+  };
+  function fillList(el,items){
+    if(!el) return;
+    el.innerHTML=(items&&items.length)?items.map(t=>'<li>'+t+'</li>').join(''):'<li><em>See poster for more names</em></li>';
   }
-  function initPosterMap(root){
-    const panel=root.querySelector('[data-panel]');
-    const chipsEl=root.querySelector('[data-chips]');
-    const btnRow=root.querySelector('[data-zone-btns]');
-    const groups=root.querySelectorAll('.map-zone');
-    if(!panel||!chipsEl) return;
-    function renderChips(z){
-      chipsEl.innerHTML=z.tribes.map(t=>{
-        const c=isPvtgChip(t)?' pvtg-chip':'';
-        return '<span class="'+c+'">'+t+'</span>';
-      }).join('');
-    }
+  function initExplorer(root){
+    const kind=root.dataset.explorer;
+    const zones=kind==='world'?worldZones:indiaZones;
+    const grid=root.querySelector('[data-region-grid]');
+    const card=root.querySelector('[data-zone-card]');
+    if(!grid||!card) return;
+    const titleEl=card.querySelector('[data-zone-title]');
+    const statesEl=card.querySelector('[data-zone-states]');
+    const majorEl=card.querySelector('[data-zone-major]');
+    const pvtgEl=card.querySelector('[data-zone-pvtg]');
+    const biomeEl=card.querySelector('[data-zone-biome]');
+    const examEl=card.querySelector('[data-zone-exam]');
+    const worldWrap=document.querySelector('[data-world-profiles]');
     function pick(key){
       const z=zones[key]; if(!z) return;
-      panel.querySelector('h4').textContent=z.title;
-      const hint=panel.querySelector('[data-hint]');
-      if(hint) hint.textContent=z.states+(z.pvtg?.length?' · PVTG: '+z.pvtg.join(', '):'');
-      renderChips(z);
-      groups.forEach(g=>{
-        g.classList.toggle('is-on',g.dataset.zone===key);
-      });
-      btnRow?.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.zone===key));
+      card.hidden=false;
+      if(titleEl) titleEl.textContent=z.title;
+      if(statesEl) statesEl.textContent=z.states;
+      fillList(majorEl,z.major);
+      if(kind==='india') fillList(pvtgEl,z.pvtg);
+      if(kind==='world'&&biomeEl) biomeEl.textContent=z.biome||'';
+      if(examEl) examEl.textContent=z.exam?'Exam hook: '+z.exam:'';
+      grid.querySelectorAll('.region-btn').forEach(b=>b.classList.toggle('active',b.dataset.zone===key));
+      if(kind==='world'&&worldWrap){
+        worldWrap.classList.add('is-filtered');
+        worldWrap.querySelectorAll('.profile').forEach(p=>{
+          const on=p.dataset.worldZone===key;
+          p.classList.toggle('is-visible',on);
+          if(on) p.open=true;
+        });
+      }
     }
-    if(btnRow&&!btnRow.dataset.ready){
-      btnRow.dataset.ready='1';
-      Object.keys(zones).forEach(key=>{
-        const b=document.createElement('button');
-        b.type='button'; b.dataset.zone=key;
-        b.textContent=btnLabels[key]||key;
-        b.title=zones[key].title;
-        b.addEventListener('click',()=>pick(key));
-        btnRow.appendChild(b);
-      });
-    }
-    groups.forEach(g=>{
-      const key=g.dataset.zone;
-      const path=g.querySelector('.map-region');
-      const enter=()=>pick(key);
-      path?.addEventListener('mouseenter',enter);
-      path?.addEventListener('focus',enter);
-      path?.addEventListener('click',enter);
-      path?.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();enter();}});
+    Object.keys(zones).forEach(key=>{
+      const z=zones[key];
+      const b=document.createElement('button');
+      b.type='button'; b.className='region-btn'; b.dataset.zone=key;
+      b.style.setProperty('--accent',z.accent);
+      b.innerHTML=z.label+'<small>'+z.short+'</small>';
+      b.addEventListener('click',()=>pick(key));
+      grid.appendChild(b);
     });
-    pick('central');
+    pick(kind==='world'?'africa':'central');
   }
-  document.querySelectorAll('.poster-interactive').forEach(initPosterMap);
+  document.querySelectorAll('.declutter-explorer').forEach(initExplorer);
 })();
 </script>
 </body>
