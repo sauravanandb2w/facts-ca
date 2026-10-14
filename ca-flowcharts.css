@@ -429,7 +429,10 @@ body.theme-io{--fc-accent:#1565a8;--fc-accent2:#0d47a1}
   display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 2px;
   width:100%;max-width:100%;padding:8px 0 12px
 }
-.afc-events--seq5{flex-wrap:nowrap;gap:0 2px;justify-content:space-between}
+.afc-events--seq5{
+  flex-wrap:nowrap;gap:0 4px;justify-content:flex-start;
+  overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch
+}
 @media(max-width:720px){
   .afc-events--seq5{flex-wrap:wrap;gap:8px;justify-content:center}
   .afc-events--seq5 .afc-conn-h{display:none}
