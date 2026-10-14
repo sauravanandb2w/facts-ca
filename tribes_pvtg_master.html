@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="ca-build" content="tribes-2026-10-14c">
+<meta name="ca-build" content="tribes-2026-10-14d">
 <title>Indian Tribes · PVTGs · Global Indigenous Peoples | UPSC Master</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +35,9 @@ a:hover{text-decoration:underline}
 .tab{padding:7px 11px;border-radius:999px;border:2px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;font-weight:700;background:#ebe6dc;color:#3d3528}
 .tab:hover,.tab.active{background:var(--earth);color:#fff;border-color:var(--earth)}
 main{max-width:1000px;margin:0 auto;padding:18px 14px 80px}
-main:has(#tab-flow.active){max-width:min(1280px,96vw)}
-main:has(#tab-map.active){max-width:min(1180px,96vw)}
+main:has(#tab-flow.active),main:has(#tab-map.active){
+  max-width:min(1520px,99vw);padding-left:max(10px,1vw);padding-right:max(10px,1vw)
+}
 .section{display:none}.section.active{display:block;animation:fade .25s ease}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .section-title{font-family:"Fraunces",serif;font-size:1.15rem;color:var(--earth);border-left:4px solid var(--ochre);padding-left:10px;margin:16px 0 10px}
@@ -81,7 +82,8 @@ td b{color:var(--earth)}
 .h-card.h-wide h3{color:var(--red)}
 .poster-interactive{margin:12px 0}
 .poster-map-shell{
-  position:relative;max-width:920px;margin:0 auto;border-radius:10px;overflow:hidden;
+  position:relative;width:min(98vw,calc(94vh * 999 / 1024));max-width:100%;margin:0 auto;
+  border-radius:10px;overflow:hidden;
   box-shadow:0 14px 40px rgba(40,25,10,.18);border:3px solid #8b4513;background:#f4c4a8;
   aspect-ratio:999/1024
 }
@@ -127,11 +129,10 @@ td b{color:var(--earth)}
 .pill.pvtg{background:#fde8e4;color:#8b2e20}
 .pill.dnt{background:#eee8f8;color:#4a3a6b}
 .map-stage{
-  display:grid;grid-template-columns:1fr;gap:16px;margin:0;align-items:stretch
+  display:flex;flex-direction:column;gap:14px;margin:0;align-items:stretch
 }
-@media(min-width:900px){.map-stage{grid-template-columns:1.2fr .8fr}}
 .map-panel{
-  min-height:280px;max-height:min(520px,75vh);overflow-y:auto;
+  width:100%;min-height:0;max-height:none;overflow-y:visible;
   padding:14px 16px;border-radius:10px;background:#fff;
   border:2px solid #e0d5c4;font-size:.84rem;line-height:1.5;box-shadow:inset 0 0 0 1px #faf6ef
 }
@@ -199,7 +200,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     <div class="map-legend-row" data-zone-btns aria-label="Jump to region"></div>
     <div class="map-stage">
       <div class="poster-map-shell">
-        <img src="assets/major-tribes-india-reference.jpg?v=3" width="999" height="1024" alt="Major Tribes in India — reference map with tribal distribution">
+        <img src="assets/major-tribes-india-reference.jpg?v=4" width="999" height="1024" alt="Major Tribes in India — reference map with tribal distribution">
         <svg class="poster-overlay" viewBox="0 0 999 1024" preserveAspectRatio="xMidYMid meet" role="application" aria-label="Tribal regions on poster map">
           <g class="map-zone" data-zone="him"><polygon class="map-region" tabindex="0" style="--rz:#5ba3d0" points="235,168 745,162 735,258 255,272 210,218"/></g>
           <g class="map-zone" data-zone="nw"><polygon class="map-region" tabindex="0" style="--rz:#e09b2d" points="155,228 365,212 405,418 205,448 135,328"/></g>
@@ -263,7 +264,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
     <div class="map-legend-row" data-zone-btns aria-label="Jump to region"></div>
     <div class="map-stage">
       <div class="poster-map-shell">
-        <img src="assets/major-tribes-india-reference.jpg?v=3" width="999" height="1024" alt="Major Tribes in India — reference map with tribal distribution">
+        <img src="assets/major-tribes-india-reference.jpg?v=4" width="999" height="1024" alt="Major Tribes in India — reference map with tribal distribution">
         <svg class="poster-overlay" viewBox="0 0 999 1024" preserveAspectRatio="xMidYMid meet" role="application" aria-label="Tribal regions on poster map">
           <g class="map-zone" data-zone="him"><polygon class="map-region" tabindex="0" style="--rz:#5ba3d0" points="235,168 745,162 735,258 255,272 210,218"/></g>
           <g class="map-zone" data-zone="nw"><polygon class="map-region" tabindex="0" style="--rz:#e09b2d" points="155,228 365,212 405,418 205,448 135,328"/></g>
@@ -721,7 +722,7 @@ footer{text-align:center;color:var(--muted);font-size:.76rem;padding:16px}
 
 </main>
 
-<footer>CA Notes · Tribes &amp; PVTG Master · build tribes-2026-10-14c · cross-check MoTA &amp; Census</footer>
+<footer>CA Notes · Tribes &amp; PVTG Master · build tribes-2026-10-14d · cross-check MoTA &amp; Census</footer>
 
 <script>
 (function(){
