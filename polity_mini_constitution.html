@@ -56,6 +56,11 @@ main{max-width:1100px;margin:0 auto;padding:18px 14px 70px;font-family:'Segoe UI
 .pdeal{font-size:.8rem;color:#c9d4ef;margin-top:4px}
 .pbody{padding:0 14px 14px;border-top:1px solid var(--line)}
 .mn{margin-top:10px;padding:8px 10px;border-radius:0 10px 10px 0;border-left:3px solid var(--accent);background:rgba(240,180,41,.08);font-size:.82rem;color:#ffe7a3}
+.mn-hub .verse{font-size:.95rem;line-height:1.7;color:#ffe7a3;background:rgba(232,184,74,.1);border:1px solid rgba(232,184,74,.35);border-radius:14px;padding:14px 16px;margin:12px 0}
+.mn-hub table{font-size:.8rem}
+.mn-hub th{background:rgba(232,184,74,.15)}
+.mn-hub td:first-child{font-weight:800;color:var(--accent);white-space:nowrap}
+.mn-pill{display:inline-block;font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:999px;background:rgba(107,159,255,.15);color:#cfe0ff;margin:2px 4px 2px 0}
 .arts{display:grid;gap:8px;margin-top:10px}
 .art{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.86rem;cursor:pointer;transition:.18s;text-align:left;width:100%;color:inherit;font-family:inherit}
 .art:hover{border-color:rgba(232,184,74,.55);background:rgba(232,184,74,.1);transform:translateX(3px)}
@@ -146,6 +151,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px 10px 4
   <div class="row">
     <input id="q" type="search" placeholder="Search article / part / body / act… e.g. 32, DPSPs, CAG, 42nd" autocomplete="off">
     <a href="#preamble">Preamble</a>
+    <a href="#mnemonics">Mnemonics</a>
     <a href="#parts">Parts</a>
     <a href="#schedules">Schedules</a>
     <a href="#writs">Writs</a>
@@ -195,8 +201,9 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px 10px 4
   <div class="card" style="font-size:.9rem;color:#c9d4ef">
     <ol style="margin-left:18px;line-height:1.8">
       <li><a href="#preamble" style="color:var(--accent)">Preamble</a> — keywords, amendments, Berubari / Kesavananda</li>
-      <li><a href="#parts" style="color:var(--accent)">22 Parts</a> — what each deals with + star articles + light map of the rest</li>
-      <li><a href="#schedules" style="color:var(--accent)">12 Schedules</a> — TEARS OF OLD PM mnemonic</li>
+      <li><a href="#mnemonics" style="color:var(--accent)">Mnemonics hub</a> — 25 Parts sentence, TEARS, FRs, emergencies, amendment↔schedule pairs</li>
+      <li><a href="#parts" style="color:var(--accent)">25 Parts</a> — open each Part for star articles + memory line</li>
+      <li><a href="#schedules" style="color:var(--accent)">12 Schedules</a> — TEARS OF OLD PM (expanded table)</li>
       <li><a href="#writs" style="color:var(--accent)">Writs only</a> — HCMPQ + Art.32 vs 226</li>
       <li><a href="#amendments" style="color:var(--accent)">Amendment Acts</a> — famous Constitution Amendment Acts (full names)</li>
       <li><a href="https://www.constitutionofindia.net/read/" target="_blank" rel="noopener" style="color:var(--accent)">Original Constitution reader ↗</a></li>
@@ -235,9 +242,82 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px 10px 4
   </div>
 </section>
 
+<section class="sec mn-hub" id="mnemonics">
+  <h2>🧠 <span>Mnemonics hub</span> — remember, don’t only list</h2>
+  <p class="lead">Widely used coaching mnemonics (StudyIndepth / Unacademy-style). Say the verse aloud once, then open <a href="#parts" style="color:var(--accent)">Parts</a> for articles. Sources are memory aids — always cross-check article numbers in the Constitution.</p>
+
+  <div class="card">
+    <h3 style="font-size:1rem;margin-bottom:8px;color:var(--accent)">25 Parts — one sentence (original 22 + IV-A, IX-A, IX-B, XIV-A)</h3>
+    <p class="verse"><b>U Can Fly Directly From US to UP to Meet Civil Servent Ram; Fruits Taste Sweet To Eat So Only Eat Maggi As Tasty Snack.</b></p>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:10px"><span class="mn-pill">Part VII</span> repealed (old Part-B states). New Parts inserted <b>alphabetically</b> (IV-A, IX-A, IX-B, XIV-A) so numbering stayed stable.</p>
+    <table>
+      <tr><th>Word</th><th>Part</th><th>Subject</th><th>Arts.</th></tr>
+      <tr><td>U</td><td>I</td><td>Union &amp; Territory</td><td>1–4</td></tr>
+      <tr><td>Can</td><td>II</td><td>Citizenship</td><td>5–11</td></tr>
+      <tr><td>Fly</td><td>III</td><td>Fundamental Rights</td><td>12–35</td></tr>
+      <tr><td>Directly</td><td>IV</td><td>DPSP</td><td>36–51</td></tr>
+      <tr><td>From</td><td>IV-A</td><td>Fundamental Duties</td><td>51A</td></tr>
+      <tr><td>U</td><td>V</td><td>The Union</td><td>52–151</td></tr>
+      <tr><td>S</td><td>VI</td><td>The States</td><td>152–237</td></tr>
+      <tr><td>—</td><td>VII</td><td><i>Repealed</i></td><td>238</td></tr>
+      <tr><td>U</td><td>VIII</td><td>Union Territories</td><td>239–242</td></tr>
+      <tr><td>P</td><td>IX</td><td>Panchayats</td><td>243–243O</td></tr>
+      <tr><td>Meet</td><td>IX-A</td><td>Municipalities</td><td>243P–243ZG</td></tr>
+      <tr><td>Civil</td><td>IX-B</td><td>Co-operative societies</td><td>243ZH–243ZT</td></tr>
+      <tr><td>Servent</td><td>X</td><td>Scheduled &amp; Tribal Areas</td><td>244–244A</td></tr>
+      <tr><td>Ram</td><td>XI</td><td>Union–State relations</td><td>245–263</td></tr>
+      <tr><td>Fruits</td><td>XII</td><td>Finance, property, contracts</td><td>264–300A</td></tr>
+      <tr><td>Taste</td><td>XIII</td><td>Trade &amp; commerce</td><td>301–307</td></tr>
+      <tr><td>Sweet</td><td>XIV</td><td>Services (Union &amp; States)</td><td>308–323</td></tr>
+      <tr><td>To</td><td>XIV-A</td><td>Tribunals</td><td>323A–323B</td></tr>
+      <tr><td>Eat</td><td>XV</td><td>Elections</td><td>324–329A</td></tr>
+      <tr><td>So</td><td>XVI</td><td>Special provisions (SC/ST/OBC)</td><td>330–342</td></tr>
+      <tr><td>Only</td><td>XVII</td><td>Official language</td><td>343–351</td></tr>
+      <tr><td>Eat</td><td>XVIII</td><td>Emergency</td><td>352–360</td></tr>
+      <tr><td>Maggi</td><td>XIX</td><td>Miscellaneous</td><td>361–367</td></tr>
+      <tr><td>As</td><td>XX</td><td>Amendment</td><td>368</td></tr>
+      <tr><td>Tasty</td><td>XXI</td><td>Temporary / special (370, 371…)</td><td>369–392</td></tr>
+      <tr><td>Snack</td><td>XXII</td><td>Short title, commencement, repeal</td><td>393–395</td></tr>
+    </table>
+  </div>
+
+  <div class="grid" style="margin-top:14px">
+    <div class="card">
+      <h3 style="font-size:.95rem;color:var(--accent)">12 Schedules — TEARS OF OLD PM</h3>
+      <p class="mn" style="margin-top:0"><b>T</b>erritory · <b>E</b>moluments · <b>A</b>ffirmations/oaths · <b>R</b>ajya Sabha seats · <b>S</b>cheduled Areas (5) · <b>O</b>ther tribal areas NE (6) · <b>F</b>ederal lists (7) · <b>O</b>fficial languages (8) · <b>L</b>and reforms shield (9) · <b>D</b>efection (10) · <b>P</b>anchayat 29 subjects (11) · <b>M</bunicipality 18 subjects (12)</p>
+      <p style="font-size:.8rem;color:var(--muted)">Trap: <b>5 vs 6</b> (mainland scheduled areas vs Assam/Meghalaya/Tripura/Mizoram ADCs). <b>11 vs 12</b> = 29 rural vs 18 urban subjects.</p>
+    </div>
+    <div class="card">
+      <h3 style="font-size:.95rem;color:var(--accent)">Amendment → Schedule pairs</h3>
+      <p style="font-size:.86rem;line-height:1.65">Numbers don’t match — memorise as fixed pairs:</p>
+      <ul style="margin:8px 0 0 18px;font-size:.84rem;line-height:1.7;color:#d5def3">
+        <li><b>1st</b> Amendment → <b>9th</b> Schedule (land reform shield)</li>
+        <li><b>52nd</b> → <b>10th</b> Schedule (anti-defection)</li>
+        <li><b>73rd</b> → <b>11th</b> Schedule + Part IX (Panchayat)</li>
+        <li><b>74th</b> → <b>12th</b> Schedule + Part IXA (Municipality)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <h3 style="font-size:.95rem;color:var(--accent)">High-yield article memory</h3>
+    <table>
+      <tr><th>Topic</th><th>Mnemonic / hook</th></tr>
+      <tr><td>Fundamental Rights</td><td><b>E-FRE-R-C-M</b> — <b>E</b>quality 14–18 · <b>FRE</b>edom 19–22 · <b>R</b>eligion 25–28 · <b>C</b>ulture 29–30 · <b>M</b>andamus path <b>32</b> (writs). Hindi: समानता–स्वतंत्रता–धर्म–संस्कृति–उपचार।</td></tr>
+      <tr><td>DPSP buckets</td><td><b>S-G-L</b> — <b>S</b>ocialist (38,39,41,42,43,43A,47) · <b>G</b>andhian (40,43,46,47,48) · <b>L</b>iberal-intellectual (44,45,48A,49,50,51). Art.37 = non-justiciable but “fundamental in governance”.</td></tr>
+      <tr><td>Fundamental Duties</td><td><b>51A (a)–(k)</b> — cluster: <b>Nation</b> (Constitution, flag, sovereignty, defence, harmony) → <b>Society</b> (women, heritage, environment, science temper, public property) → <b>(k)</b> child education 6–14 (86th). Not directly enforceable like FRs.</td></tr>
+      <tr><td>Emergency</td><td><b>352–356–360</b> — <b>352</b> National (war/external aggression/armed rebellion) · <b>356</b> State (President’s Rule) · <b>360</b> Financial (never used). Hindi: <b>“तीन सौ बावन, तीन सौ छप्पन, तीन सौ साठ”</b>.</td></tr>
+      <tr><td>Writs</td><td><b>HCMPQ</b> — Habeas Corpus · Mandamus · Prohibition · Certiorari · Quo Warranto. <b>32</b> SC (FRs) · <b>226</b> HC (FRs + other).</td></tr>
+      <tr><td>Constitutional bodies</td><td><b>324</b> ECI · <b>280</b> Finance Commission · <b>315</b> UPSC · <b>148</b> CAG · <b>279A</b> GST Council · <b>32</b> “heart &amp; soul” (Ambedkar).</td></tr>
+      <tr><td>Property right</td><td>Was FR <b>31</b> → deleted by <b>44th</b>; now <b>300A</b> legal right (not FR).</td></tr>
+      <tr><td>Amendment procedure</td><td><b>368</b> — special majority; <b>half of States</b> must ratify federal features (election of President, 7th Schedule/lists, SC/HC, Union–State distribution, representation of States, Art.368 itself).</td></tr>
+    </table>
+  </div>
+</section>
+
 <section class="sec" id="parts">
-  <h2>📚 <span>22 Parts</span> — open any Part</h2>
-  <p class="lead">Legend: <span class="chip exam">EXAM</span> = UPSC favourite. <b>Click any article</b> → study drawer opens with <b>original constitutional wording</b> first, then exam notes.</p>
+  <h2>📚 <span>25 Parts</span> — open any Part</h2>
+  <p class="lead">Master verse: <a href="#mnemonics" style="color:var(--accent)">Mnemonics hub → U Can Fly…</a>. Legend: <span class="chip exam">EXAM</span> = UPSC favourite. <b>Click any article</b> → drawer shows <b>How to remember</b> + original text.</p>
   <p class="hint-click">👉 Open a Part → tap <b>Study →</b> on an article. Cross-check anytime on constitutionofindia.net.</p>
   <div class="legend">
     <span>Search box also jumps to articles</span>
@@ -331,7 +411,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px 10px 4
   <div id="mcqMount"></div>
 </section>
 </main>
-<footer>CA Notes · Polity Mini Constitution · NCERT + Laxmikanth + PYQ favourites · Open locally in browser</footer>
+<footer>CA Notes · Polity Mini Constitution · build polity-2026-10-16 · Mnemonics: U Can Fly… + TEARS OF OLD PM</footer>
 
 <script src="polity_original_text.js"></script>
 <script>
@@ -391,7 +471,7 @@ const PARTS = [
   {a:'28',t:'Religious instruction in certain educational institutions',x:1},
   {a:'29',t:'Protection of interests of minorities (language/script/culture)',x:1},
   {a:'30',t:'Minorities’ right to establish & administer educational institutions',x:1},
-  {a:'32',t:'Remedies for enforcement of FRs — Supreme Court',x:1,d:'Writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto. Suspendable under Emergency (with 44th limits on Art.21).'},
+  {a:'32',t:'Remedies for enforcement of FRs — Supreme Court',x:1,d:'Writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto. Suspendable under Emergency (with 44th limits on Art.21).',mn:'Ambedkar: “heart & soul” · writs = HCMPQ'},
   {a:'33',t:'Parliament may modify FRs for armed forces etc.',x:1},
   {a:'34',t:'Restriction of FRs while martial law in force in any area',x:1},
   {a:'35',t:'Legislation to give effect to certain FRs',x:1}
@@ -721,19 +801,42 @@ const PARTS = [
 ];
 
 const SCHEDULES = [
-{n:1,t:'Names of States & UTs + territories',d:'Lists States and Union Territories and their territories.',mn:'नक्शा अलमारी'},
-{n:2,t:'Emoluments',d:'Salary/allowances — President, Governors, Speakers, Judges, CAG etc.',mn:'तनख्वाह'},
-{n:3,t:'Forms of Oaths / Affirmations',d:'Oaths for Union/State ministers, MPs, MLAs, judges…',mn:'कसम'},
-{n:4,t:'Allocation of Rajya Sabha seats',d:'Seats to States/UTs in Council of States.',mn:'RS सीटें'},
-{n:5,t:'Scheduled Areas & Scheduled Tribes',d:'Admin & control of Scheduled Areas; Tribes Advisory Council.',mn:'5 = Tribal (mainland pattern)'},
-{n:6,t:'Tribal Areas in Assam, Meghalaya, Tripura, Mizoram',d:'Autonomous District Councils — law-making on land, forest, customs…',mn:'6 = NE ADC'},
-{n:7,t:'Union / State / Concurrent Lists',d:'Federal distribution of legislative subjects (Art.246).',mn:'तीन लिस्टें — सबसे पूछा जाता है'},
-{n:8,t:'Official Languages',d:'22 scheduled languages.',mn:'भाषा सूची'},
-{n:9,t:'Land reform & other Acts protected',d:'Art.31B — Acts placed here immune from FR challenge (basic structure still bites — Waman Rao/I.R. Coelho).',mn:'9 = land / shield'},
-{n:10,t:'Anti-defection (52nd Am., 1985)',d:'Disqualification on defection; 91st tightened. Decision by Speaker/Chairman — judicial review after Kihoto Hollohan with limits.',mn:'दल-बदल'},
-{n:11,t:'Panchayats — 29 subjects',d:'Rural local functional list (Art.243G).',mn:'गाँव 29'},
-{n:12,t:'Municipalities — 18 subjects',d:'Urban local functional list (Art.243W).',mn:'शहर 18'}
+{n:1,letter:'T',t:'Names of States & UTs + territories',d:'Lists States and Union Territories and their territories.',mn:'T = Territory · “First Schedule = map of India”'},
+{n:2,letter:'E',t:'Emoluments',d:'Salary/allowances — President, Governors, Speakers, Judges, CAG etc.',mn:'E = Emoluments'},
+{n:3,letter:'A',t:'Forms of Oaths / Affirmations',d:'Oaths for Union/State ministers, MPs, MLAs, judges…',mn:'A = Affirmations / Oaths'},
+{n:4,letter:'R',t:'Allocation of Rajya Sabha seats',d:'Seats to States/UTs in Council of States.',mn:'R = Rajya Sabha allocation'},
+{n:5,letter:'S',t:'Scheduled Areas & Scheduled Tribes',d:'Admin & control of Scheduled Areas; Tribes Advisory Council.',mn:'S = Scheduled Areas (mainland — not NE ADC)'},
+{n:6,letter:'O',t:'Tribal Areas in Assam, Meghalaya, Tripura, Mizoram',d:'Autonomous District Councils — law-making on land, forest, customs…',mn:'O = Other tribal areas (NE ADC)'},
+{n:7,letter:'F',t:'Union / State / Concurrent Lists',d:'Federal distribution of legislative subjects (Art.246).',mn:'F = Federal lists — USC'},
+{n:8,letter:'O',t:'Official Languages',d:'22 scheduled languages.',mn:'O = Official languages (8th)'},
+{n:9,letter:'L',t:'Land reform & other Acts protected',d:'Art.31B — Acts placed here immune from FR challenge (basic structure still bites — Waman Rao/I.R. Coelho).',mn:'L = Land reforms · 1st Am. → 9th Sch.'},
+{n:10,letter:'D',t:'Anti-defection (52nd Am., 1985)',d:'Disqualification on defection; 91st tightened. Decision by Speaker/Chairman — judicial review after Kihoto Hollohan with limits.',mn:'D = Defection · 52nd → 10th Sch.'},
+{n:11,letter:'P',t:'Panchayats — 29 subjects',d:'Rural local functional list (Art.243G).',mn:'P = Panchayat · 73rd → 11th Sch. · 29 subjects'},
+{n:12,letter:'M',t:'Municipalities — 18 subjects',d:'Urban local functional list (Art.243W).',mn:'M = Municipality · 74th → 12th Sch. · 18 subjects'}
 ];
+
+const ART_MN = {
+'12':'State = Govt + Parliament + legislatures + local authorities under Union control (FRs apply).',
+'13':'“13 = judicial review switch” — law inconsistent with FRs is void.',
+'14':'14 = equality gate · reasonable classification allowed · arbitrariness banned (recent doctrine).',
+'15':'15 = no discrimination · remember exceptions: 15(3) women/children · 15(4) SEBC · 15(5) edu · 15(6) EWS.',
+'16':'16 = public employment equality · 16(4) reservation · 16(4A) promotion · 16(6) EWS.',
+'17':'17 = untouchability abolished · enforceable via laws.',
+'18':'18 = titles abolished (except military/academic).',
+'19':'19 = six freedoms for citizens · 19(2)–(6) restrictions · (f) property gone → 300A.',
+'21':'21 = life & liberty · expanded to dignity, privacy, clean env, speedy trial (Maneka, Puttaswamy).',
+'32':'32 = “heart & soul” · writs HCMPQ · FR remedy · suspendable under Emergency (limits after 44th).',
+'226':'226 = wider than 32 · FRs + any other purpose · HC workhorse.',
+'246':'246 + 7th Sch. = who legislates what (Union / State / Concurrent).',
+'249':'249 = Rajya Sabha can authorise Parliament on State List (national interest) · 2/3 RS + LS.',
+'280':'280 = Finance Commission every ~5 years · tax devolution — not NITI.',
+'324':'324 = ECI superintendence · CEC removal like SC judge.',
+'352':'352 = National Emergency · war / external aggression / armed rebellion (44th).',
+'356':'356 = President’s Rule · constitutional machinery failure · Bommai = floor test.',
+'360':'360 = Financial Emergency · never proclaimed in India.',
+'368':'368 = amend Constitution · special majority · federal features need State ratification · basic structure limit.',
+'300A':'300A = property as legal right (44th) — not a Fundamental Right anymore.'
+};
 
 const BODIES = [
 {type:'const',name:'Election Commission of India',art:'324',act:'— (Constitution) + RP Acts 1950/1951',meta:'CEC + ECs; independence, removal of CEC like SC judge',trap:'Regional Commissioners possible; State Election Commissions are separate (243K/243ZA).'},
@@ -813,7 +916,9 @@ const FLASH = [
 ['Art.226 vs 32?','226 HC: FRs + any other purpose; 32 SC: only FRs (primarily)'],
 ['Which Part = DPSP?','Part IV (36–51)'],
 ['Fundamental Duties Part?','Part IVA — Art.51A (42nd; 11th duty 86th)'],
-['TEARS OF OLD PM?','12 Schedules mnemonic'],
+['TEARS OF OLD PM?','Territory, Emoluments, Affirmations, RS seats, Scheduled Areas, Other tribal NE, Federal lists, Official lang, Land reforms, Defection, Panchayat, Municipality'],
+['25 Parts mnemonic starts with?','U Can Fly Directly From US to UP to Meet Civil Servent Ram… (see Mnemonics hub)'],
+['FR clusters mnemonic?','E-FRE-R-C-M — Equality, Freedom, Religion, Culture, Mandamus/32'],
 ['Art.368 basic structure?','Parliament can amend but not destroy basic structure (Kesavananda)'],
 ['National Emergency article?','Art.352 (armed rebellion after 44th)'],
 ['President’s Rule?','Art.356'],
@@ -870,7 +975,7 @@ function openArticle(part, s){
     origEl.innerHTML = `Full official wording for this article is best read on the Constitution reader.\n\nMarginal heading here: ${s.t}\n\n→ Use the gold button below to open the original text.`;
   }
   document.getElementById('dGist').innerHTML = s.d || s.t || '—';
-  document.getElementById('dMn').innerHTML = part.mn || '—';
+  document.getElementById('dMn').innerHTML = s.mn || ART_MN[String(s.a)] || part.mn || '—';
   document.getElementById('dCtx').innerHTML = `<b>This Part deals with:</b> ${part.deal}<br><br><b>Also in this Part (light map):</b> ${part.light}`;
   document.getElementById('dLinks').innerHTML = `
     <a href="${urls.read}" target="_blank" rel="noopener">📖 Read original Constitution (all Parts &amp; Schedules)</a>
@@ -920,7 +1025,8 @@ function renderParts(filter='all'){
       btn.id = 'art-' + s.a.replace(/[^A-Za-z0-9]/g,'');
       btn.innerHTML = `<span class="study">Study →</span>
         <div><span class="anum">Art. ${s.a}</span>${s.x?`<span class="chip exam">EXAM</span>`:''} — <b>${s.t}</b></div>
-        ${s.d?`<div class="alight">${s.d}</div>`:''}`;
+        ${s.d?`<div class="alight">${s.d}</div>`:''}
+        ${(s.mn||ART_MN[String(s.a)])?`<div class="alight" style="color:#ffe7a3">🧠 ${s.mn||ART_MN[String(s.a)]}</div>`:''}`;
       btn.addEventListener('click', ev=>{ ev.preventDefault(); ev.stopPropagation(); openArticle(p,s); });
       arts.appendChild(btn);
     });
@@ -941,8 +1047,8 @@ document.getElementById('expandAll').onclick=()=>{
 };
 
 document.getElementById('schedMount').innerHTML = `
-<table><tr><th>#</th><th>Schedule</th><th>Deals with</th><th>Memory</th></tr>
-${SCHEDULES.map(s=>`<tr><td><b>${s.n}</b></td><td>${s.t}</td><td>${s.d}</td><td>${s.mn}</td></tr>`).join('')}
+<table><tr><th>#</th><th>TEARS</th><th>Schedule</th><th>Deals with</th><th>Memory hook</th></tr>
+${SCHEDULES.map(s=>`<tr><td><b>${s.n}</b></td><td><b>${s.letter||'—'}</b></td><td>${s.t}</td><td>${s.d}</td><td>${s.mn}</td></tr>`).join('')}
 </table>`;
 
 document.getElementById('writsMount').innerHTML = WRITS.map(w=>`
