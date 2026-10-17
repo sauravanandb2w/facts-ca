@@ -60,6 +60,21 @@ main{max-width:1100px;margin:0 auto;padding:18px 14px 70px;font-family:'Segoe UI
 .mn-hub table{font-size:.8rem}
 .mn-hub th{background:rgba(232,184,74,.15)}
 .mn-hub td:first-child{font-weight:800;color:var(--accent);white-space:nowrap}
+.hindi-story{font-size:.9rem;line-height:1.9;color:#e4ebfa}
+.hindi-story p{margin:0 0 12px}
+.hindi-story .art-tag{color:var(--accent);font-weight:800}
+.hindi-story h4{font-size:.92rem;color:var(--accent);margin:18px 0 8px}
+.hindi-story h4:first-child{margin-top:0}
+.art-lookup{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px}
+.art-lookup input{flex:1;min-width:140px;max-width:220px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.25);color:#fff;font-size:1rem}
+.lookup-card{margin-top:10px;padding:12px 14px;border-radius:14px;border:1px solid rgba(232,184,74,.4);background:rgba(232,184,74,.08);font-size:.88rem;line-height:1.65}
+.part-walk{margin-top:10px}
+.part-walk details{border:1px solid var(--line);border-radius:12px;margin-bottom:8px;background:rgba(255,255,255,.02)}
+.part-walk summary{cursor:pointer;padding:12px 14px;font-weight:700;color:var(--accent);list-style:none}
+.part-walk summary::-webkit-details-marker{display:none}
+.part-walk .pw-body{padding:0 14px 14px;font-size:.8rem;color:#d5def3}
+.part-walk .pw-story{font-size:.84rem;line-height:1.75;color:#e8eef8;margin-bottom:10px}
+.part-walk table{font-size:.75rem}
 .mn-pill{display:inline-block;font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:999px;background:rgba(107,159,255,.15);color:#cfe0ff;margin:2px 4px 2px 0}
 .arts{display:grid;gap:8px;margin-top:10px}
 .art{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.86rem;cursor:pointer;transition:.18s;text-align:left;width:100%;color:inherit;font-family:inherit}
@@ -155,6 +170,8 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px 10px 4
     <a href="#mn-fr" title="FR articles">FR</a>
     <a href="#mn-dpsp" title="DPSP articles">DPSP</a>
     <a href="#mn-fd" title="Fundamental Duties">Duties</a>
+    <a href="#mn-kahani" title="Hindi stories">कहानी</a>
+    <a href="#art-lookup" title="Any article number">#Art</a>
     <a href="#parts">Parts</a>
     <a href="#schedules">Schedules</a>
     <a href="#writs">Writs</a>
@@ -204,7 +221,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px 10px 4
   <div class="card" style="font-size:.9rem;color:#c9d4ef">
     <ol style="margin-left:18px;line-height:1.8">
       <li><a href="#preamble" style="color:var(--accent)">Preamble</a> — keywords, amendments, Berubari / Kesavananda</li>
-      <li><a href="#mnemonics" style="color:var(--accent)">Mnemonics hub</a> — 25 Parts, TEARS, <a href="#mn-fr">FR 12–35</a>, <a href="#mn-dpsp">DPSP 36–51</a>, <a href="#mn-fd">Duties 51A(a–k)</a></li>
+      <li><a href="#mnemonics" style="color:var(--accent)">Mnemonics hub</a> — TEARS, <a href="#art-lookup">any Art. lookup</a>, <a href="#mn-part-walk">भाग-wise full lists</a>, <a href="#mn-kahani">Hindi kahani</a></li>
       <li><a href="#parts" style="color:var(--accent)">25 Parts</a> — open each Part for star articles + memory line</li>
       <li><a href="#schedules" style="color:var(--accent)">12 Schedules</a> — TEARS OF OLD PM (expanded table)</li>
       <li><a href="#writs" style="color:var(--accent)">Writs only</a> — HCMPQ + Art.32 vs 226</li>
@@ -382,6 +399,64 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px 10px 4
     </table>
     <p style="font-size:.8rem;color:var(--muted);margin-top:8px">Inspired by USSR Constitution (Swaran Singh Committee). Duties are <b>not directly enforceable</b> like FRs — but courts cite them (e.g. environment, RTE, flag cases).</p>
   </div>
+
+  <div class="card hindi-story" style="margin-top:16px" id="mn-kahani">
+    <h3 style="font-size:1.05rem;color:var(--accent);margin-bottom:10px">📖 सरल हिंदी कहानियाँ — याद रहने वाला क्रम (FR · DPSP · कर्तव्य · केंद्र/राज्य)</h3>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:14px">एक बार पढ़ो, फिर अनुच्छेद नंबर अपने आप जुड़ जाएँ। पहले <b>अंग्रेज़ी टेबल</b> ऊपर; यहाँ <b>कहानी-रूप</b> है।</p>
+
+    <h4>१. मूल अधिकार — “राम और संविधान-घर” (भाग III · <span class="art-tag">12–35</span>)</h4>
+    <p><b>राम</b> नागरिक है। घर के बाहर लिखा: कौन-कौन इस घर पर राज करता है — <span class="art-tag">12</span> “राज्य” की परिभाषा। कोई भी कानून दीवार (<span class="art-tag">13</span>) से टकराए तो टूट जाता है — अदालत देखती है।</p>
+    <p>सामने <b>समानता का दरवाज़ा</b> — <b>E-DOUT</b> याद करो: <span class="art-tag">14</span> सबके लिए एक जैसा कानून; <span class="art-tag">15</span> कोई भेदभाव नहीं (छूट अलग); <span class="art-tag">16</span> सरकारी नौकरी में मौका; <span class="art-tag">17</span> छुआछूत मिटी; <span class="art-tag">18</span> तख्ता-पदक नहीं (सैन्य/शैक्षणिक ठीक)।</p>
+    <p>अंदर <b>आज़ादी का कमरा</b> — <b>S-OLEA</b>: <span class="art-tag">19</span> छह आज़ादियाँ (<b>SAAMRP</b> — बोलो, मिलो, संगठन, चलो, बसो, कमाओ); <span class="art-tag">20</span> पुरानी गलती पर नई सज़ा नहीं; <span class="art-tag">21</span> जीने की लाइफ़लाइन (गरिमा, प्राइवेसी भी); <span class="art-tag">21A</span> बच्चे 6–14 स्कूल; <span class="art-tag">22</span> पकड़े तो सवाल-जवाब।</p>
+    <p>बगल में <b>शोषण-रोधी कोना</b> — <b>TC</b>: <span class="art-tag">23</span> गुलामी/तस्करी नहीं; <span class="art-tag">24</span> छोटे बच्चे खतरनाक काम में नहीं।</p>
+    <p>ऊपर <b>धर्म की छत</b> — <b>PATE</b>: <span class="art-tag">25–28</span> अपना धर्म, मठ-मंदिर चलाना, कर से एक धर्म नहीं, स्कूल में ज़बरदस्ती धर्म नहीं।</p>
+    <p><b>संस्कृति की अलमारी</b> — <b>ME</b>: <span class="art-tag">29–30</span> अल्पसंख्यक भाषा-स्कूल बचे।</p>
+    <p>और घर का <b>दिल</b> — <b>SAME</b>: <span class="art-tag">32</span> सुप्रीम कोर्ट, पाँच रिट (HCMPQ) — अंबेडकर ने कहा “हृदय”; <span class="art-tag">33–35</span> सेना/मार्शल लॉ/कानून से पूरा करो। संपत्ति पहले <span class="art-tag">31</span> थी — अब <span class="art-tag">300A</span> साधारण अधिकार।</p>
+
+    <h4>२. नीति निर्देशक सिद्धांत — “माँ की सलाह की तख्ती” (भाग IV · <span class="art-tag">36–51</span>)</h4>
+    <p>मूल अधिकार <b>कानूनी दीवार</b> हैं (तोड़ो तो कोर्ट); DPSP <b>सरकार की इच्छा-सूची</b> है — <span class="art-tag">37</span> पर लिखा: अदालत नहीं, पर सरकार को मानना “ज़रूरी”। <span class="art-tag">36</span> = वही “राज्य” जो FR में।</p>
+    <p>तीन चाचा आते हैं — याद रखो: <b>“राज्य का लक्ष्य: समाजवादी गाँधी के उदार विचार”</b></p>
+    <p><b>समाजवादी चाचा</b> कहते: <span class="art-tag">38</span> बराबरी; <span class="art-tag">39</span> रोज़ी-रोटी, पैसा बँटे, बच्चे सुरक्षित (<b>LEWPC</b>); <span class="art-tag">39A</span> गरीब को मुफ़्त वकील; <span class="art-tag">41</span> काम-पढ़ाई-मदद; <span class="art-tag">42</span> माँ-मज़दूर का सम्मान; <span class="art-tag">43/43A</span> पूरी तनख़्वाह, मज़दूर की आवाज़; <span class="art-tag">47</span> सेहत, शराब कम।</p>
+    <p><b>गाँधी चाचा</b> कहते: <span class="art-tag">40</span> गाँव की पंचायत; <span class="art-tag">43</span> घरेलू उद्योग; <span class="art-tag">43B</span> सहकारी; <span class="art-tag">46</span> दलित-आदिवासी उठाओ; <span class="art-tag">48</span> गाय-खेत; <span class="art-tag">47</span> फिर सेहत (दोनों बोलते हैं — याद रखो!)।</p>
+    <p><b>उदार चाचा</b> कहते: <span class="art-tag">44</span> एक नागरिक संहिता; <span class="art-tag">45</span> छोटे बच्चे की देखभाल; <span class="art-tag">48A</span> हरा-भरा पर्यावरण; <span class="art-tag">49</span> किले-मंदिर संभालो; <span class="art-tag">50</span> जज अलग, कलेक्टर अलग; <span class="art-tag">51</span> दुनिया में शांति। यह सूची <span class="art-tag">51</span> पर खत्म — इसलिए “DPSP तक 51” याद करो।</p>
+
+    <h4>३. मूल कर्तव्य — “घर के 11 नियम” (भाग IVA · <span class="art-tag">51A (a)–(k)</span>)</h4>
+    <p>अधिकार मिले तो <b>कर्तव्य</b> भी — दीवार पर <b>ABCDE FGHIJK</b> (42वें संशोधन ने a–j; 86वें ने <span class="art-tag">(k)</span> जोड़ा):</p>
+    <p><span class="art-tag">(a)</span> <b>A</b>bide — संविधान, झंडा, गान मानो · <span class="art-tag">(b)</span> <b>B</b>apuji — आज़ादी के सपने · <span class="art-tag">(c)</span> <b>C</b>are <b>SUI</b> — एकता-अखंडता · <span class="art-tag">(d)</span> <b>D</b>efend — देश बचाओ · <span class="art-tag">(e)</span> <b>E</b>quality — भाईचारा, महिला सम्मान · <span class="art-tag">(f)</span> <b>F</b>olk — संस्कृति संभालो · <span class="art-tag">(g)</span> <b>G</b>reen — पेड़-नदी · <span class="art-tag">(h)</span> <b>H</b>umanism — विज्ञान की सोच · <span class="art-tag">(i)</span> <b>I</b>nfrastructure — सरकारी संपत्ति, हिंसा छोड़ो · <span class="art-tag">(j)</span> <b>J</b>ump — उत्कृष्टता · <span class="art-tag">(k)</span> <b>K</b>ids — माँ-बाप, 6–14 पढ़ाओ (<span class="art-tag">21A</span> के साथ जोड़ो)।</p>
+
+    <h4>४. केंद्र और राज्य — “महल और हवेलियाँ” (भाग V · <span class="art-tag">52–151</span> · भाग VI · <span class="art-tag">152+</span>)</h4>
+    <p><b>दिल्ली का महल (केंद्र):</b> सिंहासन <span class="art-tag">52</span> <b>राष्ट्रपति</b> — नाम उनका, बिजली <span class="art-tag">53</span> उनके पास, पर बटन <span class="art-tag">74–75</span> <b>मंत्रिपरिषद</b> दबाती है (सलाह बाध्य)। चुनाव <span class="art-tag">54–55</span>, अवधि <span class="art-tag">56</span>, गलती पर <span class="art-tag">61</span> महाभियोग। <span class="art-tag">63–65</span> उपराष्ट्रपति — राज्यसभा की कुर्सी। <span class="art-tag">72</span> क्षमा की छुरी। <span class="art-tag">76</span> महालेखा-वकील AG।</p>
+    <p><b>संसद की सभा</b> <span class="art-tag">79</span>: राष्ट्रपति + <span class="art-tag">80</span> राज्यसभा (12 नामांकित) + <span class="art-tag">81</span> लोकसभा। टकराव पर <span class="art-tag">108</span> संयुक्त बैठक — <b>पैसा (109–110)</b> और <b>368</b> संशोधन यहाँ नहीं! <span class="art-tag">123</span> अध्यादेश = जरूरत की दवा (अधिकतम ~6 सप्ताह). <span class="art-tag">124+</span> सुप्रीम कोर्ट; <span class="art-tag">148</span> CAG = खर्च की जाँच।</p>
+    <p><b>राज्य की हवेली:</b> <span class="art-tag">153</span> <b>राज्यपाल</b> — <span class="art-tag">155</span> राष्ट्रपति भेजते हैं, <span class="art-tag">156</span> “खुशी” पर (हट सकते हैं)। सरकार <span class="art-tag">163–164</span> CM + मंत्री (विधानसभा जवाबदेह)। <span class="art-tag">161</span> राज्य क्षमा (मौत पर राष्ट्रपति <span class="art-tag">72</span>). <span class="art-tag">168+</span> विधानमंडल; <span class="art-tag">200–201</span> बिल — राज्यपाल मुहर या राष्ट्रपति को भेजें। <span class="art-tag">214+</span> उच्च न्यायालय; लोगों की शिकायत <span class="art-tag">226</span> (FR + और भी)।</p>
+
+    <table style="margin-top:14px">
+      <tr><th>याद की चाबी</th><th>केंद्र (V)</th><th>राज्य (VI)</th></tr>
+      <tr><td>प्रमुख</td><td><span class="art-tag">52</span> राष्ट्रपति</td><td><span class="art-tag">153</span> राज्यपाल</td></tr>
+      <tr><td>असली सरकार</td><td><span class="art-tag">74–75</span> COM → LS</td><td><span class="art-tag">163–164</span> COM → विधानसभा</td></tr>
+      <tr><td>विधायिका</td><td><span class="art-tag">79</span> RS + LS</td><td><span class="art-tag">168</span> विधानसभा/परिषद</td></tr>
+      <tr><td>पैसा</td><td><span class="art-tag">109–110</span> मनी बिल</td><td><span class="art-tag">198–199</span> मनी बिल</td></tr>
+      <tr><td>जरूरत कानून</td><td><span class="art-tag">123</span> अध्यादेश</td><td><span class="art-tag">213</span> अध्यादेश</td></tr>
+      <tr><td>न्याय</td><td><span class="art-tag">124</span> SC</td><td><span class="art-tag">214</span> HC · <span class="art-tag">226</span> रिट</td></tr>
+      <tr><td>हिसाब</td><td><span class="art-tag">148</span> CAG</td><td>राज्य लेखा (CAG ऑडिट)</td></tr>
+    </table>
+  </div>
+
+  <div class="card" style="margin-top:16px" id="art-lookup">
+    <h3 style="font-size:1rem;color:var(--accent)">🔢 किसी भी अनुच्छेद — तुरंत भाग + विषय</h3>
+    <p style="font-size:.82rem;color:var(--muted)">जैसे <b>149</b> → भाग V, CAG के कर्तव्य। ऊपर सर्च बॉक्स में भी नंबर लिखो।</p>
+    <div class="art-lookup">
+      <label for="artNumIn" style="font-size:.85rem;color:#cfe0ff">Art.</label>
+      <input id="artNumIn" type="text" inputmode="numeric" placeholder="149 / 21A / 51A(k)" autocomplete="off">
+      <button type="button" id="artNumGo" style="padding:10px 16px;border-radius:12px;border:none;background:var(--accent);color:#111;font-weight:800;cursor:pointer">देखो</button>
+    </div>
+    <div id="artNumOut" class="lookup-card" style="display:none"></div>
+  </div>
+
+  <div class="card" style="margin-top:12px" id="mn-part-walk">
+    <h3 style="font-size:1rem;color:var(--accent)">📜 भाग-दर-भाग कहानी + सारे अनुच्छेद (क्रम में)</h3>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:10px">हर भाग खोलो — ऊपर एक-पंक्ति कहानी, नीचे पूरी सूची। याद: पहले भाग नंबर, फिर अनुच्छेद क्रम।</p>
+    <div id="partWalkMount" class="part-walk"></div>
+  </div>
 </section>
 
 <section class="sec" id="parts">
@@ -461,6 +536,7 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px 10px 4
 
 <section class="sec" id="story">
   <h2>📖 <span>एक कहानी</span> — पूरा कंकाल</h2>
+  <p class="lead">विस्तार: <a href="#mn-kahani" style="color:var(--accent)">Mnemonics → सरल हिंदी कहानियाँ</a> (FR · DPSP · कर्तव्य · केंद्र/राज्य अनुच्छेद).</p>
   <div class="card" style="font-size:.92rem;line-height:1.75;color:#d7e0f5">
     भारत के लोग एक घर बनाते हैं — नाम <b>संविधान</b>। दरवाज़े पर लिखा है <b>प्रस्तावना</b>: हम स्वतंत्र, समाजवादी, धर्मनिरपेक्ष, लोकतांत्रिक गणराज्य हैं।<br><br>
     घर में सबसे पहले <b>नागरिक</b> (भाग II) घुसते हैं, फिर दीवारों पर लिखे <b>मूल अधिकार</b> (III) — इनमें दिल है <b>32</b> (संवैधानिक उपचार)। बगल में सलाह की तख्ती <b>DPSP</b> (IV) और नागरिकों के <b>कर्तव्य</b> (IVA)।<br><br>
@@ -480,8 +556,9 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:20px 10px 4
   <div id="mcqMount"></div>
 </section>
 </main>
-<footer>CA Notes · Polity Mini Constitution · build polity-2026-10-16b · FR/DPSP/Duties article mnemonics</footer>
+<footer>CA Notes · Polity Mini Constitution · build polity-2026-10-17c · Article index + part walks</footer>
 
+<script src="polity_article_index.js"></script>
 <script src="polity_original_text.js"></script>
 <script>
 /* ========== DATA ========== */
@@ -518,7 +595,7 @@ const PARTS = [
  ],
  light:'Arts 7–8 (migrants / persons of Indian origin abroad), 10 (continuance of rights).'},
 {id:'III',n:'III',title:'Fundamental Rights',arts:'12–35',tags:['rights'],deal:'Justiciable rights against the State (Art.12). Heart of the Constitution for exams.',
- mn:'🧠 “Equality 14–18 · Freedom 19–22 · Exploit 23–24 · Religion 25–28 · Culture 29–30 · Remedies 32–35”. Hindi: समानता–स्वतंत्रता–शोषण–धर्म–संस्कृति–उपचार। Art.32 = heart & soul (Ambedkar).',
+ mn:'🧠 कहानी: <a href="#mn-kahani" style="color:var(--accent)">राम और संविधान-घर</a> — E-DOUT · S-OLEA · TC · PATE · ME · SAME।',
  star:[
   {a:'12',t:'Definition of State',x:1,d:'Govt & Parliament of India; State govt & legislature; local/other authorities under control of Govt of India. Expands FR horizontal reach vs State.'},
   {a:'13',t:'Laws inconsistent with FRs void',x:1,d:'Judicial review bedrock. “Law” includes ordinance, bye-law, rule, notification, custom/usage.'},
@@ -547,7 +624,7 @@ const PARTS = [
  ],
  light:'Art.31 omitted (property). Art.31A/31B/31C special savings (land reform, 9th Schedule, DPSP shield — with basic structure limits).'},
 {id:'IV',n:'IV',title:'Directive Principles (DPSP)',arts:'36–51',tags:['rights'],deal:'Non-justiciable socio-economic guidelines. Fundamental in governance (Art.37).',
- mn:'🧠 DPSP buckets: Socialist (38,39,41,42,43,43A,47) · Gandhian (40,43,46,47,48) · Liberal-Intellectual (44,45,48A,49,50,51). Hindi: समाजवादी–गाँधीवादी–उदार। 42nd added 39A,43A,48A.',
+ mn:'🧠 कहानी: <a href="#mn-kahani" style="color:var(--accent)">तीन चाचा · 36–51</a> — राज्य का लक्ष्य: समाजवादी गाँधी के उदार विचार।',
  star:[
   {a:'36',t:'Definition of State (same as Art.12 for this Part)',x:1},
   {a:'37',t:'DPSP non-justiciable but fundamental in governance',x:1},
@@ -572,13 +649,13 @@ const PARTS = [
  ],
  light:'43B (co-ops, 97th) in text — exam Gandhian bucket. Classification: “State ka Goal: Socialist Gandhi ke Liberal ideas.”'},
 {id:'IVA',n:'IVA',title:'Fundamental Duties',arts:'51A',tags:['rights'],deal:'Added by 42nd (1976) on Swaran Singh Committee. Originally 10; 11th by 86th (2002) — education of child 6–14.',
- mn:'🧠 <b>ABCDE FGHIJK</b> — (a) Abide · (b) Bapuji ideals · (c) Care SUI · (d) Defend · (e) Equality/harmony · (f) Folk culture · (g) Green env · (h) Humanism/science · (i) Infrastructure/no violence · (j) Jump to excellence · (k) Kids 6–14. Hub: <a href="#mn-fd" style="color:var(--accent)">full table</a>.',
+ mn:'🧠 कहानी: <a href="#mn-kahani" style="color:var(--accent)">घर के 11 नियम</a> — ABCDE FGHIJK · <a href="#mn-fd">टेबल</a>.',
  star:[
   {a:'51A',t:'Fundamental Duties (a)–(k)',x:1,d:'Abide by Constitution & respect ideals/institutions/National Flag & Anthem; cherish freedom struggle ideals; uphold sovereignty/unity/integrity; defend country; promote harmony; preserve heritage; protect environment; develop scientific temper; safeguard public property; strive for excellence; parent/guardian — education opportunity for child 6–14 (k).'}
  ],
  light:'Only one article in this Part.'},
 {id:'V',n:'V',title:'The Union',arts:'52–151',tags:['union'],deal:'President, VP, Council of Ministers, Attorney-General, Parliament, Legislative procedure, Judiciary (SC), CAG.',
- mn:'🧠 भाग V = दिल्ली का पावरहाउस। President 52–62 · COM 74–75 · AG 76 · Parliament 79–122 · SC 124–147 · CAG 148–151. Hindi story: राष्ट्रपति ताज, मंत्रिपरिषद दिमाग, संसद आवाज़, SC तराजू, CAG हिसाब।',
+ mn:'🧠 भाग V = महल कहानी — <a href="#mn-kahani" style="color:var(--accent)">52</a> मुकुट · 74–75 दिमाग · 79 संसद · 124 तराजू · 148 हिसाब।',
  star:[
   {a:'52',t:'President of India',x:1,d:'There shall be a President of India — Union executive head (nominal).'},
   {a:'53',t:'Executive power of the Union',x:1,d:'Vested in President; exercised directly or through officers subordinate.'},
@@ -658,7 +735,7 @@ const PARTS = [
  ],
  light:'Also: 68–71 (VP misc./disputes on Presidential election — SC), 89–98 (Officers of Houses, Secretariat), 99–104 (voting/seats), 119 financial procedure regulation, 146–147 SC officers/interpretation. Art.32 writs live in Part III but are SC’s signature power.'},
 {id:'VI',n:'VI',title:'The States',arts:'152–237',tags:['state'],deal:'State executive, legislature, High Courts — mirrors Union pattern with differences (Governor, no joint sitting usually, etc.).',
- mn:'🧠 भाग VI = राज्य की कॉपी-बुक। Governor 153+ · COM 163–164 · AG(S) 165 · Legislature 168+ · HC 214+ · District judges 233+. Hindi: राज्यपाल मुकुट, CM सरकार, विधानसभा आवाज़, HC तराजू।',
+ mn:'🧠 भाग VI = हवेली कहानी — <a href="#mn-kahani" style="color:var(--accent)">153</a> राज्यपाल · 163–164 CM · 200–201 बिल · 214 HC।',
  star:[
   {a:'152',t:'Definition of “State” for this Part',x:1,d:'Does not include J&K historically in old text path — learn current applicability carefully; generally Part VI applies to States.'},
   {a:'153',t:'Governors of States',x:1,d:'One Governor per State; same person may be Governor of 2+ States.'},
@@ -949,7 +1026,35 @@ const ART_MN = {
 '356':'356 = President’s Rule · constitutional machinery failure · Bommai = floor test.',
 '360':'360 = Financial Emergency · never proclaimed in India.',
 '368':'368 = amend Constitution · special majority · federal features need State ratification · basic structure limit.',
-'300A':'300A = property as legal right (44th) — not a Fundamental Right anymore.'
+'300A':'300A = property as legal right (44th) — not a Fundamental Right anymore.',
+'52':'कहानी: महल का <b>मुकुट</b> — राष्ट्रपति (नाममात्र प्रमुख).',
+'53':'कहानी: केंद्र की <b>बिजली</b> राष्ट्रपति के पास — अधिकारीों से चलती है.',
+'54':'कहानी: राष्ट्रपति चुनाव — MP + चुने हुए MLA.',
+'61':'कहानी: गलती पर <b>महाभियोग</b> — 2/3 बहुमत.',
+'63':'कहानी: <b>उपराष्ट्रपति</b> — RS की कुर्सी (64).',
+'72':'कहानी: राष्ट्रपति की <b>क्षमा</b> की छुरी (मौत सहित).',
+'74':'कहानी: मंत्री <b>सलाह</b> बाध्य — राष्ट्रपति बटन नहीं दबाते अकेले.',
+'75':'कहानी: PM सिफ़ारिश · COM संसद के प्रति जिम्मेदार.',
+'76':'कहानी: AG = सरकार का वकील — संसद में बोल सकते, वोट नहीं.',
+'79':'कहानी: संसद = राष्ट्रपति + RS + LS.',
+'80':'कहानी: RS — 12 नामांकित (कला/विज्ञान/समाज).',
+'81':'कहानी: LS — लोक की आवाज़, अधिकतम 550.',
+'108':'कहानी: दोनों सदन भिड़े — <b>joint</b>; पैसा/368 यहाँ नहीं.',
+'109':'कहानी: <b>मनी बिल</b> — केवल LS से; RS 14 दिन.',
+'110':'कहानी: स्पीकर की मोहर = मनी बिल.',
+'123':'कहानी: <b>अध्यादेश</b> — संसद सो रही हो तो जरूरत की दवा.',
+'124':'कहानी: SC = सच्चाई का <b>तराजू</b> (Collegium).',
+'148':'कहानी: CAG = खर्च की <b>जाँच</b> — संसद को रिपोर्ट.',
+'153':'कहानी: हवेली का <b>राज्यपाल</b> — राष्ट्रपति नियुक्त.',
+'156':'कहानी: राज्यपाल <b>खुशी</b> पर — 5 साल लिखा, हट सकते हैं.',
+'161':'कहानी: राज्य <b>क्षमा</b> — मौत पर राष्ट्रपति (72).',
+'163':'कहानी: CM की सलाह — राज्यपाल को माननी (विवादित विवेक अलग).',
+'164':'कहानी: CM राज्यपाल से · मंत्री विधानसभा जवाबदेह.',
+'168':'कहानी: राज्य <b>विधानमंडल</b> — एक या दो सदन.',
+'200':'कहानी: राज्यपाल <b>मुहर</b> / वापस / राष्ट्रपति को भेजें.',
+'201':'कहानी: राष्ट्रपति के पास रिज़र्व बिल.',
+'213':'कहानी: राज्य <b>अध्यादेश</b> — गवर्नर (संसद 123 जैसा).',
+'214':'कहानी: HC = राज्य का <b>तराजू</b>.'
 };
 
 const BODIES = [
@@ -1038,6 +1143,8 @@ const FLASH = [
 ['Six freedoms Art.19?','SAAMRP — Speech, Assemble, Association, Move, Reside, Profession'],
 ['DPSP classification verse?','State ka Goal: Socialist Gandhi ke Liberal ideas'],
 ['11 Fundamental Duties mnemonic?','ABCDE FGHIJK — (k) Kids education 6–14 added by 86th'],
+['Hindi FR story?','#mn-kahani — राम और संविधान-घर (12–35)'],
+['Union vs State story?','#mn-kahani — महल 52/74/79/124 vs हवेली 153/163/200/214'],
 ['Art.368 basic structure?','Parliament can amend but not destroy basic structure (Kesavananda)'],
 ['National Emergency article?','Art.352 (armed rebellion after 44th)'],
 ['President’s Rule?','Art.356'],
@@ -1080,6 +1187,73 @@ function artUrl(num){
     article: `https://www.constitutionofindia.net/articles/article-${n}/`
   };
 }
+function normArtKey(raw){
+  let v = String(raw||'').trim().replace(/^art\.?\s*/i,'').replace(/^\(/,'').replace(/\)$/,'');
+  v = v.replace(/\([a-k]\)/i,'').trim(); // 51A(k) → 51A
+  return v;
+}
+function lookupArticleRow(key){
+  const idx = window.POLITY_ART_INDEX;
+  if(!idx) return null;
+  const k = normArtKey(key);
+  return idx[k] || idx[k.toUpperCase()] || null;
+}
+function openArticleByKey(key){
+  const row = lookupArticleRow(key);
+  if(!row) return false;
+  const part = PARTS.find(p=>p.id===row.partId);
+  if(!part) return false;
+  document.querySelectorAll('.part').forEach(el=>{
+    const t = el.querySelector('.ptitle');
+    if(t && t.textContent.includes(`Part ${part.n}:`)) el.open = true;
+  });
+  const s = part.star.find(x=>String(x.a)===String(row.a)) || {a:row.a, t:row.title, d:row.title};
+  openArticle(part, s);
+  const extra = row.hin ? `<br><br>${row.hin}` : '';
+  document.getElementById('dMn').innerHTML = (document.getElementById('dMn').innerHTML || '—') + extra;
+  return true;
+}
+function showArtLookup(key){
+  const out = document.getElementById('artNumOut');
+  const row = lookupArticleRow(key);
+  if(!row){
+    out.style.display = 'block';
+    out.innerHTML = `<span style="color:var(--red)">नहीं मिला:</span> “${key}” — क्रम में लिखो जैसे <b>149</b>, <b>21A</b>, <b>51A</b>.`;
+    return;
+  }
+  out.style.display = 'block';
+  out.innerHTML = `
+    <b>अनुच्छेद ${row.a}</b> → <b>भाग ${row.partNum}</b> (${row.partTitle})<br>
+    <span style="color:#ffe7a3">${row.title}</span><br>
+    <span style="font-size:.8rem;color:var(--muted)">${row.hin}</span><br>
+    <button type="button" class="art-open-btn" data-art="${row.a}" style="margin-top:8px;padding:6px 12px;border-radius:8px;border:none;background:var(--accent);color:#111;font-weight:800;cursor:pointer">Study drawer →</button>
+    <a href="#mn-part-walk" style="margin-left:10px;color:var(--accent);font-size:.8rem">भाग ${row.partNum} full list</a>`;
+  out.querySelector('.art-open-btn')?.addEventListener('click',()=>openArticleByKey(row.a));
+}
+function mountPartWalks(){
+  const walks = window.POLITY_PART_WALKS;
+  const el = document.getElementById('partWalkMount');
+  if(!walks || !el) return;
+  el.innerHTML = walks.map(w=>`
+    <details id="walk-part-${w.partId}">
+      <summary>भाग ${w.partNum} — ${w.partTitle} <span style="color:var(--muted);font-weight:500">(${w.articles.length} arts)</span></summary>
+      <div class="pw-body">
+        <p class="pw-story">${w.story}</p>
+        <table><tr><th>Art</th><th>Subject</th><th>याद</th></tr>
+        ${w.articles.map(a=>`<tr><td><b>${a.a}</b></td><td>${a.title}</td><td style="color:#ffe7a3;font-size:.72rem">${a.hin}</td></tr>`).join('')}
+        </table>
+      </div>
+    </details>`).join('');
+}
+function mergeArtIndexMnemonics(){
+  const idx = window.POLITY_ART_INDEX;
+  if(!idx) return;
+  Object.keys(idx).forEach(k=>{
+    const r = idx[k];
+    if(r && r.a && !ART_MN[r.a]) ART_MN[r.a] = `भाग <b>${r.partNum}</b> (${r.partTitle}) · ${r.title}`;
+  });
+}
+
 function openArticle(part, s){
   const urls = artUrl(s.a);
   const key = String(s.a);
@@ -1258,9 +1432,33 @@ document.querySelectorAll('.preamble .kw').forEach(k=>{
   };
 });
 
+mergeArtIndexMnemonics();
+mountPartWalks();
+document.getElementById('artNumGo')?.addEventListener('click',()=>{
+  const v = document.getElementById('artNumIn')?.value;
+  if(v) showArtLookup(v);
+});
+document.getElementById('artNumIn')?.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){ e.preventDefault(); showArtLookup(e.target.value); }
+});
+
 /* Search */
 const hits=document.getElementById('hits');
 const searchIndex=[];
+if(window.POLITY_ART_INDEX){
+  const seenArt = new Set();
+  Object.values(window.POLITY_ART_INDEX).forEach(r=>{
+    if(!r || !r.a || seenArt.has(r.a)) return;
+    seenArt.add(r.a);
+    searchIndex.push({
+      type:'Article',
+      label:`Art. ${r.a} — भाग ${r.partNum} — ${r.title}`,
+      key:`art ${r.a} article ${r.a} ${r.title} part ${r.partNum} ${r.partTitle}`,
+      go:'#art-lookup',
+      artKey:r.a
+    });
+  });
+}
 PARTS.forEach(p=>{
   searchIndex.push({type:'Part',label:`Part ${p.n}: ${p.title}`,key:`part ${p.n} ${p.title} ${p.deal} ${p.arts}`,go:'#parts',open:p.id});
   p.star.forEach(s=>{
@@ -1273,14 +1471,27 @@ AMENDMENTS.forEach(a=>searchIndex.push({type:'Amendment',label:`${a.n} (${a.y}) 
 BODIES.forEach(b=>searchIndex.push({type:'Body',label:b.name,key:`${b.name} ${b.act} ${b.art} ${b.type}`,go:'#bodies'}));
 
 document.getElementById('q').addEventListener('input',e=>{
-  const v=e.target.value.trim().toLowerCase();
-  if(v.length<2){hits.classList.remove('show');hits.innerHTML='';return;}
+  const raw=e.target.value.trim();
+  const v=raw.toLowerCase();
+  if(v.length<1){hits.classList.remove('show');hits.innerHTML='';return;}
+  const exact = lookupArticleRow(raw);
+  if(exact && /^\d+[a-zA-Z]*$/i.test(normArtKey(raw))){
+    showArtLookup(raw);
+    document.getElementById('artNumIn').value = normArtKey(raw);
+  }
+  if(v.length<2 && !exact){hits.classList.remove('show');hits.innerHTML='';return;}
   const found=searchIndex.filter(x=>x.key.toLowerCase().includes(v)).slice(0,20);
   hits.classList.add('show');
   hits.innerHTML=`<b style="color:var(--accent)">Search results</b>`+ (found.length?found.map(f=>`
-    <div class="hit" data-go="${f.go}" data-open="${f.open||''}"><b>${f.type}:</b> ${f.label}</div>`).join(''):`<div class="hit">No hits</div>`);
+    <div class="hit" data-go="${f.go}" data-open="${f.open||''}" data-art="${f.artKey||''}"><b>${f.type}:</b> ${f.label}</div>`).join(''):`<div class="hit">No hits</div>`);
   hits.querySelectorAll('.hit[data-go]').forEach(h=>{
     h.onclick=()=>{
+      if(h.dataset.art){
+        showArtLookup(h.dataset.art);
+        openArticleByKey(h.dataset.art);
+        hits.classList.remove('show');
+        return;
+      }
       const partObj=PARTS.find(p=>p.id===h.dataset.open);
       if(partObj){
         document.querySelectorAll('.part').forEach(p=>{
