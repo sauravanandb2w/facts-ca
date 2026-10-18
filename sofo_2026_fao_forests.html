@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOFO 2026 | FAO State of the World’s Forests | UPSC Environment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ca-flowcharts.css?v=14">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#14231c;--muted:#5a6b62;--paper:#eef4ef;
+  --forest:#1b5e45;--teal:#0d7a6f;--leaf:#2f9e6b;--gold:#c47a12;
+  --card:#fff;--line:#d5e0d8;--red:#b5442e;--shadow:0 10px 28px rgba(20,35,28,.08);
+}
+body{font-family:"Sora",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+a{color:var(--teal);font-weight:600;text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-flex;margin:12px 16px 0;font-size:.82rem}
+.hero{
+  background:linear-gradient(135deg,#0d3d2e,#1b5e45 42%,#2d6a3e 70%,#0d7a6f);
+  color:#fff;text-align:center;padding:36px 16px 28px
+}
+.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.35rem,4vw,2.2rem);margin:8px 0 4px}
+.hero .sub{font-size:.92rem;opacity:.94;max-width:720px;margin:0 auto}
+.badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 12px;font-size:.72rem;font-weight:600}
+.source-bar{
+  max-width:980px;margin:-18px auto 0;padding:0 14px;position:relative;z-index:2
+}
+.source-card{
+  background:#fff;border:2px solid var(--leaf);border-radius:16px;padding:14px 16px;
+  box-shadow:var(--shadow);display:grid;gap:10px
+}
+.source-card h2{font-family:"Fraunces",serif;font-size:1rem;color:var(--forest);margin-bottom:2px}
+.source-links{display:flex;flex-wrap:wrap;gap:8px}
+.src{
+  display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:10px;
+  background:#f0f7f2;border:1.5px solid var(--line);font-size:.78rem;font-weight:700;color:var(--forest)
+}
+.src:hover{background:#e0f2eb;text-decoration:none}
+.src.pdf{border-color:#c47a12;background:#fff8ed}
+.video-wrap{max-width:720px;margin:12px auto 0;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.25);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.video-wrap iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.tabs{
+  display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px 12px;
+  background:rgba(255,255,255,.95);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:40;
+  backdrop-filter:blur(8px)
+}
+.tab{padding:7px 11px;border-radius:999px;border:2px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;font-weight:700;background:#e8f0e6;color:#2a4035}
+.tab:hover,.tab.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+main{max-width:980px;margin:0 auto;padding:22px 14px 72px}
+.section{display:none}.section.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.section-title{font-family:"Fraunces",serif;font-size:1.12rem;color:var(--forest);border-left:4px solid var(--gold);padding-left:10px;margin:14px 0 10px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:15px 17px;margin-bottom:11px;box-shadow:var(--shadow)}
+.card h3,.card h4{font-family:"Fraunces",serif;color:var(--forest);margin-bottom:6px;font-size:.98rem}
+.card p,.card li{font-size:.87rem;line-height:1.65}
+.card ul{padding-left:18px;margin-top:6px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.stat{background:linear-gradient(180deg,#f6faf7,#fff);border:1.5px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+.stat b{display:block;font-family:"Fraunces",serif;font-size:1.15rem;color:var(--teal)}
+.stat span{font-size:.72rem;color:var(--muted);line-height:1.4}
+.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:10px}
+.path .p{border-radius:12px;padding:12px;border:2px solid var(--line);background:#fff}
+.path .p strong{color:var(--forest);font-size:.85rem}
+.bridge{border-left:4px solid var(--gold);padding-left:12px;margin:10px 0;font-size:.86rem}
+.bridge b{color:var(--forest)}
+.compare{overflow-x:auto;border-radius:12px;border:1px solid var(--line);margin:10px 0;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:520px;font-size:.78rem}
+th{background:linear-gradient(135deg,var(--forest),var(--teal));color:#fff;text-align:left;padding:8px 10px}
+td{padding:7px 10px;border-bottom:1px solid #e5ebe6;vertical-align:top;line-height:1.45}
+tr:nth-child(even) td{background:#f6faf7}
+.mcq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:9px}
+.mcq .q{font-weight:700;font-size:.86rem;margin-bottom:7px}
+.opt{background:#f4f7f5;border:2px solid transparent;border-radius:8px;padding:7px 10px;font-size:.82rem;cursor:pointer;margin-bottom:4px}
+.opt:hover{border-color:#7bc4a8}
+.opt.correct{background:#e8f5e9;border-color:#2e7d32;font-weight:700}
+.opt.wrong{background:#ffebee;border-color:#c62828}
+.exp{display:none;margin-top:7px;padding:8px;background:#fff4e0;border-radius:8px;font-size:.81rem}
+.exp.show{display:block}
+.cta{display:block;text-align:center;margin:16px 0;padding:14px;background:linear-gradient(135deg,var(--forest),var(--teal));color:#fff;border-radius:12px;font-weight:700}
+.cta:hover{color:#fff;text-decoration:none;opacity:.95}
+cite{font-size:.75rem;color:var(--muted);display:block;margin-top:8px}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24px}
+@media(max-width:700px){.tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.tab{white-space:nowrap}}
+</style>
+</head>
+<body class="theme-env">
+
+<a class="back" href="index.html">← Index</a>
+<a class="back" href="un_environment_architecture.html" style="margin-left:8px">🌿 Env MEAs</a>
+<a class="back" href="upsc_environment_mcqs_english.html" style="margin-left:8px">📋 Env MCQs</a>
+
+<header class="hero">
+  <div style="font-size:2.4rem">🌲</div>
+  <h1>SOFO 2026 — State of the World’s Forests</h1>
+  <p class="sub"><b>Restoring forests and landscapes: The way forward for a sustainable future</b><br>FAO flagship · Rome, 2026 · DOI <a href="https://doi.org/10.4060/ce0633en" style="color:#ffe7a3">10.4060/ce0633en</a></p>
+  <div class="badges">
+    <span class="badge">Forest &amp; landscape restoration (FLR)</span>
+    <span class="badge">UN Decade on Ecosystem Restoration</span>
+    <span class="badge">FRA 2025 data</span>
+    <span class="badge">4 pathways + 3 pillars</span>
+  </div>
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/iktcfWuS6lk" title="FAO SOFO 2026 — 5 minute overview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  </div>
+</header>
+
+<div class="source-bar">
+  <div class="source-card">
+    <h2>Official sources (open in browser)</h2>
+    <div class="source-links">
+      <a class="src" href="https://www.fao.org/publications/fao-flagship-publications/the-state-of-the-worlds-forests/en" target="_blank" rel="noopener">📘 FAO publication hub</a>
+      <a class="src" href="https://www.fao.org/interactive/2026/state-of-the-worlds-forests/en/" target="_blank" rel="noopener">🖥️ Interactive SOFO 2026</a>
+      <a class="src" href="https://www.youtube.com/watch?v=iktcfWuS6lk" target="_blank" rel="noopener">▶️ YouTube (5 min)</a>
+      <a class="src pdf" href="https://doi.org/10.4060/ce0633en" target="_blank" rel="noopener">⬇️ FAO PDF (DOI)</a>
+      <a class="src pdf" href="reports/sofo_2026_ce0633en.pdf" target="_blank" rel="noopener">📄 Local PDF copy</a>
+    </div>
+    <p style="font-size:.8rem;color:var(--muted);margin:0">Local file: <code>reports/sofo_2026_ce0633en.pdf</code> (same as FAO <code>ce0633en</code>). CC BY 4.0 — cite FAO 2026 when you use figures.</p>
+  </div>
+</div>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-tab="core">🎯 Core</button>
+  <button class="tab" data-tab="data">📊 Numbers</button>
+  <button class="tab" data-tab="pathways">🛤️ 4 pathways</button>
+  <button class="tab" data-tab="chapters">📑 Chapters</button>
+  <button class="tab" data-tab="india">🇮🇳 India</button>
+  <button class="tab" data-tab="bridge">🧭 Static bridge</button>
+  <button class="tab" data-tab="mcq">✅ MCQs</button>
+</nav>
+
+<main>
+  <section class="section active" id="core">
+    <h2 class="section-title">Why SOFO 2026 matters for UPSC</h2>
+    <div class="card">
+      <p>SOFO is FAO’s biennial flagship on forests. The <b>2026 edition</b> is timed to the second half of the <b>UN Decade on Ecosystem Restoration (2021–2030)</b> and uses fresh evidence from <b>Global Forest Resources Assessment (FRA) 2025</b>. Theme: scale up <b>high-quality forest and landscape restoration (FLR)</b> — not just hectares planted.</p>
+      <ul>
+        <li>Links <b>food insecurity, climate change, biodiversity loss, land degradation</b> through one integrated land approach.</li>
+        <li>Aligns with FAO’s <b>four betters</b> (production, nutrition, environment, life) and <b>SDGs</b>, <b>Rio conventions</b>, <b>KMGBF Target 2</b>.</li>
+        <li>Foreword: under favourable conditions, restoration can yield up to <b>USD 30 return per USD 1 invested</b>; cost of inaction is higher.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Core messages (report headline blocks)</h3>
+      <ul>
+        <li><b>Degradation intensifying</b> — ~1.56 billion ha land degraded globally; ~460 million ha forest lands; deforestation since 1990 ~489 million ha (rate slowing but loss continues).</li>
+        <li><b>Restoration essential</b> — close gap between commitments and impact; need ~<b>470 million ha</b> restored to meet 2030 targets (executive summary).</li>
+        <li><b>Strategic investment</b> — FLR = climate, biodiversity, food security, livelihoods; agroforestry &amp; agroecology as enablers.</li>
+        <li><b>People central</b> — Indigenous Peoples &amp; local communities; FPIC; rights-based governance; uneven benefit sharing.</li>
+        <li><b>Measurement gap</b> — reporting often counts <em>area</em>, not outcomes; fragmented metrics across Bonn Challenge, UNCCD, UNFCCC, CBD.</li>
+        <li><b>Quality over quantity</b> — standards-based restoration; long-term management after initial intervention.</li>
+      </ul>
+      <cite>Source: SOFO 2026 core messages &amp; foreword (FAO, ce0633en).</cite>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><b>4.14 bn ha</b><span>Forest cover (~32% land)</span></div>
+      <div class="stat"><b>714 Gt</b><span>Carbon stored in forests</span></div>
+      <div class="stat"><b>~80%</b><span>Terrestrial biodiversity in forests</span></div>
+      <div class="stat"><b>44 M ha</b><span>Forest under restoration (FRA 2025)</span></div>
+      <div class="stat"><b>206 M ha</b><span>Towards KMGBF Target 2 (terrestrial)</span></div>
+      <div class="stat"><b>1 bn+ ha</b><span>Pledged under restoration initiatives (20 yrs)</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="data">
+    <h2 class="section-title">Headline numbers to remember</h2>
+    <div class="compare">
+      <table>
+        <tr><th>Indicator</th><th>Figure</th><th>Exam hook</th></tr>
+        <tr><td>Global forest area</td><td>4.14 billion ha</td><td>FRA 2025; ~32% of land</td></tr>
+        <tr><td>Land degraded</td><td>1.56 billion ha</td><td>Includes 460 M ha forest lands</td></tr>
+        <tr><td>Annual fire-affected forest</td><td>~127 million ha</td><td>Disturbances rising</td></tr>
+        <tr><td>Gap to 2030 restoration need</td><td>~470 million ha</td><td>Core message — ambition vs delivery</td></tr>
+        <tr><td>Bonn Challenge goal</td><td>350 M ha by 2030</td><td>Landscape-scale FLR</td></tr>
+        <tr><td>Top pledge countries (BC)</td><td>China, India, Ethiopia…</td><td>India ~26 M ha commitment (report)</td></tr>
+        <tr><td>Reported under restoration (FRA)</td><td>India ~9.8 M ha (largest)</td><td>With China, Ethiopia, Indonesia, Türkiye ≈70% of reported total</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Concepts (Ch. 1)</h3>
+      <p><b>FLR</b> works at landscape scale — mosaic of uses, balances conservation &amp; production. Sits on a <b>restoration continuum</b> from reducing societal impacts → full ecological restoration. Distinct from but related to <b>ecosystem restoration</b> (UN Decade) and targeted <b>afforestation/reforestation</b>.</p>
+      <p><b>GPFLR</b> (Global Partnership on Forest and Landscape Restoration) six principles; <b>FERM</b> = Framework for Ecosystem Restoration Monitoring; <b>ROAM</b> = Restoration Opportunities Assessment Methodology.</p>
+    </div>
+  </section>
+
+  <section class="section" id="pathways">
+    <h2 class="section-title">Four pathways (Ch. 4) — weave together</h2>
+    <p style="font-size:.86rem;color:var(--muted);margin-bottom:10px">SOFO 2026: focusing on one pathway alone creates gaps in inclusiveness, efficiency, sustainability.</p>
+    <div class="path">
+      <div class="p"><strong>1. People</strong><br>Rights, meaningful engagement, Indigenous Peoples as rights-holders, local knowledge, FPIC, legitimate governance.</div>
+      <div class="p"><strong>2. Land</strong><br>Multifunctional landscapes; spatial prioritization; conservation + production + livelihoods; inland waters linked to forests.</div>
+      <div class="p"><strong>3. Finance &amp; business</strong><br>Long-term, risk-appropriate finance; public + private; local mechanisms; restoration seed capital; bankable models.</div>
+      <div class="p"><strong>4. Policy coherence &amp; law</strong><br>Land tenure, aligned fiscal incentives, cross-sector coordination (climate, biodiversity, land use, agrifood).</div>
+    </div>
+    <div class="card" style="margin-top:12px">
+      <h3>Three pillars (Ch. 5) for scale-up</h3>
+      <ul>
+        <li><b>Knowledge</b> — science + traditional knowledge; good-practice sharing (UN Decade).</li>
+        <li><b>Standards &amp; capacity</b> — quality FLR, not vanity hectares.</li>
+        <li><b>Monitoring &amp; adaptive learning</b> — harmonized reporting; FERM; Target 2 road map (CBD).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="chapters">
+    <h2 class="section-title">Report map (5 chapters + cases)</h2>
+    <div class="card">
+      <ul>
+        <li><b>Ch. 1</b> — 2020–2030 context: degradation, FLR concepts, global commitments (SDGs, Rio, KMGBF, UN Decade).</li>
+        <li><b>Ch. 2</b> — Commitments → progress: FRA 2025, UNCCD, NDCs, NBSAPs, Bonn Challenge, legal/policy frameworks.</li>
+        <li><b>Ch. 3</b> — Costs &amp; benefits of FLR investments (NbS / ecosystem-based approaches).</li>
+        <li><b>Ch. 4</b> — Four pathways in practice (people, land, finance, policy).</li>
+        <li><b>Ch. 5</b> — Knowledge, standards, monitoring for transformative FLR.</li>
+      </ul>
+      <p style="margin-top:8px"><b>Case studies</b> include Great Green Wall (Sahel), China’s Green Great Wall, EU Nature Restoration Regulation, community restoration (Kenya, Senegal, Zimbabwe), India-related multifunctional landscape examples, Great Green Wall for Sahel, etc.</p>
+    </div>
+    <a class="cta" href="https://www.fao.org/interactive/2026/state-of-the-worlds-forests/en/" target="_blank" rel="noopener">Explore interactive SOFO 2026 →</a>
+  </section>
+
+  <section class="section" id="india">
+    <h2 class="section-title">India lens (from SOFO 2026 / FRA 2025)</h2>
+    <div class="card">
+      <ul>
+        <li><b>~26 million ha</b> — among largest <b>Bonn Challenge</b> forest restoration commitments (top tier with China, Ethiopia).</li>
+        <li><b>~9.8 million ha</b> reported under restoration in <b>FRA 2025</b> — highest national figure in the dataset cited (with China, Ethiopia, Indonesia, Türkiye dominating global reported area).</li>
+        <li>Asia leads <b>reported restoration area</b> (~31 M ha regionally in FRA 2025 table narrative).</li>
+        <li>Bridge to static: <b>National Forest Policy</b>, <b>CAMPA</b>, <b>Green India Mission</b>, <b>UNCCD LDN</b>, <b>India’s NDC</b> (forest carbon sink), <b>KMGBF</b> national targets, <b>Joint Forest Management</b> / community forestry, <b>Agroforestry</b> policy.</li>
+      </ul>
+      <p class="bridge"><b>Trap:</b> Large <em>pledges</em> ≠ automatic net forest gain — SOFO stresses concurrent deforestation/degradation and need for quality &amp; tenure.</p>
+    </div>
+  </section>
+
+  <section class="section" id="bridge">
+    <h2 class="section-title">Static + current bridges (Prelims / Mains)</h2>
+    <div class="card">
+      <div class="bridge"><b>FAO</b> — HQ Rome; SOFO series; FRA every ~5 years; Agricola Medal (India PM 2026 news elsewhere).</div>
+      <div class="bridge"><b>UN Decade on Ecosystem Restoration</b> — 2021–2030 (UNGA); SOFO 2026 = forest slice of decade.</div>
+      <div class="bridge"><b>Bonn Challenge</b> — 150 M ha by 2020 → <b>350 M ha by 2030</b>; launched Germany 2011; AFR100, Initiative 20x20, RESULT Asia-Pacific.</div>
+      <div class="bridge"><b>KMGBF Target 2</b> — 30% degraded ecosystems under effective restoration by 2030 (CBD COP15 Montreal 2022).</div>
+      <div class="bridge"><b>UNCCD</b> — Land degradation neutrality (LDN); SOFO uses national reporting.</div>
+      <div class="bridge"><b>UNFCCC</b> — NDC forest / LULUCF measures; restoration mitigation in annex analysis.</div>
+      <div class="bridge"><b>India schemes</b> — MoEFCC; Forest Survey of India (ISFR biennial — pair with FRA globally); Nagar van / urban forests; MISHTI (mangroves) in policy discourse.</div>
+      <div class="bridge"><b>Mains GS3</b> — “Restoration vs afforestation”, tenure &amp; tribal rights (FRA 2006), climate justice, green finance, disaster resilience (fires).</div>
+    </div>
+    <a class="cta" href="upsc_environment_mcqs_english.html">Environment conventions &amp; MCQ bank →</a>
+  </section>
+
+  <section class="section" id="mcq">
+    <h2 class="section-title">Quick check (tap options)</h2>
+    <div class="mcq" data-a="1">
+      <div class="q">SOFO 2026 thematic focus is primarily:</div>
+      <div class="opt" data-i="0">Global trade in timber products</div>
+      <div class="opt" data-i="1">Forest and landscape restoration at scale</div>
+      <div class="opt" data-i="2">Marine blue carbon only</div>
+      <div class="opt" data-i="3">Ozone layer recovery</div>
+      <div class="exp"><b>Answer: (b)</b> Subtitle: “Restoring forests and landscapes…”</div>
+    </div>
+    <div class="mcq" data-a="2">
+      <div class="q">Which is NOT one of the four SOFO 2026 implementation pathways?</div>
+      <div class="opt" data-i="0">People</div>
+      <div class="opt" data-i="1">Land</div>
+      <div class="opt" data-i="2">Finance and business</div>
+      <div class="opt" data-i="3">Nuclear energy</div>
+      <div class="exp"><b>Answer: (d)</b> Fourth pathway is policy coherence &amp; law.</div>
+    </div>
+    <div class="mcq" data-a="1">
+      <div class="q">Bonn Challenge global restoration target for 2030 is approximately:</div>
+      <div class="opt" data-i="0">100 million ha</div>
+      <div class="opt" data-i="1">350 million ha</div>
+      <div class="opt" data-i="2">1 billion ha</div>
+      <div class="opt" data-i="3">50 million ha</div>
+      <div class="exp"><b>Answer: (b)</b> 350 M ha by 2030 (SOFO Ch. 2).</div>
+    </div>
+    <div class="mcq" data-a="0">
+      <div class="q">SOFO 2026 draws heavily on which FAO assessment cycle?</div>
+      <div class="opt" data-i="0">FRA 2025</div>
+      <div class="opt" data-i="1">FRA 2010</div>
+      <div class="opt" data-i="2">SOFA 2024 only</div>
+      <div class="opt" data-i="3">Hand-in-Hand Initiative 2019</div>
+      <div class="exp"><b>Answer: (a)</b> Methodology section — FRA 2025 core evidence.</div>
+    </div>
+  </section>
+</main>
+
+<footer>CA Notes · SOFO 2026 · FAO ce0633en · Static + current bridge · Not an official FAO product</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.tab).classList.add('active');
+  });
+});
+document.querySelectorAll('.mcq').forEach(box=>{
+  const ans=+box.dataset.a;
+  box.querySelectorAll('.opt').forEach(o=>{
+    o.addEventListener('click',()=>{
+      box.querySelectorAll('.opt').forEach(x=>x.classList.remove('correct','wrong'));
+      const i=+o.dataset.i;
+      o.classList.add(i===ans?'correct':'wrong');
+      if(i!==ans) box.querySelector(`.opt[data-i="${ans}"]`)?.classList.add('correct');
+      box.querySelector('.exp')?.classList.add('show');
+    });
+  });
+});
+</script>
+</body>
+</html>
