@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LPR 2026 | WWF Living Planet Report | UPSC Environment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ca-flowcharts.css?v=14">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#14231c;--muted:#5a6b62;--paper:#eef4ef;
+  --forest:#1b5e45;--teal:#0d7a6f;--leaf:#2f9e6b;--gold:#c47a12;
+  --card:#fff;--line:#d5e0d8;--panda:#1a6b3c;--shadow:0 10px 28px rgba(20,35,28,.08);
+}
+body{font-family:"Sora",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+a{color:var(--teal);font-weight:600;text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-flex;margin:12px 16px 0;font-size:.82rem}
+.hero{
+  background:linear-gradient(135deg,#0a3d24,#1a6b3c 45%,#2d8a4e 75%,#0d7a6f);
+  color:#fff;text-align:center;padding:36px 16px 28px
+}
+.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.35rem,4vw,2.2rem);margin:8px 0 4px}
+.hero .sub{font-size:.92rem;opacity:.94;max-width:720px;margin:0 auto}
+.badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 12px;font-size:.72rem;font-weight:600}
+.source-bar{max-width:980px;margin:-18px auto 0;padding:0 14px;position:relative;z-index:2}
+.source-card{
+  background:#fff;border:2px solid var(--leaf);border-radius:16px;padding:14px 16px;
+  box-shadow:var(--shadow);display:grid;gap:10px
+}
+.source-card h2{font-family:"Fraunces",serif;font-size:1rem;color:var(--forest);margin-bottom:2px}
+.source-links{display:flex;flex-wrap:wrap;gap:8px}
+.src{
+  display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:10px;
+  background:#f0f7f2;border:1.5px solid var(--line);font-size:.78rem;font-weight:700;color:var(--forest)
+}
+.src:hover{background:#e0f2eb;text-decoration:none}
+.src.pdf{border-color:#c47a12;background:#fff8ed}
+.tabs{
+  display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px 12px;
+  background:rgba(255,255,255,.95);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:40;
+  backdrop-filter:blur(8px)
+}
+.tab{padding:7px 11px;border-radius:999px;border:2px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;font-weight:700;background:#e8f0e6;color:#2a4035}
+.tab:hover,.tab.active{background:var(--panda);color:#fff;border-color:var(--panda)}
+main{max-width:980px;margin:0 auto;padding:22px 14px 72px}
+.section{display:none}.section.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.section-title{font-family:"Fraunces",serif;font-size:1.12rem;color:var(--forest);border-left:4px solid var(--gold);padding-left:10px;margin:14px 0 10px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:15px 17px;margin-bottom:11px;box-shadow:var(--shadow)}
+.card h3{font-family:"Fraunces",serif;color:var(--forest);margin-bottom:6px;font-size:.98rem}
+.card p,.card li{font-size:.87rem;line-height:1.65}
+.card ul{padding-left:18px;margin-top:6px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.stat{background:linear-gradient(180deg,#f6faf7,#fff);border:1.5px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+.stat b{display:block;font-family:"Fraunces",serif;font-size:1.05rem;color:var(--teal)}
+.stat span{font-size:.72rem;color:var(--muted);line-height:1.4}
+.path{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:10px}
+.path .p{border-radius:12px;padding:12px;border:2px solid var(--line);background:#fff}
+.path .p strong{color:var(--forest);font-size:.85rem}
+.bridge{border-left:4px solid var(--gold);padding-left:12px;margin:10px 0;font-size:.86rem}
+.bridge b{color:var(--forest)}
+.compare{overflow-x:auto;border-radius:12px;border:1px solid var(--line);margin:10px 0;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:520px;font-size:.78rem}
+th{background:linear-gradient(135deg,#0a3d24,var(--panda));color:#fff;text-align:left;padding:8px 10px}
+td{padding:7px 10px;border-bottom:1px solid #e5ebe6;vertical-align:top;line-height:1.45}
+tr:nth-child(even) td{background:#f6faf7}
+.mcq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:9px}
+.mcq .q{font-weight:700;font-size:.86rem;margin-bottom:7px}
+.opt{background:#f4f7f5;border:2px solid transparent;border-radius:8px;padding:7px 10px;font-size:.82rem;cursor:pointer;margin-bottom:4px}
+.opt:hover{border-color:#7bc4a8}
+.opt.correct{background:#e8f5e9;border-color:#2e7d32;font-weight:700}
+.opt.wrong{background:#ffebee;border-color:#c62828}
+.exp{display:none;margin-top:7px;padding:8px;background:#fff4e0;border-radius:8px;font-size:.81rem}
+.exp.show{display:block}
+.cta{display:block;text-align:center;margin:16px 0;padding:14px;background:linear-gradient(135deg,#0a3d24,var(--panda));color:#fff;border-radius:12px;font-weight:700}
+.cta:hover{color:#fff;text-decoration:none;opacity:.95}
+cite{font-size:.75rem;color:var(--muted);display:block;margin-top:8px}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24px}
+@media(max-width:700px){.tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.tab{white-space:nowrap}}
+</style>
+</head>
+<body class="theme-env">
+
+<a class="back" href="index.html#reports-env">← Environment reports</a>
+<a class="back" href="sofo_2026_fao_forests.html" style="margin-left:8px">🌲 SOFO 2026</a>
+<a class="back" href="upsc_environment_mcqs_english.html" style="margin-left:8px">📋 Env MCQs</a>
+
+<header class="hero">
+  <div style="font-size:2.4rem">🐼</div>
+  <h1>Living Planet Report 2026</h1>
+  <p class="sub"><b>The Science of Hope</b> — WWF flagship (with ZSL Living Planet Index) · Published 2026</p>
+  <div class="badges">
+    <span class="badge">LPI 1970–2022</span>
+    <span class="badge">Positive tipping points</span>
+    <span class="badge">Food · Energy · Finance systems</span>
+    <span class="badge">GBF implementation</span>
+  </div>
+</header>
+
+<div class="source-bar">
+  <div class="source-card">
+    <h2>Official sources</h2>
+    <div class="source-links">
+      <a class="src" href="https://livingplanet.panda.org/en-GB/" target="_blank" rel="noopener">🌐 LPR 2026 hub</a>
+      <a class="src" href="https://www.worldwildlife.org/our-work/wildlife/wwfs-living-planet-report/" target="_blank" rel="noopener">WWF International</a>
+      <a class="src pdf" href="https://wwflpr.awsassets.panda.org/downloads/living-planet-report-2026-english.pdf" target="_blank" rel="noopener">⬇️ WWF PDF (CDN)</a>
+      <a class="src pdf" href="reports/lpr_2026_living_planet_report.pdf" target="_blank" rel="noopener">📄 Local PDF copy</a>
+    </div>
+    <p style="font-size:.8rem;color:var(--muted);margin:0">Local: <code>reports/lpr_2026_living_planet_report.pdf</code> (full report, Sept 2026 build). LPI data: ZSL + WWF.</p>
+  </div>
+</div>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-tab="core">🎯 Core</button>
+  <button class="tab" data-tab="lpi">📉 LPI data</button>
+  <button class="tab" data-tab="hope">💡 Hope &amp; tipping</button>
+  <button class="tab" data-tab="systems">⚙️ Systems</button>
+  <button class="tab" data-tab="bridge">🧭 Static bridge</button>
+  <button class="tab" data-tab="mcq">✅ MCQs</button>
+</nav>
+
+<main>
+  <section class="section active" id="core">
+    <h2 class="section-title">Why LPR 2026 matters for UPSC</h2>
+    <div class="card">
+      <p>Biennial WWF science flagship (since 1998). <b>2026 edition</b> reframes the narrative: wildlife loss remains severe, but <b>recovery is observable</b> when conservation and system change align — “science of hope”, not denial of crisis.</p>
+      <ul>
+        <li><b>Living Planet Index (LPI)</b> — average change in size of monitored <b>vertebrate</b> populations (not total headcount of all wild animals).</li>
+        <li>Managed collaboratively by <b>Zoological Society of London (ZSL)</b> and WWF.</li>
+        <li>Links biodiversity loss to <b>food, energy, finance</b> — same drivers as climate &amp; land degradation.</li>
+        <li>Aligns with <b>Kunming–Montreal Global Biodiversity Framework (GBF)</b> and need to trigger <b>positive tipping points</b> before 2030 goals slip.</li>
+      </ul>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><b>−73.2%</b><span>Global LPI 1970–2022 (avg. pop. size)</span></div>
+      <div class="stat"><b>35,803</b><span>Populations tracked</span></div>
+      <div class="stat"><b>5,790</b><span>Vertebrate species</span></div>
+      <div class="stat"><b>~2.5%/yr</b><span>Average annual decline (global)</span></div>
+    </div>
+    <div class="card">
+      <h3>Report structure (5 parts)</h3>
+      <ul>
+        <li><b>1</b> — Measuring nature’s trends (LPI, regional &amp; ecosystem breakdowns).</li>
+        <li><b>2</b> — Power of hope (resilience, equity in hope, case studies).</li>
+        <li><b>3</b> — Positive tipping points (S-curve phases, cascades).</li>
+        <li><b>4</b> — Tipping <b>energy</b>, <b>food &amp; agriculture</b>, <b>finance</b> systems that drive loss.</li>
+        <li><b>5</b> — Aligning global action (GBF, differentiated commitments, monitoring).</li>
+      </ul>
+      <cite>Source: LPR 2026 table of contents &amp; executive summary.</cite>
+    </div>
+  </section>
+
+  <section class="section" id="lpi">
+    <h2 class="section-title">Living Planet Index — numbers to quote carefully</h2>
+    <div class="card">
+      <p><b>Trap for Prelims:</b> “73% decline” means monitored populations are, on average, <b>73% smaller</b> than their 1970 baseline — <em>not</em> “73% of all wildlife individuals on Earth have disappeared.”</p>
+    </div>
+    <div class="compare">
+      <table>
+        <tr><th>Index</th><th>1970–2022 change</th><th>Note</th></tr>
+        <tr><td>Global (all)</td><td>−73.2% (range −78% to −67%)</td><td>Headline figure · ~2.5% annual</td></tr>
+        <tr><td>Freshwater</td><td>−85% (range −90% to −77%)</td><td>~3.6% annual · river-basin pressures</td></tr>
+        <tr><td>Terrestrial</td><td>−69% (range −78% to −57%)</td><td>Habitat change leading driver</td></tr>
+        <tr><td>Marine</td><td>−59% (range −69% to −48%)</td><td>Fisheries &amp; ocean pressures</td></tr>
+        <tr><td>Latin America &amp; Caribbean</td><td>−95% (range −97% to −91%)</td><td>Fastest regional decline since 1970</td></tr>
+        <tr><td>Africa</td><td>−80% (range −91% to …)</td><td>Regional LPI (IPBES Africa grouping)</td></tr>
+        <tr><td>North America</td><td>−28%</td><td>Canada + US populations in index</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>Recovery examples (hope chapter)</h3>
+      <p>Report highlights species/system recoveries when policy + finance persist — e.g. <b>tigers</b>, <b>tuna</b>, <b>southern African elephants</b>, <b>green sea turtle</b> (IUCN status improvements in cited cases). Use as “conservation works at scale” evidence in Mains GS3.</p>
+    </div>
+  </section>
+
+  <section class="section" id="hope">
+    <h2 class="section-title">Hope &amp; positive tipping points</h2>
+    <div class="card">
+      <p><b>Positive tipping point</b> — when a social-ecological system crosses a threshold into a <b>self-reinforcing better trajectory</b> (e.g. renewables S-curve acceleration). Contrasts with negative tipping (e.g. ice melt, dieback).</p>
+      <ul>
+        <li><b>S-curve phases:</b> emergence → acceleration → stabilisation.</li>
+        <li><b>Cascades:</b> change in one sector (energy) can unlock food/finance shifts.</li>
+        <li><b>Equity:</b> report stresses hope must be accessible — Indigenous Peoples &amp; local communities not sidelined.</li>
+      </ul>
+    </div>
+    <div class="path">
+      <div class="p"><strong>Near threshold</strong><br>Small wins, pilot policies, falling clean-tech costs.</div>
+      <div class="p"><strong>Acceleration</strong><br>Majority adoption; fossil/incumbent systems displaced.</div>
+      <div class="p"><strong>Stabilisation</strong><br>New normal governed &amp; financed for durability.</div>
+    </div>
+    <a class="cta" href="https://livingplanet.panda.org/en-GB/" target="_blank" rel="noopener">Interactive LPR 2026 hub →</a>
+  </section>
+
+  <section class="section" id="systems">
+    <h2 class="section-title">Systems driving loss (Ch. 4)</h2>
+    <div class="card">
+      <ul>
+        <li><b>Energy</b> — track transition along S-curve; leverage points; governance of transition.</li>
+        <li><b>Food &amp; agriculture</b> — dominant land-use driver of terrestrial decline; dietary &amp; supply-chain shifts.</li>
+        <li><b>Finance</b> — align capital with nature-positive outcomes; tipping in financial rules.</li>
+      </ul>
+      <p style="margin-top:8px"><b>GBF (COP15, 2022)</b> — LPR 2025/26 frames 2030 targets as requiring whole-of-society tipping, not species-by-species rescue alone.</p>
+    </div>
+    <div class="card">
+      <h3>Pair with SOFO 2026</h3>
+      <p>SOFO = forest &amp; landscape restoration (FAO/FRA). LPR = global biodiversity trend + system transformation. Both stress <b>2030</b> window and <b>land/food/climate</b> nexus.</p>
+      <a class="cta" href="sofo_2026_fao_forests.html" style="margin-top:10px">Open SOFO 2026 note →</a>
+    </div>
+  </section>
+
+  <section class="section" id="bridge">
+    <h2 class="section-title">Static + current bridges</h2>
+    <div class="card">
+      <div class="bridge"><b>LPI</b> — ZSL + WWF; vertebrate populations only; baseline year 1970.</div>
+      <div class="bridge"><b>IPBES</b> — regional grouping for LPI trends follows IPBES regions (compare reports).</div>
+      <div class="bridge"><b>CBD / GBF</b> — 23 targets Montreal 2022; Target 2 restoration links to SOFO/KMGBF discourse.</div>
+      <div class="bridge"><b>IUCN Red List</b> — complementary (extinction risk) vs LPI (population trends).</div>
+      <div class="bridge"><b>India</b> — Project Tiger, ETIS, marine turtle conservation, renewable scale-up — map report case studies to MoEFCC / MNRE policies in Mains.</div>
+      <div class="bridge"><b>Trap</b> — LPR ≠ FAO SOFO ≠ ISFR (India biennial forest cover) — different metrics, don’t mix headlines.</div>
+    </div>
+    <a class="cta" href="un_environment_architecture.html">UN environment architecture →</a>
+  </section>
+
+  <section class="section" id="mcq">
+    <h2 class="section-title">Quick check</h2>
+    <div class="mcq" data-a="1">
+      <div class="q">Living Planet Index primarily tracks:</div>
+      <div class="opt" data-i="0">Total biomass of all species including plants</div>
+      <div class="opt" data-i="1">Average change in vertebrate population sizes since 1970</div>
+      <div class="opt" data-i="2">Annual deforestation hectares only</div>
+      <div class="opt" data-i="3">Atmospheric CO₂ ppm</div>
+      <div class="exp"><b>Answer: (b)</b> LPI = monitored vertebrate populations (ZSL/WWF).</div>
+    </div>
+    <div class="mcq" data-a="0">
+      <div class="q">LPR 2026 global LPI decline (1970–2022) is approximately:</div>
+      <div class="opt" data-i="0">73%</div>
+      <div class="opt" data-i="1">30%</div>
+      <div class="opt" data-i="2">50% (half Earth)</div>
+      <div class="opt" data-i="3">90% of all individual animals gone</div>
+      <div class="exp"><b>Answer: (a)</b> 73.2% average population size decline — interpret carefully.</div>
+    </div>
+    <div class="mcq" data-a="2">
+      <div class="q">Which ecosystem LPI shows the steepest decline in LPR 2026?</div>
+      <div class="opt" data-i="0">Marine</div>
+      <div class="opt" data-i="1">Terrestrial</div>
+      <div class="opt" data-i="2">Freshwater</div>
+      <div class="opt" data-i="3">All equal</div>
+      <div class="exp"><b>Answer: (c)</b> Freshwater ~85% decline (report ecosystem breakdown).</div>
+    </div>
+    <div class="mcq" data-a="1">
+      <div class="q">LPI is co-managed by WWF with:</div>
+      <div class="opt" data-i="0">FAO</div>
+      <div class="opt" data-i="1">Zoological Society of London (ZSL)</div>
+      <div class="opt" data-i="2">UNEP only</div>
+      <div class="opt" data-i="3">IPCC</div>
+      <div class="exp"><b>Answer: (b)</b> ZSL hosts LPI methodology with WWF.</div>
+    </div>
+  </section>
+</main>
+
+<footer>CA Notes · LPR 2026 · WWF/ZSL · Study aid — not an official WWF product</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.tab).classList.add('active');
+  });
+});
+document.querySelectorAll('.mcq').forEach(box=>{
+  const ans=+box.dataset.a;
+  box.querySelectorAll('.opt').forEach(o=>{
+    o.addEventListener('click',()=>{
+      box.querySelectorAll('.opt').forEach(x=>x.classList.remove('correct','wrong'));
+      const i=+o.dataset.i;
+      o.classList.add(i===ans?'correct':'wrong');
+      if(i!==ans) box.querySelector(`.opt[data-i="${ans}"]`)?.classList.add('correct');
+      box.querySelector('.exp')?.classList.add('show');
+    });
+  });
+});
+</script>
+</body>
+</html>

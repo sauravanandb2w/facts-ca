@@ -266,6 +266,63 @@
   .home-sub:disabled { opacity: .5; cursor: not-allowed; border-left-color: var(--line); }
   .home-sub small { font-size: .72rem; font-weight: 500; color: var(--muted); }
 
+  .track-tabs {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    margin: 0 0 14px;
+  }
+  .track-tab {
+    appearance: none; border: 1px solid var(--line); cursor: pointer;
+    font: inherit; font-weight: 700; font-size: .88rem;
+    padding: 11px 12px; border-radius: 12px;
+    background: #fff; color: var(--muted);
+    transition: background .2s, color .2s, border-color .2s;
+  }
+  .track-tab:hover { color: var(--forest); border-color: #9fc9b3; background: var(--sand); }
+  .track-tab.active {
+    background: linear-gradient(135deg, var(--forest), var(--teal));
+    color: #fff; border-color: transparent;
+    box-shadow: 0 6px 16px rgba(27,94,69,.22);
+  }
+  .track-panel { display: none; }
+  .track-panel.active { display: block; animation: fadeUp .3s ease; }
+
+  .reports-intro {
+    font-size: .82rem; color: var(--muted); line-height: 1.5; margin-bottom: 12px;
+  }
+  .report-subject-tabs {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
+  }
+  .report-subject-tab {
+    appearance: none; border: 1px solid var(--line); cursor: pointer;
+    font: inherit; font-weight: 600; font-size: .76rem;
+    padding: 8px 12px; border-radius: 999px; background: #fff; color: var(--muted);
+  }
+  .report-subject-tab:hover { border-color: var(--teal); color: var(--forest); }
+  .report-subject-tab.active {
+    background: var(--forest); color: #fff; border-color: var(--forest);
+  }
+  .report-subject-panel { display: none; }
+  .report-subject-panel.active { display: block; }
+  a.report-card {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px 16px; border-radius: 14px; text-decoration: none; color: var(--ink);
+    border: 1px solid var(--line); background: #fff; margin-bottom: 10px;
+    transition: border-color .15s, box-shadow .15s, transform .15s;
+  }
+  a.report-card:hover {
+    border-color: var(--teal); box-shadow: 0 8px 20px rgba(15,45,30,.08); transform: translateY(-1px);
+  }
+  .report-card .rc-icon {
+    flex: none; width: 42px; height: 42px; border-radius: 12px;
+    display: grid; place-items: center; font-size: 1.2rem; background: var(--sand);
+  }
+  .report-card strong { display: block; font-size: .9rem; color: var(--forest); margin-bottom: 2px; }
+  .report-card span { font-size: .75rem; color: var(--muted); line-height: 1.4; }
+  .report-empty {
+    padding: 20px; text-align: center; color: var(--muted); font-size: .85rem;
+    border: 1px dashed #b8cbbd; border-radius: 12px; background: #fafcf9;
+  }
+
   .panel { display: none; animation: fadeUp .35s ease; }
   .panel.active { display: block; }
   @keyframes fadeUp {
@@ -600,9 +657,15 @@
       <summary>
         <span class="acc-icon">🧭</span>
         <span class="acc-title"><strong>UPSC — Static + Current Bridges</strong><span>Prelims/Mains static modules</span></span>
-        <span class="acc-count">5-layer IO index + modules</span>
+        <span class="acc-count">Modules + subject reports</span>
       </summary>
-      <div class="home-acc-body">
+      <div class="home-acc-body" id="upsc-bridge">
+        <div class="track-tabs" role="tablist" aria-label="UPSC track views">
+          <button type="button" class="track-tab active" data-track-panel="upsc-modules">📚 Modules</button>
+          <button type="button" class="track-tab" data-track-panel="upsc-reports">📄 Reports</button>
+        </div>
+
+        <div id="upsc-modules" class="track-panel active">
         <div class="io-layer-block" id="io-layer-table">
           <h3>🗺️ International organisations — 5 layers</h3>
           <p class="io-layer-lead">Study order left to right. <a href="un_system_master.html#hub">UN Master site map</a> · <a href="un_system_master.html#groups">5 UN regional groups</a> (election caucuses, not G20).</p>
@@ -616,11 +679,6 @@
               <span class="io-layer-n">L2</span>
               <strong>Environment architecture</strong>
               <small>UNEP · COP · treaty mega table</small>
-            </a>
-            <a class="io-layer-card" href="sofo_2026_fao_forests.html" style="grid-column:span 2;max-width:100%">
-              <span class="io-layer-n">🌲</span>
-              <strong>SOFO 2026 (FAO forests)</strong>
-              <small>FLR · interactive · video · PDF · India data</small>
             </a>
             <a class="io-layer-card" href="international_organisations.html">
               <span class="io-layer-n">L3</span>
@@ -642,7 +700,45 @@
         </div>
         <div class="home-sub-grid" style="margin-top:14px">
           <a class="home-sub" href="polity_mini_constitution.html?v=20261017c">Polity mini-Constitution <small>Mnemonics · Parts · Schedules · drawer</small></a>
-          <button class="home-sub" type="button" disabled>Economy <small>Reports</small> <span class="soon">Soon</span></button>
+        </div>
+        </div>
+
+        <div id="upsc-reports" class="track-panel">
+          <p class="reports-intro">Flagship global reports by GS subject — revision notes, official links, and local PDF copies. Start with <b>Environment</b>; other subjects fill in over time.</p>
+          <div class="report-subject-tabs" role="tablist" aria-label="Report subjects">
+            <button type="button" class="report-subject-tab active" data-report-subject="env">🌿 Environment</button>
+            <button type="button" class="report-subject-tab" data-report-subject="economy">💰 Economy</button>
+            <button type="button" class="report-subject-tab" data-report-subject="polity">⚖️ Polity</button>
+            <button type="button" class="report-subject-tab" data-report-subject="geo">🗺️ Geography</button>
+            <button type="button" class="report-subject-tab" data-report-subject="sci">🔬 Sci &amp; tech</button>
+            <button type="button" class="report-subject-tab" data-report-subject="soc">👥 Society</button>
+          </div>
+
+          <div class="report-subject-panel active" id="reports-env" data-report-subject="env">
+            <a class="report-card" href="sofo_2026_fao_forests.html">
+              <span class="rc-icon">🌲</span>
+              <div><strong>SOFO 2026 — State of the World’s Forests (FAO)</strong><span>FLR · FRA 2025 · 4 pathways · interactive · video · PDF</span></div>
+            </a>
+            <a class="report-card" href="lpr_2026_living_planet.html">
+              <span class="rc-icon">🐼</span>
+              <div><strong>Living Planet Report 2026 (WWF / ZSL)</strong><span>LPI −73% · freshwater/terrestrial/marine · positive tipping points · PDF</span></div>
+            </a>
+          </div>
+          <div class="report-subject-panel" id="reports-economy" data-report-subject="economy">
+            <div class="report-empty">World Bank <em>Global Economic Prospects</em>, IMF WEO, Economic Survey — queued next.</div>
+          </div>
+          <div class="report-subject-panel" id="reports-polity" data-report-subject="polity">
+            <div class="report-empty">ADR / governance indices (V-Dem, Freedom House) — queued next.</div>
+          </div>
+          <div class="report-subject-panel" id="reports-geo" data-report-subject="geo">
+            <div class="report-empty">WMO State of Climate, IPCC synthesis — queued next.</div>
+          </div>
+          <div class="report-subject-panel" id="reports-sci" data-report-subject="sci">
+            <div class="report-empty">UNESCO Science Report, ITU facts — queued next.</div>
+          </div>
+          <div class="report-subject-panel" id="reports-soc" data-report-subject="soc">
+            <div class="report-empty">UNDP Human Development Report, WHO world health stats — queued next.</div>
+          </div>
         </div>
       </div>
     </details>
@@ -763,5 +859,39 @@
 
 <footer>Parcham Classes · CA Facts Sheet · Updated Oct 2026</footer>
 
+<script>
+(function () {
+  function activateTrack(panelId) {
+    document.querySelectorAll('#upsc-bridge .track-tab').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.trackPanel === panelId);
+    });
+    document.querySelectorAll('#upsc-bridge .track-panel').forEach(function (p) {
+      p.classList.toggle('active', p.id === panelId);
+    });
+  }
+  function activateReportSubject(key) {
+    document.querySelectorAll('.report-subject-tab').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.reportSubject === key);
+    });
+    document.querySelectorAll('.report-subject-panel').forEach(function (p) {
+      p.classList.toggle('active', p.dataset.reportSubject === key);
+    });
+  }
+  document.querySelectorAll('#upsc-bridge .track-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () { activateTrack(btn.dataset.trackPanel); });
+  });
+  document.querySelectorAll('.report-subject-tab').forEach(function (btn) {
+    btn.addEventListener('click', function () { activateReportSubject(btn.dataset.reportSubject); });
+  });
+  var hash = (location.hash || '').replace(/^#/, '');
+  if (hash.indexOf('reports') === 0) {
+    var upsc = document.querySelector('.tone-upsc');
+    if (upsc) upsc.setAttribute('open', '');
+    activateTrack('upsc-reports');
+    var sub = hash === 'reports' ? 'env' : hash.replace('reports-', '');
+    if (sub) activateReportSubject(sub);
+  }
+})();
+</script>
 </body>
 </html>
