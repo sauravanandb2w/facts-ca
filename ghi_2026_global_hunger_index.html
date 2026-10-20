@@ -72,6 +72,18 @@ tr:nth-child(even) td{background:#fdfaf5}
 .cta{display:block;text-align:center;margin:16px 0;padding:14px;background:linear-gradient(135deg,var(--navy),var(--amber));color:#fff;border-radius:12px;font-weight:700}
 .cta:hover{color:#fff;text-decoration:none;opacity:.95}
 cite{font-size:.75rem;color:var(--muted);display:block;margin-top:8px}
+.formula-box{
+  background:linear-gradient(180deg,#fffaf0,#fff);border:2px solid var(--gold);border-radius:14px;
+  padding:16px 18px;margin:12px 0;text-align:center;font-size:.95rem;line-height:1.7
+}
+.formula-box .eq{font-family:"Fraunces",serif;font-size:1.15rem;color:var(--navy);margin:8px 0}
+.formula-box .eq sub,.formula-box .eq sup{font-size:.75rem}
+.method-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:14px 0}
+@media(max-width:720px){.method-flow{grid-template-columns:1fr 1fr}}
+.flow-step{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:10px;text-align:center;font-size:.78rem}
+.flow-step b{display:block;font-size:.7rem;color:var(--amber);letter-spacing:.06em;margin-bottom:4px}
+.flow-arrow{text-align:center;color:var(--muted);font-size:1.2rem;margin:4px 0}
+.method-note{font-size:.8rem;color:var(--muted);background:#fdfaf5;border-radius:10px;padding:10px 12px;margin-top:10px}
 footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24px}
 @media(max-width:700px){.tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.tab{white-space:nowrap}}
 </style>
@@ -210,20 +222,126 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24
 
   <section class="section" id="method">
     <h2 class="section-title">How GHI is calculated</h2>
+
     <div class="card">
-      <p>Composite index 0–100 (0 = no hunger). <b>Four indicators</b>, equally weighted, each rescaled per appendix formula:</p>
-      <ol>
-        <li><b>Undernourishment</b> — % population with insufficient calorie intake (FAO).</li>
-        <li><b>Child stunting</b> — % under-5 with low height-for-age (UNICEF/WHO/World Bank).</li>
-        <li><b>Child wasting</b> — % under-5 with low weight-for-height (acute).</li>
-        <li><b>Child mortality</b> — % children dying before age five (UN IGME).</li>
-      </ol>
-      <p><b>2026 data windows:</b> undernourishment 2023–2025; wasting latest available; stunting 2024–2025; mortality 2024–2025 (see synopsis methodology).</p>
-      <p><b>Publishers:</b> <b>Welthungerhilfe</b> (Germany) &amp; <b>Concern Worldwide</b> (Ireland) — annual since 2006; not a UN index.</p>
+      <h3>One-line idea</h3>
+      <p>Turn four hunger-related percentages into a single score <b>0–100</b> (0 = least hunger). <b>Equal weight (¼ each)</b> on the standardized values — not a weighted average of different units.</p>
     </div>
+
+    <div class="formula-box">
+      <div style="font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em">Country GHI score</div>
+      <div class="eq">GHI = ( PUN + PW + PS + CM* ) ÷ 4</div>
+      <div style="font-size:.82rem;color:var(--muted)">PUN, PW, PS, CM* are each on a <b>0–100</b> “hunger severity” scale (higher = worse)</div>
+    </div>
+
+    <div class="method-flow" aria-label="Calculation steps">
+      <div class="flow-step"><b>Step 1</b>Collect raw data (4 indicators)</div>
+      <div class="flow-step"><b>Step 2</b>Standardize each to 0–100</div>
+      <div class="flow-step"><b>Step 3</b>Arithmetic mean (÷ 4)</div>
+      <div class="flow-step"><b>Step 4</b>Map score → severity band</div>
+    </div>
+
+    <div class="compare">
+      <table>
+        <tr>
+          <th>Symbol</th><th>Indicator</th><th>Raw data (what you read in reports)</th><th>Standardized score (0–100)</th><th>Source</th>
+        </tr>
+        <tr>
+          <td><b>PUN</b></td>
+          <td>Undernourishment</td>
+          <td>% of population undernourished</td>
+          <td>= value itself (cap at 100 if needed)</td>
+          <td>FAO</td>
+        </tr>
+        <tr>
+          <td><b>PW</b></td>
+          <td>Child wasting</td>
+          <td>% of children &lt;5 with low weight-for-height</td>
+          <td>= prevalence % (cap at 100)</td>
+          <td>UNICEF / WHO / World Bank</td>
+        </tr>
+        <tr>
+          <td><b>PS</b></td>
+          <td>Child stunting</td>
+          <td>% of children &lt;5 with low height-for-age</td>
+          <td>= prevalence % (cap at 100)</td>
+          <td>UNICEF / WHO / World Bank</td>
+        </tr>
+        <tr>
+          <td><b>CM*</b></td>
+          <td>Child mortality</td>
+          <td>Under-five mortality rate (% of live births)</td>
+          <td><b>CM* = min(100, 10 × CM)</b><br><span style="color:var(--muted)">Example: CM = 2.7% → CM* = 27</span></td>
+          <td>UN IGME</td>
+        </tr>
+      </table>
+    </div>
+    <p class="method-note"><b>Why ×10 on mortality?</b> So a 10% under-five death rate maps to the top of the scale (100), comparable to “100% stunting” — otherwise mortality would dominate too little in the average.</p>
+
     <div class="card">
-      <h3>Three of four indicators worsened globally since 2018</h3>
-      <p>Undernourishment, stunting, and wasting <b>rose</b> at global level; child mortality <b>fell slightly</b> — net global score up.</p>
+      <h3>Worked example — India (illustrative arithmetic)</h3>
+      <div class="compare">
+        <table>
+          <tr><th>Component</th><th>Report value (2026 cycle)</th><th>Standardized</th></tr>
+          <tr><td>PUN</td><td>9.8%</td><td>9.8</td></tr>
+          <tr><td>PW</td><td>15.1%</td><td>15.1</td></tr>
+          <tr><td>PS</td><td>29.3%</td><td>29.3</td></tr>
+          <tr><td>CM → CM*</td><td>2.7% → ×10</td><td>27.0</td></tr>
+          <tr><td colspan="2"><b>Mean (illustrative)</b></td><td><b>(9.8+15.1+29.3+27) ÷ 4 ≈ 20.3</b></td></tr>
+          <tr><td colspan="2"><b>Published India GHI 2026</b></td><td><b>24.1</b> (official table)</td></tr>
+        </table>
+      </div>
+      <p class="method-note">Published GHI can differ slightly from a quick hand calculation because the report uses final harmonized/provisional inputs (Appendix B), multi-year pools, and rounding. For exams, quote <b>24.1</b> and the four indicators from the dataset — not your back-of-envelope mean alone.</p>
+    </div>
+
+    <div class="card">
+      <h3>Score → severity label</h3>
+      <div class="compare">
+        <table>
+          <tr><th>GHI range</th><th>Label</th></tr>
+          <tr><td>≤ 9.9</td><td>Low</td></tr>
+          <tr><td>10.0 – 19.9</td><td>Moderate</td></tr>
+          <tr><td>20.0 – 34.9</td><td>Serious ← India (24.1)</td></tr>
+          <tr><td>35.0 – 49.9</td><td>Alarming</td></tr>
+          <tr><td>≥ 50.0</td><td>Extremely alarming</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>2026 data windows (what “2026 score” uses)</h3>
+      <div class="compare">
+        <table>
+          <tr><th>Indicator</th><th>Period in GHI 2026</th></tr>
+          <tr><td>Undernourishment</td><td>2023–2025 (3-year average)</td></tr>
+          <tr><td>Child wasting</td><td>Latest year available in cycle</td></tr>
+          <tr><td>Child stunting</td><td>2024–2025</td></tr>
+          <tr><td>Child mortality</td><td>2024–2025</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Country vs world score (trap)</h3>
+      <ul>
+        <li><b>Country GHI:</b> standardize four indicators for that country → mean.</li>
+        <li><b>Global / regional GHI:</b> build <b>population-weighted</b> aggregates for each indicator first, then apply the same formula (synopsis, Appendix A).</li>
+      </ul>
+      <p style="margin-top:8px"><b>Publisher:</b> Welthungerhilfe + Concern Worldwide (NGO index; uses UN/FAO data — not a UN index).</p>
+    </div>
+
+    <div class="card">
+      <h3>Global trend since 2018 (why score rose)</h3>
+      <div class="compare">
+        <table>
+          <tr><th>Indicator (global)</th><th>Since 2018</th></tr>
+          <tr><td>Undernourishment</td><td>↑ worse</td></tr>
+          <tr><td>Child stunting</td><td>↑ worse</td></tr>
+          <tr><td>Child wasting</td><td>↑ worse</td></tr>
+          <tr><td>Child mortality</td><td>↓ slightly better</td></tr>
+          <tr><td><b>Net GHI</b></td><td><b>18.1</b> vs <b>17.6</b> in 2018</td></tr>
+        </table>
+      </div>
     </div>
   </section>
 
