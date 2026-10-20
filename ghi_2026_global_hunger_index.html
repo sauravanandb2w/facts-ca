@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GHI 2026 | Global Hunger Index | UPSC Economy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1f2933;--muted:#5c6b7a;--paper:#f8f6f2;
+  --navy:#1a365d;--amber:#b45309;--gold:#c47a12;--rust:#9a3412;
+  --card:#fff;--line:#e2d8c8;--shadow:0 10px 28px rgba(30,25,15,.08);
+}
+body{font-family:"Sora",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+a{color:var(--amber);font-weight:600;text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-flex;margin:12px 16px 0;font-size:.82rem;color:var(--navy)}
+.hero{
+  background:linear-gradient(135deg,#1a365d,#2c5282 40%,#b45309 95%);
+  color:#fff;text-align:center;padding:36px 16px 28px
+}
+.hero h1{font-family:"Fraunces",serif;font-size:clamp(1.35rem,4vw,2.15rem);margin:8px 0 4px}
+.hero .sub{font-size:.92rem;opacity:.94;max-width:720px;margin:0 auto}
+.badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:14px}
+.badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:5px 12px;font-size:.72rem;font-weight:600}
+.source-bar{max-width:980px;margin:-18px auto 0;padding:0 14px;position:relative;z-index:2}
+.source-card{background:#fff;border:2px solid var(--gold);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow);display:grid;gap:10px}
+.source-card h2{font-family:"Fraunces",serif;font-size:1rem;color:var(--navy);margin-bottom:2px}
+.source-links{display:flex;flex-wrap:wrap;gap:8px}
+.src{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:10px;background:#fff8ed;border:1.5px solid var(--line);font-size:.78rem;font-weight:700;color:var(--rust)}
+.src:hover{background:#ffedd5;text-decoration:none}
+.src.pdf{border-color:var(--gold)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:10px 12px;background:rgba(255,255,255,.95);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:40;backdrop-filter:blur(8px)}
+.tab{padding:7px 11px;border-radius:999px;border:2px solid transparent;cursor:pointer;font:inherit;font-size:.72rem;font-weight:700;background:#f3ebe0;color:#4a3728}
+.tab:hover,.tab.active{background:var(--amber);color:#fff;border-color:var(--amber)}
+main{max-width:980px;margin:0 auto;padding:22px 14px 72px}
+.section{display:none}.section.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.section-title{font-family:"Fraunces",serif;font-size:1.12rem;color:var(--navy);border-left:4px solid var(--gold);padding-left:10px;margin:14px 0 10px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:15px 17px;margin-bottom:11px;box-shadow:var(--shadow)}
+.card h3{font-family:"Fraunces",serif;color:var(--navy);margin-bottom:6px;font-size:.98rem}
+.card p,.card li{font-size:.87rem;line-height:1.65}
+.card ul{padding-left:18px;margin-top:6px}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:12px 0}
+.stat{background:linear-gradient(180deg,#fffaf0,#fff);border:1.5px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+.stat b{display:block;font-family:"Fraunces",serif;font-size:1.05rem;color:var(--amber)}
+.stat span{font-size:.72rem;color:var(--muted);line-height:1.4}
+.bridge{border-left:4px solid var(--gold);padding-left:12px;margin:10px 0;font-size:.86rem}
+.bridge b{color:var(--navy)}
+.compare{overflow-x:auto;border-radius:12px;border:1px solid var(--line);margin:10px 0;background:#fff}
+table{width:100%;border-collapse:collapse;min-width:480px;font-size:.78rem}
+th{background:linear-gradient(135deg,var(--navy),#2c5282);color:#fff;text-align:left;padding:8px 10px}
+td{padding:7px 10px;border-bottom:1px solid #ebe4d8;vertical-align:top}
+tr:nth-child(even) td{background:#fdfaf5}
+.shot{max-width:100%;border-radius:12px;border:2px solid var(--line);box-shadow:var(--shadow);margin:12px 0}
+.shot-cap{font-size:.78rem;color:var(--muted);margin-top:6px}
+.scale{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.scale span{font-size:.72rem;font-weight:700;padding:4px 8px;border-radius:6px;color:#fff}
+.s-low{background:#2e7d32}.s-mod{background:#f9a825;color:#333}.s-ser{background:#ef6c00}
+.s-ala{background:#c62828}.s-ext{background:#4a148c}
+.mcq{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:9px}
+.mcq .q{font-weight:700;font-size:.86rem;margin-bottom:7px}
+.opt{background:#faf6ef;border:2px solid transparent;border-radius:8px;padding:7px 10px;font-size:.82rem;cursor:pointer;margin-bottom:4px}
+.opt:hover{border-color:#d4a574}
+.opt.correct{background:#e8f5e9;border-color:#2e7d32;font-weight:700}
+.opt.wrong{background:#ffebee;border-color:#c62828}
+.exp{display:none;margin-top:7px;padding:8px;background:#fff4e0;border-radius:8px;font-size:.81rem}
+.exp.show{display:block}
+.cta{display:block;text-align:center;margin:16px 0;padding:14px;background:linear-gradient(135deg,var(--navy),var(--amber));color:#fff;border-radius:12px;font-weight:700}
+.cta:hover{color:#fff;text-decoration:none;opacity:.95}
+cite{font-size:.75rem;color:var(--muted);display:block;margin-top:8px}
+footer{text-align:center;color:var(--muted);font-size:.78rem;padding:8px 16px 24px}
+@media(max-width:700px){.tabs{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap}.tab{white-space:nowrap}}
+</style>
+</head>
+<body>
+
+<a class="back" href="index.html#reports-economy">← Economy reports</a>
+
+<header class="hero">
+  <div style="font-size:2.2rem">🍽️</div>
+  <h1>Global Hunger Index 2026</h1>
+  <p class="sub"><b>No Security Without Food Security</b><br>Welthungerhilfe &amp; Concern Worldwide · October 2026 · Data mainly 2021–2025</p>
+  <div class="badges">
+    <span class="badge">SDG 2 — Zero Hunger</span>
+    <span class="badge">4 indicators · equal weight</span>
+    <span class="badge">#GHI2026</span>
+    <span class="badge">Food ↔ conflict nexus</span>
+  </div>
+</header>
+
+<div class="source-bar">
+  <div class="source-card">
+    <h2>Sources &amp; files</h2>
+    <div class="source-links">
+      <a class="src" href="https://www.globalhungerindex.org/" target="_blank" rel="noopener">🌐 globalhungerindex.org</a>
+      <a class="src pdf" href="reports/ghi_2026_synopsis.pdf" target="_blank" rel="noopener">📄 Synopsis (local)</a>
+      <a class="src pdf" href="reports/ghi_2026_full_report.pdf" target="_blank" rel="noopener">📘 Full report (local)</a>
+    </div>
+    <p style="font-size:.8rem;color:var(--muted);margin:0">Scores from official 2026 dataset (<code>2026.xlsx</code> table). Cite: Welthungerhilfe &amp; Concern Worldwide (2026).</p>
+  </div>
+</div>
+
+<nav class="tabs" id="tabs">
+  <button class="tab active" data-tab="core">🎯 Core</button>
+  <button class="tab" data-tab="global">🌍 Global</button>
+  <button class="tab" data-tab="india">🇮🇳 India</button>
+  <button class="tab" data-tab="method">📐 Method</button>
+  <button class="tab" data-tab="bridge">🧭 UPSC bridge</button>
+  <button class="tab" data-tab="mcq">✅ MCQs</button>
+</nav>
+
+<main>
+  <section class="section active" id="core">
+    <h2 class="section-title">Headline story (2026)</h2>
+    <div class="card">
+      <ul>
+        <li><b>Global reversal:</b> World GHI <b>18.1</b> (moderate) — <b>higher than 17.6 in 2018</b>, breaking the long decline from <b>28.2 (2000)</b>.</li>
+        <li><b>Theme:</b> Hunger and insecurity are <b>mutually reinforcing</b> — food security must be in peace &amp; security policy.</li>
+        <li><b>Drivers:</b> Conflict (record state-based conflicts post-WWII), climate shocks, economic/trade disruption (Ukraine war, fertilizer prices, shipping risks).</li>
+        <li><b>Severity:</b> <b>8</b> countries <em>alarming</em>; <b>36</b> <em>serious</em>; <b>32</b> countries worse than 2018.</li>
+        <li><b>SDG trajectory:</b> At current pace since 2000, <b>57 countries</b> won’t reach “low hunger” by 2030.</li>
+        <li><b>Hope:</b> Nine countries cut GHI &gt;20% since 2018 (e.g. Nepal, Rwanda, Togo, Uganda, Venezuela); long-run gains in Nepal, Sierra Leone, Tajikistan, Uganda.</li>
+      </ul>
+      <cite>Synopsis &amp; Key Messages, GHI 2026.</cite>
+    </div>
+    <div class="card">
+      <h3>GHI severity scale (0 = best)</h3>
+      <div class="scale">
+        <span class="s-low">≤9.9 Low</span>
+        <span class="s-mod">10–19.9 Moderate</span>
+        <span class="s-ser">20–34.9 Serious</span>
+        <span class="s-ala">35–49.9 Alarming</span>
+        <span class="s-ext">≥50 Extremely alarming</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="global">
+    <h2 class="section-title">Global &amp; regional snapshot</h2>
+    <div class="stat-grid">
+      <div class="stat"><b>18.1</b><span>World GHI 2026 (moderate)</span></div>
+      <div class="stat"><b>27.5</b><span>Africa South of Sahara</span></div>
+      <div class="stat"><b>23.5</b><span>South Asia (regional)</span></div>
+      <div class="stat"><b>32</b><span>Countries worse vs 2018</span></div>
+    </div>
+    <div class="card">
+      <h3>Regional trends vs 2018</h3>
+      <ul>
+        <li><b>Worsened:</b> Africa South of the Sahara; West Asia &amp; North Africa.</li>
+        <li><b>Unchanged:</b> Europe &amp; Central Asia.</li>
+        <li><b>Improved slightly (&lt;1 pt):</b> Latin America &amp; Caribbean; East &amp; Southeast Asia.</li>
+        <li><b>Highest hunger:</b> Africa South of the Sahara &amp; South Asia (both serious band).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Alarming countries (2026)</h3>
+      <p>Burundi, Chad, DRC, Madagascar, Somalia, South Sudan, Sudan, Yemen (data gaps affect some scores).</p>
+    </div>
+  </section>
+
+  <section class="section" id="india">
+    <h2 class="section-title">India — rank &amp; trend</h2>
+    <div class="stat-grid">
+      <div class="stat"><b>100</b><span>Rank (2026, of scored countries)</span></div>
+      <div class="stat"><b>24.1</b><span>GHI score 2026</span></div>
+      <div class="stat"><b>Serious</b><span>Category (20–34.9)</span></div>
+      <div class="stat"><b>−6.6%</b><span>Change in score since 2018 (25.8→24.1)</span></div>
+    </div>
+
+    <figure>
+      <img class="shot" src="reports/images/ghi_2026_india_table_screenshot.png" alt="GHI 2026 table excerpt showing India rank 100 and scores 2000–2026" width="900" height="auto" loading="lazy">
+      <figcaption class="shot-cap">Your screenshot — India at <b>rank 100</b> with GHI <b>38.1 → 24.1</b> (2000–2026). Neighbours in table: Guinea-Bissau, Ethiopia, Angola, Benin.</figcaption>
+    </figure>
+
+    <div class="compare">
+      <table>
+        <tr><th>Year</th><th>2000</th><th>2006</th><th>2012</th><th>2018</th><th>2026</th></tr>
+        <tr><td><b>India GHI</b></td><td>38.1</td><td>37.0</td><td>28.8</td><td>25.8</td><td><b>24.1</b></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Underlying indicators (India, latest periods in dataset)</h3>
+      <ul>
+        <li><b>Undernourishment</b> (2023–2025): <b>9.8%</b> — down from 10.5% (2017–2019).</li>
+        <li><b>Child wasting</b> (2021–2025): <b>15.1%</b> — acute undernutrition (survey-backed where official FAO line missing).</li>
+        <li><b>Child stunting</b> (2024): <b>29.3%</b> — chronic undernutrition (down from 35.6% in 2018).</li>
+        <li><b>Child mortality</b> (2024): <b>2.7%</b> — under-five mortality rate (continued decline).</li>
+      </ul>
+      <p>Report notes India’s score has been <b>serious since 2012</b>; long-run fall from 38.1 (2000) is large, but rank stays ~100 because peers also improved.</p>
+      <cite>Appendix data table / 2026.xlsx; GHI 2026 South Asia chapter.</cite>
+    </div>
+
+    <div class="card">
+      <h3>South Asia context</h3>
+      <ul>
+        <li>Regional GHI <b>23.5</b> — second-highest globally after Africa South of the Sahara.</li>
+        <li>~<b>218 million</b> undernourished in South Asia (incl. Iran), 2023–2025.</li>
+        <li><b>Nepal</b> among strongest long-term improvers; <b>Bangladesh</b> 19.2 (moderate) but progress slowed like India.</li>
+        <li>Monsoon / El Niño risks flagged for rainfed India (IMD 2026 cited in report).</li>
+      </ul>
+    </div>
+
+    <div class="bridge"><b>Exam debate:</b> India often disputes GHI (FAO undernourishment estimates, survey timing, child metrics vs Poshan/PM POSHAN). Know <em>both</em> report numbers and government critique for Mains.</div>
+  </section>
+
+  <section class="section" id="method">
+    <h2 class="section-title">How GHI is calculated</h2>
+    <div class="card">
+      <p>Composite index 0–100 (0 = no hunger). <b>Four indicators</b>, equally weighted, each rescaled per appendix formula:</p>
+      <ol>
+        <li><b>Undernourishment</b> — % population with insufficient calorie intake (FAO).</li>
+        <li><b>Child stunting</b> — % under-5 with low height-for-age (UNICEF/WHO/World Bank).</li>
+        <li><b>Child wasting</b> — % under-5 with low weight-for-height (acute).</li>
+        <li><b>Child mortality</b> — % children dying before age five (UN IGME).</li>
+      </ol>
+      <p><b>2026 data windows:</b> undernourishment 2023–2025; wasting latest available; stunting 2024–2025; mortality 2024–2025 (see synopsis methodology).</p>
+      <p><b>Publishers:</b> <b>Welthungerhilfe</b> (Germany) &amp; <b>Concern Worldwide</b> (Ireland) — annual since 2006; not a UN index.</p>
+    </div>
+    <div class="card">
+      <h3>Three of four indicators worsened globally since 2018</h3>
+      <p>Undernourishment, stunting, and wasting <b>rose</b> at global level; child mortality <b>fell slightly</b> — net global score up.</p>
+    </div>
+  </section>
+
+  <section class="section" id="bridge">
+    <h2 class="section-title">UPSC static + current links</h2>
+    <div class="card">
+      <div class="bridge"><b>GS2 / IR:</b> Food security &amp; conflict — Ukraine grain/fertilizer, Red Sea/shipping, humanitarian law.</div>
+      <div class="bridge"><b>GS3 Economy:</b> PDS, NFSA, buffer stocks, MSP, food inflation, PM POSHAN, Saksham Anganwari.</div>
+      <div class="bridge"><b>GS1 Society:</b> Stunting/wasting — NFHS, anaemia, maternal nutrition.</div>
+      <div class="bridge"><b>Schemes trap:</b> GHI ≠ Global Food Security Index (Economist/EIU) ≠ FAO SOFI undernourishment headline alone.</div>
+      <div class="bridge"><b>SDG 2</b> — End hunger; GHI used in debates on 2030 slip.</div>
+      <div class="bridge"><b>Institutions:</b> FAO (Rome), WFP, UNICEF nutrition data, IGME child mortality.</div>
+    </div>
+    <a class="cta" href="index.html#reports-economy">More economy reports (hub) →</a>
+  </section>
+
+  <section class="section" id="mcq">
+    <h2 class="section-title">Quick check</h2>
+    <div class="mcq" data-a="1">
+      <div class="q">2026 global GHI score and label:</div>
+      <div class="opt" data-i="0">17.6 — low hunger</div>
+      <div class="opt" data-i="1">18.1 — moderate hunger</div>
+      <div class="opt" data-i="2">28.2 — serious hunger</div>
+      <div class="opt" data-i="3">24.1 — India’s score equals world score</div>
+      <div class="exp"><b>Answer: (b)</b> World 18.1 moderate; 28.2 was year 2000 global; 24.1 is India.</div>
+    </div>
+    <div class="mcq" data-a="2">
+      <div class="q">India’s 2026 GHI rank and category:</div>
+      <div class="opt" data-i="0">Rank 50, low</div>
+      <div class="opt" data-i="1">Rank 75, moderate</div>
+      <div class="opt" data-i="2">Rank 100, serious</div>
+      <div class="opt" data-i="3">Rank 100, alarming</div>
+      <div class="exp"><b>Answer: (c)</b> Score 24.1 → serious band; rank 100 in 2026 table.</div>
+    </div>
+    <div class="mcq" data-a="0">
+      <div class="q">GHI is published jointly by:</div>
+      <div class="opt" data-i="0">Welthungerhilfe &amp; Concern Worldwide</div>
+      <div class="opt" data-i="1">World Bank &amp; IMF</div>
+      <div class="opt" data-i="2">UNDP &amp; WHO</div>
+      <div class="opt" data-i="3">FAO &amp; WFP only</div>
+      <div class="exp"><b>Answer: (a)</b> NGOs; uses UN/FAO data sources.</div>
+    </div>
+    <div class="mcq" data-a="3">
+      <div class="q">Which is NOT a GHI component indicator?</div>
+      <div class="opt" data-i="0">Child stunting</div>
+      <div class="opt" data-i="1">Child wasting</div>
+      <div class="opt" data-i="2">Undernourishment</div>
+      <div class="opt" data-i="3">Adult BMI obesity rate</div>
+      <div class="exp"><b>Answer: (d)</b> Fourth pillar is under-five mortality, not obesity.</div>
+    </div>
+  </section>
+</main>
+
+<footer>CA Notes · GHI 2026 · Study aid — not an official Welthungerhilfe product</footer>
+
+<script>
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.tab).classList.add('active');
+  });
+});
+document.querySelectorAll('.mcq').forEach(box=>{
+  const ans=+box.dataset.a;
+  box.querySelectorAll('.opt').forEach(o=>{
+    o.addEventListener('click',()=>{
+      box.querySelectorAll('.opt').forEach(x=>x.classList.remove('correct','wrong'));
+      const i=+o.dataset.i;
+      o.classList.add(i===ans?'correct':'wrong');
+      if(i!==ans) box.querySelector(`.opt[data-i="${ans}"]`)?.classList.add('correct');
+      box.querySelector('.exp')?.classList.add('show');
+    });
+  });
+});
+</script>
+</body>
+</html>
